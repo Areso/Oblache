@@ -21,7 +21,7 @@ RUN apk update && \
 WORKDIR /usr/workspace
 
 # Copy the dependencies file to the working directory
-COPY ./requirements.txt /usr/workspace
+COPY requirements.txt /usr/workspace
 
 # Install Python dependencies
 RUN pip3 install -r requirements.txt
