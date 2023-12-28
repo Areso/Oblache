@@ -6,7 +6,7 @@ import mysql.connector
 import requests
 from dotenv import load_dotenv
 
-from .request import API
+from utils.request import API
 
 
 class DataMySql:

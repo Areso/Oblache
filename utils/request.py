@@ -6,8 +6,8 @@ from pprint import pprint
 import allure
 from dotenv import load_dotenv
 
-import config_my_sql
-from http_methods import HttpMethods
+import utils.config_my_sql
+from utils.http_methods import HttpMethods
 
 base_url = 'https://dbend.areso.pro'  # Base url
 load_dotenv()

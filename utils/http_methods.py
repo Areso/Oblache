@@ -1,7 +1,7 @@
 import allure
 import requests
 
-from .logger import Logger
+from utils.logger import Logger
 
 '''List http methods'''
 
