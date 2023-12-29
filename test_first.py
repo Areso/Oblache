@@ -2,7 +2,6 @@ import json
 
 import allure
 import pytest
-
 from utils.checking import Checking
 from utils.config_my_sql import DataMySql
 from utils.request import API
