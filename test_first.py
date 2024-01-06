@@ -2,6 +2,8 @@ import json
 
 import allure
 import pytest
+
+import utils
 from utils.checking import Checking
 from utils.config_my_sql import DataMySql
 from utils.request import API
@@ -84,3 +86,21 @@ class TestConnectionDB:
     @allure.sub_suite('Complex')
     def test_complex(self):
         API.check_full_cycle(DataMySql.sid)
+
+
+class TestLoadDB:
+    def test_create_table(self):
+        host, user_name, db_name, password_db = utils.config_my_sql.DataMySql().data_to_connect_my_sql()
+        print(host, user_name, db_name, password_db, sep='\n')
+        query = '''
+        CREATE TABLE IF NOT EXISTS accounts(
+        userid INT PRIMARY KEY AUTO_INCREMENT,
+        name varchar(128),
+        date_of_birth datetime NULL,
+        text varchar(4096),
+        email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+        '''
+        utils.config_my_sql.DataMySql().create_table(query)
+
+    def test_load_table(self):
+        utils.config_my_sql.DataMySql().load_db()
