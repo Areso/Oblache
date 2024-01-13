@@ -3,7 +3,7 @@ import json
 import allure
 import pytest
 
-import utils
+from .conftest import TestData
 from utils.checking import Checking
 from utils.config_my_sql import DataMySql
 from utils.request import API
@@ -50,7 +50,7 @@ class TestPOST:
     @allure.title('Post login')
     def test_post_login(self):
         print('\n\nMethod POST: login')
-        result_post = API.post_login(DataMySql.body)
+        result_post = API.post_login(TestData.body)
         status_code, sid = result_post
         Checking.check_status_code(status_code, 200)
 
@@ -58,14 +58,14 @@ class TestPOST:
     @allure.title('Post db create')
     def test_post_db_create(self):
         print('\n\nMethod POST: db_create')
-        result_post_db_list = API.post_db_create(DataMySql.sid)
+        result_post_db_list = API.post_db_create(TestData.sid)
         Checking.check_status_code(result_post_db_list, 201)
 
     @allure.sub_suite('POST')
     @allure.title('Post db list')
     def test_post_db_list(self):
         print('\n\nMethod POST: db_list')
-        result_post_db_list = API.post_db_list(DataMySql.sid)
+        result_post_db_list = API.post_db_list(TestData.sid)
         Checking.check_status_code(result_post_db_list, 200)
 
     @allure.sub_suite('DELETE')
@@ -73,10 +73,10 @@ class TestPOST:
     @pytest.mark.xfail()
     def test_delete_db(self):
         print('\n\nMethod DELETE: delete_db')
-        list_db = API.post_db_list(DataMySql.sid)
+        list_db = API.post_db_list(TestData.sid)
         json_list_db = json.loads(list_db.text)
         first_db_uuid = list(json_list_db['content'].keys())[0]
-        result_post_db_list = API.delete_db(first_db_uuid, DataMySql.sid)
+        result_post_db_list = API.delete_db(first_db_uuid, TestData.sid)
         Checking.check_status_code(result_post_db_list, 200)
 
 
@@ -85,22 +85,29 @@ class TestPOST:
 class TestConnectionDB:
     @allure.sub_suite('Complex')
     def test_complex(self):
-        API.check_full_cycle(DataMySql.sid)
+        API.check_full_cycle(TestData.sid)
 
 
-class TestLoadDB:
-    def test_create_table(self):
-        host, user_name, db_name, password_db = utils.config_my_sql.DataMySql().data_to_connect_my_sql()
-        print(host, user_name, db_name, password_db, sep='\n')
-        query = '''
-        CREATE TABLE IF NOT EXISTS accounts(
-        userid INT PRIMARY KEY AUTO_INCREMENT,
-        name varchar(128),
-        date_of_birth datetime NULL,
-        text varchar(4096),
-        email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-        '''
-        utils.config_my_sql.DataMySql().create_table(query)
-
+# class TestLoadDB(DataMySql):
+    # def test_create_table(self):
+    #     host, user_name, db_name, password_db = utils.config_my_sql.DataMySql().data_to_connect_my_sql()
+    #     print(host, user_name, db_name, password_db, sep='\n')
+    #     query = '''
+    #     CREATE TABLE IF NOT EXISTS accounts(
+    #     userid INT PRIMARY KEY AUTO_INCREMENT,
+    #     name varchar(128),
+    #     date_of_birth datetime NULL,
+    #     text varchar(4096),
+    #     email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+    #     '''
+    #     utils.config_my_sql.DataMySql().create_table(query)
+    #
     def test_load_table(self):
-        utils.config_my_sql.DataMySql().load_db()
+        page = DataMySql()
+        page.load_db()
+
+    def test_load_table2(self, connection):
+        page = API(connection)
+        page = page.connection
+        page.load_dbV2()
+
