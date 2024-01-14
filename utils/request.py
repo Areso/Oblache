@@ -1,27 +1,25 @@
 import json
-import os
 from datetime import datetime
 from pprint import pprint
+import random
+from string import ascii_letters
 
 import allure
-from dotenv import load_dotenv
 
-import utils.config_my_sql
+from tests.conftest import TestData
 from utils.http_methods import HttpMethods
-
-base_url = 'https://dbend.areso.pro'  # Base url
-load_dotenv()
-email = os.getenv('EMAIL')
-password = os.getenv('PASSWORD')
-MY_EMAIL = os.getenv('EMAIL')
-MY_PASSWORD = os.getenv('PASSWORD')
+import mysql.connector
 
 
-class API:
+class API(TestData):
+    def __init__(self, connection):
+        self.connection = connection
+        self.connector = mysql.connector
+
     @staticmethod
     def get_tos():
         get_resource = '/tos'  # Resource for method GET
-        get_url = base_url + get_resource
+        get_url = TestData.base_url + get_resource
         print(get_url)
         result_get = HttpMethods.get(get_url)
         print(result_get.text)
@@ -30,7 +28,7 @@ class API:
     @staticmethod
     def get_list_dbtypes():
         get_resource = '/list_dbtypes'  # Resource for method GET
-        get_url = base_url + get_resource
+        get_url = TestData.base_url + get_resource
         print(get_url)
         result_get = HttpMethods.get(get_url)
         print(result_get.text)
@@ -39,7 +37,7 @@ class API:
     @staticmethod
     def get_list_dbversions():
         get_resource = '/list_dbversions'  # Resource for method GET
-        get_url = base_url + get_resource
+        get_url = TestData.base_url + get_resource
         print(get_url)
         result_get = HttpMethods.get(get_url)
         print(result_get.text)
@@ -48,7 +46,7 @@ class API:
     @staticmethod
     def get_list_envs():
         get_resource = '/list_envs'  # Resource for method GET
-        get_url = base_url + get_resource
+        get_url = TestData.base_url + get_resource
         print(get_url)
         result_get = HttpMethods.get(get_url)
         print(result_get.text)
@@ -57,7 +55,7 @@ class API:
     @staticmethod
     def get_list_regions():
         get_resource = '/list_regions'  # Resource for method GET
-        get_url = base_url + get_resource
+        get_url = TestData.base_url + get_resource
         print(get_url)
         result_get = HttpMethods.get(get_url)
         print(result_get.text)
@@ -69,10 +67,10 @@ class API:
         Method for create new user
         :return: JSON Response
         """
-        json_for_create_new_user = {"email": email, "password": password}
+        json_for_create_new_user = {"email": TestData.email, "password": TestData.password}
 
         post_resource = '/register'  # Resource for method POST
-        post_url = base_url + post_resource
+        post_url = TestData.base_url + post_resource
         print(post_url)
         result_post = HttpMethods.post(post_url, json_for_create_new_user)
         print('Response body: ', result_post.text)
@@ -81,7 +79,7 @@ class API:
     @staticmethod
     def post_login(body: dict):
         post_resource = '/login'  # Resource for method GET
-        post_url = base_url + post_resource
+        post_url = TestData.base_url + post_resource
         print(post_url)
         result_post = HttpMethods.post(post_url, body)
         cookies = result_post.cookies
@@ -100,7 +98,7 @@ class API:
         :return:
         """
         post_resource = '/db_list'  # Resource for method
-        post_url = base_url + post_resource
+        post_url = TestData.base_url + post_resource
         print(post_url)
         result_post = HttpMethods.post_set_cookie(post_url, {}, sid)
         print('Response: ')
@@ -110,7 +108,7 @@ class API:
     @staticmethod
     def post_db_create(sid: dict):
         post_resource = '/db_create'  # Resource for method
-        post_url = base_url + post_resource
+        post_url = TestData.base_url + post_resource
         body = {"dbtype": 3, "dbversion": 5, "env": 3, "region": 3}
         result_post = HttpMethods.post_set_cookie_without_body(post_url, sid, body)
         print('Url: ', post_url)
@@ -126,7 +124,7 @@ class API:
         :return: JSON Response
         """
         put_resource = 'api/users/'  # Resource for method PUT
-        put_url = base_url + put_resource + user_id
+        put_url = TestData.base_url + put_resource + user_id
         print(put_url)
         json_for_update_new_place = \
             {
@@ -140,7 +138,7 @@ class API:
     @staticmethod
     def delete_db(uuid, sid):
         delete_resource = '/db_delete'  # Resource for method DELETE
-        delete_url = base_url + delete_resource
+        delete_url = TestData.base_url + delete_resource
         print('Url: ', delete_url)
         db_uuid = {"db_uuid": f"{uuid}"}
         json_db_uuid = json.dumps(db_uuid)
@@ -158,7 +156,15 @@ class API:
         json_list_db = json.loads(result_post_db_list.text)
         first_db_uuid = list(json_list_db['content'].keys())[0]
         while True:
-            utils.config_my_sql.DataMySql().connect_my_sql()
+            try:
+                db = TestData.connection()
+                cursor = db.cursor()
+                cursor.execute('''select 1 from dual''')
+                res_query = cursor.fetchall()
+                print(res_query)
+            except Exception as ex:
+                print(ex)
+                continue
             result_post_db_delete = API.delete_db(first_db_uuid, sid)
             json_delete_db = json.loads(result_post_db_delete.text)
             message = list(json_delete_db.values())[0].split(':')
@@ -179,11 +185,17 @@ class API:
         cur_db_list = API.post_db_list(sid)
         assert cur_db_list.text == empty_db_list, f'DB is not deleted. {cur_db_list.text}'
 
-    # @staticmethod
-    # def checking_unknown_user(user_id):
-    #     get_resource = 'api/unknown/'  # Resource for method GET
-    #     get_url = base_url + get_resource + user_id
-    #     print(get_url)
-    #     result_get = HttpMethods.get(get_url)
-    #     print(result_get.text)
-    #     return result_get
+    def load_db_v2(self):
+        letters = ascii_letters
+        cursor = self.connection()
+        for x in range(1):
+            for i in range(10):
+                my_string = "".join(random.choice(letters) for i in range(4096))
+                cursor.execute("""
+                INSERT INTO accounts (name, text) 
+                VALUES (
+                'lambotik',
+                %(my_string)s);""",
+                               {'my_string': my_string})
+            self.connection.commit()
+

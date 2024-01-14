@@ -3,10 +3,11 @@ import os
 
 import allure
 from requests import Response
+from logs.logger_path import LOGS_DIR
 
 
 class Logger:
-    file_name = f'logs/log_' + str(datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')) + '.log'
+    file_name = LOGS_DIR / str(datetime.datetime.now().strftime("%d-%m-%Y_%H-%M-%S") + '.log')
 
     @classmethod
     def write_log_to_file(cls, data: str):
