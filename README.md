@@ -20,4 +20,4 @@ Visualize:
 
 ## PROJECT TESTS
 
-For Project tests documentation please [README_TESTS.md](Test documentation)
+For Project tests documentation please [Readme for Tests](./README_TESTS.md)
