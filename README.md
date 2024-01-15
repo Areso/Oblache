@@ -3,7 +3,21 @@ This is public tracker for my Oblache project.
 Here would be REST API description, tests and so on.
 
 ## DB States
-Current version (0.24) state machine (PlantUML) of the databases:  
+All the states:  
+```
+    # 0 db_creating          - EXCEPTION                        - OK
+    # 1 db_created           -   NORMAL FLOW                    - OK
+    # 2 error                -     COVERED with manual deletion - OK
+    # 3 deleting             - EXCEPTION                        - OK
+    # 4 deleted              -FILTERED OUT O on previous step   - OK
+    # 5 read_only_threshold  -   NORMAL FLOW                    - OK
+    # 6 error_creating       -     COVERED with manual deletion - OK
+    # 7 error_deleting       - EXCEPTION                        - OK
+    # 8 error_ro_threshold   - EXCEPTION?--???
+    # 9 manual_deleting      - EXCEPTION?---??/
+```
+
+Current version (0.25) state machine (PlantUML) of the databases:  
 ```
 "/db_create"->creating : Order accepted
 creating->"/db_create" : db_uuid
