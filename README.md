@@ -6,6 +6,7 @@ Here would be REST API description, tests and so on.
 Current version (0.24) state machine (PlantUML) of the databases:  
 ```
 "/db_create"->creating : Order accepted
+creating->"/db_create" : db_uuid
 creating->created : Success
 creating->creation_error : Fail
 created->deleting: "/db_delete" order accepted
