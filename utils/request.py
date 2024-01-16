@@ -1,14 +1,13 @@
 import json
-from datetime import datetime
-from pprint import pprint
 import random
+from datetime import datetime
 from string import ascii_letters
 
 import allure
+import mysql.connector
 
 from tests.conftest import TestData
 from utils.http_methods import HttpMethods
-import mysql.connector
 
 
 class API(TestData):
@@ -151,31 +150,28 @@ class API(TestData):
     def check_full_cycle(sid):
         print('\nCheck Time: ', str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
         empty_db_list = API.post_db_list(sid).text
-        API.post_db_create(sid)
-        result_post_db_list = API.post_db_list(sid)
-        json_list_db = json.loads(result_post_db_list.text)
-        first_db_uuid = list(json_list_db['content'].keys())[0]
+        result_db_create = API.post_db_create(sid)
+        db_uuid = result_db_create.json()["db_uuid"]
         while True:
             try:
-                db = TestData.connection()
+                db = TestData.connection(db_uuid)
                 cursor = db.cursor()
-                cursor.execute('''select 1 from dual''')
+                cursor.execute("""select 1 from dual""")
                 res_query = cursor.fetchall()
                 print(res_query)
             except Exception as ex:
-                print(ex)
-                continue
-            result_post_db_delete = API.delete_db(first_db_uuid, sid)
+                print('Exception: ', ex)
+            result_post_db_delete = API.delete_db(db_uuid, sid)
             json_delete_db = json.loads(result_post_db_delete.text)
             message = list(json_delete_db.values())[0].split(':')
             if 'msg[18]' in message:
                 print(str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
             elif 'msg[19]' in message:
                 print(str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
-                result_post_db_delete = API.delete_db(first_db_uuid, sid)
+                result_post_db_delete = API.delete_db(db_uuid, sid)
                 json.loads(result_post_db_delete.text)
             elif 'msg[13]' in message:
-                result_post_db_delete = API.delete_db(first_db_uuid, sid)
+                result_post_db_delete = API.delete_db(db_uuid, sid)
                 json_delete_db = json.loads(result_post_db_delete.text)
                 print('json_delete_db', json_delete_db)
                 print('Finish: ', str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
@@ -198,4 +194,3 @@ class API(TestData):
                 %(my_string)s);""",
                                {'my_string': my_string})
             self.connection.commit()
-

@@ -1,12 +1,14 @@
 import json
+import random
+from string import ascii_letters
 
 import allure
 import pytest
 
-from .conftest import TestData
 from utils.checking import Checking
 from utils.config_my_sql import DataMySql
 from utils.request import API
+from .conftest import TestData
 
 
 @allure.epic('GET REQUESTS')
@@ -59,6 +61,8 @@ class TestPOST:
     def test_post_db_create(self):
         print('\n\nMethod POST: db_create')
         result_post_db_list = API.post_db_create(TestData.sid)
+        # print(result_post_db_list)
+        print(result_post_db_list.json()["db_uuid"])
         Checking.check_status_code(result_post_db_list, 201)
 
     @allure.sub_suite('POST')
@@ -75,7 +79,8 @@ class TestPOST:
         print('\n\nMethod DELETE: delete_db')
         list_db = API.post_db_list(TestData.sid)
         json_list_db = json.loads(list_db.text)
-        first_db_uuid = list(json_list_db['content'].keys())[0]
+        first_db_uuid = "065a5b36-e472-7398-8000-7ce3e7219464"  # list(json_list_db['content'].keys())[0]
+        # print(first_db_uuid)
         result_post_db_list = API.delete_db(first_db_uuid, TestData.sid)
         Checking.check_status_code(result_post_db_list, 200)
 
@@ -88,26 +93,41 @@ class TestConnectionDB:
         API.check_full_cycle(TestData.sid)
 
 
-# class TestLoadDB(DataMySql):
-    # def test_create_table(self):
-    #     host, user_name, db_name, password_db = utils.config_my_sql.DataMySql().data_to_connect_my_sql()
-    #     print(host, user_name, db_name, password_db, sep='\n')
-    #     query = '''
-    #     CREATE TABLE IF NOT EXISTS accounts(
-    #     userid INT PRIMARY KEY AUTO_INCREMENT,
-    #     name varchar(128),
-    #     date_of_birth datetime NULL,
-    #     text varchar(4096),
-    #     email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-    #     '''
-    #     utils.config_my_sql.DataMySql().create_table(query)
-    #
-    def test_load_table(self):
-        page = DataMySql()
-        page.load_db()
+class TestLoadDB(DataMySql):
+    def test_create_table(self):
+        """
+        :return:
+        """
+        query = '''
+        CREATE TABLE IF NOT EXISTS accounts(
+        userid INT PRIMARY KEY AUTO_INCREMENT,
+        name varchar(128),
+        date_of_birth datetime NULL,
+        text varchar(4096),
+        email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+        '''
+        db = TestData.connection("065a5c25-6bd0-7a6e-8000-a9830730182e")
+        cursor = db.cursor()
+        cursor.execute(query)
+        db.commit()
 
-    def test_load_table2(self, connection):
-        page = API(connection)
-        page = page.connection
-        page.load_dbV2()
-
+    def test_load_table2(self):
+        """
+        :return:
+        """
+        db = TestData.connection("065a5c25-6bd0-7a6e-8000-a9830730182e")
+        letters = ascii_letters
+        cursor = db.cursor()
+        for x in range(10):
+            for i in range(10):
+                my_string = "".join(random.choice(letters) for i in range(4096))
+                cursor.execute("""
+                        INSERT INTO accounts (name, text) 
+                        VALUES (
+                        'lambotik',
+                        %(my_string)s);""",
+                               {'my_string': my_string})
+            db.commit()
+        cursor.execute('''select * from accounts''')
+        res = cursor.fetchall()
+        print(res)
