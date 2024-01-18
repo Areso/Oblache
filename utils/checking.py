@@ -51,6 +51,12 @@ class Checking:
 
     @staticmethod
     def check_json_value(response: json, field_name: str, expected_value):
+        """
+        :param response:
+        :param field_name:
+        :param expected_value:
+        :return:
+        """
         check = response.json()
         check_info = check.get(field_name)
         assert check_info == expected_value, 'Result is not equal expected value'
