@@ -103,6 +103,7 @@ class TestPOST:
 class TestConnectionDB:
     @allure.sub_suite('Complex')
     def test_complex(self):
+        time.sleep(30)
         API.check_full_cycle(TestData.sid)
 
 
