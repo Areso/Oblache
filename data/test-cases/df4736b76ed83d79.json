@@ -1,0 +1,93 @@
+{
+  "uid" : "df4736b76ed83d79",
+  "name" : "test_create_table",
+  "fullName" : "tests.test_first.TestLoadDB#test_create_table",
+  "historyId" : "3330525a715ec68df76fbb9b749f885c",
+  "time" : {
+    "start" : 1705946525861,
+    "stop" : 1705946526249,
+    "duration" : 388
+  },
+  "description" : "\n        :return:\n        ",
+  "descriptionHtml" : "<pre><code>    :return:\n</code></pre>\n",
+  "status" : "broken",
+  "statusMessage" : "KeyError: '065a5c25-6bd0-7a6e-8000-a9830730182e'",
+  "statusTrace" : "self = <tests.test_first.TestLoadDB object at 0x7f41c0243010>\n\n    def test_create_table(self):\n        \"\"\"\n        :return:\n        \"\"\"\n        query = '''\n        CREATE TABLE IF NOT EXISTS accounts(\n        userid INT PRIMARY KEY AUTO_INCREMENT,\n        name varchar(128),\n        date_of_birth datetime NULL,\n        text varchar(4096),\n        email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;\n        '''\n>       db = TestData.connection(\"065a5c25-6bd0-7a6e-8000-a9830730182e\")\n\ntests/test_first.py:120: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\ndb_uuid = '065a5c25-6bd0-7a6e-8000-a9830730182e'\n\n    @staticmethod\n    def connection(db_uuid):\n        post_resource = '/db_list'\n        post_url = TestData().base_url + post_resource\n        result_post = requests.post(post_url, cookies=TestData().result.cookies, json=TestData().body)\n        json_list_db = json.loads(result_post.text)\n>       db_name = json_list_db['content'][db_uuid][0]\nE       KeyError: '065a5c25-6bd0-7a6e-8000-a9830730182e'\n\ntests/conftest.py:27: KeyError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "tests"
+  }, {
+    "name" : "suite",
+    "value" : "test_first"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestLoadDB"
+  }, {
+    "name" : "host",
+    "value" : "fv-az564-817"
+  }, {
+    "name" : "thread",
+    "value" : "1815-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.test_first"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 3,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "477f3333d904f6cf",
+        "status" : "broken",
+        "statusDetails" : "KeyError: '065a5c25-6bd0-7a6e-8000-a9830730182e'",
+        "time" : {
+          "start" : 1705946302200,
+          "stop" : 1705946302528,
+          "duration" : 328
+        }
+      }, {
+        "uid" : "7d901fbb9c089238",
+        "status" : "broken",
+        "statusDetails" : "TypeError: string indices must be integers",
+        "time" : {
+          "start" : 1705692150115,
+          "stop" : 1705692150639,
+          "duration" : 524
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "df4736b76ed83d79.json",
+  "parameterValues" : [ ]
+}
