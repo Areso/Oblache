@@ -178,6 +178,8 @@ class API(TestData):
                 print('Finish: ', str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
                 break
         cur_db_list = API.post_db_list(sid)
+        with allure.step(f'Compare {cur_db_list.text} == {empty_db_list}'):
+            print(f'Compare: {cur_db_list.text} == {empty_db_list}')
         assert cur_db_list.text == empty_db_list, f'DB is not deleted. {cur_db_list.text}'
 
     def load_db_v2(self):
