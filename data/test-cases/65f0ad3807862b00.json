@@ -1,12 +1,12 @@
 {
-  "uid" : "a3f55d464f9b2e7c",
-  "name" : "test tos",
-  "fullName" : "tests.test_first.TestGET#test_tos",
-  "historyId" : "9ddeba2a143f04334db36fad59548cbe",
+  "uid" : "65f0ad3807862b00",
+  "name" : "List envs",
+  "fullName" : "tests.test_first.TestGET#test_list_envs",
+  "historyId" : "6726c463d027b8a8497f9cb5eec6d251",
   "time" : {
-    "start" : 1705954934811,
-    "stop" : 1705954935219,
-    "duration" : 408
+    "start" : 1705955334244,
+    "stop" : 1705955334587,
+    "duration" : 343
   },
   "status" : "passed",
   "flaky" : false,
@@ -17,16 +17,16 @@
     "steps" : [ {
       "name" : "Method GET",
       "time" : {
-        "start" : 1705954934811,
-        "stop" : 1705954935217,
-        "duration" : 406
+        "start" : 1705955334244,
+        "stop" : 1705955334586,
+        "duration" : 342
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "Add request",
         "time" : {
-          "start" : 1705954934811,
-          "stop" : 1705954934811,
+          "start" : 1705955334244,
+          "stop" : 1705955334244,
           "duration" : 0
         },
         "status" : "passed",
@@ -34,28 +34,28 @@
         "attachments" : [ ],
         "parameters" : [ {
           "name" : "url",
-          "value" : "'https://dbend.areso.pro/tos'"
+          "value" : "'https://dbend.areso.pro/list_envs'"
         }, {
           "name" : "method",
           "value" : "'GET'"
         } ],
         "attachmentsCount" : 0,
         "shouldDisplayMessage" : false,
-        "stepsCount" : 0,
-        "hasContent" : true
+        "hasContent" : true,
+        "stepsCount" : 0
       }, {
         "name" : "Add response",
         "time" : {
-          "start" : 1705954935217,
-          "stop" : 1705954935217,
+          "start" : 1705955334586,
+          "stop" : 1705955334586,
           "duration" : 0
         },
         "status" : "passed",
         "steps" : [ {
           "name" : "Response code: 200\n",
           "time" : {
-            "start" : 1705954935217,
-            "stop" : 1705954935217,
+            "start" : 1705955334586,
+            "stop" : 1705955334586,
             "duration" : 0
           },
           "status" : "passed",
@@ -64,13 +64,13 @@
           "parameters" : [ ],
           "attachmentsCount" : 0,
           "shouldDisplayMessage" : false,
-          "stepsCount" : 0,
-          "hasContent" : false
+          "hasContent" : false,
+          "stepsCount" : 0
         }, {
-          "name" : "Response text: \"Hello. This pet-project (later Project) works AS IS, no warranty at all.\\nUsing Project, you agree to that.\\nYou MUST create backups of your databases for sake reasons.\\nBecause I do run project on my own pocket money, \\nI limit total size of the databases per 1 user as 100 MBs.\\nAny account don't used more than 6 monts is subject for deletion with all databases.\"\n\n",
+          "name" : "Response text: {\n    \"3\": \"vm_communal\"\n}\n\n",
           "time" : {
-            "start" : 1705954935217,
-            "stop" : 1705954935217,
+            "start" : 1705955334586,
+            "stop" : 1705955334586,
             "duration" : 0
           },
           "status" : "passed",
@@ -79,8 +79,8 @@
           "parameters" : [ ],
           "attachmentsCount" : 0,
           "shouldDisplayMessage" : false,
-          "stepsCount" : 0,
-          "hasContent" : false
+          "hasContent" : false,
+          "stepsCount" : 0
         } ],
         "attachments" : [ ],
         "parameters" : [ {
@@ -89,31 +89,31 @@
         } ],
         "attachmentsCount" : 0,
         "shouldDisplayMessage" : false,
-        "stepsCount" : 2,
-        "hasContent" : true
+        "hasContent" : true,
+        "stepsCount" : 2
       } ],
       "attachments" : [ ],
       "parameters" : [ {
         "name" : "url",
-        "value" : "'https://dbend.areso.pro/tos'"
+        "value" : "'https://dbend.areso.pro/list_envs'"
       } ],
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
-      "stepsCount" : 4,
-      "hasContent" : true
+      "hasContent" : true,
+      "stepsCount" : 4
     } ],
     "attachments" : [ {
-      "uid" : "a7865a911477dcbb",
+      "uid" : "d8674a73d9f954eb",
       "name" : "stdout",
-      "source" : "a7865a911477dcbb.txt",
+      "source" : "d8674a73d9f954eb.txt",
       "type" : "text/plain",
-      "size" : 417
+      "size" : 82
     } ],
     "parameters" : [ ],
     "attachmentsCount" : 1,
     "shouldDisplayMessage" : false,
-    "stepsCount" : 5,
-    "hasContent" : true
+    "hasContent" : true,
+    "stepsCount" : 5
   },
   "afterStages" : [ ],
   "labels" : [ {
@@ -130,10 +130,10 @@
     "value" : "tests"
   }, {
     "name" : "host",
-    "value" : "fv-az840-113"
+    "value" : "fv-az1251-537"
   }, {
     "name" : "thread",
-    "value" : "1807-MainThread"
+    "value" : "1899-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -160,78 +160,86 @@
         "failed" : 0,
         "broken" : 0,
         "skipped" : 0,
-        "passed" : 9,
+        "passed" : 10,
         "unknown" : 0,
-        "total" : 9
+        "total" : 10
       },
       "items" : [ {
-        "uid" : "a38693c5f615848b",
+        "uid" : "6ad2d36634c52241",
         "status" : "passed",
         "time" : {
-          "start" : 1705948757458,
-          "stop" : 1705948757803,
-          "duration" : 345
+          "start" : 1705954936001,
+          "stop" : 1705954936391,
+          "duration" : 390
         }
       }, {
-        "uid" : "6736274a79dc7c2",
+        "uid" : "c96ce3fe027532b6",
         "status" : "passed",
         "time" : {
-          "start" : 1705948112320,
-          "stop" : 1705948112716,
-          "duration" : 396
+          "start" : 1705948758503,
+          "stop" : 1705948758847,
+          "duration" : 344
         }
       }, {
-        "uid" : "97adcad702fb5217",
+        "uid" : "bde01cf0a3ab8418",
         "status" : "passed",
         "time" : {
-          "start" : 1705947420741,
-          "stop" : 1705947421241,
-          "duration" : 500
+          "start" : 1705948113511,
+          "stop" : 1705948113924,
+          "duration" : 413
         }
       }, {
-        "uid" : "3b9de16257c6bf51",
+        "uid" : "64de4ba61c09dafd",
         "status" : "passed",
         "time" : {
-          "start" : 1705947015977,
-          "stop" : 1705947016844,
-          "duration" : 867
+          "start" : 1705947421908,
+          "stop" : 1705947422250,
+          "duration" : 342
         }
       }, {
-        "uid" : "30c6e217eb05bbae",
+        "uid" : "31d43baea882998c",
         "status" : "passed",
         "time" : {
-          "start" : 1705946786871,
-          "stop" : 1705946787277,
-          "duration" : 406
+          "start" : 1705947018077,
+          "stop" : 1705947018623,
+          "duration" : 546
         }
       }, {
-        "uid" : "a4ffb028317179c9",
+        "uid" : "2173e6f550897798",
         "status" : "passed",
         "time" : {
-          "start" : 1705946520722,
-          "stop" : 1705946521138,
-          "duration" : 416
+          "start" : 1705946788074,
+          "stop" : 1705946788452,
+          "duration" : 378
         }
       }, {
-        "uid" : "1089cbe7d2ad0676",
+        "uid" : "7a55e268e8d925dc",
         "status" : "passed",
         "time" : {
-          "start" : 1705946297818,
-          "stop" : 1705946298165,
-          "duration" : 347
+          "start" : 1705946522069,
+          "stop" : 1705946522446,
+          "duration" : 377
         }
       }, {
-        "uid" : "765c8f1f98e9a20f",
+        "uid" : "d94579829b4cf7c4",
         "status" : "passed",
         "time" : {
-          "start" : 1705692143578,
-          "stop" : 1705692144154,
-          "duration" : 576
+          "start" : 1705946298860,
+          "stop" : 1705946299208,
+          "duration" : 348
+        }
+      }, {
+        "uid" : "f6d99e1d0497d95a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1705692145244,
+          "stop" : 1705692145778,
+          "duration" : 534
         }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "a3f55d464f9b2e7c.json",
+  "source" : "65f0ad3807862b00.json",
   "parameterValues" : [ ]
 }
