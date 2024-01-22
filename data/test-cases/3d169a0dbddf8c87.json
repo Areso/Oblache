@@ -1,18 +1,18 @@
 {
-  "uid" : "8af8d8922afb25ef",
+  "uid" : "3d169a0dbddf8c87",
   "name" : "test_load_table2",
   "fullName" : "tests.test_first.TestLoadDB#test_load_table2",
   "historyId" : "6f5a59e1560cdb40848529841eb02dcb",
   "time" : {
-    "start" : 1705947023714,
-    "stop" : 1705947024236,
-    "duration" : 522
+    "start" : 1705947468190,
+    "stop" : 1705947468521,
+    "duration" : 331
   },
   "description" : "\n        :return:\n        ",
   "descriptionHtml" : "<pre><code>    :return:\n</code></pre>\n",
   "status" : "broken",
   "statusMessage" : "KeyError: '065a5c25-6bd0-7a6e-8000-a9830730182e'",
-  "statusTrace" : "self = <tests.test_first.TestLoadDB object at 0x7f93f7d0b130>\n\n    def test_load_table2(self):\n        \"\"\"\n        :return:\n        \"\"\"\n>       db = TestData.connection(\"065a5c25-6bd0-7a6e-8000-a9830730182e\")\n\ntests/test_first.py:129: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\ndb_uuid = '065a5c25-6bd0-7a6e-8000-a9830730182e'\n\n    @staticmethod\n    def connection(db_uuid):\n        post_resource = '/db_list'\n        post_url = TestData().base_url + post_resource\n        result_post = requests.post(post_url, cookies=TestData().result.cookies, json=TestData().body)\n        json_list_db = json.loads(result_post.text)\n>       db_name = json_list_db['content'][db_uuid][0]\nE       KeyError: '065a5c25-6bd0-7a6e-8000-a9830730182e'\n\ntests/conftest.py:27: KeyError",
+  "statusTrace" : "self = <tests.test_first.TestLoadDB object at 0x7f96c303b130>\n\n    def test_load_table2(self):\n        \"\"\"\n        :return:\n        \"\"\"\n>       db = TestData.connection(\"065a5c25-6bd0-7a6e-8000-a9830730182e\")\n\ntests/test_first.py:129: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\ndb_uuid = '065a5c25-6bd0-7a6e-8000-a9830730182e'\n\n    @staticmethod\n    def connection(db_uuid):\n        post_resource = '/db_list'\n        post_url = TestData().base_url + post_resource\n        result_post = requests.post(post_url, cookies=TestData().result.cookies, json=TestData().body)\n        json_list_db = json.loads(result_post.text)\n>       db_name = json_list_db['content'][db_uuid][0]\nE       KeyError: '065a5c25-6bd0-7a6e-8000-a9830730182e'\n\ntests/conftest.py:27: KeyError",
   "flaky" : false,
   "newFailed" : false,
   "beforeStages" : [ ],
@@ -28,10 +28,10 @@
     "value" : "TestLoadDB"
   }, {
     "name" : "host",
-    "value" : "fv-az1022-11"
+    "value" : "fv-az774-794"
   }, {
     "name" : "thread",
-    "value" : "1854-MainThread"
+    "value" : "1780-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -60,13 +60,22 @@
     "history" : {
       "statistic" : {
         "failed" : 0,
-        "broken" : 5,
+        "broken" : 6,
         "skipped" : 0,
         "passed" : 0,
         "unknown" : 0,
-        "total" : 5
+        "total" : 6
       },
       "items" : [ {
+        "uid" : "8af8d8922afb25ef",
+        "status" : "broken",
+        "statusDetails" : "KeyError: '065a5c25-6bd0-7a6e-8000-a9830730182e'",
+        "time" : {
+          "start" : 1705947023714,
+          "stop" : 1705947024236,
+          "duration" : 522
+        }
+      }, {
         "uid" : "2f768375c44aaec3",
         "status" : "broken",
         "statusDetails" : "KeyError: '065a5c25-6bd0-7a6e-8000-a9830730182e'",
@@ -106,6 +115,6 @@
     },
     "tags" : [ ]
   },
-  "source" : "8af8d8922afb25ef.json",
+  "source" : "3d169a0dbddf8c87.json",
   "parameterValues" : [ ]
 }

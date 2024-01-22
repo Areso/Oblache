@@ -1,12 +1,12 @@
 {
-  "uid" : "98f27dbec701a19e",
-  "name" : "List dbversions",
-  "fullName" : "tests.test_first.TestGET#test_list_dbversions",
-  "historyId" : "c975b0508a93c3bb876068d996c5e279",
+  "uid" : "76d23f1b6c8350b8",
+  "name" : "List dbtypes",
+  "fullName" : "tests.test_first.TestGET#test_list_dbtypes",
+  "historyId" : "8ac77886ec328fbec6462135172119f2",
   "time" : {
-    "start" : 1705947017388,
-    "stop" : 1705947018075,
-    "duration" : 687
+    "start" : 1705947421243,
+    "stop" : 1705947421575,
+    "duration" : 332
   },
   "status" : "passed",
   "flaky" : false,
@@ -17,16 +17,16 @@
     "steps" : [ {
       "name" : "Method GET",
       "time" : {
-        "start" : 1705947017388,
-        "stop" : 1705947018074,
-        "duration" : 686
+        "start" : 1705947421243,
+        "stop" : 1705947421574,
+        "duration" : 331
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "Add request",
         "time" : {
-          "start" : 1705947017388,
-          "stop" : 1705947017388,
+          "start" : 1705947421243,
+          "stop" : 1705947421243,
           "duration" : 0
         },
         "status" : "passed",
@@ -34,86 +34,86 @@
         "attachments" : [ ],
         "parameters" : [ {
           "name" : "url",
-          "value" : "'https://dbend.areso.pro/list_dbversions'"
+          "value" : "'https://dbend.areso.pro/list_dbtypes'"
         }, {
           "name" : "method",
           "value" : "'GET'"
         } ],
+        "hasContent" : true,
         "attachmentsCount" : 0,
         "shouldDisplayMessage" : false,
-        "stepsCount" : 0,
-        "hasContent" : true
+        "stepsCount" : 0
       }, {
         "name" : "Add response",
         "time" : {
-          "start" : 1705947018073,
-          "stop" : 1705947018074,
+          "start" : 1705947421573,
+          "stop" : 1705947421574,
           "duration" : 1
         },
         "status" : "passed",
         "steps" : [ {
           "name" : "Response code: 200\n",
           "time" : {
-            "start" : 1705947018073,
-            "stop" : 1705947018073,
+            "start" : 1705947421573,
+            "stop" : 1705947421573,
             "duration" : 0
           },
           "status" : "passed",
           "steps" : [ ],
           "attachments" : [ ],
           "parameters" : [ ],
+          "hasContent" : false,
           "attachmentsCount" : 0,
           "shouldDisplayMessage" : false,
-          "stepsCount" : 0,
-          "hasContent" : false
+          "stepsCount" : 0
         }, {
-          "name" : "Response text: {\n    \"5\": [\n        \"mysql8\",\n        \"8.0.20+\"\n    ]\n}\n\n",
+          "name" : "Response text: {\n    \"3\": \"mysql8\"\n}\n\n",
           "time" : {
-            "start" : 1705947018073,
-            "stop" : 1705947018073,
+            "start" : 1705947421573,
+            "stop" : 1705947421573,
             "duration" : 0
           },
           "status" : "passed",
           "steps" : [ ],
           "attachments" : [ ],
           "parameters" : [ ],
+          "hasContent" : false,
           "attachmentsCount" : 0,
           "shouldDisplayMessage" : false,
-          "stepsCount" : 0,
-          "hasContent" : false
+          "stepsCount" : 0
         } ],
         "attachments" : [ ],
         "parameters" : [ {
           "name" : "result",
           "value" : "<Response [200]>"
         } ],
+        "hasContent" : true,
         "attachmentsCount" : 0,
         "shouldDisplayMessage" : false,
-        "stepsCount" : 2,
-        "hasContent" : true
+        "stepsCount" : 2
       } ],
       "attachments" : [ ],
       "parameters" : [ {
         "name" : "url",
-        "value" : "'https://dbend.areso.pro/list_dbversions'"
+        "value" : "'https://dbend.areso.pro/list_dbtypes'"
       } ],
+      "hasContent" : true,
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
-      "stepsCount" : 4,
-      "hasContent" : true
+      "stepsCount" : 4
     } ],
     "attachments" : [ {
-      "uid" : "d06fbabff3a7fc60",
+      "uid" : "406774b5471cd6e4",
       "name" : "stdout",
-      "source" : "d06fbabff3a7fc60.txt",
+      "source" : "406774b5471cd6e4.txt",
       "type" : "text/plain",
-      "size" : 118
+      "size" : 80
     } ],
     "parameters" : [ ],
+    "hasContent" : true,
     "attachmentsCount" : 1,
     "shouldDisplayMessage" : false,
-    "stepsCount" : 5,
-    "hasContent" : true
+    "stepsCount" : 5
   },
   "afterStages" : [ ],
   "labels" : [ {
@@ -130,10 +130,10 @@
     "value" : "tests"
   }, {
     "name" : "host",
-    "value" : "fv-az1022-11"
+    "value" : "fv-az774-794"
   }, {
     "name" : "thread",
-    "value" : "1854-MainThread"
+    "value" : "1780-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -160,46 +160,54 @@
         "failed" : 0,
         "broken" : 0,
         "skipped" : 0,
-        "passed" : 5,
+        "passed" : 6,
         "unknown" : 0,
-        "total" : 5
+        "total" : 6
       },
       "items" : [ {
-        "uid" : "46c227f4fd7d9514",
+        "uid" : "cfa2e4799758b802",
         "status" : "passed",
         "time" : {
-          "start" : 1705946787686,
-          "stop" : 1705946788072,
-          "duration" : 386
+          "start" : 1705947016846,
+          "stop" : 1705947017386,
+          "duration" : 540
         }
       }, {
-        "uid" : "f0a363c2b1085ca5",
+        "uid" : "4c0e6a6fb71203a8",
         "status" : "passed",
         "time" : {
-          "start" : 1705946521661,
-          "stop" : 1705946522067,
-          "duration" : 406
+          "start" : 1705946787279,
+          "stop" : 1705946787684,
+          "duration" : 405
         }
       }, {
-        "uid" : "1f04fd26adc457af",
+        "uid" : "5c695df2989d8fe1",
         "status" : "passed",
         "time" : {
-          "start" : 1705946298518,
-          "stop" : 1705946298859,
-          "duration" : 341
+          "start" : 1705946521140,
+          "stop" : 1705946521659,
+          "duration" : 519
         }
       }, {
-        "uid" : "cb33e25806fc7db8",
+        "uid" : "7a795342e43bcbb3",
         "status" : "passed",
         "time" : {
-          "start" : 1705692144703,
-          "stop" : 1705692145242,
-          "duration" : 539
+          "start" : 1705946298167,
+          "stop" : 1705946298516,
+          "duration" : 349
+        }
+      }, {
+        "uid" : "77ee4c09719ef90f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1705692144156,
+          "stop" : 1705692144701,
+          "duration" : 545
         }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "98f27dbec701a19e.json",
+  "source" : "76d23f1b6c8350b8.json",
   "parameterValues" : [ ]
 }

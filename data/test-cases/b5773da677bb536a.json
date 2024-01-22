@@ -1,12 +1,12 @@
 {
-  "uid" : "3b9de16257c6bf51",
-  "name" : "test tos",
-  "fullName" : "tests.test_first.TestGET#test_tos",
-  "historyId" : "9ddeba2a143f04334db36fad59548cbe",
+  "uid" : "b5773da677bb536a",
+  "name" : "Post db list",
+  "fullName" : "tests.test_first.TestPOST#test_post_db_list",
+  "historyId" : "6364d06d5cf83d3bb6572507477edc14",
   "time" : {
-    "start" : 1705947015977,
-    "stop" : 1705947016844,
-    "duration" : 867
+    "start" : 1705947423644,
+    "stop" : 1705947423971,
+    "duration" : 327
   },
   "status" : "passed",
   "flaky" : false,
@@ -15,18 +15,18 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "Method GET",
+      "name" : "Method POST",
       "time" : {
-        "start" : 1705947015978,
-        "stop" : 1705947016843,
-        "duration" : 865
+        "start" : 1705947423644,
+        "stop" : 1705947423968,
+        "duration" : 324
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "Add request",
         "time" : {
-          "start" : 1705947015978,
-          "stop" : 1705947015978,
+          "start" : 1705947423644,
+          "stop" : 1705947423644,
           "duration" : 0
         },
         "status" : "passed",
@@ -34,106 +34,112 @@
         "attachments" : [ ],
         "parameters" : [ {
           "name" : "url",
-          "value" : "'https://dbend.areso.pro/tos'"
+          "value" : "'https://dbend.areso.pro/db_list'"
         }, {
           "name" : "method",
-          "value" : "'GET'"
+          "value" : "'POST'"
         } ],
+        "hasContent" : true,
         "attachmentsCount" : 0,
         "shouldDisplayMessage" : false,
-        "stepsCount" : 0,
-        "hasContent" : true
+        "stepsCount" : 0
       }, {
         "name" : "Add response",
         "time" : {
-          "start" : 1705947016843,
-          "stop" : 1705947016843,
+          "start" : 1705947423968,
+          "stop" : 1705947423968,
           "duration" : 0
         },
         "status" : "passed",
         "steps" : [ {
           "name" : "Response code: 200\n",
           "time" : {
-            "start" : 1705947016843,
-            "stop" : 1705947016843,
+            "start" : 1705947423968,
+            "stop" : 1705947423968,
             "duration" : 0
           },
           "status" : "passed",
           "steps" : [ ],
           "attachments" : [ ],
           "parameters" : [ ],
+          "hasContent" : false,
           "attachmentsCount" : 0,
           "shouldDisplayMessage" : false,
-          "stepsCount" : 0,
-          "hasContent" : false
+          "stepsCount" : 0
         }, {
-          "name" : "Response text: \"Hello. This pet-project (later Project) works AS IS, no warranty at all.\\nUsing Project, you agree to that.\\nYou MUST create backups of your databases for sake reasons.\\nBecause I do run project on my own pocket money, \\nI limit total size of the databases per 1 user as 100 MBs.\\nAny account don't used more than 6 monts is subject for deletion with all databases.\"\n\n",
+          "name" : "Response text: {\n    \"content\": {\n        \"065aeb11-6d98-7f6b-8000-4b2b86af4d24\": [\n            \"\",\n            \"CIS\",\n            \"db_creating\",\n            null,\n            \"None\"\n        ],\n        \"065aeb11-f891-79e3-8000-cd6464c33c42\": [\n            \"\",\n            \"CIS\",\n            \"db_creating\",\n            null,\n            \"None\"\n        ]\n    }\n}\n\n",
           "time" : {
-            "start" : 1705947016843,
-            "stop" : 1705947016843,
+            "start" : 1705947423968,
+            "stop" : 1705947423968,
             "duration" : 0
           },
           "status" : "passed",
           "steps" : [ ],
           "attachments" : [ ],
           "parameters" : [ ],
+          "hasContent" : false,
           "attachmentsCount" : 0,
           "shouldDisplayMessage" : false,
-          "stepsCount" : 0,
-          "hasContent" : false
+          "stepsCount" : 0
         } ],
         "attachments" : [ ],
         "parameters" : [ {
           "name" : "result",
           "value" : "<Response [200]>"
         } ],
+        "hasContent" : true,
         "attachmentsCount" : 0,
         "shouldDisplayMessage" : false,
-        "stepsCount" : 2,
-        "hasContent" : true
+        "stepsCount" : 2
       } ],
       "attachments" : [ ],
       "parameters" : [ {
         "name" : "url",
-        "value" : "'https://dbend.areso.pro/tos'"
+        "value" : "'https://dbend.areso.pro/db_list'"
+      }, {
+        "name" : "body",
+        "value" : "{}"
+      }, {
+        "name" : "cookie",
+        "value" : "{'sid': '39bda71b-fa62-4a22-bf79-e485afdff1f8'}"
       } ],
+      "hasContent" : true,
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
-      "stepsCount" : 4,
-      "hasContent" : true
+      "stepsCount" : 4
     } ],
     "attachments" : [ {
-      "uid" : "4c8d5cb26d268a7b",
+      "uid" : "a659641b4ae286ab",
       "name" : "stdout",
-      "source" : "4c8d5cb26d268a7b.txt",
+      "source" : "a659641b4ae286ab.txt",
       "type" : "text/plain",
-      "size" : 417
+      "size" : 433
     } ],
     "parameters" : [ ],
+    "hasContent" : true,
     "attachmentsCount" : 1,
     "shouldDisplayMessage" : false,
-    "stepsCount" : 5,
-    "hasContent" : true
+    "stepsCount" : 5
   },
   "afterStages" : [ ],
   "labels" : [ {
     "name" : "epic",
-    "value" : "GET REQUESTS"
-  }, {
-    "name" : "subSuite",
-    "value" : "GET"
+    "value" : "POST REQUESTS"
   }, {
     "name" : "suite",
-    "value" : "REQUESTS GET"
+    "value" : "REQUESTS POST"
+  }, {
+    "name" : "subSuite",
+    "value" : "POST"
   }, {
     "name" : "parentSuite",
     "value" : "tests"
   }, {
     "name" : "host",
-    "value" : "fv-az1022-11"
+    "value" : "fv-az774-794"
   }, {
     "name" : "thread",
-    "value" : "1854-MainThread"
+    "value" : "1780-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -157,49 +163,58 @@
     "categories" : [ ],
     "history" : {
       "statistic" : {
-        "failed" : 0,
+        "failed" : 1,
         "broken" : 0,
         "skipped" : 0,
         "passed" : 5,
         "unknown" : 0,
-        "total" : 5
+        "total" : 6
       },
       "items" : [ {
-        "uid" : "30c6e217eb05bbae",
+        "uid" : "cb9f3ea5749a2924",
         "status" : "passed",
         "time" : {
-          "start" : 1705946786871,
-          "stop" : 1705946787277,
-          "duration" : 406
+          "start" : 1705947020907,
+          "stop" : 1705947021446,
+          "duration" : 539
         }
       }, {
-        "uid" : "a4ffb028317179c9",
+        "uid" : "180f6966de34e237",
         "status" : "passed",
         "time" : {
-          "start" : 1705946520722,
-          "stop" : 1705946521138,
-          "duration" : 416
+          "start" : 1705946790250,
+          "stop" : 1705946790641,
+          "duration" : 391
         }
       }, {
-        "uid" : "1089cbe7d2ad0676",
+        "uid" : "825498bb7ca6def8",
         "status" : "passed",
         "time" : {
-          "start" : 1705946297818,
-          "stop" : 1705946298165,
-          "duration" : 347
+          "start" : 1705946524112,
+          "stop" : 1705946524656,
+          "duration" : 544
         }
       }, {
-        "uid" : "765c8f1f98e9a20f",
+        "uid" : "3025dde06ffc39d",
         "status" : "passed",
         "time" : {
-          "start" : 1705692143578,
-          "stop" : 1705692144154,
-          "duration" : 576
+          "start" : 1705946300471,
+          "stop" : 1705946300801,
+          "duration" : 330
+        }
+      }, {
+        "uid" : "801348c091f3a418",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1705692147369,
+          "stop" : 1705692147904,
+          "duration" : 535
         }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "3b9de16257c6bf51.json",
+  "source" : "b5773da677bb536a.json",
   "parameterValues" : [ ]
 }
