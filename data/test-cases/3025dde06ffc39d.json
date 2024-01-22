@@ -1,36 +1,32 @@
 {
-  "uid" : "984074667c66e386",
-  "name" : "Post db create",
-  "fullName" : "tests.test_first.TestPOST#test_post_db_create",
-  "historyId" : "faaa35cc026cf0fdc3328cd979a5c55e",
+  "uid" : "3025dde06ffc39d",
+  "name" : "Post db list",
+  "fullName" : "tests.test_first.TestPOST#test_post_db_list",
+  "historyId" : "6364d06d5cf83d3bb6572507477edc14",
   "time" : {
-    "start" : 1705692146831,
-    "stop" : 1705692147363,
-    "duration" : 532
+    "start" : 1705946300471,
+    "stop" : 1705946300801,
+    "duration" : 330
   },
-  "status" : "broken",
-  "statusMessage" : "KeyError: 'db_uuid'",
-  "statusTrace" : "self = <tests.test_first.TestPOST object at 0x7fe8bf63eef0>\n\n    @allure.sub_suite('POST')\n    @allure.title('Post db create')\n    def test_post_db_create(self):\n        print('\\n\\nMethod POST: db_create')\n        result_post_db_list = API.post_db_create(TestData.sid)\n        # print(result_post_db_list)\n>       print(result_post_db_list.json()[\"db_uuid\"])\nE       KeyError: 'db_uuid'\n\ntests/test_first.py:65: KeyError",
+  "status" : "passed",
   "flaky" : false,
   "newFailed" : false,
   "beforeStages" : [ ],
   "testStage" : {
-    "status" : "broken",
-    "statusMessage" : "KeyError: 'db_uuid'",
-    "statusTrace" : "self = <tests.test_first.TestPOST object at 0x7fe8bf63eef0>\n\n    @allure.sub_suite('POST')\n    @allure.title('Post db create')\n    def test_post_db_create(self):\n        print('\\n\\nMethod POST: db_create')\n        result_post_db_list = API.post_db_create(TestData.sid)\n        # print(result_post_db_list)\n>       print(result_post_db_list.json()[\"db_uuid\"])\nE       KeyError: 'db_uuid'\n\ntests/test_first.py:65: KeyError",
+    "status" : "passed",
     "steps" : [ {
       "name" : "Method POST",
       "time" : {
-        "start" : 1705692146831,
-        "stop" : 1705692147362,
-        "duration" : 531
+        "start" : 1705946300471,
+        "stop" : 1705946300800,
+        "duration" : 329
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "Add request",
         "time" : {
-          "start" : 1705692146831,
-          "stop" : 1705692146831,
+          "start" : 1705946300471,
+          "stop" : 1705946300471,
           "duration" : 0
         },
         "status" : "passed",
@@ -38,7 +34,7 @@
         "attachments" : [ ],
         "parameters" : [ {
           "name" : "url",
-          "value" : "'https://dbend.areso.pro/db_create'"
+          "value" : "'https://dbend.areso.pro/db_list'"
         }, {
           "name" : "method",
           "value" : "'POST'"
@@ -50,17 +46,17 @@
       }, {
         "name" : "Add response",
         "time" : {
-          "start" : 1705692147362,
-          "stop" : 1705692147362,
-          "duration" : 0
+          "start" : 1705946300799,
+          "stop" : 1705946300800,
+          "duration" : 1
         },
         "status" : "passed",
         "steps" : [ {
-          "name" : "Response code: 401\n",
+          "name" : "Response code: 200\n",
           "time" : {
-            "start" : 1705692147362,
-            "stop" : 1705692147362,
-            "duration" : 0
+            "start" : 1705946300799,
+            "stop" : 1705946300800,
+            "duration" : 1
           },
           "status" : "passed",
           "steps" : [ ],
@@ -71,10 +67,10 @@
           "stepsCount" : 0,
           "hasContent" : false
         }, {
-          "name" : "Response text: {\n    \"content\": \"unauthenticated\"\n}\n\n",
+          "name" : "Response text: {\n    \"content\": {}\n}\n\n",
           "time" : {
-            "start" : 1705692147362,
-            "stop" : 1705692147362,
+            "start" : 1705946300800,
+            "stop" : 1705946300800,
             "duration" : 0
           },
           "status" : "passed",
@@ -89,7 +85,7 @@
         "attachments" : [ ],
         "parameters" : [ {
           "name" : "result",
-          "value" : "<Response [401]>"
+          "value" : "<Response [200]>"
         } ],
         "attachmentsCount" : 0,
         "shouldDisplayMessage" : false,
@@ -99,13 +95,13 @@
       "attachments" : [ ],
       "parameters" : [ {
         "name" : "url",
-        "value" : "'https://dbend.areso.pro/db_create'"
-      }, {
-        "name" : "cookie",
-        "value" : "{}"
+        "value" : "'https://dbend.areso.pro/db_list'"
       }, {
         "name" : "body",
-        "value" : "{'dbtype': 3, 'dbversion': 5, 'env': 3, 'region': 3}"
+        "value" : "{}"
+      }, {
+        "name" : "cookie",
+        "value" : "{'sid': '70746f99-fc10-43c5-b7b8-4844c23276c7'}"
       } ],
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
@@ -113,37 +109,37 @@
       "hasContent" : true
     } ],
     "attachments" : [ {
-      "uid" : "d38fe3c678bc43b",
+      "uid" : "13240679edec6bd1",
       "name" : "stdout",
-      "source" : "d38fe3c678bc43b.txt",
+      "source" : "13240679edec6bd1.txt",
       "type" : "text/plain",
-      "size" : 136
+      "size" : 109
     } ],
     "parameters" : [ ],
     "attachmentsCount" : 1,
-    "shouldDisplayMessage" : true,
+    "shouldDisplayMessage" : false,
     "stepsCount" : 5,
     "hasContent" : true
   },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "epic",
-    "value" : "POST REQUESTS"
+    "name" : "suite",
+    "value" : "REQUESTS POST"
   }, {
     "name" : "subSuite",
     "value" : "POST"
   }, {
-    "name" : "suite",
-    "value" : "REQUESTS POST"
+    "name" : "epic",
+    "value" : "POST REQUESTS"
   }, {
     "name" : "parentSuite",
     "value" : "tests"
   }, {
     "name" : "host",
-    "value" : "fv-az1055-108"
+    "value" : "fv-az1538-683"
   }, {
     "name" : "thread",
-    "value" : "1787-MainThread"
+    "value" : "1793-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -164,13 +160,29 @@
   "extra" : {
     "severity" : "normal",
     "retries" : [ ],
-    "categories" : [ {
-      "name" : "Test defects",
-      "matchedStatuses" : [ ],
-      "flaky" : false
-    } ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 1,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "801348c091f3a418",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1705692147369,
+          "stop" : 1705692147904,
+          "duration" : 535
+        }
+      } ]
+    },
     "tags" : [ ]
   },
-  "source" : "984074667c66e386.json",
+  "source" : "3025dde06ffc39d.json",
   "parameterValues" : [ ]
 }

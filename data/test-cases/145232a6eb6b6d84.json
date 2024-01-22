@@ -1,0 +1,84 @@
+{
+  "uid" : "145232a6eb6b6d84",
+  "name" : "test_load_table2",
+  "fullName" : "tests.test_first.TestLoadDB#test_load_table2",
+  "historyId" : "6f5a59e1560cdb40848529841eb02dcb",
+  "time" : {
+    "start" : 1705946302533,
+    "stop" : 1705946302871,
+    "duration" : 338
+  },
+  "description" : "\n        :return:\n        ",
+  "descriptionHtml" : "<pre><code>    :return:\n</code></pre>\n",
+  "status" : "broken",
+  "statusMessage" : "KeyError: '065a5c25-6bd0-7a6e-8000-a9830730182e'",
+  "statusTrace" : "self = <tests.test_first.TestLoadDB object at 0x7f24ca04d660>\n\n    def test_load_table2(self):\n        \"\"\"\n        :return:\n        \"\"\"\n>       db = TestData.connection(\"065a5c25-6bd0-7a6e-8000-a9830730182e\")\n\ntests/test_first.py:118: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\ndb_uuid = '065a5c25-6bd0-7a6e-8000-a9830730182e'\n\n    @staticmethod\n    def connection(db_uuid):\n        post_resource = '/db_list'\n        post_url = TestData().base_url + post_resource\n        result_post = requests.post(post_url, cookies=TestData().result.cookies, json=TestData().body)\n        json_list_db = json.loads(result_post.text)\n>       db_name = json_list_db['content'][db_uuid][0]\nE       KeyError: '065a5c25-6bd0-7a6e-8000-a9830730182e'\n\ntests/conftest.py:27: KeyError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "tests"
+  }, {
+    "name" : "suite",
+    "value" : "test_first"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestLoadDB"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1538-683"
+  }, {
+    "name" : "thread",
+    "value" : "1793-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.test_first"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 2,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "40bb9ca18a3c9272",
+        "status" : "broken",
+        "statusDetails" : "TypeError: string indices must be integers",
+        "time" : {
+          "start" : 1705692150644,
+          "stop" : 1705692151174,
+          "duration" : 530
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "145232a6eb6b6d84.json",
+  "parameterValues" : [ ]
+}
