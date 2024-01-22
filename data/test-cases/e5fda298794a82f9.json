@@ -1,12 +1,12 @@
 {
-  "uid" : "a38693c5f615848b",
-  "name" : "test tos",
-  "fullName" : "tests.test_first.TestGET#test_tos",
-  "historyId" : "9ddeba2a143f04334db36fad59548cbe",
+  "uid" : "e5fda298794a82f9",
+  "name" : "Post db list",
+  "fullName" : "tests.test_first.TestPOST#test_post_db_list",
+  "historyId" : "6364d06d5cf83d3bb6572507477edc14",
   "time" : {
-    "start" : 1705948757458,
-    "stop" : 1705948757803,
-    "duration" : 345
+    "start" : 1705954937590,
+    "stop" : 1705954937994,
+    "duration" : 404
   },
   "status" : "passed",
   "flaky" : false,
@@ -15,18 +15,18 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "Method GET",
+      "name" : "Method POST",
       "time" : {
-        "start" : 1705948757459,
-        "stop" : 1705948757802,
-        "duration" : 343
+        "start" : 1705954937590,
+        "stop" : 1705954937993,
+        "duration" : 403
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "Add request",
         "time" : {
-          "start" : 1705948757459,
-          "stop" : 1705948757459,
+          "start" : 1705954937590,
+          "stop" : 1705954937590,
           "duration" : 0
         },
         "status" : "passed",
@@ -34,10 +34,10 @@
         "attachments" : [ ],
         "parameters" : [ {
           "name" : "url",
-          "value" : "'https://dbend.areso.pro/tos'"
+          "value" : "'https://dbend.areso.pro/db_list'"
         }, {
           "name" : "method",
-          "value" : "'GET'"
+          "value" : "'POST'"
         } ],
         "attachmentsCount" : 0,
         "shouldDisplayMessage" : false,
@@ -46,16 +46,16 @@
       }, {
         "name" : "Add response",
         "time" : {
-          "start" : 1705948757802,
-          "stop" : 1705948757802,
-          "duration" : 0
+          "start" : 1705954937992,
+          "stop" : 1705954937993,
+          "duration" : 1
         },
         "status" : "passed",
         "steps" : [ {
           "name" : "Response code: 200\n",
           "time" : {
-            "start" : 1705948757802,
-            "stop" : 1705948757802,
+            "start" : 1705954937993,
+            "stop" : 1705954937993,
             "duration" : 0
           },
           "status" : "passed",
@@ -67,10 +67,10 @@
           "stepsCount" : 0,
           "hasContent" : false
         }, {
-          "name" : "Response text: \"Hello. This pet-project (later Project) works AS IS, no warranty at all.\\nUsing Project, you agree to that.\\nYou MUST create backups of your databases for sake reasons.\\nBecause I do run project on my own pocket money, \\nI limit total size of the databases per 1 user as 100 MBs.\\nAny account don't used more than 6 monts is subject for deletion with all databases.\"\n\n",
+          "name" : "Response text: {\n    \"content\": {}\n}\n\n",
           "time" : {
-            "start" : 1705948757802,
-            "stop" : 1705948757802,
+            "start" : 1705954937993,
+            "stop" : 1705954937993,
             "duration" : 0
           },
           "status" : "passed",
@@ -95,7 +95,13 @@
       "attachments" : [ ],
       "parameters" : [ {
         "name" : "url",
-        "value" : "'https://dbend.areso.pro/tos'"
+        "value" : "'https://dbend.areso.pro/db_list'"
+      }, {
+        "name" : "body",
+        "value" : "{}"
+      }, {
+        "name" : "cookie",
+        "value" : "{'sid': '0c88dfc8-f64c-4557-b2b1-73efe0da3c93'}"
       } ],
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
@@ -103,11 +109,11 @@
       "hasContent" : true
     } ],
     "attachments" : [ {
-      "uid" : "4b3e2c77aaa16ac8",
+      "uid" : "6a1c49c3c8106afa",
       "name" : "stdout",
-      "source" : "4b3e2c77aaa16ac8.txt",
+      "source" : "6a1c49c3c8106afa.txt",
       "type" : "text/plain",
-      "size" : 417
+      "size" : 114
     } ],
     "parameters" : [ ],
     "attachmentsCount" : 1,
@@ -118,22 +124,22 @@
   "afterStages" : [ ],
   "labels" : [ {
     "name" : "epic",
-    "value" : "GET REQUESTS"
+    "value" : "POST REQUESTS"
   }, {
     "name" : "suite",
-    "value" : "REQUESTS GET"
+    "value" : "REQUESTS POST"
   }, {
     "name" : "subSuite",
-    "value" : "GET"
+    "value" : "POST"
   }, {
     "name" : "parentSuite",
     "value" : "tests"
   }, {
     "name" : "host",
-    "value" : "fv-az984-891"
+    "value" : "fv-az840-113"
   }, {
     "name" : "thread",
-    "value" : "1862-MainThread"
+    "value" : "1807-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -157,73 +163,82 @@
     "categories" : [ ],
     "history" : {
       "statistic" : {
-        "failed" : 0,
+        "failed" : 1,
         "broken" : 0,
         "skipped" : 0,
         "passed" : 8,
         "unknown" : 0,
-        "total" : 8
+        "total" : 9
       },
       "items" : [ {
-        "uid" : "6736274a79dc7c2",
+        "uid" : "dafb83653b688cad",
         "status" : "passed",
         "time" : {
-          "start" : 1705948112320,
-          "stop" : 1705948112716,
-          "duration" : 396
+          "start" : 1705948759904,
+          "stop" : 1705948760244,
+          "duration" : 340
         }
       }, {
-        "uid" : "97adcad702fb5217",
+        "uid" : "323a231a9db12179",
         "status" : "passed",
         "time" : {
-          "start" : 1705947420741,
-          "stop" : 1705947421241,
-          "duration" : 500
+          "start" : 1705948115533,
+          "stop" : 1705948115912,
+          "duration" : 379
         }
       }, {
-        "uid" : "3b9de16257c6bf51",
+        "uid" : "b5773da677bb536a",
         "status" : "passed",
         "time" : {
-          "start" : 1705947015977,
-          "stop" : 1705947016844,
-          "duration" : 867
+          "start" : 1705947423644,
+          "stop" : 1705947423971,
+          "duration" : 327
         }
       }, {
-        "uid" : "30c6e217eb05bbae",
+        "uid" : "cb9f3ea5749a2924",
         "status" : "passed",
         "time" : {
-          "start" : 1705946786871,
-          "stop" : 1705946787277,
-          "duration" : 406
+          "start" : 1705947020907,
+          "stop" : 1705947021446,
+          "duration" : 539
         }
       }, {
-        "uid" : "a4ffb028317179c9",
+        "uid" : "180f6966de34e237",
         "status" : "passed",
         "time" : {
-          "start" : 1705946520722,
-          "stop" : 1705946521138,
-          "duration" : 416
+          "start" : 1705946790250,
+          "stop" : 1705946790641,
+          "duration" : 391
         }
       }, {
-        "uid" : "1089cbe7d2ad0676",
+        "uid" : "825498bb7ca6def8",
         "status" : "passed",
         "time" : {
-          "start" : 1705946297818,
-          "stop" : 1705946298165,
-          "duration" : 347
+          "start" : 1705946524112,
+          "stop" : 1705946524656,
+          "duration" : 544
         }
       }, {
-        "uid" : "765c8f1f98e9a20f",
+        "uid" : "3025dde06ffc39d",
         "status" : "passed",
         "time" : {
-          "start" : 1705692143578,
-          "stop" : 1705692144154,
-          "duration" : 576
+          "start" : 1705946300471,
+          "stop" : 1705946300801,
+          "duration" : 330
+        }
+      }, {
+        "uid" : "801348c091f3a418",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1705692147369,
+          "stop" : 1705692147904,
+          "duration" : 535
         }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "a38693c5f615848b.json",
+  "source" : "e5fda298794a82f9.json",
   "parameterValues" : [ ]
 }
