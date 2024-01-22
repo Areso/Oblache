@@ -1,37 +1,37 @@
 {
-  "uid" : "6040cc6fc6c725ff",
+  "uid" : "68d41f41a31d0cf9",
   "name" : "delete db",
   "fullName" : "tests.test_first.TestPOST#test_delete_db",
   "historyId" : "26650fb8f64cc90dea4a9b411d36ba62",
   "time" : {
-    "start" : 1705946524658,
-    "stop" : 1705946525044,
-    "duration" : 386
+    "start" : 1705946790643,
+    "stop" : 1705946791035,
+    "duration" : 392
   },
   "status" : "skipped",
   "statusMessage" : "XFAIL\n\nAssertionError: Incorrect status code",
-  "statusTrace" : "self = <tests.test_first.TestPOST object at 0x7f41c0242ce0>\n\n    @allure.sub_suite('DELETE')\n    @allure.title('delete db')\n    @pytest.mark.xfail()\n    def test_delete_db(self):\n        print('\\n\\nMethod DELETE: delete_db')\n        # list_db = API.post_db_list(TestData.sid)\n        # json_list_db = json.loads(list_db.text)\n        first_db_uuid = \"065a5c25-6bd0-7a6e-8000-a9830730182e\"\n        '''\n        list(json_list_db['content'].keys())[0] #\"065a5b36-e472-7398-8000-7ce3e7219464\"\n        '''\n        # print(first_db_uuid)\n        result_post_db_list = API.delete_db(first_db_uuid, TestData.sid)\n>       Checking.check_status_code(result_post_db_list, 200)\n\ntests/test_first.py:96: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [400]>, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response JSON\n        :param status_code:\n        :return: int\n        \"\"\"\n>       assert status_code == result.status_code, 'Incorrect status code'\nE       AssertionError: Incorrect status code\n\nutils/checking.py:17: AssertionError",
+  "statusTrace" : "self = <tests.test_first.TestPOST object at 0x7f49b0e40280>\n\n    @allure.sub_suite('DELETE')\n    @allure.title('delete db')\n    @pytest.mark.xfail()\n    def test_delete_db(self):\n        print('\\n\\nMethod DELETE: delete_db')\n        # list_db = API.post_db_list(TestData.sid)\n        # json_list_db = json.loads(list_db.text)\n        first_db_uuid = \"065a5c25-6bd0-7a6e-8000-a9830730182e\"\n        '''\n        list(json_list_db['content'].keys())[0] #\"065a5b36-e472-7398-8000-7ce3e7219464\"\n        '''\n        # print(first_db_uuid)\n        result_post_db_list = API.delete_db(first_db_uuid, TestData.sid)\n>       Checking.check_status_code(result_post_db_list, 200)\n\ntests/test_first.py:96: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [400]>, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response JSON\n        :param status_code:\n        :return: int\n        \"\"\"\n>       assert status_code == result.status_code, 'Incorrect status code'\nE       AssertionError: Incorrect status code\n\nutils/checking.py:17: AssertionError",
   "flaky" : false,
   "newFailed" : false,
   "beforeStages" : [ ],
   "testStage" : {
     "status" : "skipped",
     "statusMessage" : "XFAIL\n\nAssertionError: Incorrect status code",
-    "statusTrace" : "self = <tests.test_first.TestPOST object at 0x7f41c0242ce0>\n\n    @allure.sub_suite('DELETE')\n    @allure.title('delete db')\n    @pytest.mark.xfail()\n    def test_delete_db(self):\n        print('\\n\\nMethod DELETE: delete_db')\n        # list_db = API.post_db_list(TestData.sid)\n        # json_list_db = json.loads(list_db.text)\n        first_db_uuid = \"065a5c25-6bd0-7a6e-8000-a9830730182e\"\n        '''\n        list(json_list_db['content'].keys())[0] #\"065a5b36-e472-7398-8000-7ce3e7219464\"\n        '''\n        # print(first_db_uuid)\n        result_post_db_list = API.delete_db(first_db_uuid, TestData.sid)\n>       Checking.check_status_code(result_post_db_list, 200)\n\ntests/test_first.py:96: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [400]>, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response JSON\n        :param status_code:\n        :return: int\n        \"\"\"\n>       assert status_code == result.status_code, 'Incorrect status code'\nE       AssertionError: Incorrect status code\n\nutils/checking.py:17: AssertionError",
+    "statusTrace" : "self = <tests.test_first.TestPOST object at 0x7f49b0e40280>\n\n    @allure.sub_suite('DELETE')\n    @allure.title('delete db')\n    @pytest.mark.xfail()\n    def test_delete_db(self):\n        print('\\n\\nMethod DELETE: delete_db')\n        # list_db = API.post_db_list(TestData.sid)\n        # json_list_db = json.loads(list_db.text)\n        first_db_uuid = \"065a5c25-6bd0-7a6e-8000-a9830730182e\"\n        '''\n        list(json_list_db['content'].keys())[0] #\"065a5b36-e472-7398-8000-7ce3e7219464\"\n        '''\n        # print(first_db_uuid)\n        result_post_db_list = API.delete_db(first_db_uuid, TestData.sid)\n>       Checking.check_status_code(result_post_db_list, 200)\n\ntests/test_first.py:96: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [400]>, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response JSON\n        :param status_code:\n        :return: int\n        \"\"\"\n>       assert status_code == result.status_code, 'Incorrect status code'\nE       AssertionError: Incorrect status code\n\nutils/checking.py:17: AssertionError",
     "steps" : [ {
       "name" : "Method POST",
       "time" : {
-        "start" : 1705946524658,
-        "stop" : 1705946525044,
-        "duration" : 386
+        "start" : 1705946790643,
+        "stop" : 1705946791035,
+        "duration" : 392
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "Add request",
         "time" : {
-          "start" : 1705946524658,
-          "stop" : 1705946524658,
-          "duration" : 0
+          "start" : 1705946790643,
+          "stop" : 1705946790644,
+          "duration" : 1
         },
         "status" : "passed",
         "steps" : [ ],
@@ -50,16 +50,16 @@
       }, {
         "name" : "Add response",
         "time" : {
-          "start" : 1705946525043,
-          "stop" : 1705946525044,
+          "start" : 1705946791034,
+          "stop" : 1705946791035,
           "duration" : 1
         },
         "status" : "passed",
         "steps" : [ {
           "name" : "Response code: 400\n",
           "time" : {
-            "start" : 1705946525043,
-            "stop" : 1705946525043,
+            "start" : 1705946791034,
+            "stop" : 1705946791034,
             "duration" : 0
           },
           "status" : "passed",
@@ -73,8 +73,8 @@
         }, {
           "name" : "Response text: {\n    \"content\": \"msg[16]: requested database is not found\"\n}\n\n",
           "time" : {
-            "start" : 1705946525043,
-            "stop" : 1705946525043,
+            "start" : 1705946791034,
+            "stop" : 1705946791034,
             "duration" : 0
           },
           "status" : "passed",
@@ -105,7 +105,7 @@
         "value" : "'{\"db_uuid\": \"065a5c25-6bd0-7a6e-8000-a9830730182e\"}'"
       }, {
         "name" : "sid",
-        "value" : "{'sid': 'ca207052-e3c0-427c-be16-aaba329238c8'}"
+        "value" : "{'sid': '708c5148-c28d-4a5a-89df-a6fcd28ed400'}"
       } ],
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
@@ -113,9 +113,9 @@
       "hasContent" : true
     } ],
     "attachments" : [ {
-      "uid" : "155fdf9152f1c0bf",
+      "uid" : "a6615bdfb2a889d4",
       "name" : "stdout",
-      "source" : "155fdf9152f1c0bf.txt",
+      "source" : "a6615bdfb2a889d4.txt",
       "type" : "text/plain",
       "size" : 163
     } ],
@@ -143,10 +143,10 @@
     "value" : "tests"
   }, {
     "name" : "host",
-    "value" : "fv-az564-817"
+    "value" : "fv-az520-452"
   }, {
     "name" : "thread",
-    "value" : "1815-MainThread"
+    "value" : "1808-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -172,12 +172,21 @@
       "statistic" : {
         "failed" : 0,
         "broken" : 0,
-        "skipped" : 3,
+        "skipped" : 4,
         "passed" : 0,
         "unknown" : 0,
-        "total" : 3
+        "total" : 4
       },
       "items" : [ {
+        "uid" : "6040cc6fc6c725ff",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1705946524658,
+          "stop" : 1705946525044,
+          "duration" : 386
+        }
+      }, {
         "uid" : "d85b19a262206259",
         "status" : "skipped",
         "statusDetails" : "XFAIL\n\nAssertionError: Incorrect status code",
@@ -199,6 +208,6 @@
     },
     "tags" : [ "@pytest.mark.xfail" ]
   },
-  "source" : "6040cc6fc6c725ff.json",
+  "source" : "68d41f41a31d0cf9.json",
   "parameterValues" : [ ]
 }

@@ -1,16 +1,16 @@
 {
-  "uid" : "3b1504790d91495d",
+  "uid" : "9f27c6598c3482dd",
   "name" : "test_x",
   "fullName" : "tests.test_second.TestX#test_x",
   "historyId" : "b1f551575e1b676732ef618ee2ece357",
   "time" : {
-    "start" : 1705946526639,
-    "stop" : 1705946526639,
+    "start" : 1705946792659,
+    "stop" : 1705946792659,
     "duration" : 0
   },
   "status" : "broken",
   "statusMessage" : "TypeError: TestData.connection() missing 1 required positional argument: 'db_uuid'",
-  "statusTrace" : "self = <tests.test_second.TestX object at 0x7f41c0207fa0>\n\n    def test_x(self):\n>       db = TestData.connection()\nE       TypeError: TestData.connection() missing 1 required positional argument: 'db_uuid'\n\ntests/test_second.py:10: TypeError",
+  "statusTrace" : "self = <tests.test_second.TestX object at 0x7f49b0e07f70>\n\n    def test_x(self):\n>       db = TestData.connection()\nE       TypeError: TestData.connection() missing 1 required positional argument: 'db_uuid'\n\ntests/test_second.py:10: TypeError",
   "flaky" : false,
   "newFailed" : false,
   "beforeStages" : [ ],
@@ -26,10 +26,10 @@
     "value" : "TestX"
   }, {
     "name" : "host",
-    "value" : "fv-az564-817"
+    "value" : "fv-az520-452"
   }, {
     "name" : "thread",
-    "value" : "1815-MainThread"
+    "value" : "1808-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -58,13 +58,22 @@
     "history" : {
       "statistic" : {
         "failed" : 0,
-        "broken" : 3,
+        "broken" : 4,
         "skipped" : 0,
         "passed" : 0,
         "unknown" : 0,
-        "total" : 3
+        "total" : 4
       },
       "items" : [ {
+        "uid" : "3b1504790d91495d",
+        "status" : "broken",
+        "statusDetails" : "TypeError: TestData.connection() missing 1 required positional argument: 'db_uuid'",
+        "time" : {
+          "start" : 1705946526639,
+          "stop" : 1705946526639,
+          "duration" : 0
+        }
+      }, {
         "uid" : "8ef2ecee191b577f",
         "status" : "broken",
         "statusDetails" : "TypeError: TestData.connection() missing 1 required positional argument: 'db_uuid'",
@@ -86,6 +95,6 @@
     },
     "tags" : [ ]
   },
-  "source" : "3b1504790d91495d.json",
+  "source" : "9f27c6598c3482dd.json",
   "parameterValues" : [ ]
 }

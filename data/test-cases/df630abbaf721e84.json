@@ -1,36 +1,36 @@
 {
-  "uid" : "dc04bf9de301ffc3",
+  "uid" : "df630abbaf721e84",
   "name" : "Post registration",
   "fullName" : "tests.test_first.TestPOST#test_post_registration",
   "historyId" : "471e6844a52f29f7d6d2b692e072e2a5",
   "time" : {
-    "start" : 1705946522837,
-    "stop" : 1705946523224,
-    "duration" : 387
+    "start" : 1705946788846,
+    "stop" : 1705946789224,
+    "duration" : 378
   },
   "status" : "broken",
   "statusMessage" : "AttributeError: 'int' object has no attribute 'status_code'",
-  "statusTrace" : "self = <tests.test_first.TestPOST object at 0x7f41c0241330>\n\n    @allure.sub_suite('POST')\n    @allure.title('Post registration')\n    def test_post_registration(self):\n        print('\\n\\nMethod POST: registration')\n        result_post = API.post_registration()\n        status_code = result_post.status_code\n>       Checking.check_status_code(status_code, 200)\n\ntests/test_first.py:57: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = 400, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response JSON\n        :param status_code:\n        :return: int\n        \"\"\"\n>       assert status_code == result.status_code, 'Incorrect status code'\nE       AttributeError: 'int' object has no attribute 'status_code'\n\nutils/checking.py:17: AttributeError",
+  "statusTrace" : "self = <tests.test_first.TestPOST object at 0x7f49b0e40e80>\n\n    @allure.sub_suite('POST')\n    @allure.title('Post registration')\n    def test_post_registration(self):\n        print('\\n\\nMethod POST: registration')\n        result_post = API.post_registration()\n        status_code = result_post.status_code\n>       Checking.check_status_code(status_code, 200)\n\ntests/test_first.py:57: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = 400, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response JSON\n        :param status_code:\n        :return: int\n        \"\"\"\n>       assert status_code == result.status_code, 'Incorrect status code'\nE       AttributeError: 'int' object has no attribute 'status_code'\n\nutils/checking.py:17: AttributeError",
   "flaky" : false,
   "newFailed" : false,
   "beforeStages" : [ ],
   "testStage" : {
     "status" : "broken",
     "statusMessage" : "AttributeError: 'int' object has no attribute 'status_code'",
-    "statusTrace" : "self = <tests.test_first.TestPOST object at 0x7f41c0241330>\n\n    @allure.sub_suite('POST')\n    @allure.title('Post registration')\n    def test_post_registration(self):\n        print('\\n\\nMethod POST: registration')\n        result_post = API.post_registration()\n        status_code = result_post.status_code\n>       Checking.check_status_code(status_code, 200)\n\ntests/test_first.py:57: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = 400, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response JSON\n        :param status_code:\n        :return: int\n        \"\"\"\n>       assert status_code == result.status_code, 'Incorrect status code'\nE       AttributeError: 'int' object has no attribute 'status_code'\n\nutils/checking.py:17: AttributeError",
+    "statusTrace" : "self = <tests.test_first.TestPOST object at 0x7f49b0e40e80>\n\n    @allure.sub_suite('POST')\n    @allure.title('Post registration')\n    def test_post_registration(self):\n        print('\\n\\nMethod POST: registration')\n        result_post = API.post_registration()\n        status_code = result_post.status_code\n>       Checking.check_status_code(status_code, 200)\n\ntests/test_first.py:57: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = 400, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response JSON\n        :param status_code:\n        :return: int\n        \"\"\"\n>       assert status_code == result.status_code, 'Incorrect status code'\nE       AttributeError: 'int' object has no attribute 'status_code'\n\nutils/checking.py:17: AttributeError",
     "steps" : [ {
       "name" : "Method POST",
       "time" : {
-        "start" : 1705946522838,
-        "stop" : 1705946523224,
-        "duration" : 386
+        "start" : 1705946788846,
+        "stop" : 1705946789223,
+        "duration" : 377
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "Add request",
         "time" : {
-          "start" : 1705946522838,
-          "stop" : 1705946522838,
+          "start" : 1705946788846,
+          "stop" : 1705946788846,
           "duration" : 0
         },
         "status" : "passed",
@@ -50,16 +50,16 @@
       }, {
         "name" : "Add response",
         "time" : {
-          "start" : 1705946523224,
-          "stop" : 1705946523224,
+          "start" : 1705946789223,
+          "stop" : 1705946789223,
           "duration" : 0
         },
         "status" : "passed",
         "steps" : [ {
           "name" : "Response code: 400\n",
           "time" : {
-            "start" : 1705946523224,
-            "stop" : 1705946523224,
+            "start" : 1705946789223,
+            "stop" : 1705946789223,
             "duration" : 0
           },
           "status" : "passed",
@@ -73,8 +73,8 @@
         }, {
           "name" : "Response text: {\n    \"content\": \"msg[3]: registration failed, this email is taken\"\n}\n\n",
           "time" : {
-            "start" : 1705946523224,
-            "stop" : 1705946523224,
+            "start" : 1705946789223,
+            "stop" : 1705946789223,
             "duration" : 0
           },
           "status" : "passed",
@@ -110,9 +110,9 @@
       "hasContent" : true
     } ],
     "attachments" : [ {
-      "uid" : "f8821570248e10f1",
+      "uid" : "c679539a9d7c2046",
       "name" : "stdout",
-      "source" : "f8821570248e10f1.txt",
+      "source" : "c679539a9d7c2046.txt",
       "type" : "text/plain",
       "size" : 148
     } ],
@@ -124,23 +124,23 @@
   },
   "afterStages" : [ ],
   "labels" : [ {
+    "name" : "subSuite",
+    "value" : "POST"
+  }, {
     "name" : "suite",
     "value" : "REQUESTS POST"
   }, {
     "name" : "epic",
     "value" : "POST REQUESTS"
   }, {
-    "name" : "subSuite",
-    "value" : "POST"
-  }, {
     "name" : "parentSuite",
     "value" : "tests"
   }, {
     "name" : "host",
-    "value" : "fv-az564-817"
+    "value" : "fv-az520-452"
   }, {
     "name" : "thread",
-    "value" : "1815-MainThread"
+    "value" : "1808-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -166,8 +166,28 @@
       "matchedStatuses" : [ ],
       "flaky" : false
     } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 2,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "dc04bf9de301ffc3",
+        "status" : "broken",
+        "statusDetails" : "AttributeError: 'int' object has no attribute 'status_code'",
+        "time" : {
+          "start" : 1705946522837,
+          "stop" : 1705946523224,
+          "duration" : 387
+        }
+      } ]
+    },
     "tags" : [ ]
   },
-  "source" : "dc04bf9de301ffc3.json",
+  "source" : "df630abbaf721e84.json",
   "parameterValues" : [ ]
 }
