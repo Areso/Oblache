@@ -1,36 +1,32 @@
 {
-  "uid" : "29f9900319e2afd6",
+  "uid" : "7848dbbb7be5bc4d",
   "name" : "test_create_table",
   "fullName" : "tests.test_first.TestLoadDB#test_create_table",
   "historyId" : "3330525a715ec68df76fbb9b749f885c",
   "time" : {
-    "start" : 1705955367199,
-    "stop" : 1705955427976,
-    "duration" : 60777
+    "start" : 1705955815794,
+    "stop" : 1705955905937,
+    "duration" : 90143
   },
-  "status" : "broken",
-  "statusMessage" : "KeyError: '065aec28-668f-7154-8000-e56a08c36273'",
-  "statusTrace" : "self = <tests.test_first.TestLoadDB object at 0x7fcb7d306fb0>\n\n    def test_create_table(self):\n        result_db_create = API.post_db_create(TestData.sid)\n        print('Status db is :', result_db_create.json())\n        db_uuid = result_db_create.json()[\"db_uuid\"]\n        print(\"db_uuid\", db_uuid)\n        time.sleep(60)\n        query = '''\n        CREATE TABLE IF NOT EXISTS accounts(\n        userid INT PRIMARY KEY AUTO_INCREMENT,\n        name varchar(128),\n        date_of_birth datetime NULL,\n        text varchar(4096),\n        email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;\n        '''\n>       db = TestData.connection(f\"065aec28-668f-7154-8000-e56a08c36273\")\n\ntests/test_first.py:124: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\ndb_uuid = '065aec28-668f-7154-8000-e56a08c36273'\n\n    @staticmethod\n    def connection(db_uuid):\n        post_resource = '/db_list'\n        post_url = TestData().base_url + post_resource\n        result_post = requests.post(post_url, cookies=TestData().result.cookies, json=TestData().body)\n        json_list_db = json.loads(result_post.text)\n>       db_name = json_list_db['content'][db_uuid][0]\nE       KeyError: '065aec28-668f-7154-8000-e56a08c36273'\n\ntests/conftest.py:27: KeyError",
+  "status" : "passed",
   "flaky" : false,
   "newFailed" : false,
   "beforeStages" : [ ],
   "testStage" : {
-    "status" : "broken",
-    "statusMessage" : "KeyError: '065aec28-668f-7154-8000-e56a08c36273'",
-    "statusTrace" : "self = <tests.test_first.TestLoadDB object at 0x7fcb7d306fb0>\n\n    def test_create_table(self):\n        result_db_create = API.post_db_create(TestData.sid)\n        print('Status db is :', result_db_create.json())\n        db_uuid = result_db_create.json()[\"db_uuid\"]\n        print(\"db_uuid\", db_uuid)\n        time.sleep(60)\n        query = '''\n        CREATE TABLE IF NOT EXISTS accounts(\n        userid INT PRIMARY KEY AUTO_INCREMENT,\n        name varchar(128),\n        date_of_birth datetime NULL,\n        text varchar(4096),\n        email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;\n        '''\n>       db = TestData.connection(f\"065aec28-668f-7154-8000-e56a08c36273\")\n\ntests/test_first.py:124: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\ndb_uuid = '065aec28-668f-7154-8000-e56a08c36273'\n\n    @staticmethod\n    def connection(db_uuid):\n        post_resource = '/db_list'\n        post_url = TestData().base_url + post_resource\n        result_post = requests.post(post_url, cookies=TestData().result.cookies, json=TestData().body)\n        json_list_db = json.loads(result_post.text)\n>       db_name = json_list_db['content'][db_uuid][0]\nE       KeyError: '065aec28-668f-7154-8000-e56a08c36273'\n\ntests/conftest.py:27: KeyError",
+    "status" : "passed",
     "steps" : [ {
       "name" : "Method POST",
       "time" : {
-        "start" : 1705955367199,
-        "stop" : 1705955367570,
-        "duration" : 371
+        "start" : 1705955815794,
+        "stop" : 1705955816379,
+        "duration" : 585
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "Add request",
         "time" : {
-          "start" : 1705955367200,
-          "stop" : 1705955367200,
+          "start" : 1705955815794,
+          "stop" : 1705955815794,
           "duration" : 0
         },
         "status" : "passed",
@@ -45,21 +41,21 @@
         } ],
         "attachmentsCount" : 0,
         "shouldDisplayMessage" : false,
-        "hasContent" : true,
-        "stepsCount" : 0
+        "stepsCount" : 0,
+        "hasContent" : true
       }, {
         "name" : "Add response",
         "time" : {
-          "start" : 1705955367569,
-          "stop" : 1705955367570,
-          "duration" : 1
+          "start" : 1705955816379,
+          "stop" : 1705955816379,
+          "duration" : 0
         },
         "status" : "passed",
         "steps" : [ {
           "name" : "Response code: 201\n",
           "time" : {
-            "start" : 1705955367569,
-            "stop" : 1705955367569,
+            "start" : 1705955816379,
+            "stop" : 1705955816379,
             "duration" : 0
           },
           "status" : "passed",
@@ -68,14 +64,14 @@
           "parameters" : [ ],
           "attachmentsCount" : 0,
           "shouldDisplayMessage" : false,
-          "hasContent" : false,
-          "stepsCount" : 0
+          "stepsCount" : 0,
+          "hasContent" : false
         }, {
-          "name" : "Response text: {\n    \"msg\": \"your order for a new database created successfully\",\n    \"db_uuid\": \"065aed02-77b1-7728-8000-ea6d32f3fa83\"\n}\n\n",
+          "name" : "Response text: {\n    \"msg\": \"your order for a new database created successfully\",\n    \"db_uuid\": \"065aed1e-83fb-7fbf-8000-5b8baf5c174f\"\n}\n\n",
           "time" : {
-            "start" : 1705955367569,
-            "stop" : 1705955367570,
-            "duration" : 1
+            "start" : 1705955816379,
+            "stop" : 1705955816379,
+            "duration" : 0
           },
           "status" : "passed",
           "steps" : [ ],
@@ -83,8 +79,8 @@
           "parameters" : [ ],
           "attachmentsCount" : 0,
           "shouldDisplayMessage" : false,
-          "hasContent" : false,
-          "stepsCount" : 0
+          "stepsCount" : 0,
+          "hasContent" : false
         } ],
         "attachments" : [ ],
         "parameters" : [ {
@@ -93,8 +89,8 @@
         } ],
         "attachmentsCount" : 0,
         "shouldDisplayMessage" : false,
-        "hasContent" : true,
-        "stepsCount" : 2
+        "stepsCount" : 2,
+        "hasContent" : true
       } ],
       "attachments" : [ ],
       "parameters" : [ {
@@ -102,28 +98,121 @@
         "value" : "'https://dbend.areso.pro/db_create'"
       }, {
         "name" : "cookie",
-        "value" : "{'sid': '41937d48-f4e8-4dcd-82ea-9851b1bc1d99'}"
+        "value" : "{'sid': '14eb5502-beff-468e-b4da-4d9b581a9107'}"
       }, {
         "name" : "body",
         "value" : "{'dbtype': 3, 'dbversion': 5, 'env': 3, 'region': 3}"
       } ],
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
-      "hasContent" : true,
-      "stepsCount" : 4
+      "stepsCount" : 4,
+      "hasContent" : true
+    }, {
+      "name" : "Method POST",
+      "time" : {
+        "start" : 1705955905410,
+        "stop" : 1705955905935,
+        "duration" : 525
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Add request",
+        "time" : {
+          "start" : 1705955905410,
+          "stop" : 1705955905410,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "url",
+          "value" : "'https://dbend.areso.pro/db_delete'"
+        }, {
+          "name" : "method",
+          "value" : "'POST'"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "Add response",
+        "time" : {
+          "start" : 1705955905934,
+          "stop" : 1705955905935,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Response code: 400\n",
+          "time" : {
+            "start" : 1705955905934,
+            "stop" : 1705955905934,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : false
+        }, {
+          "name" : "Response text: {\n    \"content\": \"msg[16]: requested database is not found\"\n}\n\n",
+          "time" : {
+            "start" : 1705955905935,
+            "stop" : 1705955905935,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "result",
+          "value" : "<Response [400]>"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 2,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "url",
+        "value" : "'https://dbend.areso.pro/db_delete'"
+      }, {
+        "name" : "db_uuid",
+        "value" : "'{\"db_uuid\": \"065aec28-668f-7154-8000-e56a08c36273\"}'"
+      }, {
+        "name" : "sid",
+        "value" : "{'sid': '14eb5502-beff-468e-b4da-4d9b581a9107'}"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 4,
+      "hasContent" : true
     } ],
     "attachments" : [ {
-      "uid" : "d807b91ac222834d",
+      "uid" : "bc35ab3a0675d572",
       "name" : "stdout",
-      "source" : "d807b91ac222834d.txt",
+      "source" : "bc35ab3a0675d572.txt",
       "type" : "text/plain",
-      "size" : 370
+      "size" : 413795
     } ],
     "parameters" : [ ],
     "attachmentsCount" : 1,
-    "shouldDisplayMessage" : true,
-    "hasContent" : true,
-    "stepsCount" : 5
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 10,
+    "hasContent" : true
   },
   "afterStages" : [ ],
   "labels" : [ {
@@ -137,10 +226,10 @@
     "value" : "TestLoadDB"
   }, {
     "name" : "host",
-    "value" : "fv-az1251-537"
+    "value" : "fv-az735-376"
   }, {
     "name" : "thread",
-    "value" : "1899-MainThread"
+    "value" : "1855-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -161,21 +250,26 @@
   "extra" : {
     "severity" : "normal",
     "retries" : [ ],
-    "categories" : [ {
-      "name" : "Test defects",
-      "matchedStatuses" : [ ],
-      "flaky" : false
-    } ],
+    "categories" : [ ],
     "history" : {
       "statistic" : {
         "failed" : 0,
         "broken" : 10,
         "skipped" : 0,
-        "passed" : 0,
+        "passed" : 1,
         "unknown" : 0,
-        "total" : 10
+        "total" : 11
       },
       "items" : [ {
+        "uid" : "29f9900319e2afd6",
+        "status" : "broken",
+        "statusDetails" : "KeyError: '065aec28-668f-7154-8000-e56a08c36273'",
+        "time" : {
+          "start" : 1705955367199,
+          "stop" : 1705955427976,
+          "duration" : 60777
+        }
+      }, {
         "uid" : "86c5d9b474e0c478",
         "status" : "broken",
         "statusDetails" : "KeyError: '065aec28-668f-7154-8000-e56a08c36273'",
@@ -260,6 +354,6 @@
     },
     "tags" : [ ]
   },
-  "source" : "29f9900319e2afd6.json",
+  "source" : "7848dbbb7be5bc4d.json",
   "parameterValues" : [ ]
 }
