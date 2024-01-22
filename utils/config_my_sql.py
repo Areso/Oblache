@@ -1,7 +1,5 @@
-import allure
 
-
-class DataMySql:
+# class DataMySql:
     # def __init__(self, connection):
     #     self.connection = connection
 
@@ -47,29 +45,29 @@ class DataMySql:
     #         print('Connection refused...\n')
     #         print(ex)
 
-    def connect_my_sql(self, select=None):
-        """
-        :param select:
-        :return:
-        """
-        print('\nConnecting to DB...')
-        if select is None:
-            select = '''select 1 from dual'''
-        else:
-            select = select
-        cursor = self.connection.cursor()
-        with cursor:
-            cursor.execute(select)
-            res = cursor.fetchall()
-            cursor.commit()
-            with allure.step(f'DB response {res}'):
-                print(f'DB response {res}!!!!')
-            assert res == [(1,)], 'Wrong result!!! Expected result: [(1,)].'
-
-    def create_table(self, query):
-        cursor = self.connection.cursor()
-        cursor.execute(query)
-        cursor.commit()
+    # def connect_my_sql(self, select=None):
+    #     """
+    #     :param select:
+    #     :return:
+    #     """
+    #     print('\nConnecting to DB...')
+    #     if select is None:
+    #         select = '''select 1 from dual'''
+    #     else:
+    #         select = select
+    #     cursor = self.connection.cursor()
+    #     with cursor:
+    #         cursor.execute(select)
+    #         res = cursor.fetchall()
+    #         cursor.commit()
+    #         with allure.step(f'DB response {res}'):
+    #             print(f'DB response {res}!!!!')
+    #         assert res == [(1,)], 'Wrong result!!! Expected result: [(1,)].'
+    #
+    # def create_table(self, query):
+    #     cursor = self.connection.cursor()
+    #     cursor.execute(query)
+    #     cursor.commit()
 
         # print('\nConnecting to DB...')
         # try:

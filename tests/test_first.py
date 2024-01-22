@@ -1,4 +1,4 @@
-import json
+# import json
 import random
 from string import ascii_letters
 
@@ -6,7 +6,7 @@ import allure
 import pytest
 
 from utils.checking import Checking
-from utils.config_my_sql import DataMySql
+# from utils.config_my_sql import DataMySql
 from utils.request import API
 from .conftest import TestData
 
@@ -49,6 +49,14 @@ class TestGET:
 @allure.suite('REQUESTS POST')
 class TestPOST:
     @allure.sub_suite('POST')
+    @allure.title('Post registration')
+    def test_post_registration(self):
+        print('\n\nMethod POST: registration')
+        result_post = API.post_registration()
+        status_code = result_post.status_code
+        Checking.check_status_code(status_code, 200)
+
+    @allure.sub_suite('POST')
     @allure.title('Post login')
     def test_post_login(self):
         print('\n\nMethod POST: login')
@@ -77,9 +85,12 @@ class TestPOST:
     @pytest.mark.xfail()
     def test_delete_db(self):
         print('\n\nMethod DELETE: delete_db')
-        list_db = API.post_db_list(TestData.sid)
-        json_list_db = json.loads(list_db.text)
-        first_db_uuid = "065a5b36-e472-7398-8000-7ce3e7219464"  # list(json_list_db['content'].keys())[0]
+        # list_db = API.post_db_list(TestData.sid)
+        # json_list_db = json.loads(list_db.text)
+        first_db_uuid = "065a5c25-6bd0-7a6e-8000-a9830730182e"
+        '''
+        list(json_list_db['content'].keys())[0] #"065a5b36-e472-7398-8000-7ce3e7219464"
+        '''
         # print(first_db_uuid)
         result_post_db_list = API.delete_db(first_db_uuid, TestData.sid)
         Checking.check_status_code(result_post_db_list, 200)
@@ -93,7 +104,7 @@ class TestConnectionDB:
         API.check_full_cycle(TestData.sid)
 
 
-class TestLoadDB(DataMySql):
+class TestLoadDB:
     def test_create_table(self):
         """
         :return:
@@ -120,7 +131,7 @@ class TestLoadDB(DataMySql):
         cursor = db.cursor()
         for x in range(10):
             for i in range(10):
-                my_string = "".join(random.choice(letters) for i in range(4096))
+                my_string = "".join(random.choice(letters) for _ in range(4096))
                 cursor.execute("""
                         INSERT INTO accounts (name, text) 
                         VALUES (
