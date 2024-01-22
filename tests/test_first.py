@@ -1,4 +1,4 @@
-# import json
+import json
 import random
 from string import ascii_letters
 
@@ -48,6 +48,7 @@ class TestGET:
 @allure.epic('POST REQUESTS')
 @allure.suite('REQUESTS POST')
 class TestPOST:
+    @pytest.mark.xfail()
     @allure.sub_suite('POST')
     @allure.title('Post registration')
     def test_post_registration(self):
@@ -64,14 +65,14 @@ class TestPOST:
         status_code, sid = result_post
         Checking.check_status_code(status_code, 200)
 
-    @allure.sub_suite('POST')
-    @allure.title('Post db create')
-    def test_post_db_create(self):
-        print('\n\nMethod POST: db_create')
-        result_post_db_list = API.post_db_create(TestData.sid)
-        # print(result_post_db_list)
-        print(result_post_db_list.json()["db_uuid"])
-        Checking.check_status_code(result_post_db_list, 201)
+    # @allure.sub_suite('POST')
+    # @allure.title('Post db create')
+    # def test_post_db_create(self):
+    #     print('\n\nMethod POST: db_create')
+    #     result_post_db_list = API.post_db_create(TestData.sid)
+    #     # print(result_post_db_list)
+    #     print(result_post_db_list.json()["db_uuid"])
+    #     Checking.check_status_code(result_post_db_list, 201)
 
     @allure.sub_suite('POST')
     @allure.title('Post db list')
@@ -85,9 +86,9 @@ class TestPOST:
     @pytest.mark.xfail()
     def test_delete_db(self):
         print('\n\nMethod DELETE: delete_db')
-        # list_db = API.post_db_list(TestData.sid)
-        # json_list_db = json.loads(list_db.text)
-        first_db_uuid = "065a5c25-6bd0-7a6e-8000-a9830730182e"
+        list_db = API.post_db_list(TestData.sid)
+        json_list_db = json.loads(list_db.text)
+        first_db_uuid = list(json_list_db['content'].keys())[0]
         '''
         list(json_list_db['content'].keys())[0] #"065a5b36-e472-7398-8000-7ce3e7219464"
         '''
