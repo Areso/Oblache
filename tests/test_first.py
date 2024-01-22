@@ -121,12 +121,12 @@ class TestLoadDB:
         text varchar(4096),
         email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
         '''
-        db = TestData.connection(f"065aec28-668f-7154-8000-e56a08c36273")
+        db = TestData.connection(f"{db_uuid}")
         cursor = db.cursor()
         cursor.execute(query)
         db.commit()
 
-        db = TestData.connection(f"065aec28-668f-7154-8000-e56a08c36273")
+        db = TestData.connection(f"{db_uuid}")
         letters = ascii_letters
         cursor = db.cursor()
         for x in range(10):
