@@ -94,8 +94,8 @@ class TestPOST:
         list(json_list_db['content'].keys())[0] #"065a5b36-e472-7398-8000-7ce3e7219464"
         '''
         # print(first_db_uuid)
-        result_post_db_list = API.delete_db(first_db_uuid, TestData.sid)
-        Checking.check_status_code(result_post_db_list, 200)
+        result_post_db_delete = API.delete_db(first_db_uuid, TestData.sid)
+        Checking.check_status_code(result_post_db_delete, 200)
 
 
 @allure.epic('Connection DB')
@@ -113,7 +113,7 @@ class TestLoadDB:
         print('Status db is :', result_db_create.json())
         db_uuid = result_db_create.json()["db_uuid"]
         print("db_uuid", db_uuid)
-        time.sleep(60)
+        time.sleep(40)
         query = '''
         CREATE TABLE IF NOT EXISTS accounts(
         userid INT PRIMARY KEY AUTO_INCREMENT,
@@ -143,8 +143,8 @@ class TestLoadDB:
         cursor.execute('''select * from accounts''')
         res = cursor.fetchall()
         print(res)
-        API.delete_db("065aec28-668f-7154-8000-e56a08c36273", TestData.sid)
-
+        result_post_db_delete = API.delete_db(f"{db_uuid}", TestData.sid)
+        Checking.check_status_code(result_post_db_delete, 200)
 
     # def test_load_table2(self):
     #     """
