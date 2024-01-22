@@ -1,18 +1,18 @@
 {
-  "uid" : "425332360532ac10",
+  "uid" : "549098c090de8b4b",
   "name" : "test_create_table",
   "fullName" : "tests.test_first.TestLoadDB#test_create_table",
   "historyId" : "3330525a715ec68df76fbb9b749f885c",
   "time" : {
-    "start" : 1705947467850,
-    "stop" : 1705947468185,
-    "duration" : 335
+    "start" : 1705948152794,
+    "stop" : 1705948153180,
+    "duration" : 386
   },
   "description" : "\n        :return:\n        ",
   "descriptionHtml" : "<pre><code>    :return:\n</code></pre>\n",
   "status" : "broken",
   "statusMessage" : "KeyError: '065a5c25-6bd0-7a6e-8000-a9830730182e'",
-  "statusTrace" : "self = <tests.test_first.TestLoadDB object at 0x7f96c303b010>\n\n    def test_create_table(self):\n        \"\"\"\n        :return:\n        \"\"\"\n        query = '''\n        CREATE TABLE IF NOT EXISTS accounts(\n        userid INT PRIMARY KEY AUTO_INCREMENT,\n        name varchar(128),\n        date_of_birth datetime NULL,\n        text varchar(4096),\n        email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;\n        '''\n>       db = TestData.connection(\"065a5c25-6bd0-7a6e-8000-a9830730182e\")\n\ntests/test_first.py:120: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\ndb_uuid = '065a5c25-6bd0-7a6e-8000-a9830730182e'\n\n    @staticmethod\n    def connection(db_uuid):\n        post_resource = '/db_list'\n        post_url = TestData().base_url + post_resource\n        result_post = requests.post(post_url, cookies=TestData().result.cookies, json=TestData().body)\n        json_list_db = json.loads(result_post.text)\n>       db_name = json_list_db['content'][db_uuid][0]\nE       KeyError: '065a5c25-6bd0-7a6e-8000-a9830730182e'\n\ntests/conftest.py:27: KeyError",
+  "statusTrace" : "self = <tests.test_first.TestLoadDB object at 0x7f3e81b0f100>\n\n    def test_create_table(self):\n        \"\"\"\n        :return:\n        \"\"\"\n        query = '''\n        CREATE TABLE IF NOT EXISTS accounts(\n        userid INT PRIMARY KEY AUTO_INCREMENT,\n        name varchar(128),\n        date_of_birth datetime NULL,\n        text varchar(4096),\n        email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;\n        '''\n>       db = TestData.connection(\"065a5c25-6bd0-7a6e-8000-a9830730182e\")\n\ntests/test_first.py:120: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\ndb_uuid = '065a5c25-6bd0-7a6e-8000-a9830730182e'\n\n    @staticmethod\n    def connection(db_uuid):\n        post_resource = '/db_list'\n        post_url = TestData().base_url + post_resource\n        result_post = requests.post(post_url, cookies=TestData().result.cookies, json=TestData().body)\n        json_list_db = json.loads(result_post.text)\n>       db_name = json_list_db['content'][db_uuid][0]\nE       KeyError: '065a5c25-6bd0-7a6e-8000-a9830730182e'\n\ntests/conftest.py:27: KeyError",
   "flaky" : false,
   "newFailed" : false,
   "beforeStages" : [ ],
@@ -28,10 +28,10 @@
     "value" : "TestLoadDB"
   }, {
     "name" : "host",
-    "value" : "fv-az774-794"
+    "value" : "fv-az692-582"
   }, {
     "name" : "thread",
-    "value" : "1780-MainThread"
+    "value" : "1816-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -60,13 +60,22 @@
     "history" : {
       "statistic" : {
         "failed" : 0,
-        "broken" : 6,
+        "broken" : 7,
         "skipped" : 0,
         "passed" : 0,
         "unknown" : 0,
-        "total" : 6
+        "total" : 7
       },
       "items" : [ {
+        "uid" : "425332360532ac10",
+        "status" : "broken",
+        "statusDetails" : "KeyError: '065a5c25-6bd0-7a6e-8000-a9830730182e'",
+        "time" : {
+          "start" : 1705947467850,
+          "stop" : 1705947468185,
+          "duration" : 335
+        }
+      }, {
         "uid" : "f5d7a43969db0925",
         "status" : "broken",
         "statusDetails" : "KeyError: '065a5c25-6bd0-7a6e-8000-a9830730182e'",
@@ -115,6 +124,6 @@
     },
     "tags" : [ ]
   },
-  "source" : "425332360532ac10.json",
+  "source" : "549098c090de8b4b.json",
   "parameterValues" : [ ]
 }

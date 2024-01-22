@@ -1,12 +1,12 @@
 {
-  "uid" : "b5773da677bb536a",
-  "name" : "Post db list",
-  "fullName" : "tests.test_first.TestPOST#test_post_db_list",
-  "historyId" : "6364d06d5cf83d3bb6572507477edc14",
+  "uid" : "7436ca914d906900",
+  "name" : "List regions",
+  "fullName" : "tests.test_first.TestGET#test_list_regions",
+  "historyId" : "1a14df3f7934f250c45b3908f6172f62",
   "time" : {
-    "start" : 1705947423644,
-    "stop" : 1705947423971,
-    "duration" : 327
+    "start" : 1705948113926,
+    "stop" : 1705948114307,
+    "duration" : 381
   },
   "status" : "passed",
   "flaky" : false,
@@ -15,18 +15,18 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "Method POST",
+      "name" : "Method GET",
       "time" : {
-        "start" : 1705947423644,
-        "stop" : 1705947423968,
-        "duration" : 324
+        "start" : 1705948113926,
+        "stop" : 1705948114306,
+        "duration" : 380
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "Add request",
         "time" : {
-          "start" : 1705947423644,
-          "stop" : 1705947423644,
+          "start" : 1705948113926,
+          "stop" : 1705948113926,
           "duration" : 0
         },
         "status" : "passed",
@@ -34,112 +34,106 @@
         "attachments" : [ ],
         "parameters" : [ {
           "name" : "url",
-          "value" : "'https://dbend.areso.pro/db_list'"
+          "value" : "'https://dbend.areso.pro/list_regions'"
         }, {
           "name" : "method",
-          "value" : "'POST'"
+          "value" : "'GET'"
         } ],
-        "hasContent" : true,
         "attachmentsCount" : 0,
         "shouldDisplayMessage" : false,
-        "stepsCount" : 0
+        "stepsCount" : 0,
+        "hasContent" : true
       }, {
         "name" : "Add response",
         "time" : {
-          "start" : 1705947423968,
-          "stop" : 1705947423968,
-          "duration" : 0
+          "start" : 1705948114305,
+          "stop" : 1705948114306,
+          "duration" : 1
         },
         "status" : "passed",
         "steps" : [ {
           "name" : "Response code: 200\n",
           "time" : {
-            "start" : 1705947423968,
-            "stop" : 1705947423968,
+            "start" : 1705948114305,
+            "stop" : 1705948114305,
             "duration" : 0
           },
           "status" : "passed",
           "steps" : [ ],
           "attachments" : [ ],
           "parameters" : [ ],
-          "hasContent" : false,
           "attachmentsCount" : 0,
           "shouldDisplayMessage" : false,
-          "stepsCount" : 0
+          "stepsCount" : 0,
+          "hasContent" : false
         }, {
-          "name" : "Response text: {\n    \"content\": {\n        \"065aeb11-6d98-7f6b-8000-4b2b86af4d24\": [\n            \"\",\n            \"CIS\",\n            \"db_creating\",\n            null,\n            \"None\"\n        ],\n        \"065aeb11-f891-79e3-8000-cd6464c33c42\": [\n            \"\",\n            \"CIS\",\n            \"db_creating\",\n            null,\n            \"None\"\n        ]\n    }\n}\n\n",
+          "name" : "Response text: {\n    \"3\": \"CIS\"\n}\n\n",
           "time" : {
-            "start" : 1705947423968,
-            "stop" : 1705947423968,
+            "start" : 1705948114305,
+            "stop" : 1705948114305,
             "duration" : 0
           },
           "status" : "passed",
           "steps" : [ ],
           "attachments" : [ ],
           "parameters" : [ ],
-          "hasContent" : false,
           "attachmentsCount" : 0,
           "shouldDisplayMessage" : false,
-          "stepsCount" : 0
+          "stepsCount" : 0,
+          "hasContent" : false
         } ],
         "attachments" : [ ],
         "parameters" : [ {
           "name" : "result",
           "value" : "<Response [200]>"
         } ],
-        "hasContent" : true,
         "attachmentsCount" : 0,
         "shouldDisplayMessage" : false,
-        "stepsCount" : 2
+        "stepsCount" : 2,
+        "hasContent" : true
       } ],
       "attachments" : [ ],
       "parameters" : [ {
         "name" : "url",
-        "value" : "'https://dbend.areso.pro/db_list'"
-      }, {
-        "name" : "body",
-        "value" : "{}"
-      }, {
-        "name" : "cookie",
-        "value" : "{'sid': '39bda71b-fa62-4a22-bf79-e485afdff1f8'}"
+        "value" : "'https://dbend.areso.pro/list_regions'"
       } ],
-      "hasContent" : true,
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
-      "stepsCount" : 4
+      "stepsCount" : 4,
+      "hasContent" : true
     } ],
     "attachments" : [ {
-      "uid" : "a659641b4ae286ab",
+      "uid" : "4e9a25e92e91198f",
       "name" : "stdout",
-      "source" : "a659641b4ae286ab.txt",
+      "source" : "4e9a25e92e91198f.txt",
       "type" : "text/plain",
-      "size" : 433
+      "size" : 77
     } ],
     "parameters" : [ ],
-    "hasContent" : true,
     "attachmentsCount" : 1,
     "shouldDisplayMessage" : false,
-    "stepsCount" : 5
+    "stepsCount" : 5,
+    "hasContent" : true
   },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "epic",
-    "value" : "POST REQUESTS"
+    "name" : "subSuite",
+    "value" : "GET"
   }, {
     "name" : "suite",
-    "value" : "REQUESTS POST"
+    "value" : "REQUESTS GET"
   }, {
-    "name" : "subSuite",
-    "value" : "POST"
+    "name" : "epic",
+    "value" : "GET REQUESTS"
   }, {
     "name" : "parentSuite",
     "value" : "tests"
   }, {
     "name" : "host",
-    "value" : "fv-az774-794"
+    "value" : "fv-az692-582"
   }, {
     "name" : "thread",
-    "value" : "1780-MainThread"
+    "value" : "1816-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -163,58 +157,65 @@
     "categories" : [ ],
     "history" : {
       "statistic" : {
-        "failed" : 1,
+        "failed" : 0,
         "broken" : 0,
         "skipped" : 0,
-        "passed" : 5,
+        "passed" : 7,
         "unknown" : 0,
-        "total" : 6
+        "total" : 7
       },
       "items" : [ {
-        "uid" : "cb9f3ea5749a2924",
+        "uid" : "2f209d124d95c06c",
         "status" : "passed",
         "time" : {
-          "start" : 1705947020907,
-          "stop" : 1705947021446,
-          "duration" : 539
+          "start" : 1705947422252,
+          "stop" : 1705947422579,
+          "duration" : 327
         }
       }, {
-        "uid" : "180f6966de34e237",
+        "uid" : "73ac96f27159cc",
         "status" : "passed",
         "time" : {
-          "start" : 1705946790250,
-          "stop" : 1705946790641,
-          "duration" : 391
+          "start" : 1705947018624,
+          "stop" : 1705947019177,
+          "duration" : 553
         }
       }, {
-        "uid" : "825498bb7ca6def8",
+        "uid" : "a52d6712c373cd1a",
         "status" : "passed",
         "time" : {
-          "start" : 1705946524112,
-          "stop" : 1705946524656,
-          "duration" : 544
+          "start" : 1705946788454,
+          "stop" : 1705946788844,
+          "duration" : 390
         }
       }, {
-        "uid" : "3025dde06ffc39d",
+        "uid" : "891664748a1b4b6d",
         "status" : "passed",
         "time" : {
-          "start" : 1705946300471,
-          "stop" : 1705946300801,
-          "duration" : 330
+          "start" : 1705946522447,
+          "stop" : 1705946522836,
+          "duration" : 389
         }
       }, {
-        "uid" : "801348c091f3a418",
-        "status" : "failed",
-        "statusDetails" : "AssertionError: Incorrect status code",
+        "uid" : "8ed59174bb3a5514",
+        "status" : "passed",
         "time" : {
-          "start" : 1705692147369,
-          "stop" : 1705692147904,
-          "duration" : 535
+          "start" : 1705946299209,
+          "stop" : 1705946299558,
+          "duration" : 349
+        }
+      }, {
+        "uid" : "68128e8cb0f1f686",
+        "status" : "passed",
+        "time" : {
+          "start" : 1705692145779,
+          "stop" : 1705692146300,
+          "duration" : 521
         }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "b5773da677bb536a.json",
+  "source" : "7436ca914d906900.json",
   "parameterValues" : [ ]
 }

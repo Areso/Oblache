@@ -1,12 +1,12 @@
 {
-  "uid" : "d1c4e265f05b0c4d",
-  "name" : "Post login",
-  "fullName" : "tests.test_first.TestPOST#test_post_login",
-  "historyId" : "710cf1fdf63a4a31564e72e8cd86eac7",
+  "uid" : "f64c96dc09c4c852",
+  "name" : "List dbversions",
+  "fullName" : "tests.test_first.TestGET#test_list_dbversions",
+  "historyId" : "c975b0508a93c3bb876068d996c5e279",
   "time" : {
-    "start" : 1705947422938,
-    "stop" : 1705947423258,
-    "duration" : 320
+    "start" : 1705948113114,
+    "stop" : 1705948113509,
+    "duration" : 395
   },
   "status" : "passed",
   "flaky" : false,
@@ -15,18 +15,18 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "Method POST",
+      "name" : "Method GET",
       "time" : {
-        "start" : 1705947422938,
-        "stop" : 1705947423257,
-        "duration" : 319
+        "start" : 1705948113114,
+        "stop" : 1705948113508,
+        "duration" : 394
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "Add request",
         "time" : {
-          "start" : 1705947422938,
-          "stop" : 1705947422938,
+          "start" : 1705948113114,
+          "stop" : 1705948113114,
           "duration" : 0
         },
         "status" : "passed",
@@ -34,124 +34,106 @@
         "attachments" : [ ],
         "parameters" : [ {
           "name" : "url",
-          "value" : "'https://dbend.areso.pro/login'"
+          "value" : "'https://dbend.areso.pro/list_dbversions'"
         }, {
           "name" : "method",
-          "value" : "'POST'"
+          "value" : "'GET'"
         } ],
-        "hasContent" : true,
         "attachmentsCount" : 0,
         "shouldDisplayMessage" : false,
-        "stepsCount" : 0
+        "stepsCount" : 0,
+        "hasContent" : true
       }, {
         "name" : "Add response",
         "time" : {
-          "start" : 1705947423256,
-          "stop" : 1705947423257,
-          "duration" : 1
+          "start" : 1705948113508,
+          "stop" : 1705948113508,
+          "duration" : 0
         },
         "status" : "passed",
         "steps" : [ {
           "name" : "Response code: 200\n",
           "time" : {
-            "start" : 1705947423257,
-            "stop" : 1705947423257,
+            "start" : 1705948113508,
+            "stop" : 1705948113508,
             "duration" : 0
           },
           "status" : "passed",
           "steps" : [ ],
           "attachments" : [ ],
           "parameters" : [ ],
-          "hasContent" : false,
           "attachmentsCount" : 0,
           "shouldDisplayMessage" : false,
-          "stepsCount" : 0
+          "stepsCount" : 0,
+          "hasContent" : false
         }, {
-          "name" : "Response text: msg[6]: login successful\n",
+          "name" : "Response text: {\n    \"5\": [\n        \"mysql8\",\n        \"8.0.20+\"\n    ]\n}\n\n",
           "time" : {
-            "start" : 1705947423257,
-            "stop" : 1705947423257,
+            "start" : 1705948113508,
+            "stop" : 1705948113508,
             "duration" : 0
           },
           "status" : "passed",
           "steps" : [ ],
           "attachments" : [ ],
           "parameters" : [ ],
-          "hasContent" : false,
           "attachmentsCount" : 0,
           "shouldDisplayMessage" : false,
-          "stepsCount" : 0
+          "stepsCount" : 0,
+          "hasContent" : false
         } ],
         "attachments" : [ ],
         "parameters" : [ {
           "name" : "result",
           "value" : "<Response [200]>"
         } ],
-        "hasContent" : true,
         "attachmentsCount" : 0,
         "shouldDisplayMessage" : false,
-        "stepsCount" : 2
+        "stepsCount" : 2,
+        "hasContent" : true
       } ],
       "attachments" : [ ],
       "parameters" : [ {
         "name" : "url",
-        "value" : "'https://dbend.areso.pro/login'"
-      }, {
-        "name" : "body",
-        "value" : "{'email': 'test4', 'password': 'testpassword'}"
+        "value" : "'https://dbend.areso.pro/list_dbversions'"
       } ],
-      "hasContent" : true,
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
-      "stepsCount" : 4
-    }, {
-      "name" : "Body: {\"email\":\"your_email\",\"password\":\"your_password\"}",
-      "time" : {
-        "start" : 1705947423257,
-        "stop" : 1705947423257,
-        "duration" : 0
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "hasContent" : false,
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "stepsCount" : 0
+      "stepsCount" : 4,
+      "hasContent" : true
     } ],
     "attachments" : [ {
-      "uid" : "31f5af0698e03246",
+      "uid" : "3064bab0a3dffbb3",
       "name" : "stdout",
-      "source" : "31f5af0698e03246.txt",
+      "source" : "3064bab0a3dffbb3.txt",
       "type" : "text/plain",
-      "size" : 292
+      "size" : 118
     } ],
     "parameters" : [ ],
-    "hasContent" : true,
     "attachmentsCount" : 1,
     "shouldDisplayMessage" : false,
-    "stepsCount" : 6
+    "stepsCount" : 5,
+    "hasContent" : true
   },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "epic",
-    "value" : "POST REQUESTS"
+    "name" : "subSuite",
+    "value" : "GET"
   }, {
     "name" : "suite",
-    "value" : "REQUESTS POST"
+    "value" : "REQUESTS GET"
   }, {
-    "name" : "subSuite",
-    "value" : "POST"
+    "name" : "epic",
+    "value" : "GET REQUESTS"
   }, {
     "name" : "parentSuite",
     "value" : "tests"
   }, {
     "name" : "host",
-    "value" : "fv-az774-794"
+    "value" : "fv-az692-582"
   }, {
     "name" : "thread",
-    "value" : "1780-MainThread"
+    "value" : "1816-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -176,57 +158,64 @@
     "history" : {
       "statistic" : {
         "failed" : 0,
-        "broken" : 1,
+        "broken" : 0,
         "skipped" : 0,
-        "passed" : 5,
+        "passed" : 7,
         "unknown" : 0,
-        "total" : 6
+        "total" : 7
       },
       "items" : [ {
-        "uid" : "87ced52b21e304aa",
+        "uid" : "fca36dea532c45ac",
         "status" : "passed",
         "time" : {
-          "start" : 1705947019748,
-          "stop" : 1705947020295,
-          "duration" : 547
+          "start" : 1705947421576,
+          "stop" : 1705947421906,
+          "duration" : 330
         }
       }, {
-        "uid" : "60d2da4e03668ea",
+        "uid" : "98f27dbec701a19e",
         "status" : "passed",
         "time" : {
-          "start" : 1705946789260,
-          "stop" : 1705946789639,
-          "duration" : 379
+          "start" : 1705947017388,
+          "stop" : 1705947018075,
+          "duration" : 687
         }
       }, {
-        "uid" : "8e1adf6e29da8f92",
+        "uid" : "46c227f4fd7d9514",
         "status" : "passed",
         "time" : {
-          "start" : 1705946523260,
-          "stop" : 1705946523638,
-          "duration" : 378
+          "start" : 1705946787686,
+          "stop" : 1705946788072,
+          "duration" : 386
         }
       }, {
-        "uid" : "a2a907e79cb09793",
+        "uid" : "f0a363c2b1085ca5",
         "status" : "passed",
         "time" : {
-          "start" : 1705946299560,
-          "stop" : 1705946300059,
-          "duration" : 499
+          "start" : 1705946521661,
+          "stop" : 1705946522067,
+          "duration" : 406
         }
       }, {
-        "uid" : "9fc736691f2ef9c8",
-        "status" : "broken",
-        "statusDetails" : "IndexError: list index out of range",
+        "uid" : "1f04fd26adc457af",
+        "status" : "passed",
         "time" : {
-          "start" : 1705692146302,
-          "stop" : 1705692146800,
-          "duration" : 498
+          "start" : 1705946298518,
+          "stop" : 1705946298859,
+          "duration" : 341
+        }
+      }, {
+        "uid" : "cb33e25806fc7db8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1705692144703,
+          "stop" : 1705692145242,
+          "duration" : 539
         }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "d1c4e265f05b0c4d.json",
+  "source" : "f64c96dc09c4c852.json",
   "parameterValues" : [ ]
 }
