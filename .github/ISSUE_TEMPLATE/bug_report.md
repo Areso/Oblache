@@ -7,32 +7,49 @@ assignees: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+**Discription**
+- The backend returns a phrase where there are two spaces after "There is"
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+**Preconditions:**
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+If necessary
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+**Reproduction steps:**
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+1. 
+2. 
+3.
+
+**Expected Result:**
+Expected :['there is  a match behind the box', 'there is a match under the box']
+
+What we really wanted to see, how it should work
+
+**Actual result:**
+Actual   :['there is a match behind the box', 'there is a match under the box']
+
+What we see after we reproduced the bug
+
+**Environment:**
+
+ - OS: 
+ - Выпуск	Windows 11 Pro
+ - Версия	22H2
+ - Дата установки	‎16.‎10.‎2023
+ - Сборка ОС	22621.3007
+ - Взаимодействие	Windows Feature Experience Pack 1000.22681.1000.0
+ 
+**Priority(High, Medium, Low)**
+- Low
+
+**Severity(Blocker, Critical, Major, Minor, Trivial)**
+- Trivial
+
+**Application:**
+-
+
+**Link to Allure report:**
+https://areso.github.io/Oblache/
 
 **Additional context**
-Add any other context about the problem here.
