@@ -1,34 +1,36 @@
 {
-  "uid" : "991c3d5b290cb603",
+  "uid" : "8bf544e13d76c35b",
   "name" : "delete db",
   "fullName" : "tests.test_first.TestPOST#test_delete_db",
   "historyId" : "26650fb8f64cc90dea4a9b411d36ba62",
   "time" : {
-    "start" : 1705955785221,
-    "stop" : 1705955786372,
-    "duration" : 1151
+    "start" : 1705956089466,
+    "stop" : 1705956089854,
+    "duration" : 388
   },
-  "status" : "passed",
-  "statusMessage" : "XPASS",
+  "status" : "skipped",
+  "statusMessage" : "XFAIL\n\nIndexError: list index out of range",
+  "statusTrace" : "self = <tests.test_first.TestPOST object at 0x7fd19423caf0>\n\n    @allure.sub_suite('DELETE')\n    @allure.title('delete db')\n    @pytest.mark.xfail()\n    def test_delete_db(self):\n        print('\\n\\nMethod DELETE: delete_db')\n        list_db = API.post_db_list(TestData.sid)\n        json_list_db = json.loads(list_db.text)\n>       first_db_uuid = list(json_list_db['content'].keys())[0]\nE       IndexError: list index out of range\n\ntests/test_first.py:92: IndexError",
   "flaky" : false,
   "newFailed" : false,
   "beforeStages" : [ ],
   "testStage" : {
-    "status" : "passed",
-    "statusMessage" : "XPASS",
+    "status" : "skipped",
+    "statusMessage" : "XFAIL\n\nIndexError: list index out of range",
+    "statusTrace" : "self = <tests.test_first.TestPOST object at 0x7fd19423caf0>\n\n    @allure.sub_suite('DELETE')\n    @allure.title('delete db')\n    @pytest.mark.xfail()\n    def test_delete_db(self):\n        print('\\n\\nMethod DELETE: delete_db')\n        list_db = API.post_db_list(TestData.sid)\n        json_list_db = json.loads(list_db.text)\n>       first_db_uuid = list(json_list_db['content'].keys())[0]\nE       IndexError: list index out of range\n\ntests/test_first.py:92: IndexError",
     "steps" : [ {
       "name" : "Method POST",
       "time" : {
-        "start" : 1705955785221,
-        "stop" : 1705955785760,
-        "duration" : 539
+        "start" : 1705956089466,
+        "stop" : 1705956089854,
+        "duration" : 388
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "Add request",
         "time" : {
-          "start" : 1705955785221,
-          "stop" : 1705955785221,
+          "start" : 1705956089466,
+          "stop" : 1705956089466,
           "duration" : 0
         },
         "status" : "passed",
@@ -48,16 +50,16 @@
       }, {
         "name" : "Add response",
         "time" : {
-          "start" : 1705955785760,
-          "stop" : 1705955785760,
+          "start" : 1705956089854,
+          "stop" : 1705956089854,
           "duration" : 0
         },
         "status" : "passed",
         "steps" : [ {
           "name" : "Response code: 200\n",
           "time" : {
-            "start" : 1705955785760,
-            "stop" : 1705955785760,
+            "start" : 1705956089854,
+            "stop" : 1705956089854,
             "duration" : 0
           },
           "status" : "passed",
@@ -69,10 +71,10 @@
           "stepsCount" : 0,
           "hasContent" : false
         }, {
-          "name" : "Response text: {\n    \"content\": {\n        \"065aed02-77b1-7728-8000-ea6d32f3fa83\": [\n            \"db_4pwsbjfk\",\n            \"CIS\",\n            \"db_created\",\n            \"mysql://user_yo34wz7c:pwPW01__9G2OhvrNVaiVCC@cisdb1.areso.pro:3306/db_4pwsbjfk\",\n            \"2024-01-22 20:29:39\"\n        ]\n    }\n}\n\n",
+          "name" : "Response text: {\n    \"content\": {}\n}\n\n",
           "time" : {
-            "start" : 1705955785760,
-            "stop" : 1705955785760,
+            "start" : 1705956089854,
+            "stop" : 1705956089854,
             "duration" : 0
           },
           "status" : "passed",
@@ -103,100 +105,7 @@
         "value" : "{}"
       }, {
         "name" : "cookie",
-        "value" : "{'sid': '14eb5502-beff-468e-b4da-4d9b581a9107'}"
-      } ],
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "stepsCount" : 4,
-      "hasContent" : true
-    }, {
-      "name" : "Method POST",
-      "time" : {
-        "start" : 1705955785760,
-        "stop" : 1705955786371,
-        "duration" : 611
-      },
-      "status" : "passed",
-      "steps" : [ {
-        "name" : "Add request",
-        "time" : {
-          "start" : 1705955785760,
-          "stop" : 1705955785760,
-          "duration" : 0
-        },
-        "status" : "passed",
-        "steps" : [ ],
-        "attachments" : [ ],
-        "parameters" : [ {
-          "name" : "url",
-          "value" : "'https://dbend.areso.pro/db_delete'"
-        }, {
-          "name" : "method",
-          "value" : "'POST'"
-        } ],
-        "attachmentsCount" : 0,
-        "shouldDisplayMessage" : false,
-        "stepsCount" : 0,
-        "hasContent" : true
-      }, {
-        "name" : "Add response",
-        "time" : {
-          "start" : 1705955786370,
-          "stop" : 1705955786370,
-          "duration" : 0
-        },
-        "status" : "passed",
-        "steps" : [ {
-          "name" : "Response code: 200\n",
-          "time" : {
-            "start" : 1705955786370,
-            "stop" : 1705955786370,
-            "duration" : 0
-          },
-          "status" : "passed",
-          "steps" : [ ],
-          "attachments" : [ ],
-          "parameters" : [ ],
-          "attachmentsCount" : 0,
-          "shouldDisplayMessage" : false,
-          "stepsCount" : 0,
-          "hasContent" : false
-        }, {
-          "name" : "Response text: {\n    \"content\": \"msg[13]: successfully accepted request for deletion\"\n}\n\n",
-          "time" : {
-            "start" : 1705955786370,
-            "stop" : 1705955786370,
-            "duration" : 0
-          },
-          "status" : "passed",
-          "steps" : [ ],
-          "attachments" : [ ],
-          "parameters" : [ ],
-          "attachmentsCount" : 0,
-          "shouldDisplayMessage" : false,
-          "stepsCount" : 0,
-          "hasContent" : false
-        } ],
-        "attachments" : [ ],
-        "parameters" : [ {
-          "name" : "result",
-          "value" : "<Response [200]>"
-        } ],
-        "attachmentsCount" : 0,
-        "shouldDisplayMessage" : false,
-        "stepsCount" : 2,
-        "hasContent" : true
-      } ],
-      "attachments" : [ ],
-      "parameters" : [ {
-        "name" : "url",
-        "value" : "'https://dbend.areso.pro/db_delete'"
-      }, {
-        "name" : "db_uuid",
-        "value" : "'{\"db_uuid\": \"065aed02-77b1-7728-8000-ea6d32f3fa83\"}'"
-      }, {
-        "name" : "sid",
-        "value" : "{'sid': '14eb5502-beff-468e-b4da-4d9b581a9107'}"
+        "value" : "{'sid': '68b17d68-0dc8-48d3-b936-7a94f9a2bc9f'}"
       } ],
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
@@ -204,28 +113,28 @@
       "hasContent" : true
     } ],
     "attachments" : [ {
-      "uid" : "db907b7bdd904cf7",
+      "uid" : "a62f4c1dc5e5f558",
       "name" : "stdout",
-      "source" : "db907b7bdd904cf7.txt",
+      "source" : "a62f4c1dc5e5f558.txt",
       "type" : "text/plain",
-      "size" : 530
+      "size" : 98
     } ],
     "parameters" : [ ],
     "attachmentsCount" : 1,
     "shouldDisplayMessage" : true,
-    "stepsCount" : 10,
+    "stepsCount" : 5,
     "hasContent" : true
   },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "epic",
-    "value" : "POST REQUESTS"
-  }, {
     "name" : "suite",
     "value" : "REQUESTS POST"
   }, {
     "name" : "subSuite",
     "value" : "DELETE"
+  }, {
+    "name" : "epic",
+    "value" : "POST REQUESTS"
   }, {
     "name" : "tag",
     "value" : "@pytest.mark.xfail"
@@ -234,10 +143,10 @@
     "value" : "tests"
   }, {
     "name" : "host",
-    "value" : "fv-az735-376"
+    "value" : "fv-az1242-8"
   }, {
     "name" : "thread",
-    "value" : "1855-MainThread"
+    "value" : "1951-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -263,12 +172,21 @@
       "statistic" : {
         "failed" : 0,
         "broken" : 0,
-        "skipped" : 9,
+        "skipped" : 10,
         "passed" : 2,
         "unknown" : 0,
-        "total" : 11
+        "total" : 12
       },
       "items" : [ {
+        "uid" : "991c3d5b290cb603",
+        "status" : "passed",
+        "statusDetails" : "XPASS",
+        "time" : {
+          "start" : 1705955785221,
+          "stop" : 1705955786372,
+          "duration" : 1151
+        }
+      }, {
         "uid" : "78074edc6472a470",
         "status" : "passed",
         "statusDetails" : "XPASS",
@@ -362,6 +280,6 @@
     },
     "tags" : [ "@pytest.mark.xfail" ]
   },
-  "source" : "991c3d5b290cb603.json",
+  "source" : "8bf544e13d76c35b.json",
   "parameterValues" : [ ]
 }
