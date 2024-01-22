@@ -1,5 +1,6 @@
 import json
 import random
+import time
 from string import ascii_letters
 
 import allure
@@ -107,9 +108,11 @@ class TestConnectionDB:
 
 class TestLoadDB:
     def test_create_table(self):
-        """
-        :return:
-        """
+        result_db_create = API.post_db_create(TestData.sid)
+        print('Status db is :', result_db_create.json())
+        db_uuid = result_db_create.json()["db_uuid"]
+        print("db_uuid", db_uuid)
+        time.sleep(60)
         query = '''
         CREATE TABLE IF NOT EXISTS accounts(
         userid INT PRIMARY KEY AUTO_INCREMENT,
@@ -118,28 +121,47 @@ class TestLoadDB:
         text varchar(4096),
         email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
         '''
-        db = TestData.connection("065a5c25-6bd0-7a6e-8000-a9830730182e")
+        db = TestData.connection(f"065aec28-668f-7154-8000-e56a08c36273")
         cursor = db.cursor()
         cursor.execute(query)
         db.commit()
 
-    def test_load_table2(self):
-        """
-        :return:
-        """
-        db = TestData.connection("065a5c25-6bd0-7a6e-8000-a9830730182e")
+        db = TestData.connection(f"065aec28-668f-7154-8000-e56a08c36273")
         letters = ascii_letters
         cursor = db.cursor()
         for x in range(10):
             for i in range(10):
                 my_string = "".join(random.choice(letters) for _ in range(4096))
                 cursor.execute("""
-                        INSERT INTO accounts (name, text) 
-                        VALUES (
-                        'lambotik',
-                        %(my_string)s);""",
+                                INSERT INTO accounts (name, text) 
+                                VALUES (
+                                'lambotik',
+                                %(my_string)s);""",
                                {'my_string': my_string})
             db.commit()
         cursor.execute('''select * from accounts''')
         res = cursor.fetchall()
         print(res)
+        API.delete_db("065aec28-668f-7154-8000-e56a08c36273", TestData.sid)
+
+
+    # def test_load_table2(self):
+    #     """
+    #     :return:
+    #     """
+    #     db = TestData.connection("065a5c25-6bd0-7a6e-8000-a9830730182e")
+    #     letters = ascii_letters
+    #     cursor = db.cursor()
+    #     for x in range(10):
+    #         for i in range(10):
+    #             my_string = "".join(random.choice(letters) for _ in range(4096))
+    #             cursor.execute("""
+    #                     INSERT INTO accounts (name, text)
+    #                     VALUES (
+    #                     'lambotik',
+    #                     %(my_string)s);""",
+    #                            {'my_string': my_string})
+    #         db.commit()
+    #     cursor.execute('''select * from accounts''')
+    #     res = cursor.fetchall()
+    #     print(res)

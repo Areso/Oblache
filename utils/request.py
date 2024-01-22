@@ -100,8 +100,7 @@ class API(TestData):
         post_url = TestData.base_url + post_resource
         print(post_url)
         result_post = HttpMethods.post_set_cookie(post_url, {}, sid)
-        print('Response: ')
-        print(result_post.text)
+        print('Response body: ', result_post.text)
         return result_post
 
     @staticmethod
