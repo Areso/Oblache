@@ -1,12 +1,12 @@
 {
-  "uid" : "513552e27e41f2cc",
-  "name" : "Post db list",
-  "fullName" : "tests.test_first.TestPOST#test_post_db_list",
-  "historyId" : "6364d06d5cf83d3bb6572507477edc14",
+  "uid" : "7598bf09e6898d72",
+  "name" : "List dbversions",
+  "fullName" : "tests.test_first.TestGET#test_list_dbversions",
+  "historyId" : "c975b0508a93c3bb876068d996c5e279",
   "time" : {
-    "start" : 1705956922885,
-    "stop" : 1705956923271,
-    "duration" : 386
+    "start" : 1706213874333,
+    "stop" : 1706213874685,
+    "duration" : 352
   },
   "status" : "passed",
   "flaky" : false,
@@ -15,18 +15,18 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "Method POST",
+      "name" : "Method GET",
       "time" : {
-        "start" : 1705956922885,
-        "stop" : 1705956923270,
-        "duration" : 385
+        "start" : 1706213874333,
+        "stop" : 1706213874683,
+        "duration" : 350
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "Add request",
         "time" : {
-          "start" : 1705956922885,
-          "stop" : 1705956922885,
+          "start" : 1706213874333,
+          "stop" : 1706213874333,
           "duration" : 0
         },
         "status" : "passed",
@@ -34,10 +34,10 @@
         "attachments" : [ ],
         "parameters" : [ {
           "name" : "url",
-          "value" : "'https://dbend.areso.pro/db_list'"
+          "value" : "'https://dbend.areso.pro/list_dbversions'"
         }, {
           "name" : "method",
-          "value" : "'POST'"
+          "value" : "'GET'"
         } ],
         "attachmentsCount" : 0,
         "shouldDisplayMessage" : false,
@@ -46,16 +46,16 @@
       }, {
         "name" : "Add response",
         "time" : {
-          "start" : 1705956923270,
-          "stop" : 1705956923270,
+          "start" : 1706213874683,
+          "stop" : 1706213874683,
           "duration" : 0
         },
         "status" : "passed",
         "steps" : [ {
           "name" : "Response code: 200\n",
           "time" : {
-            "start" : 1705956923270,
-            "stop" : 1705956923270,
+            "start" : 1706213874683,
+            "stop" : 1706213874683,
             "duration" : 0
           },
           "status" : "passed",
@@ -67,10 +67,10 @@
           "stepsCount" : 0,
           "hasContent" : false
         }, {
-          "name" : "Response text: {\n    \"content\": {}\n}\n\n",
+          "name" : "Response text: {\n    \"5\": [\n        \"mysql8\",\n        \"8.0.20+\"\n    ]\n}\n\n",
           "time" : {
-            "start" : 1705956923270,
-            "stop" : 1705956923270,
+            "start" : 1706213874683,
+            "stop" : 1706213874683,
             "duration" : 0
           },
           "status" : "passed",
@@ -95,13 +95,7 @@
       "attachments" : [ ],
       "parameters" : [ {
         "name" : "url",
-        "value" : "'https://dbend.areso.pro/db_list'"
-      }, {
-        "name" : "body",
-        "value" : "{}"
-      }, {
-        "name" : "cookie",
-        "value" : "{'sid': '07b9d972-13c2-404a-b4ef-4bc5a6b62fe4'}"
+        "value" : "'https://dbend.areso.pro/list_dbversions'"
       } ],
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
@@ -109,11 +103,11 @@
       "hasContent" : true
     } ],
     "attachments" : [ {
-      "uid" : "2f8a3c5cbc461695",
+      "uid" : "ca77ea7fae2face3",
       "name" : "stdout",
-      "source" : "2f8a3c5cbc461695.txt",
+      "source" : "ca77ea7fae2face3.txt",
       "type" : "text/plain",
-      "size" : 114
+      "size" : 118
     } ],
     "parameters" : [ ],
     "attachmentsCount" : 1,
@@ -124,22 +118,22 @@
   "afterStages" : [ ],
   "labels" : [ {
     "name" : "subSuite",
-    "value" : "POST"
-  }, {
-    "name" : "epic",
-    "value" : "POST REQUESTS"
+    "value" : "GET"
   }, {
     "name" : "suite",
-    "value" : "REQUESTS POST"
+    "value" : "REQUESTS GET"
+  }, {
+    "name" : "epic",
+    "value" : "GET REQUESTS"
   }, {
     "name" : "parentSuite",
     "value" : "tests"
   }, {
     "name" : "host",
-    "value" : "fv-az1014-809"
+    "value" : "fv-az777-300"
   }, {
     "name" : "thread",
-    "value" : "1819-MainThread"
+    "value" : "1835-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -163,114 +157,121 @@
     "categories" : [ ],
     "history" : {
       "statistic" : {
-        "failed" : 1,
+        "failed" : 0,
         "broken" : 0,
         "skipped" : 0,
-        "passed" : 12,
+        "passed" : 14,
         "unknown" : 0,
-        "total" : 13
+        "total" : 14
       },
       "items" : [ {
-        "uid" : "401b378be6e8ca0a",
+        "uid" : "61dbc2d26737a6eb",
         "status" : "passed",
         "time" : {
-          "start" : 1705956089069,
-          "stop" : 1705956089464,
+          "start" : 1705956920925,
+          "stop" : 1705956921324,
+          "duration" : 399
+        }
+      }, {
+        "uid" : "9027631b6b58d5a3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1705956087123,
+          "stop" : 1705956087498,
+          "duration" : 375
+        }
+      }, {
+        "uid" : "dc40a6d7d8ce5167",
+        "status" : "passed",
+        "time" : {
+          "start" : 1705955781762,
+          "stop" : 1705955782411,
+          "duration" : 649
+        }
+      }, {
+        "uid" : "ed18f76e75fdc18",
+        "status" : "passed",
+        "time" : {
+          "start" : 1705955333901,
+          "stop" : 1705955334242,
+          "duration" : 341
+        }
+      }, {
+        "uid" : "ab5fe6966aab2f2c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1705954935602,
+          "stop" : 1705954935999,
+          "duration" : 397
+        }
+      }, {
+        "uid" : "4e9d5f69c75d1e31",
+        "status" : "passed",
+        "time" : {
+          "start" : 1705948758150,
+          "stop" : 1705948758501,
+          "duration" : 351
+        }
+      }, {
+        "uid" : "f64c96dc09c4c852",
+        "status" : "passed",
+        "time" : {
+          "start" : 1705948113114,
+          "stop" : 1705948113509,
           "duration" : 395
         }
       }, {
-        "uid" : "70659458f19dac9b",
+        "uid" : "fca36dea532c45ac",
         "status" : "passed",
         "time" : {
-          "start" : 1705955784696,
-          "stop" : 1705955785219,
-          "duration" : 523
-        }
-      }, {
-        "uid" : "700cddc2302af476",
-        "status" : "passed",
-        "time" : {
-          "start" : 1705955335751,
-          "stop" : 1705955336097,
-          "duration" : 346
-        }
-      }, {
-        "uid" : "e5fda298794a82f9",
-        "status" : "passed",
-        "time" : {
-          "start" : 1705954937590,
-          "stop" : 1705954937994,
-          "duration" : 404
-        }
-      }, {
-        "uid" : "dafb83653b688cad",
-        "status" : "passed",
-        "time" : {
-          "start" : 1705948759904,
-          "stop" : 1705948760244,
-          "duration" : 340
-        }
-      }, {
-        "uid" : "323a231a9db12179",
-        "status" : "passed",
-        "time" : {
-          "start" : 1705948115533,
-          "stop" : 1705948115912,
-          "duration" : 379
-        }
-      }, {
-        "uid" : "b5773da677bb536a",
-        "status" : "passed",
-        "time" : {
-          "start" : 1705947423644,
-          "stop" : 1705947423971,
-          "duration" : 327
-        }
-      }, {
-        "uid" : "cb9f3ea5749a2924",
-        "status" : "passed",
-        "time" : {
-          "start" : 1705947020907,
-          "stop" : 1705947021446,
-          "duration" : 539
-        }
-      }, {
-        "uid" : "180f6966de34e237",
-        "status" : "passed",
-        "time" : {
-          "start" : 1705946790250,
-          "stop" : 1705946790641,
-          "duration" : 391
-        }
-      }, {
-        "uid" : "825498bb7ca6def8",
-        "status" : "passed",
-        "time" : {
-          "start" : 1705946524112,
-          "stop" : 1705946524656,
-          "duration" : 544
-        }
-      }, {
-        "uid" : "3025dde06ffc39d",
-        "status" : "passed",
-        "time" : {
-          "start" : 1705946300471,
-          "stop" : 1705946300801,
+          "start" : 1705947421576,
+          "stop" : 1705947421906,
           "duration" : 330
         }
       }, {
-        "uid" : "801348c091f3a418",
-        "status" : "failed",
-        "statusDetails" : "AssertionError: Incorrect status code",
+        "uid" : "98f27dbec701a19e",
+        "status" : "passed",
         "time" : {
-          "start" : 1705692147369,
-          "stop" : 1705692147904,
-          "duration" : 535
+          "start" : 1705947017388,
+          "stop" : 1705947018075,
+          "duration" : 687
+        }
+      }, {
+        "uid" : "46c227f4fd7d9514",
+        "status" : "passed",
+        "time" : {
+          "start" : 1705946787686,
+          "stop" : 1705946788072,
+          "duration" : 386
+        }
+      }, {
+        "uid" : "f0a363c2b1085ca5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1705946521661,
+          "stop" : 1705946522067,
+          "duration" : 406
+        }
+      }, {
+        "uid" : "1f04fd26adc457af",
+        "status" : "passed",
+        "time" : {
+          "start" : 1705946298518,
+          "stop" : 1705946298859,
+          "duration" : 341
+        }
+      }, {
+        "uid" : "cb33e25806fc7db8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1705692144703,
+          "stop" : 1705692145242,
+          "duration" : 539
         }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "513552e27e41f2cc.json",
+  "source" : "7598bf09e6898d72.json",
   "parameterValues" : [ ]
 }

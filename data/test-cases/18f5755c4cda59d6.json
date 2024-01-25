@@ -1,36 +1,36 @@
 {
-  "uid" : "c5ef9559734b5ddf",
+  "uid" : "18f5755c4cda59d6",
   "name" : "delete db",
   "fullName" : "tests.test_first.TestPOST#test_delete_db",
   "historyId" : "26650fb8f64cc90dea4a9b411d36ba62",
   "time" : {
-    "start" : 1705956923273,
-    "stop" : 1705956923661,
-    "duration" : 388
+    "start" : 1706213876429,
+    "stop" : 1706213876756,
+    "duration" : 327
   },
   "status" : "skipped",
   "statusMessage" : "XFAIL\n\nIndexError: list index out of range",
-  "statusTrace" : "self = <tests.test_first.TestPOST object at 0x7f2c91900ca0>\n\n    @allure.sub_suite('DELETE')\n    @allure.title('delete db')\n    @pytest.mark.xfail()\n    def test_delete_db(self):\n        print('\\n\\nMethod DELETE: delete_db')\n        list_db = API.post_db_list(TestData.sid)\n        json_list_db = json.loads(list_db.text)\n>       first_db_uuid = list(json_list_db['content'].keys())[0]\nE       IndexError: list index out of range\n\ntests/test_first.py:92: IndexError",
+  "statusTrace" : "self = <tests.test_first.TestPOST object at 0x7fd2ba844ca0>\n\n    @allure.sub_suite('DELETE')\n    @allure.title('delete db')\n    @pytest.mark.xfail()\n    def test_delete_db(self):\n        print('\\n\\nMethod DELETE: delete_db')\n        list_db = API.post_db_list(TestData.sid)\n        json_list_db = json.loads(list_db.text)\n>       first_db_uuid = list(json_list_db['content'].keys())[0]\nE       IndexError: list index out of range\n\ntests/test_first.py:92: IndexError",
   "flaky" : false,
   "newFailed" : false,
   "beforeStages" : [ ],
   "testStage" : {
     "status" : "skipped",
     "statusMessage" : "XFAIL\n\nIndexError: list index out of range",
-    "statusTrace" : "self = <tests.test_first.TestPOST object at 0x7f2c91900ca0>\n\n    @allure.sub_suite('DELETE')\n    @allure.title('delete db')\n    @pytest.mark.xfail()\n    def test_delete_db(self):\n        print('\\n\\nMethod DELETE: delete_db')\n        list_db = API.post_db_list(TestData.sid)\n        json_list_db = json.loads(list_db.text)\n>       first_db_uuid = list(json_list_db['content'].keys())[0]\nE       IndexError: list index out of range\n\ntests/test_first.py:92: IndexError",
+    "statusTrace" : "self = <tests.test_first.TestPOST object at 0x7fd2ba844ca0>\n\n    @allure.sub_suite('DELETE')\n    @allure.title('delete db')\n    @pytest.mark.xfail()\n    def test_delete_db(self):\n        print('\\n\\nMethod DELETE: delete_db')\n        list_db = API.post_db_list(TestData.sid)\n        json_list_db = json.loads(list_db.text)\n>       first_db_uuid = list(json_list_db['content'].keys())[0]\nE       IndexError: list index out of range\n\ntests/test_first.py:92: IndexError",
     "steps" : [ {
       "name" : "Method POST",
       "time" : {
-        "start" : 1705956923273,
-        "stop" : 1705956923661,
-        "duration" : 388
+        "start" : 1706213876429,
+        "stop" : 1706213876756,
+        "duration" : 327
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "Add request",
         "time" : {
-          "start" : 1705956923273,
-          "stop" : 1705956923273,
+          "start" : 1706213876430,
+          "stop" : 1706213876430,
           "duration" : 0
         },
         "status" : "passed",
@@ -50,16 +50,16 @@
       }, {
         "name" : "Add response",
         "time" : {
-          "start" : 1705956923660,
-          "stop" : 1705956923661,
-          "duration" : 1
+          "start" : 1706213876756,
+          "stop" : 1706213876756,
+          "duration" : 0
         },
         "status" : "passed",
         "steps" : [ {
           "name" : "Response code: 200\n",
           "time" : {
-            "start" : 1705956923660,
-            "stop" : 1705956923660,
+            "start" : 1706213876756,
+            "stop" : 1706213876756,
             "duration" : 0
           },
           "status" : "passed",
@@ -73,8 +73,8 @@
         }, {
           "name" : "Response text: {\n    \"content\": {}\n}\n\n",
           "time" : {
-            "start" : 1705956923660,
-            "stop" : 1705956923660,
+            "start" : 1706213876756,
+            "stop" : 1706213876756,
             "duration" : 0
           },
           "status" : "passed",
@@ -105,7 +105,7 @@
         "value" : "{}"
       }, {
         "name" : "cookie",
-        "value" : "{'sid': '07b9d972-13c2-404a-b4ef-4bc5a6b62fe4'}"
+        "value" : "{'sid': '9bf9f66f-e570-489c-8c37-652f8f3ffe7b'}"
       } ],
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
@@ -113,9 +113,9 @@
       "hasContent" : true
     } ],
     "attachments" : [ {
-      "uid" : "9ab12f63add20180",
+      "uid" : "17ff2aab0e1393d1",
       "name" : "stdout",
-      "source" : "9ab12f63add20180.txt",
+      "source" : "17ff2aab0e1393d1.txt",
       "type" : "text/plain",
       "size" : 98
     } ],
@@ -127,14 +127,14 @@
   },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "suite",
-    "value" : "REQUESTS POST"
+    "name" : "subSuite",
+    "value" : "DELETE"
   }, {
     "name" : "epic",
     "value" : "POST REQUESTS"
   }, {
-    "name" : "subSuite",
-    "value" : "DELETE"
+    "name" : "suite",
+    "value" : "REQUESTS POST"
   }, {
     "name" : "tag",
     "value" : "@pytest.mark.xfail"
@@ -143,10 +143,10 @@
     "value" : "tests"
   }, {
     "name" : "host",
-    "value" : "fv-az1014-809"
+    "value" : "fv-az777-300"
   }, {
     "name" : "thread",
-    "value" : "1819-MainThread"
+    "value" : "1835-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -172,12 +172,21 @@
       "statistic" : {
         "failed" : 0,
         "broken" : 0,
-        "skipped" : 11,
+        "skipped" : 12,
         "passed" : 2,
         "unknown" : 0,
-        "total" : 13
+        "total" : 14
       },
       "items" : [ {
+        "uid" : "c5ef9559734b5ddf",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL\n\nIndexError: list index out of range",
+        "time" : {
+          "start" : 1705956923273,
+          "stop" : 1705956923661,
+          "duration" : 388
+        }
+      }, {
         "uid" : "8bf544e13d76c35b",
         "status" : "skipped",
         "statusDetails" : "XFAIL\n\nIndexError: list index out of range",
@@ -289,6 +298,6 @@
     },
     "tags" : [ "@pytest.mark.xfail" ]
   },
-  "source" : "c5ef9559734b5ddf.json",
+  "source" : "18f5755c4cda59d6.json",
   "parameterValues" : [ ]
 }
