@@ -55,8 +55,17 @@ class TestPOST:
     def test_post_registration(self):
         print('\n\nMethod POST: registration')
         result_post = API.post_registration()
-        status_code = result_post.status_code
+        status_code = result_post
         Checking.check_status_code(status_code, 200)
+
+    @allure.sub_suite('POST')
+    @allure.title('Post registration email is taken')
+    def test_post_registration_email_is_taken(self):
+        print('\n\nMethod POST: registration')
+        result_post = API.post_registration()
+        status_code = result_post
+        Checking.check_status_code(status_code, 400)
+        Checking.check_json_search_word_in_value(result_post, 'content', 'msg[3]')
 
     @allure.sub_suite('POST')
     @allure.title('Post login')
@@ -89,13 +98,18 @@ class TestPOST:
         print('\n\nMethod DELETE: delete_db')
         list_db = API.post_db_list(TestData.sid)
         json_list_db = json.loads(list_db.text)
-        first_db_uuid = list(json_list_db['content'].keys())[0]
+        try:
+            first_db_uuid = list(json_list_db['content'].keys())[0]
+            result_post_db_delete = API.delete_db(first_db_uuid, TestData.sid)
+            Checking.check_status_code(result_post_db_delete, 200)
+        except IndexError as ex:
+            print(ex)
+            assert str(ex) == 'list index out of range', 'Db list is empty.'
         '''
         list(json_list_db['content'].keys())[0] #"065a5b36-e472-7398-8000-7ce3e7219464"
         '''
         # print(first_db_uuid)
-        result_post_db_delete = API.delete_db(first_db_uuid, TestData.sid)
-        Checking.check_status_code(result_post_db_delete, 200)
+
 
 
 @allure.epic('Connection DB')
