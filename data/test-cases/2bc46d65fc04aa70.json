@@ -1,12 +1,12 @@
 {
-  "uid" : "a3ca0b6a666b8551",
-  "name" : "test tos",
-  "fullName" : "tests.test_bd.TestGET#test_tos",
-  "historyId" : "8b98d28890b5c734f92328870cdafef0",
+  "uid" : "2bc46d65fc04aa70",
+  "name" : "List dbversions",
+  "fullName" : "tests.test_bd.TestGET#test_list_dbversions",
+  "historyId" : "244e9bf48a4161b6d7bd16b5dff63506",
   "time" : {
-    "start" : 1706630057905,
-    "stop" : 1706630058317,
-    "duration" : 412
+    "start" : 1706630297489,
+    "stop" : 1706630297863,
+    "duration" : 374
   },
   "status" : "passed",
   "flaky" : false,
@@ -17,16 +17,16 @@
     "steps" : [ {
       "name" : "Method GET",
       "time" : {
-        "start" : 1706630057906,
-        "stop" : 1706630058315,
-        "duration" : 409
+        "start" : 1706630297489,
+        "stop" : 1706630297863,
+        "duration" : 374
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "Add request",
         "time" : {
-          "start" : 1706630057906,
-          "stop" : 1706630057906,
+          "start" : 1706630297489,
+          "stop" : 1706630297489,
           "duration" : 0
         },
         "status" : "passed",
@@ -34,7 +34,7 @@
         "attachments" : [ ],
         "parameters" : [ {
           "name" : "url",
-          "value" : "'https://dbend.areso.pro/tos'"
+          "value" : "'https://dbend.areso.pro/list_dbversions'"
         }, {
           "name" : "method",
           "value" : "'GET'"
@@ -46,16 +46,16 @@
       }, {
         "name" : "Add response",
         "time" : {
-          "start" : 1706630058315,
-          "stop" : 1706630058315,
+          "start" : 1706630297862,
+          "stop" : 1706630297862,
           "duration" : 0
         },
         "status" : "passed",
         "steps" : [ {
           "name" : "Response code: 200\n",
           "time" : {
-            "start" : 1706630058315,
-            "stop" : 1706630058315,
+            "start" : 1706630297862,
+            "stop" : 1706630297862,
             "duration" : 0
           },
           "status" : "passed",
@@ -67,10 +67,10 @@
           "stepsCount" : 0,
           "hasContent" : false
         }, {
-          "name" : "Response text: \"Hello. This pet-project (later Project) works AS IS, no warranty at all.\\nUsing Project, you agree to that.\\nYou MUST create backups of your databases for sake reasons.\\nBecause I do run project on my own pocket money, \\nI limit total size of the databases per 1 user as 100 MBs.\\nAny account don't used more than 6 monts is subject for deletion with all databases.\"\n\n",
+          "name" : "Response text: {\n    \"5\": [\n        \"mysql8\",\n        \"8.0.20+\"\n    ]\n}\n\n",
           "time" : {
-            "start" : 1706630058315,
-            "stop" : 1706630058315,
+            "start" : 1706630297862,
+            "stop" : 1706630297862,
             "duration" : 0
           },
           "status" : "passed",
@@ -95,7 +95,7 @@
       "attachments" : [ ],
       "parameters" : [ {
         "name" : "url",
-        "value" : "'https://dbend.areso.pro/tos'"
+        "value" : "'https://dbend.areso.pro/list_dbversions'"
       } ],
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
@@ -103,11 +103,11 @@
       "hasContent" : true
     } ],
     "attachments" : [ {
-      "uid" : "6e914238b02da79e",
+      "uid" : "49643da9111e79ef",
       "name" : "stdout",
-      "source" : "6e914238b02da79e.txt",
+      "source" : "49643da9111e79ef.txt",
       "type" : "text/plain",
-      "size" : 417
+      "size" : 118
     } ],
     "parameters" : [ ],
     "attachmentsCount" : 1,
@@ -120,20 +120,20 @@
     "name" : "subSuite",
     "value" : "GET"
   }, {
-    "name" : "suite",
-    "value" : "REQUESTS GET"
-  }, {
     "name" : "epic",
     "value" : "GET REQUESTS"
+  }, {
+    "name" : "suite",
+    "value" : "REQUESTS GET"
   }, {
     "name" : "parentSuite",
     "value" : "tests"
   }, {
     "name" : "host",
-    "value" : "fv-az1530-620"
+    "value" : "fv-az693-896"
   }, {
     "name" : "thread",
-    "value" : "1786-MainThread"
+    "value" : "1800-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -160,30 +160,38 @@
         "failed" : 0,
         "broken" : 0,
         "skipped" : 0,
-        "passed" : 3,
+        "passed" : 4,
         "unknown" : 0,
-        "total" : 3
+        "total" : 4
       },
       "items" : [ {
-        "uid" : "43591d309aec84df",
+        "uid" : "83f3233f436f7cac",
         "status" : "passed",
         "time" : {
-          "start" : 1706484248197,
-          "stop" : 1706484248609,
-          "duration" : 412
+          "start" : 1706630058736,
+          "stop" : 1706630059121,
+          "duration" : 385
         }
       }, {
-        "uid" : "9bb23e08156c9e2f",
+        "uid" : "1721961a96b00399",
         "status" : "passed",
         "time" : {
-          "start" : 1706282535027,
-          "stop" : 1706282535376,
-          "duration" : 349
+          "start" : 1706484249013,
+          "stop" : 1706484249399,
+          "duration" : 386
+        }
+      }, {
+        "uid" : "bf558e26c934f68c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1706282535752,
+          "stop" : 1706282536120,
+          "duration" : 368
         }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "a3ca0b6a666b8551.json",
+  "source" : "2bc46d65fc04aa70.json",
   "parameterValues" : [ ]
 }

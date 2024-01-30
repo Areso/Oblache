@@ -1,12 +1,12 @@
 {
-  "uid" : "bc6dd17eb55c473f",
-  "name" : "Post registration email is taken",
-  "fullName" : "tests.test_bd.TestPOST#test_post_registration_email_is_taken",
-  "historyId" : "0f4134fbee9ce9a1e38b38e03bf163a2",
+  "uid" : "146266519cc3e4c2",
+  "name" : "List dbtypes",
+  "fullName" : "tests.test_bd.TestGET#test_list_dbtypes",
+  "historyId" : "883e12ccb2b08424610aa5b801af1bf5",
   "time" : {
-    "start" : 1706630060328,
-    "stop" : 1706630060732,
-    "duration" : 404
+    "start" : 1706630296979,
+    "stop" : 1706630297487,
+    "duration" : 508
   },
   "status" : "passed",
   "flaky" : false,
@@ -15,18 +15,18 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "Method POST",
+      "name" : "Method GET",
       "time" : {
-        "start" : 1706630060328,
-        "stop" : 1706630060730,
-        "duration" : 402
+        "start" : 1706630296980,
+        "stop" : 1706630297487,
+        "duration" : 507
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "Add request",
         "time" : {
-          "start" : 1706630060328,
-          "stop" : 1706630060328,
+          "start" : 1706630296980,
+          "stop" : 1706630296980,
           "duration" : 0
         },
         "status" : "passed",
@@ -34,10 +34,10 @@
         "attachments" : [ ],
         "parameters" : [ {
           "name" : "url",
-          "value" : "'https://dbend.areso.pro/register'"
+          "value" : "'https://dbend.areso.pro/list_dbtypes'"
         }, {
           "name" : "method",
-          "value" : "'POST'"
+          "value" : "'GET'"
         } ],
         "attachmentsCount" : 0,
         "shouldDisplayMessage" : false,
@@ -46,16 +46,16 @@
       }, {
         "name" : "Add response",
         "time" : {
-          "start" : 1706630060730,
-          "stop" : 1706630060730,
-          "duration" : 0
+          "start" : 1706630297486,
+          "stop" : 1706630297487,
+          "duration" : 1
         },
         "status" : "passed",
         "steps" : [ {
-          "name" : "Response code: 400\n",
+          "name" : "Response code: 200\n",
           "time" : {
-            "start" : 1706630060730,
-            "stop" : 1706630060730,
+            "start" : 1706630297487,
+            "stop" : 1706630297487,
             "duration" : 0
           },
           "status" : "passed",
@@ -67,10 +67,10 @@
           "stepsCount" : 0,
           "hasContent" : false
         }, {
-          "name" : "Response text: {\n    \"content\": \"msg[3]: registration failed, this email is taken\"\n}\n\n",
+          "name" : "Response text: {\n    \"3\": \"mysql8\"\n}\n\n",
           "time" : {
-            "start" : 1706630060730,
-            "stop" : 1706630060730,
+            "start" : 1706630297487,
+            "stop" : 1706630297487,
             "duration" : 0
           },
           "status" : "passed",
@@ -85,7 +85,7 @@
         "attachments" : [ ],
         "parameters" : [ {
           "name" : "result",
-          "value" : "<Response [400]>"
+          "value" : "<Response [200]>"
         } ],
         "attachmentsCount" : 0,
         "shouldDisplayMessage" : false,
@@ -95,10 +95,7 @@
       "attachments" : [ ],
       "parameters" : [ {
         "name" : "url",
-        "value" : "'https://dbend.areso.pro/register'"
-      }, {
-        "name" : "body",
-        "value" : "{'email': 'test4', 'password': 'testpassword'}"
+        "value" : "'https://dbend.areso.pro/list_dbtypes'"
       } ],
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
@@ -106,11 +103,11 @@
       "hasContent" : true
     } ],
     "attachments" : [ {
-      "uid" : "6549e4e850467c2b",
+      "uid" : "6e26b30b2ff4948c",
       "name" : "stdout",
-      "source" : "6549e4e850467c2b.txt",
+      "source" : "6e26b30b2ff4948c.txt",
       "type" : "text/plain",
-      "size" : 207
+      "size" : 80
     } ],
     "parameters" : [ ],
     "attachmentsCount" : 1,
@@ -121,22 +118,22 @@
   "afterStages" : [ ],
   "labels" : [ {
     "name" : "subSuite",
-    "value" : "POST"
-  }, {
-    "name" : "suite",
-    "value" : "REQUESTS POST"
+    "value" : "GET"
   }, {
     "name" : "epic",
-    "value" : "POST REQUESTS"
+    "value" : "GET REQUESTS"
+  }, {
+    "name" : "suite",
+    "value" : "REQUESTS GET"
   }, {
     "name" : "parentSuite",
     "value" : "tests"
   }, {
     "name" : "host",
-    "value" : "fv-az1530-620"
+    "value" : "fv-az693-896"
   }, {
     "name" : "thread",
-    "value" : "1786-MainThread"
+    "value" : "1800-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -163,30 +160,38 @@
         "failed" : 0,
         "broken" : 0,
         "skipped" : 0,
-        "passed" : 3,
+        "passed" : 4,
         "unknown" : 0,
-        "total" : 3
+        "total" : 4
       },
       "items" : [ {
-        "uid" : "f46c01be7660a2d0",
+        "uid" : "e5e9ade6f010de66",
         "status" : "passed",
         "time" : {
-          "start" : 1706484250572,
-          "stop" : 1706484250964,
-          "duration" : 392
+          "start" : 1706630058318,
+          "stop" : 1706630058735,
+          "duration" : 417
         }
       }, {
-        "uid" : "9ebc77a5d560e653",
+        "uid" : "b4ff682ca85863c0",
         "status" : "passed",
         "time" : {
-          "start" : 1706282537292,
-          "stop" : 1706282537628,
-          "duration" : 336
+          "start" : 1706484248611,
+          "stop" : 1706484249011,
+          "duration" : 400
+        }
+      }, {
+        "uid" : "d27198d502963f97",
+        "status" : "passed",
+        "time" : {
+          "start" : 1706282535377,
+          "stop" : 1706282535751,
+          "duration" : 374
         }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "bc6dd17eb55c473f.json",
+  "source" : "146266519cc3e4c2.json",
   "parameterValues" : [ ]
 }

@@ -1,43 +1,45 @@
 {
-  "uid" : "e5e9ade6f010de66",
-  "name" : "List dbtypes",
-  "fullName" : "tests.test_bd.TestGET#test_list_dbtypes",
-  "historyId" : "883e12ccb2b08424610aa5b801af1bf5",
+  "uid" : "b71c5bfb4d1f4711",
+  "name" : "delete db",
+  "fullName" : "tests.test_bd.TestPOST#test_delete_db",
+  "historyId" : "6b562f8bf571af52594cf0d13d8f83e3",
   "time" : {
-    "start" : 1706630058318,
-    "stop" : 1706630058735,
-    "duration" : 417
+    "start" : 1706630300187,
+    "stop" : 1706630300570,
+    "duration" : 383
   },
   "status" : "passed",
+  "statusMessage" : "XPASS",
   "flaky" : false,
   "newFailed" : false,
   "beforeStages" : [ ],
   "testStage" : {
     "status" : "passed",
+    "statusMessage" : "XPASS",
     "steps" : [ {
-      "name" : "Method GET",
+      "name" : "Method POST",
       "time" : {
-        "start" : 1706630058318,
-        "stop" : 1706630058734,
-        "duration" : 416
+        "start" : 1706630300187,
+        "stop" : 1706630300569,
+        "duration" : 382
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "Add request",
         "time" : {
-          "start" : 1706630058318,
-          "stop" : 1706630058319,
-          "duration" : 1
+          "start" : 1706630300187,
+          "stop" : 1706630300187,
+          "duration" : 0
         },
         "status" : "passed",
         "steps" : [ ],
         "attachments" : [ ],
         "parameters" : [ {
           "name" : "url",
-          "value" : "'https://dbend.areso.pro/list_dbtypes'"
+          "value" : "'https://dbend.areso.pro/db_list'"
         }, {
           "name" : "method",
-          "value" : "'GET'"
+          "value" : "'POST'"
         } ],
         "attachmentsCount" : 0,
         "shouldDisplayMessage" : false,
@@ -46,16 +48,16 @@
       }, {
         "name" : "Add response",
         "time" : {
-          "start" : 1706630058733,
-          "stop" : 1706630058734,
-          "duration" : 1
+          "start" : 1706630300569,
+          "stop" : 1706630300569,
+          "duration" : 0
         },
         "status" : "passed",
         "steps" : [ {
           "name" : "Response code: 200\n",
           "time" : {
-            "start" : 1706630058733,
-            "stop" : 1706630058733,
+            "start" : 1706630300569,
+            "stop" : 1706630300569,
             "duration" : 0
           },
           "status" : "passed",
@@ -67,10 +69,10 @@
           "stepsCount" : 0,
           "hasContent" : false
         }, {
-          "name" : "Response text: {\n    \"3\": \"mysql8\"\n}\n\n",
+          "name" : "Response text: {\n    \"content\": {}\n}\n\n",
           "time" : {
-            "start" : 1706630058734,
-            "stop" : 1706630058734,
+            "start" : 1706630300569,
+            "stop" : 1706630300569,
             "duration" : 0
           },
           "status" : "passed",
@@ -95,7 +97,13 @@
       "attachments" : [ ],
       "parameters" : [ {
         "name" : "url",
-        "value" : "'https://dbend.areso.pro/list_dbtypes'"
+        "value" : "'https://dbend.areso.pro/db_list'"
+      }, {
+        "name" : "body",
+        "value" : "{}"
+      }, {
+        "name" : "cookie",
+        "value" : "{'sid': '8476e5b6-4db0-4540-a8f4-2cba047a9583'}"
       } ],
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
@@ -103,37 +111,40 @@
       "hasContent" : true
     } ],
     "attachments" : [ {
-      "uid" : "8a45ff472babf2e9",
+      "uid" : "43dfbc75f7cb802a",
       "name" : "stdout",
-      "source" : "8a45ff472babf2e9.txt",
+      "source" : "43dfbc75f7cb802a.txt",
       "type" : "text/plain",
-      "size" : 80
+      "size" : 122
     } ],
     "parameters" : [ ],
     "attachmentsCount" : 1,
-    "shouldDisplayMessage" : false,
+    "shouldDisplayMessage" : true,
     "stepsCount" : 5,
     "hasContent" : true
   },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "subSuite",
-    "value" : "GET"
+    "name" : "epic",
+    "value" : "POST REQUESTS"
   }, {
     "name" : "suite",
-    "value" : "REQUESTS GET"
+    "value" : "REQUESTS POST"
   }, {
-    "name" : "epic",
-    "value" : "GET REQUESTS"
+    "name" : "subSuite",
+    "value" : "DELETE"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.xfail"
   }, {
     "name" : "parentSuite",
     "value" : "tests"
   }, {
     "name" : "host",
-    "value" : "fv-az1530-620"
+    "value" : "fv-az693-896"
   }, {
     "name" : "thread",
-    "value" : "1786-MainThread"
+    "value" : "1800-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -160,30 +171,41 @@
         "failed" : 0,
         "broken" : 0,
         "skipped" : 0,
-        "passed" : 3,
+        "passed" : 4,
         "unknown" : 0,
-        "total" : 3
+        "total" : 4
       },
       "items" : [ {
-        "uid" : "b4ff682ca85863c0",
+        "uid" : "bb8d4c6a3d5aa5bd",
         "status" : "passed",
+        "statusDetails" : "XPASS",
         "time" : {
-          "start" : 1706484248611,
-          "stop" : 1706484249011,
-          "duration" : 400
+          "start" : 1706630061520,
+          "stop" : 1706630061909,
+          "duration" : 389
         }
       }, {
-        "uid" : "d27198d502963f97",
+        "uid" : "2e6ca177dd6f0519",
         "status" : "passed",
+        "statusDetails" : "XPASS",
         "time" : {
-          "start" : 1706282535377,
-          "stop" : 1706282535751,
-          "duration" : 374
+          "start" : 1706484251724,
+          "stop" : 1706484252111,
+          "duration" : 387
+        }
+      }, {
+        "uid" : "85f033d2a3c9411f",
+        "status" : "passed",
+        "statusDetails" : "XPASS",
+        "time" : {
+          "start" : 1706282538329,
+          "stop" : 1706282538678,
+          "duration" : 349
         }
       } ]
     },
-    "tags" : [ ]
+    "tags" : [ "@pytest.mark.xfail" ]
   },
-  "source" : "e5e9ade6f010de66.json",
+  "source" : "b71c5bfb4d1f4711.json",
   "parameterValues" : [ ]
 }
