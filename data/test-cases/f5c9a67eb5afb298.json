@@ -1,12 +1,12 @@
 {
-  "uid" : "ca57a41d5cd3b15f",
-  "name" : "test tos",
-  "fullName" : "tests.test_bd.TestGET#test_tos",
-  "historyId" : "8b98d28890b5c734f92328870cdafef0",
+  "uid" : "f5c9a67eb5afb298",
+  "name" : "Post db_create with wrong region.",
+  "fullName" : "tests.test_bd.TestPOST#test_post_db_create_with_wrong_values_region",
+  "historyId" : "ab20bf97eee2e17efc3d49666531cfd4",
   "time" : {
-    "start" : 1706630296568,
-    "stop" : 1706630296978,
-    "duration" : 410
+    "start" : 1706630869103,
+    "stop" : 1706630869424,
+    "duration" : 321
   },
   "status" : "passed",
   "flaky" : false,
@@ -15,18 +15,18 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "Method GET",
+      "name" : "Method POST",
       "time" : {
-        "start" : 1706630296569,
-        "stop" : 1706630296977,
-        "duration" : 408
+        "start" : 1706630869103,
+        "stop" : 1706630869423,
+        "duration" : 320
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "Add request",
         "time" : {
-          "start" : 1706630296569,
-          "stop" : 1706630296569,
+          "start" : 1706630869103,
+          "stop" : 1706630869103,
           "duration" : 0
         },
         "status" : "passed",
@@ -34,10 +34,10 @@
         "attachments" : [ ],
         "parameters" : [ {
           "name" : "url",
-          "value" : "'https://dbend.areso.pro/tos'"
+          "value" : "'https://dbend.areso.pro/db_create'"
         }, {
           "name" : "method",
-          "value" : "'GET'"
+          "value" : "'POST'"
         } ],
         "attachmentsCount" : 0,
         "shouldDisplayMessage" : false,
@@ -46,16 +46,16 @@
       }, {
         "name" : "Add response",
         "time" : {
-          "start" : 1706630296977,
-          "stop" : 1706630296977,
-          "duration" : 0
+          "start" : 1706630869422,
+          "stop" : 1706630869423,
+          "duration" : 1
         },
         "status" : "passed",
         "steps" : [ {
-          "name" : "Response code: 200\n",
+          "name" : "Response code: 400\n",
           "time" : {
-            "start" : 1706630296977,
-            "stop" : 1706630296977,
+            "start" : 1706630869422,
+            "stop" : 1706630869422,
             "duration" : 0
           },
           "status" : "passed",
@@ -67,10 +67,10 @@
           "stepsCount" : 0,
           "hasContent" : false
         }, {
-          "name" : "Response text: \"Hello. This pet-project (later Project) works AS IS, no warranty at all.\\nUsing Project, you agree to that.\\nYou MUST create backups of your databases for sake reasons.\\nBecause I do run project on my own pocket money, \\nI limit total size of the databases per 1 user as 100 MBs.\\nAny account don't used more than 6 monts is subject for deletion with all databases.\"\n\n",
+          "name" : "Response text: {\n    \"content\": \"error: region isn't found or isn't available for order\"\n}\n\n",
           "time" : {
-            "start" : 1706630296977,
-            "stop" : 1706630296977,
+            "start" : 1706630869422,
+            "stop" : 1706630869422,
             "duration" : 0
           },
           "status" : "passed",
@@ -85,7 +85,7 @@
         "attachments" : [ ],
         "parameters" : [ {
           "name" : "result",
-          "value" : "<Response [200]>"
+          "value" : "<Response [400]>"
         } ],
         "attachmentsCount" : 0,
         "shouldDisplayMessage" : false,
@@ -95,7 +95,13 @@
       "attachments" : [ ],
       "parameters" : [ {
         "name" : "url",
-        "value" : "'https://dbend.areso.pro/tos'"
+        "value" : "'https://dbend.areso.pro/db_create'"
+      }, {
+        "name" : "cookie",
+        "value" : "{'sid': 'd4e1633b-694a-4649-8fcb-fbc293d264e2'}"
+      }, {
+        "name" : "body",
+        "value" : "{'dbtype': 3, 'dbversion': 5, 'env': 3, 'region': 56}"
       } ],
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
@@ -103,11 +109,11 @@
       "hasContent" : true
     } ],
     "attachments" : [ {
-      "uid" : "9db25e7b627a250e",
+      "uid" : "cca652e4bf337492",
       "name" : "stdout",
-      "source" : "9db25e7b627a250e.txt",
+      "source" : "cca652e4bf337492.txt",
       "type" : "text/plain",
-      "size" : 417
+      "size" : 379
     } ],
     "parameters" : [ ],
     "attachmentsCount" : 1,
@@ -117,23 +123,23 @@
   },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "subSuite",
-    "value" : "GET"
-  }, {
     "name" : "epic",
-    "value" : "GET REQUESTS"
+    "value" : "POST REQUESTS"
+  }, {
+    "name" : "subSuite",
+    "value" : "POST"
   }, {
     "name" : "suite",
-    "value" : "REQUESTS GET"
+    "value" : "REQUESTS POST"
   }, {
     "name" : "parentSuite",
     "value" : "tests"
   }, {
     "name" : "host",
-    "value" : "fv-az693-896"
+    "value" : "fv-az700-177"
   }, {
     "name" : "thread",
-    "value" : "1800-MainThread"
+    "value" : "1804-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -155,43 +161,8 @@
     "severity" : "normal",
     "retries" : [ ],
     "categories" : [ ],
-    "history" : {
-      "statistic" : {
-        "failed" : 0,
-        "broken" : 0,
-        "skipped" : 0,
-        "passed" : 4,
-        "unknown" : 0,
-        "total" : 4
-      },
-      "items" : [ {
-        "uid" : "a3ca0b6a666b8551",
-        "status" : "passed",
-        "time" : {
-          "start" : 1706630057905,
-          "stop" : 1706630058317,
-          "duration" : 412
-        }
-      }, {
-        "uid" : "43591d309aec84df",
-        "status" : "passed",
-        "time" : {
-          "start" : 1706484248197,
-          "stop" : 1706484248609,
-          "duration" : 412
-        }
-      }, {
-        "uid" : "9bb23e08156c9e2f",
-        "status" : "passed",
-        "time" : {
-          "start" : 1706282535027,
-          "stop" : 1706282535376,
-          "duration" : 349
-        }
-      } ]
-    },
     "tags" : [ ]
   },
-  "source" : "ca57a41d5cd3b15f.json",
+  "source" : "f5c9a67eb5afb298.json",
   "parameterValues" : [ ]
 }
