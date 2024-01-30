@@ -23,6 +23,20 @@ class HttpMethods:
         return result
 
     @staticmethod
+    @allure.step('Method GET')
+    def get_set_cookie(url: str, body: dict, cookie: dict):
+        """
+        :param url:
+        :param body:
+        :param cookie:
+        :return:
+        """
+        Logger.add_request(url, method='GET')
+        result = requests.get(url, cookies=cookie, json=body)
+        Logger.add_response(result)
+        return result
+
+    @staticmethod
     @allure.step('Method POST')
     def post(url, body):
         Logger.add_request(url, method='POST')

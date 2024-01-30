@@ -74,7 +74,7 @@ class Checking:
         check = response.json()
         check_info = check.get(key)
         assert search_word in check_info, f'{check_info} is not presence'
-        print(f'Value: {search_word}, is presence in: {key}')
+        print(f'Value: {search_word}\nis presence in key: {key}')
 
     @staticmethod
     def check_json_search_word_in_values(response, key, search_word):
