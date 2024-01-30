@@ -7,7 +7,6 @@ import allure
 import pytest
 
 from utils.checking import Checking
-# from utils.config_my_sql import DataMySql
 from utils.request import API
 from .conftest import TestData
 
@@ -16,32 +15,38 @@ from .conftest import TestData
 @allure.suite('REQUESTS GET')
 class TestGET:
     @allure.sub_suite('GET')
-    @allure.title('test tos')
+    @allure.title('Test tos.')
     def test_tos(self):
         result_get = API.get_tos()
         Checking.check_status_code(result_get, 200)
 
     @allure.sub_suite('GET')
-    @allure.title('List dbtypes')
-    def test_list_dbtypes(self):
+    @allure.title('Get profile information.')
+    def test_get_profile(self):
+        result_get = API.get_profile()
+        Checking.check_status_code(result_get, 200)
+
+    @allure.sub_suite('GET')
+    @allure.title('List dbtypes.')
+    def test_get_list_dbtypes(self):
         result_get = API.get_list_dbtypes()
         Checking.check_status_code(result_get, 200)
 
     @allure.sub_suite('GET')
-    @allure.title('List dbversions')
-    def test_list_dbversions(self):
+    @allure.title('List dbversions.')
+    def test_get_list_dbversions(self):
         result_get = API.get_list_dbversions()
         Checking.check_status_code(result_get, 200)
 
     @allure.sub_suite('GET')
-    @allure.title('List envs')
-    def test_list_envs(self):
+    @allure.title('List envs.')
+    def test_get_list_envs(self):
         result_get = API.get_list_envs()
         Checking.check_status_code(result_get, 200)
 
     @allure.sub_suite('GET')
-    @allure.title('List regions')
-    def test_list_regions(self):
+    @allure.title('List regions.')
+    def test_get_list_regions(self):
         result_get = API.get_list_regions()
         Checking.check_status_code(result_get, 200)
 
@@ -59,13 +64,24 @@ class TestPOST:
         Checking.check_status_code(status_code, 200)
 
     @allure.sub_suite('POST')
+    @allure.title('Post registration mail')
+    def test_post_registration_with_variety_mail(self):
+        print('\n\nMethod POST: registration')
+        result_post = API.post_registration_variety_email(random.choice(['gmail', 'mail', 'yandex']),
+                                                          random.choice(['com', 'ru', 'bg', 'by']))
+        status_code = result_post
+        Checking.check_status_code(status_code, 201)
+        Checking.check_json_search_word_in_value(result_post, 'content', 'msg[1]: registered successfully')
+
+    @allure.sub_suite('POST')
     @allure.title('Post registration email is taken')
     def test_post_registration_email_is_taken(self):
         print('\n\nMethod POST: registration')
         result_post = API.post_registration()
         status_code = result_post
         Checking.check_status_code(status_code, 400)
-        Checking.check_json_search_word_in_value(result_post, 'content', 'msg[3]')
+        Checking.check_json_search_word_in_value(result_post, 'content',
+                                                 'msg[3]: registration failed, this email is taken')
 
     @allure.sub_suite('POST')
     @allure.title('Post login')
@@ -75,14 +91,53 @@ class TestPOST:
         status_code, sid = result_post
         Checking.check_status_code(status_code, 200)
 
-    # @allure.sub_suite('POST')
-    # @allure.title('Post db create')
-    # def test_post_db_create(self):
-    #     print('\n\nMethod POST: db_create')
-    #     result_post_db_list = API.post_db_create(TestData.sid)
-    #     # print(result_post_db_list)
-    #     print(result_post_db_list.json()["db_uuid"])
-    #     Checking.check_status_code(result_post_db_list, 201)
+    @allure.sub_suite('POST')
+    @allure.title('Post db create')
+    def test_post_db_create(self):
+        print('\n\nMethod POST: db_create')
+        result_post_db_list = API.post_db_create(TestData.sid)
+        print(result_post_db_list.json()["db_uuid"])
+        Checking.check_status_code(result_post_db_list, 201)
+
+    @allure.sub_suite('POST')
+    @allure.title('Post db_create with wrong dbtype.')
+    def test_post_db_create_with_wrong_values_dbtype(self):
+        print('\n\nMethod POST: post_db_create_wrong_value_dbtype')
+        result_post_db_list = API.post_db_create_wrong_value_dbtype(TestData.sid)
+        print(result_post_db_list.json())
+        Checking.check_status_code(result_post_db_list, 400)
+        Checking.check_json_search_word_in_value(result_post_db_list, "content",
+                                                 "error: DB type isn't found or isn't available for order")
+
+    @allure.sub_suite('POST')
+    @allure.title('Post db_create with wrong dbversion.')
+    def test_post_db_create_with_wrong_values_dbversion(self):
+        print('\n\nMethod POST: post_db_create_wrong_value_dbversione')
+        result_post_db_list = API.post_db_create_wrong_value_dbversion(TestData.sid)
+        print(result_post_db_list.json())
+        Checking.check_status_code(result_post_db_list, 400)
+        Checking.check_json_search_word_in_value(result_post_db_list, "content",
+                                                 "error: DB version isn't found or isn't available for order")
+
+    @allure.sub_suite('POST')
+    @allure.title('Post db_create with wrong env.')
+    def test_post_db_create_with_wrong_values_env(self):
+        print('\n\nMethod POST: post_db_create_wrong_value_env')
+        result_post_db_list = API.post_db_create_wrong_value_env(TestData.sid)
+        print(result_post_db_list.json())
+        Checking.check_status_code(result_post_db_list, 400)
+        # Checking.check_json_search_word_in_value(result_post_db_list, "content",
+        #                                          "error: DB version isn't found or isn't available for order")
+
+    @allure.sub_suite('POST')
+    @allure.title('Post db_create with wrong region.')
+    def test_post_db_create_with_wrong_values_region(self):
+        print('\n\nMethod POST: post_db_create_wrong_value_region')
+        result_post_db_list = API.post_db_create_wrong_value_region(TestData.sid)
+        print(result_post_db_list.json())
+        Checking.check_status_code(result_post_db_list, 400)
+        Checking.check_json_search_word_in_value(result_post_db_list, "content",
+                                                 "error: region isn't found or isn't available for order")
 
     @allure.sub_suite('POST')
     @allure.title('Post db list')
@@ -111,7 +166,6 @@ class TestPOST:
         # print(first_db_uuid)
 
 
-
 @allure.epic('Connection DB')
 @allure.suite('Test Connection DB')
 class TestConnectionDB:
@@ -121,6 +175,8 @@ class TestConnectionDB:
         API.check_full_cycle(TestData.sid)
 
 
+@allure.epic('Performance DB')
+@allure.suite('Test Performance DB')
 class TestLoadDB:
     def test_create_table(self):
         result_db_create = API.post_db_create(TestData.sid)

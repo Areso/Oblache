@@ -6,6 +6,7 @@ from string import ascii_letters
 import allure
 import mysql.connector
 
+import data.data
 from tests.conftest import TestData
 from utils.http_methods import HttpMethods
 
@@ -22,6 +23,18 @@ class API(TestData):
         print(get_url)
         result_get = HttpMethods.get(get_url)
         print(result_get.text)
+        return result_get
+
+    @staticmethod
+    def get_profile():
+        """
+        :return:
+        """
+        get_resource = '/get_profile'  # Resource for method
+        get_url = TestData.base_url + get_resource
+        print(get_url)
+        result_get = HttpMethods.get_set_cookie(get_url, {}, TestData.sid)
+        print('Response body: ', result_get.text)
         return result_get
 
     @staticmethod
@@ -76,6 +89,21 @@ class API(TestData):
         return result_post
 
     @staticmethod
+    def post_registration_variety_email(mail, prefix):
+        """
+        Method for create new user
+        :return: JSON Response
+        """
+        json_for_create_new_user = {"email": f'(date){data.data.time}@{mail}.{prefix}', "password": TestData.password}
+        print(f'Data for request: {json_for_create_new_user}')
+        post_resource = '/register'  # Resource for method POST
+        post_url = TestData.base_url + post_resource
+        print(post_url)
+        result_post = HttpMethods.post(post_url, json_for_create_new_user)
+        print('Response body: ', result_post.text)
+        return result_post
+
+    @staticmethod
     def post_login(body: dict):
         post_resource = '/login'  # Resource for method GET
         post_url = TestData.base_url + post_resource
@@ -108,6 +136,50 @@ class API(TestData):
         post_resource = '/db_create'  # Resource for method
         post_url = TestData.base_url + post_resource
         body = {"dbtype": 3, "dbversion": 5, "env": 3, "region": 3}
+        result_post = HttpMethods.post_set_cookie_without_body(post_url, sid, body)
+        print('Url: ', post_url)
+        print(f'Status code: {result_post.status_code}')
+        print('Response body: ', result_post.text)
+        return result_post
+
+    @staticmethod
+    def post_db_create_wrong_value_dbtype(sid: dict):
+        post_resource = '/db_create'  # Resource for method
+        post_url = TestData.base_url + post_resource
+        body = {"dbtype": random.randint(4, 100), "dbversion": 5, "env": 3, "region": 3}
+        result_post = HttpMethods.post_set_cookie_without_body(post_url, sid, body)
+        print('Url: ', post_url)
+        print(f'Status code: {result_post.status_code}')
+        print('Response body: ', result_post.text)
+        return result_post
+
+    @staticmethod
+    def post_db_create_wrong_value_dbversion(sid: dict):
+        post_resource = '/db_create'  # Resource for method
+        post_url = TestData.base_url + post_resource
+        body = {"dbtype": 3, "dbversion": random.randint(6, 100), "env": 3, "region": 3}
+        result_post = HttpMethods.post_set_cookie_without_body(post_url, sid, body)
+        print('Url: ', post_url)
+        print(f'Status code: {result_post.status_code}')
+        print('Response body: ', result_post.text)
+        return result_post
+
+    @staticmethod
+    def post_db_create_wrong_value_env(sid: dict):
+        post_resource = '/db_create'  # Resource for method
+        post_url = TestData.base_url + post_resource
+        body = {"dbtype": 3, "dbversion": 5, "env": random.randint(4, 100), "region": 3}
+        result_post = HttpMethods.post_set_cookie_without_body(post_url, sid, body)
+        print('Url: ', post_url)
+        print(f'Status code: {result_post.status_code}')
+        print('Response body: ', result_post.text)
+        return result_post
+
+    @staticmethod
+    def post_db_create_wrong_value_region(sid: dict):
+        post_resource = '/db_create'  # Resource for method
+        post_url = TestData.base_url + post_resource
+        body = {"dbtype": 3, "dbversion": 5, "env": 3, "region": random.randint(4, 100)}
         result_post = HttpMethods.post_set_cookie_without_body(post_url, sid, body)
         print('Url: ', post_url)
         print(f'Status code: {result_post.status_code}')
