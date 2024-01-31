@@ -61,14 +61,23 @@ class TestPOST:
         print('\n\nMethod POST: registration')
         result_post = API.post_registration()
         status_code = result_post
-        Checking.check_status_code(status_code, 200)
+        Checking.check_status_code(status_code, 201)
 
     @allure.sub_suite('POST')
     @allure.title('Post registration mail')
     def test_post_registration_with_variety_mail(self):
         print('\n\nMethod POST: registration')
         result_post = API.post_registration_variety_email(random.choice(['gmail', 'mail', 'yandex']),
-                                                          random.choice(['com', 'ru', 'bg', 'by']))
+                                                          random.choice(['com', 'ru', 'by']))
+        status_code = result_post
+        Checking.check_status_code(status_code, 201)
+        Checking.check_json_search_word_in_value(result_post, 'content', 'msg[1]: registered successfully')
+
+    @allure.sub_suite('POST')
+    @allure.title('Post registration mail')
+    def test_post_registration_for_bulgaria(self):
+        print('\n\nMethod POST: registration')
+        result_post = API.post_registration_variety_email(random.choice(['gmail', 'mail', 'yandex']), 'bg')
         status_code = result_post
         Checking.check_status_code(status_code, 201)
         Checking.check_json_search_word_in_value(result_post, 'content', 'msg[1]: registered successfully')
@@ -163,7 +172,6 @@ class TestPOST:
         '''
         list(json_list_db['content'].keys())[0] #"065a5b36-e472-7398-8000-7ce3e7219464"
         '''
-        # print(first_db_uuid)
 
 
 @allure.epic('Connection DB')
@@ -177,8 +185,8 @@ class TestConnectionDB:
 
 @allure.epic('Performance DB')
 @allure.suite('Test Performance DB')
-class TestLoadDB:
-    def test_create_table(self):
+class TestCapacity:
+    def test_capacity_db(self):
         result_db_create = API.post_db_create(TestData.sid)
         print('Status db is :', result_db_create.json())
         db_uuid = result_db_create.json()["db_uuid"]
@@ -215,24 +223,3 @@ class TestLoadDB:
         print(res)
         result_post_db_delete = API.delete_db(f"{db_uuid}", TestData.sid)
         Checking.check_status_code(result_post_db_delete, 200)
-
-    # def test_load_table2(self):
-    #     """
-    #     :return:
-    #     """
-    #     db = TestData.connection("065a5c25-6bd0-7a6e-8000-a9830730182e")
-    #     letters = ascii_letters
-    #     cursor = db.cursor()
-    #     for x in range(10):
-    #         for i in range(10):
-    #             my_string = "".join(random.choice(letters) for _ in range(4096))
-    #             cursor.execute("""
-    #                     INSERT INTO accounts (name, text)
-    #                     VALUES (
-    #                     'lambotik',
-    #                     %(my_string)s);""",
-    #                            {'my_string': my_string})
-    #         db.commit()
-    #     cursor.execute('''select * from accounts''')
-    #     res = cursor.fetchall()
-    #     print(res)

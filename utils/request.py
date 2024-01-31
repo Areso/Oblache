@@ -94,7 +94,8 @@ class API(TestData):
         Method for create new user
         :return: JSON Response
         """
-        json_for_create_new_user = {"email": f'(date){data.data.time}@{mail}.{prefix}', "password": TestData.password}
+        json_for_create_new_user = {"email": f'aqa(date){data.data.time}@{mail}.{prefix}',
+                                    "password": TestData.password}
         print(f'Data for request: {json_for_create_new_user}')
         post_resource = '/register'  # Resource for method POST
         post_url = TestData.base_url + post_resource
@@ -259,7 +260,7 @@ class API(TestData):
         cursor = self.connection()
         for x in range(1):
             for i in range(10):
-                my_string = "".join(random.choice(letters) for i in range(4096))
+                my_string = "".join(random.choice(letters) for _ in range(4096))
                 cursor.execute("""
                 INSERT INTO accounts (name, text) 
                 VALUES (
