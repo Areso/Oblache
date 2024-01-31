@@ -1,12 +1,12 @@
 {
-  "uid" : "a647c5dc3c1e40d8",
-  "name" : "Post db_create with wrong dbtype.",
-  "fullName" : "tests.test_bd.TestPOST#test_post_db_create_with_wrong_values_dbtype",
-  "historyId" : "e69ce9aa1e1ae8013bd8fd0629d5da9b",
+  "uid" : "13b529810f332f56",
+  "name" : "Post db create",
+  "fullName" : "tests.test_bd.TestPOST#test_post_db_create",
+  "historyId" : "072cccfb757d85a23781a718b88741bd",
   "time" : {
-    "start" : 1706630868006,
-    "stop" : 1706630868332,
-    "duration" : 326
+    "start" : 1706729027716,
+    "stop" : 1706729028116,
+    "duration" : 400
   },
   "status" : "passed",
   "flaky" : false,
@@ -17,16 +17,16 @@
     "steps" : [ {
       "name" : "Method POST",
       "time" : {
-        "start" : 1706630868006,
-        "stop" : 1706630868332,
-        "duration" : 326
+        "start" : 1706729027717,
+        "stop" : 1706729028114,
+        "duration" : 397
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "Add request",
         "time" : {
-          "start" : 1706630868006,
-          "stop" : 1706630868006,
+          "start" : 1706729027717,
+          "stop" : 1706729027717,
           "duration" : 0
         },
         "status" : "passed",
@@ -46,16 +46,16 @@
       }, {
         "name" : "Add response",
         "time" : {
-          "start" : 1706630868331,
-          "stop" : 1706630868332,
+          "start" : 1706729028113,
+          "stop" : 1706729028114,
           "duration" : 1
         },
         "status" : "passed",
         "steps" : [ {
-          "name" : "Response code: 400\n",
+          "name" : "Response code: 201\n",
           "time" : {
-            "start" : 1706630868331,
-            "stop" : 1706630868331,
+            "start" : 1706729028114,
+            "stop" : 1706729028114,
             "duration" : 0
           },
           "status" : "passed",
@@ -67,10 +67,10 @@
           "stepsCount" : 0,
           "hasContent" : false
         }, {
-          "name" : "Response text: {\n    \"content\": \"error: DB type isn't found or isn't available for order\"\n}\n\n",
+          "name" : "Response text: {\n    \"msg\": \"your order for a new database created successfully\",\n    \"db_uuid\": \"065ba9e4-4004-7940-8000-6fcfa133fae9\"\n}\n\n",
           "time" : {
-            "start" : 1706630868332,
-            "stop" : 1706630868332,
+            "start" : 1706729028114,
+            "stop" : 1706729028114,
             "duration" : 0
           },
           "status" : "passed",
@@ -85,7 +85,7 @@
         "attachments" : [ ],
         "parameters" : [ {
           "name" : "result",
-          "value" : "<Response [400]>"
+          "value" : "<Response [201]>"
         } ],
         "attachmentsCount" : 0,
         "shouldDisplayMessage" : false,
@@ -98,10 +98,10 @@
         "value" : "'https://dbend.areso.pro/db_create'"
       }, {
         "name" : "cookie",
-        "value" : "{'sid': 'd4e1633b-694a-4649-8fcb-fbc293d264e2'}"
+        "value" : "{'sid': '429a6e9d-7d83-4178-9e56-cd1e4eaa46d0'}"
       }, {
         "name" : "body",
-        "value" : "{'dbtype': 37, 'dbversion': 5, 'env': 3, 'region': 3}"
+        "value" : "{'dbtype': 3, 'dbversion': 5, 'env': 3, 'region': 3}"
       } ],
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
@@ -109,11 +109,11 @@
       "hasContent" : true
     } ],
     "attachments" : [ {
-      "uid" : "50f4909c8eb6acbc",
+      "uid" : "48960d798018e7c8",
       "name" : "stdout",
-      "source" : "50f4909c8eb6acbc.txt",
+      "source" : "48960d798018e7c8.txt",
       "type" : "text/plain",
-      "size" : 382
+      "size" : 279
     } ],
     "parameters" : [ ],
     "attachmentsCount" : 1,
@@ -123,23 +123,23 @@
   },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "epic",
-    "value" : "POST REQUESTS"
-  }, {
     "name" : "subSuite",
     "value" : "POST"
   }, {
     "name" : "suite",
     "value" : "REQUESTS POST"
   }, {
+    "name" : "epic",
+    "value" : "POST REQUESTS"
+  }, {
     "name" : "parentSuite",
     "value" : "tests"
   }, {
     "name" : "host",
-    "value" : "fv-az700-177"
+    "value" : "fv-az1215-15"
   }, {
     "name" : "thread",
-    "value" : "1804-MainThread"
+    "value" : "1799-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -161,8 +161,27 @@
     "severity" : "normal",
     "retries" : [ ],
     "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "bcf9f9cac1fab859",
+        "status" : "passed",
+        "time" : {
+          "start" : 1706630867615,
+          "stop" : 1706630868004,
+          "duration" : 389
+        }
+      } ]
+    },
     "tags" : [ ]
   },
-  "source" : "a647c5dc3c1e40d8.json",
+  "source" : "13b529810f332f56.json",
   "parameterValues" : [ ]
 }

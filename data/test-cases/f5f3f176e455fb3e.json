@@ -1,12 +1,12 @@
 {
-  "uid" : "f5c9a67eb5afb298",
-  "name" : "Post db_create with wrong region.",
-  "fullName" : "tests.test_bd.TestPOST#test_post_db_create_with_wrong_values_region",
-  "historyId" : "ab20bf97eee2e17efc3d49666531cfd4",
+  "uid" : "f5f3f176e455fb3e",
+  "name" : "Post db list",
+  "fullName" : "tests.test_bd.TestPOST#test_post_db_list",
+  "historyId" : "bcc5bf5752f84e63fdae5088e2889200",
   "time" : {
-    "start" : 1706630869103,
-    "stop" : 1706630869424,
-    "duration" : 321
+    "start" : 1706729030129,
+    "stop" : 1706729030499,
+    "duration" : 370
   },
   "status" : "passed",
   "flaky" : false,
@@ -17,16 +17,16 @@
     "steps" : [ {
       "name" : "Method POST",
       "time" : {
-        "start" : 1706630869103,
-        "stop" : 1706630869423,
-        "duration" : 320
+        "start" : 1706729030129,
+        "stop" : 1706729030497,
+        "duration" : 368
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "Add request",
         "time" : {
-          "start" : 1706630869103,
-          "stop" : 1706630869103,
+          "start" : 1706729030129,
+          "stop" : 1706729030129,
           "duration" : 0
         },
         "status" : "passed",
@@ -34,7 +34,7 @@
         "attachments" : [ ],
         "parameters" : [ {
           "name" : "url",
-          "value" : "'https://dbend.areso.pro/db_create'"
+          "value" : "'https://dbend.areso.pro/db_list'"
         }, {
           "name" : "method",
           "value" : "'POST'"
@@ -46,16 +46,16 @@
       }, {
         "name" : "Add response",
         "time" : {
-          "start" : 1706630869422,
-          "stop" : 1706630869423,
-          "duration" : 1
+          "start" : 1706729030497,
+          "stop" : 1706729030497,
+          "duration" : 0
         },
         "status" : "passed",
         "steps" : [ {
-          "name" : "Response code: 400\n",
+          "name" : "Response code: 200\n",
           "time" : {
-            "start" : 1706630869422,
-            "stop" : 1706630869422,
+            "start" : 1706729030497,
+            "stop" : 1706729030497,
             "duration" : 0
           },
           "status" : "passed",
@@ -67,10 +67,10 @@
           "stepsCount" : 0,
           "hasContent" : false
         }, {
-          "name" : "Response text: {\n    \"content\": \"error: region isn't found or isn't available for order\"\n}\n\n",
+          "name" : "Response text: {\n    \"content\": {\n        \"065ba9e4-4004-7940-8000-6fcfa133fae9\": [\n            \"\",\n            \"CIS\",\n            \"db_creating\",\n            null,\n            \"None\"\n        ]\n    }\n}\n\n",
           "time" : {
-            "start" : 1706630869422,
-            "stop" : 1706630869422,
+            "start" : 1706729030497,
+            "stop" : 1706729030497,
             "duration" : 0
           },
           "status" : "passed",
@@ -85,7 +85,7 @@
         "attachments" : [ ],
         "parameters" : [ {
           "name" : "result",
-          "value" : "<Response [400]>"
+          "value" : "<Response [200]>"
         } ],
         "attachmentsCount" : 0,
         "shouldDisplayMessage" : false,
@@ -95,13 +95,13 @@
       "attachments" : [ ],
       "parameters" : [ {
         "name" : "url",
-        "value" : "'https://dbend.areso.pro/db_create'"
-      }, {
-        "name" : "cookie",
-        "value" : "{'sid': 'd4e1633b-694a-4649-8fcb-fbc293d264e2'}"
+        "value" : "'https://dbend.areso.pro/db_list'"
       }, {
         "name" : "body",
-        "value" : "{'dbtype': 3, 'dbversion': 5, 'env': 3, 'region': 56}"
+        "value" : "{}"
+      }, {
+        "name" : "cookie",
+        "value" : "{'sid': '429a6e9d-7d83-4178-9e56-cd1e4eaa46d0'}"
       } ],
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
@@ -109,11 +109,11 @@
       "hasContent" : true
     } ],
     "attachments" : [ {
-      "uid" : "cca652e4bf337492",
+      "uid" : "f90792263dd10b15",
       "name" : "stdout",
-      "source" : "cca652e4bf337492.txt",
+      "source" : "f90792263dd10b15.txt",
       "type" : "text/plain",
-      "size" : 379
+      "size" : 278
     } ],
     "parameters" : [ ],
     "attachmentsCount" : 1,
@@ -123,23 +123,23 @@
   },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "epic",
-    "value" : "POST REQUESTS"
-  }, {
     "name" : "subSuite",
     "value" : "POST"
   }, {
     "name" : "suite",
     "value" : "REQUESTS POST"
   }, {
+    "name" : "epic",
+    "value" : "POST REQUESTS"
+  }, {
     "name" : "parentSuite",
     "value" : "tests"
   }, {
     "name" : "host",
-    "value" : "fv-az700-177"
+    "value" : "fv-az1215-15"
   }, {
     "name" : "thread",
-    "value" : "1804-MainThread"
+    "value" : "1799-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -161,8 +161,59 @@
     "severity" : "normal",
     "retries" : [ ],
     "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 6,
+        "unknown" : 0,
+        "total" : 6
+      },
+      "items" : [ {
+        "uid" : "4dee8b371383d1f6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1706630869426,
+          "stop" : 1706630869751,
+          "duration" : 325
+        }
+      }, {
+        "uid" : "6448ee3af388a909",
+        "status" : "passed",
+        "time" : {
+          "start" : 1706630299807,
+          "stop" : 1706630300185,
+          "duration" : 378
+        }
+      }, {
+        "uid" : "c44ad57007abd433",
+        "status" : "passed",
+        "time" : {
+          "start" : 1706630061121,
+          "stop" : 1706630061518,
+          "duration" : 397
+        }
+      }, {
+        "uid" : "f94e89070d058b49",
+        "status" : "passed",
+        "time" : {
+          "start" : 1706484251336,
+          "stop" : 1706484251723,
+          "duration" : 387
+        }
+      }, {
+        "uid" : "a75f35fdc354a75c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1706282537977,
+          "stop" : 1706282538328,
+          "duration" : 351
+        }
+      } ]
+    },
     "tags" : [ ]
   },
-  "source" : "f5c9a67eb5afb298.json",
+  "source" : "f5f3f176e455fb3e.json",
   "parameterValues" : [ ]
 }
