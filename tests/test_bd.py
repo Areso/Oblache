@@ -12,39 +12,33 @@ from .conftest import TestData
 
 
 @allure.epic('GET REQUESTS')
-@allure.suite('REQUESTS GET')
+@allure.suite('GET')
 class TestGET:
-    @allure.sub_suite('GET')
     @allure.title('Test tos.')
     def test_tos(self):
         result_get = API.get_tos()
         Checking.check_status_code(result_get, 200)
 
-    @allure.sub_suite('GET')
     @allure.title('Get profile information.')
     def test_get_profile(self):
         result_get = API.get_profile()
         Checking.check_status_code(result_get, 200)
 
-    @allure.sub_suite('GET')
     @allure.title('List dbtypes.')
     def test_get_list_dbtypes(self):
         result_get = API.get_list_dbtypes()
         Checking.check_status_code(result_get, 200)
 
-    @allure.sub_suite('GET')
     @allure.title('List dbversions.')
     def test_get_list_dbversions(self):
         result_get = API.get_list_dbversions()
         Checking.check_status_code(result_get, 200)
 
-    @allure.sub_suite('GET')
     @allure.title('List envs.')
     def test_get_list_envs(self):
         result_get = API.get_list_envs()
         Checking.check_status_code(result_get, 200)
 
-    @allure.sub_suite('GET')
     @allure.title('List regions.')
     def test_get_list_regions(self):
         result_get = API.get_list_regions()
@@ -52,10 +46,9 @@ class TestGET:
 
 
 @allure.epic('POST REQUESTS')
-@allure.suite('REQUESTS POST')
+@allure.suite('POST')
 class TestPOST:
     @pytest.mark.xfail()
-    @allure.sub_suite('POST')
     @allure.title('Post registration')
     def test_post_registration(self):
         print('\n\nMethod POST: registration')
@@ -63,7 +56,6 @@ class TestPOST:
         status_code = result_post
         Checking.check_status_code(status_code, 201)
 
-    @allure.sub_suite('POST')
     @allure.title('Post registration mail')
     def test_post_registration_with_variety_mail(self):
         print('\n\nMethod POST: registration')
@@ -73,7 +65,6 @@ class TestPOST:
         Checking.check_status_code(status_code, 201)
         Checking.check_json_search_word_in_value(result_post, 'content', 'msg[1]: registered successfully')
 
-    @allure.sub_suite('POST')
     @allure.title('Post registration mail')
     def test_post_registration_for_bulgaria(self):
         print('\n\nMethod POST: registration')
@@ -82,7 +73,6 @@ class TestPOST:
         Checking.check_status_code(status_code, 201)
         Checking.check_json_search_word_in_value(result_post, 'content', 'msg[1]: registered successfully')
 
-    @allure.sub_suite('POST')
     @allure.title('Post registration email is taken')
     def test_post_registration_email_is_taken(self):
         print('\n\nMethod POST: registration')
@@ -92,7 +82,6 @@ class TestPOST:
         Checking.check_json_search_word_in_value(result_post, 'content',
                                                  'msg[3]: registration failed, this email is taken')
 
-    @allure.sub_suite('POST')
     @allure.title('Post login')
     def test_post_login(self):
         print('\n\nMethod POST: login')
@@ -100,7 +89,6 @@ class TestPOST:
         status_code, sid = result_post
         Checking.check_status_code(status_code, 200)
 
-    @allure.sub_suite('POST')
     @allure.title('Post db create')
     def test_post_db_create(self):
         print('\n\nMethod POST: db_create')
@@ -108,7 +96,6 @@ class TestPOST:
         print(result_post_db_list.json()["db_uuid"])
         Checking.check_status_code(result_post_db_list, 201)
 
-    @allure.sub_suite('POST')
     @allure.title('Post db_create with wrong dbtype.')
     def test_post_db_create_with_wrong_values_dbtype(self):
         print('\n\nMethod POST: post_db_create_wrong_value_dbtype')
@@ -118,7 +105,6 @@ class TestPOST:
         Checking.check_json_search_word_in_value(result_post_db_list, "content",
                                                  "error: DB type isn't found or isn't available for order")
 
-    @allure.sub_suite('POST')
     @allure.title('Post db_create with wrong dbversion.')
     def test_post_db_create_with_wrong_values_dbversion(self):
         print('\n\nMethod POST: post_db_create_wrong_value_dbversione')
@@ -128,7 +114,6 @@ class TestPOST:
         Checking.check_json_search_word_in_value(result_post_db_list, "content",
                                                  "error: DB version isn't found or isn't available for order")
 
-    @allure.sub_suite('POST')
     @allure.title('Post db_create with wrong env.')
     def test_post_db_create_with_wrong_values_env(self):
         print('\n\nMethod POST: post_db_create_wrong_value_env')
@@ -138,7 +123,6 @@ class TestPOST:
         # Checking.check_json_search_word_in_value(result_post_db_list, "content",
         #                                          "error: DB version isn't found or isn't available for order")
 
-    @allure.sub_suite('POST')
     @allure.title('Post db_create with wrong region.')
     def test_post_db_create_with_wrong_values_region(self):
         print('\n\nMethod POST: post_db_create_wrong_value_region')
@@ -148,14 +132,12 @@ class TestPOST:
         Checking.check_json_search_word_in_value(result_post_db_list, "content",
                                                  "error: region isn't found or isn't available for order")
 
-    @allure.sub_suite('POST')
     @allure.title('Post db list')
     def test_post_db_list(self):
         print('\n\nMethod POST: db_list')
         result_post_db_list = API.post_db_list(TestData.sid)
         Checking.check_status_code(result_post_db_list, 200)
 
-    @allure.sub_suite('DELETE')
     @allure.title('delete db')
     @pytest.mark.xfail()
     def test_delete_db(self):

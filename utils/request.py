@@ -20,7 +20,8 @@ class API(TestData):
     def get_tos():
         get_resource = '/tos'  # Resource for method GET
         get_url = TestData.base_url + get_resource
-        print(get_url)
+        with allure.step(f'GET {get_url}'):
+            print(get_url)
         result_get = HttpMethods.get(get_url)
         print(result_get.text)
         return result_get
@@ -32,8 +33,9 @@ class API(TestData):
         """
         get_resource = '/get_profile'  # Resource for method
         get_url = TestData.base_url + get_resource
-        print(get_url)
-        result_get = HttpMethods.get_set_cookie(get_url, {}, TestData.sid)
+        with allure.step(f'GET {get_url}'):
+            print(get_url)
+        result_get = HttpMethods.get_with_cookie(get_url, {}, TestData.sid)
         print('Response body: ', result_get.text)
         return result_get
 
@@ -41,7 +43,8 @@ class API(TestData):
     def get_list_dbtypes():
         get_resource = '/list_dbtypes'  # Resource for method GET
         get_url = TestData.base_url + get_resource
-        print(get_url)
+        with allure.step(f'GET {get_url}'):
+            print(get_url)
         result_get = HttpMethods.get(get_url)
         print(result_get.text)
         return result_get
@@ -50,7 +53,8 @@ class API(TestData):
     def get_list_dbversions():
         get_resource = '/list_dbversions'  # Resource for method GET
         get_url = TestData.base_url + get_resource
-        print(get_url)
+        with allure.step(f'GET {get_url}'):
+            print(get_url)
         result_get = HttpMethods.get(get_url)
         print(result_get.text)
         return result_get
@@ -59,7 +63,8 @@ class API(TestData):
     def get_list_envs():
         get_resource = '/list_envs'  # Resource for method GET
         get_url = TestData.base_url + get_resource
-        print(get_url)
+        with allure.step(f'GET {get_url}'):
+            print(get_url)
         result_get = HttpMethods.get(get_url)
         print(result_get.text)
         return result_get
@@ -68,7 +73,8 @@ class API(TestData):
     def get_list_regions():
         get_resource = '/list_regions'  # Resource for method GET
         get_url = TestData.base_url + get_resource
-        print(get_url)
+        with allure.step(f'GET {get_url}'):
+            print(get_url)
         result_get = HttpMethods.get(get_url)
         print(result_get.text)
         return result_get
@@ -83,7 +89,11 @@ class API(TestData):
 
         post_resource = '/register'  # Resource for method POST
         post_url = TestData.base_url + post_resource
-        print(post_url)
+        with allure.step(f'POST {post_url}'):
+            print(post_url)
+        with allure.step(f'Params:'
+                         f'{json_for_create_new_user}'):
+            pass
         result_post = HttpMethods.post(post_url, json_for_create_new_user)
         print('Response body: ', result_post.text)
         return result_post
@@ -99,7 +109,11 @@ class API(TestData):
         print(f'Data for request: {json_for_create_new_user}')
         post_resource = '/register'  # Resource for method POST
         post_url = TestData.base_url + post_resource
-        print(post_url)
+        with allure.step(f'POST {post_url}'):
+            print(post_url)
+        with allure.step(f'Params:'
+                         f'{json_for_create_new_user}'):
+            pass
         result_post = HttpMethods.post(post_url, json_for_create_new_user)
         print('Response body: ', result_post.text)
         return result_post
@@ -108,8 +122,10 @@ class API(TestData):
     def post_login(body: dict):
         post_resource = '/login'  # Resource for method GET
         post_url = TestData.base_url + post_resource
-        print(post_url)
+        with allure.step(f'POST {post_url}'):
+            print(post_url)
         result_post = HttpMethods.post(post_url, body)
+        print(result_post)
         cookies = result_post.cookies
         print(f'Cookies: {cookies}')
         sid = result_post.cookies.values()[0]
@@ -127,8 +143,9 @@ class API(TestData):
         """
         post_resource = '/db_list'  # Resource for method
         post_url = TestData.base_url + post_resource
-        print(post_url)
-        result_post = HttpMethods.post_set_cookie(post_url, {}, sid)
+        with allure.step(f'POST {post_url}'):
+            print(post_url)
+        result_post = HttpMethods.post_with_cookie(post_url, {}, sid)
         print('Response body: ', result_post.text)
         return result_post
 
@@ -136,9 +153,11 @@ class API(TestData):
     def post_db_create(sid: dict):
         post_resource = '/db_create'  # Resource for method
         post_url = TestData.base_url + post_resource
+        with allure.step(f'POST {post_url}'):
+            pass
         body = {"dbtype": 3, "dbversion": 5, "env": 3, "region": 3}
-        result_post = HttpMethods.post_set_cookie_without_body(post_url, sid, body)
-        print('Url: ', post_url)
+        result_post = HttpMethods.post_with_cookie_without_body(post_url, sid, body)
+        print('Url:', post_url)
         print(f'Status code: {result_post.status_code}')
         print('Response body: ', result_post.text)
         return result_post
@@ -147,9 +166,10 @@ class API(TestData):
     def post_db_create_wrong_value_dbtype(sid: dict):
         post_resource = '/db_create'  # Resource for method
         post_url = TestData.base_url + post_resource
+        with allure.step(f'POST {post_url}'):
+            print(post_url)
         body = {"dbtype": random.randint(4, 100), "dbversion": 5, "env": 3, "region": 3}
-        result_post = HttpMethods.post_set_cookie_without_body(post_url, sid, body)
-        print('Url: ', post_url)
+        result_post = HttpMethods.post_with_cookie_without_body(post_url, sid, body)
         print(f'Status code: {result_post.status_code}')
         print('Response body: ', result_post.text)
         return result_post
@@ -158,9 +178,10 @@ class API(TestData):
     def post_db_create_wrong_value_dbversion(sid: dict):
         post_resource = '/db_create'  # Resource for method
         post_url = TestData.base_url + post_resource
+        with allure.step(f'POST {post_url}'):
+            print(post_url)
         body = {"dbtype": 3, "dbversion": random.randint(6, 100), "env": 3, "region": 3}
-        result_post = HttpMethods.post_set_cookie_without_body(post_url, sid, body)
-        print('Url: ', post_url)
+        result_post = HttpMethods.post_with_cookie_without_body(post_url, sid, body)
         print(f'Status code: {result_post.status_code}')
         print('Response body: ', result_post.text)
         return result_post
@@ -169,9 +190,10 @@ class API(TestData):
     def post_db_create_wrong_value_env(sid: dict):
         post_resource = '/db_create'  # Resource for method
         post_url = TestData.base_url + post_resource
+        with allure.step(f'POST {post_url}'):
+            print(post_url)
         body = {"dbtype": 3, "dbversion": 5, "env": random.randint(4, 100), "region": 3}
-        result_post = HttpMethods.post_set_cookie_without_body(post_url, sid, body)
-        print('Url: ', post_url)
+        result_post = HttpMethods.post_with_cookie_without_body(post_url, sid, body)
         print(f'Status code: {result_post.status_code}')
         print('Response body: ', result_post.text)
         return result_post
@@ -180,9 +202,10 @@ class API(TestData):
     def post_db_create_wrong_value_region(sid: dict):
         post_resource = '/db_create'  # Resource for method
         post_url = TestData.base_url + post_resource
+        with allure.step(f'POST {post_url}'):
+            print(post_url)
         body = {"dbtype": 3, "dbversion": 5, "env": 3, "region": random.randint(4, 100)}
-        result_post = HttpMethods.post_set_cookie_without_body(post_url, sid, body)
-        print('Url: ', post_url)
+        result_post = HttpMethods.post_with_cookie_without_body(post_url, sid, body)
         print(f'Status code: {result_post.status_code}')
         print('Response body: ', result_post.text)
         return result_post
@@ -210,8 +233,11 @@ class API(TestData):
     def delete_db(uuid, sid):
         delete_resource = '/db_delete'  # Resource for method DELETE
         delete_url = TestData.base_url + delete_resource
-        print('Url: ', delete_url)
+        with allure.step(f'DELETE {delete_url}'):
+            print(delete_url)
         db_uuid = {"db_uuid": f"{uuid}"}
+        with allure.step(f'Db uuid is: {db_uuid}'):
+            pass
         json_db_uuid = json.dumps(db_uuid)
         result_delete = HttpMethods.post_for_delete_db(delete_url, json_db_uuid, sid)
         print(f'Status code: {result_delete.status_code}')
