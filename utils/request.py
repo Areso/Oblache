@@ -150,6 +150,21 @@ class API(TestData):
         return result_post
 
     @staticmethod
+    def post_db_list_with_filter(sid: dict, db_uuid: str):
+        """
+        Getting information about bd by uuid
+        :param sid: dict
+        :param db_uuid: str
+        :return:
+        """
+        post_resource = '/db_list'  # Resource for method
+        post_url = TestData.base_url + post_resource
+        print(post_url)
+        result_post = HttpMethods.post_with_cookie_without_body(post_url, sid, {"db_uuid": db_uuid}, )
+        print('Response body: ', result_post.text)
+        return result_post
+
+    @staticmethod
     def post_db_create(sid: dict):
         post_resource = '/db_create'  # Resource for method
         post_url = TestData.base_url + post_resource

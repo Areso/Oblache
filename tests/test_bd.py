@@ -138,6 +138,19 @@ class TestPOST:
         result_post_db_list = API.post_db_list(TestData.sid)
         Checking.check_status_code(result_post_db_list, 200)
 
+    @allure.title('Post db list with filter')
+    def test_post_db_list_with_filter(self):
+        print('\n\nMethod POST: db_list_with_filter')
+        list_db = API.post_db_list(TestData.sid)
+        json_list_db = json.loads(list_db.text)
+        try:
+            first_db_uuid = list(json_list_db['content'].keys())[0]
+            result_post_db_list = API.post_db_list_with_filter(TestData.sid, first_db_uuid)
+            Checking.check_status_code(result_post_db_list, 200)
+        except IndexError as ex:
+            print(ex)
+            assert str(ex) == 'list index out of range', 'Db list is empty.'
+
     @allure.title('delete db')
     @pytest.mark.xfail()
     def test_delete_db(self):

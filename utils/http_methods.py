@@ -21,7 +21,7 @@ class HttpMethods:
         result = requests.get(url, headers=HttpMethods.headers, cookies=HttpMethods.cookie)
         with allure.step(f'Status code: {result.status_code}'):
             pass
-        with allure.step(f'Response: {result.json()}'):
+        with allure.step(f'Response: {result.text}'):
             pass
         Logger.add_response(result)
         return result
@@ -43,7 +43,7 @@ class HttpMethods:
                          f'Cookies: {cookie}\n'
                          f'Body: {body}'):
             pass
-        with allure.step(f'Response: {result.json()}'):
+        with allure.step(f'Response: {result.text}'):
             pass
         Logger.add_response(result)
         return result
@@ -80,7 +80,7 @@ class HttpMethods:
                          f'Cookies: {cookie}\n'
                          f'Body: {body}'):
             pass
-        with allure.step(f'Response: {result.json()}'):
+        with allure.step(f'Response: {result.text}'):
             pass
         Logger.add_response(result)
         return result
@@ -102,7 +102,7 @@ class HttpMethods:
                          f'Db uuid: {db_uuid}\n'
                          f'Sid: {sid}'):
             pass
-        with allure.step(f'Response: {result.json()}'):
+        with allure.step(f'Response: {result.text}'):
             pass
         Logger.add_response(result)
         return result
@@ -124,7 +124,7 @@ class HttpMethods:
                          f'Cookies: {cookie}\n'
                          f'Body: {body}'):
             pass
-        with allure.step(f'Response: {result.json()}'):
+        with allure.step(f'Response: {result.text}'):
             pass
         Logger.add_response(result)
         return result
