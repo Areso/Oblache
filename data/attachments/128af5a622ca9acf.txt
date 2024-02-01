@@ -1,0 +1,30 @@
+
+
+Method DELETE: delete_db
+https://dbend.areso.pro/db_list
+Response body:  {
+    "content": {
+        "065bbdac-e4e5-7009-8000-e84d98a9e0c4": [
+            "db_macx6lnp",
+            "CIS",
+            "db_created",
+            "mysql://user_5j2iuyzp:pwPW01__zGn58OF8gbdJxM@cisdb1.areso.pro:3306/db_macx6lnp",
+            "2024-02-01 17:54:37"
+        ],
+        "065bbdd1-249d-744d-8000-055a0c5996b2": [
+            "",
+            "CIS",
+            "db_creating",
+            null,
+            "None"
+        ]
+    }
+}
+
+https://dbend.areso.pro/db_delete
+Status code: 200
+Response body:  {
+    "content": "msg[13]: successfully accepted request for deletion"
+}
+
+Assert expected status code: 200 == Response status code: 200
