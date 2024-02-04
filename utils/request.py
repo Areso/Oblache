@@ -80,6 +80,16 @@ class API(TestData):
         return result_get
 
     @staticmethod
+    def get_bad_request():
+        get_resource = '/bad_request'  # Resource for method GET
+        get_url = TestData.base_url + get_resource
+        with allure.step(f'GET {get_url}'):
+            print(get_url)
+        result_get = HttpMethods.get(get_url)
+        print(result_get.text)
+        return result_get
+
+    @staticmethod
     def post_registration():
         """
         Method for create new user

@@ -3,6 +3,7 @@ from datetime import datetime
 
 time = str(datetime.now().strftime("%d-%m-%Y(time)%H:%M:%S"))
 
+
 @dataclass
 class MySqlData:
     host: str = None

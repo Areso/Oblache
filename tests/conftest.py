@@ -1,6 +1,5 @@
 import json
 import os
-from pprint import pprint
 
 import mysql.connector
 import requests
@@ -26,7 +25,7 @@ class TestData:
         json_list_db = json.loads(result_post.text)
         db_name = json_list_db['content'][db_uuid][0]
         print('db_name', db_name)
-        db_status = db_name[2]
+        # db_status = db_name[2]
         user_name = json_list_db['content'][db_uuid][3].split(':')[1].replace('//', '')
         print('user_name', user_name)
         host = json_list_db['content'][db_uuid][3].split(':')[2].partition('@')[2]

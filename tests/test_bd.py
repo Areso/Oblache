@@ -44,6 +44,11 @@ class TestGET:
         result_get = API.get_list_regions()
         Checking.check_status_code(result_get, 200)
 
+    @allure.title('List regions.')
+    def test_get_with_bad_request(self):
+        result_get = API.get_bad_request()
+        Checking.check_status_code(result_get, 404)
+
 
 @allure.epic('POST REQUESTS')
 @allure.suite('POST')
@@ -120,8 +125,8 @@ class TestPOST:
         result_post_db_list = API.post_db_create_wrong_value_env(TestData.sid)
         print(result_post_db_list.json())
         Checking.check_status_code(result_post_db_list, 400)
-        # Checking.check_json_search_word_in_value(result_post_db_list, "content",
-        #                                          "error: DB version isn't found or isn't available for order")
+        Checking.check_json_search_word_in_value(result_post_db_list, "content",
+                                                 "error: DB environment isn't found or isn't available for order")
 
     @allure.title('Post db_create with wrong region.')
     def test_post_db_create_with_wrong_values_region(self):
