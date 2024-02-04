@@ -49,6 +49,11 @@ class TestGET:
         result_get = API.get_bad_request()
         Checking.check_status_code(result_get, 404)
 
+    @allure.title('Get profile information.')
+    def test_get_status(self):
+        result_get = API.get_status()
+        Checking.check_status_code(result_get, 200)
+
 
 @allure.epic('POST REQUESTS')
 @allure.suite('POST')
