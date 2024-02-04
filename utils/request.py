@@ -40,6 +40,23 @@ class API(TestData):
         return result_get
 
     @staticmethod
+    def get_status():
+        """
+        :return:
+        """
+        get_resource = '/get_profile'  # Resource for method
+        get_url = TestData.base_url + get_resource
+        with allure.step(f'GET {get_url}'):
+            print(get_url)
+        result_get = HttpMethods.get_with_cookie(get_url, {
+            "queue_db_create_orders": 3,
+            "queue_db_delete_orders": 1,
+            "number_of_stuck_tasks": 0
+        }, TestData.sid)
+        print('Response body: ', result_get.text)
+        return result_get
+
+    @staticmethod
     def get_list_dbtypes():
         get_resource = '/list_dbtypes'  # Resource for method GET
         get_url = TestData.base_url + get_resource
@@ -61,7 +78,7 @@ class API(TestData):
 
     @staticmethod
     def get_list_envs():
-        get_resource = '/list_envs'  # Resource for method GET
+        get_resource = '/list_dbenvs'  # Resource for method GET
         get_url = TestData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             print(get_url)
