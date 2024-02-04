@@ -1,13 +1,13 @@
 
 
-Method POST: db_list
+Method DELETE: delete_db
 https://dbend.areso.pro/db_list
 Response body:  {
     "content": {
         "065bbdf2-900e-7de3-8000-fe5647090c29": [
             "db_zm4roh23",
             "CIS",
-            "db_created",
+            "deleting",
             "mysql://user_kapimpj6:pwPW01__bAt5CHK4Y7nJEq@cisdb1.areso.pro:3306/db_zm4roh23",
             "2024-02-01 18:13:11"
         ],
@@ -24,8 +24,27 @@ Response body:  {
             "db_creating",
             null,
             "None"
+        ],
+        "065bfc83-974a-7804-8000-125147de4a6f": [
+            "",
+            "CIS",
+            "db_creating",
+            null,
+            "None"
+        ],
+        "065bfcc5-5fc5-7dd3-8000-f04ca7281a63": [
+            "",
+            "CIS",
+            "db_creating",
+            null,
+            "None"
         ]
     }
 }
 
-Assert expected status code: 200 == Response status code: 200
+https://dbend.areso.pro/db_delete
+Status code: 400
+Response body:  {
+    "content": "msg[19]: error: can't delete a db while it's deleting"
+}
+

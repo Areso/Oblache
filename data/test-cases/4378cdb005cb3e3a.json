@@ -1,12 +1,12 @@
 {
-  "uid" : "a0c97c00bfc7d49b",
-  "name" : "Test tos.",
-  "fullName" : "tests.test_bd.TestGET#test_tos",
-  "historyId" : "8b98d28890b5c734f92328870cdafef0",
+  "uid" : "4378cdb005cb3e3a",
+  "name" : "List dbtypes.",
+  "fullName" : "tests.test_bd.TestGET#test_get_list_dbtypes",
+  "historyId" : "568d5308d5c3380391edf599f715645c",
   "time" : {
-    "start" : 1707067406758,
-    "stop" : 1707067407297,
-    "duration" : 539
+    "start" : 1707068498118,
+    "stop" : 1707068498467,
+    "duration" : 349
   },
   "status" : "passed",
   "flaky" : false,
@@ -15,11 +15,11 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "GET https://dbend.areso.pro/tos",
+      "name" : "GET https://dbend.areso.pro/list_dbtypes",
       "time" : {
-        "start" : 1707067406758,
-        "stop" : 1707067406758,
-        "duration" : 0
+        "start" : 1707068498118,
+        "stop" : 1707068498119,
+        "duration" : 1
       },
       "status" : "passed",
       "steps" : [ ],
@@ -32,8 +32,8 @@
     }, {
       "name" : "Status code: 200",
       "time" : {
-        "start" : 1707067407296,
-        "stop" : 1707067407296,
+        "start" : 1707068498466,
+        "stop" : 1707068498466,
         "duration" : 0
       },
       "status" : "passed",
@@ -45,10 +45,10 @@
       "stepsCount" : 0,
       "hasContent" : false
     }, {
-      "name" : "Response: \"Hello. This pet-project (later Project) works AS IS, no warranty at all.\\nUsing Project, you agree to that.\\nYou MUST create backups of your databases for sake reasons.\\nBecause I do run project on my own pocket money, \\nI limit total size of the databases per 1 user as 100 MBs.\\nAny account don't used more than 6 monts is subject for deletion with all databases.\"\n",
+      "name" : "Response: {\n    \"3\": \"mysql8\"\n}\n",
       "time" : {
-        "start" : 1707067407296,
-        "stop" : 1707067407296,
+        "start" : 1707068498466,
+        "stop" : 1707068498466,
         "duration" : 0
       },
       "status" : "passed",
@@ -62,8 +62,8 @@
     }, {
       "name" : "Assert status code: 200 == Response status code: 200",
       "time" : {
-        "start" : 1707067407296,
-        "stop" : 1707067407296,
+        "start" : 1707068498466,
+        "stop" : 1707068498466,
         "duration" : 0
       },
       "status" : "passed",
@@ -76,11 +76,11 @@
       "hasContent" : false
     } ],
     "attachments" : [ {
-      "uid" : "50745fa919f39ec",
+      "uid" : "64c7d5759a45c84f",
       "name" : "stdout",
-      "source" : "50745fa919f39ec.txt",
+      "source" : "64c7d5759a45c84f.txt",
       "type" : "text/plain",
-      "size" : 459
+      "size" : 122
     } ],
     "parameters" : [ ],
     "attachmentsCount" : 1,
@@ -103,10 +103,10 @@
     "value" : "TestGET"
   }, {
     "name" : "host",
-    "value" : "fv-az714-734"
+    "value" : "fv-az1113-935"
   }, {
     "name" : "thread",
-    "value" : "1764-MainThread"
+    "value" : "1762-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -133,78 +133,54 @@
         "failed" : 0,
         "broken" : 0,
         "skipped" : 0,
-        "passed" : 9,
+        "passed" : 6,
         "unknown" : 0,
-        "total" : 9
+        "total" : 6
       },
       "items" : [ {
-        "uid" : "d6c612bef67b4729",
+        "uid" : "c88863731d309a4a",
         "status" : "passed",
         "time" : {
-          "start" : 1706811863388,
-          "stop" : 1706811863720,
-          "duration" : 332
+          "start" : 1707067407836,
+          "stop" : 1707067408361,
+          "duration" : 525
         }
       }, {
-        "uid" : "d08c5b424a004fb9",
+        "uid" : "383eb889915ea6b2",
         "status" : "passed",
         "time" : {
-          "start" : 1706810638169,
-          "stop" : 1706810638513,
-          "duration" : 344
+          "start" : 1706811864062,
+          "stop" : 1706811864395,
+          "duration" : 333
         }
       }, {
-        "uid" : "820e297a20e4e264",
+        "uid" : "80aa52381c146197",
         "status" : "passed",
         "time" : {
-          "start" : 1706729023679,
-          "stop" : 1706729024026,
-          "duration" : 347
+          "start" : 1706810638856,
+          "stop" : 1706810639182,
+          "duration" : 326
         }
       }, {
-        "uid" : "2bc3247591da93fc",
+        "uid" : "23d6fea0abe00251",
         "status" : "passed",
         "time" : {
-          "start" : 1706630864152,
-          "stop" : 1706630864486,
-          "duration" : 334
+          "start" : 1706729024435,
+          "stop" : 1706729024778,
+          "duration" : 343
         }
       }, {
-        "uid" : "ca57a41d5cd3b15f",
+        "uid" : "df097ff40f5da063",
         "status" : "passed",
         "time" : {
-          "start" : 1706630296568,
-          "stop" : 1706630296978,
-          "duration" : 410
-        }
-      }, {
-        "uid" : "a3ca0b6a666b8551",
-        "status" : "passed",
-        "time" : {
-          "start" : 1706630057905,
-          "stop" : 1706630058317,
-          "duration" : 412
-        }
-      }, {
-        "uid" : "43591d309aec84df",
-        "status" : "passed",
-        "time" : {
-          "start" : 1706484248197,
-          "stop" : 1706484248609,
-          "duration" : 412
-        }
-      }, {
-        "uid" : "9bb23e08156c9e2f",
-        "status" : "passed",
-        "time" : {
-          "start" : 1706282535027,
-          "stop" : 1706282535376,
-          "duration" : 349
+          "start" : 1706630864821,
+          "stop" : 1706630865145,
+          "duration" : 324
         }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "a0c97c00bfc7d49b.json",
+  "source" : "4378cdb005cb3e3a.json",
   "parameterValues" : [ ]
 }

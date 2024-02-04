@@ -1,28 +1,28 @@
 {
-  "uid" : "f84490c816ee6f37",
+  "uid" : "94a03fc0a4488d2f",
   "name" : "List envs.",
   "fullName" : "tests.test_bd.TestGET#test_get_list_envs",
   "historyId" : "9e790aeafa2ea7075f9baaa844cb1e2e",
   "time" : {
-    "start" : 1707067409065,
-    "stop" : 1707067409553,
-    "duration" : 488
+    "start" : 1707068498953,
+    "stop" : 1707068499266,
+    "duration" : 313
   },
   "status" : "failed",
   "statusMessage" : "AssertionError: Incorrect status code",
-  "statusTrace" : "self = <tests.test_bd.TestGET object at 0x7efef1f1aad0>\n\n    @allure.title('List envs.')\n    def test_get_list_envs(self):\n        result_get = API.get_list_envs()\n>       Checking.check_status_code(result_get, 200)\n\ntests/test_bd.py:40: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [404]>, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response JSON\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, 'Incorrect status code'\nE           AssertionError: Incorrect status code\n\nutils/checking.py:18: AssertionError",
+  "statusTrace" : "self = <tests.test_bd.TestGET object at 0x7fad88862ad0>\n\n    @allure.title('List envs.')\n    def test_get_list_envs(self):\n        result_get = API.get_list_envs()\n>       Checking.check_status_code(result_get, 200)\n\ntests/test_bd.py:40: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [404]>, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response JSON\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, 'Incorrect status code'\nE           AssertionError: Incorrect status code\n\nutils/checking.py:18: AssertionError",
   "flaky" : false,
-  "newFailed" : true,
+  "newFailed" : false,
   "beforeStages" : [ ],
   "testStage" : {
     "status" : "failed",
     "statusMessage" : "AssertionError: Incorrect status code",
-    "statusTrace" : "self = <tests.test_bd.TestGET object at 0x7efef1f1aad0>\n\n    @allure.title('List envs.')\n    def test_get_list_envs(self):\n        result_get = API.get_list_envs()\n>       Checking.check_status_code(result_get, 200)\n\ntests/test_bd.py:40: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [404]>, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response JSON\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, 'Incorrect status code'\nE           AssertionError: Incorrect status code\n\nutils/checking.py:18: AssertionError",
+    "statusTrace" : "self = <tests.test_bd.TestGET object at 0x7fad88862ad0>\n\n    @allure.title('List envs.')\n    def test_get_list_envs(self):\n        result_get = API.get_list_envs()\n>       Checking.check_status_code(result_get, 200)\n\ntests/test_bd.py:40: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [404]>, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response JSON\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, 'Incorrect status code'\nE           AssertionError: Incorrect status code\n\nutils/checking.py:18: AssertionError",
     "steps" : [ {
       "name" : "GET https://dbend.areso.pro/list_envs",
       "time" : {
-        "start" : 1707067409065,
-        "stop" : 1707067409065,
+        "start" : 1707068498953,
+        "stop" : 1707068498953,
         "duration" : 0
       },
       "status" : "passed",
@@ -36,8 +36,8 @@
     }, {
       "name" : "Status code: 404",
       "time" : {
-        "start" : 1707067409553,
-        "stop" : 1707067409553,
+        "start" : 1707068499265,
+        "stop" : 1707068499265,
         "duration" : 0
       },
       "status" : "passed",
@@ -51,8 +51,8 @@
     }, {
       "name" : "Response: <!doctype html>\n<html lang=en>\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n",
       "time" : {
-        "start" : 1707067409553,
-        "stop" : 1707067409553,
+        "start" : 1707068499265,
+        "stop" : 1707068499265,
         "duration" : 0
       },
       "status" : "passed",
@@ -66,8 +66,8 @@
     }, {
       "name" : "Assert status code: 200 == Response status code: 404",
       "time" : {
-        "start" : 1707067409553,
-        "stop" : 1707067409553,
+        "start" : 1707068499265,
+        "stop" : 1707068499265,
         "duration" : 0
       },
       "status" : "failed",
@@ -82,9 +82,9 @@
       "hasContent" : true
     } ],
     "attachments" : [ {
-      "uid" : "a1053c1bc6d7b912",
+      "uid" : "3563de8ca08a10ef",
       "name" : "stdout",
-      "source" : "a1053c1bc6d7b912.txt",
+      "source" : "3563de8ca08a10ef.txt",
       "type" : "text/plain",
       "size" : 242
     } ],
@@ -109,10 +109,10 @@
     "value" : "TestGET"
   }, {
     "name" : "host",
-    "value" : "fv-az714-734"
+    "value" : "fv-az1113-935"
   }, {
     "name" : "thread",
-    "value" : "1764-MainThread"
+    "value" : "1762-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -140,14 +140,23 @@
     } ],
     "history" : {
       "statistic" : {
-        "failed" : 1,
+        "failed" : 2,
         "broken" : 0,
         "skipped" : 0,
         "passed" : 4,
         "unknown" : 0,
-        "total" : 5
+        "total" : 6
       },
       "items" : [ {
+        "uid" : "f84490c816ee6f37",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1707067409065,
+          "stop" : 1707067409553,
+          "duration" : 488
+        }
+      }, {
         "uid" : "95fe776b84d7dc4e",
         "status" : "passed",
         "time" : {
@@ -183,6 +192,6 @@
     },
     "tags" : [ ]
   },
-  "source" : "f84490c816ee6f37.json",
+  "source" : "94a03fc0a4488d2f.json",
   "parameterValues" : [ ]
 }
