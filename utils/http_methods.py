@@ -43,7 +43,7 @@ class HttpMethods:
                          f'Cookies: {cookie}\n'
                          f'Body: {body}'):
             pass
-        with allure.step(f'Response: {result.text}'):
+        with allure.step(f'Response: {result}'):
             pass
         Logger.add_response(result)
         return result
@@ -55,10 +55,9 @@ class HttpMethods:
         result = requests.post(url, json=body, headers=HttpMethods.headers, cookies=HttpMethods.cookie)
         with allure.step(f'Status code: {result.status_code}'):
             pass
-        with allure.step(f'Params url: {url}\n'
-                         f'Body: {body}'):
+        with allure.step(f'Params url: {url}'):
             pass
-        with allure.step(f'Response: {result.text}'):
+        with allure.step(f'Response: {result}'):
             pass
         Logger.add_response(result)
         return result
@@ -76,11 +75,9 @@ class HttpMethods:
         result = requests.post(url, cookies=cookie, json=body)
         with allure.step(f'Status code: {result.status_code}'):
             pass
-        with allure.step(f'Params url: {url}\n'
-                         f'Cookies: {cookie}\n'
-                         f'Body: {body}'):
+        with allure.step(f'Params url: {url}'):
             pass
-        with allure.step(f'Response: {result.text}'):
+        with allure.step(f'Response: {result}'):
             pass
         Logger.add_response(result)
         return result
@@ -98,11 +95,9 @@ class HttpMethods:
         result = requests.post(url, data=db_uuid, cookies=sid)
         with allure.step(f'Status code: {result.status_code}'):
             pass
-        with allure.step(f'Params url: {url}\n'
-                         f'Db uuid: {db_uuid}\n'
-                         f'Sid: {sid}'):
+        with allure.step(f'Params url: {url}'):
             pass
-        with allure.step(f'Response: {result.text}'):
+        with allure.step(f'Response: {result}'):
             pass
         Logger.add_response(result)
         return result
@@ -124,7 +119,7 @@ class HttpMethods:
                          f'Cookies: {cookie}\n'
                          f'Body: {body}'):
             pass
-        with allure.step(f'Response: {result.text}'):
+        with allure.step(f'Response: {result}'):
             pass
         Logger.add_response(result)
         return result
