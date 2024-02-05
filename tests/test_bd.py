@@ -66,7 +66,7 @@ class TestPOST:
         status_code = result_post
         Checking.check_status_code(status_code, 201)
 
-    @allure.title('Post registration mail')
+    @allure.title('Post registration mail any counties')
     def test_post_registration_with_variety_mail(self):
         print('\n\nMethod POST: registration')
         result_post = API.post_registration_variety_email(random.choice(['gmail', 'mail', 'yandex']),
@@ -75,7 +75,7 @@ class TestPOST:
         Checking.check_status_code(status_code, 201)
         Checking.check_json_search_word_in_value(result_post, 'content', 'msg[1]: registered successfully')
 
-    @allure.title('Post registration mail')
+    @allure.title('Post registration mail bg')
     def test_post_registration_for_bulgaria(self):
         print('\n\nMethod POST: registration')
         result_post = API.post_registration_variety_email(random.choice(['gmail', 'mail', 'yandex']), 'bg')
@@ -182,10 +182,14 @@ class TestPOST:
 @allure.epic('Connection DB')
 @allure.suite('Test Connection DB')
 class TestConnectionDB:
-    @allure.sub_suite('Complex')
-    def test_complex(self):
-        time.sleep(30)
-        API.check_full_cycle(TestData.sid)
+    # @allure.sub_suite('Complex')
+    # def test_complex(self):
+    #     time.sleep(30)
+    #     API.check_full_cycle(TestData.sid)
+
+    @allure.sub_suite('Complex 2')
+    def test_complex2(self):
+        API.check_full_cycle2(TestData.sid)
 
 
 @allure.epic('Performance DB')
