@@ -187,7 +187,7 @@ class TestConnectionDB:
     #     time.sleep(30)
     #     API.check_full_cycle(TestData.sid)
 
-    @allure.sub_suite('Complex 2')
+    @allure.title('Complex 2')
     def test_complex2(self):
         API.check_full_cycle2(TestData.sid)
 
@@ -195,6 +195,7 @@ class TestConnectionDB:
 @allure.epic('Performance DB')
 @allure.suite('Test Performance DB')
 class TestCapacity:
+    @allure.title('test_capacity_db')
     def test_capacity_db(self):
         result_db_create = API.post_db_create(TestData.sid)
         print('Status db is :', result_db_create.json())
