@@ -1,5 +1,6 @@
 import json
 import random
+import time
 from datetime import datetime
 from string import ascii_letters
 
@@ -8,6 +9,7 @@ import mysql.connector
 
 import data.data
 from tests.conftest import TestData
+from utils.checking import Checking
 from utils.http_methods import HttpMethods
 
 
@@ -286,42 +288,80 @@ class API(TestData):
         print('Response body: ', result_delete.text)
         return result_delete
 
+    # @staticmethod
+    # def check_full_cycle(sid):
+    #     print('\nCheck Time: ', str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
+    #     empty_db_list = API.post_db_list(sid).text
+    #     result_db_create = API.post_db_create(sid)
+    #     db_uuid = result_db_create.json()["db_uuid"]
+    #     while True:
+    #         try:
+    #             db = TestData.connection(db_uuid)
+    #             cursor = db.cursor()
+    #             cursor.execute("""select 1 from dual""")
+    #             res_query = cursor.fetchall()
+    #             print(res_query)
+    #         except Exception as ex:
+    #             print('Exception: ', ex)
+    #         result_post_db_delete = API.delete_db(db_uuid, sid)
+    #         json_delete_db = json.loads(result_post_db_delete.text)
+    #         message = list(json_delete_db.values())[0].split(':')
+    #         if 'msg[18]' in message:
+    #             print(str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
+    #         elif 'msg[19]' in message:
+    #             print(str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
+    #             result_post_db_delete = API.delete_db(db_uuid, sid)
+    #             json.loads(result_post_db_delete.text)
+    #         elif 'msg[13]' in message:
+    #             result_post_db_delete = API.delete_db(db_uuid, sid)
+    #             json_delete_db = json.loads(result_post_db_delete.text)
+    #             print('json_delete_db', json_delete_db)
+    #             print('Finish: ', str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
+    #         else:
+    #             print('Finish: ', str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
+    #             break
+    #     cur_db_list = API.post_db_list(sid)
+    #     with allure.step(f'Compare {cur_db_list.text} == {empty_db_list}'):
+    #         print(f'Compare: {cur_db_list.text} == {empty_db_list}')
+    #     assert cur_db_list.text == empty_db_list, f'DB is not deleted. {cur_db_list.text}'
+
     @staticmethod
-    def check_full_cycle(sid):
+    def check_full_cycle2(sid):
         print('\nCheck Time: ', str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
-        empty_db_list = API.post_db_list(sid).text
+        start_value_db_list = API.post_db_list(sid)
+        API.get_profile()
+        post_db_list = API.post_db_list(sid)
         result_db_create = API.post_db_create(sid)
         db_uuid = result_db_create.json()["db_uuid"]
+        result_db_delete = API.delete_db(db_uuid, sid)
+        assert result_db_delete.status_code == 400
+        Checking.check_json_search_word_in_value(result_db_delete, "content",
+                                                 "msg[18]: error: can't delete a db while it's creating")
         while True:
-            try:
-                db = TestData.connection(db_uuid)
-                cursor = db.cursor()
-                cursor.execute("""select 1 from dual""")
-                res_query = cursor.fetchall()
-                print(res_query)
-            except Exception as ex:
-                print('Exception: ', ex)
-            result_post_db_delete = API.delete_db(db_uuid, sid)
-            json_delete_db = json.loads(result_post_db_delete.text)
-            message = list(json_delete_db.values())[0].split(':')
-            if 'msg[18]' in message:
-                print(str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
-            elif 'msg[19]' in message:
-                print(str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
-                result_post_db_delete = API.delete_db(db_uuid, sid)
-                json.loads(result_post_db_delete.text)
-            elif 'msg[13]' in message:
-                result_post_db_delete = API.delete_db(db_uuid, sid)
-                json_delete_db = json.loads(result_post_db_delete.text)
-                print('json_delete_db', json_delete_db)
-                print('Finish: ', str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
-            else:
-                print('Finish: ', str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
+            result_db_list = API.post_db_list_with_filter(sid, db_uuid)
+            message = result_db_list.json()['content'][db_uuid][2]
+            if message == 'db_created':
                 break
-        cur_db_list = API.post_db_list(sid)
-        with allure.step(f'Compare {cur_db_list.text} == {empty_db_list}'):
-            print(f'Compare: {cur_db_list.text} == {empty_db_list}')
-        assert cur_db_list.text == empty_db_list, f'DB is not deleted. {cur_db_list.text}'
+            else:
+                time.sleep(4)
+                continue
+        assert message == 'db_created'
+        API.get_profile()
+        assert API.delete_db(db_uuid, sid).status_code == 200
+        result_db_delete = API.delete_db(db_uuid, sid)
+        assert result_db_delete.status_code == 400
+        Checking.check_json_search_word_in_value(result_db_delete, 'content',
+                                                 "error: can't delete a db while it's deleting")
+        while True:
+            current_value_db_list = API.post_db_list(sid)
+            if start_value_db_list.text == current_value_db_list.text:
+                break
+            else:
+                time.sleep(4)
+                continue
+        last_db_delete = API.delete_db(db_uuid, sid)
+        assert last_db_delete.status_code == 400
+        Checking.check_json_search_word_in_value(last_db_delete, 'content', 'requested database is not found')
 
     def load_db_v2(self):
         letters = ascii_letters
@@ -336,3 +376,6 @@ class API(TestData):
                 %(my_string)s);""",
                                {'my_string': my_string})
             self.connection.commit()
+
+# API.check_full_cycle2(TestData.sid)
+# API.post_db_list(TestData.sid)
