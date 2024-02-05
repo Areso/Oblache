@@ -1,0 +1,281 @@
+
+Check Time:  05-02-2024 16:49:07
+https://dbend.areso.pro/db_list
+Response body:  {
+    "content": {
+        "065c10fb-1fba-7623-8000-538f4609013a": [
+            "db_vw42drh6",
+            "CIS",
+            "db_created",
+            "mysql://user_5hme4m8l:pwPW01__jzAuite16GzhJ7@cisdb1.areso.pro:3306/db_vw42drh6",
+            "2024-02-05 16:41:35"
+        ],
+        "065c110e-41ea-7fda-8000-6cd28e23f6c2": [
+            "db_mli33hte",
+            "CIS",
+            "db_created",
+            "mysql://user_20zib0lg:pwPW01__z8bxQxAMqjcILT@cisdb1.areso.pro:3306/db_mli33hte",
+            "2024-02-05 16:46:42"
+        ]
+    }
+}
+
+https://dbend.areso.pro/get_profile
+Response body:  {
+    "content": [
+        [
+            "email",
+            "test4"
+        ],
+        [
+            "is_blocked",
+            0
+        ],
+        [
+            "is_db_creation_allowed",
+            1
+        ],
+        [
+            "disk_db_quota",
+            4
+        ],
+        [
+            "disk_db_used",
+            0
+        ],
+        [
+            "db_qty_quota",
+            100
+        ],
+        [
+            "db_qty_used",
+            15
+        ],
+        [
+            "id_regions",
+            "3"
+        ]
+    ]
+}
+
+https://dbend.areso.pro/db_list
+Response body:  {
+    "content": {
+        "065c10fb-1fba-7623-8000-538f4609013a": [
+            "db_vw42drh6",
+            "CIS",
+            "db_created",
+            "mysql://user_5hme4m8l:pwPW01__jzAuite16GzhJ7@cisdb1.areso.pro:3306/db_vw42drh6",
+            "2024-02-05 16:41:35"
+        ],
+        "065c110e-41ea-7fda-8000-6cd28e23f6c2": [
+            "db_mli33hte",
+            "CIS",
+            "db_created",
+            "mysql://user_20zib0lg:pwPW01__z8bxQxAMqjcILT@cisdb1.areso.pro:3306/db_mli33hte",
+            "2024-02-05 16:46:42"
+        ]
+    }
+}
+
+Url: https://dbend.areso.pro/db_create
+Status code: 201
+Response body:  {
+    "msg": "your order for a new database created successfully",
+    "db_uuid": "065c1118-5393-76d9-8000-9a1ad33cbf7d"
+}
+
+https://dbend.areso.pro/db_delete
+Status code: 400
+Response body:  {
+    "content": "msg[18]: error: can't delete a db while it's creating"
+}
+
+Value: msg[18]: error: can't delete a db while it's creating
+is presence in key: content
+https://dbend.areso.pro/db_list
+Response body:  {
+    "content": {
+        "065c1118-5393-76d9-8000-9a1ad33cbf7d": [
+            "",
+            "CIS",
+            "db_creating",
+            null,
+            "None"
+        ]
+    }
+}
+
+https://dbend.areso.pro/db_list
+Response body:  {
+    "content": {
+        "065c1118-5393-76d9-8000-9a1ad33cbf7d": [
+            "",
+            "CIS",
+            "db_creating",
+            null,
+            "None"
+        ]
+    }
+}
+
+https://dbend.areso.pro/db_list
+Response body:  {
+    "content": {
+        "065c1118-5393-76d9-8000-9a1ad33cbf7d": [
+            "",
+            "CIS",
+            "db_creating",
+            null,
+            "None"
+        ]
+    }
+}
+
+https://dbend.areso.pro/db_list
+Response body:  {
+    "content": {
+        "065c1118-5393-76d9-8000-9a1ad33cbf7d": [
+            "db_r7ahxtpn",
+            "CIS",
+            "db_created",
+            "mysql://user_n2n79uu9:pwPW01__sqk3WQKyVG69V7@cisdb1.areso.pro:3306/db_r7ahxtpn",
+            "2024-02-05 16:49:23"
+        ]
+    }
+}
+
+https://dbend.areso.pro/get_profile
+Response body:  {
+    "content": [
+        [
+            "email",
+            "test4"
+        ],
+        [
+            "is_blocked",
+            0
+        ],
+        [
+            "is_db_creation_allowed",
+            1
+        ],
+        [
+            "disk_db_quota",
+            4
+        ],
+        [
+            "disk_db_used",
+            0
+        ],
+        [
+            "db_qty_quota",
+            100
+        ],
+        [
+            "db_qty_used",
+            16
+        ],
+        [
+            "id_regions",
+            "3"
+        ]
+    ]
+}
+
+https://dbend.areso.pro/db_delete
+Status code: 200
+Response body:  {
+    "content": "msg[13]: successfully accepted request for deletion"
+}
+
+https://dbend.areso.pro/db_delete
+Status code: 400
+Response body:  {
+    "content": "msg[19]: error: can't delete a db while it's deleting"
+}
+
+Value: error: can't delete a db while it's deleting
+is presence in key: content
+https://dbend.areso.pro/db_list
+Response body:  {
+    "content": {
+        "065c10fb-1fba-7623-8000-538f4609013a": [
+            "db_vw42drh6",
+            "CIS",
+            "db_created",
+            "mysql://user_5hme4m8l:pwPW01__jzAuite16GzhJ7@cisdb1.areso.pro:3306/db_vw42drh6",
+            "2024-02-05 16:41:35"
+        ],
+        "065c110e-41ea-7fda-8000-6cd28e23f6c2": [
+            "db_mli33hte",
+            "CIS",
+            "db_created",
+            "mysql://user_20zib0lg:pwPW01__z8bxQxAMqjcILT@cisdb1.areso.pro:3306/db_mli33hte",
+            "2024-02-05 16:46:42"
+        ],
+        "065c1118-5393-76d9-8000-9a1ad33cbf7d": [
+            "db_r7ahxtpn",
+            "CIS",
+            "deleting",
+            "mysql://user_n2n79uu9:pwPW01__sqk3WQKyVG69V7@cisdb1.areso.pro:3306/db_r7ahxtpn",
+            "2024-02-05 16:49:23"
+        ]
+    }
+}
+
+https://dbend.areso.pro/db_list
+Response body:  {
+    "content": {
+        "065c10fb-1fba-7623-8000-538f4609013a": [
+            "db_vw42drh6",
+            "CIS",
+            "db_created",
+            "mysql://user_5hme4m8l:pwPW01__jzAuite16GzhJ7@cisdb1.areso.pro:3306/db_vw42drh6",
+            "2024-02-05 16:41:35"
+        ],
+        "065c110e-41ea-7fda-8000-6cd28e23f6c2": [
+            "db_mli33hte",
+            "CIS",
+            "db_created",
+            "mysql://user_20zib0lg:pwPW01__z8bxQxAMqjcILT@cisdb1.areso.pro:3306/db_mli33hte",
+            "2024-02-05 16:46:42"
+        ],
+        "065c1118-5393-76d9-8000-9a1ad33cbf7d": [
+            "db_r7ahxtpn",
+            "CIS",
+            "deleting",
+            "mysql://user_n2n79uu9:pwPW01__sqk3WQKyVG69V7@cisdb1.areso.pro:3306/db_r7ahxtpn",
+            "2024-02-05 16:49:23"
+        ]
+    }
+}
+
+https://dbend.areso.pro/db_list
+Response body:  {
+    "content": {
+        "065c10fb-1fba-7623-8000-538f4609013a": [
+            "db_vw42drh6",
+            "CIS",
+            "db_created",
+            "mysql://user_5hme4m8l:pwPW01__jzAuite16GzhJ7@cisdb1.areso.pro:3306/db_vw42drh6",
+            "2024-02-05 16:41:35"
+        ],
+        "065c110e-41ea-7fda-8000-6cd28e23f6c2": [
+            "db_mli33hte",
+            "CIS",
+            "db_created",
+            "mysql://user_20zib0lg:pwPW01__z8bxQxAMqjcILT@cisdb1.areso.pro:3306/db_mli33hte",
+            "2024-02-05 16:46:42"
+        ]
+    }
+}
+
+https://dbend.areso.pro/db_delete
+Status code: 400
+Response body:  {
+    "content": "msg[16]: requested database is not found"
+}
+
+Value: requested database is not found
+is presence in key: content
