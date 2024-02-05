@@ -120,9 +120,6 @@ class API(TestData):
         post_url = TestData.base_url + post_resource
         with allure.step(f'POST {post_url}'):
             print(post_url)
-        with allure.step(f'Params:'
-                         f'{json_for_create_new_user}'):
-            pass
         result_post = HttpMethods.post(post_url, json_for_create_new_user)
         print('Response body: ', result_post.text)
         return result_post
@@ -133,7 +130,7 @@ class API(TestData):
         Method for create new user
         :return: JSON Response
         """
-        json_for_create_new_user = {"email": f'aqa(date){data.data.time}@{mail}.{prefix}',
+        json_for_create_new_user = {"email": f'aqa{data.data.time}@{mail}.{prefix}',
                                     "password": TestData.password}
         print(f'Data for request: {json_for_create_new_user}')
         post_resource = '/register'  # Resource for method POST
@@ -288,49 +285,12 @@ class API(TestData):
         print('Response body: ', result_delete.text)
         return result_delete
 
-    # @staticmethod
-    # def check_full_cycle(sid):
-    #     print('\nCheck Time: ', str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
-    #     empty_db_list = API.post_db_list(sid).text
-    #     result_db_create = API.post_db_create(sid)
-    #     db_uuid = result_db_create.json()["db_uuid"]
-    #     while True:
-    #         try:
-    #             db = TestData.connection(db_uuid)
-    #             cursor = db.cursor()
-    #             cursor.execute("""select 1 from dual""")
-    #             res_query = cursor.fetchall()
-    #             print(res_query)
-    #         except Exception as ex:
-    #             print('Exception: ', ex)
-    #         result_post_db_delete = API.delete_db(db_uuid, sid)
-    #         json_delete_db = json.loads(result_post_db_delete.text)
-    #         message = list(json_delete_db.values())[0].split(':')
-    #         if 'msg[18]' in message:
-    #             print(str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
-    #         elif 'msg[19]' in message:
-    #             print(str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
-    #             result_post_db_delete = API.delete_db(db_uuid, sid)
-    #             json.loads(result_post_db_delete.text)
-    #         elif 'msg[13]' in message:
-    #             result_post_db_delete = API.delete_db(db_uuid, sid)
-    #             json_delete_db = json.loads(result_post_db_delete.text)
-    #             print('json_delete_db', json_delete_db)
-    #             print('Finish: ', str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
-    #         else:
-    #             print('Finish: ', str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
-    #             break
-    #     cur_db_list = API.post_db_list(sid)
-    #     with allure.step(f'Compare {cur_db_list.text} == {empty_db_list}'):
-    #         print(f'Compare: {cur_db_list.text} == {empty_db_list}')
-    #     assert cur_db_list.text == empty_db_list, f'DB is not deleted. {cur_db_list.text}'
-
     @staticmethod
     def check_full_cycle2(sid):
         print('\nCheck Time: ', str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
         start_value_db_list = API.post_db_list(sid)
         API.get_profile()
-        post_db_list = API.post_db_list(sid)
+        API.post_db_list(sid)
         result_db_create = API.post_db_create(sid)
         db_uuid = result_db_create.json()["db_uuid"]
         result_db_delete = API.delete_db(db_uuid, sid)
@@ -376,6 +336,3 @@ class API(TestData):
                 %(my_string)s);""",
                                {'my_string': my_string})
             self.connection.commit()
-
-# API.check_full_cycle2(TestData.sid)
-# API.post_db_list(TestData.sid)
