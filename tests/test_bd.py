@@ -11,6 +11,62 @@ from utils.request import API
 from .conftest import TestData
 
 
+@allure.epic('Connection DB')
+@allure.suite('Test Connection DB')
+class TestConnectionDB:
+    # @allure.sub_suite('Complex')
+    # def test_complex(self):
+    #     time.sleep(30)
+    #     API.check_full_cycle(TestData.sid)
+
+    @allure.title('Complex 2')
+    def test_complex2(self):
+        API.check_full_cycle2(TestData.sid)
+
+
+@allure.epic('Performance DB')
+@allure.suite('Test Performance DB')
+class TestCapacity:
+    @allure.title('test_capacity_db')
+    def test_capacity_db(self):
+        result_db_create = API.post_db_create(TestData.sid)
+        print('Status db is :', result_db_create.json())
+        db_uuid = result_db_create.json()["db_uuid"]
+        print("db_uuid", db_uuid)
+        time.sleep(40)
+        query = '''
+        CREATE TABLE IF NOT EXISTS accounts(
+        userid INT PRIMARY KEY AUTO_INCREMENT,
+        name varchar(128),
+        date_of_birth datetime NULL,
+        text varchar(4096),
+        email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+        '''
+        db = TestData.connection(f"{db_uuid}")
+        cursor = db.cursor()
+        cursor.execute(query)
+        db.commit()
+
+        db = TestData.connection(f"{db_uuid}")
+        letters = ascii_letters
+        cursor = db.cursor()
+        for x in range(10):
+            for i in range(10):
+                my_string = "".join(random.choice(letters) for _ in range(4096))
+                cursor.execute("""
+                                INSERT INTO accounts (name, text) 
+                                VALUES (
+                                'lambotik',
+                                %(my_string)s);""",
+                               {'my_string': my_string})
+            db.commit()
+        cursor.execute('''select * from accounts''')
+        res = cursor.fetchall()
+        print(res)
+        result_post_db_delete = API.delete_db(f"{db_uuid}", TestData.sid)
+        Checking.check_status_code(result_post_db_delete, 200)
+
+
 @allure.epic('GET REQUESTS')
 @allure.suite('GET')
 class TestGET:
@@ -177,59 +233,3 @@ class TestPOST:
         '''
         list(json_list_db['content'].keys())[0] #"065a5b36-e472-7398-8000-7ce3e7219464"
         '''
-
-
-@allure.epic('Connection DB')
-@allure.suite('Test Connection DB')
-class TestConnectionDB:
-    # @allure.sub_suite('Complex')
-    # def test_complex(self):
-    #     time.sleep(30)
-    #     API.check_full_cycle(TestData.sid)
-
-    @allure.title('Complex 2')
-    def test_complex2(self):
-        API.check_full_cycle2(TestData.sid)
-
-
-@allure.epic('Performance DB')
-@allure.suite('Test Performance DB')
-class TestCapacity:
-    @allure.title('test_capacity_db')
-    def test_capacity_db(self):
-        result_db_create = API.post_db_create(TestData.sid)
-        print('Status db is :', result_db_create.json())
-        db_uuid = result_db_create.json()["db_uuid"]
-        print("db_uuid", db_uuid)
-        time.sleep(40)
-        query = '''
-        CREATE TABLE IF NOT EXISTS accounts(
-        userid INT PRIMARY KEY AUTO_INCREMENT,
-        name varchar(128),
-        date_of_birth datetime NULL,
-        text varchar(4096),
-        email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-        '''
-        db = TestData.connection(f"{db_uuid}")
-        cursor = db.cursor()
-        cursor.execute(query)
-        db.commit()
-
-        db = TestData.connection(f"{db_uuid}")
-        letters = ascii_letters
-        cursor = db.cursor()
-        for x in range(10):
-            for i in range(10):
-                my_string = "".join(random.choice(letters) for _ in range(4096))
-                cursor.execute("""
-                                INSERT INTO accounts (name, text) 
-                                VALUES (
-                                'lambotik',
-                                %(my_string)s);""",
-                               {'my_string': my_string})
-            db.commit()
-        cursor.execute('''select * from accounts''')
-        res = cursor.fetchall()
-        print(res)
-        result_post_db_delete = API.delete_db(f"{db_uuid}", TestData.sid)
-        Checking.check_status_code(result_post_db_delete, 200)
