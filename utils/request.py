@@ -263,7 +263,7 @@ class API(TestData):
         print(put_url)
         json_for_update_new_place = \
             {
-                "name": 'morpheus',
+                "name": "morpheus",
                 "job": "zion resident"
             }
         result_put = HttpMethods.put(put_url, json_for_update_new_place)
@@ -303,7 +303,7 @@ class API(TestData):
             if message == 'db_created':
                 break
             else:
-                time.sleep(4)
+                time.sleep(10)
                 continue
         assert message == 'db_created'
         API.get_profile()
@@ -317,7 +317,7 @@ class API(TestData):
             if start_value_db_list.text == current_value_db_list.text:
                 break
             else:
-                time.sleep(4)
+                time.sleep(10)
                 continue
         last_db_delete = API.delete_db(db_uuid, sid)
         assert last_db_delete.status_code == 400
