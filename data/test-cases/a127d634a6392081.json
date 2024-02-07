@@ -1,12 +1,12 @@
 {
-  "uid" : "fbe7faf1b0c1d276",
-  "name" : "test_capacity_db",
-  "fullName" : "tests.test_bd.TestCapacity#test_capacity_db",
-  "historyId" : "761a25d87f555427c84625be21548ea0",
+  "uid" : "a127d634a6392081",
+  "name" : "Post db list with filter",
+  "fullName" : "tests.test_bd.TestPOST#test_post_db_list_with_filter",
+  "historyId" : "6f36813e0600b433eda47665426f083e",
   "time" : {
-    "start" : 1707265266596,
-    "stop" : 1707265328737,
-    "duration" : 62141
+    "start" : 1707265570593,
+    "stop" : 1707265571617,
+    "duration" : 1024
   },
   "status" : "passed",
   "flaky" : false,
@@ -15,85 +15,10 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "POST https://dbend.areso.pro/db_create",
+      "name" : "POST https://dbend.areso.pro/db_list",
       "time" : {
-        "start" : 1707265266596,
-        "stop" : 1707265266596,
-        "duration" : 0
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "stepsCount" : 0,
-      "hasContent" : false
-    }, {
-      "name" : "Status code: 201",
-      "time" : {
-        "start" : 1707265267008,
-        "stop" : 1707265267008,
-        "duration" : 0
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "stepsCount" : 0,
-      "hasContent" : false
-    }, {
-      "name" : "Params url: https://dbend.areso.pro/db_create\nCookies: {'sid': '1e367a81-4f9f-4f50-a841-a527959e9d63'}\nBody: {'dbtype': 3, 'dbversion': 5, 'env': 3, 'region': 3}",
-      "time" : {
-        "start" : 1707265267008,
-        "stop" : 1707265267008,
-        "duration" : 0
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "stepsCount" : 0,
-      "hasContent" : false
-    }, {
-      "name" : "Response: <Response [201]>",
-      "time" : {
-        "start" : 1707265267009,
-        "stop" : 1707265267009,
-        "duration" : 0
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "stepsCount" : 0,
-      "hasContent" : false
-    }, {
-      "name" : "DELETE https://dbend.areso.pro/db_delete",
-      "time" : {
-        "start" : 1707265328302,
-        "stop" : 1707265328302,
-        "duration" : 0
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "stepsCount" : 0,
-      "hasContent" : false
-    }, {
-      "name" : "Db uuid is: {'db_uuid': '065c2ccf-2e9d-7c60-8000-64543247fe6c'}",
-      "time" : {
-        "start" : 1707265328302,
-        "stop" : 1707265328302,
+        "start" : 1707265570593,
+        "stop" : 1707265570593,
         "duration" : 0
       },
       "status" : "passed",
@@ -107,8 +32,8 @@
     }, {
       "name" : "Status code: 200",
       "time" : {
-        "start" : 1707265328735,
-        "stop" : 1707265328735,
+        "start" : 1707265571107,
+        "stop" : 1707265571107,
         "duration" : 0
       },
       "status" : "passed",
@@ -120,10 +45,10 @@
       "stepsCount" : 0,
       "hasContent" : false
     }, {
-      "name" : "Params url: https://dbend.areso.pro/db_delete",
+      "name" : "Params url: https://dbend.areso.pro/db_list",
       "time" : {
-        "start" : 1707265328735,
-        "stop" : 1707265328735,
+        "start" : 1707265571107,
+        "stop" : 1707265571107,
         "duration" : 0
       },
       "status" : "passed",
@@ -137,8 +62,53 @@
     }, {
       "name" : "Response: <Response [200]>",
       "time" : {
-        "start" : 1707265328735,
-        "stop" : 1707265328735,
+        "start" : 1707265571107,
+        "stop" : 1707265571107,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Status code: 200",
+      "time" : {
+        "start" : 1707265571615,
+        "stop" : 1707265571615,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Params url: https://dbend.areso.pro/db_list\nCookies: {'sid': 'd110676c-d529-40a5-ba6c-3a22d075069a'}\nBody: {'db_uuid': '065c2cd3-6023-760e-8000-999589c76203'}",
+      "time" : {
+        "start" : 1707265571615,
+        "stop" : 1707265571615,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Response: <Response [200]>",
+      "time" : {
+        "start" : 1707265571615,
+        "stop" : 1707265571615,
         "duration" : 0
       },
       "status" : "passed",
@@ -152,8 +122,8 @@
     }, {
       "name" : "Assert status code: 200 == Response status code: 200",
       "time" : {
-        "start" : 1707265328736,
-        "stop" : 1707265328736,
+        "start" : 1707265571615,
+        "stop" : 1707265571615,
         "duration" : 0
       },
       "status" : "passed",
@@ -169,28 +139,28 @@
     "parameters" : [ ],
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
-    "stepsCount" : 10,
+    "stepsCount" : 8,
     "hasContent" : true
   },
   "afterStages" : [ ],
   "labels" : [ {
     "name" : "epic",
-    "value" : "Performance DB"
+    "value" : "POST REQUESTS"
   }, {
     "name" : "suite",
-    "value" : "Test Performance DB"
+    "value" : "POST"
   }, {
     "name" : "parentSuite",
     "value" : "tests"
   }, {
     "name" : "subSuite",
-    "value" : "TestCapacity"
+    "value" : "TestPOST"
   }, {
     "name" : "host",
-    "value" : "fv-az973-3"
+    "value" : "fv-az1052-962"
   }, {
     "name" : "thread",
-    "value" : "1773-MainThread"
+    "value" : "1794-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -215,113 +185,128 @@
     "history" : {
       "statistic" : {
         "failed" : 0,
-        "broken" : 1,
+        "broken" : 0,
         "skipped" : 0,
-        "passed" : 12,
+        "passed" : 15,
         "unknown" : 0,
-        "total" : 13
+        "total" : 15
       },
       "items" : [ {
-        "uid" : "ce5a2a9289d94fe5",
+        "uid" : "475939c735116abe",
         "status" : "passed",
         "time" : {
-          "start" : 1707165445398,
-          "stop" : 1707165507852,
-          "duration" : 62454
+          "start" : 1707265336350,
+          "stop" : 1707265337095,
+          "duration" : 745
         }
       }, {
-        "uid" : "1333e750360edb74",
+        "uid" : "dfb3aca06a4d7f57",
         "status" : "passed",
         "time" : {
-          "start" : 1707164024761,
-          "stop" : 1707164094627,
-          "duration" : 69866
+          "start" : 1707165515144,
+          "stop" : 1707165515869,
+          "duration" : 725
         }
       }, {
-        "uid" : "91811c9034a68fac",
+        "uid" : "716456411c85a864",
         "status" : "passed",
         "time" : {
-          "start" : 1707158525982,
-          "stop" : 1707158594740,
-          "duration" : 68758
+          "start" : 1707164104816,
+          "stop" : 1707164105849,
+          "duration" : 1033
         }
       }, {
-        "uid" : "2fbf6dd1ba335b1d",
+        "uid" : "d470f6ebedddb03e",
         "status" : "passed",
         "time" : {
-          "start" : 1707157954105,
-          "stop" : 1707158014288,
-          "duration" : 60183
+          "start" : 1707158604831,
+          "stop" : 1707158605868,
+          "duration" : 1037
         }
       }, {
-        "uid" : "721a0e4aa68ed10e",
+        "uid" : "1fb96a5dbce96ca5",
         "status" : "passed",
         "time" : {
-          "start" : 1707155788338,
-          "stop" : 1707155858166,
-          "duration" : 69828
+          "start" : 1707158020577,
+          "stop" : 1707158021224,
+          "duration" : 647
         }
       }, {
-        "uid" : "a3964271e26bd15f",
+        "uid" : "cc08295a4be68a74",
         "status" : "passed",
         "time" : {
-          "start" : 1707151773720,
-          "stop" : 1707151833164,
-          "duration" : 59444
+          "start" : 1707155868355,
+          "stop" : 1707155869382,
+          "duration" : 1027
         }
       }, {
-        "uid" : "7852e9640efa2972",
+        "uid" : "4094f768c3c7b0a2",
         "status" : "passed",
         "time" : {
-          "start" : 1707069668998,
-          "stop" : 1707069740521,
-          "duration" : 71523
+          "start" : 1707151839242,
+          "stop" : 1707151839865,
+          "duration" : 623
         }
       }, {
-        "uid" : "a7a7fe1a592d063",
-        "status" : "broken",
-        "statusDetails" : "KeyError: 'db_uuid'",
-        "time" : {
-          "start" : 1707069399619,
-          "stop" : 1707069399938,
-          "duration" : 319
-        }
-      }, {
-        "uid" : "e0ba92ac9d49f9f7",
+        "uid" : "fed1fe644401fe9e",
         "status" : "passed",
         "time" : {
-          "start" : 1707068899436,
-          "stop" : 1707068958994,
-          "duration" : 59558
+          "start" : 1707151283726,
+          "stop" : 1707151284377,
+          "duration" : 651
         }
       }, {
-        "uid" : "2f298175f0a01718",
+        "uid" : "b623793ab0ad8edd",
         "status" : "passed",
         "time" : {
-          "start" : 1706811925372,
-          "stop" : 1706811985095,
-          "duration" : 59723
+          "start" : 1707148761804,
+          "stop" : 1707148762852,
+          "duration" : 1048
         }
       }, {
-        "uid" : "8cfd355f1c9a8a08",
+        "uid" : "a2f34cadf2aa183a",
         "status" : "passed",
         "time" : {
-          "start" : 1706810700415,
-          "stop" : 1706810760161,
-          "duration" : 59746
+          "start" : 1707069609028,
+          "stop" : 1707069610091,
+          "duration" : 1063
         }
       }, {
-        "uid" : "89b0fc7707e4894",
+        "uid" : "c70b19683e68fc78",
         "status" : "passed",
         "time" : {
-          "start" : 1706729087075,
-          "stop" : 1706729146888,
-          "duration" : 59813
+          "start" : 1707069367635,
+          "stop" : 1707069368270,
+          "duration" : 635
+        }
+      }, {
+        "uid" : "867fad0df8b84723",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707068503724,
+          "stop" : 1707068504389,
+          "duration" : 665
+        }
+      }, {
+        "uid" : "a2b69420afada4e1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707067416377,
+          "stop" : 1707067417411,
+          "duration" : 1034
+        }
+      }, {
+        "uid" : "6c9a33a640068d43",
+        "status" : "passed",
+        "time" : {
+          "start" : 1706811869362,
+          "stop" : 1706811870014,
+          "duration" : 652
         }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "fbe7faf1b0c1d276.json",
+  "source" : "a127d634a6392081.json",
   "parameterValues" : [ ]
 }
