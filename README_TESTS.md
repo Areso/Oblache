@@ -1,10 +1,10 @@
 ## Technologies used in the project for automation:
 
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg" width="80" heigh="80"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg"  width="80" heigh="80"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg" width="80" heigh="80"/> | <img src="https://github.com/allure-framework/allure2/blob/master/.idea/icon.png" width="80" heigh="80"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" width="80" heigh="80"/> |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg" width="80" heigh="80"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg"  width="80" heigh="80"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg" width="80" heigh="80"/> | <img src="https://github.com/allure-framework/allure2/blob/main/.idea/icon.png" width="80" heigh="80"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" width="80" heigh="80"/> |
 |---------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
 ___
 
-To view the current test report, click the button: [![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-green)](https://lambotik.github.io/API/)
+To view the current test report, click the button: [![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-green)](https://areso.github.io/Oblache/)
 
 # DBaaS backend
 `export FLASK_APP=dbaas_backend.py`
