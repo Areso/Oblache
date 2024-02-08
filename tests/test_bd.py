@@ -14,11 +14,6 @@ from .conftest import TestData
 @allure.epic('Connection DB')
 @allure.suite('Test Connection DB')
 class TestConnectionDB:
-    # @allure.sub_suite('Complex')
-    # def test_complex(self):
-    #     time.sleep(30)
-    #     API.check_full_cycle(TestData.sid)
-
     @allure.title('Complex 2')
     def test_complex2(self):
         API.check_full_cycle2(TestData.sid)
@@ -100,7 +95,7 @@ class TestGET:
         result_get = API.get_list_regions()
         Checking.check_status_code(result_get, 200)
 
-    @allure.title('List regions.')
+    @allure.title('Bad request.')
     def test_get_with_bad_request(self):
         result_get = API.get_bad_request()
         Checking.check_status_code(result_get, 404)

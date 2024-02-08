@@ -125,7 +125,7 @@ class API(TestData):
         return result_post
 
     @staticmethod
-    def post_registration_variety_email(mail, prefix):
+    def post_registration_variety_email(mail: str, prefix: str):
         """
         Method for create new user
         :return: JSON Response
@@ -252,26 +252,7 @@ class API(TestData):
         return result_post
 
     @staticmethod
-    def put_default_user(user_id):
-        """
-        Method for changing new location
-        :param user_id: int
-        :return: JSON Response
-        """
-        put_resource = 'api/users/'  # Resource for method PUT
-        put_url = TestData.base_url + put_resource + user_id
-        print(put_url)
-        json_for_update_new_place = \
-            {
-                "name": 'morpheus',
-                "job": "zion resident"
-            }
-        result_put = HttpMethods.put(put_url, json_for_update_new_place)
-        print('Response body: ', result_put.text)
-        return result_put
-
-    @staticmethod
-    def delete_db(uuid, sid):
+    def delete_db(uuid: str, sid: dict):
         delete_resource = '/db_delete'  # Resource for method DELETE
         delete_url = TestData.base_url + delete_resource
         with allure.step(f'DELETE {delete_url}'):
