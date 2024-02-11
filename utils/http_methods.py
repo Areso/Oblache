@@ -40,7 +40,7 @@ class HttpMethods:
         with allure.step(f'Status code: {result.status_code}'):
             pass
         with allure.step(f'Params url: {url}\n'
-                         f'Cookies: {cookie}\n'
+                         f'Cookies: sid\n'
                          f'Body: {body}'):
             pass
         with allure.step(f'Response: {result}'):
@@ -116,7 +116,7 @@ class HttpMethods:
         with allure.step(f'Status code: {result.status_code}'):
             pass
         with allure.step(f'Params url: {url}\n'
-                         f'Cookies: {cookie}\n'
+                         f'Cookies: sid\n'
                          f'Body: {body}'):
             pass
         with allure.step(f'Response: {result}'):
