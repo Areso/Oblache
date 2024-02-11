@@ -1,0 +1,338 @@
+{
+  "uid" : "bbef004a3ecc2003",
+  "name" : "Post db list with filter",
+  "fullName" : "tests.test_bd.TestPOST#test_post_db_list_with_filter",
+  "historyId" : "6f36813e0600b433eda47665426f083e",
+  "time" : {
+    "start" : 1707673543395,
+    "stop" : 1707673543705,
+    "duration" : 310
+  },
+  "status" : "broken",
+  "statusMessage" : "TypeError: string indices must be integers",
+  "statusTrace" : "self = <tests.test_bd.TestPOST object at 0x7fc111f0c400>\n\n    @allure.title('Post db list with filter')\n    def test_post_db_list_with_filter(self):\n        print('\\n\\nMethod POST: db_list_with_filter')\n        list_db = API.post_db_list(TestData.sid)\n        json_list_db = json.loads(list_db.text)\n        try:\n            first_db_uuid = list(json_list_db['content'].keys())[0]\n            print('first_db_uuid', first_db_uuid)\n>           result_post_db_list = API.delete_db(TestData.sid, first_db_uuid)\n\ntests/test_bd.py:222: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nutils/request.py:283: in delete_db\n    result_delete = HttpMethods.post_for_delete_db(delete_url, json_db_uuid, sid)\nutils/http_methods.py:95: in post_for_delete_db\n    result = requests.post(url, data=db_uuid, cookies=sid)\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/api.py:115: in post\n    return request(\"post\", url, data=data, json=json, **kwargs)\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/api.py:59: in request\n    return session.request(method=method, url=url, **kwargs)\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/sessions.py:575: in request\n    prep = self.prepare_request(req)\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/sessions.py:473: in prepare_request\n    cookies = cookiejar_from_dict(cookies)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\ncookie_dict = '065c907c-5b9c-74c4-8000-3c73d9e1b0df'\ncookiejar = <RequestsCookieJar[]>, overwrite = True\n\n    def cookiejar_from_dict(cookie_dict, cookiejar=None, overwrite=True):\n        \"\"\"Returns a CookieJar from a key/value dictionary.\n    \n        :param cookie_dict: Dict of key/values to insert into CookieJar.\n        :param cookiejar: (optional) A cookiejar to add the cookies to.\n        :param overwrite: (optional) If False, will not replace cookies\n            already in the jar with new ones.\n        :rtype: CookieJar\n        \"\"\"\n        if cookiejar is None:\n            cookiejar = RequestsCookieJar()\n    \n        if cookie_dict is not None:\n            names_from_jar = [cookie.name for cookie in cookiejar]\n            for name in cookie_dict:\n                if overwrite or (name not in names_from_jar):\n>                   cookiejar.set_cookie(create_cookie(name, cookie_dict[name]))\nE                   TypeError: string indices must be integers\n\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/cookies.py:537: TypeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "TypeError: string indices must be integers",
+    "statusTrace" : "self = <tests.test_bd.TestPOST object at 0x7fc111f0c400>\n\n    @allure.title('Post db list with filter')\n    def test_post_db_list_with_filter(self):\n        print('\\n\\nMethod POST: db_list_with_filter')\n        list_db = API.post_db_list(TestData.sid)\n        json_list_db = json.loads(list_db.text)\n        try:\n            first_db_uuid = list(json_list_db['content'].keys())[0]\n            print('first_db_uuid', first_db_uuid)\n>           result_post_db_list = API.delete_db(TestData.sid, first_db_uuid)\n\ntests/test_bd.py:222: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nutils/request.py:283: in delete_db\n    result_delete = HttpMethods.post_for_delete_db(delete_url, json_db_uuid, sid)\nutils/http_methods.py:95: in post_for_delete_db\n    result = requests.post(url, data=db_uuid, cookies=sid)\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/api.py:115: in post\n    return request(\"post\", url, data=data, json=json, **kwargs)\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/api.py:59: in request\n    return session.request(method=method, url=url, **kwargs)\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/sessions.py:575: in request\n    prep = self.prepare_request(req)\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/sessions.py:473: in prepare_request\n    cookies = cookiejar_from_dict(cookies)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\ncookie_dict = '065c907c-5b9c-74c4-8000-3c73d9e1b0df'\ncookiejar = <RequestsCookieJar[]>, overwrite = True\n\n    def cookiejar_from_dict(cookie_dict, cookiejar=None, overwrite=True):\n        \"\"\"Returns a CookieJar from a key/value dictionary.\n    \n        :param cookie_dict: Dict of key/values to insert into CookieJar.\n        :param cookiejar: (optional) A cookiejar to add the cookies to.\n        :param overwrite: (optional) If False, will not replace cookies\n            already in the jar with new ones.\n        :rtype: CookieJar\n        \"\"\"\n        if cookiejar is None:\n            cookiejar = RequestsCookieJar()\n    \n        if cookie_dict is not None:\n            names_from_jar = [cookie.name for cookie in cookiejar]\n            for name in cookie_dict:\n                if overwrite or (name not in names_from_jar):\n>                   cookiejar.set_cookie(create_cookie(name, cookie_dict[name]))\nE                   TypeError: string indices must be integers\n\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/cookies.py:537: TypeError",
+    "steps" : [ {
+      "name" : "POST https://dbend.areso.pro/db_list",
+      "time" : {
+        "start" : 1707673543395,
+        "stop" : 1707673543395,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Status code: 200",
+      "time" : {
+        "start" : 1707673543704,
+        "stop" : 1707673543704,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Params url: https://dbend.areso.pro/db_list",
+      "time" : {
+        "start" : 1707673543704,
+        "stop" : 1707673543704,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Response: <Response [200]>",
+      "time" : {
+        "start" : 1707673543704,
+        "stop" : 1707673543704,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "DELETE https://dbend.areso.pro/db_delete",
+      "time" : {
+        "start" : 1707673543704,
+        "stop" : 1707673543704,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Db uuid is: {'db_uuid': \"{'sid': '3d9d96ad-c67f-46a8-94af-544ef158f423'}\"}",
+      "time" : {
+        "start" : 1707673543704,
+        "stop" : 1707673543704,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 6,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "POST"
+  }, {
+    "name" : "epic",
+    "value" : "POST REQUESTS"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestPOST"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1433-7"
+  }, {
+    "name" : "thread",
+    "value" : "1778-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 1,
+        "skipped" : 0,
+        "passed" : 25,
+        "unknown" : 0,
+        "total" : 26
+      },
+      "items" : [ {
+        "uid" : "7ddf414bb9e37931",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707608824232,
+          "stop" : 1707608825268,
+          "duration" : 1036
+        }
+      }, {
+        "uid" : "a7b46defd5c2bda3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707437717305,
+          "stop" : 1707437718351,
+          "duration" : 1046
+        }
+      }, {
+        "uid" : "b87db262f4338dc",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707436446558,
+          "stop" : 1707436447602,
+          "duration" : 1044
+        }
+      }, {
+        "uid" : "dee27d0cc41f3d6b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707430243747,
+          "stop" : 1707430244518,
+          "duration" : 771
+        }
+      }, {
+        "uid" : "f9eb2e35d847d2ad",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707392879075,
+          "stop" : 1707392879714,
+          "duration" : 639
+        }
+      }, {
+        "uid" : "c516d513792e2149",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707392541215,
+          "stop" : 1707392541886,
+          "duration" : 671
+        }
+      }, {
+        "uid" : "8754d01125d88524",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707348733461,
+          "stop" : 1707348734206,
+          "duration" : 745
+        }
+      }, {
+        "uid" : "5c2c3757e5756787",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707348481584,
+          "stop" : 1707348482246,
+          "duration" : 662
+        }
+      }, {
+        "uid" : "9f47d8c785dde9d7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707346508746,
+          "stop" : 1707346509485,
+          "duration" : 739
+        }
+      }, {
+        "uid" : "62363505769d3fcf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707337140521,
+          "stop" : 1707337141586,
+          "duration" : 1065
+        }
+      }, {
+        "uid" : "a127d634a6392081",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707265570593,
+          "stop" : 1707265571617,
+          "duration" : 1024
+        }
+      }, {
+        "uid" : "475939c735116abe",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707265336350,
+          "stop" : 1707265337095,
+          "duration" : 745
+        }
+      }, {
+        "uid" : "dfb3aca06a4d7f57",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707165515144,
+          "stop" : 1707165515869,
+          "duration" : 725
+        }
+      }, {
+        "uid" : "716456411c85a864",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707164104816,
+          "stop" : 1707164105849,
+          "duration" : 1033
+        }
+      }, {
+        "uid" : "d470f6ebedddb03e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707158604831,
+          "stop" : 1707158605868,
+          "duration" : 1037
+        }
+      }, {
+        "uid" : "1fb96a5dbce96ca5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707158020577,
+          "stop" : 1707158021224,
+          "duration" : 647
+        }
+      }, {
+        "uid" : "cc08295a4be68a74",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707155868355,
+          "stop" : 1707155869382,
+          "duration" : 1027
+        }
+      }, {
+        "uid" : "4094f768c3c7b0a2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707151839242,
+          "stop" : 1707151839865,
+          "duration" : 623
+        }
+      }, {
+        "uid" : "fed1fe644401fe9e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707151283726,
+          "stop" : 1707151284377,
+          "duration" : 651
+        }
+      }, {
+        "uid" : "b623793ab0ad8edd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707148761804,
+          "stop" : 1707148762852,
+          "duration" : 1048
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "bbef004a3ecc2003.json",
+  "parameterValues" : [ ]
+}
