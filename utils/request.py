@@ -114,7 +114,7 @@ class API(TestData):
         Method for create new user
         :return: JSON Response
         """
-        json_for_create_new_user = {"email": TestData.email, "password": TestData.password}
+        json_for_create_new_user = {"email": TestData.email, "password": TestData.old_password}
 
         post_resource = '/register'  # Resource for method POST
         post_url = TestData.base_url + post_resource
@@ -131,7 +131,7 @@ class API(TestData):
         :return: JSON Response
         """
         json_for_create_new_user = {"email": f'aqa{data.data.time}@{mail}.{prefix}',
-                                    "password": TestData.password}
+                                    "password": TestData.old_password}
         print(f'Data for request: {json_for_create_new_user}')
         post_resource = '/register'  # Resource for method POST
         post_url = TestData.base_url + post_resource
@@ -172,6 +172,25 @@ class API(TestData):
         with allure.step(f'POST {post_url}'):
             print(post_url)
         result_post = HttpMethods.post_with_cookie(post_url, {}, sid)
+        print('Response body: ', result_post.text)
+        return result_post
+
+    @staticmethod
+    def post_change_password(sid: dict, old_password: str, new_password: str):
+        """
+        Body example {"current_password":"", "new_password":""}.
+        :param sid:
+        :param old_password:
+        :param new_password:
+        :return:
+        """
+        post_resource = '/password_update'  # Resource for method
+        post_url = TestData.base_url + post_resource
+        with allure.step(f'POST {post_url}'):
+            print(post_url)
+        result_post = HttpMethods.post_with_cookie(post_url,
+                                                   {"current_password": old_password, "new_password": new_password},
+                                                   sid)
         print('Response body: ', result_post.text)
         return result_post
 

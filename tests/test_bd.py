@@ -1,10 +1,12 @@
 import json
 import random
 import time
+from pprint import pprint
 from string import ascii_letters
 
 import allure
 import pytest
+import requests
 
 from utils.checking import Checking
 from utils.request import API
@@ -24,11 +26,13 @@ class TestConnectionDB:
 class TestCapacity:
     @allure.title('test_capacity_db')
     def test_capacity_db(self):
+        start = API.get_profile()
+        print('start', start)
         result_db_create = API.post_db_create(TestData.sid)
         print('Status db is :', result_db_create.json())
         db_uuid = result_db_create.json()["db_uuid"]
         print("db_uuid", db_uuid)
-        time.sleep(40)
+        time.sleep(20)
         query = '''
         CREATE TABLE IF NOT EXISTS accounts(
         userid INT PRIMARY KEY AUTO_INCREMENT,
@@ -54,12 +58,20 @@ class TestCapacity:
                                 'lambotik',
                                 %(my_string)s);""",
                                {'my_string': my_string})
+                db.commit()
             db.commit()
         cursor.execute('''select * from accounts''')
         res = cursor.fetchall()
         print(res)
-        result_post_db_delete = API.delete_db(f"{db_uuid}", TestData.sid)
-        Checking.check_status_code(result_post_db_delete, 200)
+        time.sleep(40)
+        amount = API.get_profile()
+        print('amount', amount.text)
+        req = requests.post('http://cisdb1.areso.pro:9090/list', json={"token": "SuperSecret"})
+        pprint(req.text)
+        # cr = API.post_db_create(TestData.sid)
+        # print(cr.status_code)
+        # result_post_db_delete = API.delete_db(f"{db_uuid}", TestData.sid)
+        # Checking.check_status_code(result_post_db_delete, 200)
 
 
 @allure.epic('GET REQUESTS')
@@ -206,11 +218,25 @@ class TestPOST:
         json_list_db = json.loads(list_db.text)
         try:
             first_db_uuid = list(json_list_db['content'].keys())[0]
-            result_post_db_list = API.post_db_list_with_filter(TestData.sid, first_db_uuid)
+            print('first_db_uuid', first_db_uuid)
+            result_post_db_list = API.delete_db(TestData.sid, first_db_uuid)
             Checking.check_status_code(result_post_db_list, 200)
         except IndexError as ex:
             print(ex)
             assert str(ex) == 'list index out of range', 'Db list is empty.'
+
+    @allure.title('Post change password')
+    def test_post_change_password(self):
+        print('\n\nMethod POST: change_password')
+        new_password = TestData.new_password
+        result_post_change_password = API.post_change_password(TestData.sid, TestData.old_password, new_password)
+        Checking.check_status_code(result_post_change_password, 200)
+        Checking.check_json_search_word_in_value(result_post_change_password, "content",
+                                                 "msg[31]: password successfully updated")
+        result_post_change_password = API.post_change_password(TestData.sid, new_password, TestData.old_password)
+        Checking.check_status_code(result_post_change_password, 200)
+        Checking.check_json_search_word_in_value(result_post_change_password, "content",
+                                                 "msg[31]: password successfully updated")
 
     @allure.title('delete db')
     @pytest.mark.xfail()
@@ -220,7 +246,7 @@ class TestPOST:
         json_list_db = json.loads(list_db.text)
         try:
             first_db_uuid = list(json_list_db['content'].keys())[0]
-            result_post_db_delete = API.delete_db(first_db_uuid, TestData.sid)
+            result_post_db_delete = API.delete_db("065c4fb4-fcfa-7753-8000-db22051e3cf7", TestData.sid)
             Checking.check_status_code(result_post_db_delete, 200)
         except IndexError as ex:
             print(ex)
