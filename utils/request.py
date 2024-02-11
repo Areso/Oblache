@@ -2,7 +2,6 @@ import json
 import random
 import time
 from datetime import datetime
-from pprint import pprint
 from string import ascii_letters
 
 import allure
@@ -20,6 +19,7 @@ class API(TestData):
         self.connector = mysql.connector
 
     @staticmethod
+    @allure.step('get_tos')
     def get_tos():
         get_resource = '/tos'  # Resource for method GET
         get_url = TestData.base_url + get_resource
@@ -30,6 +30,7 @@ class API(TestData):
         return result_get
 
     @staticmethod
+    @allure.step('get_profile')
     def get_profile():
         """
         :return:
@@ -43,6 +44,7 @@ class API(TestData):
         return result_get
 
     @staticmethod
+    @allure.step('get_status')
     def get_status():
         """
         :return:
@@ -60,7 +62,8 @@ class API(TestData):
         return result_get
 
     @staticmethod
-    def get_list_dbtypes():
+    @allure.step('get_list_db_types')
+    def get_list_db_types():
         get_resource = '/list_dbtypes'  # Resource for method GET
         get_url = TestData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
@@ -70,6 +73,7 @@ class API(TestData):
         return result_get
 
     @staticmethod
+    @allure.step('get_list_dbversions')
     def get_list_dbversions():
         get_resource = '/list_dbversions'  # Resource for method GET
         get_url = TestData.base_url + get_resource
@@ -80,6 +84,7 @@ class API(TestData):
         return result_get
 
     @staticmethod
+    @allure.step('get_list_envs')
     def get_list_envs():
         get_resource = '/list_dbenvs'  # Resource for method GET
         get_url = TestData.base_url + get_resource
@@ -90,6 +95,7 @@ class API(TestData):
         return result_get
 
     @staticmethod
+    @allure.step('get_list_regions')
     def get_list_regions():
         get_resource = '/list_regions'  # Resource for method GET
         get_url = TestData.base_url + get_resource
@@ -100,6 +106,7 @@ class API(TestData):
         return result_get
 
     @staticmethod
+    @allure.step('get_bad_request')
     def get_bad_request():
         get_resource = '/bad_request'  # Resource for method GET
         get_url = TestData.base_url + get_resource
@@ -110,6 +117,7 @@ class API(TestData):
         return result_get
 
     @staticmethod
+    @allure.step('post_registration')
     def post_registration():
         """
         Method for create new user
@@ -126,6 +134,7 @@ class API(TestData):
         return result_post
 
     @staticmethod
+    @allure.step('post_registration_variety_email')
     def post_registration_variety_email(mail: str, prefix: str):
         """
         Method for create new user
@@ -146,6 +155,7 @@ class API(TestData):
         return result_post
 
     @staticmethod
+    @allure.step('post_login')
     def post_login(body: dict):
         post_resource = '/login'  # Resource for method GET
         post_url = TestData.base_url + post_resource
@@ -163,6 +173,7 @@ class API(TestData):
         return result_post, sid
 
     @staticmethod
+    @allure.step('post_db_list')
     def post_db_list(sid: dict):
         """
         :param sid:
@@ -177,6 +188,7 @@ class API(TestData):
         return result_post
 
     @staticmethod
+    @allure.step('post_change_password')
     def post_change_password(sid: dict, old_password: str, new_password: str):
         """
         Body example {"current_password":"", "new_password":""}.
@@ -196,6 +208,7 @@ class API(TestData):
         return result_post
 
     @staticmethod
+    @allure.step('post_db_list_with_filter')
     def post_db_list_with_filter(sid: dict, db_uuid: str):
         """
         Getting information about bd by uuid
@@ -211,6 +224,7 @@ class API(TestData):
         return result_post
 
     @staticmethod
+    @allure.step('post_db_create')
     def post_db_create(sid: dict):
         post_resource = '/db_create'  # Resource for method
         post_url = TestData.base_url + post_resource
@@ -224,7 +238,8 @@ class API(TestData):
         return result_post
 
     @staticmethod
-    def post_db_create_wrong_value_dbtype(sid: dict):
+    @allure.step('post_db_create_wrong_value_db_type')
+    def post_db_create_wrong_value_db_type(sid: dict):
         post_resource = '/db_create'  # Resource for method
         post_url = TestData.base_url + post_resource
         with allure.step(f'POST {post_url}'):
@@ -236,7 +251,8 @@ class API(TestData):
         return result_post
 
     @staticmethod
-    def post_db_create_wrong_value_dbversion(sid: dict):
+    @allure.step('post_db_create_wrong_value_db_version')
+    def post_db_create_wrong_value_db_version(sid: dict):
         post_resource = '/db_create'  # Resource for method
         post_url = TestData.base_url + post_resource
         with allure.step(f'POST {post_url}'):
@@ -248,6 +264,7 @@ class API(TestData):
         return result_post
 
     @staticmethod
+    @allure.step('post_db_create_wrong_value_env')
     def post_db_create_wrong_value_env(sid: dict):
         post_resource = '/db_create'  # Resource for method
         post_url = TestData.base_url + post_resource
@@ -260,6 +277,7 @@ class API(TestData):
         return result_post
 
     @staticmethod
+    @allure.step('post_db_create_wrong_value_region')
     def post_db_create_wrong_value_region(sid: dict):
         post_resource = '/db_create'  # Resource for method
         post_url = TestData.base_url + post_resource
@@ -272,6 +290,7 @@ class API(TestData):
         return result_post
 
     @staticmethod
+    @allure.step('delete_db')
     def delete_db(uuid, sid):
         delete_resource = '/db_delete'  # Resource for method DELETE
         delete_url = TestData.base_url + delete_resource
@@ -287,7 +306,8 @@ class API(TestData):
         return result_delete
 
     @staticmethod
-    def check_full_cycle2(sid):
+    @allure.step('check_full_cycle')
+    def check_full_cycle(sid):
         print('\nCheck Time: ', str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
         start_value_db_list = API.post_db_list(sid)
         API.get_profile()
@@ -324,7 +344,8 @@ class API(TestData):
         assert last_db_delete.status_code == 400
         Checking.check_json_search_word_in_value(last_db_delete, 'content', 'requested database is not found')
 
-    def load_db_v2(self):
+    @allure.step('load_db')
+    def load_db(self):
         letters = ascii_letters
         cursor = self.connection()
         for x in range(1):
