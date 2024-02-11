@@ -7,9 +7,9 @@ import allure
 import pytest
 import requests
 
-from utils.checking import Checking
-from utils.request import API
-from .conftest import TestData
+from .utils.checking import Checking
+from .utils.request import API
+from conftest_api import TestData
 
 
 @allure.epic('Connection DB')

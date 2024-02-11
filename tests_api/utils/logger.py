@@ -1,9 +1,8 @@
 import datetime
 import os
 
-import allure
 from requests import Response
-from logs.logger_path import LOGS_DIR
+from tests_api.logs.logger_path import LOGS_DIR
 
 
 class Logger:

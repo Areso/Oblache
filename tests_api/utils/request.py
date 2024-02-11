@@ -7,10 +7,11 @@ from string import ascii_letters
 import allure
 import mysql.connector
 
-import data.data
-from tests.conftest import TestData
-from utils.checking import Checking
-from utils.http_methods import HttpMethods
+import tests_api
+from tests_api.data import data
+from conftest_api import TestData
+from .checking import Checking
+from .http_methods import HttpMethods
 
 
 class API(TestData):
@@ -131,7 +132,7 @@ class API(TestData):
         Method for create new user
         :return: JSON Response
         """
-        json_for_create_new_user = {"email": f'aqa{data.data.time}@{mail}.{prefix}',
+        json_for_create_new_user = {"email": f'aqa{tests_api.data.data.time}@{mail}.{prefix}',
                                     "password": TestData.old_password}
         post_resource = '/register'  # Resource for method POST
         post_url = TestData.base_url + post_resource
