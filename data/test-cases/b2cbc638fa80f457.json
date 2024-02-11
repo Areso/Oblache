@@ -1,11 +1,11 @@
 {
-  "uid" : "8a1dc0e575e19a6d",
-  "name" : "List db_types.",
-  "fullName" : "tests.test_bd.TestGET#test_get_list_db_types",
-  "historyId" : "a4d36cad99ba55257c1ff4118051a7ac",
+  "uid" : "b2cbc638fa80f457",
+  "name" : "List db_versions.",
+  "fullName" : "tests.test_bd.TestGET#test_get_list_db_versions",
+  "historyId" : "fbb983d94857327c3f7688004b51d334",
   "time" : {
-    "start" : 1707684207481,
-    "stop" : 1707684207843,
+    "start" : 1707693322350,
+    "stop" : 1707693322712,
     "duration" : 362
   },
   "status" : "passed",
@@ -15,18 +15,18 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "get_list_db_types",
+      "name" : "get_list_dbversions",
       "time" : {
-        "start" : 1707684207482,
-        "stop" : 1707684207842,
-        "duration" : 360
+        "start" : 1707693322350,
+        "stop" : 1707693322711,
+        "duration" : 361
       },
       "status" : "passed",
       "steps" : [ {
-        "name" : "GET https://dbend.areso.pro/list_dbtypes",
+        "name" : "GET https://dbend.areso.pro/list_dbversions",
         "time" : {
-          "start" : 1707684207482,
-          "stop" : 1707684207482,
+          "start" : 1707693322350,
+          "stop" : 1707693322350,
           "duration" : 0
         },
         "status" : "passed",
@@ -40,8 +40,8 @@
       }, {
         "name" : "Status code: 200",
         "time" : {
-          "start" : 1707684207842,
-          "stop" : 1707684207842,
+          "start" : 1707693322711,
+          "stop" : 1707693322711,
           "duration" : 0
         },
         "status" : "passed",
@@ -53,10 +53,10 @@
         "stepsCount" : 0,
         "hasContent" : false
       }, {
-        "name" : "Response: {'3': 'mysql8'}",
+        "name" : "Response: {\n    \"5\": [\n        \"mysql8\",\n        \"8.0.20+\"\n    ]\n}\n",
         "time" : {
-          "start" : 1707684207842,
-          "stop" : 1707684207842,
+          "start" : 1707693322711,
+          "stop" : 1707693322711,
           "duration" : 0
         },
         "status" : "passed",
@@ -77,9 +77,9 @@
     }, {
       "name" : "Assert status code: 200 == Response status code: 200",
       "time" : {
-        "start" : 1707684207842,
-        "stop" : 1707684207843,
-        "duration" : 1
+        "start" : 1707693322712,
+        "stop" : 1707693322712,
+        "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
@@ -112,10 +112,10 @@
     "value" : "TestGET"
   }, {
     "name" : "host",
-    "value" : "fv-az692-190"
+    "value" : "fv-az883-39"
   }, {
     "name" : "thread",
-    "value" : "1774-MainThread"
+    "value" : "1773-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -142,30 +142,38 @@
         "failed" : 0,
         "broken" : 0,
         "skipped" : 0,
-        "passed" : 3,
+        "passed" : 4,
         "unknown" : 0,
-        "total" : 3
+        "total" : 4
       },
       "items" : [ {
-        "uid" : "1748a371ff2ec67d",
+        "uid" : "b50de9986945d385",
         "status" : "passed",
         "time" : {
-          "start" : 1707683169986,
-          "stop" : 1707683170510,
-          "duration" : 524
+          "start" : 1707684207845,
+          "stop" : 1707684208225,
+          "duration" : 380
         }
       }, {
-        "uid" : "d8e98819502383ba",
+        "uid" : "d9a462681b31dc60",
         "status" : "passed",
         "time" : {
-          "start" : 1707681000603,
-          "stop" : 1707681000924,
-          "duration" : 321
+          "start" : 1707683170512,
+          "stop" : 1707683171020,
+          "duration" : 508
+        }
+      }, {
+        "uid" : "4e80bbed92a21f5b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707681000926,
+          "stop" : 1707681001253,
+          "duration" : 327
         }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "8a1dc0e575e19a6d.json",
+  "source" : "b2cbc638fa80f457.json",
   "parameterValues" : [ ]
 }
