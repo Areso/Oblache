@@ -111,7 +111,7 @@ class HttpMethods:
             pass
         with allure.step(f'Params url: {url}\n'
                          f'Cookies: sid\n'
-                         f'Body: {body}'):
+                         f'Body: body'):
             pass
         with allure.step(f'Response: {result}'):
             pass

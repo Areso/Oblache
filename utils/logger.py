@@ -35,11 +35,7 @@ class Logger:
         headers_as_dict = dict(result.headers)
 
         data_to_add = f'Response code: {result.status_code}\n'
-        # with allure.step(f'Response code: {result.status_code}\n'):
-        #     pass
         data_to_add += f'Response text: {result}\n'
-        # with allure.step(f'Response text: {result.text}\n'):
-        #     pass
         data_to_add += f'Response headers: {headers_as_dict}\n'
         data_to_add += f'Response cookies: {cookies_as_dict}\n'
         data_to_add += '\n------\n'
