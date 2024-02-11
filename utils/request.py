@@ -2,6 +2,7 @@ import json
 import random
 import time
 from datetime import datetime
+from pprint import pprint
 from string import ascii_letters
 
 import allure
@@ -172,7 +173,7 @@ class API(TestData):
         with allure.step(f'POST {post_url}'):
             print(post_url)
         result_post = HttpMethods.post_with_cookie(post_url, {}, sid)
-        print('Response body: ', result_post.text)
+        print('Response body: ', result_post.json())
         return result_post
 
     @staticmethod
