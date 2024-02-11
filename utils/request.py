@@ -114,7 +114,7 @@ class API(TestData):
         Method for create new user
         :return: JSON Response
         """
-        json_for_create_new_user = {"email": TestData.email, "password": TestData.password}
+        json_for_create_new_user = {"email": TestData.email, "password": TestData.old_password}
 
         post_resource = '/register'  # Resource for method POST
         post_url = TestData.base_url + post_resource
@@ -131,7 +131,7 @@ class API(TestData):
         :return: JSON Response
         """
         json_for_create_new_user = {"email": f'aqa{data.data.time}@{mail}.{prefix}',
-                                    "password": TestData.password}
+                                    "password": TestData.old_password}
         print(f'Data for request: {json_for_create_new_user}')
         post_resource = '/register'  # Resource for method POST
         post_url = TestData.base_url + post_resource
