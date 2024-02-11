@@ -168,14 +168,12 @@ class TestPOST:
     def test_post_db_create(self):
         print('\n\nMethod POST: db_create')
         result_post_db_list = API.post_db_create(TestData.sid)
-        print(result_post_db_list.json()["db_uuid"])
         Checking.check_status_code(result_post_db_list, 201)
 
     @allure.title('Post db_create with wrong db_type.')
     def test_post_db_create_with_wrong_values_dbtype(self):
         print('\n\nMethod POST: post_db_create_wrong_value_dbtype')
         result_post_db_list = API.post_db_create_wrong_value_db_type(TestData.sid)
-        print(result_post_db_list.json())
         Checking.check_status_code(result_post_db_list, 400)
         Checking.check_json_search_word_in_value(result_post_db_list, "content",
                                                  "error: DB type isn't found or isn't available for order")
@@ -184,7 +182,6 @@ class TestPOST:
     def test_post_db_create_with_wrong_values_db_version(self):
         print('\n\nMethod POST: post_db_create_wrong_value_db_versione')
         result_post_db_list = API.post_db_create_wrong_value_db_version(TestData.sid)
-        print(result_post_db_list.json())
         Checking.check_status_code(result_post_db_list, 400)
         Checking.check_json_search_word_in_value(result_post_db_list, "content",
                                                  "error: DB version isn't found or isn't available for order")
@@ -193,7 +190,6 @@ class TestPOST:
     def test_post_db_create_with_wrong_values_env(self):
         print('\n\nMethod POST: post_db_create_wrong_value_env')
         result_post_db_list = API.post_db_create_wrong_value_env(TestData.sid)
-        print(result_post_db_list.json())
         Checking.check_status_code(result_post_db_list, 400)
         Checking.check_json_search_word_in_value(result_post_db_list, "content",
                                                  "error: DB environment isn't found or isn't available for order")
