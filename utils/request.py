@@ -24,9 +24,8 @@ class API(TestData):
         get_resource = '/tos'  # Resource for method GET
         get_url = TestData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
-            print(get_url)
+            pass
         result_get = HttpMethods.get(get_url)
-        print(result_get.text)
         return result_get
 
     @staticmethod
@@ -38,9 +37,8 @@ class API(TestData):
         get_resource = '/get_profile'  # Resource for method
         get_url = TestData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
-            print(get_url)
+            pass
         result_get = HttpMethods.get_with_cookie(get_url, {}, TestData.sid)
-        print('Response body: ', result_get.text)
         return result_get
 
     @staticmethod
@@ -52,13 +50,12 @@ class API(TestData):
         get_resource = '/get_profile'  # Resource for method
         get_url = TestData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
-            print(get_url)
+            pass
         result_get = HttpMethods.get_with_cookie(get_url, {
             "queue_db_create_orders": 3,
             "queue_db_delete_orders": 1,
             "number_of_stuck_tasks": 0
         }, TestData.sid)
-        print('Response body: ', result_get.text)
         return result_get
 
     @staticmethod
@@ -67,9 +64,8 @@ class API(TestData):
         get_resource = '/list_dbtypes'  # Resource for method GET
         get_url = TestData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
-            print(get_url)
+            pass
         result_get = HttpMethods.get(get_url)
-        print(result_get.text)
         return result_get
 
     @staticmethod
@@ -78,9 +74,8 @@ class API(TestData):
         get_resource = '/list_dbversions'  # Resource for method GET
         get_url = TestData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
-            print(get_url)
+            pass
         result_get = HttpMethods.get(get_url)
-        print(result_get.text)
         return result_get
 
     @staticmethod
@@ -89,9 +84,8 @@ class API(TestData):
         get_resource = '/list_dbenvs'  # Resource for method GET
         get_url = TestData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
-            print(get_url)
+            pass
         result_get = HttpMethods.get(get_url)
-        print(result_get.text)
         return result_get
 
     @staticmethod
@@ -100,9 +94,8 @@ class API(TestData):
         get_resource = '/list_regions'  # Resource for method GET
         get_url = TestData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
-            print(get_url)
+            pass
         result_get = HttpMethods.get(get_url)
-        print(result_get.text)
         return result_get
 
     @staticmethod
@@ -111,9 +104,8 @@ class API(TestData):
         get_resource = '/bad_request'  # Resource for method GET
         get_url = TestData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
-            print(get_url)
+            pass
         result_get = HttpMethods.get(get_url)
-        print(result_get.text)
         return result_get
 
     @staticmethod
@@ -128,9 +120,8 @@ class API(TestData):
         post_resource = '/register'  # Resource for method POST
         post_url = TestData.base_url + post_resource
         with allure.step(f'POST {post_url}'):
-            print(post_url)
+            pass
         result_post = HttpMethods.post(post_url, json_for_create_new_user)
-        print('Response body: ', result_post.text)
         return result_post
 
     @staticmethod
@@ -142,16 +133,14 @@ class API(TestData):
         """
         json_for_create_new_user = {"email": f'aqa{data.data.time}@{mail}.{prefix}',
                                     "password": TestData.old_password}
-        print(f'Data for request: {json_for_create_new_user}')
         post_resource = '/register'  # Resource for method POST
         post_url = TestData.base_url + post_resource
         with allure.step(f'POST {post_url}'):
-            print(post_url)
+            pass
         with allure.step(f'Params:'
                          f'{json_for_create_new_user}'):
             pass
         result_post = HttpMethods.post(post_url, json_for_create_new_user)
-        print('Response body: ', result_post.text)
         return result_post
 
     @staticmethod
@@ -160,16 +149,11 @@ class API(TestData):
         post_resource = '/login'  # Resource for method GET
         post_url = TestData.base_url + post_resource
         with allure.step(f'POST {post_url}'):
-            print(post_url)
+            pass
         result_post = HttpMethods.post(post_url, body)
-        print(result_post)
-        cookies = result_post.cookies
-        print(f'Cookies: {cookies}')
         sid = result_post.cookies.values()[0]
         with allure.step('Body: {"email":"your_email","password":"your_password"}'):
             pass
-        print('Response: ', result_post.text, f'Sid: {sid}')
-        print(f'Sid: {sid}')
         return result_post, sid
 
     @staticmethod

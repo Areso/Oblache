@@ -11,7 +11,6 @@ class HttpMethods:
     cookie = ''
 
     @staticmethod
-    # @allure.step('Method GET')
     def get(url):
         """
         :param url:
@@ -21,13 +20,12 @@ class HttpMethods:
         result = requests.get(url, headers=HttpMethods.headers, cookies=HttpMethods.cookie)
         with allure.step(f'Status code: {result.status_code}'):
             pass
-        with allure.step(f'Response: {result.text}'):
+        with allure.step(f'Response: {result.json()}'):
             pass
         Logger.add_response(result)
         return result
 
     @staticmethod
-    # @allure.step('Method GET')
     def get_with_cookie(url: str, body: dict, cookie: dict):
         """
         :param url:
@@ -49,7 +47,6 @@ class HttpMethods:
         return result
 
     @staticmethod
-    # @allure.step('Method POST')
     def post(url, body):
         Logger.add_request(url, method='POST')
         result = requests.post(url, json=body, headers=HttpMethods.headers, cookies=HttpMethods.cookie)
@@ -63,7 +60,6 @@ class HttpMethods:
         return result
 
     @staticmethod
-    # @allure.step('Method POST')
     def post_with_cookie(url: str, body: dict, cookie: dict):
         """
         :param url:
@@ -83,7 +79,6 @@ class HttpMethods:
         return result
 
     @staticmethod
-    # @allure.step('Method POST')
     def post_for_delete_db(url, db_uuid, sid):
         """
         :param url:
@@ -103,7 +98,6 @@ class HttpMethods:
         return result
 
     @staticmethod
-    # @allure.step('Method POST')
     def post_with_cookie_without_body(url: str, cookie: dict, body: dict):
         """
         :param url:
