@@ -1,0 +1,488 @@
+{
+  "uid" : "a5962b76668e6749",
+  "name" : "test_capacity_db",
+  "fullName" : "tests.test_bd.TestCapacity#test_capacity_db",
+  "historyId" : "761a25d87f555427c84625be21548ea0",
+  "time" : {
+    "start" : 1707679221914,
+    "stop" : 1707679317944,
+    "duration" : 96030
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: Value db_size should be more than 0.\nassert 0 > 0\n +  where 0 = int(0)",
+  "statusTrace" : "self = <tests.test_bd.TestCapacity object at 0x7f3c89266950>\n\n    @allure.title('test_capacity_db')\n    def test_capacity_db(self):\n        start_mb_value = API.get_profile().json()[\"content\"][4][1]\n        print('Db size mb:', start_mb_value)\n        result_db_create = API.post_db_create(TestData.sid)\n        print('Status db is :', result_db_create.json())\n        db_uuid = result_db_create.json()[\"db_uuid\"]\n        print(\"db_uuid\", db_uuid)\n        time.sleep(20)\n        query = '''\n        CREATE TABLE IF NOT EXISTS accounts(\n        userid INT PRIMARY KEY AUTO_INCREMENT,\n        name varchar(128),\n        date_of_birth datetime NULL,\n        text varchar(4096),\n        email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;\n        '''\n        db = TestData.connection(f\"{db_uuid}\")\n        cursor = db.cursor()\n        cursor.execute(query)\n        db.commit()\n    \n        db = TestData.connection(f\"{db_uuid}\")\n        letters = ascii_letters\n        cursor = db.cursor()\n        for x in range(10):\n            for i in range(10):\n                my_string = \"\".join(random.choice(letters) for _ in range(4096))\n                cursor.execute(\"\"\"\n                                INSERT INTO accounts (name, text)\n                                VALUES (\n                                'lambotik',\n                                %(my_string)s);\"\"\",\n                               {'my_string': my_string})\n                db.commit()\n            db.commit()\n        cursor.execute('''select * from accounts''')\n        res = cursor.fetchall()\n        # print(res)\n        time.sleep(40)\n        finish_mb_value = API.get_profile().json()[\"content\"][4][1]\n        # print('amount', finish_mb_value.text)\n        req = requests.post('http://cisdb1.areso.pro:9090/list', json={\"token\": \"SuperSecret\"})\n        pprint(req.text)\n        print('Db size mb after insert:', finish_mb_value)\n        cr = API.post_db_create(TestData.sid)\n        print(cr.status_code)\n>       assert int(finish_mb_value) > 0, 'Value db_size should be more than 0.'\nE       AssertionError: Value db_size should be more than 0.\nE       assert 0 > 0\nE        +  where 0 = int(0)\n\ntests/test_bd.py:74: AssertionError",
+  "flaky" : false,
+  "newFailed" : true,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: Value db_size should be more than 0.\nassert 0 > 0\n +  where 0 = int(0)",
+    "statusTrace" : "self = <tests.test_bd.TestCapacity object at 0x7f3c89266950>\n\n    @allure.title('test_capacity_db')\n    def test_capacity_db(self):\n        start_mb_value = API.get_profile().json()[\"content\"][4][1]\n        print('Db size mb:', start_mb_value)\n        result_db_create = API.post_db_create(TestData.sid)\n        print('Status db is :', result_db_create.json())\n        db_uuid = result_db_create.json()[\"db_uuid\"]\n        print(\"db_uuid\", db_uuid)\n        time.sleep(20)\n        query = '''\n        CREATE TABLE IF NOT EXISTS accounts(\n        userid INT PRIMARY KEY AUTO_INCREMENT,\n        name varchar(128),\n        date_of_birth datetime NULL,\n        text varchar(4096),\n        email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;\n        '''\n        db = TestData.connection(f\"{db_uuid}\")\n        cursor = db.cursor()\n        cursor.execute(query)\n        db.commit()\n    \n        db = TestData.connection(f\"{db_uuid}\")\n        letters = ascii_letters\n        cursor = db.cursor()\n        for x in range(10):\n            for i in range(10):\n                my_string = \"\".join(random.choice(letters) for _ in range(4096))\n                cursor.execute(\"\"\"\n                                INSERT INTO accounts (name, text)\n                                VALUES (\n                                'lambotik',\n                                %(my_string)s);\"\"\",\n                               {'my_string': my_string})\n                db.commit()\n            db.commit()\n        cursor.execute('''select * from accounts''')\n        res = cursor.fetchall()\n        # print(res)\n        time.sleep(40)\n        finish_mb_value = API.get_profile().json()[\"content\"][4][1]\n        # print('amount', finish_mb_value.text)\n        req = requests.post('http://cisdb1.areso.pro:9090/list', json={\"token\": \"SuperSecret\"})\n        pprint(req.text)\n        print('Db size mb after insert:', finish_mb_value)\n        cr = API.post_db_create(TestData.sid)\n        print(cr.status_code)\n>       assert int(finish_mb_value) > 0, 'Value db_size should be more than 0.'\nE       AssertionError: Value db_size should be more than 0.\nE       assert 0 > 0\nE        +  where 0 = int(0)\n\ntests/test_bd.py:74: AssertionError",
+    "steps" : [ {
+      "name" : "GET https://dbend.areso.pro/get_profile",
+      "time" : {
+        "start" : 1707679221914,
+        "stop" : 1707679221914,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Status code: 200",
+      "time" : {
+        "start" : 1707679222232,
+        "stop" : 1707679222232,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Params url: https://dbend.areso.pro/get_profile\nCookies: {'sid': 'c3f9c7ff-6d04-4fac-969d-a3fa1f4a6753'}\nBody: {}",
+      "time" : {
+        "start" : 1707679222232,
+        "stop" : 1707679222232,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Response: <Response [200]>",
+      "time" : {
+        "start" : 1707679222232,
+        "stop" : 1707679222232,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "POST https://dbend.areso.pro/db_create",
+      "time" : {
+        "start" : 1707679222233,
+        "stop" : 1707679222233,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Status code: 201",
+      "time" : {
+        "start" : 1707679222731,
+        "stop" : 1707679222731,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Params url: https://dbend.areso.pro/db_create\nCookies: {'sid': 'c3f9c7ff-6d04-4fac-969d-a3fa1f4a6753'}\nBody: {'dbtype': 3, 'dbversion': 5, 'env': 3, 'region': 3}",
+      "time" : {
+        "start" : 1707679222731,
+        "stop" : 1707679222731,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Response: <Response [201]>",
+      "time" : {
+        "start" : 1707679222731,
+        "stop" : 1707679222731,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "GET https://dbend.areso.pro/get_profile",
+      "time" : {
+        "start" : 1707679316950,
+        "stop" : 1707679316950,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Status code: 200",
+      "time" : {
+        "start" : 1707679317302,
+        "stop" : 1707679317302,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Params url: https://dbend.areso.pro/get_profile\nCookies: {'sid': 'c3f9c7ff-6d04-4fac-969d-a3fa1f4a6753'}\nBody: {}",
+      "time" : {
+        "start" : 1707679317302,
+        "stop" : 1707679317302,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Response: <Response [200]>",
+      "time" : {
+        "start" : 1707679317302,
+        "stop" : 1707679317302,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "POST https://dbend.areso.pro/db_create",
+      "time" : {
+        "start" : 1707679317569,
+        "stop" : 1707679317569,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Status code: 201",
+      "time" : {
+        "start" : 1707679317943,
+        "stop" : 1707679317943,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Params url: https://dbend.areso.pro/db_create\nCookies: {'sid': 'c3f9c7ff-6d04-4fac-969d-a3fa1f4a6753'}\nBody: {'dbtype': 3, 'dbversion': 5, 'env': 3, 'region': 3}",
+      "time" : {
+        "start" : 1707679317943,
+        "stop" : 1707679317943,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Response: <Response [201]>",
+      "time" : {
+        "start" : 1707679317944,
+        "stop" : 1707679317944,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "stepsCount" : 16,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "epic",
+    "value" : "Performance DB"
+  }, {
+    "name" : "suite",
+    "value" : "Test Performance DB"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestCapacity"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1538-567"
+  }, {
+    "name" : "thread",
+    "value" : "1796-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 1,
+        "skipped" : 0,
+        "passed" : 24,
+        "unknown" : 0,
+        "total" : 26
+      },
+      "items" : [ {
+        "uid" : "7c3c5fa6478fc2cd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707673443363,
+          "stop" : 1707673537310,
+          "duration" : 93947
+        }
+      }, {
+        "uid" : "db36020d13311152",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707608747000,
+          "stop" : 1707608814246,
+          "duration" : 67246
+        }
+      }, {
+        "uid" : "ab1223b763e435f9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707437632226,
+          "stop" : 1707437707153,
+          "duration" : 74927
+        }
+      }, {
+        "uid" : "2d380e6b3b027823",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707436368629,
+          "stop" : 1707436436548,
+          "duration" : 67919
+        }
+      }, {
+        "uid" : "ce87176381ebf708",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707430174081,
+          "stop" : 1707430236544,
+          "duration" : 62463
+        }
+      }, {
+        "uid" : "9a50cd7ba93ea6b8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707392812243,
+          "stop" : 1707392872674,
+          "duration" : 60431
+        }
+      }, {
+        "uid" : "e73570981eea1f9b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707392475296,
+          "stop" : 1707392534707,
+          "duration" : 59411
+        }
+      }, {
+        "uid" : "f35735edfb7e7ce7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707348663532,
+          "stop" : 1707348726292,
+          "duration" : 62760
+        }
+      }, {
+        "uid" : "8c976fc824f40570",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707348415855,
+          "stop" : 1707348475348,
+          "duration" : 59493
+        }
+      }, {
+        "uid" : "962cdd3a99d116c6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707346439090,
+          "stop" : 1707346501585,
+          "duration" : 62495
+        }
+      }, {
+        "uid" : "fe3822ed1e62ad34",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707337060395,
+          "stop" : 1707337130307,
+          "duration" : 69912
+        }
+      }, {
+        "uid" : "afda05a1422fdbe9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707265491818,
+          "stop" : 1707265560553,
+          "duration" : 68735
+        }
+      }, {
+        "uid" : "fbe7faf1b0c1d276",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707265266596,
+          "stop" : 1707265328737,
+          "duration" : 62141
+        }
+      }, {
+        "uid" : "ce5a2a9289d94fe5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707165445398,
+          "stop" : 1707165507852,
+          "duration" : 62454
+        }
+      }, {
+        "uid" : "1333e750360edb74",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707164024761,
+          "stop" : 1707164094627,
+          "duration" : 69866
+        }
+      }, {
+        "uid" : "91811c9034a68fac",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707158525982,
+          "stop" : 1707158594740,
+          "duration" : 68758
+        }
+      }, {
+        "uid" : "2fbf6dd1ba335b1d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707157954105,
+          "stop" : 1707158014288,
+          "duration" : 60183
+        }
+      }, {
+        "uid" : "721a0e4aa68ed10e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707155788338,
+          "stop" : 1707155858166,
+          "duration" : 69828
+        }
+      }, {
+        "uid" : "a3964271e26bd15f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707151773720,
+          "stop" : 1707151833164,
+          "duration" : 59444
+        }
+      }, {
+        "uid" : "7852e9640efa2972",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707069668998,
+          "stop" : 1707069740521,
+          "duration" : 71523
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "a5962b76668e6749.json",
+  "parameterValues" : [ ]
+}
