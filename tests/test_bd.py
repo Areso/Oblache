@@ -1,4 +1,3 @@
-import json
 import random
 import time
 from pprint import pprint
@@ -242,7 +241,7 @@ class TestPOST:
         print('\n\nMethod DELETE: delete_db')
         list_db = API.post_db_list(TestData.sid)
         json_list_db = list_db.json()
-        print('#'*20,len(list(json_list_db['content'])))
+        print('#' * 20, len(list(json_list_db['content'])))
         try:
             first_db_uuid = list(json_list_db['content'].keys())[-1]
             print(first_db_uuid)
