@@ -13,7 +13,7 @@ class TestData:
     old_password = os.getenv('PASSWORD')
     new_password = '123456789'
     try:
-        body = {"email": f'{email}', "password": f'{old_password}'}
+        body = {"email": email, "password": f'{old_password}'}
         result = requests.post('https://dbend.areso.pro/login', json=body)
         sid = dict(result.cookies)
         if sid != {}:
@@ -21,7 +21,7 @@ class TestData:
         assert sid != {}
     except:
         old_password, new_password = new_password, old_password
-        body = {"email": f'{email}', "password": f'{old_password}'}
+        body = {"email": email, "password": f'{old_password}'}
         result = requests.post('https://dbend.areso.pro/login', json=body)
         sid = dict(result.cookies)
         assert sid != {}
