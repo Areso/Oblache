@@ -1,12 +1,12 @@
 {
-  "uid" : "618555d4460e62cc",
-  "name" : "Post db_create",
-  "fullName" : "tests.test_bd.TestPOST#test_post_db_create",
-  "historyId" : "072cccfb757d85a23781a718b88741bd",
+  "uid" : "932b37fbe7bc065e",
+  "name" : "Post db_create with wrong region.",
+  "fullName" : "tests.test_bd.TestPOST#test_post_db_create_with_wrong_values_region",
+  "historyId" : "ab20bf97eee2e17efc3d49666531cfd4",
   "time" : {
-    "start" : 1707693326164,
-    "stop" : 1707693326585,
-    "duration" : 421
+    "start" : 1707693867384,
+    "stop" : 1707693867706,
+    "duration" : 322
   },
   "status" : "passed",
   "flaky" : false,
@@ -15,18 +15,18 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "post_db_create",
+      "name" : "post_db_create_wrong_value_region",
       "time" : {
-        "start" : 1707693326164,
-        "stop" : 1707693326584,
-        "duration" : 420
+        "start" : 1707693867385,
+        "stop" : 1707693867705,
+        "duration" : 320
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "POST https://dbend.areso.pro/db_create",
         "time" : {
-          "start" : 1707693326164,
-          "stop" : 1707693326164,
+          "start" : 1707693867385,
+          "stop" : 1707693867385,
           "duration" : 0
         },
         "status" : "passed",
@@ -38,11 +38,11 @@
         "stepsCount" : 0,
         "hasContent" : false
       }, {
-        "name" : "Status code: 201",
+        "name" : "Status code: 400",
         "time" : {
-          "start" : 1707693326583,
-          "stop" : 1707693326584,
-          "duration" : 1
+          "start" : 1707693867705,
+          "stop" : 1707693867705,
+          "duration" : 0
         },
         "status" : "passed",
         "steps" : [ ],
@@ -55,8 +55,8 @@
       }, {
         "name" : "Params url: https://dbend.areso.pro/db_create\nCookies: sid\nBody: body",
         "time" : {
-          "start" : 1707693326584,
-          "stop" : 1707693326584,
+          "start" : 1707693867705,
+          "stop" : 1707693867705,
           "duration" : 0
         },
         "status" : "passed",
@@ -68,10 +68,10 @@
         "stepsCount" : 0,
         "hasContent" : false
       }, {
-        "name" : "Response: <Response [201]>",
+        "name" : "Response: <Response [400]>",
         "time" : {
-          "start" : 1707693326584,
-          "stop" : 1707693326584,
+          "start" : 1707693867705,
+          "stop" : 1707693867705,
           "duration" : 0
         },
         "status" : "passed",
@@ -90,10 +90,25 @@
       "stepsCount" : 4,
       "hasContent" : true
     }, {
-      "name" : "Assert status code: 201 == Response status code: 201",
+      "name" : "Assert status code: 400 == Response status code: 400",
       "time" : {
-        "start" : 1707693326584,
-        "stop" : 1707693326584,
+        "start" : 1707693867705,
+        "stop" : 1707693867705,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Check and compare result request with expected value by key:\nResponse: <Response [400]>\nKey: content\nValue: error: region isn't found or isn't available for order",
+      "time" : {
+        "start" : 1707693867706,
+        "stop" : 1707693867706,
         "duration" : 0
       },
       "status" : "passed",
@@ -109,7 +124,7 @@
     "parameters" : [ ],
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
-    "stepsCount" : 6,
+    "stepsCount" : 7,
     "hasContent" : true
   },
   "afterStages" : [ ],
@@ -127,10 +142,10 @@
     "value" : "TestPOST"
   }, {
     "name" : "host",
-    "value" : "fv-az883-39"
+    "value" : "fv-az984-61"
   }, {
     "name" : "thread",
-    "value" : "1773-MainThread"
+    "value" : "1806-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -157,174 +172,174 @@
         "failed" : 0,
         "broken" : 0,
         "skipped" : 0,
-        "passed" : 34,
+        "passed" : 35,
         "unknown" : 0,
-        "total" : 34
+        "total" : 35
       },
       "items" : [ {
-        "uid" : "4f445ddcbf439f30",
+        "uid" : "d3b04061fb240f15",
         "status" : "passed",
         "time" : {
-          "start" : 1707684211620,
-          "stop" : 1707684212022,
-          "duration" : 402
+          "start" : 1707693327703,
+          "stop" : 1707693328075,
+          "duration" : 372
         }
       }, {
-        "uid" : "80aa219891500cd5",
+        "uid" : "69c0bef778f9e26f",
         "status" : "passed",
         "time" : {
-          "start" : 1707683175712,
-          "stop" : 1707683176273,
-          "duration" : 561
+          "start" : 1707684213162,
+          "stop" : 1707684213529,
+          "duration" : 367
         }
       }, {
-        "uid" : "6fbb97405c954245",
+        "uid" : "450045d3d2791bad",
         "status" : "passed",
         "time" : {
-          "start" : 1707681004284,
-          "stop" : 1707681004650,
-          "duration" : 366
+          "start" : 1707683177821,
+          "stop" : 1707683178341,
+          "duration" : 520
         }
       }, {
-        "uid" : "9aecd658d56b87ec",
+        "uid" : "3c5418e4ebd9aeb0",
         "status" : "passed",
         "time" : {
-          "start" : 1707679322410,
-          "stop" : 1707679322783,
-          "duration" : 373
+          "start" : 1707681005641,
+          "stop" : 1707681005965,
+          "duration" : 324
         }
       }, {
-        "uid" : "8a9f04e8ce1ae7de",
+        "uid" : "349317c292905554",
         "status" : "passed",
         "time" : {
-          "start" : 1707673541462,
-          "stop" : 1707673541820,
-          "duration" : 358
+          "start" : 1707679323760,
+          "stop" : 1707679324082,
+          "duration" : 322
         }
       }, {
-        "uid" : "793de237838a034d",
+        "uid" : "3a292487541aa3f7",
         "status" : "passed",
         "time" : {
-          "start" : 1707608821040,
-          "stop" : 1707608821613,
-          "duration" : 573
+          "start" : 1707673542767,
+          "stop" : 1707673543079,
+          "duration" : 312
         }
       }, {
-        "uid" : "fd48e317d322953f",
+        "uid" : "8a91cf6ca2bb6aff",
         "status" : "passed",
         "time" : {
-          "start" : 1707437714118,
-          "stop" : 1707437714691,
-          "duration" : 573
+          "start" : 1707608823168,
+          "stop" : 1707608823708,
+          "duration" : 540
         }
       }, {
-        "uid" : "1b6fad39de949013",
+        "uid" : "2e0d6686a2415acf",
         "status" : "passed",
         "time" : {
-          "start" : 1707436443377,
-          "stop" : 1707436443940,
-          "duration" : 563
+          "start" : 1707437716268,
+          "stop" : 1707437716792,
+          "duration" : 524
         }
       }, {
-        "uid" : "77d6a67a9b96f88a",
+        "uid" : "d33226421ce96526",
         "status" : "passed",
         "time" : {
-          "start" : 1707430241462,
-          "stop" : 1707430241875,
-          "duration" : 413
+          "start" : 1707436445534,
+          "stop" : 1707436446052,
+          "duration" : 518
         }
       }, {
-        "uid" : "42bb5ae96ded48a",
+        "uid" : "af728d219ac8e1d4",
         "status" : "passed",
         "time" : {
-          "start" : 1707392877021,
-          "stop" : 1707392877397,
-          "duration" : 376
+          "start" : 1707430242983,
+          "stop" : 1707430243358,
+          "duration" : 375
         }
       }, {
-        "uid" : "55264021d2117a5a",
+        "uid" : "262a0e2e55d1940b",
         "status" : "passed",
         "time" : {
-          "start" : 1707392539122,
-          "stop" : 1707392539492,
-          "duration" : 370
+          "start" : 1707392878409,
+          "stop" : 1707392878740,
+          "duration" : 331
         }
       }, {
-        "uid" : "74c9bb56f031ac2e",
+        "uid" : "2991226bda805b43",
         "status" : "passed",
         "time" : {
-          "start" : 1707348731169,
-          "stop" : 1707348731590,
-          "duration" : 421
+          "start" : 1707392540550,
+          "stop" : 1707392540891,
+          "duration" : 341
         }
       }, {
-        "uid" : "a42ee1e93855f2fc",
+        "uid" : "736f3eba848741f0",
         "status" : "passed",
         "time" : {
-          "start" : 1707348479588,
-          "stop" : 1707348479946,
-          "duration" : 358
+          "start" : 1707348732732,
+          "stop" : 1707348733093,
+          "duration" : 361
         }
       }, {
-        "uid" : "1cd995fbec6ec5ad",
+        "uid" : "34053d0cf487f91e",
         "status" : "passed",
         "time" : {
-          "start" : 1707346506430,
-          "stop" : 1707346506842,
-          "duration" : 412
+          "start" : 1707348480919,
+          "stop" : 1707348481251,
+          "duration" : 332
         }
       }, {
-        "uid" : "dd3c1d2a33d9d52d",
+        "uid" : "b1d0f00fd1b44ceb",
         "status" : "passed",
         "time" : {
-          "start" : 1707337137217,
-          "stop" : 1707337137851,
-          "duration" : 634
+          "start" : 1707346507992,
+          "stop" : 1707346508377,
+          "duration" : 385
         }
       }, {
-        "uid" : "714f01e4555b2f80",
+        "uid" : "b7921cfd7ebf6360",
         "status" : "passed",
         "time" : {
-          "start" : 1707265567362,
-          "stop" : 1707265567954,
-          "duration" : 592
+          "start" : 1707337139447,
+          "stop" : 1707337139982,
+          "duration" : 535
         }
       }, {
-        "uid" : "68f71133fdc25088",
+        "uid" : "322dee23f321c56",
         "status" : "passed",
         "time" : {
-          "start" : 1707265333696,
-          "stop" : 1707265334282,
-          "duration" : 586
+          "start" : 1707265569531,
+          "stop" : 1707265570064,
+          "duration" : 533
         }
       }, {
-        "uid" : "d8d53b958a09c2da",
+        "uid" : "650ab7638dc8c596",
         "status" : "passed",
         "time" : {
-          "start" : 1707165512732,
-          "stop" : 1707165513157,
-          "duration" : 425
+          "start" : 1707265335561,
+          "stop" : 1707265335954,
+          "duration" : 393
         }
       }, {
-        "uid" : "e72f648a51914c5c",
+        "uid" : "eab6e1a724747082",
         "status" : "passed",
         "time" : {
-          "start" : 1707164101519,
-          "stop" : 1707164102091,
-          "duration" : 572
+          "start" : 1707165514282,
+          "stop" : 1707165514760,
+          "duration" : 478
         }
       }, {
-        "uid" : "c09f516e1c5b0741",
+        "uid" : "42de99e4ccfe874e",
         "status" : "passed",
         "time" : {
-          "start" : 1707158601597,
-          "stop" : 1707158602179,
-          "duration" : 582
+          "start" : 1707164103649,
+          "stop" : 1707164104293,
+          "duration" : 644
         }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "618555d4460e62cc.json",
+  "source" : "932b37fbe7bc065e.json",
   "parameterValues" : [ ]
 }

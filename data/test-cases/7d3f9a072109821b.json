@@ -1,36 +1,36 @@
 {
-  "uid" : "785dcc7d5a149b3d",
+  "uid" : "7d3f9a072109821b",
   "name" : "Post db list with filter",
   "fullName" : "tests.test_bd.TestPOST#test_post_db_list_with_filter",
   "historyId" : "6f36813e0600b433eda47665426f083e",
   "time" : {
-    "start" : 1707693328546,
-    "stop" : 1707693329005,
-    "duration" : 459
+    "start" : 1707693868104,
+    "stop" : 1707693868507,
+    "duration" : 403
   },
   "status" : "broken",
   "statusMessage" : "TypeError: string indices must be integers",
-  "statusTrace" : "self = <tests.test_bd.TestPOST object at 0x7f1d9291f9a0>\n\n    @allure.title('Post db list with filter')\n    def test_post_db_list_with_filter(self):\n        print('\\n\\nMethod POST: db_list_with_filter')\n        list_db = API.post_db_list(TestData.sid)\n        json_list_db = list_db.json()\n        try:\n            first_db_uuid = list(json_list_db['content'].keys())[0]\n            print('first_db_uuid', first_db_uuid)\n>           result_post_db_list = API.delete_db(TestData.sid, first_db_uuid)\n\ntests/test_bd.py:219: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nutils/request.py:287: in delete_db\n    result_delete = HttpMethods.post_for_delete_db(delete_url, json_db_uuid, sid)\nutils/http_methods.py:90: in post_for_delete_db\n    result = requests.post(url, data=db_uuid, cookies=sid)\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/api.py:115: in post\n    return request(\"post\", url, data=data, json=json, **kwargs)\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/api.py:59: in request\n    return session.request(method=method, url=url, **kwargs)\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/sessions.py:575: in request\n    prep = self.prepare_request(req)\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/sessions.py:473: in prepare_request\n    cookies = cookiejar_from_dict(cookies)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\ncookie_dict = '065c2cf5-8d15-7d52-8000-ca909fb8e389'\ncookiejar = <RequestsCookieJar[]>, overwrite = True\n\n    def cookiejar_from_dict(cookie_dict, cookiejar=None, overwrite=True):\n        \"\"\"Returns a CookieJar from a key/value dictionary.\n    \n        :param cookie_dict: Dict of key/values to insert into CookieJar.\n        :param cookiejar: (optional) A cookiejar to add the cookies to.\n        :param overwrite: (optional) If False, will not replace cookies\n            already in the jar with new ones.\n        :rtype: CookieJar\n        \"\"\"\n        if cookiejar is None:\n            cookiejar = RequestsCookieJar()\n    \n        if cookie_dict is not None:\n            names_from_jar = [cookie.name for cookie in cookiejar]\n            for name in cookie_dict:\n                if overwrite or (name not in names_from_jar):\n>                   cookiejar.set_cookie(create_cookie(name, cookie_dict[name]))\nE                   TypeError: string indices must be integers\n\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/cookies.py:537: TypeError",
+  "statusTrace" : "self = <tests.test_bd.TestPOST object at 0x7f70612600a0>\n\n    @allure.title('Post db list with filter')\n    def test_post_db_list_with_filter(self):\n        print('\\n\\nMethod POST: db_list_with_filter')\n        list_db = API.post_db_list(TestData.sid)\n        json_list_db = list_db.json()\n        try:\n            first_db_uuid = list(json_list_db['content'].keys())[0]\n            print('first_db_uuid', first_db_uuid)\n>           result_post_db_list = API.delete_db(TestData.sid, first_db_uuid)\n\ntests/test_bd.py:219: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nutils/request.py:287: in delete_db\n    result_delete = HttpMethods.post_for_delete_db(delete_url, json_db_uuid, sid)\nutils/http_methods.py:90: in post_for_delete_db\n    result = requests.post(url, data=db_uuid, cookies=sid)\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/api.py:115: in post\n    return request(\"post\", url, data=data, json=json, **kwargs)\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/api.py:59: in request\n    return session.request(method=method, url=url, **kwargs)\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/sessions.py:575: in request\n    prep = self.prepare_request(req)\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/sessions.py:473: in prepare_request\n    cookies = cookiejar_from_dict(cookies)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\ncookie_dict = '065c2cf5-8d15-7d52-8000-ca909fb8e389'\ncookiejar = <RequestsCookieJar[]>, overwrite = True\n\n    def cookiejar_from_dict(cookie_dict, cookiejar=None, overwrite=True):\n        \"\"\"Returns a CookieJar from a key/value dictionary.\n    \n        :param cookie_dict: Dict of key/values to insert into CookieJar.\n        :param cookiejar: (optional) A cookiejar to add the cookies to.\n        :param overwrite: (optional) If False, will not replace cookies\n            already in the jar with new ones.\n        :rtype: CookieJar\n        \"\"\"\n        if cookiejar is None:\n            cookiejar = RequestsCookieJar()\n    \n        if cookie_dict is not None:\n            names_from_jar = [cookie.name for cookie in cookiejar]\n            for name in cookie_dict:\n                if overwrite or (name not in names_from_jar):\n>                   cookiejar.set_cookie(create_cookie(name, cookie_dict[name]))\nE                   TypeError: string indices must be integers\n\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/cookies.py:537: TypeError",
   "flaky" : false,
   "newFailed" : false,
   "beforeStages" : [ ],
   "testStage" : {
     "status" : "broken",
     "statusMessage" : "TypeError: string indices must be integers",
-    "statusTrace" : "self = <tests.test_bd.TestPOST object at 0x7f1d9291f9a0>\n\n    @allure.title('Post db list with filter')\n    def test_post_db_list_with_filter(self):\n        print('\\n\\nMethod POST: db_list_with_filter')\n        list_db = API.post_db_list(TestData.sid)\n        json_list_db = list_db.json()\n        try:\n            first_db_uuid = list(json_list_db['content'].keys())[0]\n            print('first_db_uuid', first_db_uuid)\n>           result_post_db_list = API.delete_db(TestData.sid, first_db_uuid)\n\ntests/test_bd.py:219: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nutils/request.py:287: in delete_db\n    result_delete = HttpMethods.post_for_delete_db(delete_url, json_db_uuid, sid)\nutils/http_methods.py:90: in post_for_delete_db\n    result = requests.post(url, data=db_uuid, cookies=sid)\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/api.py:115: in post\n    return request(\"post\", url, data=data, json=json, **kwargs)\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/api.py:59: in request\n    return session.request(method=method, url=url, **kwargs)\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/sessions.py:575: in request\n    prep = self.prepare_request(req)\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/sessions.py:473: in prepare_request\n    cookies = cookiejar_from_dict(cookies)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\ncookie_dict = '065c2cf5-8d15-7d52-8000-ca909fb8e389'\ncookiejar = <RequestsCookieJar[]>, overwrite = True\n\n    def cookiejar_from_dict(cookie_dict, cookiejar=None, overwrite=True):\n        \"\"\"Returns a CookieJar from a key/value dictionary.\n    \n        :param cookie_dict: Dict of key/values to insert into CookieJar.\n        :param cookiejar: (optional) A cookiejar to add the cookies to.\n        :param overwrite: (optional) If False, will not replace cookies\n            already in the jar with new ones.\n        :rtype: CookieJar\n        \"\"\"\n        if cookiejar is None:\n            cookiejar = RequestsCookieJar()\n    \n        if cookie_dict is not None:\n            names_from_jar = [cookie.name for cookie in cookiejar]\n            for name in cookie_dict:\n                if overwrite or (name not in names_from_jar):\n>                   cookiejar.set_cookie(create_cookie(name, cookie_dict[name]))\nE                   TypeError: string indices must be integers\n\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/cookies.py:537: TypeError",
+    "statusTrace" : "self = <tests.test_bd.TestPOST object at 0x7f70612600a0>\n\n    @allure.title('Post db list with filter')\n    def test_post_db_list_with_filter(self):\n        print('\\n\\nMethod POST: db_list_with_filter')\n        list_db = API.post_db_list(TestData.sid)\n        json_list_db = list_db.json()\n        try:\n            first_db_uuid = list(json_list_db['content'].keys())[0]\n            print('first_db_uuid', first_db_uuid)\n>           result_post_db_list = API.delete_db(TestData.sid, first_db_uuid)\n\ntests/test_bd.py:219: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nutils/request.py:287: in delete_db\n    result_delete = HttpMethods.post_for_delete_db(delete_url, json_db_uuid, sid)\nutils/http_methods.py:90: in post_for_delete_db\n    result = requests.post(url, data=db_uuid, cookies=sid)\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/api.py:115: in post\n    return request(\"post\", url, data=data, json=json, **kwargs)\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/api.py:59: in request\n    return session.request(method=method, url=url, **kwargs)\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/sessions.py:575: in request\n    prep = self.prepare_request(req)\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/sessions.py:473: in prepare_request\n    cookies = cookiejar_from_dict(cookies)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\ncookie_dict = '065c2cf5-8d15-7d52-8000-ca909fb8e389'\ncookiejar = <RequestsCookieJar[]>, overwrite = True\n\n    def cookiejar_from_dict(cookie_dict, cookiejar=None, overwrite=True):\n        \"\"\"Returns a CookieJar from a key/value dictionary.\n    \n        :param cookie_dict: Dict of key/values to insert into CookieJar.\n        :param cookiejar: (optional) A cookiejar to add the cookies to.\n        :param overwrite: (optional) If False, will not replace cookies\n            already in the jar with new ones.\n        :rtype: CookieJar\n        \"\"\"\n        if cookiejar is None:\n            cookiejar = RequestsCookieJar()\n    \n        if cookie_dict is not None:\n            names_from_jar = [cookie.name for cookie in cookiejar]\n            for name in cookie_dict:\n                if overwrite or (name not in names_from_jar):\n>                   cookiejar.set_cookie(create_cookie(name, cookie_dict[name]))\nE                   TypeError: string indices must be integers\n\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/requests/cookies.py:537: TypeError",
     "steps" : [ {
       "name" : "post_db_list",
       "time" : {
-        "start" : 1707693328546,
-        "stop" : 1707693329001,
-        "duration" : 455
+        "start" : 1707693868104,
+        "stop" : 1707693868503,
+        "duration" : 399
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "POST https://dbend.areso.pro/db_list",
         "time" : {
-          "start" : 1707693328546,
-          "stop" : 1707693328546,
+          "start" : 1707693868104,
+          "stop" : 1707693868104,
           "duration" : 0
         },
         "status" : "passed",
@@ -44,8 +44,8 @@
       }, {
         "name" : "Status code: 200",
         "time" : {
-          "start" : 1707693329000,
-          "stop" : 1707693329000,
+          "start" : 1707693868502,
+          "stop" : 1707693868502,
           "duration" : 0
         },
         "status" : "passed",
@@ -59,8 +59,8 @@
       }, {
         "name" : "Params url: https://dbend.areso.pro/db_list",
         "time" : {
-          "start" : 1707693329000,
-          "stop" : 1707693329000,
+          "start" : 1707693868502,
+          "stop" : 1707693868502,
           "duration" : 0
         },
         "status" : "passed",
@@ -74,8 +74,8 @@
       }, {
         "name" : "Response: <Response [200]>",
         "time" : {
-          "start" : 1707693329000,
-          "stop" : 1707693329000,
+          "start" : 1707693868502,
+          "stop" : 1707693868502,
           "duration" : 0
         },
         "status" : "passed",
@@ -96,8 +96,8 @@
     }, {
       "name" : "delete_db",
       "time" : {
-        "start" : 1707693329001,
-        "stop" : 1707693329001,
+        "start" : 1707693868503,
+        "stop" : 1707693868503,
         "duration" : 0
       },
       "status" : "broken",
@@ -106,8 +106,8 @@
       "steps" : [ {
         "name" : "DELETE https://dbend.areso.pro/db_delete",
         "time" : {
-          "start" : 1707693329001,
-          "stop" : 1707693329001,
+          "start" : 1707693868503,
+          "stop" : 1707693868503,
           "duration" : 0
         },
         "status" : "passed",
@@ -119,10 +119,10 @@
         "stepsCount" : 0,
         "hasContent" : false
       }, {
-        "name" : "Db uuid is: {'db_uuid': \"{'sid': '92ad4840-0672-4cc5-b75c-6f27714e2d6c'}\"}",
+        "name" : "Db uuid is: {'db_uuid': \"{'sid': 'cc716297-116e-45b2-8928-9c5b3aaa095a'}\"}",
         "time" : {
-          "start" : 1707693329001,
-          "stop" : 1707693329001,
+          "start" : 1707693868503,
+          "stop" : 1707693868503,
           "duration" : 0
         },
         "status" : "passed",
@@ -163,10 +163,10 @@
     "value" : "TestPOST"
   }, {
     "name" : "host",
-    "value" : "fv-az883-39"
+    "value" : "fv-az984-61"
   }, {
     "name" : "thread",
-    "value" : "1773-MainThread"
+    "value" : "1806-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -195,13 +195,22 @@
     "history" : {
       "statistic" : {
         "failed" : 0,
-        "broken" : 6,
+        "broken" : 7,
         "skipped" : 0,
         "passed" : 25,
         "unknown" : 0,
-        "total" : 31
+        "total" : 32
       },
       "items" : [ {
+        "uid" : "785dcc7d5a149b3d",
+        "status" : "broken",
+        "statusDetails" : "TypeError: string indices must be integers",
+        "time" : {
+          "start" : 1707693328546,
+          "stop" : 1707693329005,
+          "duration" : 459
+        }
+      }, {
         "uid" : "1b44e8d95099f539",
         "status" : "broken",
         "statusDetails" : "TypeError: string indices must be integers",
@@ -358,18 +367,10 @@
           "stop" : 1707164105849,
           "duration" : 1033
         }
-      }, {
-        "uid" : "d470f6ebedddb03e",
-        "status" : "passed",
-        "time" : {
-          "start" : 1707158604831,
-          "stop" : 1707158605868,
-          "duration" : 1037
-        }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "785dcc7d5a149b3d.json",
+  "source" : "7d3f9a072109821b.json",
   "parameterValues" : [ ]
 }
