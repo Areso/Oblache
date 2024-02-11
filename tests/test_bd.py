@@ -26,8 +26,8 @@ class TestConnectionDB:
 class TestCapacity:
     @allure.title('test_capacity_db')
     def test_capacity_db(self):
-        start = API.get_profile()
-        print('start', start)
+        start_mb_value = API.get_profile().json()["content"][4][1]
+        print('Db size mb:', start_mb_value)
         result_db_create = API.post_db_create(TestData.sid)
         print('Status db is :', result_db_create.json())
         db_uuid = result_db_create.json()["db_uuid"]
@@ -53,7 +53,7 @@ class TestCapacity:
             for i in range(10):
                 my_string = "".join(random.choice(letters) for _ in range(4096))
                 cursor.execute("""
-                                INSERT INTO accounts (name, text) 
+                                INSERT INTO accounts (name, text)
                                 VALUES (
                                 'lambotik',
                                 %(my_string)s);""",
@@ -62,16 +62,18 @@ class TestCapacity:
             db.commit()
         cursor.execute('''select * from accounts''')
         res = cursor.fetchall()
-        print(res)
+        # print(res)
         time.sleep(40)
-        amount = API.get_profile()
-        print('amount', amount.text)
+        finish_mb_value = API.get_profile().json()["content"][4][1]
+        # print('amount', finish_mb_value.text)
         req = requests.post('http://cisdb1.areso.pro:9090/list', json={"token": "SuperSecret"})
         pprint(req.text)
-        # cr = API.post_db_create(TestData.sid)
-        # print(cr.status_code)
-        # result_post_db_delete = API.delete_db(f"{db_uuid}", TestData.sid)
-        # Checking.check_status_code(result_post_db_delete, 200)
+        print('Db size mb after insert:', finish_mb_value)
+        cr = API.post_db_create(TestData.sid)
+        print(cr.status_code)
+        assert int(finish_mb_value) > 0, 'Value db_size should be more than 0.'
+        result_post_db_delete = API.delete_db(f"{db_uuid}", TestData.sid)
+        Checking.check_status_code(result_post_db_delete, 200)
 
 
 @allure.epic('GET REQUESTS')
@@ -215,7 +217,7 @@ class TestPOST:
     def test_post_db_list_with_filter(self):
         print('\n\nMethod POST: db_list_with_filter')
         list_db = API.post_db_list(TestData.sid)
-        json_list_db = json.loads(list_db.text)
+        json_list_db = list_db.json()
         try:
             first_db_uuid = list(json_list_db['content'].keys())[0]
             print('first_db_uuid', first_db_uuid)
@@ -243,10 +245,12 @@ class TestPOST:
     def test_delete_db(self):
         print('\n\nMethod DELETE: delete_db')
         list_db = API.post_db_list(TestData.sid)
-        json_list_db = json.loads(list_db.text)
+        json_list_db = list_db.json()
+        print('#'*20,len(list(json_list_db['content'])))
         try:
-            first_db_uuid = list(json_list_db['content'].keys())[0]
-            result_post_db_delete = API.delete_db("065c4fb4-fcfa-7753-8000-db22051e3cf7", TestData.sid)
+            first_db_uuid = list(json_list_db['content'].keys())[-1]
+            print(first_db_uuid)
+            result_post_db_delete = API.delete_db(first_db_uuid, TestData.sid)
             Checking.check_status_code(result_post_db_delete, 200)
         except IndexError as ex:
             print(ex)
