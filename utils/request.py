@@ -271,7 +271,7 @@ class API(TestData):
         return result_post
 
     @staticmethod
-    def delete_db(uuid: str, sid: dict):
+    def delete_db(uuid, sid):
         delete_resource = '/db_delete'  # Resource for method DELETE
         delete_url = TestData.base_url + delete_resource
         with allure.step(f'DELETE {delete_url}'):
@@ -303,7 +303,7 @@ class API(TestData):
             if message == 'db_created':
                 break
             else:
-                time.sleep(4)
+                time.sleep(10)
                 continue
         assert message == 'db_created'
         API.get_profile()
@@ -317,7 +317,7 @@ class API(TestData):
             if start_value_db_list.text == current_value_db_list.text:
                 break
             else:
-                time.sleep(4)
+                time.sleep(10)
                 continue
         last_db_delete = API.delete_db(db_uuid, sid)
         assert last_db_delete.status_code == 400
