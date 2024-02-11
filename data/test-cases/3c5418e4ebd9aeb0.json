@@ -1,12 +1,12 @@
 {
-  "uid" : "349317c292905554",
+  "uid" : "3c5418e4ebd9aeb0",
   "name" : "Post db_create with wrong region.",
   "fullName" : "tests.test_bd.TestPOST#test_post_db_create_with_wrong_values_region",
   "historyId" : "ab20bf97eee2e17efc3d49666531cfd4",
   "time" : {
-    "start" : 1707679323760,
-    "stop" : 1707679324082,
-    "duration" : 322
+    "start" : 1707681005641,
+    "stop" : 1707681005965,
+    "duration" : 324
   },
   "status" : "passed",
   "flaky" : false,
@@ -15,70 +15,88 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "POST https://dbend.areso.pro/db_create",
+      "name" : "post_db_create_wrong_value_region",
       "time" : {
-        "start" : 1707679323760,
-        "stop" : 1707679323760,
-        "duration" : 0
+        "start" : 1707681005641,
+        "stop" : 1707681005964,
+        "duration" : 323
       },
       "status" : "passed",
-      "steps" : [ ],
+      "steps" : [ {
+        "name" : "POST https://dbend.areso.pro/db_create",
+        "time" : {
+          "start" : 1707681005641,
+          "stop" : 1707681005641,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Status code: 400",
+        "time" : {
+          "start" : 1707681005964,
+          "stop" : 1707681005964,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Params url: https://dbend.areso.pro/db_create\nCookies: {'sid': '8ecd374b-47ea-4db8-a6d5-7492ce06297b'}\nBody: {'dbtype': 3, 'dbversion': 5, 'env': 3, 'region': 98}",
+        "time" : {
+          "start" : 1707681005964,
+          "stop" : 1707681005964,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Response: <Response [400]>",
+        "time" : {
+          "start" : 1707681005964,
+          "stop" : 1707681005964,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      } ],
       "attachments" : [ ],
-      "parameters" : [ ],
+      "parameters" : [ {
+        "name" : "sid",
+        "value" : "{'sid': '8ecd374b-47ea-4db8-a6d5-7492ce06297b'}"
+      } ],
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
-      "stepsCount" : 0,
-      "hasContent" : false
-    }, {
-      "name" : "Status code: 400",
-      "time" : {
-        "start" : 1707679324081,
-        "stop" : 1707679324081,
-        "duration" : 0
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "stepsCount" : 0,
-      "hasContent" : false
-    }, {
-      "name" : "Params url: https://dbend.areso.pro/db_create\nCookies: {'sid': 'c3f9c7ff-6d04-4fac-969d-a3fa1f4a6753'}\nBody: {'dbtype': 3, 'dbversion': 5, 'env': 3, 'region': 52}",
-      "time" : {
-        "start" : 1707679324081,
-        "stop" : 1707679324081,
-        "duration" : 0
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "stepsCount" : 0,
-      "hasContent" : false
-    }, {
-      "name" : "Response: <Response [400]>",
-      "time" : {
-        "start" : 1707679324081,
-        "stop" : 1707679324081,
-        "duration" : 0
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "stepsCount" : 0,
-      "hasContent" : false
+      "stepsCount" : 4,
+      "hasContent" : true
     }, {
       "name" : "Assert status code: 400 == Response status code: 400",
       "time" : {
-        "start" : 1707679324081,
-        "stop" : 1707679324081,
+        "start" : 1707681005964,
+        "stop" : 1707681005964,
         "duration" : 0
       },
       "status" : "passed",
@@ -92,8 +110,8 @@
     }, {
       "name" : "Check and compare result request with expected value by key:\nResponse: <Response [400]>\nKey: content\nValue: error: region isn't found or isn't available for order",
       "time" : {
-        "start" : 1707679324081,
-        "stop" : 1707679324081,
+        "start" : 1707681005964,
+        "stop" : 1707681005964,
         "duration" : 0
       },
       "status" : "passed",
@@ -109,16 +127,16 @@
     "parameters" : [ ],
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
-    "stepsCount" : 6,
+    "stepsCount" : 7,
     "hasContent" : true
   },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "epic",
-    "value" : "POST REQUESTS"
-  }, {
     "name" : "suite",
     "value" : "POST"
+  }, {
+    "name" : "epic",
+    "value" : "POST REQUESTS"
   }, {
     "name" : "parentSuite",
     "value" : "tests"
@@ -127,10 +145,10 @@
     "value" : "TestPOST"
   }, {
     "name" : "host",
-    "value" : "fv-az1538-567"
+    "value" : "fv-az1543-348"
   }, {
     "name" : "thread",
-    "value" : "1796-MainThread"
+    "value" : "1805-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -157,11 +175,19 @@
         "failed" : 0,
         "broken" : 0,
         "skipped" : 0,
-        "passed" : 30,
+        "passed" : 31,
         "unknown" : 0,
-        "total" : 30
+        "total" : 31
       },
       "items" : [ {
+        "uid" : "349317c292905554",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707679323760,
+          "stop" : 1707679324082,
+          "duration" : 322
+        }
+      }, {
         "uid" : "3a292487541aa3f7",
         "status" : "passed",
         "time" : {
@@ -313,18 +339,10 @@
           "stop" : 1707151838931,
           "duration" : 311
         }
-      }, {
-        "uid" : "5d38e79b47b15b3c",
-        "status" : "passed",
-        "time" : {
-          "start" : 1707151283082,
-          "stop" : 1707151283403,
-          "duration" : 321
-        }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "349317c292905554.json",
+  "source" : "3c5418e4ebd9aeb0.json",
   "parameterValues" : [ ]
 }

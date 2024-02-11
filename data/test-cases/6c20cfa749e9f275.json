@@ -1,12 +1,12 @@
 {
-  "uid" : "36ebf3b2f9b3b591",
+  "uid" : "6c20cfa749e9f275",
   "name" : "Post registration mail bg",
   "fullName" : "tests.test_bd.TestPOST#test_post_registration_for_bulgaria",
   "historyId" : "f2c6da3792d2913da1c7d6499f2d5473",
   "time" : {
-    "start" : 1707679321383,
-    "stop" : 1707679321751,
-    "duration" : 368
+    "start" : 1707681003292,
+    "stop" : 1707681003640,
+    "duration" : 348
   },
   "status" : "passed",
   "flaky" : false,
@@ -15,85 +15,106 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "POST https://dbend.areso.pro/register",
+      "name" : "post_registration_variety_email",
       "time" : {
-        "start" : 1707679321383,
-        "stop" : 1707679321383,
-        "duration" : 0
+        "start" : 1707681003292,
+        "stop" : 1707681003639,
+        "duration" : 347
       },
       "status" : "passed",
-      "steps" : [ ],
+      "steps" : [ {
+        "name" : "POST https://dbend.areso.pro/register",
+        "time" : {
+          "start" : 1707681003292,
+          "stop" : 1707681003292,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Params:{'email': 'aqa2024_02_11_19_47_49@mail.bg', 'password': '123456789'}",
+        "time" : {
+          "start" : 1707681003292,
+          "stop" : 1707681003292,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Status code: 201",
+        "time" : {
+          "start" : 1707681003639,
+          "stop" : 1707681003639,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Params url: https://dbend.areso.pro/register",
+        "time" : {
+          "start" : 1707681003639,
+          "stop" : 1707681003639,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Response: <Response [201]>",
+        "time" : {
+          "start" : 1707681003639,
+          "stop" : 1707681003639,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      } ],
       "attachments" : [ ],
-      "parameters" : [ ],
+      "parameters" : [ {
+        "name" : "mail",
+        "value" : "'mail'"
+      }, {
+        "name" : "prefix",
+        "value" : "'bg'"
+      } ],
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
-      "stepsCount" : 0,
-      "hasContent" : false
-    }, {
-      "name" : "Params:{'email': 'aqa2024_02_11_19_19_47@yandex.bg', 'password': '123456789'}",
-      "time" : {
-        "start" : 1707679321383,
-        "stop" : 1707679321383,
-        "duration" : 0
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "stepsCount" : 0,
-      "hasContent" : false
-    }, {
-      "name" : "Status code: 201",
-      "time" : {
-        "start" : 1707679321749,
-        "stop" : 1707679321750,
-        "duration" : 1
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "stepsCount" : 0,
-      "hasContent" : false
-    }, {
-      "name" : "Params url: https://dbend.areso.pro/register",
-      "time" : {
-        "start" : 1707679321750,
-        "stop" : 1707679321750,
-        "duration" : 0
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "stepsCount" : 0,
-      "hasContent" : false
-    }, {
-      "name" : "Response: <Response [201]>",
-      "time" : {
-        "start" : 1707679321750,
-        "stop" : 1707679321750,
-        "duration" : 0
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "stepsCount" : 0,
-      "hasContent" : false
+      "stepsCount" : 5,
+      "hasContent" : true
     }, {
       "name" : "Assert status code: 201 == Response status code: 201",
       "time" : {
-        "start" : 1707679321750,
-        "stop" : 1707679321750,
+        "start" : 1707681003639,
+        "stop" : 1707681003639,
         "duration" : 0
       },
       "status" : "passed",
@@ -107,8 +128,8 @@
     }, {
       "name" : "Check and compare result request with expected value by key:\nResponse: <Response [201]>\nKey: content\nValue: msg[1]: registered successfully",
       "time" : {
-        "start" : 1707679321750,
-        "stop" : 1707679321750,
+        "start" : 1707681003639,
+        "stop" : 1707681003639,
         "duration" : 0
       },
       "status" : "passed",
@@ -124,16 +145,16 @@
     "parameters" : [ ],
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
-    "stepsCount" : 7,
+    "stepsCount" : 8,
     "hasContent" : true
   },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "epic",
-    "value" : "POST REQUESTS"
-  }, {
     "name" : "suite",
     "value" : "POST"
+  }, {
+    "name" : "epic",
+    "value" : "POST REQUESTS"
   }, {
     "name" : "parentSuite",
     "value" : "tests"
@@ -142,10 +163,10 @@
     "value" : "TestPOST"
   }, {
     "name" : "host",
-    "value" : "fv-az1538-567"
+    "value" : "fv-az1543-348"
   }, {
     "name" : "thread",
-    "value" : "1796-MainThread"
+    "value" : "1805-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -172,11 +193,19 @@
         "failed" : 0,
         "broken" : 0,
         "skipped" : 0,
-        "passed" : 29,
+        "passed" : 30,
         "unknown" : 0,
-        "total" : 29
+        "total" : 30
       },
       "items" : [ {
+        "uid" : "36ebf3b2f9b3b591",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707679321383,
+          "stop" : 1707679321751,
+          "duration" : 368
+        }
+      }, {
         "uid" : "69366b97c3d0069f",
         "status" : "passed",
         "time" : {
@@ -328,18 +357,10 @@
           "stop" : 1707151836699,
           "duration" : 336
         }
-      }, {
-        "uid" : "dbda183d72f474e9",
-        "status" : "passed",
-        "time" : {
-          "start" : 1707151280748,
-          "stop" : 1707151281070,
-          "duration" : 322
-        }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "36ebf3b2f9b3b591.json",
+  "source" : "6c20cfa749e9f275.json",
   "parameterValues" : [ ]
 }

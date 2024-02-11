@@ -1,11 +1,11 @@
 {
-  "uid" : "2599ce5a1e1388b4",
+  "uid" : "a3004a93e84e047e",
   "name" : "Test tos.",
   "fullName" : "tests.test_bd.TestGET#test_tos",
   "historyId" : "8b98d28890b5c734f92328870cdafef0",
   "time" : {
-    "start" : 1707679317984,
-    "stop" : 1707679318303,
+    "start" : 1707680999963,
+    "stop" : 1707681000282,
     "duration" : 319
   },
   "status" : "passed",
@@ -15,55 +15,70 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "GET https://dbend.areso.pro/tos",
+      "name" : "get_tos",
       "time" : {
-        "start" : 1707679317985,
-        "stop" : 1707679317985,
-        "duration" : 0
+        "start" : 1707680999963,
+        "stop" : 1707681000281,
+        "duration" : 318
       },
       "status" : "passed",
-      "steps" : [ ],
+      "steps" : [ {
+        "name" : "GET https://dbend.areso.pro/tos",
+        "time" : {
+          "start" : 1707680999963,
+          "stop" : 1707680999963,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Status code: 200",
+        "time" : {
+          "start" : 1707681000280,
+          "stop" : 1707681000280,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Response: \"Hello. This pet-project (later Project) works AS IS, no warranty at all.\\nUsing Project, you agree to that.\\nYou MUST create backups of your databases for sake reasons.\\nBecause I do run project on my own pocket money, \\nI limit total size of the databases per 1 user as 100 MBs.\\nAny account don't used more than 6 monts is subject for deletion with all databases.\"\n",
+        "time" : {
+          "start" : 1707681000280,
+          "stop" : 1707681000280,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      } ],
       "attachments" : [ ],
       "parameters" : [ ],
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
-      "stepsCount" : 0,
-      "hasContent" : false
-    }, {
-      "name" : "Status code: 200",
-      "time" : {
-        "start" : 1707679318302,
-        "stop" : 1707679318302,
-        "duration" : 0
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "stepsCount" : 0,
-      "hasContent" : false
-    }, {
-      "name" : "Response: \"Hello. This pet-project (later Project) works AS IS, no warranty at all.\\nUsing Project, you agree to that.\\nYou MUST create backups of your databases for sake reasons.\\nBecause I do run project on my own pocket money, \\nI limit total size of the databases per 1 user as 100 MBs.\\nAny account don't used more than 6 monts is subject for deletion with all databases.\"\n",
-      "time" : {
-        "start" : 1707679318302,
-        "stop" : 1707679318302,
-        "duration" : 0
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "stepsCount" : 0,
-      "hasContent" : false
+      "stepsCount" : 3,
+      "hasContent" : true
     }, {
       "name" : "Assert status code: 200 == Response status code: 200",
       "time" : {
-        "start" : 1707679318302,
-        "stop" : 1707679318302,
+        "start" : 1707681000281,
+        "stop" : 1707681000281,
         "duration" : 0
       },
       "status" : "passed",
@@ -79,7 +94,7 @@
     "parameters" : [ ],
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
-    "stepsCount" : 4,
+    "stepsCount" : 5,
     "hasContent" : true
   },
   "afterStages" : [ ],
@@ -97,10 +112,10 @@
     "value" : "TestGET"
   }, {
     "name" : "host",
-    "value" : "fv-az1538-567"
+    "value" : "fv-az1543-348"
   }, {
     "name" : "thread",
-    "value" : "1796-MainThread"
+    "value" : "1805-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -127,11 +142,19 @@
         "failed" : 0,
         "broken" : 0,
         "skipped" : 0,
-        "passed" : 35,
+        "passed" : 36,
         "unknown" : 0,
-        "total" : 35
+        "total" : 36
       },
       "items" : [ {
+        "uid" : "2599ce5a1e1388b4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707679317984,
+          "stop" : 1707679318303,
+          "duration" : 319
+        }
+      }, {
         "uid" : "e525f4b924084486",
         "status" : "passed",
         "time" : {
@@ -283,18 +306,10 @@
           "stop" : 1707155858695,
           "duration" : 527
         }
-      }, {
-        "uid" : "76a6a929fd4249d0",
-        "status" : "passed",
-        "time" : {
-          "start" : 1707151833167,
-          "stop" : 1707151833486,
-          "duration" : 319
-        }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "2599ce5a1e1388b4.json",
+  "source" : "a3004a93e84e047e.json",
   "parameterValues" : [ ]
 }

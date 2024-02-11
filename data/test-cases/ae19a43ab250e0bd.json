@@ -1,12 +1,12 @@
 {
-  "uid" : "37125adc7bd996d5",
+  "uid" : "ae19a43ab250e0bd",
   "name" : "List envs.",
   "fullName" : "tests.test_bd.TestGET#test_get_list_envs",
   "historyId" : "9e790aeafa2ea7075f9baaa844cb1e2e",
   "time" : {
-    "start" : 1707679319272,
-    "stop" : 1707679319602,
-    "duration" : 330
+    "start" : 1707681001255,
+    "stop" : 1707681001593,
+    "duration" : 338
   },
   "status" : "passed",
   "flaky" : false,
@@ -15,55 +15,70 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "GET https://dbend.areso.pro/list_dbenvs",
+      "name" : "get_list_envs",
       "time" : {
-        "start" : 1707679319272,
-        "stop" : 1707679319272,
-        "duration" : 0
+        "start" : 1707681001255,
+        "stop" : 1707681001593,
+        "duration" : 338
       },
       "status" : "passed",
-      "steps" : [ ],
+      "steps" : [ {
+        "name" : "GET https://dbend.areso.pro/list_dbenvs",
+        "time" : {
+          "start" : 1707681001255,
+          "stop" : 1707681001255,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Status code: 200",
+        "time" : {
+          "start" : 1707681001592,
+          "stop" : 1707681001592,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Response: {\n    \"3\": \"vm_communal\"\n}\n",
+        "time" : {
+          "start" : 1707681001592,
+          "stop" : 1707681001592,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      } ],
       "attachments" : [ ],
       "parameters" : [ ],
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
-      "stepsCount" : 0,
-      "hasContent" : false
-    }, {
-      "name" : "Status code: 200",
-      "time" : {
-        "start" : 1707679319601,
-        "stop" : 1707679319601,
-        "duration" : 0
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "stepsCount" : 0,
-      "hasContent" : false
-    }, {
-      "name" : "Response: {\n    \"3\": \"vm_communal\"\n}\n",
-      "time" : {
-        "start" : 1707679319601,
-        "stop" : 1707679319601,
-        "duration" : 0
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "stepsCount" : 0,
-      "hasContent" : false
+      "stepsCount" : 3,
+      "hasContent" : true
     }, {
       "name" : "Assert status code: 200 == Response status code: 200",
       "time" : {
-        "start" : 1707679319602,
-        "stop" : 1707679319602,
+        "start" : 1707681001593,
+        "stop" : 1707681001593,
         "duration" : 0
       },
       "status" : "passed",
@@ -79,7 +94,7 @@
     "parameters" : [ ],
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
-    "stepsCount" : 4,
+    "stepsCount" : 5,
     "hasContent" : true
   },
   "afterStages" : [ ],
@@ -97,10 +112,10 @@
     "value" : "TestGET"
   }, {
     "name" : "host",
-    "value" : "fv-az1538-567"
+    "value" : "fv-az1543-348"
   }, {
     "name" : "thread",
-    "value" : "1796-MainThread"
+    "value" : "1805-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -127,11 +142,19 @@
         "failed" : 2,
         "broken" : 0,
         "skipped" : 0,
-        "passed" : 28,
+        "passed" : 29,
         "unknown" : 0,
-        "total" : 30
+        "total" : 31
       },
       "items" : [ {
+        "uid" : "37125adc7bd996d5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707679319272,
+          "stop" : 1707679319602,
+          "duration" : 330
+        }
+      }, {
         "uid" : "6ff60709daab07ee",
         "status" : "passed",
         "time" : {
@@ -283,18 +306,10 @@
           "stop" : 1707151834734,
           "duration" : 310
         }
-      }, {
-        "uid" : "f7dc3f14c9c410e6",
-        "status" : "passed",
-        "time" : {
-          "start" : 1707151278711,
-          "stop" : 1707151279043,
-          "duration" : 332
-        }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "37125adc7bd996d5.json",
+  "source" : "ae19a43ab250e0bd.json",
   "parameterValues" : [ ]
 }
