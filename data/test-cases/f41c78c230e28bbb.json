@@ -1,12 +1,12 @@
 {
-  "uid" : "ec8822784254f5db",
+  "uid" : "f41c78c230e28bbb",
   "name" : "Post db_create with wrong db_version.",
   "fullName" : "tests.test_bd.TestPOST#test_post_db_create_with_wrong_values_db_version",
   "historyId" : "39f1ee52f256468fd780a8a303115ac6",
   "time" : {
-    "start" : 1707681004979,
-    "stop" : 1707681005302,
-    "duration" : 323
+    "start" : 1707683176787,
+    "stop" : 1707683177309,
+    "duration" : 522
   },
   "status" : "passed",
   "flaky" : false,
@@ -17,16 +17,16 @@
     "steps" : [ {
       "name" : "post_db_create_wrong_value_db_version",
       "time" : {
-        "start" : 1707681004979,
-        "stop" : 1707681005301,
-        "duration" : 322
+        "start" : 1707683176787,
+        "stop" : 1707683177308,
+        "duration" : 521
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "POST https://dbend.areso.pro/db_create",
         "time" : {
-          "start" : 1707681004979,
-          "stop" : 1707681004979,
+          "start" : 1707683176787,
+          "stop" : 1707683176787,
           "duration" : 0
         },
         "status" : "passed",
@@ -40,8 +40,8 @@
       }, {
         "name" : "Status code: 400",
         "time" : {
-          "start" : 1707681005301,
-          "stop" : 1707681005301,
+          "start" : 1707683177308,
+          "stop" : 1707683177308,
           "duration" : 0
         },
         "status" : "passed",
@@ -53,10 +53,10 @@
         "stepsCount" : 0,
         "hasContent" : false
       }, {
-        "name" : "Params url: https://dbend.areso.pro/db_create\nCookies: {'sid': '8ecd374b-47ea-4db8-a6d5-7492ce06297b'}\nBody: {'dbtype': 3, 'dbversion': 92, 'env': 3, 'region': 3}",
+        "name" : "Params url: https://dbend.areso.pro/db_create\nCookies: sid\nBody: {'dbtype': 3, 'dbversion': 65, 'env': 3, 'region': 3}",
         "time" : {
-          "start" : 1707681005301,
-          "stop" : 1707681005301,
+          "start" : 1707683177308,
+          "stop" : 1707683177308,
           "duration" : 0
         },
         "status" : "passed",
@@ -70,8 +70,8 @@
       }, {
         "name" : "Response: <Response [400]>",
         "time" : {
-          "start" : 1707681005301,
-          "stop" : 1707681005301,
+          "start" : 1707683177308,
+          "stop" : 1707683177308,
           "duration" : 0
         },
         "status" : "passed",
@@ -86,7 +86,7 @@
       "attachments" : [ ],
       "parameters" : [ {
         "name" : "sid",
-        "value" : "{'sid': '8ecd374b-47ea-4db8-a6d5-7492ce06297b'}"
+        "value" : "{'sid': '4fa10cb4-1be4-42fe-b50f-89ddd940ca35'}"
       } ],
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
@@ -95,8 +95,8 @@
     }, {
       "name" : "Assert status code: 400 == Response status code: 400",
       "time" : {
-        "start" : 1707681005301,
-        "stop" : 1707681005301,
+        "start" : 1707683177308,
+        "stop" : 1707683177308,
         "duration" : 0
       },
       "status" : "passed",
@@ -110,8 +110,8 @@
     }, {
       "name" : "Check and compare result request with expected value by key:\nResponse: <Response [400]>\nKey: content\nValue: error: DB version isn't found or isn't available for order",
       "time" : {
-        "start" : 1707681005302,
-        "stop" : 1707681005302,
+        "start" : 1707683177308,
+        "stop" : 1707683177308,
         "duration" : 0
       },
       "status" : "passed",
@@ -132,11 +132,11 @@
   },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "suite",
-    "value" : "POST"
-  }, {
     "name" : "epic",
     "value" : "POST REQUESTS"
+  }, {
+    "name" : "suite",
+    "value" : "POST"
   }, {
     "name" : "parentSuite",
     "value" : "tests"
@@ -145,10 +145,10 @@
     "value" : "TestPOST"
   }, {
     "name" : "host",
-    "value" : "fv-az1543-348"
+    "value" : "fv-az1055-779"
   }, {
     "name" : "thread",
-    "value" : "1805-MainThread"
+    "value" : "1800-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -170,8 +170,27 @@
     "severity" : "normal",
     "retries" : [ ],
     "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "ec8822784254f5db",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707681004979,
+          "stop" : 1707681005302,
+          "duration" : 323
+        }
+      } ]
+    },
     "tags" : [ ]
   },
-  "source" : "ec8822784254f5db.json",
+  "source" : "f41c78c230e28bbb.json",
   "parameterValues" : [ ]
 }
