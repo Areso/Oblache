@@ -10,12 +10,22 @@ class TestData:
     base_url = 'https://dbend.areso.pro'  # Base url
     load_dotenv()
     email = os.getenv('EMAIL')
-    password = os.getenv('PASSWORD')
-    MY_EMAIL = os.getenv('EMAIL')
-    MY_PASSWORD = os.getenv('PASSWORD')
-    body = {"email": f'{email}', "password": f'{password}'}
-    result = requests.post('https://dbend.areso.pro/login', json=body)
-    sid = dict(result.cookies)
+    old_password = os.getenv('PASSWORD')
+    new_password = '123456789'
+    try:
+        body = {"email": f'{email}', "password": f'{old_password}'}
+        result = requests.post('https://dbend.areso.pro/login', json=body)
+        sid = dict(result.cookies)
+        if sid != {}:
+            new_password, old_password = old_password, new_password
+        assert sid != {}
+    except:
+        old_password, new_password = new_password, old_password
+        body = {"email": f'{email}', "password": f'{old_password}'}
+        result = requests.post('https://dbend.areso.pro/login', json=body)
+        sid = dict(result.cookies)
+        assert sid != {}
+    print(sid)
 
     @staticmethod
     def connection(db_uuid):

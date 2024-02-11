@@ -176,6 +176,25 @@ class API(TestData):
         return result_post
 
     @staticmethod
+    def post_change_password(sid: dict, old_password: str, new_password: str):
+        """
+        Body example {"current_password":"", "new_password":""}.
+        :param sid:
+        :param old_password:
+        :param new_password:
+        :return:
+        """
+        post_resource = '/password_update'  # Resource for method
+        post_url = TestData.base_url + post_resource
+        with allure.step(f'POST {post_url}'):
+            print(post_url)
+        result_post = HttpMethods.post_with_cookie(post_url,
+                                                   {"current_password": old_password, "new_password": new_password},
+                                                   sid)
+        print('Response body: ', result_post.text)
+        return result_post
+
+    @staticmethod
     def post_db_list_with_filter(sid: dict, db_uuid: str):
         """
         Getting information about bd by uuid
