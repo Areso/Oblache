@@ -1,12 +1,12 @@
 {
-  "uid" : "ca7b6888e559774d",
-  "name" : "List db_types.",
-  "fullName" : "tests.test_bd.TestGET#test_get_list_db_types",
-  "historyId" : "a4d36cad99ba55257c1ff4118051a7ac",
+  "uid" : "ee6a6eb19df4922",
+  "name" : "Post login",
+  "fullName" : "tests_api.test_bd.TestPOST#test_post_login",
+  "historyId" : "c63a2718dd359ea9a57ebf3b258dd33a",
   "time" : {
-    "start" : 1707693862406,
-    "stop" : 1707693862729,
-    "duration" : 323
+    "start" : 1707696105109,
+    "stop" : 1707696105605,
+    "duration" : 496
   },
   "status" : "passed",
   "flaky" : false,
@@ -15,18 +15,18 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "get_list_db_types",
+      "name" : "post_login",
       "time" : {
-        "start" : 1707693862407,
-        "stop" : 1707693862728,
-        "duration" : 321
+        "start" : 1707696105109,
+        "stop" : 1707696105604,
+        "duration" : 495
       },
       "status" : "passed",
       "steps" : [ {
-        "name" : "GET https://dbend.areso.pro/list_dbtypes",
+        "name" : "POST https://dbend.areso.pro/login",
         "time" : {
-          "start" : 1707693862407,
-          "stop" : 1707693862407,
+          "start" : 1707696105109,
+          "stop" : 1707696105109,
           "duration" : 0
         },
         "status" : "passed",
@@ -40,8 +40,8 @@
       }, {
         "name" : "Status code: 200",
         "time" : {
-          "start" : 1707693862728,
-          "stop" : 1707693862728,
+          "start" : 1707696105603,
+          "stop" : 1707696105603,
           "duration" : 0
         },
         "status" : "passed",
@@ -53,10 +53,40 @@
         "stepsCount" : 0,
         "hasContent" : false
       }, {
-        "name" : "Response: {\n    \"3\": \"mysql8\"\n}\n",
+        "name" : "Params url: https://dbend.areso.pro/login",
         "time" : {
-          "start" : 1707693862728,
-          "stop" : 1707693862728,
+          "start" : 1707696105603,
+          "stop" : 1707696105604,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Response: <Response [200]>",
+        "time" : {
+          "start" : 1707696105604,
+          "stop" : 1707696105604,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Body: {\"email\":\"your_email\",\"password\":\"your_password\"}",
+        "time" : {
+          "start" : 1707696105604,
+          "stop" : 1707696105604,
           "duration" : 0
         },
         "status" : "passed",
@@ -72,13 +102,13 @@
       "parameters" : [ ],
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
-      "stepsCount" : 3,
+      "stepsCount" : 5,
       "hasContent" : true
     }, {
       "name" : "Assert status code: 200 == Response status code: 200",
       "time" : {
-        "start" : 1707693862729,
-        "stop" : 1707693862729,
+        "start" : 1707696105604,
+        "stop" : 1707696105604,
         "duration" : 0
       },
       "status" : "passed",
@@ -94,28 +124,28 @@
     "parameters" : [ ],
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
-    "stepsCount" : 5,
+    "stepsCount" : 7,
     "hasContent" : true
   },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "suite",
-    "value" : "GET"
-  }, {
     "name" : "epic",
-    "value" : "GET REQUESTS"
+    "value" : "POST REQUESTS"
+  }, {
+    "name" : "suite",
+    "value" : "POST"
   }, {
     "name" : "parentSuite",
-    "value" : "tests"
+    "value" : "tests_api"
   }, {
     "name" : "subSuite",
-    "value" : "TestGET"
+    "value" : "TestPOST"
   }, {
     "name" : "host",
-    "value" : "fv-az984-61"
+    "value" : "fv-az915-40"
   }, {
     "name" : "thread",
-    "value" : "1806-MainThread"
+    "value" : "1814-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -124,7 +154,7 @@
     "value" : "cpython3"
   }, {
     "name" : "package",
-    "value" : "tests.test_bd"
+    "value" : "tests_api.test_bd"
   }, {
     "name" : "resultFormat",
     "value" : "allure2"
@@ -137,51 +167,8 @@
     "severity" : "normal",
     "retries" : [ ],
     "categories" : [ ],
-    "history" : {
-      "statistic" : {
-        "failed" : 0,
-        "broken" : 0,
-        "skipped" : 0,
-        "passed" : 5,
-        "unknown" : 0,
-        "total" : 5
-      },
-      "items" : [ {
-        "uid" : "93f60a0b74def7e2",
-        "status" : "passed",
-        "time" : {
-          "start" : 1707693321987,
-          "stop" : 1707693322349,
-          "duration" : 362
-        }
-      }, {
-        "uid" : "8a1dc0e575e19a6d",
-        "status" : "passed",
-        "time" : {
-          "start" : 1707684207481,
-          "stop" : 1707684207843,
-          "duration" : 362
-        }
-      }, {
-        "uid" : "1748a371ff2ec67d",
-        "status" : "passed",
-        "time" : {
-          "start" : 1707683169986,
-          "stop" : 1707683170510,
-          "duration" : 524
-        }
-      }, {
-        "uid" : "d8e98819502383ba",
-        "status" : "passed",
-        "time" : {
-          "start" : 1707681000603,
-          "stop" : 1707681000924,
-          "duration" : 321
-        }
-      } ]
-    },
     "tags" : [ ]
   },
-  "source" : "ca7b6888e559774d.json",
+  "source" : "ee6a6eb19df4922.json",
   "parameterValues" : [ ]
 }
