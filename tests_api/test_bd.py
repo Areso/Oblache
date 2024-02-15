@@ -163,6 +163,13 @@ class TestPOST:
         status_code, sid = result_post
         Checking.check_status_code(status_code, 200)
 
+    @allure.title('test_post_is_logged')
+    def test_post_is_logged(self):
+        print('\n\nMethod POST: is_logged')
+        result_post = API.post_is_logged(TestData.body)
+        status_code = result_post
+        # Checking.check_status_code(status_code, 200)
+
     @allure.title('Post db_create')
     def test_post_db_create(self):
         print('\n\nMethod POST: db_create')
