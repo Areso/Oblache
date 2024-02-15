@@ -221,7 +221,7 @@ class TestPOST:
         list_db = API.post_db_list(TestData.sid)
         json_list_db = list_db.json()
         try:
-            first_db_uuid = list(json_list_db['content'].keys())[0]
+            first_db_uuid = list(json_list_db['content'].keys())[-1]
             print('first_db_uuid', first_db_uuid)
             result_post_db_list = API.delete_db(TestData.sid, first_db_uuid)
             Checking.check_status_code(result_post_db_list, 200)
