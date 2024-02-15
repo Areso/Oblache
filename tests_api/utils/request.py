@@ -158,6 +158,18 @@ class API(TestData):
             return result_post, sid
 
     @staticmethod
+    def post_is_logged(body: dict):
+        with allure.step('post_is_logged'):
+            post_resource = '/is_logged'  # Resource for method GET
+            post_url = TestData.base_url + post_resource
+            with allure.step(f'POST {post_url}'):
+                pass
+            result_post = HttpMethods.post(post_url, body, cookie=TestData.sid)
+            with allure.step('Body: {"email":"your_email","password":"your_password"}'):
+                pass
+            return result_post
+
+    @staticmethod
     def post_db_list(sid: dict):
         """
         :param sid:
