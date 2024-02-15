@@ -47,7 +47,7 @@ class HttpMethods:
         return result
 
     @staticmethod
-    def post(url, body):
+    def post(url, body, cookie=None):
         Logger.add_request(url, method='POST')
         result = requests.post(url, json=body, headers=HttpMethods.headers, cookies=HttpMethods.cookie)
         with allure.step(f'Status code: {result.status_code}'):
