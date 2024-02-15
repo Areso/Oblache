@@ -1,12 +1,12 @@
 {
-  "uid" : "4554a467b09bed48",
-  "name" : "Get profile status.",
-  "fullName" : "tests_api.test_bd.TestGET#test_get_status",
-  "historyId" : "1db526b86e70a0d5647421e92bf453b9",
+  "uid" : "21a03002fc5ed072",
+  "name" : "Get profile information.",
+  "fullName" : "tests_api.test_bd.TestGET#test_get_profile",
+  "historyId" : "766cb6f3a7cf6add5fb057e07bf28012",
   "time" : {
-    "start" : 1708028402612,
-    "stop" : 1708028403003,
-    "duration" : 391
+    "start" : 1708031922583,
+    "stop" : 1708031923085,
+    "duration" : 502
   },
   "status" : "passed",
   "flaky" : false,
@@ -15,110 +15,110 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "get_status",
+      "name" : "get_profile",
       "time" : {
-        "start" : 1708028402612,
-        "stop" : 1708028403002,
-        "duration" : 390
+        "start" : 1708031922583,
+        "stop" : 1708031923084,
+        "duration" : 501
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "GET https://dbend.areso.pro/get_profile",
         "time" : {
-          "start" : 1708028402612,
-          "stop" : 1708028402612,
+          "start" : 1708031922584,
+          "stop" : 1708031922584,
           "duration" : 0
         },
         "status" : "passed",
         "steps" : [ ],
         "attachments" : [ ],
         "parameters" : [ ],
-        "stepsCount" : 0,
-        "hasContent" : false,
         "attachmentsCount" : 0,
-        "shouldDisplayMessage" : false
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
       }, {
         "name" : "Status code: 200",
         "time" : {
-          "start" : 1708028403002,
-          "stop" : 1708028403002,
+          "start" : 1708031923084,
+          "stop" : 1708031923084,
           "duration" : 0
         },
         "status" : "passed",
         "steps" : [ ],
         "attachments" : [ ],
         "parameters" : [ ],
-        "stepsCount" : 0,
-        "hasContent" : false,
         "attachmentsCount" : 0,
-        "shouldDisplayMessage" : false
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
       }, {
-        "name" : "Params url: https://dbend.areso.pro/get_profile\nCookies: sid\nBody: {'queue_db_create_orders': 3, 'queue_db_delete_orders': 1, 'number_of_stuck_tasks': 0}",
+        "name" : "Params url: https://dbend.areso.pro/get_profile\nCookies: sid\nBody: {}",
         "time" : {
-          "start" : 1708028403002,
-          "stop" : 1708028403002,
+          "start" : 1708031923084,
+          "stop" : 1708031923084,
           "duration" : 0
         },
         "status" : "passed",
         "steps" : [ ],
         "attachments" : [ ],
         "parameters" : [ ],
-        "stepsCount" : 0,
-        "hasContent" : false,
         "attachmentsCount" : 0,
-        "shouldDisplayMessage" : false
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
       }, {
         "name" : "Response: <Response [200]>",
         "time" : {
-          "start" : 1708028403002,
-          "stop" : 1708028403002,
+          "start" : 1708031923084,
+          "stop" : 1708031923084,
           "duration" : 0
         },
         "status" : "passed",
         "steps" : [ ],
         "attachments" : [ ],
         "parameters" : [ ],
-        "stepsCount" : 0,
-        "hasContent" : false,
         "attachmentsCount" : 0,
-        "shouldDisplayMessage" : false
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
       } ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 4,
-      "hasContent" : true,
       "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 4,
+      "hasContent" : true
     }, {
       "name" : "Assert status code: 200 == Response status code: 200",
       "time" : {
-        "start" : 1708028403002,
-        "stop" : 1708028403002,
+        "start" : 1708031923084,
+        "stop" : 1708031923084,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
-      "hasContent" : false,
       "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 6,
-    "hasContent" : true,
     "attachmentsCount" : 0,
-    "shouldDisplayMessage" : false
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 6,
+    "hasContent" : true
   },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "epic",
-    "value" : "GET REQUESTS"
-  }, {
     "name" : "suite",
     "value" : "GET"
+  }, {
+    "name" : "epic",
+    "value" : "GET REQUESTS"
   }, {
     "name" : "parentSuite",
     "value" : "tests_api"
@@ -127,10 +127,10 @@
     "value" : "TestGET"
   }, {
     "name" : "host",
-    "value" : "fv-az1242-26"
+    "value" : "fv-az914-262"
   }, {
     "name" : "thread",
-    "value" : "1786-MainThread"
+    "value" : "1772-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -157,22 +157,30 @@
         "failed" : 0,
         "broken" : 0,
         "skipped" : 0,
-        "passed" : 2,
+        "passed" : 3,
         "unknown" : 0,
-        "total" : 2
+        "total" : 3
       },
       "items" : [ {
-        "uid" : "1f0b63c71c43ed33",
+        "uid" : "901d577282baca2e",
         "status" : "passed",
         "time" : {
-          "start" : 1707696102525,
-          "stop" : 1707696103038,
-          "duration" : 513
+          "start" : 1708028400339,
+          "stop" : 1708028400712,
+          "duration" : 373
+        }
+      }, {
+        "uid" : "6af5159afeef241c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707696099443,
+          "stop" : 1707696099963,
+          "duration" : 520
         }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "4554a467b09bed48.json",
+  "source" : "21a03002fc5ed072.json",
   "parameterValues" : [ ]
 }

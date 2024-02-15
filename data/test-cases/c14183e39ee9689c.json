@@ -1,12 +1,12 @@
 {
-  "uid" : "1f6419c56c5944fd",
-  "name" : "Post registration mail bg",
-  "fullName" : "tests_api.test_bd.TestPOST#test_post_registration_for_bulgaria",
-  "historyId" : "b66b1c765f0bbf26e12ef6afe13ecfa6",
+  "uid" : "c14183e39ee9689c",
+  "name" : "Post registration email is taken",
+  "fullName" : "tests_api.test_bd.TestPOST#test_post_registration_email_is_taken",
+  "historyId" : "8e5e97e65cd661fe5135ad0b97aa29eb",
   "time" : {
-    "start" : 1708028403838,
-    "stop" : 1708028404227,
-    "duration" : 389
+    "start" : 1708031927732,
+    "stop" : 1708031928223,
+    "duration" : 491
   },
   "status" : "passed",
   "flaky" : false,
@@ -15,138 +15,117 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "post_registration_variety_email",
+      "name" : "post_registration",
       "time" : {
-        "start" : 1708028403839,
-        "stop" : 1708028404226,
-        "duration" : 387
+        "start" : 1708031927732,
+        "stop" : 1708031928222,
+        "duration" : 490
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "POST https://dbend.areso.pro/register",
         "time" : {
-          "start" : 1708028403839,
-          "stop" : 1708028403839,
+          "start" : 1708031927732,
+          "stop" : 1708031927732,
           "duration" : 0
         },
         "status" : "passed",
         "steps" : [ ],
         "attachments" : [ ],
         "parameters" : [ ],
-        "stepsCount" : 0,
-        "hasContent" : false,
         "attachmentsCount" : 0,
-        "shouldDisplayMessage" : false
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
       }, {
-        "name" : "Params:{'email': 'aqa2024_02_15_20_17_44@gmail.bg', 'password': '123456789'}",
+        "name" : "Status code: 400",
         "time" : {
-          "start" : 1708028403839,
-          "stop" : 1708028403839,
+          "start" : 1708031928222,
+          "stop" : 1708031928222,
           "duration" : 0
         },
         "status" : "passed",
         "steps" : [ ],
         "attachments" : [ ],
         "parameters" : [ ],
-        "stepsCount" : 0,
-        "hasContent" : false,
         "attachmentsCount" : 0,
-        "shouldDisplayMessage" : false
-      }, {
-        "name" : "Status code: 201",
-        "time" : {
-          "start" : 1708028404226,
-          "stop" : 1708028404226,
-          "duration" : 0
-        },
-        "status" : "passed",
-        "steps" : [ ],
-        "attachments" : [ ],
-        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
         "stepsCount" : 0,
-        "hasContent" : false,
-        "attachmentsCount" : 0,
-        "shouldDisplayMessage" : false
+        "hasContent" : false
       }, {
         "name" : "Params url: https://dbend.areso.pro/register",
         "time" : {
-          "start" : 1708028404226,
-          "stop" : 1708028404226,
+          "start" : 1708031928222,
+          "stop" : 1708031928222,
           "duration" : 0
         },
         "status" : "passed",
         "steps" : [ ],
         "attachments" : [ ],
         "parameters" : [ ],
-        "stepsCount" : 0,
-        "hasContent" : false,
         "attachmentsCount" : 0,
-        "shouldDisplayMessage" : false
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
       }, {
-        "name" : "Response: <Response [201]>",
+        "name" : "Response: <Response [400]>",
         "time" : {
-          "start" : 1708028404226,
-          "stop" : 1708028404226,
+          "start" : 1708031928222,
+          "stop" : 1708031928222,
           "duration" : 0
         },
         "status" : "passed",
         "steps" : [ ],
         "attachments" : [ ],
         "parameters" : [ ],
-        "stepsCount" : 0,
-        "hasContent" : false,
         "attachmentsCount" : 0,
-        "shouldDisplayMessage" : false
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
       } ],
       "attachments" : [ ],
-      "parameters" : [ {
-        "name" : "mail",
-        "value" : "'gmail'"
-      }, {
-        "name" : "prefix",
-        "value" : "'bg'"
-      } ],
-      "stepsCount" : 5,
-      "hasContent" : true,
+      "parameters" : [ ],
       "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 4,
+      "hasContent" : true
     }, {
-      "name" : "Assert status code: 201 == Response status code: 201",
+      "name" : "Assert status code: 400 == Response status code: 400",
       "time" : {
-        "start" : 1708028404226,
-        "stop" : 1708028404226,
+        "start" : 1708031928222,
+        "stop" : 1708031928222,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
-      "hasContent" : false,
       "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
     }, {
-      "name" : "Check and compare result request with expected value by key:\nResponse: <Response [201]>\nKey: content\nValue: msg[1]: registered successfully",
+      "name" : "Check and compare result request with expected value by key:\nResponse: <Response [400]>\nKey: content\nValue: msg[3]: registration failed, this email is taken",
       "time" : {
-        "start" : 1708028404227,
-        "stop" : 1708028404227,
+        "start" : 1708031928222,
+        "stop" : 1708031928222,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
-      "hasContent" : false,
       "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 8,
-    "hasContent" : true,
     "attachmentsCount" : 0,
-    "shouldDisplayMessage" : false
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 7,
+    "hasContent" : true
   },
   "afterStages" : [ ],
   "labels" : [ {
@@ -163,10 +142,10 @@
     "value" : "TestPOST"
   }, {
     "name" : "host",
-    "value" : "fv-az1242-26"
+    "value" : "fv-az914-262"
   }, {
     "name" : "thread",
-    "value" : "1786-MainThread"
+    "value" : "1772-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -193,22 +172,30 @@
         "failed" : 0,
         "broken" : 0,
         "skipped" : 0,
-        "passed" : 2,
+        "passed" : 3,
         "unknown" : 0,
-        "total" : 2
+        "total" : 3
       },
       "items" : [ {
-        "uid" : "153cfe0899e82fbc",
+        "uid" : "b8ab77e462b3e479",
         "status" : "passed",
         "time" : {
-          "start" : 1707696104065,
-          "stop" : 1707696104600,
-          "duration" : 535
+          "start" : 1708028404229,
+          "stop" : 1708028404595,
+          "duration" : 366
+        }
+      }, {
+        "uid" : "938875ff0cc9f813",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707696104602,
+          "stop" : 1707696105107,
+          "duration" : 505
         }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "1f6419c56c5944fd.json",
+  "source" : "c14183e39ee9689c.json",
   "parameterValues" : [ ]
 }
