@@ -1,12 +1,12 @@
 {
-  "uid" : "1b7a4b582552db1d",
-  "name" : "Get profile status.",
-  "fullName" : "tests_api.test_bd.TestGET#test_get_status",
-  "historyId" : "1db526b86e70a0d5647421e92bf453b9",
+  "uid" : "1e3fd36d033b0d96",
+  "name" : "Post db_create",
+  "fullName" : "tests_api.test_bd.TestPOST#test_post_db_create",
+  "historyId" : "0b53e71177b12ce964a75d76d7986dbc",
   "time" : {
-    "start" : 1708031925628,
-    "stop" : 1708031926131,
-    "duration" : 503
+    "start" : 1708032434680,
+    "stop" : 1708032435217,
+    "duration" : 537
   },
   "status" : "passed",
   "flaky" : false,
@@ -15,18 +15,18 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "get_status",
+      "name" : "post_db_create",
       "time" : {
-        "start" : 1708031925628,
-        "stop" : 1708031926130,
-        "duration" : 502
+        "start" : 1708032434680,
+        "stop" : 1708032435215,
+        "duration" : 535
       },
       "status" : "passed",
       "steps" : [ {
-        "name" : "GET https://dbend.areso.pro/get_profile",
+        "name" : "POST https://dbend.areso.pro/db_create",
         "time" : {
-          "start" : 1708031925628,
-          "stop" : 1708031925628,
+          "start" : 1708032434681,
+          "stop" : 1708032434681,
           "duration" : 0
         },
         "status" : "passed",
@@ -38,10 +38,10 @@
         "stepsCount" : 0,
         "hasContent" : false
       }, {
-        "name" : "Status code: 200",
+        "name" : "Status code: 201",
         "time" : {
-          "start" : 1708031926130,
-          "stop" : 1708031926130,
+          "start" : 1708032435215,
+          "stop" : 1708032435215,
           "duration" : 0
         },
         "status" : "passed",
@@ -53,10 +53,10 @@
         "stepsCount" : 0,
         "hasContent" : false
       }, {
-        "name" : "Params url: https://dbend.areso.pro/get_profile\nCookies: sid\nBody: {'queue_db_create_orders': 3, 'queue_db_delete_orders': 1, 'number_of_stuck_tasks': 0}",
+        "name" : "Params url: https://dbend.areso.pro/db_create\nCookies: sid\nBody: body",
         "time" : {
-          "start" : 1708031926130,
-          "stop" : 1708031926130,
+          "start" : 1708032435215,
+          "stop" : 1708032435215,
           "duration" : 0
         },
         "status" : "passed",
@@ -68,10 +68,10 @@
         "stepsCount" : 0,
         "hasContent" : false
       }, {
-        "name" : "Response: <Response [200]>",
+        "name" : "Response: <Response [201]>",
         "time" : {
-          "start" : 1708031926130,
-          "stop" : 1708031926130,
+          "start" : 1708032435215,
+          "stop" : 1708032435215,
           "duration" : 0
         },
         "status" : "passed",
@@ -90,10 +90,10 @@
       "stepsCount" : 4,
       "hasContent" : true
     }, {
-      "name" : "Assert status code: 200 == Response status code: 200",
+      "name" : "Assert status code: 201 == Response status code: 201",
       "time" : {
-        "start" : 1708031926130,
-        "stop" : 1708031926130,
+        "start" : 1708032435215,
+        "stop" : 1708032435215,
         "duration" : 0
       },
       "status" : "passed",
@@ -115,22 +115,22 @@
   "afterStages" : [ ],
   "labels" : [ {
     "name" : "suite",
-    "value" : "GET"
+    "value" : "POST"
   }, {
     "name" : "epic",
-    "value" : "GET REQUESTS"
+    "value" : "POST REQUESTS"
   }, {
     "name" : "parentSuite",
     "value" : "tests_api"
   }, {
     "name" : "subSuite",
-    "value" : "TestGET"
+    "value" : "TestPOST"
   }, {
     "name" : "host",
-    "value" : "fv-az914-262"
+    "value" : "fv-az802-432"
   }, {
     "name" : "thread",
-    "value" : "1772-MainThread"
+    "value" : "1854-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -157,30 +157,38 @@
         "failed" : 0,
         "broken" : 0,
         "skipped" : 0,
-        "passed" : 3,
+        "passed" : 4,
         "unknown" : 0,
-        "total" : 3
+        "total" : 4
       },
       "items" : [ {
-        "uid" : "4554a467b09bed48",
+        "uid" : "809bc45f06c88336",
         "status" : "passed",
         "time" : {
-          "start" : 1708028402612,
-          "stop" : 1708028403003,
-          "duration" : 391
+          "start" : 1708031929238,
+          "stop" : 1708031929781,
+          "duration" : 543
         }
       }, {
-        "uid" : "1f0b63c71c43ed33",
+        "uid" : "284c3a9aa505113a",
         "status" : "passed",
         "time" : {
-          "start" : 1707696102525,
-          "stop" : 1707696103038,
-          "duration" : 513
+          "start" : 1708028404983,
+          "stop" : 1708028405411,
+          "duration" : 428
+        }
+      }, {
+        "uid" : "765e640b8f775101",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707696105606,
+          "stop" : 1707696106171,
+          "duration" : 565
         }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "1b7a4b582552db1d.json",
+  "source" : "1e3fd36d033b0d96.json",
   "parameterValues" : [ ]
 }

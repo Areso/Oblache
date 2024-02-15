@@ -1,12 +1,12 @@
 {
-  "uid" : "fe42ef05cf284247",
-  "name" : "Post db_create with wrong db_version.",
-  "fullName" : "tests_api.test_bd.TestPOST#test_post_db_create_with_wrong_values_db_version",
-  "historyId" : "bda6ac446aec42c036b6b747abee39c3",
+  "uid" : "8e220b802e59f518",
+  "name" : "Post registration email is taken",
+  "fullName" : "tests_api.test_bd.TestPOST#test_post_registration_email_is_taken",
+  "historyId" : "8e5e97e65cd661fe5135ad0b97aa29eb",
   "time" : {
-    "start" : 1708031930292,
-    "stop" : 1708031930826,
-    "duration" : 534
+    "start" : 1708032433177,
+    "stop" : 1708032433670,
+    "duration" : 493
   },
   "status" : "passed",
   "flaky" : false,
@@ -15,18 +15,18 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "post_db_create_wrong_value_db_version",
+      "name" : "post_registration",
       "time" : {
-        "start" : 1708031930292,
-        "stop" : 1708031930825,
-        "duration" : 533
+        "start" : 1708032433177,
+        "stop" : 1708032433669,
+        "duration" : 492
       },
       "status" : "passed",
       "steps" : [ {
-        "name" : "POST https://dbend.areso.pro/db_create",
+        "name" : "POST https://dbend.areso.pro/register",
         "time" : {
-          "start" : 1708031930292,
-          "stop" : 1708031930292,
+          "start" : 1708032433177,
+          "stop" : 1708032433177,
           "duration" : 0
         },
         "status" : "passed",
@@ -40,8 +40,8 @@
       }, {
         "name" : "Status code: 400",
         "time" : {
-          "start" : 1708031930825,
-          "stop" : 1708031930825,
+          "start" : 1708032433669,
+          "stop" : 1708032433669,
           "duration" : 0
         },
         "status" : "passed",
@@ -53,10 +53,10 @@
         "stepsCount" : 0,
         "hasContent" : false
       }, {
-        "name" : "Params url: https://dbend.areso.pro/db_create\nCookies: sid\nBody: body",
+        "name" : "Params url: https://dbend.areso.pro/register",
         "time" : {
-          "start" : 1708031930825,
-          "stop" : 1708031930825,
+          "start" : 1708032433669,
+          "stop" : 1708032433669,
           "duration" : 0
         },
         "status" : "passed",
@@ -70,8 +70,8 @@
       }, {
         "name" : "Response: <Response [400]>",
         "time" : {
-          "start" : 1708031930825,
-          "stop" : 1708031930825,
+          "start" : 1708032433669,
+          "stop" : 1708032433669,
           "duration" : 0
         },
         "status" : "passed",
@@ -92,8 +92,8 @@
     }, {
       "name" : "Assert status code: 400 == Response status code: 400",
       "time" : {
-        "start" : 1708031930825,
-        "stop" : 1708031930825,
+        "start" : 1708032433669,
+        "stop" : 1708032433669,
         "duration" : 0
       },
       "status" : "passed",
@@ -105,10 +105,10 @@
       "stepsCount" : 0,
       "hasContent" : false
     }, {
-      "name" : "Check and compare result request with expected value by key:\nResponse: <Response [400]>\nKey: content\nValue: error: DB version isn't found or isn't available for order",
+      "name" : "Check and compare result request with expected value by key:\nResponse: <Response [400]>\nKey: content\nValue: msg[3]: registration failed, this email is taken",
       "time" : {
-        "start" : 1708031930825,
-        "stop" : 1708031930825,
+        "start" : 1708032433669,
+        "stop" : 1708032433669,
         "duration" : 0
       },
       "status" : "passed",
@@ -129,11 +129,11 @@
   },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "epic",
-    "value" : "POST REQUESTS"
-  }, {
     "name" : "suite",
     "value" : "POST"
+  }, {
+    "name" : "epic",
+    "value" : "POST REQUESTS"
   }, {
     "name" : "parentSuite",
     "value" : "tests_api"
@@ -142,10 +142,10 @@
     "value" : "TestPOST"
   }, {
     "name" : "host",
-    "value" : "fv-az914-262"
+    "value" : "fv-az802-432"
   }, {
     "name" : "thread",
-    "value" : "1772-MainThread"
+    "value" : "1854-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -172,30 +172,38 @@
         "failed" : 0,
         "broken" : 0,
         "skipped" : 0,
-        "passed" : 3,
+        "passed" : 4,
         "unknown" : 0,
-        "total" : 3
+        "total" : 4
       },
       "items" : [ {
-        "uid" : "2bcdda40012bf8f",
+        "uid" : "c14183e39ee9689c",
         "status" : "passed",
         "time" : {
-          "start" : 1708028405789,
-          "stop" : 1708028406173,
-          "duration" : 384
+          "start" : 1708031927732,
+          "stop" : 1708031928223,
+          "duration" : 491
         }
       }, {
-        "uid" : "6352c7713ecbfaaf",
+        "uid" : "b8ab77e462b3e479",
         "status" : "passed",
         "time" : {
-          "start" : 1707696106700,
-          "stop" : 1707696107221,
-          "duration" : 521
+          "start" : 1708028404229,
+          "stop" : 1708028404595,
+          "duration" : 366
+        }
+      }, {
+        "uid" : "938875ff0cc9f813",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707696104602,
+          "stop" : 1707696105107,
+          "duration" : 505
         }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "fe42ef05cf284247.json",
+  "source" : "8e220b802e59f518.json",
   "parameterValues" : [ ]
 }

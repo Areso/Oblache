@@ -1,12 +1,12 @@
 {
-  "uid" : "373518919a6678fe",
-  "name" : "Test tos.",
-  "fullName" : "tests_api.test_bd.TestGET#test_tos",
-  "historyId" : "1bd6d480cd29dd301e6e77cd0f9194c6",
+  "uid" : "47da4408c468e007",
+  "name" : "Bad request.",
+  "fullName" : "tests_api.test_bd.TestGET#test_get_with_bad_request",
+  "historyId" : "5156f5dedc3d46e33a62122a588c6956",
   "time" : {
-    "start" : 1708031922083,
-    "stop" : 1708031922582,
-    "duration" : 499
+    "start" : 1708032430626,
+    "stop" : 1708032431123,
+    "duration" : 497
   },
   "status" : "passed",
   "flaky" : false,
@@ -15,18 +15,18 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "get_tos",
+      "name" : "get_bad_request",
       "time" : {
-        "start" : 1708031922083,
-        "stop" : 1708031922581,
-        "duration" : 498
+        "start" : 1708032430626,
+        "stop" : 1708032431122,
+        "duration" : 496
       },
       "status" : "passed",
       "steps" : [ {
-        "name" : "GET https://dbend.areso.pro/tos",
+        "name" : "GET https://dbend.areso.pro/bad_request",
         "time" : {
-          "start" : 1708031922083,
-          "stop" : 1708031922083,
+          "start" : 1708032430626,
+          "stop" : 1708032430626,
           "duration" : 0
         },
         "status" : "passed",
@@ -38,10 +38,10 @@
         "stepsCount" : 0,
         "hasContent" : false
       }, {
-        "name" : "Status code: 200",
+        "name" : "Status code: 404",
         "time" : {
-          "start" : 1708031922581,
-          "stop" : 1708031922581,
+          "start" : 1708032431121,
+          "stop" : 1708032431121,
           "duration" : 0
         },
         "status" : "passed",
@@ -53,10 +53,10 @@
         "stepsCount" : 0,
         "hasContent" : false
       }, {
-        "name" : "Response: \"Hello. This pet-project (later Project) works AS IS, no warranty at all.\\nUsing Project, you agree to that.\\nYou MUST create backups of your databases for sake reasons.\\nBecause I do run project on my own pocket money, \\nI limit total size of the databases per 1 user as 100 MBs.\\nAny account don't used more than 6 monts is subject for deletion with all databases.\"\n",
+        "name" : "Response: Some general exception",
         "time" : {
-          "start" : 1708031922581,
-          "stop" : 1708031922581,
+          "start" : 1708032431121,
+          "stop" : 1708032431121,
           "duration" : 0
         },
         "status" : "passed",
@@ -75,10 +75,10 @@
       "stepsCount" : 3,
       "hasContent" : true
     }, {
-      "name" : "Assert status code: 200 == Response status code: 200",
+      "name" : "Assert status code: 404 == Response status code: 404",
       "time" : {
-        "start" : 1708031922581,
-        "stop" : 1708031922581,
+        "start" : 1708032431122,
+        "stop" : 1708032431122,
         "duration" : 0
       },
       "status" : "passed",
@@ -112,10 +112,10 @@
     "value" : "TestGET"
   }, {
     "name" : "host",
-    "value" : "fv-az914-262"
+    "value" : "fv-az802-432"
   }, {
     "name" : "thread",
-    "value" : "1772-MainThread"
+    "value" : "1854-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -142,30 +142,38 @@
         "failed" : 0,
         "broken" : 0,
         "skipped" : 0,
-        "passed" : 3,
+        "passed" : 4,
         "unknown" : 0,
-        "total" : 3
+        "total" : 4
       },
       "items" : [ {
-        "uid" : "8eb3f4d0b1b7ce03",
+        "uid" : "863e5c7ac6cfe672",
         "status" : "passed",
         "time" : {
-          "start" : 1708028399969,
-          "stop" : 1708028400337,
-          "duration" : 368
+          "start" : 1708031925122,
+          "stop" : 1708031925626,
+          "duration" : 504
         }
       }, {
-        "uid" : "a3a07481150a5a10",
+        "uid" : "b311cf20f9f5088c",
         "status" : "passed",
         "time" : {
-          "start" : 1707696098909,
-          "stop" : 1707696099441,
-          "duration" : 532
+          "start" : 1708028402244,
+          "stop" : 1708028402610,
+          "duration" : 366
+        }
+      }, {
+        "uid" : "530639fe2d3cfd1c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707696102034,
+          "stop" : 1707696102524,
+          "duration" : 490
         }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "373518919a6678fe.json",
+  "source" : "47da4408c468e007.json",
   "parameterValues" : [ ]
 }

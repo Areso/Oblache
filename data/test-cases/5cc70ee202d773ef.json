@@ -1,36 +1,36 @@
 {
-  "uid" : "8c21c05543e1b36",
+  "uid" : "5cc70ee202d773ef",
   "name" : "test_post_is_logged",
   "fullName" : "tests_api.test_bd.TestPOST#test_post_is_logged",
   "historyId" : "0bc19031fd70da12edd5e058e257bd16",
   "time" : {
-    "start" : 1708031928729,
-    "stop" : 1708031929229,
-    "duration" : 500
+    "start" : 1708032434173,
+    "stop" : 1708032434671,
+    "duration" : 498
   },
   "status" : "failed",
   "statusMessage" : "AssertionError: Incorrect status code",
-  "statusTrace" : "self = <tests_api.test_bd.TestPOST object at 0x7f93824eb760>\n\n    @allure.title('test_post_is_logged')\n    def test_post_is_logged(self):\n        print('\\n\\nMethod POST: is_logged')\n        result_post = API.post_is_logged(TestData.body)\n        status_code = result_post\n>       Checking.check_status_code(status_code, 200)\n\ntests_api/test_bd.py:171: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [401]>, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response JSON\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, 'Incorrect status code'\nE           AssertionError: Incorrect status code\n\ntests_api/utils/checking.py:18: AssertionError",
+  "statusTrace" : "self = <tests_api.test_bd.TestPOST object at 0x7f46d1a7f760>\n\n    @allure.title('test_post_is_logged')\n    def test_post_is_logged(self):\n        print('\\n\\nMethod POST: is_logged')\n        result_post = API.post_is_logged(TestData.body)\n        status_code = result_post\n>       Checking.check_status_code(status_code, 200)\n\ntests_api/test_bd.py:171: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [401]>, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response JSON\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, 'Incorrect status code'\nE           AssertionError: Incorrect status code\n\ntests_api/utils/checking.py:18: AssertionError",
   "flaky" : false,
   "newFailed" : false,
   "beforeStages" : [ ],
   "testStage" : {
     "status" : "failed",
     "statusMessage" : "AssertionError: Incorrect status code",
-    "statusTrace" : "self = <tests_api.test_bd.TestPOST object at 0x7f93824eb760>\n\n    @allure.title('test_post_is_logged')\n    def test_post_is_logged(self):\n        print('\\n\\nMethod POST: is_logged')\n        result_post = API.post_is_logged(TestData.body)\n        status_code = result_post\n>       Checking.check_status_code(status_code, 200)\n\ntests_api/test_bd.py:171: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [401]>, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response JSON\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, 'Incorrect status code'\nE           AssertionError: Incorrect status code\n\ntests_api/utils/checking.py:18: AssertionError",
+    "statusTrace" : "self = <tests_api.test_bd.TestPOST object at 0x7f46d1a7f760>\n\n    @allure.title('test_post_is_logged')\n    def test_post_is_logged(self):\n        print('\\n\\nMethod POST: is_logged')\n        result_post = API.post_is_logged(TestData.body)\n        status_code = result_post\n>       Checking.check_status_code(status_code, 200)\n\ntests_api/test_bd.py:171: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [401]>, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response JSON\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, 'Incorrect status code'\nE           AssertionError: Incorrect status code\n\ntests_api/utils/checking.py:18: AssertionError",
     "steps" : [ {
       "name" : "post_is_logged",
       "time" : {
-        "start" : 1708031928729,
-        "stop" : 1708031929229,
-        "duration" : 500
+        "start" : 1708032434173,
+        "stop" : 1708032434671,
+        "duration" : 498
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "POST https://dbend.areso.pro/is_logged",
         "time" : {
-          "start" : 1708031928729,
-          "stop" : 1708031928729,
+          "start" : 1708032434173,
+          "stop" : 1708032434173,
           "duration" : 0
         },
         "status" : "passed",
@@ -44,8 +44,8 @@
       }, {
         "name" : "Status code: 401",
         "time" : {
-          "start" : 1708031929229,
-          "stop" : 1708031929229,
+          "start" : 1708032434671,
+          "stop" : 1708032434671,
           "duration" : 0
         },
         "status" : "passed",
@@ -59,8 +59,8 @@
       }, {
         "name" : "Params url: https://dbend.areso.pro/is_logged",
         "time" : {
-          "start" : 1708031929229,
-          "stop" : 1708031929229,
+          "start" : 1708032434671,
+          "stop" : 1708032434671,
           "duration" : 0
         },
         "status" : "passed",
@@ -74,8 +74,8 @@
       }, {
         "name" : "Response: <Response [401]>",
         "time" : {
-          "start" : 1708031929229,
-          "stop" : 1708031929229,
+          "start" : 1708032434671,
+          "stop" : 1708032434671,
           "duration" : 0
         },
         "status" : "passed",
@@ -89,8 +89,8 @@
       }, {
         "name" : "Body: {\"email\":\"your_email\",\"password\":\"your_password\"}",
         "time" : {
-          "start" : 1708031929229,
-          "stop" : 1708031929229,
+          "start" : 1708032434671,
+          "stop" : 1708032434671,
           "duration" : 0
         },
         "status" : "passed",
@@ -111,8 +111,8 @@
     }, {
       "name" : "Assert status code: 200 == Response status code: 401",
       "time" : {
-        "start" : 1708031929229,
-        "stop" : 1708031929229,
+        "start" : 1708032434671,
+        "stop" : 1708032434671,
         "duration" : 0
       },
       "status" : "failed",
@@ -135,11 +135,11 @@
   },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "epic",
-    "value" : "POST REQUESTS"
-  }, {
     "name" : "suite",
     "value" : "POST"
+  }, {
+    "name" : "epic",
+    "value" : "POST REQUESTS"
   }, {
     "name" : "parentSuite",
     "value" : "tests_api"
@@ -148,10 +148,10 @@
     "value" : "TestPOST"
   }, {
     "name" : "host",
-    "value" : "fv-az914-262"
+    "value" : "fv-az802-432"
   }, {
     "name" : "thread",
-    "value" : "1772-MainThread"
+    "value" : "1854-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -179,14 +179,23 @@
     } ],
     "history" : {
       "statistic" : {
-        "failed" : 1,
+        "failed" : 2,
         "broken" : 1,
         "skipped" : 0,
         "passed" : 0,
         "unknown" : 0,
-        "total" : 2
+        "total" : 3
       },
       "items" : [ {
+        "uid" : "8c21c05543e1b36",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1708031928729,
+          "stop" : 1708031929229,
+          "duration" : 500
+        }
+      }, {
         "uid" : "f417d7852bac7711",
         "status" : "broken",
         "statusDetails" : "AttributeError: type object 'API' has no attribute 'post_is_logged'",
@@ -199,6 +208,6 @@
     },
     "tags" : [ ]
   },
-  "source" : "8c21c05543e1b36.json",
+  "source" : "5cc70ee202d773ef.json",
   "parameterValues" : [ ]
 }

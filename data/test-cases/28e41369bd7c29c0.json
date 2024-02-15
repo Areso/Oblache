@@ -1,36 +1,36 @@
 {
-  "uid" : "6c1c8400ff6a51dc",
+  "uid" : "28e41369bd7c29c0",
   "name" : "test_capacity_db",
   "fullName" : "tests_api.test_bd.TestCapacity#test_capacity_db",
   "historyId" : "d4e63d876bdadc96b0cb07e9735e72e1",
   "time" : {
-    "start" : 1708031814207,
-    "stop" : 1708031922045,
-    "duration" : 107838
+    "start" : 1708032320537,
+    "stop" : 1708032427534,
+    "duration" : 106997
   },
   "status" : "failed",
   "statusMessage" : "AssertionError: Value db_size should be more than 0.\nassert 0 > 0\n +  where 0 = int(0)",
-  "statusTrace" : "self = <tests_api.test_bd.TestCapacity object at 0x7f93824e8f40>\n\n    @allure.title('test_capacity_db')\n    def test_capacity_db(self):\n        start_mb_value = API.get_profile().json()[\"content\"][4][1]\n        print('Db size mb:', start_mb_value)\n        result_db_create = API.post_db_create(TestData.sid)\n        print('Status db is :', result_db_create.json())\n        db_uuid = result_db_create.json()[\"db_uuid\"]\n        print(\"db_uuid\", db_uuid)\n        time.sleep(20)\n        query = '''\n        CREATE TABLE IF NOT EXISTS accounts(\n        userid INT PRIMARY KEY AUTO_INCREMENT,\n        name varchar(128),\n        date_of_birth datetime NULL,\n        text varchar(4096),\n        email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;\n        '''\n        db = TestData.connection(f\"{db_uuid}\")\n        cursor = db.cursor()\n        cursor.execute(query)\n        db.commit()\n    \n        db = TestData.connection(f\"{db_uuid}\")\n        letters = ascii_letters\n        cursor = db.cursor()\n        for x in range(10):\n            for i in range(10):\n                my_string = \"\".join(random.choice(letters) for _ in range(4096))\n                cursor.execute(\"\"\"\n                                INSERT INTO accounts (name, text)\n                                VALUES (\n                                'lambotik',\n                                %(my_string)s);\"\"\",\n                               {'my_string': my_string})\n                db.commit()\n            db.commit()\n        cursor.execute('''select * from accounts''')\n        res = cursor.fetchall()\n        # print(res)\n        time.sleep(40)\n        finish_mb_value = API.get_profile().json()[\"content\"][4][1]\n        # print('amount', finish_mb_value.text)\n        req = requests.post('http://cisdb1.areso.pro:9090/list', json={\"token\": \"SuperSecret\"})\n        pprint(req.text)\n        print('Db size mb after insert:', finish_mb_value)\n        cr = API.post_db_create(TestData.sid)\n        print(cr.status_code)\n>       assert int(finish_mb_value) > 0, 'Value db_size should be more than 0.'\nE       AssertionError: Value db_size should be more than 0.\nE       assert 0 > 0\nE        +  where 0 = int(0)\n\ntests_api/test_bd.py:73: AssertionError",
+  "statusTrace" : "self = <tests_api.test_bd.TestCapacity object at 0x7f46d1a7cf40>\n\n    @allure.title('test_capacity_db')\n    def test_capacity_db(self):\n        start_mb_value = API.get_profile().json()[\"content\"][4][1]\n        print('Db size mb:', start_mb_value)\n        result_db_create = API.post_db_create(TestData.sid)\n        print('Status db is :', result_db_create.json())\n        db_uuid = result_db_create.json()[\"db_uuid\"]\n        print(\"db_uuid\", db_uuid)\n        time.sleep(20)\n        query = '''\n        CREATE TABLE IF NOT EXISTS accounts(\n        userid INT PRIMARY KEY AUTO_INCREMENT,\n        name varchar(128),\n        date_of_birth datetime NULL,\n        text varchar(4096),\n        email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;\n        '''\n        db = TestData.connection(f\"{db_uuid}\")\n        cursor = db.cursor()\n        cursor.execute(query)\n        db.commit()\n    \n        db = TestData.connection(f\"{db_uuid}\")\n        letters = ascii_letters\n        cursor = db.cursor()\n        for x in range(10):\n            for i in range(10):\n                my_string = \"\".join(random.choice(letters) for _ in range(4096))\n                cursor.execute(\"\"\"\n                                INSERT INTO accounts (name, text)\n                                VALUES (\n                                'lambotik',\n                                %(my_string)s);\"\"\",\n                               {'my_string': my_string})\n                db.commit()\n            db.commit()\n        cursor.execute('''select * from accounts''')\n        res = cursor.fetchall()\n        # print(res)\n        time.sleep(40)\n        finish_mb_value = API.get_profile().json()[\"content\"][4][1]\n        # print('amount', finish_mb_value.text)\n        req = requests.post('http://cisdb1.areso.pro:9090/list', json={\"token\": \"SuperSecret\"})\n        pprint(req.text)\n        print('Db size mb after insert:', finish_mb_value)\n        cr = API.post_db_create(TestData.sid)\n        print(cr.status_code)\n>       assert int(finish_mb_value) > 0, 'Value db_size should be more than 0.'\nE       AssertionError: Value db_size should be more than 0.\nE       assert 0 > 0\nE        +  where 0 = int(0)\n\ntests_api/test_bd.py:73: AssertionError",
   "flaky" : false,
   "newFailed" : false,
   "beforeStages" : [ ],
   "testStage" : {
     "status" : "failed",
     "statusMessage" : "AssertionError: Value db_size should be more than 0.\nassert 0 > 0\n +  where 0 = int(0)",
-    "statusTrace" : "self = <tests_api.test_bd.TestCapacity object at 0x7f93824e8f40>\n\n    @allure.title('test_capacity_db')\n    def test_capacity_db(self):\n        start_mb_value = API.get_profile().json()[\"content\"][4][1]\n        print('Db size mb:', start_mb_value)\n        result_db_create = API.post_db_create(TestData.sid)\n        print('Status db is :', result_db_create.json())\n        db_uuid = result_db_create.json()[\"db_uuid\"]\n        print(\"db_uuid\", db_uuid)\n        time.sleep(20)\n        query = '''\n        CREATE TABLE IF NOT EXISTS accounts(\n        userid INT PRIMARY KEY AUTO_INCREMENT,\n        name varchar(128),\n        date_of_birth datetime NULL,\n        text varchar(4096),\n        email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;\n        '''\n        db = TestData.connection(f\"{db_uuid}\")\n        cursor = db.cursor()\n        cursor.execute(query)\n        db.commit()\n    \n        db = TestData.connection(f\"{db_uuid}\")\n        letters = ascii_letters\n        cursor = db.cursor()\n        for x in range(10):\n            for i in range(10):\n                my_string = \"\".join(random.choice(letters) for _ in range(4096))\n                cursor.execute(\"\"\"\n                                INSERT INTO accounts (name, text)\n                                VALUES (\n                                'lambotik',\n                                %(my_string)s);\"\"\",\n                               {'my_string': my_string})\n                db.commit()\n            db.commit()\n        cursor.execute('''select * from accounts''')\n        res = cursor.fetchall()\n        # print(res)\n        time.sleep(40)\n        finish_mb_value = API.get_profile().json()[\"content\"][4][1]\n        # print('amount', finish_mb_value.text)\n        req = requests.post('http://cisdb1.areso.pro:9090/list', json={\"token\": \"SuperSecret\"})\n        pprint(req.text)\n        print('Db size mb after insert:', finish_mb_value)\n        cr = API.post_db_create(TestData.sid)\n        print(cr.status_code)\n>       assert int(finish_mb_value) > 0, 'Value db_size should be more than 0.'\nE       AssertionError: Value db_size should be more than 0.\nE       assert 0 > 0\nE        +  where 0 = int(0)\n\ntests_api/test_bd.py:73: AssertionError",
+    "statusTrace" : "self = <tests_api.test_bd.TestCapacity object at 0x7f46d1a7cf40>\n\n    @allure.title('test_capacity_db')\n    def test_capacity_db(self):\n        start_mb_value = API.get_profile().json()[\"content\"][4][1]\n        print('Db size mb:', start_mb_value)\n        result_db_create = API.post_db_create(TestData.sid)\n        print('Status db is :', result_db_create.json())\n        db_uuid = result_db_create.json()[\"db_uuid\"]\n        print(\"db_uuid\", db_uuid)\n        time.sleep(20)\n        query = '''\n        CREATE TABLE IF NOT EXISTS accounts(\n        userid INT PRIMARY KEY AUTO_INCREMENT,\n        name varchar(128),\n        date_of_birth datetime NULL,\n        text varchar(4096),\n        email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;\n        '''\n        db = TestData.connection(f\"{db_uuid}\")\n        cursor = db.cursor()\n        cursor.execute(query)\n        db.commit()\n    \n        db = TestData.connection(f\"{db_uuid}\")\n        letters = ascii_letters\n        cursor = db.cursor()\n        for x in range(10):\n            for i in range(10):\n                my_string = \"\".join(random.choice(letters) for _ in range(4096))\n                cursor.execute(\"\"\"\n                                INSERT INTO accounts (name, text)\n                                VALUES (\n                                'lambotik',\n                                %(my_string)s);\"\"\",\n                               {'my_string': my_string})\n                db.commit()\n            db.commit()\n        cursor.execute('''select * from accounts''')\n        res = cursor.fetchall()\n        # print(res)\n        time.sleep(40)\n        finish_mb_value = API.get_profile().json()[\"content\"][4][1]\n        # print('amount', finish_mb_value.text)\n        req = requests.post('http://cisdb1.areso.pro:9090/list', json={\"token\": \"SuperSecret\"})\n        pprint(req.text)\n        print('Db size mb after insert:', finish_mb_value)\n        cr = API.post_db_create(TestData.sid)\n        print(cr.status_code)\n>       assert int(finish_mb_value) > 0, 'Value db_size should be more than 0.'\nE       AssertionError: Value db_size should be more than 0.\nE       assert 0 > 0\nE        +  where 0 = int(0)\n\ntests_api/test_bd.py:73: AssertionError",
     "steps" : [ {
       "name" : "get_profile",
       "time" : {
-        "start" : 1708031814208,
-        "stop" : 1708031814738,
-        "duration" : 530
+        "start" : 1708032320537,
+        "stop" : 1708032321041,
+        "duration" : 504
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "GET https://dbend.areso.pro/get_profile",
         "time" : {
-          "start" : 1708031814208,
-          "stop" : 1708031814208,
+          "start" : 1708032320537,
+          "stop" : 1708032320537,
           "duration" : 0
         },
         "status" : "passed",
@@ -44,8 +44,8 @@
       }, {
         "name" : "Status code: 200",
         "time" : {
-          "start" : 1708031814738,
-          "stop" : 1708031814738,
+          "start" : 1708032321041,
+          "stop" : 1708032321041,
           "duration" : 0
         },
         "status" : "passed",
@@ -59,8 +59,8 @@
       }, {
         "name" : "Params url: https://dbend.areso.pro/get_profile\nCookies: sid\nBody: {}",
         "time" : {
-          "start" : 1708031814738,
-          "stop" : 1708031814738,
+          "start" : 1708032321041,
+          "stop" : 1708032321041,
           "duration" : 0
         },
         "status" : "passed",
@@ -74,8 +74,8 @@
       }, {
         "name" : "Response: <Response [200]>",
         "time" : {
-          "start" : 1708031814738,
-          "stop" : 1708031814738,
+          "start" : 1708032321041,
+          "stop" : 1708032321041,
           "duration" : 0
         },
         "status" : "passed",
@@ -96,16 +96,16 @@
     }, {
       "name" : "post_db_create",
       "time" : {
-        "start" : 1708031814739,
-        "stop" : 1708031815285,
-        "duration" : 546
+        "start" : 1708032321042,
+        "stop" : 1708032321592,
+        "duration" : 550
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "POST https://dbend.areso.pro/db_create",
         "time" : {
-          "start" : 1708031814739,
-          "stop" : 1708031814739,
+          "start" : 1708032321042,
+          "stop" : 1708032321042,
           "duration" : 0
         },
         "status" : "passed",
@@ -119,8 +119,8 @@
       }, {
         "name" : "Status code: 201",
         "time" : {
-          "start" : 1708031815284,
-          "stop" : 1708031815284,
+          "start" : 1708032321592,
+          "stop" : 1708032321592,
           "duration" : 0
         },
         "status" : "passed",
@@ -134,8 +134,8 @@
       }, {
         "name" : "Params url: https://dbend.areso.pro/db_create\nCookies: sid\nBody: body",
         "time" : {
-          "start" : 1708031815284,
-          "stop" : 1708031815284,
+          "start" : 1708032321592,
+          "stop" : 1708032321592,
           "duration" : 0
         },
         "status" : "passed",
@@ -149,8 +149,8 @@
       }, {
         "name" : "Response: <Response [201]>",
         "time" : {
-          "start" : 1708031815285,
-          "stop" : 1708031815285,
+          "start" : 1708032321592,
+          "stop" : 1708032321592,
           "duration" : 0
         },
         "status" : "passed",
@@ -171,16 +171,16 @@
     }, {
       "name" : "get_profile",
       "time" : {
-        "start" : 1708031920590,
-        "stop" : 1708031921095,
-        "duration" : 505
+        "start" : 1708032426076,
+        "stop" : 1708032426591,
+        "duration" : 515
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "GET https://dbend.areso.pro/get_profile",
         "time" : {
-          "start" : 1708031920590,
-          "stop" : 1708031920590,
+          "start" : 1708032426076,
+          "stop" : 1708032426076,
           "duration" : 0
         },
         "status" : "passed",
@@ -194,8 +194,8 @@
       }, {
         "name" : "Status code: 200",
         "time" : {
-          "start" : 1708031921094,
-          "stop" : 1708031921094,
+          "start" : 1708032426590,
+          "stop" : 1708032426590,
           "duration" : 0
         },
         "status" : "passed",
@@ -209,8 +209,8 @@
       }, {
         "name" : "Params url: https://dbend.areso.pro/get_profile\nCookies: sid\nBody: {}",
         "time" : {
-          "start" : 1708031921094,
-          "stop" : 1708031921094,
+          "start" : 1708032426590,
+          "stop" : 1708032426590,
           "duration" : 0
         },
         "status" : "passed",
@@ -224,8 +224,8 @@
       }, {
         "name" : "Response: <Response [200]>",
         "time" : {
-          "start" : 1708031921095,
-          "stop" : 1708031921095,
+          "start" : 1708032426590,
+          "stop" : 1708032426590,
           "duration" : 0
         },
         "status" : "passed",
@@ -246,16 +246,16 @@
     }, {
       "name" : "post_db_create",
       "time" : {
-        "start" : 1708031921481,
-        "stop" : 1708031922045,
-        "duration" : 564
+        "start" : 1708032426951,
+        "stop" : 1708032427534,
+        "duration" : 583
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "POST https://dbend.areso.pro/db_create",
         "time" : {
-          "start" : 1708031921481,
-          "stop" : 1708031921481,
+          "start" : 1708032426951,
+          "stop" : 1708032426951,
           "duration" : 0
         },
         "status" : "passed",
@@ -269,8 +269,8 @@
       }, {
         "name" : "Status code: 201",
         "time" : {
-          "start" : 1708031922045,
-          "stop" : 1708031922045,
+          "start" : 1708032427533,
+          "stop" : 1708032427533,
           "duration" : 0
         },
         "status" : "passed",
@@ -284,8 +284,8 @@
       }, {
         "name" : "Params url: https://dbend.areso.pro/db_create\nCookies: sid\nBody: body",
         "time" : {
-          "start" : 1708031922045,
-          "stop" : 1708031922045,
+          "start" : 1708032427533,
+          "stop" : 1708032427533,
           "duration" : 0
         },
         "status" : "passed",
@@ -299,8 +299,8 @@
       }, {
         "name" : "Response: <Response [201]>",
         "time" : {
-          "start" : 1708031922045,
-          "stop" : 1708031922045,
+          "start" : 1708032427534,
+          "stop" : 1708032427534,
           "duration" : 0
         },
         "status" : "passed",
@@ -328,11 +328,11 @@
   },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "epic",
-    "value" : "Performance DB"
-  }, {
     "name" : "suite",
     "value" : "Test Performance DB"
+  }, {
+    "name" : "epic",
+    "value" : "Performance DB"
   }, {
     "name" : "parentSuite",
     "value" : "tests_api"
@@ -341,10 +341,10 @@
     "value" : "TestCapacity"
   }, {
     "name" : "host",
-    "value" : "fv-az914-262"
+    "value" : "fv-az802-432"
   }, {
     "name" : "thread",
-    "value" : "1772-MainThread"
+    "value" : "1854-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -372,14 +372,23 @@
     } ],
     "history" : {
       "statistic" : {
-        "failed" : 3,
+        "failed" : 4,
         "broken" : 0,
         "skipped" : 0,
         "passed" : 0,
         "unknown" : 0,
-        "total" : 3
+        "total" : 4
       },
       "items" : [ {
+        "uid" : "6c1c8400ff6a51dc",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Value db_size should be more than 0.\nassert 0 > 0\n +  where 0 = int(0)",
+        "time" : {
+          "start" : 1708031814207,
+          "stop" : 1708031922045,
+          "duration" : 107838
+        }
+      }, {
         "uid" : "3d20859392380f45",
         "status" : "failed",
         "statusDetails" : "AssertionError: Value db_size should be more than 0.\nassert 0 > 0\n +  where 0 = int(0)",
@@ -401,6 +410,6 @@
     },
     "tags" : [ ]
   },
-  "source" : "6c1c8400ff6a51dc.json",
+  "source" : "28e41369bd7c29c0.json",
   "parameterValues" : [ ]
 }
