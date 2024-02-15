@@ -1,12 +1,12 @@
 {
-  "uid" : "cd067ce590535875",
-  "name" : "List db_types.",
-  "fullName" : "tests_api.test_bd.TestGET#test_get_list_db_types",
-  "historyId" : "a5ae0cd958e41b035b5b00dc6373e042",
+  "uid" : "262305f995e737d",
+  "name" : "List db_versions.",
+  "fullName" : "tests_api.test_bd.TestGET#test_get_list_db_versions",
+  "historyId" : "8bbfe42adf25237260fbe695e4aa058a",
   "time" : {
-    "start" : 1707696099964,
-    "stop" : 1707696100485,
-    "duration" : 521
+    "start" : 1708028401098,
+    "stop" : 1708028401474,
+    "duration" : 376
   },
   "status" : "passed",
   "flaky" : false,
@@ -15,95 +15,95 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "get_list_db_types",
+      "name" : "get_list_dbversions",
       "time" : {
-        "start" : 1707696099965,
-        "stop" : 1707696100485,
-        "duration" : 520
+        "start" : 1708028401098,
+        "stop" : 1708028401473,
+        "duration" : 375
       },
       "status" : "passed",
       "steps" : [ {
-        "name" : "GET https://dbend.areso.pro/list_dbtypes",
+        "name" : "GET https://dbend.areso.pro/list_dbversions",
         "time" : {
-          "start" : 1707696099965,
-          "stop" : 1707696099965,
+          "start" : 1708028401098,
+          "stop" : 1708028401098,
           "duration" : 0
         },
         "status" : "passed",
         "steps" : [ ],
         "attachments" : [ ],
         "parameters" : [ ],
-        "attachmentsCount" : 0,
-        "shouldDisplayMessage" : false,
         "stepsCount" : 0,
-        "hasContent" : false
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
       }, {
         "name" : "Status code: 200",
         "time" : {
-          "start" : 1707696100484,
-          "stop" : 1707696100484,
+          "start" : 1708028401473,
+          "stop" : 1708028401473,
           "duration" : 0
         },
         "status" : "passed",
         "steps" : [ ],
         "attachments" : [ ],
         "parameters" : [ ],
-        "attachmentsCount" : 0,
-        "shouldDisplayMessage" : false,
         "stepsCount" : 0,
-        "hasContent" : false
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
       }, {
-        "name" : "Response: {\n    \"3\": \"mysql8\"\n}\n",
+        "name" : "Response: {\n    \"5\": [\n        \"mysql8\",\n        \"8.0.20+\"\n    ]\n}\n",
         "time" : {
-          "start" : 1707696100485,
-          "stop" : 1707696100485,
+          "start" : 1708028401473,
+          "stop" : 1708028401473,
           "duration" : 0
         },
         "status" : "passed",
         "steps" : [ ],
         "attachments" : [ ],
         "parameters" : [ ],
-        "attachmentsCount" : 0,
-        "shouldDisplayMessage" : false,
         "stepsCount" : 0,
-        "hasContent" : false
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
       } ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
       "stepsCount" : 3,
-      "hasContent" : true
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
     }, {
       "name" : "Assert status code: 200 == Response status code: 200",
       "time" : {
-        "start" : 1707696100485,
-        "stop" : 1707696100485,
+        "start" : 1708028401473,
+        "stop" : 1708028401473,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
       "stepsCount" : 0,
-      "hasContent" : false
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "attachmentsCount" : 0,
-    "shouldDisplayMessage" : false,
     "stepsCount" : 5,
-    "hasContent" : true
+    "hasContent" : true,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
   },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "suite",
-    "value" : "GET"
-  }, {
     "name" : "epic",
     "value" : "GET REQUESTS"
+  }, {
+    "name" : "suite",
+    "value" : "GET"
   }, {
     "name" : "parentSuite",
     "value" : "tests_api"
@@ -112,10 +112,10 @@
     "value" : "TestGET"
   }, {
     "name" : "host",
-    "value" : "fv-az915-40"
+    "value" : "fv-az1242-26"
   }, {
     "name" : "thread",
-    "value" : "1814-MainThread"
+    "value" : "1786-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -137,8 +137,27 @@
     "severity" : "normal",
     "retries" : [ ],
     "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "3e24126e6f43ae65",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707696100487,
+          "stop" : 1707696100998,
+          "duration" : 511
+        }
+      } ]
+    },
     "tags" : [ ]
   },
-  "source" : "cd067ce590535875.json",
+  "source" : "262305f995e737d.json",
   "parameterValues" : [ ]
 }
