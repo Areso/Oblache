@@ -1,12 +1,9 @@
 import allure
-# from locators.main_page_locators import MainPageLocators
-from selenium.common import TimeoutException
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.ui import WebDriverWait as Wait
 
 
 class BasePage:
-    # locators = MainPageLocators()
 
     def __init__(self, driver, link=None):
         self.driver = driver
@@ -76,4 +73,3 @@ class BasePage:
         with allure.step(f'Wait until url: {url} will be changed.'):
             Wait(self.driver, self.timeout).until(ec.url_changes(url), message=f"Url: {url} has not been changed!!!")
             self.get_current_url()
-
