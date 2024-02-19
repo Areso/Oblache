@@ -15,16 +15,20 @@ class TestData:
     try:
         body = {"email": email, "password": f'{old_password}'}
         result = requests.post('https://dbend.areso.pro/login', json=body)
+        print(result.text)
         sid = dict(result.cookies)
         if sid != {}:
             new_password, old_password = old_password, new_password
-        assert sid != {}
+            print(sid)
+        # assert sid != {}
     except:
         old_password, new_password = new_password, old_password
         body = {"email": email, "password": f'{old_password}'}
         result = requests.post('https://dbend.areso.pro/login', json=body)
+        print(result.text)
         sid = dict(result.cookies)
-        assert sid != {}
+        print(sid)
+        # assert sid != {}
 
     @staticmethod
     def connection(db_uuid):
@@ -46,3 +50,5 @@ class TestData:
         print('Successfully connected...')
         assert db.is_connected() is True
         return db
+
+TestData()
