@@ -1,7 +1,4 @@
-import time
-
 import allure
-from selenium.webdriver.common.by import By
 
 from tests_ui.data import TestDataLinks
 from tests_ui.login_page import LoginPage
