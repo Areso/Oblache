@@ -52,12 +52,6 @@ class HttpMethods:
 
     @staticmethod
     def post_for_delete_db(url, db_uuid, sid):
-        """
-        :param url:
-        :param db_uuid:
-        :param sid:
-        :return:
-        """
         Logger.add_request(url, method='POST')
         result = requests.post(url, data=db_uuid, cookies=sid)
         with allure.step(f'Status code: {result.status_code}'):

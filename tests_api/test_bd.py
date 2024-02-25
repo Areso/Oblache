@@ -60,7 +60,7 @@ class TestCapacity:
                 db.commit()
             db.commit()
         cursor.execute('''select * from accounts''')
-        res = cursor.fetchall()
+        # res = cursor.fetchall()
         # print(res)
         time.sleep(40)
         finish_mb_value = API.get_profile(TestData.token).json()['data']["content"][4][1]
@@ -161,15 +161,13 @@ class TestPOST:
     def test_post_login(self):
         print('\n\nMethod POST: login')
         result_post = API.post_login(TestData.body)
-        status_code = result_post
-        Checking.check_status_code(status_code, 200)
+        Checking.check_status_code(result_post, 200)
 
     @allure.title('test_post_is_logged')
     def test_post_is_logged(self):
         print('\n\nMethod POST: is_logged')
         result_post = API.post_is_logged(TestData.token)
-        status_code = result_post
-        Checking.check_status_code(status_code, 200)
+        Checking.check_status_code(result_post, 200)
 
     @allure.title('Post db_create')
     def test_post_db_create(self):
@@ -205,7 +203,6 @@ class TestPOST:
     def test_post_db_create_with_wrong_values_region(self):
         print('\n\nMethod POST: post_db_create_wrong_value_region')
         result_post_db_list = API.post_db_create_wrong_value_region(TestData.token)
-        print(result_post_db_list.json())
         Checking.check_status_code(result_post_db_list, 400)
         Checking.check_json_search_word_in_value(result_post_db_list, "content",
                                                  "error: region isn't found or isn't available for order")

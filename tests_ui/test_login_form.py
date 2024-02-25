@@ -28,3 +28,9 @@ class TestLoginPage:
         page = LoginPage(driver, TestDataLinks.register_page)
         page.open()
         page.check_buttons()
+
+    @allure.title('test_login')
+    def test_login(self, driver):
+        page = LoginPage(driver, TestDataLinks.register_page)
+        page.open()
+        page.login_user()
