@@ -1,12 +1,12 @@
 {
-  "uid" : "21aa47336ab937c7",
-  "name" : "Bad request.",
-  "fullName" : "tests_api.test_bd.TestGET#test_get_with_bad_request",
-  "historyId" : "5156f5dedc3d46e33a62122a588c6956",
+  "uid" : "91c0e124fcec0ee5",
+  "name" : "List regions.",
+  "fullName" : "tests_api.test_bd.TestGET#test_get_list_regions",
+  "historyId" : "f582edc7610323801f9b520159e35f6b",
   "time" : {
-    "start" : 1708876666528,
-    "stop" : 1708876666829,
-    "duration" : 301
+    "start" : 1708882311834,
+    "stop" : 1708882312156,
+    "duration" : 322
   },
   "status" : "passed",
   "flaky" : false,
@@ -15,18 +15,18 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "get_bad_request",
+      "name" : "get_list_regions",
       "time" : {
-        "start" : 1708876666528,
-        "stop" : 1708876666828,
-        "duration" : 300
+        "start" : 1708882311834,
+        "stop" : 1708882312156,
+        "duration" : 322
       },
       "status" : "passed",
       "steps" : [ {
-        "name" : "GET https://dbend.areso.pro/bad_request",
+        "name" : "GET https://dbend.areso.pro/list_regions",
         "time" : {
-          "start" : 1708876666528,
-          "stop" : 1708876666528,
+          "start" : 1708882311835,
+          "stop" : 1708882311835,
           "duration" : 0
         },
         "status" : "passed",
@@ -38,10 +38,10 @@
         "stepsCount" : 0,
         "hasContent" : false
       }, {
-        "name" : "Status code: 404",
+        "name" : "Status code: 200",
         "time" : {
-          "start" : 1708876666828,
-          "stop" : 1708876666828,
+          "start" : 1708882312156,
+          "stop" : 1708882312156,
           "duration" : 0
         },
         "status" : "passed",
@@ -53,10 +53,10 @@
         "stepsCount" : 0,
         "hasContent" : false
       }, {
-        "name" : "Response: <!doctype html>\n<html lang=en>\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n",
+        "name" : "Response: {\n    \"3\": \"CIS\"\n}\n",
         "time" : {
-          "start" : 1708876666828,
-          "stop" : 1708876666828,
+          "start" : 1708882312156,
+          "stop" : 1708882312156,
           "duration" : 0
         },
         "status" : "passed",
@@ -75,10 +75,10 @@
       "stepsCount" : 3,
       "hasContent" : true
     }, {
-      "name" : "Assert status code: 404 == Response status code: 404",
+      "name" : "Assert status code: 200 == Response status code: 200",
       "time" : {
-        "start" : 1708876666829,
-        "stop" : 1708876666829,
+        "start" : 1708882312156,
+        "stop" : 1708882312156,
         "duration" : 0
       },
       "status" : "passed",
@@ -112,10 +112,10 @@
     "value" : "TestGET"
   }, {
     "name" : "host",
-    "value" : "fv-az665-41"
+    "value" : "fv-az661-142"
   }, {
     "name" : "thread",
-    "value" : "1844-MainThread"
+    "value" : "1794-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -142,46 +142,54 @@
         "failed" : 0,
         "broken" : 0,
         "skipped" : 0,
-        "passed" : 5,
+        "passed" : 6,
         "unknown" : 0,
-        "total" : 5
+        "total" : 6
       },
       "items" : [ {
-        "uid" : "47da4408c468e007",
+        "uid" : "d87af234cb03af34",
         "status" : "passed",
         "time" : {
-          "start" : 1708032430626,
-          "stop" : 1708032431123,
-          "duration" : 497
+          "start" : 1708876666216,
+          "stop" : 1708876666526,
+          "duration" : 310
         }
       }, {
-        "uid" : "863e5c7ac6cfe672",
+        "uid" : "1a6bade47b0357ef",
         "status" : "passed",
         "time" : {
-          "start" : 1708031925122,
-          "stop" : 1708031925626,
-          "duration" : 504
+          "start" : 1708032430108,
+          "stop" : 1708032430624,
+          "duration" : 516
         }
       }, {
-        "uid" : "b311cf20f9f5088c",
+        "uid" : "8d6d06e1a5df0a5e",
         "status" : "passed",
         "time" : {
-          "start" : 1708028402244,
-          "stop" : 1708028402610,
-          "duration" : 366
+          "start" : 1708031924624,
+          "stop" : 1708031925120,
+          "duration" : 496
         }
       }, {
-        "uid" : "530639fe2d3cfd1c",
+        "uid" : "80c9045b852e54cc",
         "status" : "passed",
         "time" : {
-          "start" : 1707696102034,
-          "stop" : 1707696102524,
-          "duration" : 490
+          "start" : 1708028401865,
+          "stop" : 1708028402242,
+          "duration" : 377
+        }
+      }, {
+        "uid" : "b23e65e7c690a14b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707696101512,
+          "stop" : 1707696102032,
+          "duration" : 520
         }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "21aa47336ab937c7.json",
+  "source" : "91c0e124fcec0ee5.json",
   "parameterValues" : [ ]
 }

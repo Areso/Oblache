@@ -1,12 +1,12 @@
 {
-  "uid" : "484d190192a6d7c1",
-  "name" : "Post registration email is taken",
-  "fullName" : "tests_api.test_bd.TestPOST#test_post_registration_email_is_taken",
-  "historyId" : "8e5e97e65cd661fe5135ad0b97aa29eb",
+  "uid" : "14f99dc720852e7e",
+  "name" : "Post db_create with wrong db_type.",
+  "fullName" : "tests_api.test_bd.TestPOST#test_post_db_create_with_wrong_values_dbtype",
+  "historyId" : "ae63095b2fe55ca99f871a9193b615b5",
   "time" : {
-    "start" : 1708876668119,
-    "stop" : 1708876668426,
-    "duration" : 307
+    "start" : 1708882315320,
+    "stop" : 1708882315659,
+    "duration" : 339
   },
   "status" : "passed",
   "flaky" : false,
@@ -15,18 +15,18 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "post_registration",
+      "name" : "post_db_create_wrong_value_db_type",
       "time" : {
-        "start" : 1708876668119,
-        "stop" : 1708876668425,
-        "duration" : 306
+        "start" : 1708882315320,
+        "stop" : 1708882315658,
+        "duration" : 338
       },
       "status" : "passed",
       "steps" : [ {
-        "name" : "POST https://dbend.areso.pro/register",
+        "name" : "POST https://dbend.areso.pro/db_create",
         "time" : {
-          "start" : 1708876668119,
-          "stop" : 1708876668119,
+          "start" : 1708882315320,
+          "stop" : 1708882315320,
           "duration" : 0
         },
         "status" : "passed",
@@ -40,8 +40,8 @@
       }, {
         "name" : "Status code: 400",
         "time" : {
-          "start" : 1708876668425,
-          "stop" : 1708876668425,
+          "start" : 1708882315658,
+          "stop" : 1708882315658,
           "duration" : 0
         },
         "status" : "passed",
@@ -53,10 +53,10 @@
         "stepsCount" : 0,
         "hasContent" : false
       }, {
-        "name" : "Params url: https://dbend.areso.pro/register",
+        "name" : "Params url: https://dbend.areso.pro/db_create",
         "time" : {
-          "start" : 1708876668425,
-          "stop" : 1708876668425,
+          "start" : 1708882315658,
+          "stop" : 1708882315658,
           "duration" : 0
         },
         "status" : "passed",
@@ -70,8 +70,8 @@
       }, {
         "name" : "Response: <Response [400]>",
         "time" : {
-          "start" : 1708876668425,
-          "stop" : 1708876668425,
+          "start" : 1708882315658,
+          "stop" : 1708882315658,
           "duration" : 0
         },
         "status" : "passed",
@@ -92,8 +92,8 @@
     }, {
       "name" : "Assert status code: 400 == Response status code: 400",
       "time" : {
-        "start" : 1708876668425,
-        "stop" : 1708876668425,
+        "start" : 1708882315658,
+        "stop" : 1708882315658,
         "duration" : 0
       },
       "status" : "passed",
@@ -105,10 +105,10 @@
       "stepsCount" : 0,
       "hasContent" : false
     }, {
-      "name" : "Check and compare result request with expected value by key:\nResponse: <Response [400]>\nKey: content\nValue: msg[3]: registration failed, this email is taken",
+      "name" : "Check and compare result request with expected value by key:\nResponse: <Response [400]>\nKey: content\nValue: error: DB type isn't found or isn't available for order",
       "time" : {
-        "start" : 1708876668425,
-        "stop" : 1708876668425,
+        "start" : 1708882315658,
+        "stop" : 1708882315658,
         "duration" : 0
       },
       "status" : "passed",
@@ -129,11 +129,11 @@
   },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "epic",
-    "value" : "POST REQUESTS"
-  }, {
     "name" : "suite",
     "value" : "POST"
+  }, {
+    "name" : "epic",
+    "value" : "POST REQUESTS"
   }, {
     "name" : "parentSuite",
     "value" : "tests_api"
@@ -142,10 +142,10 @@
     "value" : "TestPOST"
   }, {
     "name" : "host",
-    "value" : "fv-az665-41"
+    "value" : "fv-az661-142"
   }, {
     "name" : "thread",
-    "value" : "1844-MainThread"
+    "value" : "1794-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -169,49 +169,58 @@
     "categories" : [ ],
     "history" : {
       "statistic" : {
-        "failed" : 0,
+        "failed" : 1,
         "broken" : 0,
         "skipped" : 0,
         "passed" : 5,
         "unknown" : 0,
-        "total" : 5
+        "total" : 6
       },
       "items" : [ {
-        "uid" : "8e220b802e59f518",
-        "status" : "passed",
+        "uid" : "7fdeee0da1f8700",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
         "time" : {
-          "start" : 1708032433177,
-          "stop" : 1708032433670,
-          "duration" : 493
+          "start" : 1708876669366,
+          "stop" : 1708876669671,
+          "duration" : 305
         }
       }, {
-        "uid" : "c14183e39ee9689c",
+        "uid" : "94f2c6fefe624915",
         "status" : "passed",
         "time" : {
-          "start" : 1708031927732,
-          "stop" : 1708031928223,
-          "duration" : 491
+          "start" : 1708032435219,
+          "stop" : 1708032435742,
+          "duration" : 523
         }
       }, {
-        "uid" : "b8ab77e462b3e479",
+        "uid" : "945b99aa7539f55d",
         "status" : "passed",
         "time" : {
-          "start" : 1708028404229,
-          "stop" : 1708028404595,
-          "duration" : 366
+          "start" : 1708031929783,
+          "stop" : 1708031930290,
+          "duration" : 507
         }
       }, {
-        "uid" : "938875ff0cc9f813",
+        "uid" : "f42e61c37a307b82",
         "status" : "passed",
         "time" : {
-          "start" : 1707696104602,
-          "stop" : 1707696105107,
-          "duration" : 505
+          "start" : 1708028405413,
+          "stop" : 1708028405787,
+          "duration" : 374
+        }
+      }, {
+        "uid" : "22c16fa302ccdc5a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707696106173,
+          "stop" : 1707696106698,
+          "duration" : 525
         }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "484d190192a6d7c1.json",
+  "source" : "14f99dc720852e7e.json",
   "parameterValues" : [ ]
 }
