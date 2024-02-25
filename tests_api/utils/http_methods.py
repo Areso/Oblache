@@ -3,21 +3,23 @@ import requests
 
 from tests_api.utils.logger import Logger
 
-'''List http methods'''
-
 
 class HttpMethods:
     headers = {'Content-Type': 'application/json'}
     cookie = ''
 
     @staticmethod
-    def get(url):
+    def get(url, body=None, token=None):
         """
         :param url:
+        :param body:
+        :param token:
         :return:
         """
         Logger.add_request(url, method='GET')
-        result = requests.get(url, headers=HttpMethods.headers, cookies=HttpMethods.cookie)
+        result = requests.get(url, headers=HttpMethods.headers | {'Authorization': f'{token}'},
+                              cookies=HttpMethods.cookie)
+
         with allure.step(f'Status code: {result.status_code}'):
             pass
         with allure.step(f'Response: {result.text}'):
@@ -26,49 +28,19 @@ class HttpMethods:
         return result
 
     @staticmethod
-    def get_with_cookie(url: str, body: dict, cookie: dict):
+    def post(url, body=None, token=None, data=None, cookie=None):
         """
         :param url:
         :param body:
+        :param token:
+        :param data:
         :param cookie:
-        :return: result
-        """
-        Logger.add_request(url, method='GET')
-        result = requests.get(url, cookies=cookie, json=body)
-        with allure.step(f'Status code: {result.status_code}'):
-            pass
-        with allure.step(f'Params url: {url}\n'
-                         f'Cookies: sid\n'
-                         f'Body: {body}'):
-            pass
-        with allure.step(f'Response: {result}'):
-            pass
-        Logger.add_response(result)
-        return result
-
-    @staticmethod
-    def post(url, body, cookie=None):
-        Logger.add_request(url, method='POST')
-        result = requests.post(url, json=body, headers=HttpMethods.headers, cookies=HttpMethods.cookie)
-        with allure.step(f'Status code: {result.status_code}'):
-            pass
-        with allure.step(f'Params url: {url}'):
-            pass
-        with allure.step(f'Response: {result}'):
-            pass
-        Logger.add_response(result)
-        return result
-
-    @staticmethod
-    def post_with_cookie(url: str, body: dict, cookie: dict):
-        """
-        :param url:
-        :param body:
-        :param cookie:
-        :return: result
+        :return:
         """
         Logger.add_request(url, method='POST')
-        result = requests.post(url, cookies=cookie, json=body)
+        # HttpMethods.headers['Authorization'] = token
+        result = requests.post(url, json=body,
+                               headers=HttpMethods.headers | {'Authorization': f'{token}'})
         with allure.step(f'Status code: {result.status_code}'):
             pass
         with allure.step(f'Params url: {url}'):
@@ -94,52 +66,5 @@ class HttpMethods:
             pass
         with allure.step(f'Response: {result}'):
             pass
-        Logger.add_response(result)
-        return result
-
-    @staticmethod
-    def post_with_cookie_without_body(url: str, cookie: dict, body: dict):
-        """
-        :param url:
-        :param cookie:
-        :param body:
-        :return:
-        """
-        Logger.add_request(url, method='POST')
-        result = requests.post(url, cookies=cookie, json=body)
-        with allure.step(f'Status code: {result.status_code}'):
-            pass
-        with allure.step(f'Params url: {url}\n'
-                         f'Cookies: sid\n'
-                         f'Body: body'):
-            pass
-        with allure.step(f'Response: {result}'):
-            pass
-        Logger.add_response(result)
-        return result
-
-    @staticmethod
-    @allure.step('Method PUT')
-    def put(url, body):
-        """
-        :param url:
-        :param body:
-        :return:
-        """
-        Logger.add_request(url, method='PUT')
-        result = requests.put(url, json=body, headers=HttpMethods.headers, cookies=HttpMethods.cookie)
-        Logger.add_response(result)
-        return result
-
-    @staticmethod
-    @allure.step('Method DELETE')
-    def delete(url, body):
-        """
-        :param url:
-        :param body:
-        :return:
-        """
-        Logger.add_request(url, method='DELETE')
-        result = requests.delete(url, json=body, headers=HttpMethods.headers, cookies=HttpMethods.cookie)
         Logger.add_response(result)
         return result

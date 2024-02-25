@@ -7,17 +7,17 @@ import allure
 import pytest
 import requests
 
+from conftest_api import TestData
 from .utils.checking import Checking
 from .utils.request import API
-from conftest_api import TestData
 
 
 @allure.epic('Connection DB')
 @allure.suite('Test Connection DB')
 class TestConnectionDB:
     @allure.title('Complex')
-    def test_complex2(self):
-        API.check_full_cycle(TestData.sid)
+    def test_complex(self):
+        API.check_full_cycle(TestData.token)
 
 
 @allure.epic('Performance DB')
@@ -25,9 +25,9 @@ class TestConnectionDB:
 class TestCapacity:
     @allure.title('test_capacity_db')
     def test_capacity_db(self):
-        start_mb_value = API.get_profile().json()["content"][4][1]
+        start_mb_value = API.get_profile(TestData.token).json()['data']["content"][4][1]
         print('Db size mb:', start_mb_value)
-        result_db_create = API.post_db_create(TestData.sid)
+        result_db_create = API.post_db_create(TestData.token)
         print('Status db is :', result_db_create.json())
         db_uuid = result_db_create.json()["db_uuid"]
         print("db_uuid", db_uuid)
@@ -63,15 +63,15 @@ class TestCapacity:
         res = cursor.fetchall()
         # print(res)
         time.sleep(40)
-        finish_mb_value = API.get_profile().json()["content"][4][1]
+        finish_mb_value = API.get_profile(TestData.token).json()['data']["content"][4][1]
         # print('amount', finish_mb_value.text)
         req = requests.post('http://cisdb1.areso.pro:9090/list', json={"token": "SuperSecret"})
         pprint(req.text)
         print('Db size mb after insert:', finish_mb_value)
-        cr = API.post_db_create(TestData.sid)
+        cr = API.post_db_create(TestData.token)
         print(cr.status_code)
         assert int(finish_mb_value) > 0, 'Value db_size should be more than 0.'
-        result_post_db_delete = API.delete_db(f"{db_uuid}", TestData.sid)
+        result_post_db_delete = API.delete_db(f"{db_uuid}", TestData.token)
         Checking.check_status_code(result_post_db_delete, 200)
 
 
@@ -85,7 +85,8 @@ class TestGET:
 
     @allure.title('Get profile information.')
     def test_get_profile(self):
-        result_get = API.get_profile()
+        result_get = API.get_profile(TestData.token)
+        print(result_get.text)
         Checking.check_status_code(result_get, 200)
 
     @allure.title('List db_types.')
@@ -160,26 +161,26 @@ class TestPOST:
     def test_post_login(self):
         print('\n\nMethod POST: login')
         result_post = API.post_login(TestData.body)
-        status_code, sid = result_post
+        status_code = result_post
         Checking.check_status_code(status_code, 200)
 
     @allure.title('test_post_is_logged')
     def test_post_is_logged(self):
         print('\n\nMethod POST: is_logged')
-        result_post = API.post_is_logged(TestData.body)
+        result_post = API.post_is_logged(TestData.token)
         status_code = result_post
         Checking.check_status_code(status_code, 200)
 
     @allure.title('Post db_create')
     def test_post_db_create(self):
         print('\n\nMethod POST: db_create')
-        result_post_db_list = API.post_db_create(TestData.sid)
+        result_post_db_list = API.post_db_create(TestData.token)
         Checking.check_status_code(result_post_db_list, 201)
 
     @allure.title('Post db_create with wrong db_type.')
     def test_post_db_create_with_wrong_values_dbtype(self):
         print('\n\nMethod POST: post_db_create_wrong_value_dbtype')
-        result_post_db_list = API.post_db_create_wrong_value_db_type(TestData.sid)
+        result_post_db_list = API.post_db_create_wrong_value_db_type(TestData.token)
         Checking.check_status_code(result_post_db_list, 400)
         Checking.check_json_search_word_in_value(result_post_db_list, "content",
                                                  "error: DB type isn't found or isn't available for order")
@@ -187,7 +188,7 @@ class TestPOST:
     @allure.title('Post db_create with wrong db_version.')
     def test_post_db_create_with_wrong_values_db_version(self):
         print('\n\nMethod POST: post_db_create_wrong_value_db_versione')
-        result_post_db_list = API.post_db_create_wrong_value_db_version(TestData.sid)
+        result_post_db_list = API.post_db_create_wrong_value_db_version(TestData.token)
         Checking.check_status_code(result_post_db_list, 400)
         Checking.check_json_search_word_in_value(result_post_db_list, "content",
                                                  "error: DB version isn't found or isn't available for order")
@@ -195,7 +196,7 @@ class TestPOST:
     @allure.title('Post db_create with wrong env.')
     def test_post_db_create_with_wrong_values_env(self):
         print('\n\nMethod POST: post_db_create_wrong_value_env')
-        result_post_db_list = API.post_db_create_wrong_value_env(TestData.sid)
+        result_post_db_list = API.post_db_create_wrong_value_env(TestData.token)
         Checking.check_status_code(result_post_db_list, 400)
         Checking.check_json_search_word_in_value(result_post_db_list, "content",
                                                  "error: DB environment isn't found or isn't available for order")
@@ -203,7 +204,7 @@ class TestPOST:
     @allure.title('Post db_create with wrong region.')
     def test_post_db_create_with_wrong_values_region(self):
         print('\n\nMethod POST: post_db_create_wrong_value_region')
-        result_post_db_list = API.post_db_create_wrong_value_region(TestData.sid)
+        result_post_db_list = API.post_db_create_wrong_value_region(TestData.token)
         print(result_post_db_list.json())
         Checking.check_status_code(result_post_db_list, 400)
         Checking.check_json_search_word_in_value(result_post_db_list, "content",
@@ -212,18 +213,18 @@ class TestPOST:
     @allure.title('Post db_list')
     def test_post_db_list(self):
         print('\n\nMethod POST: db_list')
-        result_post_db_list = API.post_db_list(TestData.sid)
+        result_post_db_list = API.post_db_list(TestData.token)
         Checking.check_status_code(result_post_db_list, 200)
 
     @allure.title('Post db list with filter')
     def test_post_db_list_with_filter(self):
         print('\n\nMethod POST: db_list_with_filter')
-        list_db = API.post_db_list(TestData.sid)
+        list_db = API.post_db_list(TestData.token)
         json_list_db = list_db.json()
         try:
-            first_db_uuid = list(json_list_db['content'].keys())[-1]
+            first_db_uuid = list(json_list_db['data'])[-1]
             print('first_db_uuid', first_db_uuid)
-            result_post_db_list = API.delete_db(TestData.sid, first_db_uuid)
+            result_post_db_list = API.delete_db(first_db_uuid, TestData.token)
             Checking.check_status_code(result_post_db_list, 200)
         except IndexError as ex:
             print(ex)
@@ -233,11 +234,11 @@ class TestPOST:
     def test_post_change_password(self):
         print('\n\nMethod POST: change password')
         new_password = TestData.new_password
-        result_post_change_password = API.post_change_password(TestData.sid, TestData.old_password, new_password)
+        result_post_change_password = API.post_change_password(TestData.token, TestData.old_password, new_password)
         Checking.check_status_code(result_post_change_password, 200)
         Checking.check_json_search_word_in_value(result_post_change_password, "content",
                                                  "msg[31]: password successfully updated")
-        result_post_change_password = API.post_change_password(TestData.sid, new_password, TestData.old_password)
+        result_post_change_password = API.post_change_password(TestData.token, new_password, TestData.old_password)
         Checking.check_status_code(result_post_change_password, 200)
         Checking.check_json_search_word_in_value(result_post_change_password, "content",
                                                  "msg[31]: password successfully updated")
@@ -246,13 +247,12 @@ class TestPOST:
     @pytest.mark.xfail()
     def test_delete_db(self):
         print('\n\nMethod DELETE: delete_db')
-        list_db = API.post_db_list(TestData.sid)
+        list_db = API.post_db_list(TestData.token)
         json_list_db = list_db.json()
-        print('#' * 20, len(list(json_list_db['content'])))
         try:
-            first_db_uuid = list(json_list_db['content'].keys())[-1]
+            first_db_uuid = list(json_list_db['data'])[-1]
             print(first_db_uuid)
-            result_post_db_delete = API.delete_db(first_db_uuid, TestData.sid)
+            result_post_db_delete = API.delete_db(first_db_uuid, TestData.token)
             Checking.check_status_code(result_post_db_delete, 200)
         except IndexError as ex:
             print(ex)
