@@ -250,10 +250,6 @@ class API(TestData):
 
     @staticmethod
     def post_db_create_wrong_value_db_type(token: dict):
-        """
-        :param token:
-        :return:
-        """
         with allure.step('post_db_create_wrong_value_db_type'):
             post_resource = '/db_create'  # Resource for method
             post_url = TestData.base_url + post_resource
