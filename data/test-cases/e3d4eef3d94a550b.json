@@ -1,0 +1,1136 @@
+{
+  "uid" : "e3d4eef3d94a550b",
+  "name" : "test_create_database",
+  "fullName" : "tests_ui.test_ui.TestProfilePage#test_create_database",
+  "historyId" : "4762f7b87391625d86f9ea8dbdd3b406",
+  "time" : {
+    "start" : 1708977179965,
+    "stop" : 1708977181978,
+    "duration" : 2013
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert (72 + 1) == 72\n +  where 72 = int('72')\n +  and   72 = int('72')",
+  "statusTrace" : "self = <tests_ui.test_ui.TestUI.TestProfilePage object at 0x7fc4eae63bb0>\ndriver = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"93dc6d69a00ddbe647918e2e45d6c7ba\")>\n\n    @allure.title('test_create_database')\n    def test_create_database(self, driver):\n        page = LoginPage(driver, TestDataLinks.register_page)\n        page.open()\n        page.login_user()\n        page = ProfilePage(driver)\n        page.click_button_status()\n        amount_databases = page.get_status_data()['db qty used']\n    \n        page.click_button_databases()\n        page.click_buttons_create_new_db()\n    \n        page.click_button_status()\n        amount_after_create = page.get_status_data()['db qty used']\n>       assert int(amount_databases) + 1 == int(amount_after_create)\nE       AssertionError: assert (72 + 1) == 72\nE        +  where 72 = int('72')\nE        +  and   72 = int('72')\n\ntests_ui/test_ui.py:67: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "driver",
+    "time" : {
+      "start" : 1708977179684,
+      "stop" : 1708977179964,
+      "duration" : 280
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: assert (72 + 1) == 72\n +  where 72 = int('72')\n +  and   72 = int('72')",
+    "statusTrace" : "self = <tests_ui.test_ui.TestUI.TestProfilePage object at 0x7fc4eae63bb0>\ndriver = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"93dc6d69a00ddbe647918e2e45d6c7ba\")>\n\n    @allure.title('test_create_database')\n    def test_create_database(self, driver):\n        page = LoginPage(driver, TestDataLinks.register_page)\n        page.open()\n        page.login_user()\n        page = ProfilePage(driver)\n        page.click_button_status()\n        amount_databases = page.get_status_data()['db qty used']\n    \n        page.click_button_databases()\n        page.click_buttons_create_new_db()\n    \n        page.click_button_status()\n        amount_after_create = page.get_status_data()['db qty used']\n>       assert int(amount_databases) + 1 == int(amount_after_create)\nE       AssertionError: assert (72 + 1) == 72\nE        +  where 72 = int('72')\nE        +  and   72 = int('72')\n\ntests_ui/test_ui.py:67: AssertionError",
+    "steps" : [ {
+      "name" : "Open page: https://oblache.areso.pro/register.html",
+      "time" : {
+        "start" : 1708977179965,
+        "stop" : 1708977180266,
+        "duration" : 301
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "login_user",
+      "time" : {
+        "start" : 1708977180266,
+        "stop" : 1708977181076,
+        "duration" : 810
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Enter email.",
+        "time" : {
+          "start" : 1708977180266,
+          "stop" : 1708977180319,
+          "duration" : 53
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Check element is present: ('xpath', '//input[@id=\"inp_loginform_email\"]')",
+          "time" : {
+            "start" : 1708977180266,
+            "stop" : 1708977180276,
+            "duration" : 10
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 1,
+        "hasContent" : true
+      }, {
+        "name" : "Enter password.",
+        "time" : {
+          "start" : 1708977180319,
+          "stop" : 1708977180361,
+          "duration" : 42
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Check element is present: ('xpath', '//input[@id=\"inp_loginform_password\"]')",
+          "time" : {
+            "start" : 1708977180319,
+            "stop" : 1708977180328,
+            "duration" : 9
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 1,
+        "hasContent" : true
+      }, {
+        "name" : "Click button \"Login\"",
+        "time" : {
+          "start" : 1708977180361,
+          "stop" : 1708977180425,
+          "duration" : 64
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Check element is visible and clickable: ('xpath', '//input[@id=\"inp_regform_login_submit\"]')",
+          "time" : {
+            "start" : 1708977180361,
+            "stop" : 1708977180397,
+            "duration" : 36
+          },
+          "status" : "passed",
+          "steps" : [ {
+            "name" : "Check element is clickable",
+            "time" : {
+              "start" : 1708977180379,
+              "stop" : 1708977180397,
+              "duration" : 18
+            },
+            "status" : "passed",
+            "steps" : [ {
+              "name" : "Check element is clickable: ('xpath', '//input[@id=\"inp_regform_login_submit\"]')",
+              "time" : {
+                "start" : 1708977180379,
+                "stop" : 1708977180397,
+                "duration" : 18
+              },
+              "status" : "passed",
+              "steps" : [ ],
+              "attachments" : [ ],
+              "parameters" : [ ],
+              "attachmentsCount" : 0,
+              "shouldDisplayMessage" : false,
+              "stepsCount" : 0,
+              "hasContent" : false
+            } ],
+            "attachments" : [ ],
+            "parameters" : [ {
+              "name" : "locator",
+              "value" : "('xpath', '//input[@id=\"inp_regform_login_submit\"]')"
+            } ],
+            "attachmentsCount" : 0,
+            "shouldDisplayMessage" : false,
+            "stepsCount" : 1,
+            "hasContent" : true
+          } ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 2,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 3,
+        "hasContent" : true
+      }, {
+        "name" : "Check url is present: https://oblache.areso.pro/profile.html",
+        "time" : {
+          "start" : 1708977180425,
+          "stop" : 1708977181076,
+          "duration" : 651
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 9,
+      "hasContent" : true
+    }, {
+      "name" : "Click button Status.",
+      "time" : {
+        "start" : 1708977181076,
+        "stop" : 1708977181127,
+        "duration" : 51
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Check element is visible and clickable: ('xpath', '//button[@id=\"menu_button_status\"]')",
+        "time" : {
+          "start" : 1708977181076,
+          "stop" : 1708977181106,
+          "duration" : 30
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Check element is clickable",
+          "time" : {
+            "start" : 1708977181091,
+            "stop" : 1708977181106,
+            "duration" : 15
+          },
+          "status" : "passed",
+          "steps" : [ {
+            "name" : "Check element is clickable: ('xpath', '//button[@id=\"menu_button_status\"]')",
+            "time" : {
+              "start" : 1708977181091,
+              "stop" : 1708977181106,
+              "duration" : 15
+            },
+            "status" : "passed",
+            "steps" : [ ],
+            "attachments" : [ ],
+            "parameters" : [ ],
+            "attachmentsCount" : 0,
+            "shouldDisplayMessage" : false,
+            "stepsCount" : 0,
+            "hasContent" : false
+          } ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "locator",
+            "value" : "('xpath', '//button[@id=\"menu_button_status\"]')"
+          } ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 1,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 2,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 3,
+      "hasContent" : true
+    }, {
+      "name" : "get_status_data",
+      "time" : {
+        "start" : 1708977181127,
+        "stop" : 1708977181522,
+        "duration" : 395
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Check elements are visible: ('xpath', '//tbody[@id=\"tbody_status\"]/tr')",
+        "time" : {
+          "start" : 1708977181128,
+          "stop" : 1708977181182,
+          "duration" : 54
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[1]/td[2]')",
+        "time" : {
+          "start" : 1708977181182,
+          "stop" : 1708977181190,
+          "duration" : 8
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[1]/td[1]')",
+        "time" : {
+          "start" : 1708977181215,
+          "stop" : 1708977181222,
+          "duration" : 7
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[2]/td[2]')",
+        "time" : {
+          "start" : 1708977181228,
+          "stop" : 1708977181235,
+          "duration" : 7
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[2]/td[1]')",
+        "time" : {
+          "start" : 1708977181241,
+          "stop" : 1708977181248,
+          "duration" : 7
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[3]/td[2]')",
+        "time" : {
+          "start" : 1708977181254,
+          "stop" : 1708977181262,
+          "duration" : 8
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[3]/td[1]')",
+        "time" : {
+          "start" : 1708977181268,
+          "stop" : 1708977181275,
+          "duration" : 7
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[4]/td[2]')",
+        "time" : {
+          "start" : 1708977181281,
+          "stop" : 1708977181288,
+          "duration" : 7
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[4]/td[1]')",
+        "time" : {
+          "start" : 1708977181293,
+          "stop" : 1708977181301,
+          "duration" : 8
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[5]/td[2]')",
+        "time" : {
+          "start" : 1708977181306,
+          "stop" : 1708977181316,
+          "duration" : 10
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[5]/td[1]')",
+        "time" : {
+          "start" : 1708977181322,
+          "stop" : 1708977181329,
+          "duration" : 7
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[6]/td[2]')",
+        "time" : {
+          "start" : 1708977181335,
+          "stop" : 1708977181342,
+          "duration" : 7
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[6]/td[1]')",
+        "time" : {
+          "start" : 1708977181348,
+          "stop" : 1708977181355,
+          "duration" : 7
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[7]/td[2]')",
+        "time" : {
+          "start" : 1708977181361,
+          "stop" : 1708977181503,
+          "duration" : 142
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[7]/td[1]')",
+        "time" : {
+          "start" : 1708977181509,
+          "stop" : 1708977181516,
+          "duration" : 7
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Get status data.",
+        "time" : {
+          "start" : 1708977181522,
+          "stop" : 1708977181522,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status data is: {'email': 'nodata', 'is blocked?': 'nodata', 'is db creation allowed?': 'nodata', 'disk db quota, mb': 'nodata', 'disk db used': 'nodata', 'db qty quota, mb': 'nodata', 'db qty used': '72'}",
+          "time" : {
+            "start" : 1708977181522,
+            "stop" : 1708977181522,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 1,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 17,
+      "hasContent" : true
+    }, {
+      "name" : "Click \"Databases\" button.",
+      "time" : {
+        "start" : 1708977181522,
+        "stop" : 1708977181572,
+        "duration" : 50
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Check element is visible and clickable: ('xpath', '//button[@id = \"menu_button_databases\"]')",
+        "time" : {
+          "start" : 1708977181522,
+          "stop" : 1708977181551,
+          "duration" : 29
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Check element is clickable",
+          "time" : {
+            "start" : 1708977181536,
+            "stop" : 1708977181551,
+            "duration" : 15
+          },
+          "status" : "passed",
+          "steps" : [ {
+            "name" : "Check element is clickable: ('xpath', '//button[@id = \"menu_button_databases\"]')",
+            "time" : {
+              "start" : 1708977181536,
+              "stop" : 1708977181551,
+              "duration" : 15
+            },
+            "status" : "passed",
+            "steps" : [ ],
+            "attachments" : [ ],
+            "parameters" : [ ],
+            "attachmentsCount" : 0,
+            "shouldDisplayMessage" : false,
+            "stepsCount" : 0,
+            "hasContent" : false
+          } ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "locator",
+            "value" : "('xpath', '//button[@id = \"menu_button_databases\"]')"
+          } ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 1,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 2,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 3,
+      "hasContent" : true
+    }, {
+      "name" : "click_buttons_create_new_db",
+      "time" : {
+        "start" : 1708977181572,
+        "stop" : 1708977181668,
+        "duration" : 96
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Click \"Create new DB\" button.",
+        "time" : {
+          "start" : 1708977181572,
+          "stop" : 1708977181630,
+          "duration" : 58
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Check element is visible and clickable: ('xpath', '//button[@id=\"btn_new_db\"]')",
+          "time" : {
+            "start" : 1708977181572,
+            "stop" : 1708977181601,
+            "duration" : 29
+          },
+          "status" : "passed",
+          "steps" : [ {
+            "name" : "Check element is clickable",
+            "time" : {
+              "start" : 1708977181586,
+              "stop" : 1708977181601,
+              "duration" : 15
+            },
+            "status" : "passed",
+            "steps" : [ {
+              "name" : "Check element is clickable: ('xpath', '//button[@id=\"btn_new_db\"]')",
+              "time" : {
+                "start" : 1708977181586,
+                "stop" : 1708977181601,
+                "duration" : 15
+              },
+              "status" : "passed",
+              "steps" : [ ],
+              "attachments" : [ ],
+              "parameters" : [ ],
+              "attachmentsCount" : 0,
+              "shouldDisplayMessage" : false,
+              "stepsCount" : 0,
+              "hasContent" : false
+            } ],
+            "attachments" : [ ],
+            "parameters" : [ {
+              "name" : "locator",
+              "value" : "('xpath', '//button[@id=\"btn_new_db\"]')"
+            } ],
+            "attachmentsCount" : 0,
+            "shouldDisplayMessage" : false,
+            "stepsCount" : 1,
+            "hasContent" : true
+          } ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 2,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 3,
+        "hasContent" : true
+      }, {
+        "name" : "Click \"Create new DB\" button.",
+        "time" : {
+          "start" : 1708977181630,
+          "stop" : 1708977181668,
+          "duration" : 38
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Check element is clickable",
+          "time" : {
+            "start" : 1708977181630,
+            "stop" : 1708977181648,
+            "duration" : 18
+          },
+          "status" : "passed",
+          "steps" : [ {
+            "name" : "Check element is clickable: ('xpath', '//button[@id=\"btn_create_db\"]')",
+            "time" : {
+              "start" : 1708977181630,
+              "stop" : 1708977181648,
+              "duration" : 18
+            },
+            "status" : "passed",
+            "steps" : [ ],
+            "attachments" : [ ],
+            "parameters" : [ ],
+            "attachmentsCount" : 0,
+            "shouldDisplayMessage" : false,
+            "stepsCount" : 0,
+            "hasContent" : false
+          } ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "locator",
+            "value" : "('xpath', '//button[@id=\"btn_create_db\"]')"
+          } ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 1,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 2,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 7,
+      "hasContent" : true
+    }, {
+      "name" : "Click button Status.",
+      "time" : {
+        "start" : 1708977181669,
+        "stop" : 1708977181714,
+        "duration" : 45
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Check element is visible and clickable: ('xpath', '//button[@id=\"menu_button_status\"]')",
+        "time" : {
+          "start" : 1708977181669,
+          "stop" : 1708977181695,
+          "duration" : 26
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Check element is clickable",
+          "time" : {
+            "start" : 1708977181680,
+            "stop" : 1708977181695,
+            "duration" : 15
+          },
+          "status" : "passed",
+          "steps" : [ {
+            "name" : "Check element is clickable: ('xpath', '//button[@id=\"menu_button_status\"]')",
+            "time" : {
+              "start" : 1708977181680,
+              "stop" : 1708977181695,
+              "duration" : 15
+            },
+            "status" : "passed",
+            "steps" : [ ],
+            "attachments" : [ ],
+            "parameters" : [ ],
+            "attachmentsCount" : 0,
+            "shouldDisplayMessage" : false,
+            "stepsCount" : 0,
+            "hasContent" : false
+          } ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "locator",
+            "value" : "('xpath', '//button[@id=\"menu_button_status\"]')"
+          } ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 1,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 2,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 3,
+      "hasContent" : true
+    }, {
+      "name" : "get_status_data",
+      "time" : {
+        "start" : 1708977181714,
+        "stop" : 1708977181978,
+        "duration" : 264
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Check elements are visible: ('xpath', '//tbody[@id=\"tbody_status\"]/tr')",
+        "time" : {
+          "start" : 1708977181714,
+          "stop" : 1708977181765,
+          "duration" : 51
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[1]/td[2]')",
+        "time" : {
+          "start" : 1708977181765,
+          "stop" : 1708977181774,
+          "duration" : 9
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[1]/td[1]')",
+        "time" : {
+          "start" : 1708977181780,
+          "stop" : 1708977181784,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[2]/td[2]')",
+        "time" : {
+          "start" : 1708977181789,
+          "stop" : 1708977181794,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[2]/td[1]')",
+        "time" : {
+          "start" : 1708977181799,
+          "stop" : 1708977181804,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[3]/td[2]')",
+        "time" : {
+          "start" : 1708977181809,
+          "stop" : 1708977181814,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[3]/td[1]')",
+        "time" : {
+          "start" : 1708977181821,
+          "stop" : 1708977181891,
+          "duration" : 70
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[4]/td[2]')",
+        "time" : {
+          "start" : 1708977181897,
+          "stop" : 1708977181902,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[4]/td[1]')",
+        "time" : {
+          "start" : 1708977181907,
+          "stop" : 1708977181911,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[5]/td[2]')",
+        "time" : {
+          "start" : 1708977181917,
+          "stop" : 1708977181922,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[5]/td[1]')",
+        "time" : {
+          "start" : 1708977181927,
+          "stop" : 1708977181932,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[6]/td[2]')",
+        "time" : {
+          "start" : 1708977181937,
+          "stop" : 1708977181941,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[6]/td[1]')",
+        "time" : {
+          "start" : 1708977181947,
+          "stop" : 1708977181952,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[7]/td[2]')",
+        "time" : {
+          "start" : 1708977181957,
+          "stop" : 1708977181962,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Check element is present: ('xpath', '//tbody[@id=\"tbody_status\"]/tr[7]/td[1]')",
+        "time" : {
+          "start" : 1708977181968,
+          "stop" : 1708977181972,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Get status data.",
+        "time" : {
+          "start" : 1708977181977,
+          "stop" : 1708977181978,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status data is: {'email': 'test4@mail.com', 'is blocked?': '0', 'is db creation allowed?': '1', 'disk db quota, mb': '4', 'disk db used': '0', 'db qty quota, mb': '100', 'db qty used': '72'}",
+          "time" : {
+            "start" : 1708977181977,
+            "stop" : 1708977181978,
+            "duration" : 1
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 1,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 17,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "stepsCount" : 67,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "driver::0",
+    "time" : {
+      "start" : 1708977181980,
+      "stop" : 1708977182152,
+      "duration" : 172
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "c470f06e8e90555a",
+      "name" : "Screenshot 2024-02-26 19:53:02.092637",
+      "source" : "c470f06e8e90555a.png",
+      "type" : "image/png",
+      "size" : 35754
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : true
+  } ],
+  "labels" : [ {
+    "name" : "epic",
+    "value" : "UI Tests"
+  }, {
+    "name" : "suite",
+    "value" : "Test Profile Page."
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_ui"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestUI"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1536-61"
+  }, {
+    "name" : "thread",
+    "value" : "1787-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_ui.test_ui"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "e3d4eef3d94a550b.json",
+  "parameterValues" : [ ]
+}
