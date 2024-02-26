@@ -16,16 +16,15 @@ class TestData:
     try:
         body = {"email": email, "password": f'{old_password}'}
         result = requests.post('https://dbend.areso.pro/login', json=body)
-        print(result.text)
         token = result.json()['data']['token']
         if token != {}:
             new_password, old_password = old_password, new_password
             print(token)
-    except:
+    except Exception as ex:
+        print(ex)
         old_password, new_password = new_password, old_password
         body = {"email": email, "password": f'{old_password}'}
         result = requests.post('https://dbend.areso.pro/login', json=body)
-        print(result.text)
         token = result.json()['data']['token']
         print(token)
 
@@ -52,5 +51,4 @@ class TestData:
         assert db.is_connected() is True
         return db
 
-
-# TestData.connection('065db4a3-75f8-7c2f-8000-d20793ec33a5')
+# TestData()

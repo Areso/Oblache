@@ -4,6 +4,9 @@ from selenium.webdriver.common.by import By
 class Locators:
     IDS = (By.XPATH, "//*[@id]")
 
+    # Main page
+    LINKS = (By.XPATH, '//a[@href]')
+
     # Login page
     LOGIN_BUTTON = (By.XPATH, '//button[@id="btn_opentab_login"]')
     REGISTER_BUTTON = (By.XPATH, '//button[@id="btn_opentab_register"]')
@@ -14,3 +17,12 @@ class Locators:
     INPUT_LOGIN = (By.XPATH, '//input[@id="inp_loginform_email"]')
     INPUT_PASSWORD = (By.XPATH, '//input[@id="inp_loginform_password"]')
 
+    # Profile page
+    DATABASE_BUTTON = (By.XPATH, '//button[@id = "menu_button_databases"]')
+    STATUS_BUTTON = (By.XPATH, '//button[@id="menu_button_status"]')
+
+    CREATE_DATABASE_BUTTON = (By.XPATH, '//button[@id="btn_new_db"]')
+    CREATE_NEW_DATABASE_BUTTON = (By.XPATH, '//button[@id="btn_create_db"]')
+
+    LIST_DATABASES = (By.XPATH, '//tbody[@id="tbody_dbs"]/tr')
+    LEN_TABLE_STRINGS = (By.XPATH, '//tbody[@id="tbody_status"]/tr')

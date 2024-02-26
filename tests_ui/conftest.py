@@ -7,7 +7,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 
-@pytest.fixture(scope='function')
+@pytest.fixture()
 def driver():
     print('\nstart browser...')
     chrome_options = Options()

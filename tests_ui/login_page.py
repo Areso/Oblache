@@ -17,7 +17,13 @@ class LoginPage(BasePage):
         with allure.step(f'First list is: {list_ids}'):
             pass
         second_list = []
-        [second_list.append(ids) for ids in list_ids if ids not in second_list]
+        for ids in list_ids:
+            if ids not in second_list:
+                second_list.append(ids)
+            else:
+                with allure.step(f'{ids} is repeated.'):
+                    assert ids is False, f'{ids} is repeated!'
+        # [second_list.append(ids) for ids in list_ids if ids not in second_list]
         with allure.step(f'If id not in first list second_list.append. Second list is: {second_list}'):
             pass
         pprint(list_ids)
@@ -41,6 +47,7 @@ class LoginPage(BasePage):
             assert self.element_is_present_and_clickable(
                 self.locators.INPUT_REGISTER_BUTTON), 'Register(input) button is not present or clickable.'
 
+    @allure.step('login_user')
     def login_user(self):
         with allure.step('Enter email.'):
             self.element_is_present(self.locators.INPUT_LOGIN).send_keys(TestData.email)
