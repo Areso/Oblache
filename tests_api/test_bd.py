@@ -256,6 +256,8 @@ class TestPOST:
         start = datetime.now().time().strftime('%H:%M')
         print('Start', start)
         while True:
+            finish = datetime.now().time().strftime('%H:%M')
+            print('Finish', finish)
             list_db = API.post_db_list(TestData.token)
             json_list_db = list_db.json()['data']
             if json_list_db == {}:
@@ -264,11 +266,12 @@ class TestPOST:
                 first_db_uuid = list(json_list_db)[0]
                 result_post_db_delete = API.delete_db(first_db_uuid, TestData.token)
                 print(result_post_db_delete.json())
-                finish = datetime.now().time().strftime('%H:%M')
-                print('Finish', finish)
                 time.sleep(5)
                 if start != finish:
                     break
+        list_db = API.post_db_list(TestData.token)
+        json_list_db = list_db.json()['data']
+        assert json_list_db == {}
 
 
 
