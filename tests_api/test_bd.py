@@ -1,5 +1,6 @@
 import random
 import time
+from datetime import datetime
 from pprint import pprint
 from string import ascii_letters
 
@@ -252,22 +253,23 @@ class TestPOST:
         '''
     @allure.title('test_delete_all_created_db')
     def test_delete_all_created_db(self):
-        start_time = int(data.time.split('_')[-1][-1])
-        print(start_time)
+        start = datetime.now().time().strftime('%H:%M')
+        print('Start', start)
         while True:
             list_db = API.post_db_list(TestData.token)
             json_list_db = list_db.json()['data']
             if json_list_db == {}:
                 break
-            first_db_uuid = list(json_list_db)[0]
-            result_post_db_delete = API.delete_db(first_db_uuid, TestData.token)
-            print(result_post_db_delete.json())
-            finish_time = data.time.split('_')[-1][-1]
-            print(finish_time)
-            end_time = int(finish_time) - int(start_time)
-            print(end_time)
-            if abs(end_time) > 1:
-                break
+            else:
+                first_db_uuid = list(json_list_db)[0]
+                result_post_db_delete = API.delete_db(first_db_uuid, TestData.token)
+                print(result_post_db_delete.json())
+                finish = datetime.now().time().strftime('%H:%M')
+                print('Finish', finish)
+                time.sleep(5)
+                if start != finish:
+                    break
+
 
 
 
