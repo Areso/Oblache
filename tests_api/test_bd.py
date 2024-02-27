@@ -265,8 +265,8 @@ class TestPOST:
             finish_time = data.time.split('_')[-1][-1]
             print(finish_time)
             end_time = int(finish_time) - int(start_time)
-            print(abs(end_time))
-            if end_time > 1:
+            print(end_time)
+            if abs(end_time) > 1:
                 break
 
 
