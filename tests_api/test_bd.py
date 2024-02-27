@@ -206,7 +206,7 @@ class TestPOST:
         Checking.check_status_code(result_post_db_list, 200)
 
     @allure.title('Post db list with filter')
-    @pytest.mark.xfail('Reason: There are databases that need to be deleted manually.')
+    @pytest.mark.xfail(reason='There are databases that need to be deleted manually.')
     def test_post_db_list_with_filter(self):
         list_db = API.post_db_list(TestData.token)
         json_list_db = list_db.json()
@@ -231,7 +231,7 @@ class TestPOST:
                                                  "msg[31]: password successfully updated")
 
     @allure.title('delete_db')
-    @pytest.mark.xfail('Reason: When using this method during a test run, the database may be in deleting status.')
+    @pytest.mark.xfail(reason='When using this method during a test run, the database may be in deleting status.')
     def test_delete_db(self):
         list_db = API.post_db_list(TestData.token)
         json_list_db = list_db.json()
