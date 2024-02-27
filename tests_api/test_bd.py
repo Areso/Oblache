@@ -64,12 +64,11 @@ class TestCapacity:
         # print(res)
         time.sleep(40)
         finish_mb_value = API.get_profile(TestData.token).json()['data']["content"][4][1]
-        # print('amount', finish_mb_value.text)
         req = requests.post('http://cisdb1.areso.pro:9090/list', json={"token": "SuperSecret"})
         pprint(req.text)
         print('Db size mb after insert:', finish_mb_value)
-        cr = API.post_db_create(TestData.token)
-        print(cr.status_code)
+        create_new_db = API.post_db_create(TestData.token)
+        print(create_new_db.status_code)
         assert int(finish_mb_value) > 0, 'Value db_size should be more than 0.'
         result_post_db_delete = API.delete_db(f"{db_uuid}", TestData.token)
         Checking.check_status_code(result_post_db_delete, 200)
@@ -86,7 +85,6 @@ class TestGET:
     @allure.title('Get profile information.')
     def test_get_profile(self):
         result_get = API.get_profile(TestData.token)
-        print(result_get.text)
         Checking.check_status_code(result_get, 200)
 
     @allure.title('List db_types.')
@@ -126,14 +124,12 @@ class TestPOST:
     @pytest.mark.xfail()
     @allure.title('Post registration')
     def test_post_registration(self):
-        print('\n\nMethod POST: registration')
         result_post = API.post_registration()
         status_code = result_post
         Checking.check_status_code(status_code, 201)
 
     @allure.title('Post registration mail any countries')
     def test_post_registration_with_variety_mail(self):
-        print('\n\nMethod POST: registration')
         result_post = API.post_registration_variety_email(random.choice(['gmail', 'mail', 'yandex']),
                                                           random.choice(['com', 'ru', 'by']))
         status_code = result_post
@@ -142,7 +138,6 @@ class TestPOST:
 
     @allure.title('Post registration mail bg')
     def test_post_registration_for_bulgaria(self):
-        print('\n\nMethod POST: registration')
         result_post = API.post_registration_variety_email(random.choice(['gmail', 'mail', 'yandex']), 'bg')
         status_code = result_post
         Checking.check_status_code(status_code, 201)
@@ -150,7 +145,6 @@ class TestPOST:
 
     @allure.title('Post registration email is taken')
     def test_post_registration_email_is_taken(self):
-        print('\n\nMethod POST: registration')
         result_post = API.post_registration()
         status_code = result_post
         Checking.check_status_code(status_code, 400)
@@ -159,25 +153,27 @@ class TestPOST:
 
     @allure.title('Post login')
     def test_post_login(self):
-        print('\n\nMethod POST: login')
         result_post = API.post_login(TestData.body)
         Checking.check_status_code(result_post, 200)
 
     @allure.title('test_post_is_logged')
     def test_post_is_logged(self):
-        print('\n\nMethod POST: is_logged')
         result_post = API.post_is_logged(TestData.token)
+        print(result_post.json())
         Checking.check_status_code(result_post, 200)
+
+    @allure.title('test_post_is_logged_with_wrong_token')
+    def test_post_is_logged_with_wrong_token(self):
+        result_post = API.post_is_logged_with_wrong_token()
+        Checking.check_status_code(result_post, 401)
 
     @allure.title('Post db_create')
     def test_post_db_create(self):
-        print('\n\nMethod POST: db_create')
         result_post_db_list = API.post_db_create(TestData.token)
         Checking.check_status_code(result_post_db_list, 201)
 
     @allure.title('Post db_create with wrong db_type.')
     def test_post_db_create_with_wrong_values_dbtype(self):
-        print('\n\nMethod POST: post_db_create_wrong_value_dbtype')
         result_post_db_list = API.post_db_create_wrong_value_db_type(TestData.token)
         Checking.check_status_code(result_post_db_list, 400)
         Checking.check_json_search_word_in_value(result_post_db_list, "content",
@@ -185,7 +181,6 @@ class TestPOST:
 
     @allure.title('Post db_create with wrong db_version.')
     def test_post_db_create_with_wrong_values_db_version(self):
-        print('\n\nMethod POST: post_db_create_wrong_value_db_versione')
         result_post_db_list = API.post_db_create_wrong_value_db_version(TestData.token)
         Checking.check_status_code(result_post_db_list, 400)
         Checking.check_json_search_word_in_value(result_post_db_list, "content",
@@ -193,7 +188,6 @@ class TestPOST:
 
     @allure.title('Post db_create with wrong env.')
     def test_post_db_create_with_wrong_values_env(self):
-        print('\n\nMethod POST: post_db_create_wrong_value_env')
         result_post_db_list = API.post_db_create_wrong_value_env(TestData.token)
         Checking.check_status_code(result_post_db_list, 400)
         Checking.check_json_search_word_in_value(result_post_db_list, "content",
@@ -201,7 +195,6 @@ class TestPOST:
 
     @allure.title('Post db_create with wrong region.')
     def test_post_db_create_with_wrong_values_region(self):
-        print('\n\nMethod POST: post_db_create_wrong_value_region')
         result_post_db_list = API.post_db_create_wrong_value_region(TestData.token)
         Checking.check_status_code(result_post_db_list, 400)
         Checking.check_json_search_word_in_value(result_post_db_list, "content",
@@ -209,18 +202,16 @@ class TestPOST:
 
     @allure.title('Post db_list')
     def test_post_db_list(self):
-        print('\n\nMethod POST: db_list')
         result_post_db_list = API.post_db_list(TestData.token)
         Checking.check_status_code(result_post_db_list, 200)
 
     @allure.title('Post db list with filter')
+    @pytest.mark.xfail('Reason: There are databases that need to be deleted manually.')
     def test_post_db_list_with_filter(self):
-        print('\n\nMethod POST: db_list_with_filter')
         list_db = API.post_db_list(TestData.token)
         json_list_db = list_db.json()
         try:
             first_db_uuid = list(json_list_db['data'])[-1]
-            print('first_db_uuid', first_db_uuid)
             result_post_db_list = API.delete_db(first_db_uuid, TestData.token)
             Checking.check_status_code(result_post_db_list, 200)
         except IndexError as ex:
@@ -229,7 +220,6 @@ class TestPOST:
 
     @allure.title('Post change password')
     def test_post_change_password(self):
-        print('\n\nMethod POST: change password')
         new_password = TestData.new_password
         result_post_change_password = API.post_change_password(TestData.token, TestData.old_password, new_password)
         Checking.check_status_code(result_post_change_password, 200)
@@ -241,9 +231,8 @@ class TestPOST:
                                                  "msg[31]: password successfully updated")
 
     @allure.title('delete_db')
-    @pytest.mark.xfail()
+    @pytest.mark.xfail('Reason: When using this method during a test run, the database may be in deleting status.')
     def test_delete_db(self):
-        print('\n\nMethod DELETE: delete_db')
         list_db = API.post_db_list(TestData.token)
         json_list_db = list_db.json()
         try:
@@ -257,3 +246,16 @@ class TestPOST:
         '''
         list(json_list_db['content'].keys())[0] #"065a5b36-e472-7398-8000-7ce3e7219464"
         '''
+
+    # def test_delete_all_created_db(self):
+    #     list_db = API.post_db_list(TestData.token)
+    #     num = len(list(list_db.json()['data']))
+    #     print(num)
+    #     list_uuid = []
+    #
+    #     for i in range(num):
+    #         list_uuid.append(list(list_db.json()['data'])[i])
+    #     print(list_uuid[-1])
+    #     print(list_uuid)
+    #     first_db_uuid = list_db.json()['data'][list_uuid[-1]]
+    #     API.delete_db(first_db_uuid, TestData.token)

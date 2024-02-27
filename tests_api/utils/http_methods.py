@@ -23,18 +23,18 @@ class HttpMethods:
         with allure.step(f'Status code: {result.status_code}'):
             pass
         with allure.step(f'Response: {result.text}'):
-            pass
-        Logger.add_response(result)
+            Logger.add_response(result)
         return result
 
     @staticmethod
-    def post(url, body=None, token=None, data=None, cookie=None):
+    def post(url, body=None, token=None, data=None, cookie=None, json=None):
         """
         :param url:
         :param body:
         :param token:
         :param data:
         :param cookie:
+        :param json
         :return:
         """
         Logger.add_request(url, method='POST')
@@ -44,21 +44,24 @@ class HttpMethods:
         with allure.step(f'Status code: {result.status_code}'):
             pass
         with allure.step(f'Params url: {url}'):
-            pass
-        with allure.step(f'Response: {result}'):
-            pass
-        Logger.add_response(result)
+            Logger.add_response(result)
         return result
 
     @staticmethod
     def post_for_delete_db(url, db_uuid, sid):
+        """
+        :param url:
+        :param db_uuid:
+        :param sid:
+        :return:
+        """
         Logger.add_request(url, method='POST')
         result = requests.post(url, data=db_uuid, cookies=sid)
         with allure.step(f'Status code: {result.status_code}'):
             pass
         with allure.step(f'Params url: {url}'):
             pass
-        with allure.step(f'Response: {result}'):
+        with allure.step(f'Response: {result.json()}'):
             pass
         Logger.add_response(result)
         return result
