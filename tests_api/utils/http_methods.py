@@ -27,13 +27,14 @@ class HttpMethods:
         return result
 
     @staticmethod
-    def post(url, body=None, token=None, data=None, cookie=None):
+    def post(url, body=None, token=None, data=None, cookie=None, json=None):
         """
         :param url:
         :param body:
         :param token:
         :param data:
         :param cookie:
+        :param json
         :return:
         """
         Logger.add_request(url, method='POST')

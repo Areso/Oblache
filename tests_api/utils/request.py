@@ -199,6 +199,21 @@ class API(TestData):
                 return result_post
 
     @staticmethod
+    def post_is_logged_with_wrong_token():
+        """
+        :return: Response
+        """
+        with allure.step('post_is_logged'):
+            post_resource = '/is_logged'
+            post_url = TestData.base_url + post_resource
+            with allure.step(f'POST {post_url}'):
+                result_post = HttpMethods.post(post_url, token=1)
+            with allure.step('Body: {"email":"your_email","password":"your_password"}'):
+                pass
+            with allure.step(f'Response JSON: {result_post.json()}'):
+                return result_post
+
+    @staticmethod
     def post_db_list(token: dict):
         """
         :param token:

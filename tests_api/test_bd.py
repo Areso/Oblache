@@ -159,7 +159,13 @@ class TestPOST:
     @allure.title('test_post_is_logged')
     def test_post_is_logged(self):
         result_post = API.post_is_logged(TestData.token)
+        print(result_post.json())
         Checking.check_status_code(result_post, 200)
+
+    @allure.title('test_post_is_logged_with_wrong_token')
+    def test_post_is_logged_with_wrong_token(self):
+        result_post = API.post_is_logged_with_wrong_token()
+        Checking.check_status_code(result_post, 401)
 
     @allure.title('Post db_create')
     def test_post_db_create(self):
