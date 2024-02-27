@@ -203,6 +203,7 @@ class TestPOST:
     @allure.title('Post db_list')
     def test_post_db_list(self):
         result_post_db_list = API.post_db_list(TestData.token)
+        print(result_post_db_list.json())
         Checking.check_status_code(result_post_db_list, 200)
 
     @allure.title('Post db list with filter')
@@ -213,6 +214,7 @@ class TestPOST:
         try:
             first_db_uuid = list(json_list_db['data'])[-1]
             result_post_db_list = API.delete_db(first_db_uuid, TestData.token)
+            print(result_post_db_list.json())
             Checking.check_status_code(result_post_db_list, 200)
         except IndexError as ex:
             print(ex)
@@ -236,9 +238,10 @@ class TestPOST:
         list_db = API.post_db_list(TestData.token)
         json_list_db = list_db.json()
         try:
-            first_db_uuid = list(json_list_db['data'])[-1]
+            first_db_uuid = list(json_list_db['data'])[0]
             print(first_db_uuid)
             result_post_db_delete = API.delete_db(first_db_uuid, TestData.token)
+            print(result_post_db_delete.json())
             Checking.check_status_code(result_post_db_delete, 200)
         except IndexError as ex:
             print(ex)
@@ -246,16 +249,14 @@ class TestPOST:
         '''
         list(json_list_db['content'].keys())[0] #"065a5b36-e472-7398-8000-7ce3e7219464"
         '''
+    @allure.title('test_delete_all_created_db')
+    def test_delete_all_created_db(self):
+        while True:
+            list_db = API.post_db_list(TestData.token)
+            json_list_db = list_db.json()['data']
+            if json_list_db == {}:
+                break
+            first_db_uuid = list(json_list_db)[0]
+            result_post_db_delete = API.delete_db(first_db_uuid, TestData.token)
+            print(result_post_db_delete.json())
 
-    # def test_delete_all_created_db(self):
-    #     list_db = API.post_db_list(TestData.token)
-    #     num = len(list(list_db.json()['data']))
-    #     print(num)
-    #     list_uuid = []
-    #
-    #     for i in range(num):
-    #         list_uuid.append(list(list_db.json()['data'])[i])
-    #     print(list_uuid[-1])
-    #     print(list_uuid)
-    #     first_db_uuid = list_db.json()['data'][list_uuid[-1]]
-    #     API.delete_db(first_db_uuid, TestData.token)
