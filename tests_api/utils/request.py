@@ -21,99 +21,127 @@ class API(TestData):
     @staticmethod
     @allure.step('get_tos')
     def get_tos():
+        """
+        Get information about databases limit.
+        :return: Response
+        """
         get_resource = '/tos'  # Resource for method GET
         get_url = TestData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
-            pass
-        result_get = HttpMethods.get(get_url)
-        return result_get
+            result_get = HttpMethods.get(get_url)
+        with allure.step(f'Response JSON: {result_get.json()}'):
+            print(result_get.json())
+            return result_get
 
     @staticmethod
     @allure.step('get_profile')
     def get_profile(token):
         """
+        Get profile information.
         :param token:
-        :return:
+        :return: Response
         """
         get_resource = '/get_profile'  # Resource for method
         get_url = TestData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
-            pass
-        result_get = HttpMethods.get(get_url, token=token)
-        return result_get
+            result_get = HttpMethods.get(get_url, token=token)
+        with allure.step(f'Response JSON: {result_get.json()}'):
+            print(result_get.json())
+            return result_get
 
     @staticmethod
     @allure.step('get_status')
     def get_status():
         """
-        :return:
+        Get profile status.
+        :return: Response
         """
         get_resource = '/get_profile'  # Resource for method
         get_url = TestData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
-            pass
-        result_get = HttpMethods.get(get_url, {
-            "queue_db_create_orders": 3,
-            "queue_db_delete_orders": 1,
-            "number_of_stuck_tasks": 0
-        }, TestData.token)
-        return result_get
+            result_get = HttpMethods.get(get_url, {
+                "queue_db_create_orders": 3,
+                "queue_db_delete_orders": 1,
+                "number_of_stuck_tasks": 0
+            }, TestData.token)
+        with allure.step(f'Response JSON: {result_get.json()}'):
+            return result_get
 
     @staticmethod
     @allure.step('get_list_db_types')
     def get_list_db_types():
+        """
+        Get databases type list.
+        :return: Response
+        """
         get_resource = '/list_dbtypes'  # Resource for method GET
         get_url = TestData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
-            pass
-        result_get = HttpMethods.get(get_url)
-        return result_get
+            result_get = HttpMethods.get(get_url)
+        with allure.step(f'Response JSON: {result_get.json()}'):
+            return result_get
 
     @staticmethod
     @allure.step('get_list_dbversions')
     def get_list_dbversions():
+        """
+        Get list databases versions.
+        :return: Response
+        """
         get_resource = '/list_dbversions'  # Resource for method GET
         get_url = TestData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
-            pass
-        result_get = HttpMethods.get(get_url)
-        return result_get
+            result_get = HttpMethods.get(get_url)
+        with allure.step(f'Response JSON: {result_get.json()}'):
+            return result_get
 
     @staticmethod
     @allure.step('get_list_envs')
     def get_list_envs():
+        """
+        Get list environments.
+        :return: Response
+        """
         get_resource = '/list_dbenvs'  # Resource for method GET
         get_url = TestData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
-            pass
-        result_get = HttpMethods.get(get_url)
-        return result_get
+            result_get = HttpMethods.get(get_url)
+        with allure.step(f'Response JSON: {result_get.json()}'):
+            return result_get
 
     @staticmethod
     @allure.step('get_list_regions')
     def get_list_regions():
+        """
+        Get list regions.
+        :return: Response
+        """
         get_resource = '/list_regions'  # Resource for method GET
         get_url = TestData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
-            pass
-        result_get = HttpMethods.get(get_url)
-        return result_get
+            result_get = HttpMethods.get(get_url)
+        with allure.step(f'Response JSON: {result_get.json()}'):
+            return result_get
 
     @staticmethod
     @allure.step('get_bad_request')
     def get_bad_request():
+        """
+        Send bad request.
+        :return: Response
+        """
         get_resource = '/bad_request'  # Resource for method GET
         get_url = TestData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
-            pass
-        result_get = HttpMethods.get(get_url)
-        return result_get
+            result_get = HttpMethods.get(get_url)
+        with allure.step(f'Response JSON: {result_get.text}'):
+            return result_get
 
     @staticmethod
     @allure.step('post_registration')
     def post_registration():
         """
-        Method for create new user
+        Method for create new user.
         :return: JSON Response
         """
         json_for_create_new_user = {"email": TestData.email, "password": TestData.old_password}
@@ -121,77 +149,66 @@ class API(TestData):
         post_resource = '/register'  # Resource for method POST
         post_url = TestData.base_url + post_resource
         with allure.step(f'POST {post_url}'):
-            pass
-        result_post = HttpMethods.post(post_url, json_for_create_new_user)
+            result_post = HttpMethods.post(post_url, json_for_create_new_user)
         return result_post
 
     @staticmethod
     @allure.step('post_registration_variety_email')
     def post_registration_variety_email(mail: str, prefix: str):
         """
-        Method for create new user
+        Method for create new user.
         :return: JSON Response
         """
         json_for_create_new_user = {"email": f'aqa{tests_api.data.data.time}@{mail}.{prefix}',
                                     "password": TestData.old_password}
-        post_resource = '/register'  # Resource for method POST
+        post_resource = '/register'
         post_url = TestData.base_url + post_resource
-        with allure.step(f'POST {post_url}'):
-            pass
-        with allure.step(f'Params:'
-                         f'{json_for_create_new_user}'):
-            pass
-        result_post = HttpMethods.post(post_url, json_for_create_new_user)
-        return result_post
+        with allure.step(f'POST {post_url}. Params:'f'{json_for_create_new_user}'):
+            result_post = HttpMethods.post(post_url, json_for_create_new_user)
+        with allure.step(f'Response JSON: {result_post.json()}'):
+            return result_post
 
     @staticmethod
     def post_login(body: dict):
         """
         :param body:
-        :return:
+        :return: Response
         """
         with allure.step('post_login'):
-            post_resource = '/login'  # Resource for method GET
+            post_resource = '/login'
             post_url = TestData.base_url + post_resource
             with allure.step(f'POST {post_url}'):
-                pass
-            result_post = HttpMethods.post(post_url, body)
-            print(result_post.text)
+                result_post = HttpMethods.post(post_url, body)
             with allure.step('Body: {"email":"your_email","password":"your_password"}'):
-                pass
-            return result_post
+                return result_post
 
     @staticmethod
     def post_is_logged(token):
         """
         :param token:
-        :return:
+        :return: Response
         """
         with allure.step('post_is_logged'):
-            post_resource = '/is_logged'  # Resource for method GET
+            post_resource = '/is_logged'
             post_url = TestData.base_url + post_resource
             with allure.step(f'POST {post_url}'):
-                pass
-            result_post = HttpMethods.post(post_url, token=token)
+                result_post = HttpMethods.post(post_url, token=token)
             with allure.step('Body: {"email":"your_email","password":"your_password"}'):
                 pass
-            print(result_post.json())
-            print(result_post.status_code)
-            return result_post
+            with allure.step(f'Response JSON: {result_post.json()}'):
+                return result_post
 
     @staticmethod
     def post_db_list(token: dict):
         """
         :param token:
-        :return:
+        :return: Response
         """
         with allure.step('post_db_list'):
             post_resource = '/db_list'  # Resource for method
             post_url = TestData.base_url + post_resource
             with allure.step(f'POST {post_url}'):
-                print(post_url)
-            result_post = HttpMethods.post(post_url, token=token)
-            print('Response body: ', result_post.json())
+                result_post = HttpMethods.post(post_url, token=token)
             return result_post
 
     @staticmethod
@@ -201,18 +218,17 @@ class API(TestData):
         :param token:
         :param old_password:
         :param new_password:
-        :return:
+        :return: Response
         """
         with allure.step('post_change_password'):
             post_resource = '/password_update'  # Resource for method
             post_url = TestData.base_url + post_resource
             with allure.step(f'POST {post_url}'):
-                print(post_url)
-            result_post = HttpMethods.post(post_url,
-                                           {"current_password": old_password, "new_password": new_password},
-                                           token=token)
-            print('Response body: ', result_post.text)
-            return result_post
+                result_post = HttpMethods.post(post_url,
+                                               {"current_password": old_password, "new_password": new_password},
+                                               token=token)
+            with allure.step(f'Response JSON: {result_post.json()}'):
+                return result_post
 
     @staticmethod
     def post_db_list_with_filter(token: dict, db_uuid: str):
@@ -220,124 +236,114 @@ class API(TestData):
         Getting information about bd by uuid
         :param token: dict
         :param db_uuid: str
-        :return:
+        :return: Response
         """
         with allure.step('post_db_list_with_filter'):
             post_resource = '/db_list'  # Resource for method
             post_url = TestData.base_url + post_resource
-            print(post_url)
+        with allure.step(f'POST {post_url}'):
             result_post = HttpMethods.post(post_url, {"db_uuid": db_uuid}, token=token)
-            print('Response body: ', result_post.text)
             return result_post
 
     @staticmethod
     def post_db_create(token: dict):
         """
         :param token:
-        :return:
+        :return: Response
         """
         with allure.step('post_db_create'):
             post_resource = '/db_create'  # Resource for method
             post_url = TestData.base_url + post_resource
-            with allure.step(f'POST {post_url}'):
-                pass
             body = {"dbtype": 3, "dbversion": 5, "env": 3, "region": 3}
-            result_post = HttpMethods.post(post_url, body, token=token)
-            print('Url:', post_url)
-            print(f'Status code: {result_post.status_code}')
-            print('Response body: ', result_post.text)
-            return result_post
+            with allure.step(f'POST {post_url}, body: {body}'):
+                result_post = HttpMethods.post(post_url, body, token=token)
+            with allure.step(f'Response JSON: {result_post.json()}'):
+                return result_post
 
     @staticmethod
     def post_db_create_wrong_value_db_type(token: dict):
+        """
+        :param token:
+        :return: Response
+        """
         with allure.step('post_db_create_wrong_value_db_type'):
             post_resource = '/db_create'  # Resource for method
             post_url = TestData.base_url + post_resource
-            with allure.step(f'POST {post_url}'):
-                print(post_url)
             body = {"dbtype": random.randint(4, 100), "dbversion": 5, "env": 3, "region": 3}
-            result_post = HttpMethods.post(post_url, body, token=token)
-            print(f'Status code: {result_post.status_code}')
-            print('Response body: ', result_post.text)
-            return result_post
+            with allure.step(f'POST {post_url}, body: {body}'):
+                result_post = HttpMethods.post(post_url, body, token=token)
+            with allure.step(f'Response JSON: {result_post.json()}'):
+                return result_post
 
     @staticmethod
     def post_db_create_wrong_value_db_version(token: dict):
         """
         :param token:
-        :return:
+        :return: Response
         """
         with allure.step('post_db_create_wrong_value_db_version'):
             post_resource = '/db_create'  # Resource for method
             post_url = TestData.base_url + post_resource
-            with allure.step(f'POST {post_url}'):
-                print(post_url)
             body = {"dbtype": 3, "dbversion": random.randint(6, 100), "env": 3, "region": 3}
-            result_post = HttpMethods.post(post_url, body, token=token)
-            print(f'Status code: {result_post.status_code}')
-            print('Response body: ', result_post.text)
-            return result_post
+            with allure.step(f'POST {post_url}, body: {body}'):
+                result_post = HttpMethods.post(post_url, body, token=token)
+            with allure.step(f'Response JSON: {result_post.json()}'):
+                return result_post
 
     @staticmethod
     def post_db_create_wrong_value_env(token: dict):
         """
         :param token:
-        :return:
+        :return: Response
         """
         with allure.step('post_db_create_wrong_value_env'):
-            post_resource = '/db_create'  # Resource for method
+            post_resource = '/db_create'
             post_url = TestData.base_url + post_resource
-            with allure.step(f'POST {post_url}'):
-                print(post_url)
             body = {"dbtype": 3, "dbversion": 5, "env": random.randint(4, 100), "region": 3}
-            result_post = HttpMethods.post(post_url, body, token=token)
-            print(f'Status code: {result_post.status_code}')
-            print('Response body: ', result_post.text)
-            return result_post
+            with allure.step(f'POST {post_url}, body: {body}'):
+                result_post = HttpMethods.post(post_url, body, token=token)
+            with allure.step(f'Response JSON: {result_post.json()}'):
+                return result_post
 
     @staticmethod
     def post_db_create_wrong_value_region(token: dict):
         """
         :param token:
-        :return:
+        :return: Response
         """
         with allure.step('post_db_create_wrong_value_region'):
-            post_resource = '/db_create'  # Resource for method
+            post_resource = '/db_create'
             post_url = TestData.base_url + post_resource
-            with allure.step(f'POST {post_url}'):
-                print(post_url)
             body = {"dbtype": 3, "dbversion": 5, "env": 3, "region": random.randint(4, 100)}
-            result_post = HttpMethods.post(post_url, body, token=token)
-            print(f'Status code: {result_post.status_code}')
-            print('Response body: ', result_post.text)
-            return result_post
+            with allure.step(f'POST {post_url}, body: {body}'):
+                result_post = HttpMethods.post(post_url, body, token=token)
+            with allure.step(f'Response JSON: {result_post.json()}'):
+                return result_post
 
     @staticmethod
     def delete_db(uuid, token):
         """
         :param uuid:
         :param token:
-        :return:
+        :return: Response
         """
         with allure.step('delete_db'):
-            delete_resource = '/db_delete'  # Resource for method DELETE
+            delete_resource = '/db_delete'
             delete_url = TestData.base_url + delete_resource
             with allure.step(f'DELETE {delete_url}'):
-                print(delete_url)
-            db_uuid = {"db_uuid": f"{uuid}"}
+                db_uuid = {"db_uuid": f"{uuid}"}
             with allure.step(f'Db uuid is: {db_uuid}'):
                 pass
             json_db_uuid = db_uuid
             result_delete = HttpMethods.post(delete_url, json_db_uuid, token=token)
-            print(f'Status code: {result_delete.status_code}')
-            print('Response body: ', result_delete.text)
-            return result_delete
+            with allure.step(f'Response JSON: {result_delete.json()}'):
+                return result_delete
 
     @staticmethod
     def check_full_cycle(token):
         """
         :param token:
-        :return:
+        :return: Response
         """
         with allure.step('check_full_cycle'):
             print('\nCheck Time: ', str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
