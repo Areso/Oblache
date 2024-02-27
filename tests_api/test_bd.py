@@ -8,6 +8,7 @@ import pytest
 import requests
 
 from conftest_api import TestData
+from .data import data
 from .utils.checking import Checking
 from .utils.request import API
 
@@ -251,6 +252,8 @@ class TestPOST:
         '''
     @allure.title('test_delete_all_created_db')
     def test_delete_all_created_db(self):
+        start_time = int(data.time.split('_')[-1][-1])
+        print(start_time)
         while True:
             list_db = API.post_db_list(TestData.token)
             json_list_db = list_db.json()['data']
@@ -259,4 +262,12 @@ class TestPOST:
             first_db_uuid = list(json_list_db)[0]
             result_post_db_delete = API.delete_db(first_db_uuid, TestData.token)
             print(result_post_db_delete.json())
+            finish_time = data.time.split('_')[-1][-1]
+            print(finish_time)
+            end_time = int(finish_time) - int(start_time)
+            print(end_time)
+            if abs(end_time) > 1:
+                break
+
+
 
