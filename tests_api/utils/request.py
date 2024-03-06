@@ -355,6 +355,29 @@ class API(TestData):
                 return result_delete
 
     @staticmethod
+    def delete_all_created_db():
+        start = datetime.now().time().strftime('%H:%M')
+        print('Start', start)
+        while True:
+            finish = datetime.now().time().strftime('%H:%M')
+            print('Finish', finish)
+            list_db = API.post_db_list(TestData.token)
+            json_list_db = list_db.json()['data']
+            if json_list_db == {}:
+                break
+            else:
+                first_db_uuid = list(json_list_db)[0]
+                result_post_db_delete = API.delete_db(first_db_uuid, TestData.token)
+                with allure.step(f'Response JSON: {result_post_db_delete.json()}'):
+                    print(result_post_db_delete.json())
+                time.sleep(5)
+                if start != finish:
+                    break
+        list_db = API.post_db_list(TestData.token)
+        json_list_db = list_db.json()['data']
+        return json_list_db
+
+    @staticmethod
     def check_full_cycle(token):
         """
         :param token:

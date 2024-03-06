@@ -1,6 +1,5 @@
 import random
 import time
-from datetime import datetime
 from pprint import pprint
 from string import ascii_letters
 
@@ -9,7 +8,6 @@ import pytest
 import requests
 
 from conftest_api import TestData
-from .data import data
 from .utils.checking import Checking
 from .utils.request import API
 
@@ -127,6 +125,7 @@ class TestPOST:
     @allure.title('Post registration')
     def test_post_registration(self):
         result_post = API.post_registration()
+        print(result_post.text)
         status_code = result_post
         Checking.check_status_code(status_code, 201)
 
@@ -134,6 +133,7 @@ class TestPOST:
     def test_post_registration_with_variety_mail(self):
         result_post = API.post_registration_variety_email(random.choice(['gmail', 'mail', 'yandex']),
                                                           random.choice(['com', 'ru', 'by']))
+        print(result_post.text)
         status_code = result_post
         Checking.check_status_code(status_code, 201)
         Checking.check_json_search_word_in_value(result_post, 'content', 'msg[1]: registered successfully')
@@ -142,12 +142,15 @@ class TestPOST:
     def test_post_registration_for_bulgaria(self):
         result_post = API.post_registration_variety_email(random.choice(['gmail', 'mail', 'yandex']), 'bg')
         status_code = result_post
+        print(result_post.text)
+        print(result_post.status_code)
         Checking.check_status_code(status_code, 201)
         Checking.check_json_search_word_in_value(result_post, 'content', 'msg[1]: registered successfully')
 
     @allure.title('Post registration email is taken')
     def test_post_registration_email_is_taken(self):
         result_post = API.post_registration()
+        print(result_post.text)
         status_code = result_post
         Checking.check_status_code(status_code, 400)
         Checking.check_json_search_word_in_value(result_post, 'content',
@@ -167,6 +170,8 @@ class TestPOST:
     @allure.title('test_post_is_logged_with_wrong_token')
     def test_post_is_logged_with_wrong_token(self):
         result_post = API.post_is_logged_with_wrong_token()
+        print(result_post.text)
+        print(result_post.status_code)
         Checking.check_status_code(result_post, 401)
 
     @allure.title('Post db_create')
@@ -241,38 +246,16 @@ class TestPOST:
         json_list_db = list_db.json()
         try:
             first_db_uuid = list(json_list_db['data'])[0]
-            print(first_db_uuid)
             result_post_db_delete = API.delete_db(first_db_uuid, TestData.token)
             print(result_post_db_delete.json())
             Checking.check_status_code(result_post_db_delete, 200)
         except IndexError as ex:
             print(ex)
             assert str(ex) == 'list index out of range', 'Db list is empty.'
-        '''
-        list(json_list_db['content'].keys())[0] #"065a5b36-e472-7398-8000-7ce3e7219464"
-        '''
+
     @allure.title('test_delete_all_created_db')
     def test_delete_all_created_db(self):
-        start = datetime.now().time().strftime('%H:%M')
-        print('Start', start)
-        while True:
-            finish = datetime.now().time().strftime('%H:%M')
-            print('Finish', finish)
-            list_db = API.post_db_list(TestData.token)
-            json_list_db = list_db.json()['data']
-            if json_list_db == {}:
-                break
-            else:
-                first_db_uuid = list(json_list_db)[0]
-                result_post_db_delete = API.delete_db(first_db_uuid, TestData.token)
-                print(result_post_db_delete.json())
-                time.sleep(5)
-                if start != finish:
-                    break
+        json_list_db = API.delete_all_created_db()
         list_db = API.post_db_list(TestData.token)
-        json_list_db = list_db.json()['data']
+        Checking.check_status_code(list_db, 200)
         assert json_list_db == {}
-
-
-
-

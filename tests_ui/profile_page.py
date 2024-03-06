@@ -1,3 +1,4 @@
+import time
 from pprint import pprint
 
 import allure
@@ -36,9 +37,11 @@ class ProfilePage(BasePage):
     def click_buttons_create_new_db(self):
         with allure.step('Click "Create new DB" button.'):
             self.element_is_present_and_clickable(self.locators.CREATE_DATABASE_BUTTON).click()
+            # time.sleep(1)
         with allure.step('Click "Create new DB" button.'):
             self.element_is_clickable(self.locators.CREATE_NEW_DATABASE_BUTTON).click()
             print(f'Click {self.locators.CREATE_NEW_DATABASE_BUTTON}')
+            time.sleep(1)
 
     @allure.step('get_amount_databases')
     def get_amount_databases(self):

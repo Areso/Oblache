@@ -6,6 +6,7 @@ class Locators:
 
     # Main page
     LINKS = (By.XPATH, '//a[@href]')
+    SCRIPT = (By.XPATH, '')
 
     # Login page
     LOGIN_BUTTON = (By.XPATH, '//button[@id="btn_opentab_login"]')
