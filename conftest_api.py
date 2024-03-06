@@ -16,7 +16,8 @@ class TestData:
     try:
         body = {"email": email, "password": f'{old_password}'}
         result = requests.post('https://dbend.areso.pro/login', json=body)
-        token = result.json()['data']['token']
+        print(result.text)
+        token = result.json()['token']
         if token != {}:
             new_password, old_password = old_password, new_password
             print(token)
@@ -25,7 +26,7 @@ class TestData:
         old_password, new_password = new_password, old_password
         body = {"email": email, "password": f'{old_password}'}
         result = requests.post('https://dbend.areso.pro/login', json=body)
-        token = result.json()['data']['token']
+        token = result.json()['token']
         print(token)
 
     @staticmethod
