@@ -1,0 +1,274 @@
+{
+  "uid" : "1024837b0a1eb80c",
+  "name" : "Post registration mail bg",
+  "fullName" : "tests_api.test_bd.TestPOST#test_post_registration_for_bulgaria",
+  "historyId" : "b66b1c765f0bbf26e12ef6afe13ecfa6",
+  "time" : {
+    "start" : 1709754045671,
+    "stop" : 1709754046037,
+    "duration" : 366
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: Incorrect status code",
+  "statusTrace" : "self = <tests_api.test_bd.TestPOST object at 0x7fb88c1fe950>\n\n    @allure.title('Post registration mail bg')\n    def test_post_registration_for_bulgaria(self):\n        result_post = API.post_registration_variety_email(random.choice(['gmail', 'mail', 'yandex']), 'bg')\n        status_code = result_post\n        print(result_post.text)\n        print(result_post.status_code)\n>       Checking.check_status_code(status_code, 201)\n\ntests_api/test_bd.py:147: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [400]>, status_code = 201\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response JSON\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, 'Incorrect status code'\nE           AssertionError: Incorrect status code\n\ntests_api/utils/checking.py:18: AssertionError",
+  "flaky" : false,
+  "newFailed" : true,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: Incorrect status code",
+    "statusTrace" : "self = <tests_api.test_bd.TestPOST object at 0x7fb88c1fe950>\n\n    @allure.title('Post registration mail bg')\n    def test_post_registration_for_bulgaria(self):\n        result_post = API.post_registration_variety_email(random.choice(['gmail', 'mail', 'yandex']), 'bg')\n        status_code = result_post\n        print(result_post.text)\n        print(result_post.status_code)\n>       Checking.check_status_code(status_code, 201)\n\ntests_api/test_bd.py:147: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [400]>, status_code = 201\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response JSON\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, 'Incorrect status code'\nE           AssertionError: Incorrect status code\n\ntests_api/utils/checking.py:18: AssertionError",
+    "steps" : [ {
+      "name" : "post_registration_variety_email",
+      "time" : {
+        "start" : 1709754045672,
+        "stop" : 1709754046037,
+        "duration" : 365
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "POST https://dbend.areso.pro/register. Params:{'email': 'aqa2024_03_06_19_38_29@yandex.bg', 'password': '123456789'}",
+        "time" : {
+          "start" : 1709754045672,
+          "stop" : 1709754046037,
+          "duration" : 365
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status code: 400",
+          "time" : {
+            "start" : 1709754046037,
+            "stop" : 1709754046037,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : false
+        }, {
+          "name" : "Params url: https://dbend.areso.pro/register",
+          "time" : {
+            "start" : 1709754046037,
+            "stop" : 1709754046037,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 2,
+        "hasContent" : true
+      }, {
+        "name" : "Response JSON: {'content': 'msg[33]: language is not provided'}",
+        "time" : {
+          "start" : 1709754046037,
+          "stop" : 1709754046037,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "mail",
+        "value" : "'yandex'"
+      }, {
+        "name" : "prefix",
+        "value" : "'bg'"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 4,
+      "hasContent" : true
+    }, {
+      "name" : "Assert status code: 201 == Response status code: 400",
+      "time" : {
+        "start" : 1709754046037,
+        "stop" : 1709754046037,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: Incorrect status code\n",
+      "statusTrace" : "  File \"/home/runner/work/Oblache/Oblache/tests_api/utils/checking.py\", line 18, in check_status_code\n    assert status_code == result.status_code, 'Incorrect status code'\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "stepsCount" : 6,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "POST"
+  }, {
+    "name" : "epic",
+    "value" : "POST REQUESTS"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_api"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestPOST"
+  }, {
+    "name" : "host",
+    "value" : "fv-az564-124"
+  }, {
+    "name" : "thread",
+    "value" : "1775-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_api.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 11,
+        "unknown" : 0,
+        "total" : 12
+      },
+      "items" : [ {
+        "uid" : "ac15e34cea54a42e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1709070972139,
+          "stop" : 1709070972681,
+          "duration" : 542
+        }
+      }, {
+        "uid" : "9dafb3c7f25d1a5f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1709068080361,
+          "stop" : 1709068080690,
+          "duration" : 329
+        }
+      }, {
+        "uid" : "38cdf5e45404e81a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1709064647619,
+          "stop" : 1709064647950,
+          "duration" : 331
+        }
+      }, {
+        "uid" : "de70b8f2a8b00411",
+        "status" : "passed",
+        "time" : {
+          "start" : 1709054411292,
+          "stop" : 1709054411637,
+          "duration" : 345
+        }
+      }, {
+        "uid" : "c617f41dc3465889",
+        "status" : "passed",
+        "time" : {
+          "start" : 1708977155227,
+          "stop" : 1708977155545,
+          "duration" : 318
+        }
+      }, {
+        "uid" : "2452b2ad71bb2f2e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1708882313662,
+          "stop" : 1708882313991,
+          "duration" : 329
+        }
+      }, {
+        "uid" : "b23478d70c6caf0d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1708876667794,
+          "stop" : 1708876668118,
+          "duration" : 324
+        }
+      }, {
+        "uid" : "5c2420d8dec74747",
+        "status" : "passed",
+        "time" : {
+          "start" : 1708032432655,
+          "stop" : 1708032433175,
+          "duration" : 520
+        }
+      }, {
+        "uid" : "e98bf5231b462e43",
+        "status" : "passed",
+        "time" : {
+          "start" : 1708031927180,
+          "stop" : 1708031927730,
+          "duration" : 550
+        }
+      }, {
+        "uid" : "1f6419c56c5944fd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1708028403838,
+          "stop" : 1708028404227,
+          "duration" : 389
+        }
+      }, {
+        "uid" : "153cfe0899e82fbc",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707696104065,
+          "stop" : 1707696104600,
+          "duration" : 535
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "1024837b0a1eb80c.json",
+  "parameterValues" : [ ]
+}

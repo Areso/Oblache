@@ -6,13 +6,13 @@
       "name" : "AssertionError: Value db_size should be more than 0.\nassert 0 > 0\n +  where 0 = int(0)",
       "children" : [ {
         "name" : "test_capacity_db",
-        "uid" : "70295bf66ef41096",
+        "uid" : "ea57600b185fe2d6",
         "parentUid" : "54d4fefbe7b7ebed0a1bbb048761752b",
         "status" : "failed",
         "time" : {
-          "start" : 1709070855119,
-          "stop" : 1709070966832,
-          "duration" : 111713
+          "start" : 1709753945320,
+          "stop" : 1709754042023,
+          "duration" : 96703
         },
         "flaky" : false,
         "newFailed" : false,
@@ -22,20 +22,80 @@
     }, {
       "name" : "AssertionError: Incorrect status code",
       "children" : [ {
-        "name" : "test_post_is_logged_with_wrong_token",
-        "uid" : "d33e0dd4e230600a",
+        "name" : "Post registration mail any countries",
+        "uid" : "f3d41952f5879aca",
         "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
         "status" : "failed",
         "time" : {
-          "start" : 1709070974272,
-          "stop" : 1709070974781,
-          "duration" : 509
+          "start" : 1709754045304,
+          "stop" : 1709754045662,
+          "duration" : 358
+        },
+        "flaky" : false,
+        "newFailed" : true,
+        "parameters" : [ ]
+      }, {
+        "name" : "Post registration mail bg",
+        "uid" : "1024837b0a1eb80c",
+        "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1709754045671,
+          "stop" : 1709754046037,
+          "duration" : 366
+        },
+        "flaky" : false,
+        "newFailed" : true,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_post_is_logged_with_wrong_token",
+        "uid" : "2fa6864cda080430",
+        "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1709754047140,
+          "stop" : 1709754047492,
+          "duration" : 352
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       } ],
       "uid" : "e07dd4ab999b15027ae5a060e6c5c14d"
+    }, {
+      "name" : "AssertionError: msg[33]: language is not provided is not presence",
+      "children" : [ {
+        "name" : "Post registration email is taken",
+        "uid" : "9097f87ddc1cc4f2",
+        "parentUid" : "829e7545945c18d891733cc5985d2c2e",
+        "status" : "failed",
+        "time" : {
+          "start" : 1709754046045,
+          "stop" : 1709754046406,
+          "duration" : 361
+        },
+        "flaky" : false,
+        "newFailed" : true,
+        "parameters" : [ ]
+      } ],
+      "uid" : "829e7545945c18d891733cc5985d2c2e"
+    }, {
+      "name" : "AssertionError: assert {'065e8c65-9f...e, 'None', 0]} == {}\n  Left contains 3 more items:\n  {'065e8c65-9ff4-7abc-8000-5717b83586b7': ['db_twuh2e07',\n                                            'CIS',\n                                            'deleting',\n                                            'mysql://user_g06a8uul:pwPW01__7nwcFjHz8LTiCW@cisdb1.areso.pro:3306/db_twuh2e07',\n                                            '2024-03-06 19:39:18',\n                                            9],\n   '065e8c6b-9ebc-7b33-8000-b059d4591be5': ['db_2iy6nf5l',\n                                            'CIS',\n                                            'db_created',\n                                            'mysql://user_o5505zmi:pwPW01__jwGrfuQ1uONYb5@cisdb1.areso.pro:3306/db_2iy6nf5l',\n                                            '2024-03-06 19:40:56',\n                                            0],\n   '065e8c6b-fcf4-7937-8000-d9811c59cdf7': ['',\n                                            'CIS',\n                                            'db_creating',\n                                            None,\n                                            'None',\n                                            0]}\n  Full diff:\n    {\n  -  ,\n  +  '065e8c65-9ff4-7abc-8000-5717b83586b7': ['db_twuh2e07',\n  +                                           'CIS',\n  +                                           'deleting',\n  +                                           'mysql://user_g06a8uul:pwPW01__7nwcFjHz8LTiCW@cisdb1.areso.pro:3306/db_twuh2e07',\n  +                                           '2024-03-06 19:39:18',\n  +                                           9],\n  +  '065e8c6b-9ebc-7b33-8000-b059d4591be5': ['db_2iy6nf5l',\n  +                                           'CIS',\n  +                                           'db_created',\n  +                                           'mysql://user_o5505zmi:pwPW01__jwGrfuQ1uONYb5@cisdb1.areso.pro:3306/db_2iy6nf5l',\n  +                                           '2024-03-06 19:40:56',\n  +                                           0],\n  +  '065e8c6b-fcf4-7937-8000-d9811c59cdf7': ['',\n  +                                           'CIS',\n  +                                           'db_creating',\n  +                                           None,\n  +                                           'None',\n  +                                           0],\n    }",
+      "children" : [ {
+        "name" : "test_delete_all_created_db",
+        "uid" : "1e050358dcd911a9",
+        "parentUid" : "a9c9e6676234bbf2548d774d0b22c153",
+        "status" : "failed",
+        "time" : {
+          "start" : 1709754052575,
+          "stop" : 1709754070512,
+          "duration" : 17937
+        },
+        "flaky" : false,
+        "newFailed" : true,
+        "parameters" : [ ]
+      } ],
+      "uid" : "a9c9e6676234bbf2548d774d0b22c153"
     } ],
     "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
   }, {
@@ -44,13 +104,13 @@
       "name" : "ValueError: invalid literal for int() with base 10: 'nodata'",
       "children" : [ {
         "name" : "test_create_database",
-        "uid" : "725af07609bd98b3",
+        "uid" : "477a2d285161c28",
         "parentUid" : "1e5c751b9891191eb8565e82f613bcd2",
         "status" : "broken",
         "time" : {
-          "start" : 1709071043402,
-          "stop" : 1709071045966,
-          "duration" : 2564
+          "start" : 1709754082642,
+          "stop" : 1709754086719,
+          "duration" : 4077
         },
         "flaky" : false,
         "newFailed" : false,
