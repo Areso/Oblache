@@ -98,7 +98,7 @@ ___
 - inner_label: email_taken
 - used_for: 1000001
 - en_us_value: registration failed, this email is taken
-- ru_ru_value: не ударегистрация не удалась, данный email занят
+- ru_ru_value: регистрация не удалась, данный email занят
 - bg_bg_value: неуспешна регистрация на потребител, имейлът е зает
 - es_es_value: el registro falló, se tomó el correo electrónico
 - eo_value: registrita malsukcese, retpoŝto estas prenita
