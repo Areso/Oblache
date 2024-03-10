@@ -124,37 +124,67 @@ class TestPOST:
     @pytest.mark.xfail()
     @allure.title('Post registration')
     def test_post_registration(self):
-        result_post = API.post_registration()
-        print(result_post.text)
-        status_code = result_post
-        Checking.check_status_code(status_code, 201)
+        result_post = API.post_registration("en-us", True)
+        print(result_post.json())
+        Checking.check_status_code(result_post, 201)
 
-    @allure.title('Post registration mail any countries')
-    def test_post_registration_with_variety_mail(self):
+    @allure.title('Post registration for English language.')
+    def test_post_registration_for_english_language(self):
         result_post = API.post_registration_variety_email(random.choice(['gmail', 'mail', 'yandex']),
-                                                          random.choice(['com', 'ru', 'by']))
-        print(result_post.text)
-        status_code = result_post
-        Checking.check_status_code(status_code, 201)
-        Checking.check_json_search_word_in_value(result_post, 'content', 'msg[1]: registered successfully')
+                                                          random.choice(['com', 'ru', 'by']), "en-us", True)
+        print(result_post.json())
+        Checking.check_status_code(result_post, 201)
+        Checking.check_json_search_word_in_value(
+            result_post, 'content', 'msg[1]: registered successfully')
 
-    @allure.title('Post registration mail bg')
-    def test_post_registration_for_bulgaria(self):
-        result_post = API.post_registration_variety_email(random.choice(['gmail', 'mail', 'yandex']), 'bg')
-        status_code = result_post
-        print(result_post.text)
-        print(result_post.status_code)
-        Checking.check_status_code(status_code, 201)
-        Checking.check_json_search_word_in_value(result_post, 'content', 'msg[1]: registered successfully')
+    @allure.title('Post registration for English language not agree.')
+    def test_post_registration_for_english_language_not_agree(self):
+        result_post = API.post_registration_variety_email(random.choice(['gmail', 'mail', 'yandex']),
+                                                          random.choice(['com', 'ru', 'by']), "en-us", False)
+        print(result_post.json())
+        Checking.check_status_code(result_post, 400)
+        Checking.check_json_search_word_in_value(
+            result_post, 'content', 'msg[36]: you must agree to Terms of Use')
 
-    @allure.title('Post registration email is taken')
-    def test_post_registration_email_is_taken(self):
-        result_post = API.post_registration()
-        print(result_post.text)
+    @allure.title('Post registration Bulgaria language.')
+    def test_post_registration_for_bulgaria_language(self):
+        result_post = API.post_registration_variety_email(
+            random.choice(['gmail', 'mail', 'yandex']), 'bg', "bg-bg", True)
+        Checking.check_status_code(result_post, 201)
+        Checking.check_json_search_word_in_value(
+            result_post, 'content', 'msg[1]: регистриран успешно на потребитель')
+
+    @allure.title('Post registration Bulgaria language not agree.')
+    def test_post_registration_for_bulgaria_language_not_agree(self):
+        result_post = API.post_registration_variety_email(
+            random.choice(['gmail', 'mail', 'yandex']), 'bg', "bg-bg", False)
+        Checking.check_status_code(result_post, 400)
+        Checking.check_json_search_word_in_value(
+            result_post, 'content', 'msg[36]: трябва да се съгласите с Условията за Ползване')
+
+    @allure.title('Post registration email is taken for en-us')
+    def test_post_registration_email_is_taken_for_en_en(self):
+        result_post = API.post_registration("en-us", True)
         status_code = result_post
         Checking.check_status_code(status_code, 400)
         Checking.check_json_search_word_in_value(result_post, 'content',
                                                  'msg[3]: registration failed, this email is taken')
+
+    @allure.title('Post registration email is taken for bg-bg')
+    def test_post_registration_email_is_taken_for_bg_bg(self):
+        result_post = API.post_registration("bg-bg", True)
+        status_code = result_post
+        Checking.check_status_code(status_code, 400)
+        Checking.check_json_search_word_in_value(result_post, 'content',
+                                                 'msg[3]: неуспешна регистрация на потребител, имейлът е зает')
+
+    @allure.title('Post registration email is taken for unsupported languages')
+    def test_post_registration_email_is_taken_for_unsupported_languages(self):
+        result_post = API.post_registration("ru-ru", True)
+        status_code = result_post
+        Checking.check_status_code(status_code, 400)
+        Checking.check_json_search_word_in_value(result_post, 'content',
+                                                 'msg[34]: the language is not accepted')
 
     @allure.title('Post login')
     def test_post_login(self):
@@ -170,7 +200,7 @@ class TestPOST:
     @allure.title('test_post_is_logged_with_wrong_token')
     def test_post_is_logged_with_wrong_token(self):
         result_post = API.post_is_logged_with_wrong_token()
-        print(result_post.text)
+        print(result_post.json())
         print(result_post.status_code)
         Checking.check_status_code(result_post, 401)
 
