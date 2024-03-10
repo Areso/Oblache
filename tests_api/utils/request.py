@@ -139,12 +139,17 @@ class API(TestData):
 
     @staticmethod
     @allure.step('post_registration')
-    def post_registration():
+    def post_registration(language: str, tos_agree: bool):
         """
         Method for create new user.
+        :param language:
+        :param tos_agree:
         :return: JSON Response
         """
-        json_for_create_new_user = {"email": TestData.email, "password": TestData.old_password}
+        json_for_create_new_user = {"email": TestData.email,
+                                    "password": TestData.old_password,
+                                    "tos_agree": tos_agree,
+                                    'language': language}
 
         post_resource = '/register'  # Resource for method POST
         post_url = TestData.base_url + post_resource
@@ -154,13 +159,20 @@ class API(TestData):
 
     @staticmethod
     @allure.step('post_registration_variety_email')
-    def post_registration_variety_email(mail: str, prefix: str):
+    def post_registration_variety_email(mail: str, prefix: str, language: str, tos_agree: bool):
         """
         Method for create new user.
+        :param mail:
+        :param prefix:
+        :param language:
+        :param tos_agree:
         :return: JSON Response
         """
         json_for_create_new_user = {"email": f'aqa{tests_api.data.data.time}@{mail}.{prefix}',
-                                    "password": TestData.old_password}
+                                    "password": TestData.old_password,
+                                    "tos_agree": tos_agree,
+                                    "language": language
+                                    }
         post_resource = '/register'
         post_url = TestData.base_url + post_resource
         with allure.step(f'POST {post_url}. Params:'f'{json_for_create_new_user}'):
