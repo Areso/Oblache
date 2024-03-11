@@ -1,0 +1,308 @@
+{
+  "uid" : "a5688556416345f6",
+  "name" : "Post db_create with wrong region.",
+  "fullName" : "tests_api.test_bd.TestPOST#test_post_db_create_with_wrong_values_region",
+  "historyId" : "856aa6401c668dd622a03a1da3937968",
+  "time" : {
+    "start" : 1710193260408,
+    "stop" : 1710193260938,
+    "duration" : 530
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "post_db_create_wrong_value_region",
+      "time" : {
+        "start" : 1710193260408,
+        "stop" : 1710193260937,
+        "duration" : 529
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "POST https://dbend.areso.pro/db_create, body: {'dbtype': 3, 'dbversion': 5, 'env': 3, 'region': 28}",
+        "time" : {
+          "start" : 1710193260408,
+          "stop" : 1710193260937,
+          "duration" : 529
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status code: 400",
+          "time" : {
+            "start" : 1710193260937,
+            "stop" : 1710193260937,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : false
+        }, {
+          "name" : "Params url: https://dbend.areso.pro/db_create",
+          "time" : {
+            "start" : 1710193260937,
+            "stop" : 1710193260937,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 2,
+        "hasContent" : true
+      }, {
+        "name" : "Response JSON: {'content': \"error: region isn't found or isn't available for order\"}",
+        "time" : {
+          "start" : 1710193260937,
+          "stop" : 1710193260937,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 4,
+      "hasContent" : true
+    }, {
+      "name" : "Assert status code: 400 == Response status code: 400",
+      "time" : {
+        "start" : 1710193260937,
+        "stop" : 1710193260937,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Check and compare result request with expected value by key:\nResponse: <Response [400]>\nKey: content\nValue: error: region isn't found or isn't available for order",
+      "time" : {
+        "start" : 1710193260937,
+        "stop" : 1710193260937,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 7,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "POST"
+  }, {
+    "name" : "epic",
+    "value" : "POST REQUESTS"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_api"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestPOST"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1247-87"
+  }, {
+    "name" : "thread",
+    "value" : "1872-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_api.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 2,
+        "skipped" : 0,
+        "passed" : 13,
+        "unknown" : 0,
+        "total" : 16
+      },
+      "items" : [ {
+        "uid" : "3a9ab8c1515bfa31",
+        "status" : "passed",
+        "time" : {
+          "start" : 1710087701044,
+          "stop" : 1710087701552,
+          "duration" : 508
+        }
+      }, {
+        "uid" : "7f1eadb3ebbaf6e8",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+        "time" : {
+          "start" : 1710086221441,
+          "stop" : 1710086221744,
+          "duration" : 303
+        }
+      }, {
+        "uid" : "25236328e5c34a88",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+        "time" : {
+          "start" : 1710085915050,
+          "stop" : 1710085915355,
+          "duration" : 305
+        }
+      }, {
+        "uid" : "c3f1320a8e9f935",
+        "status" : "passed",
+        "time" : {
+          "start" : 1709754048990,
+          "stop" : 1709754049351,
+          "duration" : 361
+        }
+      }, {
+        "uid" : "5cc17f385e0937b4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1709070976926,
+          "stop" : 1709070977464,
+          "duration" : 538
+        }
+      }, {
+        "uid" : "53c01c8edd486efe",
+        "status" : "passed",
+        "time" : {
+          "start" : 1709068083371,
+          "stop" : 1709068083688,
+          "duration" : 317
+        }
+      }, {
+        "uid" : "e4a85275224c2a49",
+        "status" : "passed",
+        "time" : {
+          "start" : 1709064650550,
+          "stop" : 1709064650866,
+          "duration" : 316
+        }
+      }, {
+        "uid" : "b5feb6ca05255a64",
+        "status" : "passed",
+        "time" : {
+          "start" : 1709054414276,
+          "stop" : 1709054414600,
+          "duration" : 324
+        }
+      }, {
+        "uid" : "f9352112d8d86353",
+        "status" : "passed",
+        "time" : {
+          "start" : 1708977157771,
+          "stop" : 1708977158081,
+          "duration" : 310
+        }
+      }, {
+        "uid" : "6eac7f0efa7120cf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1708882316309,
+          "stop" : 1708882316628,
+          "duration" : 319
+        }
+      }, {
+        "uid" : "5d3b5bb8a883596a",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1708876670307,
+          "stop" : 1708876670619,
+          "duration" : 312
+        }
+      }, {
+        "uid" : "224b339d01f3097a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1708032436805,
+          "stop" : 1708032437335,
+          "duration" : 530
+        }
+      }, {
+        "uid" : "3a26579efe08a85a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1708031931337,
+          "stop" : 1708031931827,
+          "duration" : 490
+        }
+      }, {
+        "uid" : "178ddf70c06a67ad",
+        "status" : "passed",
+        "time" : {
+          "start" : 1708028406552,
+          "stop" : 1708028406925,
+          "duration" : 373
+        }
+      }, {
+        "uid" : "c2a0851c3ccd181",
+        "status" : "passed",
+        "time" : {
+          "start" : 1707696107740,
+          "stop" : 1707696108251,
+          "duration" : 511
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "a5688556416345f6.json",
+  "parameterValues" : [ ]
+}
