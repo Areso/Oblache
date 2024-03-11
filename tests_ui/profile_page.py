@@ -37,14 +37,31 @@ class ProfilePage(BasePage):
     def click_buttons_create_new_db(self):
         with allure.step('Click "Create new DB" button.'):
             self.element_is_present_and_clickable(self.locators.CREATE_DATABASE_BUTTON).click()
-            # time.sleep(1)
         with allure.step('Click "Create new DB" button.'):
             self.element_is_clickable(self.locators.CREATE_NEW_DATABASE_BUTTON).click()
             print(f'Click {self.locators.CREATE_NEW_DATABASE_BUTTON}')
-            time.sleep(1)
+            time.sleep(1.5)
 
     @allure.step('get_amount_databases')
     def get_amount_databases(self):
         self.click_button_databases()
         amount = len(self.elements_are_present((By.XPATH, '//tbody[@id="tbody_dbs"]/tr')))
         return amount
+
+    @allure.step('delete_database')
+    def delete_database(self):
+        self.click_button_databases()
+        x = self.elements_are_present(self.locators.LIST_DATABASES)
+        self.click_buttons_create_new_db()
+        self.click_button_databases()
+        list_db = [x[i].text for i in range(len(x))]
+        print(list_db)
+        if len(list_db) != 0:
+            button = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]/td[10] /button'))
+            button.click()
+            with allure.step(f'Click button: {button.text}'):
+                time.sleep(20)
+        else:
+            msg = 'No database for deleting.'
+            with allure.step(f'{msg}'):
+                return msg

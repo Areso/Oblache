@@ -24,4 +24,3 @@ def driver():
     allure.attach(attach, name=f"Screenshot {datetime.today()}", attachment_type=allure.attachment_type.PNG)
     print('\nquit browser...')
     driver.quit()
-

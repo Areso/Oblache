@@ -1,7 +1,4 @@
-from pprint import pprint
-
 import allure
-import requests
 
 from tests_ui.data import TestDataLinks
 from tests_ui.login_page import LoginPage
@@ -69,17 +66,30 @@ class TestUI:
             amount_after_create = page.get_status_data()['db qty used']
             assert int(amount_databases) + 1 == int(amount_after_create)
 
-    def test_source_v1(self):
-        source = requests.get('https://oblache.areso.pro/tos.html')
-        data = []
-        data_vac = {}
-        for i in source.text.split('\n'):
-            if 'locObj' in i.split('=')[0]:
-                data_vac.setdefault(i.split('=')[0].strip(), i.split('=')[1])
-            if 'locObj' in i.split('=')[0] and i.split('=')[0] not in data:
-                data.append(i.split('=')[0])
+        @allure.title('test_delete_database')
+        def test_delete_database(self, driver):
+            page = LoginPage(driver, TestDataLinks.register_page)
+            page.open()
+            page.login_user()
+            page = ProfilePage(driver)
+            page.click_button_status()
+            amount_databases = page.get_status_data()['db qty used']
+            msg = page.delete_database()
+            page.click_button_status()
+            amount_after_create = page.get_status_data()['db qty used']
+            assert amount_databases == amount_after_create or msg == 'No database for deleting.'
 
-        pprint(data_vac)
-        print(len(data_vac.keys()))
-        print(len(data))
-        print(data_vac['locObj.en_us.div_limits'])
+    # def test_source_v1(self):
+    #     source = requests.get('https://oblache.areso.pro/tos.html')
+    #     data = []
+    #     data_vac = {}
+    #     for i in source.text.split('\n'):
+    #         if 'locObj' in i.split('=')[0]:
+    #             data_vac.setdefault(i.split('=')[0].strip(), i.split('=')[1])
+    #         if 'locObj' in i.split('=')[0] and i.split('=')[0] not in data:
+    #             data.append(i.split('=')[0])
+    #
+    #     pprint(data_vac)
+    #     print(len(data_vac.keys()))
+    #     print(len(data))
+    #     print(data_vac['locObj.en_us.div_limits'])
