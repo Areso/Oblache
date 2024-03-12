@@ -77,9 +77,9 @@ class ProfilePage(BasePage):
         if len(list_db) != 0:
             button = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]/td[3] /button'))
             button.click()
-            with allure.step(f'Click button {button.text} in database:'
-                             f'{self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]')).text}'
-                             f', for copy uuid.'):
+            with allure.step(
+                    f'Click button {button.text} in database:'
+                    f'{self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]')).text}, for copy uuid.'):
                 pass
             clipboard_uuid = pyperclip.paste()
             short_uuid = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]/td[2]')).text
