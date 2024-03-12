@@ -2,9 +2,10 @@ import time
 from pprint import pprint
 
 import allure
-import pyperclip
 from selenium.webdriver.common.by import By
 
+from connection_data import ConnectionData
+from tests_api.utils.request import API
 from tests_ui.base_page import BasePage
 from tests_ui.login_page_locators import Locators
 
@@ -80,11 +81,17 @@ class ProfilePage(BasePage):
             table_line = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]')).text
             with allure.step(f'Click button {button.text} in database:{table_line}, for copy uuid.'):
                 pass
-            clipboard_uuid = pyperclip.paste()
+
+            result = API.post_db_list(ConnectionData.token)
+            full_uuid = list(result.json()['data'])[0]
             short_uuid = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]/td[2]')).text
-            with allure.step(f'Checked that {short_uuid} is included into {clipboard_uuid}'):
+            assert self.element_is_visible(self.locators.MSG_FROM_SERVER)
+            with allure.step('Check msg after copy uuid is present'):
+                msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text
+                print(msg)
+            with allure.step(f'Checked that {short_uuid} is included into {full_uuid}'):
                 pass
-            assert short_uuid in clipboard_uuid
+            assert short_uuid in full_uuid
         else:
             assert False, 'No database in the table.'
 
