@@ -87,6 +87,8 @@ class ProfilePage(BasePage):
             result = API.post_db_list(ConnectionData.token)
             full_uuid = list(result.json()['data'])[0]
             short_uuid = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]/td[2]')).text
+            assert self.element_is_visible(self.locators.MSG_FROM_SERVER)
+            msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text
             with allure.step(f'Checked that {short_uuid} is included into {full_uuid}'):
                 pass
             assert short_uuid in full_uuid

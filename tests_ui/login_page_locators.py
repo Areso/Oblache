@@ -28,4 +28,4 @@ class Locators:
     LIST_DATABASES = (By.XPATH, '//tbody[@id="tbody_dbs"]/tr')
     LEN_TABLE_STRINGS = (By.XPATH, '//tbody[@id="tbody_status"]/tr')
 
-    MSG_FROM_SERVER = (By.XPATH, '//div[@id="msg_from_server"]')
+    MSG_FROM_SERVER = (By.XPATH, '//div[@id="msg_copypaste"]')
