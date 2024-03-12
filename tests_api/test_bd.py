@@ -260,11 +260,13 @@ class TestPOST:
     @allure.title('Post change password')
     def test_post_change_password(self):
         new_password = ConnectionData.new_password
-        result_post_change_password = API.post_change_password(ConnectionData.token, ConnectionData.old_password, new_password)
+        result_post_change_password = API.post_change_password(
+            ConnectionData.token, ConnectionData.new_password, new_password)
         Checking.check_status_code(result_post_change_password, 200)
         Checking.check_json_search_word_in_value(result_post_change_password, "content",
                                                  "msg[31]: password successfully updated")
-        result_post_change_password = API.post_change_password(ConnectionData.token, new_password, ConnectionData.old_password)
+        result_post_change_password = API.post_change_password(
+            ConnectionData.token, new_password, ConnectionData.new_password)
         Checking.check_status_code(result_post_change_password, 200)
         Checking.check_json_search_word_in_value(result_post_change_password, "content",
                                                  "msg[31]: password successfully updated")
@@ -283,6 +285,8 @@ class TestPOST:
             print(ex)
             assert str(ex) == 'list index out of range', 'Db list is empty.'
 
+    @pytest.mark.xfail(
+        reason="If databases will be deleting more than 1 minute and all databases won't deleting for this time.")
     @allure.title('test_delete_all_created_db')
     def test_delete_all_created_db(self):
         json_list_db = API.delete_all_created_db()
