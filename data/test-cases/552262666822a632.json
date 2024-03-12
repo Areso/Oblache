@@ -1,0 +1,416 @@
+{
+  "uid" : "552262666822a632",
+  "name" : "Post db list with filter",
+  "fullName" : "tests_api.test_bd.TestPOST#test_post_db_list_with_filter",
+  "historyId" : "1404cf75602dc5c195df0f6e9ffb5ba3",
+  "time" : {
+    "start" : 1710279300040,
+    "stop" : 1710279300819,
+    "duration" : 779
+  },
+  "status" : "skipped",
+  "statusMessage" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code",
+  "statusTrace" : "self = <tests_api.test_bd.TestPOST object at 0x7f69dfa407f0>\n\n    @allure.title('Post db list with filter')\n    @pytest.mark.xfail(reason='There are databases that need to be deleted manually.')\n    def test_post_db_list_with_filter(self):\n        list_db = API.post_db_list(ConnectionData.token)\n        json_list_db = list_db.json()\n        try:\n            first_db_uuid = list(json_list_db['data'])[-1]\n            result_post_db_list = API.delete_db(first_db_uuid, ConnectionData.token)\n            print(result_post_db_list.json())\n>           Checking.check_status_code(result_post_db_list, 200)\n\ntests_api/test_bd.py:255: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [400]>, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response JSON\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, 'Incorrect status code'\nE           AssertionError: Incorrect status code\n\ntests_api/utils/checking.py:18: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "skipped",
+    "statusMessage" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code",
+    "statusTrace" : "self = <tests_api.test_bd.TestPOST object at 0x7f69dfa407f0>\n\n    @allure.title('Post db list with filter')\n    @pytest.mark.xfail(reason='There are databases that need to be deleted manually.')\n    def test_post_db_list_with_filter(self):\n        list_db = API.post_db_list(ConnectionData.token)\n        json_list_db = list_db.json()\n        try:\n            first_db_uuid = list(json_list_db['data'])[-1]\n            result_post_db_list = API.delete_db(first_db_uuid, ConnectionData.token)\n            print(result_post_db_list.json())\n>           Checking.check_status_code(result_post_db_list, 200)\n\ntests_api/test_bd.py:255: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [400]>, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response JSON\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, 'Incorrect status code'\nE           AssertionError: Incorrect status code\n\ntests_api/utils/checking.py:18: AssertionError",
+    "steps" : [ {
+      "name" : "post_db_list",
+      "time" : {
+        "start" : 1710279300040,
+        "stop" : 1710279300427,
+        "duration" : 387
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "POST https://dbend.areso.pro/db_list",
+        "time" : {
+          "start" : 1710279300040,
+          "stop" : 1710279300427,
+          "duration" : 387
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status code: 200",
+          "time" : {
+            "start" : 1710279300427,
+            "stop" : 1710279300427,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : false
+        }, {
+          "name" : "Params url: https://dbend.areso.pro/db_list",
+          "time" : {
+            "start" : 1710279300427,
+            "stop" : 1710279300427,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 2,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 3,
+      "hasContent" : true
+    }, {
+      "name" : "delete_db",
+      "time" : {
+        "start" : 1710279300427,
+        "stop" : 1710279300819,
+        "duration" : 392
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "DELETE https://dbend.areso.pro/db_delete",
+        "time" : {
+          "start" : 1710279300427,
+          "stop" : 1710279300427,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Db uuid is: {'db_uuid': '065f0ca8-2011-71a4-8000-c5945abad109'}",
+        "time" : {
+          "start" : 1710279300427,
+          "stop" : 1710279300427,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Status code: 400",
+        "time" : {
+          "start" : 1710279300819,
+          "stop" : 1710279300819,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Params url: https://dbend.areso.pro/db_delete",
+        "time" : {
+          "start" : 1710279300819,
+          "stop" : 1710279300819,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Response JSON: {'content': \"msg[18]: error: can't delete a db while it's creating\"}",
+        "time" : {
+          "start" : 1710279300819,
+          "stop" : 1710279300819,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 5,
+      "hasContent" : true
+    }, {
+      "name" : "Assert status code: 200 == Response status code: 400",
+      "time" : {
+        "start" : 1710279300819,
+        "stop" : 1710279300819,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: Incorrect status code\n",
+      "statusTrace" : "  File \"/home/runner/work/Oblache/Oblache/tests_api/utils/checking.py\", line 18, in check_status_code\n    assert status_code == result.status_code, 'Incorrect status code'\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "stepsCount" : 11,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "POST"
+  }, {
+    "name" : "epic",
+    "value" : "POST REQUESTS"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.xfail(reason='There are databases that need to be deleted manually.')"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_api"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestPOST"
+  }, {
+    "name" : "host",
+    "value" : "fv-az651-624"
+  }, {
+    "name" : "thread",
+    "value" : "1803-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_api.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 4,
+        "broken" : 4,
+        "skipped" : 11,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 19
+      },
+      "items" : [ {
+        "uid" : "d2ab35415df8687e",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1710269361615,
+          "stop" : 1710269362679,
+          "duration" : 1064
+        }
+      }, {
+        "uid" : "f1c7393968b05151",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1710264702680,
+          "stop" : 1710264703471,
+          "duration" : 791
+        }
+      }, {
+        "uid" : "9582465473d8f32d",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1710193261473,
+          "stop" : 1710193262568,
+          "duration" : 1095
+        }
+      }, {
+        "uid" : "f23dae5ebf9b29eb",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1710087702062,
+          "stop" : 1710087703070,
+          "duration" : 1008
+        }
+      }, {
+        "uid" : "9ed469ca7f2446e0",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nrequests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+        "time" : {
+          "start" : 1710086222121,
+          "stop" : 1710086222421,
+          "duration" : 300
+        }
+      }, {
+        "uid" : "6fb092b60afa7a18",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nrequests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+        "time" : {
+          "start" : 1710085915756,
+          "stop" : 1710085916061,
+          "duration" : 305
+        }
+      }, {
+        "uid" : "1b02a289a1864a18",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1709754049731,
+          "stop" : 1709754050446,
+          "duration" : 715
+        }
+      }, {
+        "uid" : "253187a3610bc80e",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1709070977987,
+          "stop" : 1709070979039,
+          "duration" : 1052
+        }
+      }, {
+        "uid" : "8aba356f038d46a2",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1709068084032,
+          "stop" : 1709068084679,
+          "duration" : 647
+        }
+      }, {
+        "uid" : "dda05e407ec44c99",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1709064651184,
+          "stop" : 1709064651816,
+          "duration" : 632
+        }
+      }, {
+        "uid" : "946c268dfb919600",
+        "status" : "failed",
+        "statusDetails" : "Failed: Error evaluating 'xfail' condition\n    Reason: There are databases that need to be deleted manually.\n           ^\nSyntaxError: invalid syntax",
+        "time" : {
+          "start" : 1709054414926,
+          "stop" : 1709054414926,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "4300d3759be6e6f8",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1708977158470,
+          "stop" : 1708977159166,
+          "duration" : 696
+        }
+      }, {
+        "uid" : "7c66fb9b5193ec71",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1708882317136,
+          "stop" : 1708882317779,
+          "duration" : 643
+        }
+      }, {
+        "uid" : "72da370cafdec602",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1708876671034,
+          "stop" : 1708876671736,
+          "duration" : 702
+        }
+      }, {
+        "uid" : "7709aa3c4e771226",
+        "status" : "broken",
+        "statusDetails" : "TypeError: string indices must be integers",
+        "time" : {
+          "start" : 1708032437998,
+          "stop" : 1708032438658,
+          "duration" : 660
+        }
+      }, {
+        "uid" : "988b2b2738df82bb",
+        "status" : "broken",
+        "statusDetails" : "TypeError: string indices must be integers",
+        "time" : {
+          "start" : 1708031932476,
+          "stop" : 1708031933119,
+          "duration" : 643
+        }
+      }, {
+        "uid" : "8c240ebd117748be",
+        "status" : "broken",
+        "statusDetails" : "TypeError: string indices must be integers",
+        "time" : {
+          "start" : 1708028407393,
+          "stop" : 1708028407849,
+          "duration" : 456
+        }
+      }, {
+        "uid" : "f7a61fdff35a37c",
+        "status" : "broken",
+        "statusDetails" : "TypeError: string indices must be integers",
+        "time" : {
+          "start" : 1707696108920,
+          "stop" : 1707696109555,
+          "duration" : 635
+        }
+      } ]
+    },
+    "tags" : [ "@pytest.mark.xfail(reason='There are databases that need to be deleted manually.')" ]
+  },
+  "source" : "552262666822a632.json",
+  "parameterValues" : [ ]
+}
