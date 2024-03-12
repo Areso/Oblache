@@ -1,0 +1,321 @@
+{
+  "uid" : "61721fd8adbae54d",
+  "name" : "test_clipboard",
+  "fullName" : "tests_ui.test_ui.TestProfilePage#test_clipboard",
+  "historyId" : "81aced422d9d8374d3529d0114e56e91",
+  "time" : {
+    "start" : 1710269457318,
+    "stop" : 1710269458013,
+    "duration" : 695
+  },
+  "status" : "broken",
+  "statusMessage" : "pyperclip.PyperclipException: \n    Pyperclip could not find a copy/paste mechanism for your system.\n    For more information, please visit https://pyperclip.readthedocs.io/en/latest/index.html#not-implemented-error",
+  "statusTrace" : "self = <tests_ui.test_ui.TestUI.TestProfilePage object at 0x7f8203d3c4f0>\ndriver = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"d69e65f94dc58840e8d22a7ba2916736\")>\nauthorization_user = <tests_ui.login_page.LoginPage object at 0x7f82046c4880>\n\n    @allure.title('test_clipboard')\n    def test_clipboard(self, driver, authorization_user):\n        page = ProfilePage(driver)\n>       page.check_clipboard()\n\ntests_ui/test_ui.py:71: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \ntests_ui/profile_page.py:83: in check_clipboard\n    clipboard_uuid = pyperclip.paste()\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/pyperclip/__init__.py:681: in lazy_load_stub_paste\n    return paste()\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <pyperclip.init_no_clipboard.<locals>.ClipboardUnavailable object at 0x7f82046c74f0>\nargs = (), kwargs = {}\n\n    def __call__(self, *args, **kwargs):\n>       raise PyperclipException(EXCEPT_MSG)\nE       pyperclip.PyperclipException: \nE           Pyperclip could not find a copy/paste mechanism for your system.\nE           For more information, please visit https://pyperclip.readthedocs.io/en/latest/index.html#not-implemented-error\n\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/pyperclip/__init__.py:336: PyperclipException",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "authorization_user",
+    "time" : {
+      "start" : 1710269455385,
+      "stop" : 1710269457318,
+      "duration" : 1933
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Open page: https://oblache.areso.pro/register.html",
+      "time" : {
+        "start" : 1710269455385,
+        "stop" : 1710269455878,
+        "duration" : 493
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "login_user",
+      "time" : {
+        "start" : 1710269455878,
+        "stop" : 1710269457318,
+        "duration" : 1440
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Enter email.",
+        "time" : {
+          "start" : 1710269455878,
+          "stop" : 1710269455931,
+          "duration" : 53
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Enter password.",
+        "time" : {
+          "start" : 1710269455931,
+          "stop" : 1710269455972,
+          "duration" : 41
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Click button \"Login\"",
+        "time" : {
+          "start" : 1710269455972,
+          "stop" : 1710269456035,
+          "duration" : 63
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "element_is_present_and_clickable",
+          "time" : {
+            "start" : 1710269455972,
+            "stop" : 1710269456007,
+            "duration" : 35
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "locator",
+            "value" : "('xpath', '//input[@id=\"inp_regform_login_submit\"]')"
+          } ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 1,
+        "hasContent" : true
+      }, {
+        "name" : "Check url is present: https://oblache.areso.pro/profile.html",
+        "time" : {
+          "start" : 1710269456035,
+          "stop" : 1710269457318,
+          "duration" : 1283
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 5,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 7,
+    "hasContent" : true
+  }, {
+    "name" : "driver",
+    "time" : {
+      "start" : 1710269455104,
+      "stop" : 1710269455385,
+      "duration" : 281
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "pyperclip.PyperclipException: \n    Pyperclip could not find a copy/paste mechanism for your system.\n    For more information, please visit https://pyperclip.readthedocs.io/en/latest/index.html#not-implemented-error",
+    "statusTrace" : "self = <tests_ui.test_ui.TestUI.TestProfilePage object at 0x7f8203d3c4f0>\ndriver = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"d69e65f94dc58840e8d22a7ba2916736\")>\nauthorization_user = <tests_ui.login_page.LoginPage object at 0x7f82046c4880>\n\n    @allure.title('test_clipboard')\n    def test_clipboard(self, driver, authorization_user):\n        page = ProfilePage(driver)\n>       page.check_clipboard()\n\ntests_ui/test_ui.py:71: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \ntests_ui/profile_page.py:83: in check_clipboard\n    clipboard_uuid = pyperclip.paste()\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/pyperclip/__init__.py:681: in lazy_load_stub_paste\n    return paste()\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <pyperclip.init_no_clipboard.<locals>.ClipboardUnavailable object at 0x7f82046c74f0>\nargs = (), kwargs = {}\n\n    def __call__(self, *args, **kwargs):\n>       raise PyperclipException(EXCEPT_MSG)\nE       pyperclip.PyperclipException: \nE           Pyperclip could not find a copy/paste mechanism for your system.\nE           For more information, please visit https://pyperclip.readthedocs.io/en/latest/index.html#not-implemented-error\n\n/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/pyperclip/__init__.py:336: PyperclipException",
+    "steps" : [ {
+      "name" : "check_clipboard",
+      "time" : {
+        "start" : 1710269457318,
+        "stop" : 1710269458013,
+        "duration" : 695
+      },
+      "status" : "broken",
+      "statusMessage" : "pyperclip.PyperclipException: \n    Pyperclip could not find a copy/paste mechanism for your system.\n    For more information, please visit https://pyperclip.readthedocs.io/en/latest/index.html#not-implemented-error \n",
+      "statusTrace" : "  File \"/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/allure_commons/_allure.py\", line 192, in impl\n    return func(*a, **kw)\n  File \"/home/runner/work/Oblache/Oblache/tests_ui/profile_page.py\", line 83, in check_clipboard\n    clipboard_uuid = pyperclip.paste()\n  File \"/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/pyperclip/__init__.py\", line 681, in lazy_load_stub_paste\n    return paste()\n  File \"/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/pyperclip/__init__.py\", line 336, in __call__\n    raise PyperclipException(EXCEPT_MSG)\n",
+      "steps" : [ {
+        "name" : "Click \"Databases\" button.",
+        "time" : {
+          "start" : 1710269457319,
+          "stop" : 1710269457371,
+          "duration" : 52
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "element_is_present_and_clickable",
+          "time" : {
+            "start" : 1710269457319,
+            "stop" : 1710269457348,
+            "duration" : 29
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "locator",
+            "value" : "('xpath', '//button[@id = \"menu_button_databases\"]')"
+          } ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 1,
+        "hasContent" : true
+      }, {
+        "name" : "Click button \uD83D\uDCCB in database:0 2fd532 \uD83D\uDCCB db_mboo7tfs CIS db_created \uD83D\uDD11 2024-03-12 18:47:29 9 ❌, for copy uuid.",
+        "time" : {
+          "start" : 1710269458012,
+          "stop" : 1710269458012,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "stepsCount" : 3,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "stepsCount" : 4,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "driver::0",
+    "time" : {
+      "start" : 1710269458028,
+      "stop" : 1710269458206,
+      "duration" : 178
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "ab8c7bdf55eeba09",
+      "name" : "Screenshot 2024-03-12 18:50:58.148938",
+      "source" : "ab8c7bdf55eeba09.png",
+      "type" : "image/png",
+      "size" : 83617
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : true
+  } ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test Profile Page."
+  }, {
+    "name" : "epic",
+    "value" : "UI Tests"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_ui"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestUI"
+  }, {
+    "name" : "host",
+    "value" : "fv-az773-794"
+  }, {
+    "name" : "thread",
+    "value" : "2174-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_ui.test_ui"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 2,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "968fdceb6f87c4f5",
+        "status" : "broken",
+        "statusDetails" : "pyperclip.PyperclipException: \n    Pyperclip could not find a copy/paste mechanism for your system.\n    For more information, please visit https://pyperclip.readthedocs.io/en/latest/index.html#not-implemented-error",
+        "time" : {
+          "start" : 1710264773999,
+          "stop" : 1710264774685,
+          "duration" : 686
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "61721fd8adbae54d.json",
+  "parameterValues" : [ ]
+}
