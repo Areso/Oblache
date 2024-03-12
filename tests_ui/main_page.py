@@ -5,6 +5,7 @@ from tests_ui.base_page import BasePage
 from tests_ui.login_page_locators import Locators
 
 
+@allure.suite('Main Page')
 class MainPage(BasePage):
     locators = Locators()
 

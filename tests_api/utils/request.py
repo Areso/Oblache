@@ -7,13 +7,13 @@ import allure
 import mysql.connector
 
 import tests_api
-from conftest_api import TestData
+from connection_data import ConnectionData
 from tests_api.data import data
 from .checking import Checking
 from .http_methods import HttpMethods
 
 
-class API(TestData):
+class API(ConnectionData):
     def __init__(self, connection):
         self.connection = connection
         self.connector = mysql.connector
@@ -26,7 +26,7 @@ class API(TestData):
         :return: Response
         """
         get_resource = '/tos'  # Resource for method GET
-        get_url = TestData.base_url + get_resource
+        get_url = ConnectionData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url)
         with allure.step(f'Response JSON: {result_get.json()}'):
@@ -42,7 +42,7 @@ class API(TestData):
         :return: Response
         """
         get_resource = '/get_profile'  # Resource for method
-        get_url = TestData.base_url + get_resource
+        get_url = ConnectionData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url, token=token)
         with allure.step(f'Response JSON: {result_get.json()}'):
@@ -57,13 +57,13 @@ class API(TestData):
         :return: Response
         """
         get_resource = '/get_profile'  # Resource for method
-        get_url = TestData.base_url + get_resource
+        get_url = ConnectionData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url, {
                 "queue_db_create_orders": 3,
                 "queue_db_delete_orders": 1,
                 "number_of_stuck_tasks": 0
-            }, TestData.token)
+            }, ConnectionData.token)
         with allure.step(f'Response JSON: {result_get.json()}'):
             return result_get
 
@@ -75,7 +75,7 @@ class API(TestData):
         :return: Response
         """
         get_resource = '/list_dbtypes'  # Resource for method GET
-        get_url = TestData.base_url + get_resource
+        get_url = ConnectionData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url)
         with allure.step(f'Response JSON: {result_get.json()}'):
@@ -89,7 +89,7 @@ class API(TestData):
         :return: Response
         """
         get_resource = '/list_dbversions'  # Resource for method GET
-        get_url = TestData.base_url + get_resource
+        get_url = ConnectionData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url)
         with allure.step(f'Response JSON: {result_get.json()}'):
@@ -103,7 +103,7 @@ class API(TestData):
         :return: Response
         """
         get_resource = '/list_dbenvs'  # Resource for method GET
-        get_url = TestData.base_url + get_resource
+        get_url = ConnectionData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url)
         with allure.step(f'Response JSON: {result_get.json()}'):
@@ -117,7 +117,7 @@ class API(TestData):
         :return: Response
         """
         get_resource = '/list_regions'  # Resource for method GET
-        get_url = TestData.base_url + get_resource
+        get_url = ConnectionData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url)
         with allure.step(f'Response JSON: {result_get.json()}'):
@@ -131,7 +131,7 @@ class API(TestData):
         :return: Response
         """
         get_resource = '/bad_request'  # Resource for method GET
-        get_url = TestData.base_url + get_resource
+        get_url = ConnectionData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url)
         with allure.step(f'Response JSON: {result_get.text}'):
@@ -146,13 +146,13 @@ class API(TestData):
         :param tos_agree:
         :return: JSON Response
         """
-        json_for_create_new_user = {"email": TestData.email,
-                                    "password": TestData.old_password,
+        json_for_create_new_user = {"email": ConnectionData.email,
+                                    "password": ConnectionData.old_password,
                                     "tos_agree": tos_agree,
                                     'language': language}
 
         post_resource = '/register'  # Resource for method POST
-        post_url = TestData.base_url + post_resource
+        post_url = ConnectionData.base_url + post_resource
         with allure.step(f'POST {post_url}'):
             result_post = HttpMethods.post(post_url, json_for_create_new_user)
         return result_post
@@ -169,12 +169,12 @@ class API(TestData):
         :return: JSON Response
         """
         json_for_create_new_user = {"email": f'aqa{tests_api.data.data.time}@{mail}.{prefix}',
-                                    "password": TestData.old_password,
+                                    "password": ConnectionData.old_password,
                                     "tos_agree": tos_agree,
                                     "language": language
                                     }
         post_resource = '/register'
-        post_url = TestData.base_url + post_resource
+        post_url = ConnectionData.base_url + post_resource
         with allure.step(f'POST {post_url}. Params:'f'{json_for_create_new_user}'):
             result_post = HttpMethods.post(post_url, json_for_create_new_user)
         with allure.step(f'Response JSON: {result_post.json()}'):
@@ -188,7 +188,7 @@ class API(TestData):
         """
         with allure.step('post_login'):
             post_resource = '/login'
-            post_url = TestData.base_url + post_resource
+            post_url = ConnectionData.base_url + post_resource
             with allure.step(f'POST {post_url}'):
                 result_post = HttpMethods.post(post_url, body)
             with allure.step('Body: {"email":"your_email","password":"your_password"}'):
@@ -202,7 +202,7 @@ class API(TestData):
         """
         with allure.step('post_is_logged'):
             post_resource = '/is_logged'
-            post_url = TestData.base_url + post_resource
+            post_url = ConnectionData.base_url + post_resource
             with allure.step(f'POST {post_url}'):
                 result_post = HttpMethods.post(post_url, token=token)
             with allure.step('Body: {"email":"your_email","password":"your_password"}'):
@@ -217,7 +217,7 @@ class API(TestData):
         """
         with allure.step('post_is_logged'):
             post_resource = '/is_logged'
-            post_url = TestData.base_url + post_resource
+            post_url = ConnectionData.base_url + post_resource
             with allure.step(f'POST {post_url}'):
                 result_post = HttpMethods.post(post_url, token=1)
             with allure.step('Body: {"email":"your_email","password":"your_password"}'):
@@ -233,7 +233,7 @@ class API(TestData):
         """
         with allure.step('post_db_list'):
             post_resource = '/db_list'  # Resource for method
-            post_url = TestData.base_url + post_resource
+            post_url = ConnectionData.base_url + post_resource
             with allure.step(f'POST {post_url}'):
                 result_post = HttpMethods.post(post_url, token=token)
             return result_post
@@ -249,7 +249,7 @@ class API(TestData):
         """
         with allure.step('post_change_password'):
             post_resource = '/password_update'  # Resource for method
-            post_url = TestData.base_url + post_resource
+            post_url = ConnectionData.base_url + post_resource
             with allure.step(f'POST {post_url}'):
                 result_post = HttpMethods.post(post_url,
                                                {"current_password": old_password, "new_password": new_password},
@@ -267,7 +267,7 @@ class API(TestData):
         """
         with allure.step('post_db_list_with_filter'):
             post_resource = '/db_list'  # Resource for method
-            post_url = TestData.base_url + post_resource
+            post_url = ConnectionData.base_url + post_resource
         with allure.step(f'POST {post_url}'):
             result_post = HttpMethods.post(post_url, {"db_uuid": db_uuid}, token=token)
             return result_post
@@ -280,7 +280,7 @@ class API(TestData):
         """
         with allure.step('post_db_create'):
             post_resource = '/db_create'  # Resource for method
-            post_url = TestData.base_url + post_resource
+            post_url = ConnectionData.base_url + post_resource
             body = {"dbtype": 3, "dbversion": 5, "env": 3, "region": 3}
             with allure.step(f'POST {post_url}, body: {body}'):
                 result_post = HttpMethods.post(post_url, body, token=token)
@@ -295,7 +295,7 @@ class API(TestData):
         """
         with allure.step('post_db_create_wrong_value_db_type'):
             post_resource = '/db_create'  # Resource for method
-            post_url = TestData.base_url + post_resource
+            post_url = ConnectionData.base_url + post_resource
             body = {"dbtype": random.randint(4, 100), "dbversion": 5, "env": 3, "region": 3}
             with allure.step(f'POST {post_url}, body: {body}'):
                 result_post = HttpMethods.post(post_url, body, token=token)
@@ -310,7 +310,7 @@ class API(TestData):
         """
         with allure.step('post_db_create_wrong_value_db_version'):
             post_resource = '/db_create'  # Resource for method
-            post_url = TestData.base_url + post_resource
+            post_url = ConnectionData.base_url + post_resource
             body = {"dbtype": 3, "dbversion": random.randint(6, 100), "env": 3, "region": 3}
             with allure.step(f'POST {post_url}, body: {body}'):
                 result_post = HttpMethods.post(post_url, body, token=token)
@@ -325,7 +325,7 @@ class API(TestData):
         """
         with allure.step('post_db_create_wrong_value_env'):
             post_resource = '/db_create'
-            post_url = TestData.base_url + post_resource
+            post_url = ConnectionData.base_url + post_resource
             body = {"dbtype": 3, "dbversion": 5, "env": random.randint(4, 100), "region": 3}
             with allure.step(f'POST {post_url}, body: {body}'):
                 result_post = HttpMethods.post(post_url, body, token=token)
@@ -340,7 +340,7 @@ class API(TestData):
         """
         with allure.step('post_db_create_wrong_value_region'):
             post_resource = '/db_create'
-            post_url = TestData.base_url + post_resource
+            post_url = ConnectionData.base_url + post_resource
             body = {"dbtype": 3, "dbversion": 5, "env": 3, "region": random.randint(4, 100)}
             with allure.step(f'POST {post_url}, body: {body}'):
                 result_post = HttpMethods.post(post_url, body, token=token)
@@ -356,7 +356,7 @@ class API(TestData):
         """
         with allure.step('delete_db'):
             delete_resource = '/db_delete'
-            delete_url = TestData.base_url + delete_resource
+            delete_url = ConnectionData.base_url + delete_resource
             with allure.step(f'DELETE {delete_url}'):
                 db_uuid = {"db_uuid": f"{uuid}"}
             with allure.step(f'Db uuid is: {db_uuid}'):
@@ -373,19 +373,19 @@ class API(TestData):
         while True:
             finish = datetime.now().time().strftime('%H:%M')
             print('Finish', finish)
-            list_db = API.post_db_list(TestData.token)
+            list_db = API.post_db_list(ConnectionData.token)
             json_list_db = list_db.json()['data']
             if json_list_db == {}:
                 break
             else:
                 first_db_uuid = list(json_list_db)[0]
-                result_post_db_delete = API.delete_db(first_db_uuid, TestData.token)
+                result_post_db_delete = API.delete_db(first_db_uuid, ConnectionData.token)
                 with allure.step(f'Response JSON: {result_post_db_delete.json()}'):
                     print(result_post_db_delete.json())
                 time.sleep(5)
                 if start != finish:
                     break
-        list_db = API.post_db_list(TestData.token)
+        list_db = API.post_db_list(ConnectionData.token)
         json_list_db = list_db.json()['data']
         return json_list_db
 

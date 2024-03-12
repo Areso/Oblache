@@ -2,12 +2,14 @@ import time
 from pprint import pprint
 
 import allure
+import pyperclip
 from selenium.webdriver.common.by import By
 
 from tests_ui.base_page import BasePage
 from tests_ui.login_page_locators import Locators
 
 
+@allure.suite('Profile Page')
 class ProfilePage(BasePage):
     locators = Locators()
 
@@ -23,7 +25,7 @@ class ProfilePage(BasePage):
             status_dict[self.element_is_present(
                 (By.XPATH, f'//tbody[@id="tbody_status"]/tr[{i}]/td[1]')).text] = self.element_is_present(
                 (By.XPATH, f'//tbody[@id="tbody_status"]/tr[{i}]/td[2]')).text
-        with allure.step('Get status data.'):
+        with allure.step(f'Get status data.'):
             pass
             with allure.step(f'Status data is: {status_dict}'):
                 pprint(status_dict)
@@ -51,9 +53,10 @@ class ProfilePage(BasePage):
     @allure.step('delete_database')
     def delete_database(self):
         self.click_button_databases()
-        x = self.elements_are_present(self.locators.LIST_DATABASES)
         self.click_buttons_create_new_db()
         self.click_button_databases()
+        time.sleep(1)
+        x = self.elements_are_present(self.locators.LIST_DATABASES)
         list_db = [x[i].text for i in range(len(x))]
         print(list_db)
         if len(list_db) != 0:
@@ -65,3 +68,33 @@ class ProfilePage(BasePage):
             msg = 'No database for deleting.'
             with allure.step(f'{msg}'):
                 return msg
+
+    @allure.step('check_clipboard')
+    def check_clipboard(self):
+        self.click_button_databases()
+        databases_list = self.elements_are_present(self.locators.LIST_DATABASES)
+        list_db = [databases_list[i].text for i in range(len(databases_list))]
+        if len(list_db) != 0:
+            button = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]/td[3] /button'))
+            button.click()
+            with allure.step(f'Click button {button.text} in database:'
+                             f'{self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]')).text}'
+                             f', for copy uuid.'):
+                pass
+            clipboard_uuid = pyperclip.paste()
+            short_uuid = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]/td[2]')).text
+            with allure.step(f'Checked that {short_uuid} is included into {clipboard_uuid}'):
+                pass
+            assert short_uuid in clipboard_uuid
+        else:
+            assert False, 'No database in the table.'
+
+    @allure.step('compare_database_status')
+    def compare_database_status(self):
+        self.click_button_status()
+        amount_databases = self.get_status_data()['db qty used']
+        self.click_button_databases()
+        self.click_buttons_create_new_db()
+        self.click_button_status()
+        amount_after_create = self.get_status_data()['db qty used']
+        assert int(amount_databases) + 1 == int(amount_after_create)
