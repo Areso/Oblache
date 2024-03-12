@@ -20,6 +20,7 @@ jobs:
           python-version: "3.10"
       - name: Install dependencies
         run: |
+          sudo apt-get install xsel -y
           sudo apt-get install xclip -y
           python -m pip install --upgrade pip
           pip install flake8 pytest
@@ -33,7 +34,7 @@ jobs:
           EMAIL: ${{ secrets.EMAIL}}
           PASSWORD: ${{ secrets.PASSWORD}}
         run: |
-          pytest -s --alluredir=allure-results
+          pytest -sv --alluredir=allure-results
       - name: Add allure information
         working-directory: allure-results
         if: always()
