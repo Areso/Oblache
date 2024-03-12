@@ -34,7 +34,8 @@ jobs:
           EMAIL: ${{ secrets.EMAIL}}
           PASSWORD: ${{ secrets.PASSWORD}}
         run: |
-          pytest -sv --alluredir=allure-results
+          pytest -s -v --alluredir=allure-results ./tests_ui/test_ui.py
+#          pytest -sv --alluredir=allure-results
       - name: Add allure information
         working-directory: allure-results
         if: always()
