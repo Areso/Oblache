@@ -3,6 +3,7 @@ from pprint import pprint
 
 import allure
 import pyperclip
+from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 
 from tests_ui.base_page import BasePage
@@ -81,6 +82,8 @@ class ProfilePage(BasePage):
             with allure.step(f'Click button {button.text} in database:{table_line}, for copy uuid.'):
                 pass
             clipboard_uuid = pyperclip.paste()
+            with allure.step(f"{Keys.COMMAND + 'V', Keys.COMMAND, 'V', Keys.LEFT_CONTROL + 'V'}"):
+                print(Keys.COMMAND + 'V', Keys.COMMAND, 'V', Keys.LEFT_CONTROL + 'V')
             short_uuid = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]/td[2]')).text
             with allure.step(f'Checked that {short_uuid} is included into {clipboard_uuid}'):
                 pass
