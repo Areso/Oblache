@@ -7,7 +7,7 @@ import allure
 import pytest
 import requests
 
-from conftest_api import TestData
+from connection_data import ConnectionData
 from .utils.checking import Checking
 from .utils.request import API
 
@@ -17,7 +17,7 @@ from .utils.request import API
 class TestConnectionDB:
     @allure.title('Complex')
     def test_complex(self):
-        API.check_full_cycle(TestData.token)
+        API.check_full_cycle(ConnectionData.token)
 
 
 @allure.epic('Performance DB')
@@ -25,9 +25,9 @@ class TestConnectionDB:
 class TestCapacity:
     @allure.title('test_capacity_db')
     def test_capacity_db(self):
-        start_mb_value = API.get_profile(TestData.token).json()['data']["content"][4][1]
+        start_mb_value = API.get_profile(ConnectionData.token).json()['data']["content"][4][1]
         print('Db size mb:', start_mb_value)
-        result_db_create = API.post_db_create(TestData.token)
+        result_db_create = API.post_db_create(ConnectionData.token)
         print('Status db is :', result_db_create.json())
         db_uuid = result_db_create.json()["db_uuid"]
         print("db_uuid", db_uuid)
@@ -40,12 +40,12 @@ class TestCapacity:
         text varchar(4096),
         email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
         '''
-        db = TestData.connection(f"{db_uuid}")
+        db = ConnectionData.connection(f"{db_uuid}")
         cursor = db.cursor()
         cursor.execute(query)
         db.commit()
 
-        db = TestData.connection(f"{db_uuid}")
+        db = ConnectionData.connection(f"{db_uuid}")
         letters = ascii_letters
         cursor = db.cursor()
         for x in range(10):
@@ -63,14 +63,14 @@ class TestCapacity:
         # res = cursor.fetchall()
         # print(res)
         time.sleep(40)
-        finish_mb_value = API.get_profile(TestData.token).json()['data']["content"][4][1]
+        finish_mb_value = API.get_profile(ConnectionData.token).json()['data']["content"][4][1]
         req = requests.post('http://cisdb1.areso.pro:9090/list', json={"token": "SuperSecret"})
         pprint(req.text)
         print('Db size mb after insert:', finish_mb_value)
-        create_new_db = API.post_db_create(TestData.token)
+        create_new_db = API.post_db_create(ConnectionData.token)
         print(create_new_db.status_code)
         assert int(finish_mb_value) > 0, 'Value db_size should be more than 0.'
-        result_post_db_delete = API.delete_db(f"{db_uuid}", TestData.token)
+        result_post_db_delete = API.delete_db(f"{db_uuid}", ConnectionData.token)
         Checking.check_status_code(result_post_db_delete, 200)
 
 
@@ -84,7 +84,7 @@ class TestGET:
 
     @allure.title('Get profile information.')
     def test_get_profile(self):
-        result_get = API.get_profile(TestData.token)
+        result_get = API.get_profile(ConnectionData.token)
         Checking.check_status_code(result_get, 200)
 
     @allure.title('List db_types.')
@@ -188,12 +188,12 @@ class TestPOST:
 
     @allure.title('Post login')
     def test_post_login(self):
-        result_post = API.post_login(TestData.body)
+        result_post = API.post_login(ConnectionData.body)
         Checking.check_status_code(result_post, 200)
 
     @allure.title('test_post_is_logged')
     def test_post_is_logged(self):
-        result_post = API.post_is_logged(TestData.token)
+        result_post = API.post_is_logged(ConnectionData.token)
         print(result_post.json())
         Checking.check_status_code(result_post, 200)
 
@@ -206,51 +206,51 @@ class TestPOST:
 
     @allure.title('Post db_create')
     def test_post_db_create(self):
-        result_post_db_list = API.post_db_create(TestData.token)
+        result_post_db_list = API.post_db_create(ConnectionData.token)
         Checking.check_status_code(result_post_db_list, 201)
 
     @allure.title('Post db_create with wrong db_type.')
     def test_post_db_create_with_wrong_values_dbtype(self):
-        result_post_db_list = API.post_db_create_wrong_value_db_type(TestData.token)
+        result_post_db_list = API.post_db_create_wrong_value_db_type(ConnectionData.token)
         Checking.check_status_code(result_post_db_list, 400)
         Checking.check_json_search_word_in_value(result_post_db_list, "content",
                                                  "error: DB type isn't found or isn't available for order")
 
     @allure.title('Post db_create with wrong db_version.')
     def test_post_db_create_with_wrong_values_db_version(self):
-        result_post_db_list = API.post_db_create_wrong_value_db_version(TestData.token)
+        result_post_db_list = API.post_db_create_wrong_value_db_version(ConnectionData.token)
         Checking.check_status_code(result_post_db_list, 400)
         Checking.check_json_search_word_in_value(result_post_db_list, "content",
                                                  "error: DB version isn't found or isn't available for order")
 
     @allure.title('Post db_create with wrong env.')
     def test_post_db_create_with_wrong_values_env(self):
-        result_post_db_list = API.post_db_create_wrong_value_env(TestData.token)
+        result_post_db_list = API.post_db_create_wrong_value_env(ConnectionData.token)
         Checking.check_status_code(result_post_db_list, 400)
         Checking.check_json_search_word_in_value(result_post_db_list, "content",
                                                  "error: DB environment isn't found or isn't available for order")
 
     @allure.title('Post db_create with wrong region.')
     def test_post_db_create_with_wrong_values_region(self):
-        result_post_db_list = API.post_db_create_wrong_value_region(TestData.token)
+        result_post_db_list = API.post_db_create_wrong_value_region(ConnectionData.token)
         Checking.check_status_code(result_post_db_list, 400)
         Checking.check_json_search_word_in_value(result_post_db_list, "content",
                                                  "error: region isn't found or isn't available for order")
 
     @allure.title('Post db_list')
     def test_post_db_list(self):
-        result_post_db_list = API.post_db_list(TestData.token)
+        result_post_db_list = API.post_db_list(ConnectionData.token)
         print(result_post_db_list.json())
         Checking.check_status_code(result_post_db_list, 200)
 
     @allure.title('Post db list with filter')
     @pytest.mark.xfail(reason='There are databases that need to be deleted manually.')
     def test_post_db_list_with_filter(self):
-        list_db = API.post_db_list(TestData.token)
+        list_db = API.post_db_list(ConnectionData.token)
         json_list_db = list_db.json()
         try:
             first_db_uuid = list(json_list_db['data'])[-1]
-            result_post_db_list = API.delete_db(first_db_uuid, TestData.token)
+            result_post_db_list = API.delete_db(first_db_uuid, ConnectionData.token)
             print(result_post_db_list.json())
             Checking.check_status_code(result_post_db_list, 200)
         except IndexError as ex:
@@ -259,12 +259,12 @@ class TestPOST:
 
     @allure.title('Post change password')
     def test_post_change_password(self):
-        new_password = TestData.new_password
-        result_post_change_password = API.post_change_password(TestData.token, TestData.old_password, new_password)
+        new_password = ConnectionData.new_password
+        result_post_change_password = API.post_change_password(ConnectionData.token, ConnectionData.old_password, new_password)
         Checking.check_status_code(result_post_change_password, 200)
         Checking.check_json_search_word_in_value(result_post_change_password, "content",
                                                  "msg[31]: password successfully updated")
-        result_post_change_password = API.post_change_password(TestData.token, new_password, TestData.old_password)
+        result_post_change_password = API.post_change_password(ConnectionData.token, new_password, ConnectionData.old_password)
         Checking.check_status_code(result_post_change_password, 200)
         Checking.check_json_search_word_in_value(result_post_change_password, "content",
                                                  "msg[31]: password successfully updated")
@@ -272,11 +272,11 @@ class TestPOST:
     @allure.title('delete_db')
     @pytest.mark.xfail(reason='When using this method during a test run, the database may be in deleting status.')
     def test_delete_db(self):
-        list_db = API.post_db_list(TestData.token)
+        list_db = API.post_db_list(ConnectionData.token)
         json_list_db = list_db.json()
         try:
             first_db_uuid = list(json_list_db['data'])[0]
-            result_post_db_delete = API.delete_db(first_db_uuid, TestData.token)
+            result_post_db_delete = API.delete_db(first_db_uuid, ConnectionData.token)
             print(result_post_db_delete.json())
             Checking.check_status_code(result_post_db_delete, 200)
         except IndexError as ex:
@@ -286,6 +286,6 @@ class TestPOST:
     @allure.title('test_delete_all_created_db')
     def test_delete_all_created_db(self):
         json_list_db = API.delete_all_created_db()
-        list_db = API.post_db_list(TestData.token)
+        list_db = API.post_db_list(ConnectionData.token)
         Checking.check_status_code(list_db, 200)
         assert json_list_db == {}

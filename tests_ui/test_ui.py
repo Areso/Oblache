@@ -30,7 +30,7 @@ class TestUI:
             page.open()
             page.get_all_ids()
 
-        @allure.title('test_ids_is_not_repeated_on_login_page')
+        @allure.title('test_buttons_are_clickable')
         def test_buttons_are_clickable(self, driver):
             page = LoginPage(driver, TestDataLinks.register_page)
             page.open()
@@ -44,33 +44,19 @@ class TestUI:
 
     @allure.suite('Test Profile Page.')
     class TestProfilePage:
-        @allure.title('test_ids_is_not_repeated_on_login_page')
+        @allure.title('test_ids_is_not_repeated_on_profile_page')
         def test_ids_is_not_repeated_on_profile_page(self, driver):
             page = LoginPage(driver, TestDataLinks.profile_page)
             page.open()
             page.get_all_ids()
 
         @allure.title('test_create_database')
-        def test_create_database(self, driver):
-            page = LoginPage(driver, TestDataLinks.register_page)
-            page.open()
-            page.login_user()
+        def test_create_database(self, driver, authorization_user):
             page = ProfilePage(driver)
-            page.click_button_status()
-            amount_databases = page.get_status_data()['db qty used']
-
-            page.click_button_databases()
-            page.click_buttons_create_new_db()
-
-            page.click_button_status()
-            amount_after_create = page.get_status_data()['db qty used']
-            assert int(amount_databases) + 1 == int(amount_after_create)
+            page.compare_database_status()
 
         @allure.title('test_delete_database')
-        def test_delete_database(self, driver):
-            page = LoginPage(driver, TestDataLinks.register_page)
-            page.open()
-            page.login_user()
+        def test_delete_database(self, driver, authorization_user):
             page = ProfilePage(driver)
             page.click_button_status()
             amount_databases = page.get_status_data()['db qty used']
@@ -78,6 +64,11 @@ class TestUI:
             page.click_button_status()
             amount_after_create = page.get_status_data()['db qty used']
             assert amount_databases == amount_after_create or msg == 'No database for deleting.'
+
+        @allure.title('test_clipboard')
+        def test_clipboard(self, driver, authorization_user):
+            page = ProfilePage(driver)
+            page.check_clipboard()
 
     # def test_source_v1(self):
     #     source = requests.get('https://oblache.areso.pro/tos.html')
