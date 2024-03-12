@@ -6,6 +6,8 @@ import pyperclip
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 
+from connection_data import ConnectionData
+from tests_api.utils.request import API
 from tests_ui.base_page import BasePage
 from tests_ui.login_page_locators import Locators
 
@@ -81,15 +83,15 @@ class ProfilePage(BasePage):
             table_line = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]')).text
             with allure.step(f'Click button {button.text} in database:{table_line}, for copy uuid.'):
                 pass
-            # clipboard_uuid = pyperclip.paste()
-            with allure.step(f"{Keys.COMMAND + 'V', Keys.COMMAND, 'V', Keys.LEFT_CONTROL + 'V'}"):
-                print(Keys.COMMAND + 'V', Keys.COMMAND, 'V', Keys.LEFT_CONTROL + 'V')
-        #     short_uuid = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]/td[2]')).text
-        #     with allure.step(f'Checked that {short_uuid} is included into {clipboard_uuid}'):
-        #         pass
-        #     assert short_uuid in clipboard_uuid
-        # else:
-        #     assert False, 'No database in the table.'
+
+            result = API.post_db_list(ConnectionData.token)
+            full_uuid = list(result.json()['data'])[0]
+            short_uuid = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]/td[2]')).text
+            with allure.step(f'Checked that {short_uuid} is included into {full_uuid}'):
+                pass
+            assert short_uuid in full_uuid
+        else:
+            assert False, 'No database in the table.'
 
     @allure.step('compare_database_status')
     def compare_database_status(self):
