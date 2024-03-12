@@ -1,0 +1,551 @@
+{
+  "uid" : "4a8dd1469612cccf",
+  "name" : "test_delete_database",
+  "fullName" : "tests_ui.test_ui.TestProfilePage#test_delete_database",
+  "historyId" : "79ccd4aa4a29c03ae3f72e89c73351ae",
+  "time" : {
+    "start" : 1710264747280,
+    "stop" : 1710264772161,
+    "duration" : 24881
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert ('nodata' == '5'\n  - 5\n  + nodata or None == 'No database for deleting.')",
+  "statusTrace" : "self = <tests_ui.test_ui.TestUI.TestProfilePage object at 0x7fe44101c640>\ndriver = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"e2d0b42a5ef985ed17912219de3dc0ad\")>\nauthorization_user = <tests_ui.login_page.LoginPage object at 0x7fe4410bcc70>\n\n    @allure.title('test_delete_database')\n    def test_delete_database(self, driver, authorization_user):\n        page = ProfilePage(driver)\n        page.click_button_status()\n        amount_databases = page.get_status_data()['db qty used']\n        msg = page.delete_database()\n        page.click_button_status()\n        amount_after_create = page.get_status_data()['db qty used']\n>       assert amount_databases == amount_after_create or msg == 'No database for deleting.'\nE       AssertionError: assert ('nodata' == '5'\nE         - 5\nE         + nodata or None == 'No database for deleting.')\n\ntests_ui/test_ui.py:66: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "driver",
+    "time" : {
+      "start" : 1710264745600,
+      "stop" : 1710264745877,
+      "duration" : 277
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "authorization_user",
+    "time" : {
+      "start" : 1710264745878,
+      "stop" : 1710264747279,
+      "duration" : 1401
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Open page: https://oblache.areso.pro/register.html",
+      "time" : {
+        "start" : 1710264745878,
+        "stop" : 1710264746225,
+        "duration" : 347
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "login_user",
+      "time" : {
+        "start" : 1710264746225,
+        "stop" : 1710264747279,
+        "duration" : 1054
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Enter email.",
+        "time" : {
+          "start" : 1710264746225,
+          "stop" : 1710264746277,
+          "duration" : 52
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Enter password.",
+        "time" : {
+          "start" : 1710264746277,
+          "stop" : 1710264746317,
+          "duration" : 40
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Click button \"Login\"",
+        "time" : {
+          "start" : 1710264746317,
+          "stop" : 1710264746379,
+          "duration" : 62
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "element_is_present_and_clickable",
+          "time" : {
+            "start" : 1710264746318,
+            "stop" : 1710264746352,
+            "duration" : 34
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "locator",
+            "value" : "('xpath', '//input[@id=\"inp_regform_login_submit\"]')"
+          } ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 1,
+        "hasContent" : true
+      }, {
+        "name" : "Check url is present: https://oblache.areso.pro/profile.html",
+        "time" : {
+          "start" : 1710264746379,
+          "stop" : 1710264747279,
+          "duration" : 900
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 5,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 7,
+    "hasContent" : true
+  } ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: assert ('nodata' == '5'\n  - 5\n  + nodata or None == 'No database for deleting.')",
+    "statusTrace" : "self = <tests_ui.test_ui.TestUI.TestProfilePage object at 0x7fe44101c640>\ndriver = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"e2d0b42a5ef985ed17912219de3dc0ad\")>\nauthorization_user = <tests_ui.login_page.LoginPage object at 0x7fe4410bcc70>\n\n    @allure.title('test_delete_database')\n    def test_delete_database(self, driver, authorization_user):\n        page = ProfilePage(driver)\n        page.click_button_status()\n        amount_databases = page.get_status_data()['db qty used']\n        msg = page.delete_database()\n        page.click_button_status()\n        amount_after_create = page.get_status_data()['db qty used']\n>       assert amount_databases == amount_after_create or msg == 'No database for deleting.'\nE       AssertionError: assert ('nodata' == '5'\nE         - 5\nE         + nodata or None == 'No database for deleting.')\n\ntests_ui/test_ui.py:66: AssertionError",
+    "steps" : [ {
+      "name" : "Click button Status.",
+      "time" : {
+        "start" : 1710264747280,
+        "stop" : 1710264747330,
+        "duration" : 50
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "element_is_present_and_clickable",
+        "time" : {
+          "start" : 1710264747280,
+          "stop" : 1710264747309,
+          "duration" : 29
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "locator",
+          "value" : "('xpath', '//button[@id=\"menu_button_status\"]')"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 1,
+      "hasContent" : true
+    }, {
+      "name" : "get_status_data",
+      "time" : {
+        "start" : 1710264747331,
+        "stop" : 1710264747560,
+        "duration" : 229
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Get status data.",
+        "time" : {
+          "start" : 1710264747559,
+          "stop" : 1710264747560,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status data is: {'Email:': 'nodata', 'is blocked?': 'nodata', 'is db creation allowed?': 'nodata', 'disk db quota, mb': 'nodata', 'disk db used, mb': 'nodata', 'db qty quota': 'nodata', 'db qty used': 'nodata'}",
+          "time" : {
+            "start" : 1710264747560,
+            "stop" : 1710264747560,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 1,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 2,
+      "hasContent" : true
+    }, {
+      "name" : "delete_database",
+      "time" : {
+        "start" : 1710264747560,
+        "stop" : 1710264771927,
+        "duration" : 24367
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Click \"Databases\" button.",
+        "time" : {
+          "start" : 1710264747560,
+          "stop" : 1710264747610,
+          "duration" : 50
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "element_is_present_and_clickable",
+          "time" : {
+            "start" : 1710264747560,
+            "stop" : 1710264747588,
+            "duration" : 28
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "locator",
+            "value" : "('xpath', '//button[@id = \"menu_button_databases\"]')"
+          } ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 1,
+        "hasContent" : true
+      }, {
+        "name" : "click_buttons_create_new_db",
+        "time" : {
+          "start" : 1710264747610,
+          "stop" : 1710264750752,
+          "duration" : 3142
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Click \"Create new DB\" button.",
+          "time" : {
+            "start" : 1710264747610,
+            "stop" : 1710264747661,
+            "duration" : 51
+          },
+          "status" : "passed",
+          "steps" : [ {
+            "name" : "element_is_present_and_clickable",
+            "time" : {
+              "start" : 1710264747610,
+              "stop" : 1710264747639,
+              "duration" : 29
+            },
+            "status" : "passed",
+            "steps" : [ ],
+            "attachments" : [ ],
+            "parameters" : [ {
+              "name" : "locator",
+              "value" : "('xpath', '//button[@id=\"btn_new_db\"]')"
+            } ],
+            "attachmentsCount" : 0,
+            "shouldDisplayMessage" : false,
+            "stepsCount" : 0,
+            "hasContent" : true
+          } ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 1,
+          "hasContent" : true
+        }, {
+          "name" : "Click \"Create new DB\" button.",
+          "time" : {
+            "start" : 1710264747661,
+            "stop" : 1710264750752,
+            "duration" : 3091
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 3,
+        "hasContent" : true
+      }, {
+        "name" : "Click \"Databases\" button.",
+        "time" : {
+          "start" : 1710264750752,
+          "stop" : 1710264750803,
+          "duration" : 51
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "element_is_present_and_clickable",
+          "time" : {
+            "start" : 1710264750752,
+            "stop" : 1710264750779,
+            "duration" : 27
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "locator",
+            "value" : "('xpath', '//button[@id = \"menu_button_databases\"]')"
+          } ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 1,
+        "hasContent" : true
+      }, {
+        "name" : "Click button: ❌",
+        "time" : {
+          "start" : 1710264751907,
+          "stop" : 1710264771927,
+          "duration" : 20020
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 9,
+      "hasContent" : true
+    }, {
+      "name" : "Click button Status.",
+      "time" : {
+        "start" : 1710264771927,
+        "stop" : 1710264771973,
+        "duration" : 46
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "element_is_present_and_clickable",
+        "time" : {
+          "start" : 1710264771927,
+          "stop" : 1710264771954,
+          "duration" : 27
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "locator",
+          "value" : "('xpath', '//button[@id=\"menu_button_status\"]')"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 1,
+      "hasContent" : true
+    }, {
+      "name" : "get_status_data",
+      "time" : {
+        "start" : 1710264771973,
+        "stop" : 1710264772161,
+        "duration" : 188
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Get status data.",
+        "time" : {
+          "start" : 1710264772161,
+          "stop" : 1710264772161,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status data is: {'Email:': 'test4@mail.com', 'is blocked?': '0', 'is db creation allowed?': '1', 'disk db quota, mb': '4', 'disk db used, mb': '0', 'db qty quota': '100', 'db qty used': '5'}",
+          "time" : {
+            "start" : 1710264772161,
+            "stop" : 1710264772161,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 1,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 2,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "stepsCount" : 20,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "driver::0",
+    "time" : {
+      "start" : 1710264772165,
+      "stop" : 1710264772331,
+      "duration" : 166
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "a07ed05cc9b033d7",
+      "name" : "Screenshot 2024-03-12 17:32:52.273623",
+      "source" : "a07ed05cc9b033d7.png",
+      "type" : "image/png",
+      "size" : 37625
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : true
+  } ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test Profile Page."
+  }, {
+    "name" : "epic",
+    "value" : "UI Tests"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_ui"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestUI"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1424-773"
+  }, {
+    "name" : "thread",
+    "value" : "1831-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_ui.test_ui"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "4a8dd1469612cccf.json",
+  "parameterValues" : [ ]
+}
