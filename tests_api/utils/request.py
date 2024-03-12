@@ -391,10 +391,6 @@ class API(ConnectionData):
 
     @staticmethod
     def check_full_cycle(token):
-        """
-        :param token:
-        :return: Response
-        """
         with allure.step('check_full_cycle'):
             print('\nCheck Time: ', str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
             start_value_db_list = API.post_db_list(token)

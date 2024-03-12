@@ -16,6 +16,7 @@ class ProfilePage(BasePage):
 
     @allure.step('Click button Status.')
     def click_button_status(self):
+        time.sleep(1)
         return self.element_is_present_and_clickable(self.locators.STATUS_BUTTON).click()
 
     @allure.step('get_status_data')

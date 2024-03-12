@@ -70,6 +70,7 @@ class TestUI:
             page = ProfilePage(driver)
             page.check_clipboard()
 
+
     # def test_source_v1(self):
     #     source = requests.get('https://oblache.areso.pro/tos.html')
     #     data = []
