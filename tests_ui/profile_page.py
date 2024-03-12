@@ -2,8 +2,6 @@ import time
 from pprint import pprint
 
 import allure
-import pyperclip
-from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 
 from connection_data import ConnectionData
@@ -88,7 +86,9 @@ class ProfilePage(BasePage):
             full_uuid = list(result.json()['data'])[0]
             short_uuid = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]/td[2]')).text
             assert self.element_is_visible(self.locators.MSG_FROM_SERVER)
-            msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text
+            with allure.step('Check msg after copy uuid is present'):
+                msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text
+                print(msg)
             with allure.step(f'Checked that {short_uuid} is included into {full_uuid}'):
                 pass
             assert short_uuid in full_uuid
