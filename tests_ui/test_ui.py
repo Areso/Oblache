@@ -66,10 +66,14 @@ class TestUI:
             assert amount_databases == amount_after_create or msg == 'No database for deleting.'
 
         @allure.title('test_clipboard')
-        def test_clipboard(self, driver, authorization_user):
+        def test_clipboard_uuid(self, driver, authorization_user):
             page = ProfilePage(driver)
             page.check_clipboard()
 
+        @allure.title('test_clipboard_jdbc')
+        def test_clipboard_jdbc(self, driver, authorization_user):
+            page = ProfilePage(driver)
+            page.check_clipboard_jdbc()
 
     # def test_source_v1(self):
     #     source = requests.get('https://oblache.areso.pro/tos.html')

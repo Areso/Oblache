@@ -92,7 +92,32 @@ class ProfilePage(BasePage):
                 print(msg)
             with allure.step(f'Checked that {short_uuid} is included into {full_uuid}'):
                 pass
-            assert short_uuid in full_uuid
+            assert short_uuid in msg
+        else:
+            assert False, 'No database in the table.'
+
+    @allure.step('check_clipboard_jdbc')
+    def check_clipboard_jdbc(self):
+        self.click_button_databases()
+        databases_list = self.elements_are_present(self.locators.LIST_DATABASES)
+        list_db = [databases_list[i].text for i in range(len(databases_list))]
+        if len(list_db) != 0:
+            button = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]/td[7] /button'))
+            button.click()
+            table_line = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]')).text
+            with allure.step(f'Click button {button.text} in database:{table_line}, for copy uuid.'):
+                pass
+
+            result = API.post_db_list(ConnectionData.token)
+            uuid = list(result.json()['data'])[0]
+            print('UUID: ', uuid)
+            jdbc = result.json()['data'][f'{uuid}'][3]
+            print('JDBC', jdbc)
+            assert self.element_is_visible(self.locators.MSG_FROM_SERVER)
+            with allure.step('Check msg after copy JDBC is present'):
+                msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text
+                print(msg)
+            assert msg in jdbc
         else:
             assert False, 'No database in the table.'
 
