@@ -117,7 +117,7 @@ class ProfilePage(BasePage):
             with allure.step('Check msg after copy JDBC is present'):
                 msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text
                 print(msg)
-            assert msg in jdbc
+            assert msg == jdbc, f'{msg} != {jdbc}'
         else:
             assert False, 'No database in the table.'
 
