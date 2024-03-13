@@ -1,0 +1,395 @@
+{
+  "uid" : "d54c63be78c925de",
+  "name" : "test_clipboard_jdbc",
+  "fullName" : "tests_ui.test_ui.TestProfilePage#test_clipboard_jdbc",
+  "historyId" : "3c3bc2de59af179987e51569fc1d3309",
+  "time" : {
+    "start" : 1710357784950,
+    "stop" : 1710357786133,
+    "duration" : 1183
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: 0 != mysql://user_b5zflcdf:pwPW01__3ctFnfS3o5Tba9@cisdb1.areso.pro:3306/db_q72c4hiz",
+  "statusTrace" : "self = <tests_ui.test_ui.TestUI.TestProfilePage object at 0x755b56c0faf0>\ndriver = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"48bec81d2fe450b1a7484dc84ea027c7\")>\nauthorization_user = <tests_ui.login_page.LoginPage object at 0x755b56c70460>\n\n    @allure.title('test_clipboard_jdbc')\n    def test_clipboard_jdbc(self, driver, authorization_user):\n        page = ProfilePage(driver)\n>       page.check_clipboard_jdbc()\n\ntests_ui/test_ui.py:76: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <tests_ui.profile_page.ProfilePage object at 0x755b56c70070>\n\n    @allure.step('check_clipboard_jdbc')\n    def check_clipboard_jdbc(self):\n        self.click_button_databases()\n        databases_list = self.elements_are_present(self.locators.LIST_DATABASES)\n        list_db = [databases_list[i].text for i in range(len(databases_list))]\n        if len(list_db) != 0:\n            button = self.element_is_visible((By.XPATH, '//tbody[@id=\"tbody_dbs\"] /tr[1]/td[7] /button'))\n            button.click()\n            table_line = self.element_is_visible((By.XPATH, '//tbody[@id=\"tbody_dbs\"] /tr[1]')).text\n            with allure.step(f'Click button {button.text} in database:{table_line}, for copy uuid.'):\n                pass\n    \n            result = API.post_db_list(ConnectionData.token)\n            uuid = list(result.json()['data'])[0]\n            print('UUID: ', uuid)\n            jdbc = result.json()['data'][f'{uuid}'][3]\n            print('JDBC', jdbc)\n            assert self.element_is_visible(self.locators.MSG_FROM_SERVER)\n            with allure.step('Check msg after copy JDBC is present'):\n                msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text\n                print(msg)\n>           assert msg == jdbc, f'{msg} != {jdbc}'\nE           AssertionError: 0 != mysql://user_b5zflcdf:pwPW01__3ctFnfS3o5Tba9@cisdb1.areso.pro:3306/db_q72c4hiz\n\ntests_ui/profile_page.py:120: AssertionError",
+  "flaky" : false,
+  "newFailed" : true,
+  "beforeStages" : [ {
+    "name" : "driver",
+    "time" : {
+      "start" : 1710357783264,
+      "stop" : 1710357783543,
+      "duration" : 279
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "authorization_user",
+    "time" : {
+      "start" : 1710357783544,
+      "stop" : 1710357784950,
+      "duration" : 1406
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Open page: https://oblache.areso.pro/register.html",
+      "time" : {
+        "start" : 1710357783544,
+        "stop" : 1710357783903,
+        "duration" : 359
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "login_user",
+      "time" : {
+        "start" : 1710357783904,
+        "stop" : 1710357784950,
+        "duration" : 1046
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Enter email.",
+        "time" : {
+          "start" : 1710357783904,
+          "stop" : 1710357783956,
+          "duration" : 52
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Enter password.",
+        "time" : {
+          "start" : 1710357783956,
+          "stop" : 1710357783996,
+          "duration" : 40
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "Click button \"Login\"",
+        "time" : {
+          "start" : 1710357783997,
+          "stop" : 1710357784059,
+          "duration" : 62
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "element_is_present_and_clickable",
+          "time" : {
+            "start" : 1710357783997,
+            "stop" : 1710357784031,
+            "duration" : 34
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "locator",
+            "value" : "('xpath', '//input[@id=\"inp_regform_login_submit\"]')"
+          } ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 1,
+        "hasContent" : true
+      }, {
+        "name" : "Check url is present: https://oblache.areso.pro/profile.html",
+        "time" : {
+          "start" : 1710357784059,
+          "stop" : 1710357784950,
+          "duration" : 891
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 5,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 7,
+    "hasContent" : true
+  } ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: 0 != mysql://user_b5zflcdf:pwPW01__3ctFnfS3o5Tba9@cisdb1.areso.pro:3306/db_q72c4hiz",
+    "statusTrace" : "self = <tests_ui.test_ui.TestUI.TestProfilePage object at 0x755b56c0faf0>\ndriver = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"48bec81d2fe450b1a7484dc84ea027c7\")>\nauthorization_user = <tests_ui.login_page.LoginPage object at 0x755b56c70460>\n\n    @allure.title('test_clipboard_jdbc')\n    def test_clipboard_jdbc(self, driver, authorization_user):\n        page = ProfilePage(driver)\n>       page.check_clipboard_jdbc()\n\ntests_ui/test_ui.py:76: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <tests_ui.profile_page.ProfilePage object at 0x755b56c70070>\n\n    @allure.step('check_clipboard_jdbc')\n    def check_clipboard_jdbc(self):\n        self.click_button_databases()\n        databases_list = self.elements_are_present(self.locators.LIST_DATABASES)\n        list_db = [databases_list[i].text for i in range(len(databases_list))]\n        if len(list_db) != 0:\n            button = self.element_is_visible((By.XPATH, '//tbody[@id=\"tbody_dbs\"] /tr[1]/td[7] /button'))\n            button.click()\n            table_line = self.element_is_visible((By.XPATH, '//tbody[@id=\"tbody_dbs\"] /tr[1]')).text\n            with allure.step(f'Click button {button.text} in database:{table_line}, for copy uuid.'):\n                pass\n    \n            result = API.post_db_list(ConnectionData.token)\n            uuid = list(result.json()['data'])[0]\n            print('UUID: ', uuid)\n            jdbc = result.json()['data'][f'{uuid}'][3]\n            print('JDBC', jdbc)\n            assert self.element_is_visible(self.locators.MSG_FROM_SERVER)\n            with allure.step('Check msg after copy JDBC is present'):\n                msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text\n                print(msg)\n>           assert msg == jdbc, f'{msg} != {jdbc}'\nE           AssertionError: 0 != mysql://user_b5zflcdf:pwPW01__3ctFnfS3o5Tba9@cisdb1.areso.pro:3306/db_q72c4hiz\n\ntests_ui/profile_page.py:120: AssertionError",
+    "steps" : [ {
+      "name" : "check_clipboard_jdbc",
+      "time" : {
+        "start" : 1710357784950,
+        "stop" : 1710357786133,
+        "duration" : 1183
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: 0 != mysql://user_b5zflcdf:pwPW01__3ctFnfS3o5Tba9@cisdb1.areso.pro:3306/db_q72c4hiz\n",
+      "statusTrace" : "  File \"/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/allure_commons/_allure.py\", line 192, in impl\n    return func(*a, **kw)\n  File \"/home/runner/work/Oblache/Oblache/tests_ui/profile_page.py\", line 120, in check_clipboard_jdbc\n    assert msg == jdbc, f'{msg} != {jdbc}'\n",
+      "steps" : [ {
+        "name" : "Click \"Databases\" button.",
+        "time" : {
+          "start" : 1710357784951,
+          "stop" : 1710357785003,
+          "duration" : 52
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "element_is_present_and_clickable",
+          "time" : {
+            "start" : 1710357784951,
+            "stop" : 1710357784980,
+            "duration" : 29
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "locator",
+            "value" : "('xpath', '//button[@id = \"menu_button_databases\"]')"
+          } ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 0,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 1,
+        "hasContent" : true
+      }, {
+        "name" : "Click button \uD83D\uDD11 in database:0 bad109 \uD83D\uDCCB db_q72c4hiz CIS db_created \uD83D\uDD11 2024-03-12 21:35:14 0 ❌, for copy uuid.",
+        "time" : {
+          "start" : 1710357785696,
+          "stop" : 1710357785696,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      }, {
+        "name" : "post_db_list",
+        "time" : {
+          "start" : 1710357785696,
+          "stop" : 1710357786087,
+          "duration" : 391
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "POST https://dbend.areso.pro/db_list",
+          "time" : {
+            "start" : 1710357785696,
+            "stop" : 1710357786087,
+            "duration" : 391
+          },
+          "status" : "passed",
+          "steps" : [ {
+            "name" : "Status code: 200",
+            "time" : {
+              "start" : 1710357786087,
+              "stop" : 1710357786087,
+              "duration" : 0
+            },
+            "status" : "passed",
+            "steps" : [ ],
+            "attachments" : [ ],
+            "parameters" : [ ],
+            "attachmentsCount" : 0,
+            "shouldDisplayMessage" : false,
+            "stepsCount" : 0,
+            "hasContent" : false
+          }, {
+            "name" : "Params url: https://dbend.areso.pro/db_list",
+            "time" : {
+              "start" : 1710357786087,
+              "stop" : 1710357786087,
+              "duration" : 0
+            },
+            "status" : "passed",
+            "steps" : [ ],
+            "attachments" : [ ],
+            "parameters" : [ ],
+            "attachmentsCount" : 0,
+            "shouldDisplayMessage" : false,
+            "stepsCount" : 0,
+            "hasContent" : false
+          } ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "stepsCount" : 2,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 3,
+        "hasContent" : true
+      }, {
+        "name" : "Check msg after copy JDBC is present",
+        "time" : {
+          "start" : 1710357786109,
+          "stop" : 1710357786133,
+          "duration" : 24
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "stepsCount" : 8,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "stepsCount" : 9,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "driver::0",
+    "time" : {
+      "start" : 1710357786140,
+      "stop" : 1710357786330,
+      "duration" : 190
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "b31e62ccf5afd242",
+      "name" : "Screenshot 2024-03-13 19:23:06.270323",
+      "source" : "b31e62ccf5afd242.png",
+      "type" : "image/png",
+      "size" : 138560
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : true
+  } ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test Profile Page."
+  }, {
+    "name" : "epic",
+    "value" : "UI Tests"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_ui"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestUI"
+  }, {
+    "name" : "host",
+    "value" : "fv-az883-636"
+  }, {
+    "name" : "thread",
+    "value" : "2024-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_ui.test_ui"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 1,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "3f39014d99895981",
+        "status" : "passed",
+        "time" : {
+          "start" : 1710357479795,
+          "stop" : 1710357480911,
+          "duration" : 1116
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "d54c63be78c925de.json",
+  "parameterValues" : [ ]
+}
