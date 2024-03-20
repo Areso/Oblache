@@ -2,7 +2,7 @@ import allure
 import requests
 
 from tests_ui.login_page_locators import Locators
-from tests_ui.pages.base_page import BasePage
+from tests_ui.base_page import BasePage
 
 
 @allure.suite('Main Page')
