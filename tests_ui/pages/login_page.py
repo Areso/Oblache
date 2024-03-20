@@ -4,8 +4,8 @@ from pprint import pprint
 import allure
 from dotenv import load_dotenv
 
-from tests_ui.pages.base_page import BasePage
 from tests_ui.login_page_locators import Locators
+from tests_ui.pages.base_page import BasePage
 
 load_dotenv()
 
