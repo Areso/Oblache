@@ -45,7 +45,7 @@ class ProfilePage(BasePage):
     def click_buttons_create_new_db(self):
         with allure.step('Click "Create new DB" button.'):
             self.element_is_present_and_clickable(self.locators.CREATE_DATABASE_BUTTON).click()
-        with allure.step('Click "Create new DB" button.'):
+        with allure.step('Click "Create" button.'):
             self.element_is_clickable(self.locators.CREATE_NEW_DATABASE_BUTTON).click()
             print(f'Click {self.locators.CREATE_NEW_DATABASE_BUTTON}')
 
