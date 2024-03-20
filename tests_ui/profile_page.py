@@ -48,7 +48,6 @@ class ProfilePage(BasePage):
         with allure.step('Click "Create new DB" button.'):
             self.element_is_clickable(self.locators.CREATE_NEW_DATABASE_BUTTON).click()
             print(f'Click {self.locators.CREATE_NEW_DATABASE_BUTTON}')
-            time.sleep(1.5)
 
     @allure.step('get_amount_databases')
     def get_amount_databases(self):
@@ -89,10 +88,10 @@ class ProfilePage(BasePage):
             result = API.post_db_list(ConnectionData.token)
             full_uuid = list(result.json()['data'])[0]
             short_uuid = self.element_is_visible((By.XPATH, f'{table_xpath} //tr[1]/td[2]')).text
-            assert self.element_is_visible(self.locators.MSG_FROM_SERVER)
-            msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text
+            assert self.element_is_visible(self.locators.MSG_COPYPASTE)
+            msg = self.element_is_visible(self.locators.MSG_COPYPASTE).text
             print(msg)
-            with allure.step(f'Check msg after copy uuid is present. MSG: {msg}'):
+            with allure.step(f'Check message after UUID copy. MSG: {msg}'):
                 pass
             with allure.step(f'Checked that {short_uuid} is included into {full_uuid}'):
                 pass
@@ -115,10 +114,10 @@ class ProfilePage(BasePage):
             print('UUID: ', uuid)
             jdbc = result.json()['data'][f'{uuid}'][3]
             print('JDBC', jdbc)
-            assert self.element_is_visible(self.locators.MSG_FROM_SERVER)
-            msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text
+            assert self.element_is_visible(self.locators.MSG_COPYPASTE)
+            msg = self.element_is_visible(self.locators.MSG_COPYPASTE).text
             print(msg)
-            with allure.step(f'Check msg after copy JDBC is present. MSG: {msg}'):
+            with allure.step(f'Check message after JDBC copy. MSG: {msg}'):
                 pass
             assert msg == 'copied to clipboard', 'Message is not present.'
         else:
@@ -130,6 +129,11 @@ class ProfilePage(BasePage):
         amount_databases = self.get_status_data()['db qty used']
         self.click_button_databases()
         self.click_buttons_create_new_db()
+        msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text
+        print(msg)
+        with allure.step(f'Check the message after clicking the create database button. MSG: {msg}'):
+            pass
+        assert msg == 'Order for new DB accepted', 'Message is not present.'
         self.click_button_status()
         amount_after_create = self.get_status_data()['db qty used']
         assert int(amount_databases) + 1 == int(amount_after_create)
