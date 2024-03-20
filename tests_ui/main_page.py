@@ -16,3 +16,7 @@ class MainPage(BasePage):
         for link in list_links:
             with allure.step(f'{link} status code is: {requests.get(link).status_code}'):
                 assert requests.get(link).status_code != 404, f'Link {link} is broken!'
+
+    def check_main_button_is_visible(self):
+        self.element_is_present_and_clickable(self.locators.TOS_BUTTON).click()
+        assert self.element_is_visible(self.locators.DATABASE_BUTTON)

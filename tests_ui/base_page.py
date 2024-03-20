@@ -67,4 +67,3 @@ class BasePage:
             Wait(self.driver, self.timeout).until(
                 ec.url_changes(url), message=f"Url: {url} has not been changed!!!")
             self.get_current_url()
-

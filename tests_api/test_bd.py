@@ -243,6 +243,12 @@ class TestPOST:
         print(result_post_db_list.json())
         Checking.check_status_code(result_post_db_list, 200)
 
+    @allure.title('Post container_list')
+    def test_post_container_list(self):
+        result = API.post_container_list(ConnectionData.token)
+        print(result.json())
+        Checking.check_status_code(result, 200)
+
     @allure.title('Post db list with filter')
     @pytest.mark.xfail(reason='There are databases that need to be deleted manually.')
     def test_post_db_list_with_filter(self):
