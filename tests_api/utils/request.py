@@ -239,6 +239,19 @@ class API(ConnectionData):
             return result_post
 
     @staticmethod
+    def post_container_list(token: dict):
+        """
+        :param token:
+        :return: Response
+        """
+        with allure.step('post_container_list'):
+            post_resource = '/container_list'  # Resource for method
+            post_url = ConnectionData.base_url + post_resource
+            with allure.step(f'POST {post_url}'):
+                result_post = HttpMethods.post(post_url, token=token)
+            return result_post
+
+    @staticmethod
     def post_change_password(token: dict, old_password: str, new_password: str):
         """
         Body example {"current_password":"", "new_password":""}.

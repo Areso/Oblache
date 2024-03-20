@@ -22,6 +22,12 @@ class TestUI:
             page.open()
             page.check_links()
 
+        @allure.title('test_main_button')
+        def test_main_button(self, driver):
+            page = MainPage(driver, TestDataLinks.main_page)
+            page.open()
+            page.check_main_button_is_visible()
+
     @allure.suite('Test Login Page.')
     class TestLoginPage:
         @allure.title('test_ids_is_not_repeated_on_login_page')
@@ -68,12 +74,20 @@ class TestUI:
         @allure.title('test_clipboard')
         def test_clipboard_uuid(self, driver, authorization_user):
             page = ProfilePage(driver)
-            page.check_clipboard()
+            page.click_button_databases()
+            page.check_clipboard('//tbody[@id="tbody_dbs"]')
 
         @allure.title('test_clipboard_jdbc')
         def test_clipboard_jdbc(self, driver, authorization_user):
             page = ProfilePage(driver)
+            page.click_button_databases()
             page.check_clipboard_jdbc()
+
+        @allure.title('test_clipboard_jdbc')
+        def test_clipboard_uuid_docker(self, driver, authorization_user):
+            page = ProfilePage(driver)
+            page.click_button_docker_containers()
+            page.check_clipboard('//table[@id="table_containers"]')
 
     # def test_source_v1(self):
     #     source = requests.get('https://oblache.areso.pro/tos.html')

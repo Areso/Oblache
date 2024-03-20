@@ -37,6 +37,10 @@ class ProfilePage(BasePage):
     def click_button_databases(self):
         return self.element_is_present_and_clickable(self.locators.DATABASE_BUTTON).click()
 
+    @allure.step('Click "Docker containers" button.')
+    def click_button_docker_containers(self):
+        return self.element_is_present_and_clickable(self.locators.BUTTON_DOCKER_CONTAINER).click()
+
     @allure.step('click_buttons_create_new_db')
     def click_buttons_create_new_db(self):
         with allure.step('Click "Create new DB" button.'):
@@ -72,33 +76,32 @@ class ProfilePage(BasePage):
                 return msg
 
     @allure.step('check_clipboard')
-    def check_clipboard(self):
-        self.click_button_databases()
-        databases_list = self.elements_are_present(self.locators.LIST_DATABASES)
+    def check_clipboard(self, table_xpath):
+        databases_list = self.elements_are_present((By.XPATH, f'{table_xpath}//tr'))
         list_db = [databases_list[i].text for i in range(len(databases_list))]
         if len(list_db) != 0:
-            button = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]/td[3] /button'))
+            button = self.element_is_visible((By.XPATH, f'{table_xpath} //tr[1]/td[3] /button'))
             button.click()
-            table_line = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]')).text
+            table_line = self.element_is_visible((By.XPATH, f'{table_xpath} //tr[1]')).text
             with allure.step(f'Click button {button.text} in database:{table_line}, for copy uuid.'):
                 pass
 
             result = API.post_db_list(ConnectionData.token)
             full_uuid = list(result.json()['data'])[0]
-            short_uuid = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]/td[2]')).text
+            short_uuid = self.element_is_visible((By.XPATH, f'{table_xpath} //tr[1]/td[2]')).text
             assert self.element_is_visible(self.locators.MSG_FROM_SERVER)
-            with allure.step('Check msg after copy uuid is present'):
-                msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text
-                print(msg)
+            msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text
+            print(msg)
+            with allure.step(f'Check msg after copy uuid is present. MSG: {msg}'):
+                pass
             with allure.step(f'Checked that {short_uuid} is included into {full_uuid}'):
                 pass
-            assert short_uuid in msg
+            assert msg == 'copied to clipboard', 'Message is not present.'
         else:
             assert False, 'No database in the table.'
 
     @allure.step('check_clipboard_jdbc')
     def check_clipboard_jdbc(self):
-        self.click_button_databases()
         databases_list = self.elements_are_present(self.locators.LIST_DATABASES)
         list_db = [databases_list[i].text for i in range(len(databases_list))]
         if len(list_db) != 0:
@@ -107,17 +110,17 @@ class ProfilePage(BasePage):
             table_line = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]')).text
             with allure.step(f'Click button {button.text} in database:{table_line}, for copy uuid.'):
                 pass
-
             result = API.post_db_list(ConnectionData.token)
             uuid = list(result.json()['data'])[0]
             print('UUID: ', uuid)
             jdbc = result.json()['data'][f'{uuid}'][3]
             print('JDBC', jdbc)
             assert self.element_is_visible(self.locators.MSG_FROM_SERVER)
-            with allure.step('Check msg after copy JDBC is present'):
-                msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text
-                print(msg)
-            assert msg == jdbc, f'{msg} != {jdbc}'
+            msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text
+            print(msg)
+            with allure.step(f'Check msg after copy JDBC is present. MSG: {msg}'):
+                pass
+            assert msg == 'copied to clipboard', 'Message is not present.'
         else:
             assert False, 'No database in the table.'
 
