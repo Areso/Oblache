@@ -1,9 +1,9 @@
 import allure
 
 from tests_ui.links import TestDataLinks
-from tests_ui.pages.login_page import LoginPage
-from tests_ui.pages.main_page import MainPage
-from tests_ui.pages.profile_page import ProfilePage
+from tests_ui.login_page import LoginPage
+from tests_ui.main_page import MainPage
+from tests_ui.profile_page import ProfilePage
 
 
 @allure.epic('UI Tests')

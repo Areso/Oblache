@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from connection_data import ConnectionData
 from tests_api.utils.request import API
 from tests_ui.login_page_locators import Locators
-from tests_ui.pages.base_page import BasePage
+from tests_ui.base_page import BasePage
 
 
 @allure.suite('Profile Page')
