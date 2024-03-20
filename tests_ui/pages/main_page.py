@@ -1,7 +1,7 @@
 import allure
 import requests
 
-from tests_ui.base_page import BasePage
+from tests_ui.pages.base_page import BasePage
 from tests_ui.login_page_locators import Locators
 
 
@@ -19,4 +19,4 @@ class MainPage(BasePage):
 
     def check_main_button_is_visible(self):
         self.element_is_present_and_clickable(self.locators.TOS_BUTTON).click()
-        assert self.element_is_visible(self.locators.DATABASE_BUTTON)
+        assert self.element_is_present_and_clickable(self.locators.MAIN_BUTTON)

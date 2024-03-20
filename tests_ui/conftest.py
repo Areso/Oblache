@@ -6,8 +6,8 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from tests_ui.data import TestDataLinks
-from tests_ui.login_page import LoginPage
+from tests_ui.links import TestDataLinks
+from tests_ui.pages.login_page import LoginPage
 
 
 @pytest.fixture()
