@@ -263,7 +263,7 @@ class TestPOST:
             print(ex)
             assert str(ex) == 'list index out of range', 'Db list is empty.'
 
-    @allure.title('Post change password')
+    @allure.title('test_post_change_password')
     def test_post_change_password(self):
         new_password = ConnectionData.new_password
         result_post_change_password = API.post_change_password(
@@ -276,6 +276,22 @@ class TestPOST:
         Checking.check_status_code(result_post_change_password, 200)
         Checking.check_json_search_word_in_value(result_post_change_password, "content",
                                                  "msg[31]: password successfully updated")
+
+    @allure.title('test_post_change_password_with_wrong_data')
+    def test_post_change_password_with_wrong_data(self):
+        result = API.post_change_password(ConnectionData.token, '123456', '123456')
+        print('response', result.json())
+        Checking.check_status_code(result, 400)
+        Checking.check_json_search_word_in_value(
+            result, 'content', 'msg[7]: error: current password is incorrect')
+
+    @allure.title('test_post_change_password_without_token')
+    def test_post_change_password_without_token(self):
+        new_password = ConnectionData.new_password
+        result = API.post_change_password({}, ConnectionData.new_password, new_password)
+        print(result.json())
+        Checking.check_status_code(result, 401)
+        Checking.check_json_search_word_in_value(result, 'content', 'msg[5]: unauthenticated')
 
     @allure.title('delete_db')
     @pytest.mark.xfail(reason='When using this method during a test run, the database may be in deleting status.')

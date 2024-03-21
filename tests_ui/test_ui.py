@@ -83,7 +83,7 @@ class TestUI:
             page.click_button_databases()
             page.check_clipboard_jdbc()
 
-        @allure.title('test_clipboard_jdbc')
+        @allure.title('test_clipboard_uuid_docker')
         def test_clipboard_uuid_docker(self, driver, authorization_user):
             page = ProfilePage(driver)
             page.click_button_docker_containers()
