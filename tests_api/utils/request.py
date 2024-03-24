@@ -361,6 +361,17 @@ class API(ConnectionData):
                 return result_post
 
     @staticmethod
+    def post_create_docker_container(token):
+        with allure.step('post_create_docker_container'):
+            post_resource = '/container_create'
+            post_url = ConnectionData.base_url + post_resource
+            body = {"docker_image": "nginx", "int_ports": "80", "env": 3, "region": 3}
+            with allure.step(f'POST {post_url}, body: {body}'):
+                result_post = HttpMethods.post(post_url, body, token=token)
+            with allure.step(f'Response JSON: {result_post.json()}'):
+                return result_post
+
+    @staticmethod
     def delete_db(uuid, token):
         """
         :param uuid:
