@@ -165,26 +165,24 @@ class TestPOST:
     @allure.title('Post registration email is taken for en-us')
     def test_post_registration_email_is_taken_for_en_en(self):
         result_post = API.post_registration("en-us", True)
-        status_code = result_post
-        Checking.check_status_code(status_code, 400)
-        Checking.check_json_search_word_in_value(result_post, 'content',
-                                                 'msg[3]: registration failed, this email is taken')
+        Checking.check_status_code(result_post, 400)
+        Checking.check_json_search_word_in_value(
+            result_post, 'content', 'msg[3]: registration failed, this email is taken')
 
     @allure.title('Post registration email is taken for bg-bg')
     def test_post_registration_email_is_taken_for_bg_bg(self):
         result_post = API.post_registration("bg-bg", True)
-        status_code = result_post
-        Checking.check_status_code(status_code, 400)
-        Checking.check_json_search_word_in_value(result_post, 'content',
-                                                 'msg[3]: неуспешна регистрация на потребител, имейлът е зает')
+        Checking.check_status_code(result_post, 400)
+        Checking.check_json_search_word_in_value(
+            result_post, 'content', 'msg[3]: неуспешна регистрация на потребител, имейлът е зает')
 
     @allure.title('Post registration email is taken for unsupported languages')
     def test_post_registration_email_is_taken_for_unsupported_languages(self):
         result_post = API.post_registration("ru-ru", True)
         status_code = result_post
         Checking.check_status_code(status_code, 400)
-        Checking.check_json_search_word_in_value(result_post, 'content',
-                                                 'msg[34]: the language is not accepted')
+        Checking.check_json_search_word_in_value(
+            result_post, 'content', 'msg[34]: the language is not accepted')
 
     @allure.title('Post login')
     def test_post_login(self):
@@ -292,6 +290,33 @@ class TestPOST:
         print(result.json())
         Checking.check_status_code(result, 401)
         Checking.check_json_search_word_in_value(result, 'content', 'msg[5]: unauthenticated')
+
+    @allure.title('test_post_create_docker_container')
+    def test_post_container_list(self):
+        result = API.post_container_list(ConnectionData.token)
+        print(result.json(), result.status_code)
+        Checking.check_status_code(result, 200)
+
+    @allure.title('test_post_create_docker_container')
+    def test_post_create_docker_container(self):
+        result = API.post_create_docker_container(ConnectionData.token)
+        print(result.json(), result.status_code)
+        Checking.check_status_code(result, 201)
+        Checking.check_json_value(result, 'msg', 'order for new container accepted')
+
+    @allure.title('test_post_create_docker_container_without_token')
+    def test_post_create_docker_container_without_token(self):
+        result = API.post_create_docker_container('incorrect_token')
+        print(result.json(), result.status_code)
+        Checking.check_status_code(result, 401)
+        Checking.check_json_value(result, 'msg', 'msg[5]: unauthenticated')
+
+    @allure.title('test_post_create_docker_container_without_token')
+    def test_post_create_docker_container(self):
+        result = API.post_create_docker_container('incorrect_token')
+        print(result.json(), result.status_code)
+        Checking.check_status_code(result, 401)
+        Checking.check_json_value(result, 'msg', 'msg[5]: unauthenticated')
 
     @allure.title('delete_db')
     @pytest.mark.xfail(reason='When using this method during a test run, the database may be in deleting status.')
