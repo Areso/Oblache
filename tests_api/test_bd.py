@@ -312,11 +312,17 @@ class TestPOST:
         Checking.check_json_value(result, 'msg', 'msg[5]: unauthenticated')
 
     @allure.title('test_post_create_docker_container_without_token')
-    def test_post_create_docker_container(self):
-        result = API.post_create_docker_container('incorrect_token')
+    def test_post_create_docker_with_defunct_image(self):
+        result = API.post_create_docker_container_with_defunct_image(ConnectionData.token)
         print(result.json(), result.status_code)
-        Checking.check_status_code(result, 401)
-        Checking.check_json_value(result, 'msg', 'msg[5]: unauthenticated')
+        Checking.check_status_code(result, 400)
+        Checking.check_json_value(result, 'msg', "msg[]: the image doesn't found in the DockerHub")
+
+    @allure.title('test_delete_container')
+    def test_delete_container(self):
+        result = API.post_delete_docker_container(ConnectionData.token, -1)
+        print(result.json(), result.status_code)
+        Checking.check_status_code(result, 200)
 
     @allure.title('delete_db')
     @pytest.mark.xfail(reason='When using this method during a test run, the database may be in deleting status.')
