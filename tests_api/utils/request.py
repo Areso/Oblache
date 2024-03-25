@@ -372,6 +372,31 @@ class API(ConnectionData):
                 return result_post
 
     @staticmethod
+    def post_create_docker_container_with_defunct_image(token):
+        with allure.step('post_create_docker_container_with_defunct_image'):
+            post_resource = '/container_create'
+            post_url = ConnectionData.base_url + post_resource
+            body = {"docker_image": "", "int_ports": "80", "env": 3, "region": 3}
+            with allure.step(f'POST {post_url}, body: {body}'):
+                result_post = HttpMethods.post(post_url, body, token=token)
+            with allure.step(f'Response JSON: {result_post.json()}'):
+                return result_post
+
+    @staticmethod
+    def post_delete_docker_container(token, list_index: int):
+        with allure.step('post_delete_docker_container'):
+            post_resource = '/container_delete'
+            post_url = ConnectionData.base_url + post_resource
+            result_list = API.post_container_list(token)
+            docker_uuid = list(result_list.json()['data'])[list_index]
+            print('Selected uuid for delete:', docker_uuid)
+            body = {'docker_uuid': f'{docker_uuid}'}
+            with allure.step(f'POST {post_url}, body: {body}'):
+                result_post = HttpMethods.post(post_url, body, token=token)
+            with allure.step(f'Response JSON: {result_post.json()}'):
+                return result_post
+
+    @staticmethod
     def delete_db(uuid, token):
         """
         :param uuid:
