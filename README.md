@@ -10,7 +10,7 @@ Here you could find a [Kanban project board](https://github.com/users/Areso/proj
 
 ## Bugs
 Report bugs [in this tracker](https://github.com/Areso/Oblache/issues)  
-For security-related bugs, write to me in Telegram or Discord  
+For security-related bugs, write me privately in Telegram or Discord  
 
 ## Release notes
 [Release notes](./release_notes.md)
