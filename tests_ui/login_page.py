@@ -1,12 +1,16 @@
+import os
 from pprint import pprint
 
 import allure
+from dotenv import load_dotenv
 
-from conftest_api import TestData
-from tests_ui.base_page import BasePage
 from tests_ui.login_page_locators import Locators
+from tests_ui.base_page import BasePage
+
+load_dotenv()
 
 
+@allure.suite('Login Page')
 class LoginPage(BasePage):
     locators = Locators()
 
@@ -50,9 +54,9 @@ class LoginPage(BasePage):
     @allure.step('login_user')
     def login_user(self):
         with allure.step('Enter email.'):
-            self.element_is_present(self.locators.INPUT_LOGIN).send_keys(TestData.email)
+            self.element_is_present(self.locators.INPUT_LOGIN).send_keys(os.getenv('EMAIL'))
         with allure.step('Enter password.'):
-            self.element_is_present(self.locators.INPUT_PASSWORD).send_keys(TestData.old_password)
+            self.element_is_present(self.locators.INPUT_PASSWORD).send_keys(os.getenv('PASSWORD'))
         with allure.step('Click button "Login"'):
             self.element_is_present_and_clickable(self.locators.SIGN_IN_BUTTON).click()
         assert self.check_expected_link('https://oblache.areso.pro/profile.html'

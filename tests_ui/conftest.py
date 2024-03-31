@@ -6,6 +6,9 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
+from tests_ui.links import TestDataLinks
+from tests_ui.login_page import LoginPage
+
 
 @pytest.fixture()
 def driver():
@@ -25,3 +28,10 @@ def driver():
     print('\nquit browser...')
     driver.quit()
 
+
+@pytest.fixture()
+def authorization_user(driver):
+    page = LoginPage(driver, TestDataLinks.register_page)
+    page.open()
+    page.login_user()
+    return page

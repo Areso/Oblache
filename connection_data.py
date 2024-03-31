@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from tests_api.utils.http_methods import HttpMethods
 
 
-class TestData:
+class ConnectionData:
     base_url = 'https://dbend.areso.pro'  # Base url
     load_dotenv()
     email = os.getenv('EMAIL')
@@ -33,8 +33,8 @@ class TestData:
     def connection(db_uuid):
         print(db_uuid)
         post_resource = '/db_list'
-        post_url = TestData().base_url + post_resource
-        result_post = HttpMethods.post(post_url, token=TestData.token, body=TestData.body)
+        post_url = ConnectionData().base_url + post_resource
+        result_post = HttpMethods.post(post_url, token=ConnectionData.token, body=ConnectionData.body)
         json_list_db = result_post.json()
         print(json_list_db['data'])
         db_name = json_list_db['data'][db_uuid][0]

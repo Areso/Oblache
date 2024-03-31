@@ -7,6 +7,8 @@ class Locators:
     # Main page
     LINKS = (By.XPATH, '//a[@href]')
     SCRIPT = (By.XPATH, '')
+    TOS_BUTTON = (By.XPATH, '//a[@id="ahref_tos"]')
+    MAIN_BUTTON = (By.XPATH, '//a[@id="ahref_index"]')
 
     # Login page
     LOGIN_BUTTON = (By.XPATH, '//button[@id="btn_opentab_login"]')
@@ -25,5 +27,10 @@ class Locators:
     CREATE_DATABASE_BUTTON = (By.XPATH, '//button[@id="btn_new_db"]')
     CREATE_NEW_DATABASE_BUTTON = (By.XPATH, '//button[@id="btn_create_db"]')
 
-    LIST_DATABASES = (By.XPATH, '//tbody[@id="tbody_dbs"]/tr')
+    LIST_DATABASES = (By.XPATH, f'//tbody[@id="tbody_dbs"]/tr')
     LEN_TABLE_STRINGS = (By.XPATH, '//tbody[@id="tbody_status"]/tr')
+
+    MSG_COPYPASTE = (By.XPATH, '//div[@id="msg_copypaste"]')
+    MSG_FROM_SERVER = (By.XPATH, '//div[@id="msg_from_server"]')
+
+    BUTTON_DOCKER_CONTAINER = (By.XPATH, '//button[@id="menu_button_dockers"]')
