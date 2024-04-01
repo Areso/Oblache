@@ -5,7 +5,7 @@ This is public tracker for Oblache project.
 [Design Document](./design_doc.md)
 
 ## API references
-[API References](./api_refences.md)
+[API References](./api_references.md)
 
 ## Project board
 Here you could find a [Kanban project board](https://github.com/users/Areso/projects/2) with tasks and known bugs
