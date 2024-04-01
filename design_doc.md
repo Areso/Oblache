@@ -70,7 +70,7 @@ As parameters it currently takes:
 Please note, you ARE NOT allowed to mix them up like this `443,5400-5410`!
 2) Environment key-value pairs, e.g.: 
 - `username=myuser`
-- `username=myuser,password=mypassword`
+- `username=myuser;password=mypassword`
 - empty value also allowed
 
 For a created Docker Container the following information is provided:
