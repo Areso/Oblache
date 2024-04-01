@@ -1,19 +1,21 @@
 # Oblache
-This is public tracker for my Oblache project.  
-Here would be REST API description, tests and so on.
+This is public tracker for Oblache project.  
 
 ## Design document
 [Design Document](./design_doc.md)
+
+## API references
+[API References](./api_refences.md)
 
 ## Project board
 Here you could find a [Kanban project board](https://github.com/users/Areso/projects/2) with tasks and known bugs
 
 ## Bugs
 Report bugs [in this tracker](https://github.com/Areso/Oblache/issues)  
-For security-related bugs, write me privately in Telegram or Discord  
+For security-related bugs, write me privately in [Telegram](https://t.me/Areso2012) or Discord (areso_x)
 
 ## Release notes
 [Release notes](./release_notes.md)
 
-## PROJECT TESTS
+## Project tests
 For Project tests documentation please [Readme for Tests](./README_TESTS.md)
