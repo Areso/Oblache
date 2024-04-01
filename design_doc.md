@@ -21,7 +21,7 @@ For a created database the following information is provided:
 - UUID of a database - great to provide the admin if there is any issue
 - JDBC connection string with all the credentials and the host-port pair
 - region (EU, CIS, US, etc)
-- current known status (TODO to add `actuliazate` button here)
+- current known status (TODO to add `actualize` button here)
 - date of creation
 - gross size of the database
 
@@ -79,7 +79,7 @@ For a created Docker Container the following information is provided:
 - Docker Container name
 - Ports (if any was exposed, `exposed:inner`)
 - Creation date
-- Current known status (TODO to add `actuliazate` button here)
+- current known status (TODO to add `actualize` button here)
 
 ## User manipulation
 Okay, we covered the basic functionality of the cloud  
