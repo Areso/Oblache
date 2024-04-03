@@ -29,7 +29,7 @@ class API(ConnectionData):
         get_url = ConnectionData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url)
-        with allure.step(f'Response JSON: {result_get.json()}'):
+        with allure.step(f'Response JSON: {result_get.text}'):
             print(result_get.json())
             return result_get
 
@@ -45,7 +45,7 @@ class API(ConnectionData):
         get_url = ConnectionData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url, token=token)
-        with allure.step(f'Response JSON: {result_get.json()}'):
+        with allure.step(f'Response JSON: {result_get.text}'):
             print(result_get.json())
             return result_get
 
@@ -64,7 +64,7 @@ class API(ConnectionData):
                 "queue_db_delete_orders": 1,
                 "number_of_stuck_tasks": 0
             }, ConnectionData.token)
-        with allure.step(f'Response JSON: {result_get.json()}'):
+        with allure.step(f'Response JSON: {result_get.text}'):
             return result_get
 
     @staticmethod
@@ -78,7 +78,7 @@ class API(ConnectionData):
         get_url = ConnectionData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url)
-        with allure.step(f'Response JSON: {result_get.json()}'):
+        with allure.step(f'Response JSON: {result_get.text}'):
             return result_get
 
     @staticmethod
@@ -92,7 +92,7 @@ class API(ConnectionData):
         get_url = ConnectionData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url)
-        with allure.step(f'Response JSON: {result_get.json()}'):
+        with allure.step(f'Response JSON: {result_get.text}'):
             return result_get
 
     @staticmethod
@@ -106,7 +106,7 @@ class API(ConnectionData):
         get_url = ConnectionData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url)
-        with allure.step(f'Response JSON: {result_get.json()}'):
+        with allure.step(f'Response JSON: {result_get.text}'):
             return result_get
 
     @staticmethod
@@ -120,7 +120,7 @@ class API(ConnectionData):
         get_url = ConnectionData.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url)
-        with allure.step(f'Response JSON: {result_get.json()}'):
+        with allure.step(f'Response JSON: {result_get.text}'):
             return result_get
 
     @staticmethod
@@ -177,7 +177,7 @@ class API(ConnectionData):
         post_url = ConnectionData.base_url + post_resource
         with allure.step(f'POST {post_url}. Params:'f'{json_for_create_new_user}'):
             result_post = HttpMethods.post(post_url, json_for_create_new_user)
-        with allure.step(f'Response JSON: {result_post.json()}'):
+        with allure.step(f'Response JSON: {result_post.text}'):
             return result_post
 
     @staticmethod
@@ -207,7 +207,7 @@ class API(ConnectionData):
                 result_post = HttpMethods.post(post_url, token=token)
             with allure.step('Body: {"email":"your_email","password":"your_password"}'):
                 pass
-            with allure.step(f'Response JSON: {result_post.json()}'):
+            with allure.step(f'Response JSON: {result_post.text}'):
                 return result_post
 
     @staticmethod
@@ -222,7 +222,7 @@ class API(ConnectionData):
                 result_post = HttpMethods.post(post_url, token=1)
             with allure.step('Body: {"email":"your_email","password":"your_password"}'):
                 pass
-            with allure.step(f'Response JSON: {result_post.json()}'):
+            with allure.step(f'Response JSON: {result_post.text}'):
                 return result_post
 
     @staticmethod
@@ -267,7 +267,7 @@ class API(ConnectionData):
                 result_post = HttpMethods.post(post_url,
                                                {"current_password": old_password, "new_password": new_password},
                                                token=token)
-            with allure.step(f'Response JSON: {result_post.json()}'):
+            with allure.step(f'Response JSON: {result_post.text}'):
                 return result_post
 
     @staticmethod
@@ -297,7 +297,7 @@ class API(ConnectionData):
             body = {"dbtype": 3, "dbversion": 5, "env": 3, "region": 3}
             with allure.step(f'POST {post_url}, body: {body}'):
                 result_post = HttpMethods.post(post_url, body, token=token)
-            with allure.step(f'Response JSON: {result_post.json()}'):
+            with allure.step(f'Response JSON: {result_post.text}'):
                 return result_post
 
     @staticmethod
@@ -312,7 +312,7 @@ class API(ConnectionData):
             body = {"dbtype": random.randint(4, 100), "dbversion": 5, "env": 3, "region": 3}
             with allure.step(f'POST {post_url}, body: {body}'):
                 result_post = HttpMethods.post(post_url, body, token=token)
-            with allure.step(f'Response JSON: {result_post.json()}'):
+            with allure.step(f'Response JSON: {result_post.text}'):
                 return result_post
 
     @staticmethod
@@ -327,7 +327,7 @@ class API(ConnectionData):
             body = {"dbtype": 3, "dbversion": random.randint(6, 100), "env": 3, "region": 3}
             with allure.step(f'POST {post_url}, body: {body}'):
                 result_post = HttpMethods.post(post_url, body, token=token)
-            with allure.step(f'Response JSON: {result_post.json()}'):
+            with allure.step(f'Response JSON: {result_post.text}'):
                 return result_post
 
     @staticmethod
@@ -342,7 +342,7 @@ class API(ConnectionData):
             body = {"dbtype": 3, "dbversion": 5, "env": random.randint(4, 100), "region": 3}
             with allure.step(f'POST {post_url}, body: {body}'):
                 result_post = HttpMethods.post(post_url, body, token=token)
-            with allure.step(f'Response JSON: {result_post.json()}'):
+            with allure.step(f'Response JSON: {result_post.text}'):
                 return result_post
 
     @staticmethod
@@ -357,7 +357,7 @@ class API(ConnectionData):
             body = {"dbtype": 3, "dbversion": 5, "env": 3, "region": random.randint(4, 100)}
             with allure.step(f'POST {post_url}, body: {body}'):
                 result_post = HttpMethods.post(post_url, body, token=token)
-            with allure.step(f'Response JSON: {result_post.json()}'):
+            with allure.step(f'Response JSON: {result_post.text}'):
                 return result_post
 
     @staticmethod
@@ -368,7 +368,7 @@ class API(ConnectionData):
             body = {"docker_image": "nginx", "int_ports": "80", "env": 3, "region": 3}
             with allure.step(f'POST {post_url}, body: {body}'):
                 result_post = HttpMethods.post(post_url, body, token=token)
-            with allure.step(f'Response JSON: {result_post.json()}'):
+            with allure.step(f'Response JSON: {result_post.text}'):
                 return result_post
 
     @staticmethod
@@ -379,7 +379,7 @@ class API(ConnectionData):
             body = {"docker_image": "", "int_ports": "80", "env": 3, "region": 3}
             with allure.step(f'POST {post_url}, body: {body}'):
                 result_post = HttpMethods.post(post_url, body, token=token)
-            with allure.step(f'Response JSON: {result_post.json()}'):
+            with allure.step(f'Response JSON: {result_post.text}'):
                 return result_post
 
     @staticmethod
@@ -393,7 +393,7 @@ class API(ConnectionData):
             body = {'docker_uuid': f'{docker_uuid}'}
             with allure.step(f'POST {post_url}, body: {body}'):
                 result_post = HttpMethods.post(post_url, body, token=token)
-            with allure.step(f'Response JSON: {result_post.json()}'):
+            with allure.step(f'Response JSON: {result_post.text}'):
                 return result_post
 
     @staticmethod
@@ -412,7 +412,7 @@ class API(ConnectionData):
                 pass
             json_db_uuid = db_uuid
             result_delete = HttpMethods.post(delete_url, json_db_uuid, token=token)
-            with allure.step(f'Response JSON: {result_delete.json()}'):
+            with allure.step(f'Response JSON: {result_delete.text}'):
                 return result_delete
 
     @staticmethod
@@ -429,8 +429,8 @@ class API(ConnectionData):
             else:
                 first_db_uuid = list(json_list_db)[0]
                 result_post_db_delete = API.delete_db(first_db_uuid, ConnectionData.token)
-                with allure.step(f'Response JSON: {result_post_db_delete.json()}'):
-                    print(result_post_db_delete.json())
+                with allure.step(f'Response JSON: {result_post_db_delete.text}'):
+                    print(result_post_db_delete.text)
                 time.sleep(5)
                 if start != finish:
                     break
