@@ -133,7 +133,7 @@ class ProfilePage(BasePage):
         print(msg)
         with allure.step(f'Check the message after clicking the create database button. MSG: {msg}'):
             pass
-        assert msg == 'Order for new DB accepted', 'Message is not present.'
+        assert msg == 'Order for the new DB accepted', 'Message is not present.'
         self.click_button_status()
         amount_after_create = self.get_status_data()['db qty used']
         assert int(amount_databases) + 1 == int(amount_after_create)
