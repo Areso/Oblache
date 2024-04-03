@@ -12,12 +12,12 @@ from .utils.checking import Checking
 from .utils.request import API
 
 
-# @allure.epic('Connection DB')
-# @allure.suite('Test Connection DB')
-# class TestConnectionDB:
-#     @allure.title('Complex')
-#     def test_complex(self):
-#         API.check_full_cycle(ConnectionData.token)
+@allure.epic('Connection DB')
+@allure.suite('Test Connection DB')
+class TestConnectionDB:
+    @allure.title('Complex')
+    def test_complex(self):
+        API.check_full_cycle(ConnectionData.token)
 
 
 @allure.epic('Performance DB')

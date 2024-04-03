@@ -6,8 +6,8 @@ from selenium.webdriver.common.by import By
 
 from connection_data import ConnectionData
 from tests_api.utils.request import API
-from tests_ui.login_page_locators import Locators
 from tests_ui.base_page import BasePage
+from tests_ui.login_page_locators import Locators
 
 
 @allure.suite('Profile Page')
@@ -137,3 +137,14 @@ class ProfilePage(BasePage):
         self.click_button_status()
         amount_after_create = self.get_status_data()['db qty used']
         assert int(amount_databases) + 1 == int(amount_after_create)
+
+    def get_containers_list(self,table_xpath):
+        self.element_is_present_and_clickable(self.locators.BUTTON_DOCKER_CONTAINER).click()
+        databases_list = self.elements_are_present((By.XPATH, f'{table_xpath}//tr'))
+        list_db = [databases_list[i].text for i in range(len(databases_list))]
+        print(list_db)
+
+    def create_docker_container(self):
+        self.element_is_present_and_clickable(self.locators.BUTTON_DOCKER_CONTAINER).click()
+        self.element_is_present_and_clickable(self.locators.BUTTON_CREATE_DOCKER_CONTAINER).click()
+        self.element_is_present_and_clickable(self.locators.BUTTON_CREATE).click()

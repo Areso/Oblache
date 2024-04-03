@@ -33,4 +33,7 @@ class Locators:
     MSG_COPYPASTE = (By.XPATH, '//div[@id="msg_copypaste"]')
     MSG_FROM_SERVER = (By.XPATH, '//div[@id="msg_from_server"]')
 
-    BUTTON_DOCKER_CONTAINER = (By.XPATH, '//button[@id="menu_button_dockers"]')
+    # Docker container page
+    BUTTON_DOCKER_CONTAINER = (By.XPATH, '//button[@id="menu_button_containers"]')
+    BUTTON_CREATE_DOCKER_CONTAINER = (By.XPATH, '//button[@id="btn_new_docker_container"]')
+    BUTTON_CREATE = (By.XPATH, '//button[@id="btn_create_docker"]')
