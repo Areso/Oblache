@@ -1,3 +1,4 @@
+import json
 import random
 import time
 from pprint import pprint
@@ -128,14 +129,14 @@ class TestPOST:
     @allure.title('Post registration')
     def test_post_registration(self):
         result_post = API.post_registration("en-us", True)
-        print(result_post.json())
+        print(result_post.text)
         Checking.check_status_code(result_post, 201)
 
     @allure.title('Post registration for English language.')
     def test_post_registration_for_english_language(self):
         result_post = API.post_registration_variety_email(random.choice(['gmail', 'mail', 'yandex']),
                                                           random.choice(['com', 'ru', 'by']), "en-us", True)
-        print(result_post.json())
+        print(result_post.text)
         Checking.check_status_code(result_post, 201)
         Checking.check_json_search_word_in_value(
             result_post, 'content', 'msg[1]: registered successfully')
@@ -144,7 +145,7 @@ class TestPOST:
     def test_post_registration_for_english_language_not_agree(self):
         result_post = API.post_registration_variety_email(random.choice(['gmail', 'mail', 'yandex']),
                                                           random.choice(['com', 'ru', 'by']), "en-us", False)
-        print(result_post.json())
+        print(result_post.text)
         Checking.check_status_code(result_post, 400)
         Checking.check_json_search_word_in_value(
             result_post, 'content', 'msg[36]: you must agree to Terms of Use')
@@ -195,13 +196,13 @@ class TestPOST:
     @allure.title('test_post_is_logged')
     def test_post_is_logged(self):
         result_post = API.post_is_logged(ConnectionData.token)
-        print(result_post.json())
+        print(result_post.text)
         Checking.check_status_code(result_post, 200)
 
     @allure.title('test_post_is_logged_with_wrong_token')
     def test_post_is_logged_with_wrong_token(self):
         result_post = API.post_is_logged_with_wrong_token()
-        print(result_post.json())
+        print(result_post.text)
         print(result_post.status_code)
         Checking.check_status_code(result_post, 401)
 
@@ -241,24 +242,25 @@ class TestPOST:
     @allure.title('Post db_list')
     def test_post_db_list(self):
         result_post_db_list = API.post_db_list(ConnectionData.token)
-        print(result_post_db_list.json())
+        print(result_post_db_list.text)
         Checking.check_status_code(result_post_db_list, 200)
 
     @allure.title('Post container_list')
     def test_post_container_list(self):
         result = API.post_container_list(ConnectionData.token)
-        print(result.json())
+        print(result.text)
         Checking.check_status_code(result, 200)
 
     @allure.title('Post db list with filter')
     @pytest.mark.xfail(reason='There are databases that need to be deleted manually.')
     def test_post_db_list_with_filter(self):
         list_db = API.post_db_list(ConnectionData.token)
-        json_list_db = list_db.json()
+        json_list_db = json.loads(list_db.text)
+        print(json_list_db)
         try:
             first_db_uuid = list(json_list_db['data'])[-1]
             result_post_db_list = API.delete_db(first_db_uuid, ConnectionData.token)
-            print(result_post_db_list.json())
+            print(result_post_db_list.text)
             Checking.check_status_code(result_post_db_list, 200)
         except IndexError as ex:
             print(ex)
@@ -281,7 +283,7 @@ class TestPOST:
     @allure.title('test_post_change_password_with_wrong_data')
     def test_post_change_password_with_wrong_data(self):
         result = API.post_change_password(ConnectionData.token, '123456', '123456')
-        print('response', result.json())
+        print('response', result.text)
         Checking.check_status_code(result, 400)
         Checking.check_json_search_word_in_value(
             result, 'content', 'msg[7]: error: current password is incorrect')
@@ -290,52 +292,52 @@ class TestPOST:
     def test_post_change_password_without_token(self):
         new_password = ConnectionData.new_password
         result = API.post_change_password({}, ConnectionData.new_password, new_password)
-        print(result.json())
+        print(result.text)
         Checking.check_status_code(result, 401)
         Checking.check_json_search_word_in_value(result, 'content', 'msg[5]: unauthenticated')
 
     @allure.title('test_post_create_docker_container')
     def test_post_container_list(self):
         result = API.post_container_list(ConnectionData.token)
-        print(result.json(), result.status_code)
+        print(result.text, result.status_code)
         Checking.check_status_code(result, 200)
 
     @allure.title('test_post_create_docker_container')
     def test_post_create_docker_container(self):
         result = API.post_create_docker_container(ConnectionData.token)
-        print(result.json(), result.status_code)
+        print(result.text, result.status_code)
         Checking.check_status_code(result, 201)
         Checking.check_json_value(result, 'msg', 'order for new container accepted')
 
     @allure.title('test_post_create_docker_container_without_token')
     def test_post_create_docker_container_without_token(self):
         result = API.post_create_docker_container('incorrect_token')
-        print(result.json(), result.status_code)
+        print(result.text, result.status_code)
         Checking.check_status_code(result, 401)
         Checking.check_json_value(result, 'msg', 'msg[5]: unauthenticated')
 
     @allure.title('test_post_create_docker_container_without_token')
     def test_post_create_docker_with_defunct_image(self):
         result = API.post_create_docker_container_with_defunct_image(ConnectionData.token)
-        print(result.json(), result.status_code)
+        print(result.text, result.status_code)
         Checking.check_status_code(result, 400)
         Checking.check_json_value(result, 'msg', "msg[]: the image doesn't found in the DockerHub")
 
     @allure.title('test_delete_container')
     def test_delete_container(self):
         result = API.post_delete_docker_container(ConnectionData.token, -1)
-        print(result.json(), result.status_code)
+        print(result.text, result.status_code)
         Checking.check_status_code(result, 200)
 
     @allure.title('delete_db')
     @pytest.mark.xfail(reason='When using this method during a test run, the database may be in deleting status.')
     def test_delete_db(self):
         list_db = API.post_db_list(ConnectionData.token)
-        json_list_db = list_db.json()
+        json_list_db = json.loads(list_db.text)
         try:
             first_db_uuid = list(json_list_db['data'])[0]
             result_post_db_delete = API.delete_db(first_db_uuid, ConnectionData.token)
-            print(result_post_db_delete.json())
+            print(result_post_db_delete.text)
             Checking.check_status_code(result_post_db_delete, 200)
         except IndexError as ex:
             print(ex)
