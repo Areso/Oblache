@@ -1,3 +1,5 @@
+import time
+
 import allure
 
 from tests_ui.links import TestDataLinks
@@ -88,6 +90,14 @@ class TestUI:
             page = ProfilePage(driver)
             page.click_button_docker_containers()
             page.check_clipboard('//table[@id="table_containers"]')
+
+        # @allure.title('test_create_docker_container')
+        # def test_create_docker_container(self, driver, authorization_user):
+        #     page = ProfilePage(driver)
+        #     page.create_docker_container()
+        #
+        #     time.sleep(5)
+
 
     # def test_source_v1(self):
     #     source = requests.get('https://oblache.areso.pro/tos.html')

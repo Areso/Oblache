@@ -20,6 +20,7 @@ def driver():
         driver.set_window_size(1920, 1080)
     else:
         chrome_options.add_argument("--window-size=1920,1080")
+        chrome_options.page_load_strategy = 'normal'
         # chrome_options.add_argument('--headless')
         driver = webdriver.Chrome(options=chrome_options)
     yield driver
