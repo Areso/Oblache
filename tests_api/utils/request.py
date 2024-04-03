@@ -455,12 +455,12 @@ class API(ConnectionData):
                 result_db_list = API.post_db_list_with_filter(token, db_uuid)
                 print('#' * 50, result_db_list.text)
                 message = result_db_list.json()['data'][db_uuid][2]
-                if message == 'db_created':
+                if message == 'created':
                     break
                 else:
                     time.sleep(10)
                     continue
-            assert message == 'db_created'
+            assert message == 'created'
             API.get_profile(token)
             assert API.delete_db(db_uuid, token).status_code == 200
             result_db_delete = API.delete_db(db_uuid, token)
