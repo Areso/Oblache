@@ -16,7 +16,7 @@ from .utils.request import API
 @allure.epic('Connection DB')
 @allure.suite('Test Connection DB')
 @allure.severity(allure.severity_level.CRITICAL)
-class FullTest:
+class TestFull:
     @allure.severity(allure.severity_level.CRITICAL)
     @allure.title('Complex')
     def test_complex(self):
