@@ -391,6 +391,7 @@ class API(ConnectionData):
             docker_uuid = list(result_list.json()['data'])[list_index]
             print('Selected uuid for delete:', docker_uuid)
             body = {'docker_uuid': f'{docker_uuid}'}
+            time.sleep(20)
             with allure.step(f'POST {post_url}, body: {body}'):
                 result_post = HttpMethods.post(post_url, body, token=token)
             with allure.step(f'Response JSON: {result_post.text}'):
