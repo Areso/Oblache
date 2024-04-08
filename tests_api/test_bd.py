@@ -208,8 +208,9 @@ class TestPOST:
 
     @allure.title('Post db_create')
     def test_post_db_create(self):
-        result_post_db_list = API.post_db_create(ConnectionData.token)
-        Checking.check_status_code(result_post_db_list, 201)
+        result = API.post_db_create(ConnectionData.token)
+        print(result.text)
+        Checking.check_status_code(result, 201)
 
     @allure.title('Post db_create with wrong db_type.')
     def test_post_db_create_with_wrong_values_dbtype(self):
