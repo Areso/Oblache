@@ -35,7 +35,7 @@ jobs:
           EMAIL: ${{ secrets.EMAIL}}
           PASSWORD: ${{ secrets.PASSWORD}}
         run: |
-          ls \\home\\runner\\work\\Oblache\\Oblache\\tests_api\\test_bd.py
+          sudo ls \\home\\runner\\work\\Oblache\\Oblache\\tests_api\\test_bd.py
           pytest -s -v --alluredir=allure-results \\home\\runner\\work\\Oblache\\Oblache\\tests_api\\test_bd.py::TestCapacity
         continue-on-error: true
 
