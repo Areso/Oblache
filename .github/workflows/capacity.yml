@@ -23,8 +23,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install flake8 pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          apt install tree
-          tree
+          sudo apt install tree
+          sudo tree
 
       - name: Lint with flake8
         run: |
