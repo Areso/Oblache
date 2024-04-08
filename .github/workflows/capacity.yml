@@ -37,7 +37,7 @@ jobs:
           PASSWORD: ${{ secrets.PASSWORD}}
         run: |
           
-          pytest -s -vv --alluredir=allure-results tests_api\test_bd.py::TestCapacity::test_capacity_db
+          pytest -s -vv --alluredir=allure-results .\\tests_api\\test_bd.py::TestCapacity::test_capacity_db
         continue-on-error: true
 
 
