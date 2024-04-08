@@ -1,0 +1,212 @@
+{
+  "uid" : "651323d85eb8e87c",
+  "name" : "Post db_create with wrong region.",
+  "fullName" : "tests_api.test_bd.TestPOST#test_post_db_create_with_wrong_values_region",
+  "historyId" : "856aa6401c668dd622a03a1da3937968",
+  "time" : {
+    "start" : 1712614538315,
+    "stop" : 1712614538890,
+    "duration" : 575
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "post_db_create_wrong_value_region",
+      "time" : {
+        "start" : 1712614538315,
+        "stop" : 1712614538889,
+        "duration" : 574
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "POST https://dbend.areso.pro/db_create, body: {'dbtype': 3, 'dbversion': 5, 'env': 3, 'region': 16}",
+        "time" : {
+          "start" : 1712614538315,
+          "stop" : 1712614538889,
+          "duration" : 574
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status code: 400",
+          "time" : {
+            "start" : 1712614538889,
+            "stop" : 1712614538889,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Params url: https://dbend.areso.pro/db_create",
+          "time" : {
+            "start" : 1712614538889,
+            "stop" : 1712614538889,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Response JSON: {\n    \"content\": \"error: region isn't found or isn't available for order\"\n}\n",
+        "time" : {
+          "start" : 1712614538889,
+          "stop" : 1712614538889,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Assert status code: 400 == Response status code: 400",
+      "time" : {
+        "start" : 1712614538889,
+        "stop" : 1712614538889,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Check and compare result request with expected value by key:\nResponse: <Response [400]>\nKey: content\nValue: error: region isn't found or isn't available for order",
+      "time" : {
+        "start" : 1712614538889,
+        "stop" : 1712614538889,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 7,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "epic",
+    "value" : "TestRequests"
+  }, {
+    "name" : "suite",
+    "value" : "POST"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_api"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestRequests"
+  }, {
+    "name" : "host",
+    "value" : "fv-az658-11"
+  }, {
+    "name" : "thread",
+    "value" : "2280-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_api.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "fbc504c0c43bc4d2",
+        "reportUrl" : "https://Areso.github.io/Oblache/88//#testresult/fbc504c0c43bc4d2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1712606315718,
+          "stop" : 1712606316107,
+          "duration" : 389
+        }
+      }, {
+        "uid" : "46f307ef58c20db6",
+        "reportUrl" : "https://Areso.github.io/Oblache/87//#testresult/46f307ef58c20db6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1712606111325,
+          "stop" : 1712606111865,
+          "duration" : 540
+        }
+      }, {
+        "uid" : "6a96a2fc2656f7a8",
+        "reportUrl" : "https://Areso.github.io/Oblache/86//#testresult/6a96a2fc2656f7a8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1712604357307,
+          "stop" : 1712604357844,
+          "duration" : 537
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "651323d85eb8e87c.json",
+  "parameterValues" : [ ]
+}
