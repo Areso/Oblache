@@ -35,6 +35,7 @@ jobs:
           EMAIL: ${{ secrets.EMAIL}}
           PASSWORD: ${{ secrets.PASSWORD}}
         run: |
+          ls -lah
           tree
           pytest -s -vv --alluredir=allure-results .\\tests_api\\test_bd.py::TestCapacity::test_capacity_db
         continue-on-error: true
