@@ -428,7 +428,7 @@ class API(ConnectionData):
             if json_list_db == {}:
                 break
             else:
-                first_db_uuid = list(json_list_db)[0]
+                first_db_uuid = list(json_list_db)[-1]
                 result_post_db_delete = API.delete_db(first_db_uuid, ConnectionData.token)
                 with allure.step(f'Response JSON: {result_post_db_delete.text}'):
                     print(result_post_db_delete.text)
