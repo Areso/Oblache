@@ -20,20 +20,20 @@ jobs:
       - name: Check Response Code
         id: check_response
 #        run: echo "::set-output name=code::$(curl -s -o /dev/null -w "%{http_code}" https://dbend.areso.pro/tos)"
-        run: echo "{response}={curl -s -o /dev/null -w "%{http_code}" https://dbend.areso.pro/tos}" >> $GITHUB_OUTPUT
+        run: echo "RESPONSE={curl -s -o /dev/null -w "%{http_code}" https://dbend.areso.pro/tos}" >> "$GITHUB_OUTPUT"
 
       - name: Response
         env:
-          response: ${{ steps.check_response.outputs.response }}
-        run: echo "The selected color is $response"
+          RESPONSE: ${{ steps.check_response.outputs.RESPONSE }}
+        run: echo "The selected color is $RESPONSE"
 
-      - name: Set color
-        id: color-selector
-        run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
-      - name: Get color
-        env:
-          SELECTED_COLOR: ${{ steps.color-selector.outputs.SELECTED_COLOR }}
-        run: echo "The selected color is $SELECTED_COLOR"
+#      - name: Set color
+#        id: color-selector
+#        run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
+#      - name: Get color
+#        env:
+#          SELECTED_COLOR: ${{ steps.color-selector.outputs.SELECTED_COLOR }}
+#        run: echo "The selected color is $SELECTED_COLOR"
 
 
       - name: Handle Response 500
