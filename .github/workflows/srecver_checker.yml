@@ -19,21 +19,30 @@ jobs:
 
       - name: Check Response Code
         id: check_response
-#        run: echo "::set-output name=code::$(curl -s -o /dev/null -w "%{http_code}" https://dbend.areso.pro/tos)"
-        run: echo "{name}={curl -s -o /dev/null -w "%{http_code}" https://dbend.areso.pro/tos}" >> $GITHUB_OUTPUT
+        run: echo "::set-output name=code::$(curl -s -o /dev/null -w "%{http_code}" https://dbend.areso.pro/tos)"
+#        run: echo "{name}={curl -s -o /dev/null -w "%{http_code}" https://dbend.areso.pro/tos}" >> $GITHUB_OUTPUT
 
-      - name: Handle Response
+      - name: Handle Response 500
         uses: "appleboy/telegram-action@master"
-        if: steps.check_response.outputs.code == '500'
+        if: steps.check_response.outputs.code == 500
         with:
           to: ${{secrets.CHAT_ID}}
           token: ${{secrets.TELEGRAM_TOKEN}}
           args: Server crashed!!!
         continue-on-error: true
 
-      - name: Handle Response
+      - name: Handle Response 502
         uses: "appleboy/telegram-action@master"
-        if: steps.check_response.outputs.code == '502'
+        if: steps.check_response.outputs.code == 502
+        with:
+          to: ${{secrets.CHAT_ID}}
+          token: ${{secrets.TELEGRAM_TOKEN}}
+          args: Server crashed!!!
+        continue-on-error: true
+
+      - name: Handle Response 1
+        uses: "appleboy/telegram-action@master"
+        if: steps.check_response.outputs.code == 1
         with:
           to: ${{secrets.CHAT_ID}}
           token: ${{secrets.TELEGRAM_TOKEN}}
