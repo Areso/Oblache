@@ -31,3 +31,12 @@ jobs:
           args: Server crashed!!!
         continue-on-error: true
 
+      - name: Handle Response
+        uses: "appleboy/telegram-action@master"
+        if: steps.check_response.outputs.code == '502'
+        with:
+          to: ${{secrets.CHAT_ID}}
+          token: ${{secrets.TELEGRAM_TOKEN}}
+          args: Server crashed!!!
+        continue-on-error: true
+
