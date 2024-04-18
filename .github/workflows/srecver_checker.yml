@@ -1,0 +1,32 @@
+name: Server checker
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Send API Request
+        run: curl -X GET https://your-api-endpoint.com/some-resource
+
+      - name: Check Response Code
+        id: check_response
+        run: echo "::set-output name=code::$(curl -s -o /dev/null -w "%{http_code}" https://dbend.areso.pro/tos)"
+
+      - name: Handle Response
+        if: steps.check_response.outputs.code == '500'
+        run: |
+          echo "API request returned a 500 status code."
+        uses: "appleboy/telegram-action@master"
+        with:
+          to: ${{secrets.CHAT_ID}}
+          token: ${{secrets.TELEGRAM_TOKEN}}
+          args: Server crashed!!!
+        continue-on-error: true
+
