@@ -76,15 +76,4 @@ jobs:
           PUBLISH_DIR: allure-history
         continue-on-error: true
 
-  messsage:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Send message to Telegram
-        uses: "appleboy/telegram-action@master"
-        with:
-          to: ${{secrets.CHAT_ID}}
-          token: ${{secrets.TELEGRAM_TOKEN}}
-          args: Link https://lambotik.github.io/Oblache/
-        continue-on-error: true
+
