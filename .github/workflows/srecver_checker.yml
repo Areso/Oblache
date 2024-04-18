@@ -20,7 +20,7 @@ jobs:
       - name: Check Response Code
         id: check_response
 #        run: echo "::set-output name=code::$(curl -s -o /dev/null -w "%{http_code}" https://dbend.areso.pro/tos)"
-        run: echo "{name}={curl -s -o /dev/null -w "%{http_code}" https://dbend.areso.pro/tos}" >> $GITHUB_OUTPUT
+        run: echo "{code}={curl -s -o /dev/null -w "%{http_code}" https://dbend.areso.pro/tos}" >> $GITHUB_OUTPUT
       - name: Output
         run: echo  $GITHUB_OUTPUT
 
