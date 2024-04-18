@@ -1,0 +1,49 @@
+name: Server checker
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+#on: #push
+#  workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Send API Request
+        run: curl -X GET https://dbend.areso.pro/tos
+
+      - name: Check Response Code
+        id: check_response
+        run: echo "RESPONSE=$(curl -s -o /dev/null -w '%{http_code}' https://dbend.areso.pro/tos)" >> "$GITHUB_OUTPUT"
+
+      - name: Response
+        env:
+          RESPONSE: ${{ steps.check_response.outputs.RESPONSE }}
+        run: echo "Status code is $RESPONSE"
+
+
+
+      - name: Handle Response 500
+        uses: "appleboy/telegram-action@master"
+        if: steps.check_response.outputs.RESPONSE == 500
+        with:
+          to: ${{secrets.CHAT_ID}}
+          token: ${{secrets.TELEGRAM_TOKEN}}
+          args: Server crashed!!!
+        continue-on-error: true
+
+      - name: Handle Response 502
+        uses: "appleboy/telegram-action@master"
+        if: steps.check_response.outputs.RESPONSE == 502
+        with:
+          to: ${{secrets.CHAT_ID}}
+          token: ${{secrets.TELEGRAM_TOKEN}}
+          args: Server crashed!!!
+        continue-on-error: true
+
+
