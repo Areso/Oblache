@@ -19,26 +19,18 @@ jobs:
 
       - name: Check Response Code
         id: check_response
-#        run: echo "::set-output name=code::$(curl -s -o /dev/null -w "%{http_code}" https://dbend.areso.pro/tos)"
         run: echo "RESPONSE=$(curl -s -o /dev/null -w '%{http_code}' https://dbend.areso.pro/tos)" >> "$GITHUB_OUTPUT"
 
       - name: Response
         env:
           RESPONSE: ${{ steps.check_response.outputs.RESPONSE }}
-        run: echo "The selected color is $RESPONSE"
+        run: echo "Status code is $RESPONSE"
 
-#      - name: Set color
-#        id: color-selector
-#        run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
-#      - name: Get color
-#        env:
-#          SELECTED_COLOR: ${{ steps.color-selector.outputs.SELECTED_COLOR }}
-#        run: echo "The selected color is $SELECTED_COLOR"
 
 
       - name: Handle Response 500
         uses: "appleboy/telegram-action@master"
-        if: steps.check_response.outputs.code == 500
+        if: steps.check_response.outputs.RESPONSE == 500
         with:
           to: ${{secrets.CHAT_ID}}
           token: ${{secrets.TELEGRAM_TOKEN}}
@@ -47,7 +39,7 @@ jobs:
 
       - name: Handle Response 502
         uses: "appleboy/telegram-action@master"
-        if: steps.check_response.outputs.code == 502
+        if: steps.check_response.outputs.RESPONSE == 502
         with:
           to: ${{secrets.CHAT_ID}}
           token: ${{secrets.TELEGRAM_TOKEN}}
