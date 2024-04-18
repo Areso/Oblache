@@ -22,8 +22,6 @@ jobs:
       - name: Handle Response
         uses: "appleboy/telegram-action@master"
         if: steps.check_response.outputs.code == '500'
-        run: |
-          echo "API request returned a 500 status code."
         with:
           to: ${{secrets.CHAT_ID}}
           token: ${{secrets.TELEGRAM_TOKEN}}
