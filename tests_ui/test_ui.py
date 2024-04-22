@@ -97,8 +97,9 @@ class TestUI:
         def test_delete_container(self, driver, authorization_user):
             page = ProfilePage(driver)
             page.click_button_docker_containers()
-            before_deletion = page.get_containers_list()
-            print(len(before_deletion))
+            page.get_containers_list()
+            page.delete_first_container()
+
 
     # def test_source_v1(self):
     #     source = requests.get('https://oblache.areso.pro/tos.html')
