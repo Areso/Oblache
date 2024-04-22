@@ -99,19 +99,3 @@ class TestUI:
             page.click_button_docker_containers()
             page.get_containers_list()
             page.delete_first_container()
-
-
-    # def test_source_v1(self):
-    #     source = requests.get('https://oblache.areso.pro/tos.html')
-    #     data = []
-    #     data_vac = {}
-    #     for i in source.text.split('\n'):
-    #         if 'locObj' in i.split('=')[0]:
-    #             data_vac.setdefault(i.split('=')[0].strip(), i.split('=')[1])
-    #         if 'locObj' in i.split('=')[0] and i.split('=')[0] not in data:
-    #             data.append(i.split('=')[0])
-    #
-    #     pprint(data_vac)
-    #     print(len(data_vac.keys()))
-    #     print(len(data))
-    #     print(data_vac['locObj.en_us.div_limits'])
