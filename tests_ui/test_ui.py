@@ -1,5 +1,3 @@
-import time
-
 import allure
 
 from tests_ui.links import TestDataLinks
@@ -74,7 +72,7 @@ class TestUI:
             assert amount_databases == amount_after_create or msg == 'No database for deleting.'
 
         @allure.title('test_clipboard')
-        def test_clipboard_uuid(self, driver, authorization_user):
+        def test_clipboard_uuid_db(self, driver, authorization_user):
             page = ProfilePage(driver)
             page.click_button_databases()
             page.check_clipboard('//tbody[@id="tbody_dbs"]')
@@ -91,12 +89,16 @@ class TestUI:
             page.click_button_docker_containers()
             page.check_clipboard('//table[@id="table_containers"]')
 
-        # @allure.title('test_create_docker_container')
-        # def test_create_docker_container(self, driver, authorization_user):
-        #     page = ProfilePage(driver)
-        #     page.create_docker_container()
-        #
-        #     time.sleep(5)
+        @allure.title('test_create_docker_container')
+        def test_create_docker_container(self, driver, authorization_user):
+            page = ProfilePage(driver)
+            page.create_docker_container()
+
+        def test_delete_container(self, driver, authorization_user):
+            page = ProfilePage(driver)
+            page.click_button_docker_containers()
+            page.get_containers_list()
+            page.delete_first_container()
 
 
     # def test_source_v1(self):

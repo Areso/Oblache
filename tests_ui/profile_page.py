@@ -61,13 +61,15 @@ class ProfilePage(BasePage):
         self.click_buttons_create_new_db()
         self.click_button_databases()
         time.sleep(1)
-        x = self.elements_are_present(self.locators.LIST_DATABASES)
-        list_db = [x[i].text for i in range(len(x))]
-        print(list_db)
+        list_databases = self.elements_are_present(self.locators.LIST_DATABASES)
+        list_db = [list_databases[i].text for i in range(len(list_databases))]
         if len(list_db) != 0:
-            button = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]/td[10] /button'))
+            button = self.element_is_visible((By.XPATH, f'//tbody[@id="tbody_dbs"] /tr[1]/td[10] /button'))
             button.click()
-            with allure.step(f'Click button: {button.text}'):
+            server_msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text
+            with allure.step(f'Check server answer is: {server_msg}'):
+                assert server_msg == 'server is set for deleting', 'Wrong answer from server or need manual deleting!!!'
+            with allure.step(f'Clicked button: {button.text} on the first database in the list.'):
                 time.sleep(20)
         else:
             msg = 'No database for deleting.'
@@ -82,7 +84,7 @@ class ProfilePage(BasePage):
             button = self.element_is_visible((By.XPATH, f'{table_xpath} //tr[1]/td[3] /button'))
             button.click()
             table_line = self.element_is_visible((By.XPATH, f'{table_xpath} //tr[1]')).text
-            with allure.step(f'Click button {button.text} in database:{table_line}, for copy uuid.'):
+            with allure.step(f'Clicked button {button.text} in database:{table_line}, for copy uuid.'):
                 pass
 
             result = API.post_db_list(ConnectionData.token)
@@ -107,7 +109,7 @@ class ProfilePage(BasePage):
             button = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]/td[7] /button'))
             button.click()
             table_line = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]')).text
-            with allure.step(f'Click button {button.text} in database:{table_line}, for copy uuid.'):
+            with allure.step(f'Clicked button {button.text} in database:{table_line}, for copy uuid.'):
                 pass
             result = API.post_db_list(ConnectionData.token)
             uuid = list(result.json()['data'])[0]
@@ -138,13 +140,45 @@ class ProfilePage(BasePage):
         amount_after_create = self.get_status_data()['db qty used']
         assert int(amount_databases) + 1 == int(amount_after_create)
 
-    def get_containers_list(self,table_xpath):
-        self.element_is_present_and_clickable(self.locators.BUTTON_DOCKER_CONTAINER).click()
-        databases_list = self.elements_are_present((By.XPATH, f'{table_xpath}//tr'))
-        list_db = [databases_list[i].text for i in range(len(databases_list))]
-        print(list_db)
-
+    @allure.step('create_docker_container')
     def create_docker_container(self):
+        with allure.step('Click button "Docker Containers".'):
+            self.element_is_present_and_clickable(self.locators.BUTTON_DOCKER_CONTAINER).click()
+        before = self.elements_are_visible((By.XPATH, '//table[@id="table_containers"]/tbody/tr'))
+        list_before = [i.text for i in before]
+        with allure.step(f'Check containers list before creation: {list_before}'):
+            pass
+        with allure.step('Click button "Create new Docker Container".'):
+            self.element_is_present_and_clickable(self.locators.BUTTON_CREATE_DOCKER_CONTAINER).click()
+        with allure.step('Click button "Create".'):
+            self.element_is_present_and_clickable(self.locators.BUTTON_CREATE).click()
+        with allure.step('Click button "Docker Containers".'):
+            self.element_is_present_and_clickable(self.locators.BUTTON_DOCKER_CONTAINER).click()
+        server_msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text
+        with allure.step(f'Check message from server: "{server_msg}"'):
+            assert server_msg == 'Order for the new Container accepted', 'Error creating container!!!'
         self.element_is_present_and_clickable(self.locators.BUTTON_DOCKER_CONTAINER).click()
-        self.element_is_present_and_clickable(self.locators.BUTTON_CREATE_DOCKER_CONTAINER).click()
-        self.element_is_present_and_clickable(self.locators.BUTTON_CREATE).click()
+        self.element_is_visible((By.XPATH, f'//table[@id="table_containers"]/tbody/tr[{len(list_before) + 1}]'))
+        after = self.elements_are_visible((By.XPATH, f'//table[@id="table_containers"]/tbody/tr'))
+        list_after = [i.text for i in after]
+        with allure.step(f'Check containers list after creation: {list_after}'):
+            pass
+        assert len(list_before) + 1 == len(list_after)
+
+    @allure.step('get_containers_list')
+    def get_containers_list(self):
+        containers_data = self.elements_are_visible((By.XPATH, '//table[@id="table_containers"]/tbody/tr'))
+        containers_list = [i.text for i in containers_data]
+        with allure.step(f'Check containers list before creation: {containers_list}'):
+            pprint(containers_list)
+        return containers_list
+
+    @allure.step('delete_first_container')
+    def delete_first_container(self):
+        amount_containers = len(self.get_containers_list())
+        if amount_containers != 0:
+            self.element_is_present_and_clickable('//tbody[@id="tbody_containers"] /tr[1]/td[10] /button').click()
+            server_msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text
+            assert server_msg == 'container is set for deleting'
+        else:
+            assert False, 'No containers in the table.'

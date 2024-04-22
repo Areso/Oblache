@@ -37,3 +37,4 @@ class Locators:
     BUTTON_DOCKER_CONTAINER = (By.XPATH, '//button[@id="menu_button_containers"]')
     BUTTON_CREATE_DOCKER_CONTAINER = (By.XPATH, '//button[@id="btn_new_docker_container"]')
     BUTTON_CREATE = (By.XPATH, '//button[@id="btn_create_docker"]')
+    LIST_DOCKER_CONTAINERS = (By.XPATH, '//table[@id="table_containers"]/tbody/tr')
