@@ -1,0 +1,662 @@
+{
+  "uid" : "e895cf24f1800422",
+  "name" : "Capacity_db",
+  "fullName" : "tests_api.test_bd.TestFull#test_capacity_db",
+  "historyId" : "936f7fa0df691d843e1d921c6b4b86e7",
+  "time" : {
+    "start" : 1713920093791,
+    "stop" : 1713920192348,
+    "duration" : 98557
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: Value disk db used(MB) should be more than 0.\nassert 0 > 0\n +  where 0 = int(0)",
+  "statusTrace" : "self = <tests_api.test_bd.TestFull object at 0x7f80425144d0>\n\n    @allure.severity(allure.severity_level.CRITICAL)\n    @allure.title('Capacity_db')\n    def test_capacity_db(self):\n        start_mb_value = API.get_profile(ConnectionData.token).json()['data'][\"content\"][4][1]\n        print('Db size mb:', start_mb_value)\n        result_db_create = API.post_db_create(ConnectionData.token)\n        print('Status db is :', result_db_create.json())\n        db_uuid = result_db_create.json()[\"db_uuid\"]\n        print(\"db_uuid\", db_uuid)\n        time.sleep(20)\n        with allure.step('Create table.'):\n            query = '''\n            CREATE TABLE IF NOT EXISTS accounts(\n            userid INT PRIMARY KEY AUTO_INCREMENT,\n            name varchar(128),\n            date_of_birth datetime NULL,\n            text varchar(4096),\n            email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;\n            '''\n        db = ConnectionData.connection(f\"{db_uuid}\")\n        cursor = db.cursor()\n        cursor.execute(query)\n        db.commit()\n    \n        db = ConnectionData.connection(f\"{db_uuid}\")\n        letters = ascii_letters\n        cursor = db.cursor()\n        with allure.step('Insert records to the database'):\n            for x in range(10):\n                for i in range(10):\n                    my_string = \"\".join(random.choice(letters) for _ in range(4096))\n                    cursor.execute(\"\"\"\n                                    INSERT INTO accounts (name, text)\n                                    VALUES (\n                                    'lambotik',\n                                    %(my_string)s);\"\"\",\n                                   {'my_string': my_string})\n                    db.commit()\n                db.commit()\n            cursor.execute('''select * from accounts''')\n            # res = cursor.fetchall()\n            # print(res)\n            time.sleep(40)\n        finish_mb_value = API.get_profile(ConnectionData.token).json()['data'][\"content\"][4][1]\n        with allure.step('Get DB size (in MB) after records have been inserted.'):\n            req = requests.post('http://cisdb1.areso.pro:9090/list', json={\"token\": \"SuperSecret\"})\n        pprint(req.text)\n        print('Db size mb after insert:', finish_mb_value)\n        create_new_db = API.post_db_create(ConnectionData.token)\n        print(create_new_db.status_code)\n>       assert int(finish_mb_value) > 0, 'Value disk db used(MB) should be more than 0.'\nE       AssertionError: Value disk db used(MB) should be more than 0.\nE       assert 0 > 0\nE        +  where 0 = int(0)\n\ntests_api/test_bd.py:75: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: Value disk db used(MB) should be more than 0.\nassert 0 > 0\n +  where 0 = int(0)",
+    "statusTrace" : "self = <tests_api.test_bd.TestFull object at 0x7f80425144d0>\n\n    @allure.severity(allure.severity_level.CRITICAL)\n    @allure.title('Capacity_db')\n    def test_capacity_db(self):\n        start_mb_value = API.get_profile(ConnectionData.token).json()['data'][\"content\"][4][1]\n        print('Db size mb:', start_mb_value)\n        result_db_create = API.post_db_create(ConnectionData.token)\n        print('Status db is :', result_db_create.json())\n        db_uuid = result_db_create.json()[\"db_uuid\"]\n        print(\"db_uuid\", db_uuid)\n        time.sleep(20)\n        with allure.step('Create table.'):\n            query = '''\n            CREATE TABLE IF NOT EXISTS accounts(\n            userid INT PRIMARY KEY AUTO_INCREMENT,\n            name varchar(128),\n            date_of_birth datetime NULL,\n            text varchar(4096),\n            email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;\n            '''\n        db = ConnectionData.connection(f\"{db_uuid}\")\n        cursor = db.cursor()\n        cursor.execute(query)\n        db.commit()\n    \n        db = ConnectionData.connection(f\"{db_uuid}\")\n        letters = ascii_letters\n        cursor = db.cursor()\n        with allure.step('Insert records to the database'):\n            for x in range(10):\n                for i in range(10):\n                    my_string = \"\".join(random.choice(letters) for _ in range(4096))\n                    cursor.execute(\"\"\"\n                                    INSERT INTO accounts (name, text)\n                                    VALUES (\n                                    'lambotik',\n                                    %(my_string)s);\"\"\",\n                                   {'my_string': my_string})\n                    db.commit()\n                db.commit()\n            cursor.execute('''select * from accounts''')\n            # res = cursor.fetchall()\n            # print(res)\n            time.sleep(40)\n        finish_mb_value = API.get_profile(ConnectionData.token).json()['data'][\"content\"][4][1]\n        with allure.step('Get DB size (in MB) after records have been inserted.'):\n            req = requests.post('http://cisdb1.areso.pro:9090/list', json={\"token\": \"SuperSecret\"})\n        pprint(req.text)\n        print('Db size mb after insert:', finish_mb_value)\n        create_new_db = API.post_db_create(ConnectionData.token)\n        print(create_new_db.status_code)\n>       assert int(finish_mb_value) > 0, 'Value disk db used(MB) should be more than 0.'\nE       AssertionError: Value disk db used(MB) should be more than 0.\nE       assert 0 > 0\nE        +  where 0 = int(0)\n\ntests_api/test_bd.py:75: AssertionError",
+    "steps" : [ {
+      "name" : "get_profile",
+      "time" : {
+        "start" : 1713920093791,
+        "stop" : 1713920094178,
+        "duration" : 387
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "GET https://dbend.areso.pro/get_profile",
+        "time" : {
+          "start" : 1713920093791,
+          "stop" : 1713920094178,
+          "duration" : 387
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status code: 200",
+          "time" : {
+            "start" : 1713920094178,
+            "stop" : 1713920094178,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Response: {\n  \"data\": {\n    \"content\": [\n      [\n        \"email\",\n        \"test4@mail.com\"\n      ],\n      [\n        \"is_blocked\",\n        0\n      ],\n      [\n        \"is_db_creation_allowed\",\n        1\n      ],\n      [\n        \"disk_db_quota\",\n        4\n      ],\n      [\n        \"disk_db_used\",\n        0\n      ],\n      [\n        \"db_qty_quota\",\n        100\n      ],\n      [\n        \"db_qty_used\",\n        57\n      ],\n      [\n        \"id_regions\",\n        \"2,3\"\n      ]\n    ]\n  },\n  \"headers\": {\n    \"Access-Control-Allow-Methods\": \"GET\",\n    \"Access-Control-Allow-Origin\": \"*\",\n    \"Content-type\": \"application/json\"\n  },\n  \"status\": 200\n}\n",
+          "time" : {
+            "start" : 1713920094178,
+            "stop" : 1713920094178,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Response JSON: {\n  \"data\": {\n    \"content\": [\n      [\n        \"email\",\n        \"test4@mail.com\"\n      ],\n      [\n        \"is_blocked\",\n        0\n      ],\n      [\n        \"is_db_creation_allowed\",\n        1\n      ],\n      [\n        \"disk_db_quota\",\n        4\n      ],\n      [\n        \"disk_db_used\",\n        0\n      ],\n      [\n        \"db_qty_quota\",\n        100\n      ],\n      [\n        \"db_qty_used\",\n        57\n      ],\n      [\n        \"id_regions\",\n        \"2,3\"\n      ]\n    ]\n  },\n  \"headers\": {\n    \"Access-Control-Allow-Methods\": \"GET\",\n    \"Access-Control-Allow-Origin\": \"*\",\n    \"Content-type\": \"application/json\"\n  },\n  \"status\": 200\n}\n",
+        "time" : {
+          "start" : 1713920094178,
+          "stop" : 1713920094178,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "token",
+        "value" : "'26353935-01eb-450a-bc0c-9b2a40715e47'"
+      } ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "post_db_create",
+      "time" : {
+        "start" : 1713920094179,
+        "stop" : 1713920094624,
+        "duration" : 445
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "POST https://dbend.areso.pro/db_create, body: {'dbtype': 3, 'dbversion': 5, 'env': 3, 'region': 3}",
+        "time" : {
+          "start" : 1713920094179,
+          "stop" : 1713920094624,
+          "duration" : 445
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status code: 201",
+          "time" : {
+            "start" : 1713920094623,
+            "stop" : 1713920094623,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Params url: https://dbend.areso.pro/db_create",
+          "time" : {
+            "start" : 1713920094623,
+            "stop" : 1713920094624,
+            "duration" : 1
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Response JSON: {\n    \"msg\": \"your order for a new database created successfully\",\n    \"db_uuid\": \"06628585-e862-75df-8000-2ca389a13a0f\"\n}\n",
+        "time" : {
+          "start" : 1713920094624,
+          "stop" : 1713920094624,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Create table.",
+      "time" : {
+        "start" : 1713920114624,
+        "stop" : 1713920114624,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Status code: 200",
+      "time" : {
+        "start" : 1713920115110,
+        "stop" : 1713920115110,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Params url: https://dbend.areso.pro/db_list",
+      "time" : {
+        "start" : 1713920115110,
+        "stop" : 1713920115110,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Status code: 200",
+      "time" : {
+        "start" : 1713920117488,
+        "stop" : 1713920117488,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Params url: https://dbend.areso.pro/db_list",
+      "time" : {
+        "start" : 1713920117488,
+        "stop" : 1713920117488,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Insert records to the database",
+      "time" : {
+        "start" : 1713920118938,
+        "stop" : 1713920191192,
+        "duration" : 72254
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "get_profile",
+      "time" : {
+        "start" : 1713920191193,
+        "stop" : 1713920191589,
+        "duration" : 396
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "GET https://dbend.areso.pro/get_profile",
+        "time" : {
+          "start" : 1713920191193,
+          "stop" : 1713920191589,
+          "duration" : 396
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status code: 200",
+          "time" : {
+            "start" : 1713920191589,
+            "stop" : 1713920191589,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Response: {\n  \"data\": {\n    \"content\": [\n      [\n        \"email\",\n        \"test4@mail.com\"\n      ],\n      [\n        \"is_blocked\",\n        0\n      ],\n      [\n        \"is_db_creation_allowed\",\n        1\n      ],\n      [\n        \"disk_db_quota\",\n        4\n      ],\n      [\n        \"disk_db_used\",\n        0\n      ],\n      [\n        \"db_qty_quota\",\n        100\n      ],\n      [\n        \"db_qty_used\",\n        58\n      ],\n      [\n        \"id_regions\",\n        \"2,3\"\n      ]\n    ]\n  },\n  \"headers\": {\n    \"Access-Control-Allow-Methods\": \"GET\",\n    \"Access-Control-Allow-Origin\": \"*\",\n    \"Content-type\": \"application/json\"\n  },\n  \"status\": 200\n}\n",
+          "time" : {
+            "start" : 1713920191589,
+            "stop" : 1713920191589,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Response JSON: {\n  \"data\": {\n    \"content\": [\n      [\n        \"email\",\n        \"test4@mail.com\"\n      ],\n      [\n        \"is_blocked\",\n        0\n      ],\n      [\n        \"is_db_creation_allowed\",\n        1\n      ],\n      [\n        \"disk_db_quota\",\n        4\n      ],\n      [\n        \"disk_db_used\",\n        0\n      ],\n      [\n        \"db_qty_quota\",\n        100\n      ],\n      [\n        \"db_qty_used\",\n        58\n      ],\n      [\n        \"id_regions\",\n        \"2,3\"\n      ]\n    ]\n  },\n  \"headers\": {\n    \"Access-Control-Allow-Methods\": \"GET\",\n    \"Access-Control-Allow-Origin\": \"*\",\n    \"Content-type\": \"application/json\"\n  },\n  \"status\": 200\n}\n",
+        "time" : {
+          "start" : 1713920191589,
+          "stop" : 1713920191589,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "token",
+        "value" : "'26353935-01eb-450a-bc0c-9b2a40715e47'"
+      } ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Get DB size (in MB) after records have been inserted.",
+      "time" : {
+        "start" : 1713920191590,
+        "stop" : 1713920191894,
+        "duration" : 304
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "post_db_create",
+      "time" : {
+        "start" : 1713920191894,
+        "stop" : 1713920192348,
+        "duration" : 454
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "POST https://dbend.areso.pro/db_create, body: {'dbtype': 3, 'dbversion': 5, 'env': 3, 'region': 3}",
+        "time" : {
+          "start" : 1713920191894,
+          "stop" : 1713920192348,
+          "duration" : 454
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status code: 201",
+          "time" : {
+            "start" : 1713920192348,
+            "stop" : 1713920192348,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Params url: https://dbend.areso.pro/db_create",
+          "time" : {
+            "start" : 1713920192348,
+            "stop" : 1713920192348,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Response JSON: {\n    \"msg\": \"your order for a new database created successfully\",\n    \"db_uuid\": \"0662858c-03f1-75a1-8000-a7a16201ac75\"\n}\n",
+        "time" : {
+          "start" : 1713920192348,
+          "stop" : 1713920192348,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 27,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "suite",
+    "value" : "Test Connection DB"
+  }, {
+    "name" : "epic",
+    "value" : "Connection DB"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_api"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestFull"
+  }, {
+    "name" : "host",
+    "value" : "fv-az523-929"
+  }, {
+    "name" : "thread",
+    "value" : "2330-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_api.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 14,
+        "broken" : 3,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 17
+      },
+      "items" : [ {
+        "uid" : "fd7de44c7e247c8a",
+        "reportUrl" : "https://Areso.github.io/Oblache/13//#testresult/fd7de44c7e247c8a",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Value disk db used(MB) should be more than 0.\nassert 0 > 0\n +  where 0 = int(0)",
+        "time" : {
+          "start" : 1713833711277,
+          "stop" : 1713833806215,
+          "duration" : 94938
+        }
+      }, {
+        "uid" : "2ad2bd8a8946b4e1",
+        "reportUrl" : "https://Areso.github.io/Oblache/12//#testresult/2ad2bd8a8946b4e1",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Value disk db used(MB) should be more than 0.\nassert 0 > 0\n +  where 0 = int(0)",
+        "time" : {
+          "start" : 1713747377352,
+          "stop" : 1713747472453,
+          "duration" : 95101
+        }
+      }, {
+        "uid" : "6dd99fe828cc1c26",
+        "reportUrl" : "https://Areso.github.io/Oblache/11//#testresult/6dd99fe828cc1c26",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Value disk db used(MB) should be more than 0.\nassert 0 > 0\n +  where 0 = int(0)",
+        "time" : {
+          "start" : 1713661110780,
+          "stop" : 1713661205835,
+          "duration" : 95055
+        }
+      }, {
+        "uid" : "5dcbed17e0e8a74b",
+        "reportUrl" : "https://Areso.github.io/Oblache/10//#testresult/5dcbed17e0e8a74b",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Value disk db used(MB) should be more than 0.\nassert 0 > 0\n +  where 0 = int(0)",
+        "time" : {
+          "start" : 1713574472730,
+          "stop" : 1713574572491,
+          "duration" : 99761
+        }
+      }, {
+        "uid" : "b20f5267bdb46ffd",
+        "reportUrl" : "https://Areso.github.io/Oblache/9//#testresult/b20f5267bdb46ffd",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Value disk db used(MB) should be more than 0.\nassert 0 > 0\n +  where 0 = int(0)",
+        "time" : {
+          "start" : 1713488068597,
+          "stop" : 1713488166063,
+          "duration" : 97466
+        }
+      }, {
+        "uid" : "8dbe1951caf9546e",
+        "reportUrl" : "https://Areso.github.io/Oblache/8//#testresult/8dbe1951caf9546e",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+        "time" : {
+          "start" : 1713402373552,
+          "stop" : 1713402373986,
+          "duration" : 434
+        }
+      }, {
+        "uid" : "ead54961983bf9c4",
+        "reportUrl" : "https://Areso.github.io/Oblache/6//#testresult/ead54961983bf9c4",
+        "status" : "broken",
+        "statusDetails" : "AttributeError: 'NoneType' object has no attribute 'split'",
+        "time" : {
+          "start" : 1713228850695,
+          "stop" : 1713228871941,
+          "duration" : 21246
+        }
+      }, {
+        "uid" : "d04628e7218242e0",
+        "reportUrl" : "https://Areso.github.io/Oblache/5//#testresult/d04628e7218242e0",
+        "status" : "broken",
+        "statusDetails" : "AttributeError: 'NoneType' object has no attribute 'split'",
+        "time" : {
+          "start" : 1713152996704,
+          "stop" : 1713153017808,
+          "duration" : 21104
+        }
+      }, {
+        "uid" : "69c05a215cafac5d",
+        "reportUrl" : "https://Areso.github.io/Oblache/4//#testresult/69c05a215cafac5d",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Value disk db used(MB) should be more than 0.\nassert 0 > 0\n +  where 0 = int(0)",
+        "time" : {
+          "start" : 1713057198362,
+          "stop" : 1713057309831,
+          "duration" : 111469
+        }
+      }, {
+        "uid" : "9215b6c4f289c2c6",
+        "reportUrl" : "https://Areso.github.io/Oblache/3//#testresult/9215b6c4f289c2c6",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Value disk db used(MB) should be more than 0.\nassert 0 > 0\n +  where 0 = int(0)",
+        "time" : {
+          "start" : 1712969080676,
+          "stop" : 1712969180311,
+          "duration" : 99635
+        }
+      }, {
+        "uid" : "dfb9b230b8ddb88d",
+        "reportUrl" : "https://Areso.github.io/Oblache/2//#testresult/dfb9b230b8ddb88d",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Value disk db used(MB) should be more than 0.\nassert 0 > 0\n +  where 0 = int(0)",
+        "time" : {
+          "start" : 1712883278291,
+          "stop" : 1712883375667,
+          "duration" : 97376
+        }
+      }, {
+        "uid" : "bbdad3ff14844e63",
+        "reportUrl" : "https://Areso.github.io/Oblache/1//#testresult/bbdad3ff14844e63",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Value disk db used(MB) should be more than 0.\nassert 0 > 0\n +  where 0 = int(0)",
+        "time" : {
+          "start" : 1712796876177,
+          "stop" : 1712796974934,
+          "duration" : 98757
+        }
+      }, {
+        "uid" : "e98edc6bbb2f806b",
+        "reportUrl" : "https://Areso.github.io/Oblache/22//#testresult/e98edc6bbb2f806b",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Value disk db used(MB) should be more than 0.\nassert 0 > 0\n +  where 0 = int(0)",
+        "time" : {
+          "start" : 1712763299246,
+          "stop" : 1712763393439,
+          "duration" : 94193
+        }
+      }, {
+        "uid" : "7d550d8cec98556",
+        "reportUrl" : "https://Areso.github.io/Oblache/21//#testresult/7d550d8cec98556",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Value disk db used(MB) should be more than 0.\nassert 0 > 0\n +  where 0 = int(0)",
+        "time" : {
+          "start" : 1712606626853,
+          "stop" : 1712606722194,
+          "duration" : 95341
+        }
+      }, {
+        "uid" : "db21931b87712e72",
+        "reportUrl" : "https://Areso.github.io/Oblache/20//#testresult/db21931b87712e72",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Value disk db used(MB) should be more than 0.\nassert 0 > 0\n +  where 0 = int(0)",
+        "time" : {
+          "start" : 1712605857489,
+          "stop" : 1712605955132,
+          "duration" : 97643
+        }
+      }, {
+        "uid" : "eb10135824873b2c",
+        "reportUrl" : "https://Areso.github.io/Oblache/19//#testresult/eb10135824873b2c",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Value disk db used(MB) should be more than 0.\nassert 0 > 0\n +  where 0 = int(0)",
+        "time" : {
+          "start" : 1712605592714,
+          "stop" : 1712605686404,
+          "duration" : 93690
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "e895cf24f1800422.json",
+  "parameterValues" : [ ]
+}
