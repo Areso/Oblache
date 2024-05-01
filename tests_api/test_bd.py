@@ -302,6 +302,35 @@ class TestRequests:
             Checking.check_status_code(result, 201)
             Checking.check_json_value(result, 'msg', 'order for new container accepted')
 
+        @allure.title('POST checking ports_len positive')
+        def test_post_checking_ports_len_positive(self):
+            result = API.post_create_docker_container_checking_ports(ConnectionData.token, "80-89")
+            print(result.text, result.status_code)
+            Checking.check_status_code(result, 201)
+            Checking.check_json_value(result, 'msg', 'order for new container accepted')
+
+        @allure.title('POST checking ports_len negative range')
+        def test_post_checking_ports_len_negative_range(self):
+            result = API.post_create_docker_container_checking_ports(ConnectionData.token, "80-90")
+            print(result.text, result.status_code)
+            Checking.check_status_code(result, 400)
+            Checking.check_json_value(result, 'msg', 'msg[]: ports range is too wide')
+
+        @allure.title('POST checking ports_len negative len')
+        def test_post_checking_ports_len_negative_len(self):
+            result = API.post_create_docker_container_checking_ports(ConnectionData.token,
+                                                                     "80,81,82,83,84,85,86,87,88,89,90")
+            print(result.text, result.status_code)
+            Checking.check_status_code(result, 400)
+            Checking.check_json_value(result, 'msg', 'msg[]: ports range is too wide')
+
+        @allure.title('POST checking ports_len negative symbols')
+        def test_post_checking_ports_len_negative_symbols(self):
+            result = API.post_create_docker_container_checking_ports(ConnectionData.token, "qwert")
+            print(result.text, result.status_code)
+            Checking.check_status_code(result, 400)
+            Checking.check_json_value(result, 'msg', "msg[]: ports range isn't accepted")
+
         @allure.title('POST create_docker_container_without_token')
         def test_post_create_docker_container_without_token(self):
             result = API.post_create_docker_container('incorrect_token')

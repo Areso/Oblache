@@ -191,7 +191,7 @@ class ProfilePage(BasePage):
         amount_containers = self.get_containers_list()
         if len(amount_containers) != 0:
             self.element_is_present_and_clickable((By.XPATH,
-                                                  '//tbody[@id="tbody_containers"] /tr[1]/td[10] /button')).click()
+                                                   '//tbody[@id="tbody_containers"] /tr[1]/td[10] /button')).click()
             server_msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text
             assert server_msg == 'container is set for deleting'
         else:
