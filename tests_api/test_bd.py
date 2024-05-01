@@ -123,12 +123,6 @@ class TestRequests:
 
     @allure.suite('POST')
     class TestPOST:
-        @pytest.mark.xfail()
-        @allure.title('Post registration')
-        def test_post_registration(self):
-            result_post = API.post_registration("en-us", True)
-            print(result_post.text)
-            Checking.check_status_code(result_post, 201)
 
         @allure.title('Post registration for English language.')
         def test_post_registration_for_english_language(self):

@@ -45,9 +45,17 @@ class ProfilePage(BasePage):
     def click_buttons_create_new_db(self):
         with allure.step('Click "Create new DB" button.'):
             self.element_is_present_and_clickable(self.locators.CREATE_DATABASE_BUTTON).click()
+
+    @allure.step('click_buttons_create')
+    def click_buttons_create(self):
         with allure.step('Click "Create" button.'):
             self.element_is_clickable(self.locators.CREATE_NEW_DATABASE_BUTTON).click()
             print(f'Click {self.locators.CREATE_NEW_DATABASE_BUTTON}')
+
+    @allure.step('Select region "CIS".')
+    def select_db_region_cis(self):
+        self.element_is_present_and_clickable(self.locators.SELECT_DB_REGION).click()
+        self.element_is_present_and_clickable(self.locators.DB_REGION_CIS).click()
 
     @allure.step('get_amount_databases')
     def get_amount_databases(self):
@@ -131,6 +139,8 @@ class ProfilePage(BasePage):
         amount_databases = self.get_status_data()['db qty used']
         self.click_button_databases()
         self.click_buttons_create_new_db()
+        self.select_db_region_cis()
+        self.click_buttons_create()
         msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text
         print(msg)
         with allure.step(f'Check the message after clicking the create database button. MSG: {msg}'):
@@ -150,6 +160,9 @@ class ProfilePage(BasePage):
             pass
         with allure.step('Click button "Create new Docker Container".'):
             self.element_is_present_and_clickable(self.locators.BUTTON_CREATE_DOCKER_CONTAINER).click()
+        with allure.step('Select region "CIS".'):
+            self.element_is_present_and_clickable(self.locators.SELECT_DOCKER_REGION).click()
+            self.element_is_visible(self.locators.DOCKER_REGION_CIS).click()
         with allure.step('Click button "Create".'):
             self.element_is_present_and_clickable(self.locators.BUTTON_CREATE).click()
         with allure.step('Click button "Docker Containers".'):
