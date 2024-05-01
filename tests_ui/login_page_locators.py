@@ -26,6 +26,11 @@ class Locators:
 
     CREATE_DATABASE_BUTTON = (By.XPATH, '//button[@id="btn_new_db"]')
     CREATE_NEW_DATABASE_BUTTON = (By.XPATH, '//button[@id="btn_create_db"]')
+    SELECT_DB_REGION =(By.XPATH, '//select[@id="selectDBRegion"]')
+    DB_REGION_CIS = (By.XPATH, '//select[@id="selectDBRegion"] /option[@value="3"]')
+    SELECT_DOCKER_REGION = (By.XPATH, '//select[@id="selectDockerRegion"]')
+    DOCKER_REGION_CIS = (By.XPATH, '//select[@id="selectDockerRegion"] /option[@value="3"]')
+
 
     LIST_DATABASES = (By.XPATH, f'//tbody[@id="tbody_dbs"]/tr')
     LEN_TABLE_STRINGS = (By.XPATH, '//tbody[@id="tbody_status"]/tr')
