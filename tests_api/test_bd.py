@@ -318,7 +318,8 @@ class TestRequests:
 
         @allure.title('POST checking ports_len negative len')
         def test_post_checking_ports_len_negative_len(self):
-            result = API.post_create_docker_container_checking_ports(ConnectionData.token, "80,81,82,83,84,85,86,87,88,89,90")
+            result = API.post_create_docker_container_checking_ports(ConnectionData.token,
+                                                                     "80,81,82,83,84,85,86,87,88,89,90")
             print(result.text, result.status_code)
             Checking.check_status_code(result, 400)
             Checking.check_json_value(result, 'msg', 'msg[]: ports range is too wide')
