@@ -372,6 +372,17 @@ class API(ConnectionData):
                 return result_post
 
     @staticmethod
+    def post_create_docker_container_checking_ports(token, port_len):
+        with allure.step('post_create_docker_container'):
+            post_resource = '/container_create'
+            post_url = ConnectionData.base_url + post_resource
+            body = {"docker_image": "nginx", "int_ports": f"{port_len}", "env": 3, "region": 3}
+            with allure.step(f'POST {post_url}, body: {body}'):
+                result_post = HttpMethods.post(post_url, body, token=token)
+            with allure.step(f'Response JSON: {result_post.text}'):
+                return result_post
+
+    @staticmethod
     def post_create_docker_container_with_defunct_image(token):
         with allure.step('post_create_docker_container_with_defunct_image'):
             post_resource = '/container_create'
