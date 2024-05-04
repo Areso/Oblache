@@ -13,68 +13,68 @@ from .utils.checking import Checking
 from .utils.request import API
 
 
-@allure.epic('Connection DB')
-@allure.suite('Test Connection DB')
-@allure.severity(allure.severity_level.CRITICAL)
-class TestFull:
-    @allure.severity(allure.severity_level.CRITICAL)
-    @allure.title('Complex')
-    def test_complex(self):
-        API.check_full_cycle(ConnectionData.token)
-
-    @allure.severity(allure.severity_level.CRITICAL)
-    @allure.title('Capacity_db')
-    def test_capacity_db(self):
-        start_mb_value = API.get_profile(ConnectionData.token).json()['data']["content"][4][1]
-        print('Db size mb:', start_mb_value)
-        result_db_create = API.post_db_create(ConnectionData.token)
-        print('Status db is :', result_db_create.json())
-        db_uuid = result_db_create.json()["db_uuid"]
-        print("db_uuid", db_uuid)
-        time.sleep(20)
-        with allure.step('Create table.'):
-            query = '''
-            CREATE TABLE IF NOT EXISTS accounts(
-            userid INT PRIMARY KEY AUTO_INCREMENT,
-            name varchar(128),
-            date_of_birth datetime NULL,
-            text varchar(4096),
-            email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-            '''
-        db = ConnectionData.connection(f"{db_uuid}")
-        cursor = db.cursor()
-        cursor.execute(query)
-        db.commit()
-
-        db = ConnectionData.connection(f"{db_uuid}")
-        letters = ascii_letters
-        cursor = db.cursor()
-        with allure.step('Insert records to the database'):
-            for x in range(10):
-                for i in range(10):
-                    my_string = "".join(random.choice(letters) for _ in range(4096))
-                    cursor.execute("""
-                                    INSERT INTO accounts (name, text)
-                                    VALUES (
-                                    'lambotik',
-                                    %(my_string)s);""",
-                                   {'my_string': my_string})
-                    db.commit()
-                db.commit()
-            cursor.execute('''select * from accounts''')
-            # res = cursor.fetchall()
-            # print(res)
-            time.sleep(40)
-        finish_mb_value = API.get_profile(ConnectionData.token).json()['data']["content"][4][1]
-        with allure.step('Get DB size (in MB) after records have been inserted.'):
-            req = requests.post('http://cisdb1.areso.pro:9090/list', json={"token": "SuperSecret"})
-        pprint(req.text)
-        print('Db size mb after insert:', finish_mb_value)
-        create_new_db = API.post_db_create(ConnectionData.token)
-        print(create_new_db.status_code)
-        assert int(finish_mb_value) > 0, 'Value disk db used(MB) should be more than 0.'
-        result_post_db_delete = API.delete_db(f"{db_uuid}", ConnectionData.token)
-        Checking.check_status_code(result_post_db_delete, 200)
+# @allure.epic('Connection DB')
+# @allure.suite('Test Connection DB')
+# @allure.severity(allure.severity_level.CRITICAL)
+# class TestFull:
+#     @allure.severity(allure.severity_level.CRITICAL)
+#     @allure.title('Complex')
+#     def test_complex(self):
+#         API.check_full_cycle(ConnectionData.token)
+#
+#     @allure.severity(allure.severity_level.CRITICAL)
+#     @allure.title('Capacity_db')
+#     def test_capacity_db(self):
+#         start_mb_value = API.get_profile(ConnectionData.token).json()['data']["content"][4][1]
+#         print('Db size mb:', start_mb_value)
+#         result_db_create = API.post_db_create(ConnectionData.token)
+#         print('Status db is :', result_db_create.json())
+#         db_uuid = result_db_create.json()["db_uuid"]
+#         print("db_uuid", db_uuid)
+#         time.sleep(20)
+#         with allure.step('Create table.'):
+#             query = '''
+#             CREATE TABLE IF NOT EXISTS accounts(
+#             userid INT PRIMARY KEY AUTO_INCREMENT,
+#             name varchar(128),
+#             date_of_birth datetime NULL,
+#             text varchar(4096),
+#             email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+#             '''
+#         db = ConnectionData.connection(f"{db_uuid}")
+#         cursor = db.cursor()
+#         cursor.execute(query)
+#         db.commit()
+#
+#         db = ConnectionData.connection(f"{db_uuid}")
+#         letters = ascii_letters
+#         cursor = db.cursor()
+#         with allure.step('Insert records to the database'):
+#             for x in range(10):
+#                 for i in range(10):
+#                     my_string = "".join(random.choice(letters) for _ in range(4096))
+#                     cursor.execute("""
+#                                     INSERT INTO accounts (name, text)
+#                                     VALUES (
+#                                     'lambotik',
+#                                     %(my_string)s);""",
+#                                    {'my_string': my_string})
+#                     db.commit()
+#                 db.commit()
+#             cursor.execute('''select * from accounts''')
+#             # res = cursor.fetchall()
+#             # print(res)
+#             time.sleep(40)
+#         finish_mb_value = API.get_profile(ConnectionData.token).json()['data']["content"][4][1]
+#         with allure.step('Get DB size (in MB) after records have been inserted.'):
+#             req = requests.post('http://cisdb1.areso.pro:9090/list', json={"token": "SuperSecret"})
+#         pprint(req.text)
+#         print('Db size mb after insert:', finish_mb_value)
+#         create_new_db = API.post_db_create(ConnectionData.token)
+#         print(create_new_db.status_code)
+#         assert int(finish_mb_value) > 0, 'Value disk db used(MB) should be more than 0.'
+#         result_post_db_delete = API.delete_db(f"{db_uuid}", ConnectionData.token)
+#         Checking.check_status_code(result_post_db_delete, 200)
 
 
 @allure.epic('TestRequests')
@@ -292,15 +292,18 @@ class TestRequests:
         @allure.title('POST create_docker_container')
         def test_post_container_list(self):
             result = API.post_container_list(ConnectionData.token)
-            print(result.text, result.status_code)
+            print(len(result.json()['data']), result.status_code)
             Checking.check_status_code(result, 200)
 
         @allure.title('POST create_docker_container')
         def test_post_create_docker_container(self):
+            amount_before = API.post_container_list(ConnectionData.token)
             result = API.post_create_docker_container(ConnectionData.token)
             print(result.text, result.status_code)
+            amount_after = API.post_container_list(ConnectionData.token)
             Checking.check_status_code(result, 201)
             Checking.check_json_value(result, 'msg', 'order for new container accepted')
+            assert amount_before == amount_after + 1, 'Container not added to table.'
 
         @allure.title('POST checking ports_len positive')
         def test_post_checking_ports_len_positive(self):

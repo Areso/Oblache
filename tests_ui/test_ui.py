@@ -94,6 +94,10 @@ class TestUI:
             page = ProfilePage(driver)
             page.create_docker_container()
 
+        def test_check_port_lens_positive(self, driver, authorization_user):
+            page = ProfilePage(driver)
+            page.check_port_lens_positive()
+
         def test_delete_container(self, driver, authorization_user):
             page = ProfilePage(driver)
             page.click_button_docker_containers()
