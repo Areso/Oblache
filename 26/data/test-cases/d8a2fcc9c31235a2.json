@@ -1,0 +1,485 @@
+{
+  "uid" : "d8a2fcc9c31235a2",
+  "name" : "test_delete_container",
+  "fullName" : "tests_ui.test_ui.TestProfilePage#test_delete_container",
+  "historyId" : "82f1b1649b6ba1f52776126438c9d89e",
+  "time" : {
+    "start" : 1714957152654,
+    "stop" : 1714957155525,
+    "duration" : 2871
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError",
+  "statusTrace" : "self = <tests_ui.test_ui.TestUI.TestProfilePage object at 0x7f76ba823980>\ndriver = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"2312e011d047bee72fe8a1f9242d199b\")>\nauthorization_user = <tests_ui.login_page.LoginPage object at 0x7f76ba83f260>\n\n    def test_delete_container(self, driver, authorization_user):\n        page = ProfilePage(driver)\n        page.click_button_docker_containers()\n        page.get_containers_list()\n>       page.delete_first_container()\n\ntests_ui/test_ui.py:105: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <tests_ui.profile_page.ProfilePage object at 0x7f76ba83fda0>\n\n    @allure.step('delete_first_container')\n    def delete_first_container(self):\n        amount_containers = self.get_containers_list()\n        if len(amount_containers) != 0:\n            self.element_is_present_and_clickable((By.XPATH,\n                                                   '//tbody[@id=\"tbody_containers\"] /tr[1]/td[10] /button')).click()\n            server_msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text\n>           assert server_msg == 'container is set for deleting'\nE           AssertionError\n\ntests_ui/profile_page.py:196: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "authorization_user",
+    "time" : {
+      "start" : 1714957150673,
+      "stop" : 1714957152654,
+      "duration" : 1981
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Open page: https://oblache.areso.pro/register.html",
+      "time" : {
+        "start" : 1714957150673,
+        "stop" : 1714957151185,
+        "duration" : 512
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "login_user",
+      "time" : {
+        "start" : 1714957151185,
+        "stop" : 1714957152654,
+        "duration" : 1469
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Enter email.",
+        "time" : {
+          "start" : 1714957151185,
+          "stop" : 1714957151238,
+          "duration" : 53
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Enter password.",
+        "time" : {
+          "start" : 1714957151238,
+          "stop" : 1714957151278,
+          "duration" : 40
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Click button \"Login\"",
+        "time" : {
+          "start" : 1714957151278,
+          "stop" : 1714957151341,
+          "duration" : 63
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "element_is_present_and_clickable",
+          "time" : {
+            "start" : 1714957151279,
+            "stop" : 1714957151314,
+            "duration" : 35
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "locator",
+            "value" : "('xpath', '//input[@id=\"inp_regform_login_submit\"]')"
+          } ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Check url is present: https://oblache.areso.pro/profile.html",
+        "time" : {
+          "start" : 1714957151341,
+          "stop" : 1714957152654,
+          "duration" : 1313
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 5,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 7,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  }, {
+    "name" : "driver",
+    "time" : {
+      "start" : 1714957150475,
+      "stop" : 1714957150673,
+      "duration" : 198
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError",
+    "statusTrace" : "self = <tests_ui.test_ui.TestUI.TestProfilePage object at 0x7f76ba823980>\ndriver = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"2312e011d047bee72fe8a1f9242d199b\")>\nauthorization_user = <tests_ui.login_page.LoginPage object at 0x7f76ba83f260>\n\n    def test_delete_container(self, driver, authorization_user):\n        page = ProfilePage(driver)\n        page.click_button_docker_containers()\n        page.get_containers_list()\n>       page.delete_first_container()\n\ntests_ui/test_ui.py:105: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <tests_ui.profile_page.ProfilePage object at 0x7f76ba83fda0>\n\n    @allure.step('delete_first_container')\n    def delete_first_container(self):\n        amount_containers = self.get_containers_list()\n        if len(amount_containers) != 0:\n            self.element_is_present_and_clickable((By.XPATH,\n                                                   '//tbody[@id=\"tbody_containers\"] /tr[1]/td[10] /button')).click()\n            server_msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text\n>           assert server_msg == 'container is set for deleting'\nE           AssertionError\n\ntests_ui/profile_page.py:196: AssertionError",
+    "steps" : [ {
+      "name" : "Click \"Docker containers\" button.",
+      "time" : {
+        "start" : 1714957152655,
+        "stop" : 1714957152709,
+        "duration" : 54
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "element_is_present_and_clickable",
+        "time" : {
+          "start" : 1714957152655,
+          "stop" : 1714957152686,
+          "duration" : 31
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "locator",
+          "value" : "('xpath', '//button[@id=\"menu_button_containers\"]')"
+        } ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "get_containers_list",
+      "time" : {
+        "start" : 1714957152709,
+        "stop" : 1714957154336,
+        "duration" : 1627
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Check containers list before creation: ['0 399e20 \uD83D\uDCCB nginx None None creating ❌', '1 47facc \uD83D\uDCCB nginx None None creating ❌', '2 b941e4 \uD83D\uDCCB nginx None None creating ❌', '3 941ed1 \uD83D\uDCCB nginx None None creating ❌', '4 c81591 \uD83D\uDCCB nginx None None creating ❌', '5 2459e6 \uD83D\uDCCB nginx None None creating ❌', '6 8c067b \uD83D\uDCCB nginx None None creating ❌', '7 837b4f \uD83D\uDCCB nginx None None creating ❌', '8 0f4856 \uD83D\uDCCB nginx None None creating ❌', '9 4b3960 \uD83D\uDCCB nginx None None creating ❌', '10 8ab93a \uD83D\uDCCB nginx None None creating ❌', '11 edbc8d \uD83D\uDCCB nginx None None creating ❌', '12 c43054 \uD83D\uDCCB nginx None None creating ❌', '13 96ed94 \uD83D\uDCCB nginx None None creating ❌', '14 1e2eb1 \uD83D\uDCCB nginx None None creating ❌', '15 b69cae \uD83D\uDCCB nginx None None creating ❌', '16 d949d3 \uD83D\uDCCB nginx None None creating ❌', '17 7c7233 \uD83D\uDCCB nginx nginx_tj7qdnub cisdocker1.areso.pro 6399:80 None error_creating ❌', '18 9a89d6 \uD83D\uDCCB nginx None None creating ❌', '19 7fe623 \uD83D\uDCCB nginx nginx_lfvry5yt cisdocker1.areso.pro 6628:80 None error_creating ❌', '20 ae26ba \uD83D\uDCCB nginx nginx_ea7w97h8 cisdocker1.areso.pro 6889:80 None error_creating ❌', '21 b62619 \uD83D\uDCCB nginx nginx_dxwxwzhw cisdocker1.areso.pro 6827:90 None error_creating ❌', '22 6cee20 \uD83D\uDCCB nginx nginx_l28zxrll cisdocker1.areso.pro 6967:80,6383:81,6174:82,6714:83,6974:84,6932:85,6304:86,6358:87,6927:88,6437:89 None error_creating ❌', '23 073b6f \uD83D\uDCCB nginx nginx_1la4xmji cisdocker1.areso.pro 6809:80,6721:81,6937:82,6111:83,6187:84,6584:85,6511:86,6761:87,6228:88,6825:89 None error_creating ❌', '24 fa54bb \uD83D\uDCCB nginx nginx_8f9pk4vc cisdocker1.areso.pro 6496:1 None error_creating ❌', '25 fec50f \uD83D\uDCCB nginx nginx_b01p9295 cisdocker1.areso.pro 6727:80 None error_creating ❌', '26 3bb682 \uD83D\uDCCB nginx nginx_z06nvccn cisdocker1.areso.pro 6052:80,6276:81,6505:82,6009:83,6140:84,6345:85,6689:86,6963:87,6705:88,6320:89 None error_creating ❌', '27 22392f \uD83D\uDCCB nginx nginx_ctjjgk0z cisdocker1.areso.pro 6983:80 None error_creating ❌', '28 153ab9 \uD83D\uDCCB nginx nginx_u3mpz43a cisdocker1.areso.pro 6668:80 None error_creating ❌', '29 2006dc \uD83D\uDCCB nginx nginx_ycc87w67 cisdocker1.areso.pro 6003:80,6033:81,6072:82,6294:83,6026:84,6335:85,6789:86,6544:87,6197:88,6103:89 None error_creating ❌', '30 dc9f23 \uD83D\uDCCB nginx nginx_xpm9f5ds cisdocker1.areso.pro 6249:80 None error_creating ❌', '31 8b941b \uD83D\uDCCB nginx nginx_5f8nz8m4 cisdocker1.areso.pro 6647:80 None error_creating ❌', '32 3ae35f \uD83D\uDCCB nginx nginx_y7g8k3bj cisdocker1.areso.pro 6738:80,6088:81,6636:82,6757:83,6253:84,6517:85,6059:86,6957:87,6038:88,6600:89 None error_creating ❌', '33 d8a211 \uD83D\uDCCB nginx nginx_kxl3ygw3 cisdocker1.areso.pro 6713:80 None error_creating ❌', '34 f1b184 \uD83D\uDCCB nginx nginx_9oq9917k cisdocker1.areso.pro 6800:80 None error_creating ❌', '35 672f7f \uD83D\uDCCB nginx nginx_ehxhl1pd cisdocker1.areso.pro 6524:80,6369:81,6612:82,6354:83,6066:84,6346:85,6579:86,6454:87,6773:88,6441:89 None error_creating ❌', '36 5a5eac \uD83D\uDCCB nginx nginx_j837vj8z cisdocker1.areso.pro 6287:80 None error_creating ❌', '37 36ba71 \uD83D\uDCCB nginx nginx_si99kqcb cisdocker1.areso.pro 6570:80 None error_creating ❌', '38 e2dd73 \uD83D\uDCCB nginx nginx_8gsqftxx cisdocker1.areso.pro 6001:80,6456:81,6936:82,6233:83,6642:84,6724:85,6554:86,6163:87,6207:88,6213:89 None error_creating ❌', '39 2cb188 \uD83D\uDCCB nginx nginx_apccaugc cisdocker1.areso.pro 6198:80 None error_creating ❌', '40 84e48d \uD83D\uDCCB nginx nginx_9q5zjpl6 cisdocker1.areso.pro 6893:80 None error_creating ❌', '41 3a875b \uD83D\uDCCB nginx nginx_o1o7m90z cisdocker1.areso.pro 6664:80,6349:81,6438:82,6840:83,6047:84,6824:85,6371:86,6490:87,6614:88,6309:89 None error_creating ❌', '42 36ec89 \uD83D\uDCCB nginx nginx_wn7ft3k9 cisdocker1.areso.pro 6890:80 None error_creating ❌', '43 25afb3 \uD83D\uDCCB nginx nginx_cdvi83b2 cisdocker1.areso.pro 6024:80 None error_creating ❌', '44 1d6617 \uD83D\uDCCB nginx nginx_llxm9opk cisdocker1.areso.pro 6419:80,6384:81,6407:82,6780:83,6459:84,6325:85,6029:86,6742:87,6109:88,6177:89 None error_creating ❌', '45 179d92 \uD83D\uDCCB nginx nginx_8002aozr cisdocker1.areso.pro 6519:80 None error_creating ❌', '46 0b607e \uD83D\uDCCB nginx nginx_vdmnwy7t cisdocker1.areso.pro 6432:80 None error_creating ❌', '47 1871c5 \uD83D\uDCCB nginx nginx_pwnc4iya cisdocker1.areso.pro 6669:80,6765:81,6237:82,6030:83,6536:84,6740:85,6440:86,6330:87,6020:88,6016:89 None error_creating ❌', '48 586418 \uD83D\uDCCB nginx 6423:80 None creating ❌']",
+        "time" : {
+          "start" : 1714957154336,
+          "stop" : 1714957154336,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "delete_first_container",
+      "time" : {
+        "start" : 1714957154336,
+        "stop" : 1714957155525,
+        "duration" : 1189
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError\n",
+      "statusTrace" : "  File \"/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/allure_commons/_allure.py\", line 192, in impl\n    return func(*a, **kw)\n           ^^^^^^^^^^^^^^\n  File \"/home/runner/work/Oblache/Oblache/tests_ui/profile_page.py\", line 196, in delete_first_container\n    assert server_msg == 'container is set for deleting'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+      "steps" : [ {
+        "name" : "get_containers_list",
+        "time" : {
+          "start" : 1714957154336,
+          "stop" : 1714957154931,
+          "duration" : 595
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Check containers list before creation: ['0 399e20 \uD83D\uDCCB nginx None None creating ❌', '1 47facc \uD83D\uDCCB nginx None None creating ❌', '2 b941e4 \uD83D\uDCCB nginx None None creating ❌', '3 941ed1 \uD83D\uDCCB nginx None None creating ❌', '4 c81591 \uD83D\uDCCB nginx None None creating ❌', '5 2459e6 \uD83D\uDCCB nginx None None creating ❌', '6 8c067b \uD83D\uDCCB nginx None None creating ❌', '7 837b4f \uD83D\uDCCB nginx None None creating ❌', '8 0f4856 \uD83D\uDCCB nginx None None creating ❌', '9 4b3960 \uD83D\uDCCB nginx None None creating ❌', '10 8ab93a \uD83D\uDCCB nginx None None creating ❌', '11 edbc8d \uD83D\uDCCB nginx None None creating ❌', '12 c43054 \uD83D\uDCCB nginx None None creating ❌', '13 96ed94 \uD83D\uDCCB nginx None None creating ❌', '14 1e2eb1 \uD83D\uDCCB nginx None None creating ❌', '15 b69cae \uD83D\uDCCB nginx None None creating ❌', '16 d949d3 \uD83D\uDCCB nginx None None creating ❌', '17 7c7233 \uD83D\uDCCB nginx nginx_tj7qdnub cisdocker1.areso.pro 6399:80 None error_creating ❌', '18 9a89d6 \uD83D\uDCCB nginx None None creating ❌', '19 7fe623 \uD83D\uDCCB nginx nginx_lfvry5yt cisdocker1.areso.pro 6628:80 None error_creating ❌', '20 ae26ba \uD83D\uDCCB nginx nginx_ea7w97h8 cisdocker1.areso.pro 6889:80 None error_creating ❌', '21 b62619 \uD83D\uDCCB nginx nginx_dxwxwzhw cisdocker1.areso.pro 6827:90 None error_creating ❌', '22 6cee20 \uD83D\uDCCB nginx nginx_l28zxrll cisdocker1.areso.pro 6967:80,6383:81,6174:82,6714:83,6974:84,6932:85,6304:86,6358:87,6927:88,6437:89 None error_creating ❌', '23 073b6f \uD83D\uDCCB nginx nginx_1la4xmji cisdocker1.areso.pro 6809:80,6721:81,6937:82,6111:83,6187:84,6584:85,6511:86,6761:87,6228:88,6825:89 None error_creating ❌', '24 fa54bb \uD83D\uDCCB nginx nginx_8f9pk4vc cisdocker1.areso.pro 6496:1 None error_creating ❌', '25 fec50f \uD83D\uDCCB nginx nginx_b01p9295 cisdocker1.areso.pro 6727:80 None error_creating ❌', '26 3bb682 \uD83D\uDCCB nginx nginx_z06nvccn cisdocker1.areso.pro 6052:80,6276:81,6505:82,6009:83,6140:84,6345:85,6689:86,6963:87,6705:88,6320:89 None error_creating ❌', '27 22392f \uD83D\uDCCB nginx nginx_ctjjgk0z cisdocker1.areso.pro 6983:80 None error_creating ❌', '28 153ab9 \uD83D\uDCCB nginx nginx_u3mpz43a cisdocker1.areso.pro 6668:80 None error_creating ❌', '29 2006dc \uD83D\uDCCB nginx nginx_ycc87w67 cisdocker1.areso.pro 6003:80,6033:81,6072:82,6294:83,6026:84,6335:85,6789:86,6544:87,6197:88,6103:89 None error_creating ❌', '30 dc9f23 \uD83D\uDCCB nginx nginx_xpm9f5ds cisdocker1.areso.pro 6249:80 None error_creating ❌', '31 8b941b \uD83D\uDCCB nginx nginx_5f8nz8m4 cisdocker1.areso.pro 6647:80 None error_creating ❌', '32 3ae35f \uD83D\uDCCB nginx nginx_y7g8k3bj cisdocker1.areso.pro 6738:80,6088:81,6636:82,6757:83,6253:84,6517:85,6059:86,6957:87,6038:88,6600:89 None error_creating ❌', '33 d8a211 \uD83D\uDCCB nginx nginx_kxl3ygw3 cisdocker1.areso.pro 6713:80 None error_creating ❌', '34 f1b184 \uD83D\uDCCB nginx nginx_9oq9917k cisdocker1.areso.pro 6800:80 None error_creating ❌', '35 672f7f \uD83D\uDCCB nginx nginx_ehxhl1pd cisdocker1.areso.pro 6524:80,6369:81,6612:82,6354:83,6066:84,6346:85,6579:86,6454:87,6773:88,6441:89 None error_creating ❌', '36 5a5eac \uD83D\uDCCB nginx nginx_j837vj8z cisdocker1.areso.pro 6287:80 None error_creating ❌', '37 36ba71 \uD83D\uDCCB nginx nginx_si99kqcb cisdocker1.areso.pro 6570:80 None error_creating ❌', '38 e2dd73 \uD83D\uDCCB nginx nginx_8gsqftxx cisdocker1.areso.pro 6001:80,6456:81,6936:82,6233:83,6642:84,6724:85,6554:86,6163:87,6207:88,6213:89 None error_creating ❌', '39 2cb188 \uD83D\uDCCB nginx nginx_apccaugc cisdocker1.areso.pro 6198:80 None error_creating ❌', '40 84e48d \uD83D\uDCCB nginx nginx_9q5zjpl6 cisdocker1.areso.pro 6893:80 None error_creating ❌', '41 3a875b \uD83D\uDCCB nginx nginx_o1o7m90z cisdocker1.areso.pro 6664:80,6349:81,6438:82,6840:83,6047:84,6824:85,6371:86,6490:87,6614:88,6309:89 None error_creating ❌', '42 36ec89 \uD83D\uDCCB nginx nginx_wn7ft3k9 cisdocker1.areso.pro 6890:80 None error_creating ❌', '43 25afb3 \uD83D\uDCCB nginx nginx_cdvi83b2 cisdocker1.areso.pro 6024:80 None error_creating ❌', '44 1d6617 \uD83D\uDCCB nginx nginx_llxm9opk cisdocker1.areso.pro 6419:80,6384:81,6407:82,6780:83,6459:84,6325:85,6029:86,6742:87,6109:88,6177:89 None error_creating ❌', '45 179d92 \uD83D\uDCCB nginx nginx_8002aozr cisdocker1.areso.pro 6519:80 None error_creating ❌', '46 0b607e \uD83D\uDCCB nginx nginx_vdmnwy7t cisdocker1.areso.pro 6432:80 None error_creating ❌', '47 1871c5 \uD83D\uDCCB nginx nginx_pwnc4iya cisdocker1.areso.pro 6669:80,6765:81,6237:82,6030:83,6536:84,6740:85,6440:86,6330:87,6020:88,6016:89 None error_creating ❌', '48 586418 \uD83D\uDCCB nginx 6423:80 None creating ❌']",
+          "time" : {
+            "start" : 1714957154930,
+            "stop" : 1714957154931,
+            "duration" : 1
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "element_is_present_and_clickable",
+        "time" : {
+          "start" : 1714957154931,
+          "stop" : 1714957154961,
+          "duration" : 30
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "locator",
+          "value" : "('xpath', '//tbody[@id=\"tbody_containers\"] /tr[1]/td[10] /button')"
+        } ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 8,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "driver::0",
+    "time" : {
+      "start" : 1714957155534,
+      "stop" : 1714957155725,
+      "duration" : 191
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "3d040e6337f88079",
+      "name" : "Screenshot 2024-05-06 00:59:15.665154",
+      "source" : "3d040e6337f88079.png",
+      "type" : "image/png",
+      "size" : 206805
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  } ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test Profile Page."
+  }, {
+    "name" : "epic",
+    "value" : "UI Tests"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_ui"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestUI"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1535-882"
+  }, {
+    "name" : "thread",
+    "value" : "2319-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_ui.test_ui"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 12,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 12
+      },
+      "items" : [ {
+        "uid" : "aaa50586c70193ff",
+        "reportUrl" : "https://Areso.github.io/Oblache/25//#testresult/aaa50586c70193ff",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1714870852494,
+          "stop" : 1714870854743,
+          "duration" : 2249
+        }
+      }, {
+        "uid" : "e0e457979ab9c30b",
+        "reportUrl" : "https://Areso.github.io/Oblache/24//#testresult/e0e457979ab9c30b",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1714803667531,
+          "stop" : 1714803670128,
+          "duration" : 2597
+        }
+      }, {
+        "uid" : "80e4de27bbd1b861",
+        "reportUrl" : "https://Areso.github.io/Oblache/23//#testresult/80e4de27bbd1b861",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1714705554810,
+          "stop" : 1714705556858,
+          "duration" : 2048
+        }
+      }, {
+        "uid" : "6e83fe6b9fb82af",
+        "reportUrl" : "https://Areso.github.io/Oblache/20//#testresult/6e83fe6b9fb82af",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1714438736982,
+          "stop" : 1714438738592,
+          "duration" : 1610
+        }
+      }, {
+        "uid" : "577b82ed2c310b90",
+        "reportUrl" : "https://Areso.github.io/Oblache/19//#testresult/577b82ed2c310b90",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1714352414103,
+          "stop" : 1714352415649,
+          "duration" : 1546
+        }
+      }, {
+        "uid" : "df09e076b593d006",
+        "reportUrl" : "https://Areso.github.io/Oblache/18//#testresult/df09e076b593d006",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1714266164560,
+          "stop" : 1714266166019,
+          "duration" : 1459
+        }
+      }, {
+        "uid" : "2ec7e1daea9bbb7d",
+        "reportUrl" : "https://Areso.github.io/Oblache/17//#testresult/2ec7e1daea9bbb7d",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1714179471660,
+          "stop" : 1714179473101,
+          "duration" : 1441
+        }
+      }, {
+        "uid" : "5bb3ed8918ded8d0",
+        "reportUrl" : "https://Areso.github.io/Oblache/16//#testresult/5bb3ed8918ded8d0",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1714093131097,
+          "stop" : 1714093132490,
+          "duration" : 1393
+        }
+      }, {
+        "uid" : "affece3dfb0b22e8",
+        "reportUrl" : "https://Areso.github.io/Oblache/15//#testresult/affece3dfb0b22e8",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1714006841519,
+          "stop" : 1714006842879,
+          "duration" : 1360
+        }
+      }, {
+        "uid" : "25ffe0ed39392c84",
+        "reportUrl" : "https://Areso.github.io/Oblache/14//#testresult/25ffe0ed39392c84",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1713920362690,
+          "stop" : 1713920363992,
+          "duration" : 1302
+        }
+      }, {
+        "uid" : "c3ba4df8b1bedf3b",
+        "reportUrl" : "https://Areso.github.io/Oblache/13//#testresult/c3ba4df8b1bedf3b",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1713833939228,
+          "stop" : 1713833940474,
+          "duration" : 1246
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "d8a2fcc9c31235a2.json",
+  "parameterValues" : [ ]
+}
