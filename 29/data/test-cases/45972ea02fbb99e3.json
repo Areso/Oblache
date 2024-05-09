@@ -1,0 +1,412 @@
+{
+  "uid" : "45972ea02fbb99e3",
+  "name" : "POST delete_container",
+  "fullName" : "tests_api.test_bd.TestPOST#test_delete_container",
+  "historyId" : "f292c4cfa0c4b2dd77724aada1d3db8c",
+  "time" : {
+    "start" : 1715216160811,
+    "stop" : 1715216182030,
+    "duration" : 21219
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "post_delete_docker_container",
+      "time" : {
+        "start" : 1715216160812,
+        "stop" : 1715216182028,
+        "duration" : 21216
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "post_container_list",
+        "time" : {
+          "start" : 1715216160812,
+          "stop" : 1715216161485,
+          "duration" : 673
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "POST https://dbend.areso.pro/container_list",
+          "time" : {
+            "start" : 1715216160812,
+            "stop" : 1715216161485,
+            "duration" : 673
+          },
+          "status" : "passed",
+          "steps" : [ {
+            "name" : "Status code: 200",
+            "time" : {
+              "start" : 1715216161485,
+              "stop" : 1715216161485,
+              "duration" : 0
+            },
+            "status" : "passed",
+            "steps" : [ ],
+            "attachments" : [ ],
+            "parameters" : [ ],
+            "stepsCount" : 0,
+            "attachmentsCount" : 0,
+            "shouldDisplayMessage" : false,
+            "hasContent" : false
+          }, {
+            "name" : "Params url: https://dbend.areso.pro/container_list",
+            "time" : {
+              "start" : 1715216161485,
+              "stop" : 1715216161485,
+              "duration" : 0
+            },
+            "status" : "passed",
+            "steps" : [ ],
+            "attachments" : [ ],
+            "parameters" : [ ],
+            "stepsCount" : 0,
+            "attachmentsCount" : 0,
+            "shouldDisplayMessage" : false,
+            "hasContent" : false
+          } ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 2,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "POST https://dbend.areso.pro/container_delete, body: {'docker_uuid': '0663c1f1-d73b-72ad-8000-8c1de7130b13'}",
+        "time" : {
+          "start" : 1715216181485,
+          "stop" : 1715216182028,
+          "duration" : 543
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status code: 200",
+          "time" : {
+            "start" : 1715216182027,
+            "stop" : 1715216182027,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Params url: https://dbend.areso.pro/container_delete",
+          "time" : {
+            "start" : 1715216182027,
+            "stop" : 1715216182028,
+            "duration" : 1
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Response JSON: {\n    \"content\": \"msg[17]: broken database marked for manual deletion\"\n}\n",
+        "time" : {
+          "start" : 1715216182028,
+          "stop" : 1715216182028,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 8,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Assert status code: 200 == Response status code: 200",
+      "time" : {
+        "start" : 1715216182029,
+        "stop" : 1715216182029,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 10,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "epic",
+    "value" : "TestRequests"
+  }, {
+    "name" : "suite",
+    "value" : "POST"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_api"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestRequests"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1456-833"
+  }, {
+    "name" : "thread",
+    "value" : "2362-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_api.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 2,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 32,
+        "unknown" : 0,
+        "total" : 34
+      },
+      "items" : [ {
+        "uid" : "319f6b440519e2d4",
+        "reportUrl" : "https://Areso.github.io/Oblache/28//#testresult/319f6b440519e2d4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1715129144869,
+          "stop" : 1715129165926,
+          "duration" : 21057
+        }
+      }, {
+        "uid" : "64a8657c90590fe9",
+        "reportUrl" : "https://Areso.github.io/Oblache/27//#testresult/64a8657c90590fe9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1715043331596,
+          "stop" : 1715043352412,
+          "duration" : 20816
+        }
+      }, {
+        "uid" : "a85708dc8492a0b8",
+        "reportUrl" : "https://Areso.github.io/Oblache/26//#testresult/a85708dc8492a0b8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1714957003012,
+          "stop" : 1714957024123,
+          "duration" : 21111
+        }
+      }, {
+        "uid" : "f154904e42d881bf",
+        "reportUrl" : "https://Areso.github.io/Oblache/25//#testresult/f154904e42d881bf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1714870721027,
+          "stop" : 1714870741848,
+          "duration" : 20821
+        }
+      }, {
+        "uid" : "2328e3b73bc3e5ba",
+        "reportUrl" : "https://Areso.github.io/Oblache/24//#testresult/2328e3b73bc3e5ba",
+        "status" : "passed",
+        "time" : {
+          "start" : 1714803565842,
+          "stop" : 1714803586965,
+          "duration" : 21123
+        }
+      }, {
+        "uid" : "93ae8e858d8c2966",
+        "reportUrl" : "https://Areso.github.io/Oblache/23//#testresult/93ae8e858d8c2966",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1714705463331,
+          "stop" : 1714705484035,
+          "duration" : 20704
+        }
+      }, {
+        "uid" : "169abace8c1e9adb",
+        "reportUrl" : "https://Areso.github.io/Oblache/4//#testresult/169abace8c1e9adb",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1714552783627,
+          "stop" : 1714552804310,
+          "duration" : 20683
+        }
+      }, {
+        "uid" : "b75db133879cdfae",
+        "reportUrl" : "https://Areso.github.io/Oblache/20//#testresult/b75db133879cdfae",
+        "status" : "passed",
+        "time" : {
+          "start" : 1714438598570,
+          "stop" : 1714438619303,
+          "duration" : 20733
+        }
+      }, {
+        "uid" : "c0a2d41f0cb51970",
+        "reportUrl" : "https://Areso.github.io/Oblache/19//#testresult/c0a2d41f0cb51970",
+        "status" : "passed",
+        "time" : {
+          "start" : 1714352269410,
+          "stop" : 1714352290114,
+          "duration" : 20704
+        }
+      }, {
+        "uid" : "fcca928d4db8e74d",
+        "reportUrl" : "https://Areso.github.io/Oblache/18//#testresult/fcca928d4db8e74d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1714266063230,
+          "stop" : 1714266084063,
+          "duration" : 20833
+        }
+      }, {
+        "uid" : "85d3a91c35d2eb45",
+        "reportUrl" : "https://Areso.github.io/Oblache/17//#testresult/85d3a91c35d2eb45",
+        "status" : "passed",
+        "time" : {
+          "start" : 1714179365534,
+          "stop" : 1714179386292,
+          "duration" : 20758
+        }
+      }, {
+        "uid" : "1490a9cc9ae3e859",
+        "reportUrl" : "https://Areso.github.io/Oblache/16//#testresult/1490a9cc9ae3e859",
+        "status" : "passed",
+        "time" : {
+          "start" : 1714093015938,
+          "stop" : 1714093036790,
+          "duration" : 20852
+        }
+      }, {
+        "uid" : "9a7a9416b948cbdb",
+        "reportUrl" : "https://Areso.github.io/Oblache/15//#testresult/9a7a9416b948cbdb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1714006731870,
+          "stop" : 1714006752601,
+          "duration" : 20731
+        }
+      }, {
+        "uid" : "ded93fa221df9891",
+        "reportUrl" : "https://Areso.github.io/Oblache/14//#testresult/ded93fa221df9891",
+        "status" : "passed",
+        "time" : {
+          "start" : 1713920207904,
+          "stop" : 1713920228740,
+          "duration" : 20836
+        }
+      }, {
+        "uid" : "2dab9564b48a9b08",
+        "reportUrl" : "https://Areso.github.io/Oblache/13//#testresult/2dab9564b48a9b08",
+        "status" : "passed",
+        "time" : {
+          "start" : 1713833819778,
+          "stop" : 1713833840491,
+          "duration" : 20713
+        }
+      }, {
+        "uid" : "d6ef78745aa8c1d3",
+        "reportUrl" : "https://Areso.github.io/Oblache/12//#testresult/d6ef78745aa8c1d3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1713747486440,
+          "stop" : 1713747507153,
+          "duration" : 20713
+        }
+      }, {
+        "uid" : "3ff6467a8bdead38",
+        "reportUrl" : "https://Areso.github.io/Oblache/11//#testresult/3ff6467a8bdead38",
+        "status" : "passed",
+        "time" : {
+          "start" : 1713661219493,
+          "stop" : 1713661240215,
+          "duration" : 20722
+        }
+      }, {
+        "uid" : "66b2c1d2b81a3d97",
+        "reportUrl" : "https://Areso.github.io/Oblache/10//#testresult/66b2c1d2b81a3d97",
+        "status" : "passed",
+        "time" : {
+          "start" : 1713574587634,
+          "stop" : 1713574608457,
+          "duration" : 20823
+        }
+      }, {
+        "uid" : "9b206f4fcd8edff6",
+        "reportUrl" : "https://Areso.github.io/Oblache/9//#testresult/9b206f4fcd8edff6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1713488181070,
+          "stop" : 1713488201925,
+          "duration" : 20855
+        }
+      }, {
+        "uid" : "eb5023ebe619d4f9",
+        "reportUrl" : "https://Areso.github.io/Oblache/8//#testresult/eb5023ebe619d4f9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1713402389145,
+          "stop" : 1713402409959,
+          "duration" : 20814
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "45972ea02fbb99e3.json",
+  "parameterValues" : [ ]
+}

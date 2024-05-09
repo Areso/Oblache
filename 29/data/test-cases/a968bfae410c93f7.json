@@ -1,0 +1,454 @@
+{
+  "uid" : "a968bfae410c93f7",
+  "name" : "POST delete_db",
+  "fullName" : "tests_api.test_bd.TestPOST#test_delete_db",
+  "historyId" : "aacf29e4b56c0d304e9b651197b003cc",
+  "time" : {
+    "start" : 1715216182031,
+    "stop" : 1715216183285,
+    "duration" : 1254
+  },
+  "status" : "skipped",
+  "statusMessage" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code",
+  "statusTrace" : "self = <tests_api.test_bd.TestRequests.TestPOST object at 0x7f493b8e2150>\n\n    @allure.title('POST delete_db')\n    @pytest.mark.xfail(reason='When using this method during a test run, the database may be in deleting status.')\n    def test_delete_db(self):\n        list_db = API.post_db_list(ConnectionData.token)\n        json_list_db = json.loads(list_db.text)\n        try:\n            first_db_uuid = list(json_list_db['data'])[0]\n            result_post_db_delete = API.delete_db(first_db_uuid, ConnectionData.token)\n            print(result_post_db_delete.text)\n>           Checking.check_status_code(result_post_db_delete, 200)\n\ntests_api/test_bd.py:366: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [400]>, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response JSON\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, 'Incorrect status code'\nE           AssertionError: Incorrect status code\n\ntests_api/utils/checking.py:18: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "skipped",
+    "statusMessage" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code",
+    "statusTrace" : "self = <tests_api.test_bd.TestRequests.TestPOST object at 0x7f493b8e2150>\n\n    @allure.title('POST delete_db')\n    @pytest.mark.xfail(reason='When using this method during a test run, the database may be in deleting status.')\n    def test_delete_db(self):\n        list_db = API.post_db_list(ConnectionData.token)\n        json_list_db = json.loads(list_db.text)\n        try:\n            first_db_uuid = list(json_list_db['data'])[0]\n            result_post_db_delete = API.delete_db(first_db_uuid, ConnectionData.token)\n            print(result_post_db_delete.text)\n>           Checking.check_status_code(result_post_db_delete, 200)\n\ntests_api/test_bd.py:366: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [400]>, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response JSON\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, 'Incorrect status code'\nE           AssertionError: Incorrect status code\n\ntests_api/utils/checking.py:18: AssertionError",
+    "steps" : [ {
+      "name" : "post_db_list",
+      "time" : {
+        "start" : 1715216182032,
+        "stop" : 1715216182743,
+        "duration" : 711
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "POST https://dbend.areso.pro/db_list",
+        "time" : {
+          "start" : 1715216182032,
+          "stop" : 1715216182743,
+          "duration" : 711
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status code: 200",
+          "time" : {
+            "start" : 1715216182743,
+            "stop" : 1715216182743,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Params url: https://dbend.areso.pro/db_list",
+          "time" : {
+            "start" : 1715216182743,
+            "stop" : 1715216182743,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "delete_db",
+      "time" : {
+        "start" : 1715216182744,
+        "stop" : 1715216183285,
+        "duration" : 541
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "DELETE https://dbend.areso.pro/db_delete",
+        "time" : {
+          "start" : 1715216182744,
+          "stop" : 1715216182744,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Db uuid is: {'db_uuid': '066142d7-1f14-7fa0-8000-97e6ac071238'}",
+        "time" : {
+          "start" : 1715216182744,
+          "stop" : 1715216182744,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Status code: 400",
+        "time" : {
+          "start" : 1715216183284,
+          "stop" : 1715216183285,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Params url: https://dbend.areso.pro/db_delete",
+        "time" : {
+          "start" : 1715216183285,
+          "stop" : 1715216183285,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Response JSON: {\n    \"content\": \"msg[20]: error: can't delete a db while it is in deletion error state\"\n}\n",
+        "time" : {
+          "start" : 1715216183285,
+          "stop" : 1715216183285,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 5,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Assert status code: 200 == Response status code: 400",
+      "time" : {
+        "start" : 1715216183285,
+        "stop" : 1715216183285,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: Incorrect status code\n",
+      "statusTrace" : "  File \"/home/runner/work/Oblache/Oblache/tests_api/utils/checking.py\", line 18, in check_status_code\n    assert status_code == result.status_code, 'Incorrect status code'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 11,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "epic",
+    "value" : "TestRequests"
+  }, {
+    "name" : "suite",
+    "value" : "POST"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.xfail(reason='When using this method during a test run, the database may be in deleting status.')"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_api"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestRequests"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1456-833"
+  }, {
+    "name" : "thread",
+    "value" : "2362-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_api.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 34,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 34
+      },
+      "items" : [ {
+        "uid" : "443f59e85427f707",
+        "reportUrl" : "https://Areso.github.io/Oblache/28//#testresult/443f59e85427f707",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1715129165928,
+          "stop" : 1715129167165,
+          "duration" : 1237
+        }
+      }, {
+        "uid" : "eb42237d3fa8831c",
+        "reportUrl" : "https://Areso.github.io/Oblache/27//#testresult/eb42237d3fa8831c",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1715043352414,
+          "stop" : 1715043353311,
+          "duration" : 897
+        }
+      }, {
+        "uid" : "c8db1a1fb0b73e3c",
+        "reportUrl" : "https://Areso.github.io/Oblache/26//#testresult/c8db1a1fb0b73e3c",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1714957024125,
+          "stop" : 1714957025323,
+          "duration" : 1198
+        }
+      }, {
+        "uid" : "cd09137c19948e70",
+        "reportUrl" : "https://Areso.github.io/Oblache/25//#testresult/cd09137c19948e70",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1714870741849,
+          "stop" : 1714870742740,
+          "duration" : 891
+        }
+      }, {
+        "uid" : "2162b509983f3508",
+        "reportUrl" : "https://Areso.github.io/Oblache/24//#testresult/2162b509983f3508",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1714803586967,
+          "stop" : 1714803588178,
+          "duration" : 1211
+        }
+      }, {
+        "uid" : "6d70104456eccf04",
+        "reportUrl" : "https://Areso.github.io/Oblache/23//#testresult/6d70104456eccf04",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1714705484046,
+          "stop" : 1714705484783,
+          "duration" : 737
+        }
+      }, {
+        "uid" : "5c88799789a5ef0b",
+        "reportUrl" : "https://Areso.github.io/Oblache/4//#testresult/5c88799789a5ef0b",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1714552804324,
+          "stop" : 1714552805070,
+          "duration" : 746
+        }
+      }, {
+        "uid" : "50da65455f78901c",
+        "reportUrl" : "https://Areso.github.io/Oblache/20//#testresult/50da65455f78901c",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1714438619304,
+          "stop" : 1714438620015,
+          "duration" : 711
+        }
+      }, {
+        "uid" : "ac4ebae47e21e149",
+        "reportUrl" : "https://Areso.github.io/Oblache/19//#testresult/ac4ebae47e21e149",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1714352290116,
+          "stop" : 1714352290829,
+          "duration" : 713
+        }
+      }, {
+        "uid" : "152eda2193588d81",
+        "reportUrl" : "https://Areso.github.io/Oblache/18//#testresult/152eda2193588d81",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1714266084065,
+          "stop" : 1714266084910,
+          "duration" : 845
+        }
+      }, {
+        "uid" : "60868e3698ce9492",
+        "reportUrl" : "https://Areso.github.io/Oblache/17//#testresult/60868e3698ce9492",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1714179386294,
+          "stop" : 1714179387029,
+          "duration" : 735
+        }
+      }, {
+        "uid" : "9a733a7a68c481db",
+        "reportUrl" : "https://Areso.github.io/Oblache/16//#testresult/9a733a7a68c481db",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1714093036792,
+          "stop" : 1714093037689,
+          "duration" : 897
+        }
+      }, {
+        "uid" : "c06992fa7db23b2b",
+        "reportUrl" : "https://Areso.github.io/Oblache/15//#testresult/c06992fa7db23b2b",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1714006752603,
+          "stop" : 1714006753318,
+          "duration" : 715
+        }
+      }, {
+        "uid" : "fb7168d31ecf9b",
+        "reportUrl" : "https://Areso.github.io/Oblache/14//#testresult/fb7168d31ecf9b",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1713920228741,
+          "stop" : 1713920229632,
+          "duration" : 891
+        }
+      }, {
+        "uid" : "3759e01576d073fe",
+        "reportUrl" : "https://Areso.github.io/Oblache/13//#testresult/3759e01576d073fe",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1713833840493,
+          "stop" : 1713833841245,
+          "duration" : 752
+        }
+      }, {
+        "uid" : "83518689d3b1fca3",
+        "reportUrl" : "https://Areso.github.io/Oblache/12//#testresult/83518689d3b1fca3",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1713747507155,
+          "stop" : 1713747507917,
+          "duration" : 762
+        }
+      }, {
+        "uid" : "1243ec8505f4bba4",
+        "reportUrl" : "https://Areso.github.io/Oblache/11//#testresult/1243ec8505f4bba4",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1713661240216,
+          "stop" : 1713661240976,
+          "duration" : 760
+        }
+      }, {
+        "uid" : "a21950c3118d6b5a",
+        "reportUrl" : "https://Areso.github.io/Oblache/10//#testresult/a21950c3118d6b5a",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1713574608459,
+          "stop" : 1713574609307,
+          "duration" : 848
+        }
+      }, {
+        "uid" : "5957438d943c103e",
+        "reportUrl" : "https://Areso.github.io/Oblache/9//#testresult/5957438d943c103e",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1713488201927,
+          "stop" : 1713488202783,
+          "duration" : 856
+        }
+      }, {
+        "uid" : "65b1f5f1e9dd1473",
+        "reportUrl" : "https://Areso.github.io/Oblache/8//#testresult/65b1f5f1e9dd1473",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1713402409961,
+          "stop" : 1713402410756,
+          "duration" : 795
+        }
+      } ]
+    },
+    "tags" : [ "@pytest.mark.xfail(reason='When using this method during a test run, the database may be in deleting status.')" ]
+  },
+  "source" : "a968bfae410c93f7.json",
+  "parameterValues" : [ ]
+}
