@@ -1,0 +1,575 @@
+{
+  "uid" : "3777a34f3c5a4b6e",
+  "name" : "test_delete_container",
+  "fullName" : "tests_ui.test_ui.TestProfilePage#test_delete_container",
+  "historyId" : "82f1b1649b6ba1f52776126438c9d89e",
+  "time" : {
+    "start" : 1715993879922,
+    "stop" : 1715993884112,
+    "duration" : 4190
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError",
+  "statusTrace" : "self = <tests_ui.test_ui.TestUI.TestProfilePage object at 0x7f415a5c3980>\ndriver = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"62b5774746ec0d15979b5a8a881f15ab\")>\nauthorization_user = <tests_ui.login_page.LoginPage object at 0x7f415a424b60>\n\n    def test_delete_container(self, driver, authorization_user):\n        page = ProfilePage(driver)\n        page.click_button_docker_containers()\n        page.get_containers_list()\n>       page.delete_first_container()\n\ntests_ui/test_ui.py:105: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <tests_ui.profile_page.ProfilePage object at 0x7f415a402150>\n\n    @allure.step('delete_first_container')\n    def delete_first_container(self):\n        amount_containers = self.get_containers_list()\n        if len(amount_containers) != 0:\n            self.element_is_present_and_clickable((By.XPATH,\n                                                   '//tbody[@id=\"tbody_containers\"] /tr[1]/td[10] /button')).click()\n            server_msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text\n>           assert server_msg == 'container is set for deleting'\nE           AssertionError\n\ntests_ui/profile_page.py:196: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "driver",
+    "time" : {
+      "start" : 1715993878482,
+      "stop" : 1715993878678,
+      "duration" : 196
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "authorization_user",
+    "time" : {
+      "start" : 1715993878678,
+      "stop" : 1715993879922,
+      "duration" : 1244
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Open page: https://oblache.areso.pro/register.html",
+      "time" : {
+        "start" : 1715993878678,
+        "stop" : 1715993878985,
+        "duration" : 307
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "login_user",
+      "time" : {
+        "start" : 1715993878985,
+        "stop" : 1715993879922,
+        "duration" : 937
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Enter email.",
+        "time" : {
+          "start" : 1715993878985,
+          "stop" : 1715993879036,
+          "duration" : 51
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Enter password.",
+        "time" : {
+          "start" : 1715993879036,
+          "stop" : 1715993879076,
+          "duration" : 40
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Click button \"Login\"",
+        "time" : {
+          "start" : 1715993879076,
+          "stop" : 1715993879139,
+          "duration" : 63
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "element_is_present_and_clickable",
+          "time" : {
+            "start" : 1715993879076,
+            "stop" : 1715993879111,
+            "duration" : 35
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "locator",
+            "value" : "('xpath', '//input[@id=\"inp_regform_login_submit\"]')"
+          } ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Check url is present: https://oblache.areso.pro/profile.html",
+        "time" : {
+          "start" : 1715993879139,
+          "stop" : 1715993879921,
+          "duration" : 782
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 5,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 7,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  } ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError",
+    "statusTrace" : "self = <tests_ui.test_ui.TestUI.TestProfilePage object at 0x7f415a5c3980>\ndriver = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"62b5774746ec0d15979b5a8a881f15ab\")>\nauthorization_user = <tests_ui.login_page.LoginPage object at 0x7f415a424b60>\n\n    def test_delete_container(self, driver, authorization_user):\n        page = ProfilePage(driver)\n        page.click_button_docker_containers()\n        page.get_containers_list()\n>       page.delete_first_container()\n\ntests_ui/test_ui.py:105: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <tests_ui.profile_page.ProfilePage object at 0x7f415a402150>\n\n    @allure.step('delete_first_container')\n    def delete_first_container(self):\n        amount_containers = self.get_containers_list()\n        if len(amount_containers) != 0:\n            self.element_is_present_and_clickable((By.XPATH,\n                                                   '//tbody[@id=\"tbody_containers\"] /tr[1]/td[10] /button')).click()\n            server_msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text\n>           assert server_msg == 'container is set for deleting'\nE           AssertionError\n\ntests_ui/profile_page.py:196: AssertionError",
+    "steps" : [ {
+      "name" : "Click \"Docker containers\" button.",
+      "time" : {
+        "start" : 1715993879922,
+        "stop" : 1715993879976,
+        "duration" : 54
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "element_is_present_and_clickable",
+        "time" : {
+          "start" : 1715993879922,
+          "stop" : 1715993879953,
+          "duration" : 31
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "locator",
+          "value" : "('xpath', '//button[@id=\"menu_button_containers\"]')"
+        } ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "get_containers_list",
+      "time" : {
+        "start" : 1715993879976,
+        "stop" : 1715993882025,
+        "duration" : 2049
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Check containers list before creation: ['0 399e20 \uD83D\uDCCB nginx None None creating ❌', '1 47facc \uD83D\uDCCB nginx None None creating ❌', '2 b941e4 \uD83D\uDCCB nginx None None creating ❌', '3 941ed1 \uD83D\uDCCB nginx None None creating ❌', '4 c81591 \uD83D\uDCCB nginx None None creating ❌', '5 2459e6 \uD83D\uDCCB nginx None None creating ❌', '6 8c067b \uD83D\uDCCB nginx None None creating ❌', '7 837b4f \uD83D\uDCCB nginx None None creating ❌', '8 0f4856 \uD83D\uDCCB nginx None None creating ❌', '9 4b3960 \uD83D\uDCCB nginx None None creating ❌', '10 8ab93a \uD83D\uDCCB nginx None None creating ❌', '11 edbc8d \uD83D\uDCCB nginx None None creating ❌', '12 c43054 \uD83D\uDCCB nginx None None creating ❌', '13 96ed94 \uD83D\uDCCB nginx None None creating ❌', '14 1e2eb1 \uD83D\uDCCB nginx None None creating ❌', '15 b69cae \uD83D\uDCCB nginx None None creating ❌', '16 d949d3 \uD83D\uDCCB nginx None None creating ❌', '17 7c7233 \uD83D\uDCCB nginx nginx_tj7qdnub cisdocker1.areso.pro 6399:80 None error_creating ❌', '18 9a89d6 \uD83D\uDCCB nginx None None creating ❌', '19 7fe623 \uD83D\uDCCB nginx nginx_lfvry5yt cisdocker1.areso.pro 6628:80 None error_creating ❌', '20 ae26ba \uD83D\uDCCB nginx nginx_ea7w97h8 cisdocker1.areso.pro 6889:80 None error_creating ❌', '21 b62619 \uD83D\uDCCB nginx nginx_dxwxwzhw cisdocker1.areso.pro 6827:90 None error_creating ❌', '22 6cee20 \uD83D\uDCCB nginx nginx_l28zxrll cisdocker1.areso.pro 6967:80,6383:81,6174:82,6714:83,6974:84,6932:85,6304:86,6358:87,6927:88,6437:89 None error_creating ❌', '23 073b6f \uD83D\uDCCB nginx nginx_1la4xmji cisdocker1.areso.pro 6809:80,6721:81,6937:82,6111:83,6187:84,6584:85,6511:86,6761:87,6228:88,6825:89 None error_creating ❌', '24 fa54bb \uD83D\uDCCB nginx nginx_8f9pk4vc cisdocker1.areso.pro 6496:1 None error_creating ❌', '25 fec50f \uD83D\uDCCB nginx nginx_b01p9295 cisdocker1.areso.pro 6727:80 None error_creating ❌', '26 3bb682 \uD83D\uDCCB nginx nginx_z06nvccn cisdocker1.areso.pro 6052:80,6276:81,6505:82,6009:83,6140:84,6345:85,6689:86,6963:87,6705:88,6320:89 None error_creating ❌', '27 22392f \uD83D\uDCCB nginx nginx_ctjjgk0z cisdocker1.areso.pro 6983:80 None error_creating ❌', '28 153ab9 \uD83D\uDCCB nginx nginx_u3mpz43a cisdocker1.areso.pro 6668:80 None error_creating ❌', '29 2006dc \uD83D\uDCCB nginx nginx_ycc87w67 cisdocker1.areso.pro 6003:80,6033:81,6072:82,6294:83,6026:84,6335:85,6789:86,6544:87,6197:88,6103:89 None error_creating ❌', '30 dc9f23 \uD83D\uDCCB nginx nginx_xpm9f5ds cisdocker1.areso.pro 6249:80 None error_creating ❌', '31 8b941b \uD83D\uDCCB nginx nginx_5f8nz8m4 cisdocker1.areso.pro 6647:80 None error_creating ❌', '32 3ae35f \uD83D\uDCCB nginx nginx_y7g8k3bj cisdocker1.areso.pro 6738:80,6088:81,6636:82,6757:83,6253:84,6517:85,6059:86,6957:87,6038:88,6600:89 None error_creating ❌', '33 d8a211 \uD83D\uDCCB nginx nginx_kxl3ygw3 cisdocker1.areso.pro 6713:80 None error_creating ❌', '34 f1b184 \uD83D\uDCCB nginx nginx_9oq9917k cisdocker1.areso.pro 6800:80 None error_creating ❌', '35 672f7f \uD83D\uDCCB nginx nginx_ehxhl1pd cisdocker1.areso.pro 6524:80,6369:81,6612:82,6354:83,6066:84,6346:85,6579:86,6454:87,6773:88,6441:89 None error_creating ❌', '36 5a5eac \uD83D\uDCCB nginx nginx_j837vj8z cisdocker1.areso.pro 6287:80 None error_creating ❌', '37 36ba71 \uD83D\uDCCB nginx nginx_si99kqcb cisdocker1.areso.pro 6570:80 None error_creating ❌', '38 e2dd73 \uD83D\uDCCB nginx nginx_8gsqftxx cisdocker1.areso.pro 6001:80,6456:81,6936:82,6233:83,6642:84,6724:85,6554:86,6163:87,6207:88,6213:89 None error_creating ❌', '39 2cb188 \uD83D\uDCCB nginx nginx_apccaugc cisdocker1.areso.pro 6198:80 None error_creating ❌', '40 84e48d \uD83D\uDCCB nginx nginx_9q5zjpl6 cisdocker1.areso.pro 6893:80 None error_creating ❌', '41 3a875b \uD83D\uDCCB nginx nginx_o1o7m90z cisdocker1.areso.pro 6664:80,6349:81,6438:82,6840:83,6047:84,6824:85,6371:86,6490:87,6614:88,6309:89 None error_creating ❌', '42 36ec89 \uD83D\uDCCB nginx nginx_wn7ft3k9 cisdocker1.areso.pro 6890:80 None error_creating ❌', '43 25afb3 \uD83D\uDCCB nginx nginx_cdvi83b2 cisdocker1.areso.pro 6024:80 None error_creating ❌', '44 1d6617 \uD83D\uDCCB nginx nginx_llxm9opk cisdocker1.areso.pro 6419:80,6384:81,6407:82,6780:83,6459:84,6325:85,6029:86,6742:87,6109:88,6177:89 None error_creating ❌', '45 179d92 \uD83D\uDCCB nginx nginx_8002aozr cisdocker1.areso.pro 6519:80 None error_creating ❌', '46 0b607e \uD83D\uDCCB nginx nginx_vdmnwy7t cisdocker1.areso.pro 6432:80 None error_creating ❌', '47 1871c5 \uD83D\uDCCB nginx nginx_pwnc4iya cisdocker1.areso.pro 6669:80,6765:81,6237:82,6030:83,6536:84,6740:85,6440:86,6330:87,6020:88,6016:89 None error_creating ❌', '48 586418 \uD83D\uDCCB nginx nginx_8ydld8ic cisdocker1.areso.pro 6423:80 None error_creating ❌', '49 38b53d \uD83D\uDCCB nginx nginx_zasvtnrj cisdocker1.areso.pro 6027:80 None error_creating ❌', '50 6ac093 \uD83D\uDCCB nginx nginx_7cgpszv1 cisdocker1.areso.pro 6181:80,6090:81,6333:82,6949:83,6167:84,6492:85,6112:86,6136:87,6204:88,6219:89 None error_creating ❌', '51 4c070e \uD83D\uDCCB nginx nginx_361ihqo2 cisdocker1.areso.pro 6546:80 None error_creating ❌', '52 a8228a \uD83D\uDCCB nginx nginx_xbdkr6ox cisdocker1.areso.pro 6847:80 None error_creating ❌', '53 62a4d5 \uD83D\uDCCB nginx nginx_8c6txlbw cisdocker1.areso.pro 6776:80,6037:81,6299:82,6013:83,6186:84,6527:85,6699:86,6886:87,6708:88,6032:89 None error_creating ❌', '54 310287 \uD83D\uDCCB nginx nginx_f9pua9yg cisdocker1.areso.pro 6844:80 None error_creating ❌', '55 27da0f \uD83D\uDCCB nginx nginx_ptobt5o0 cisdocker1.areso.pro 6947:80 None error_creating ❌', '56 bd1fff \uD83D\uDCCB nginx nginx_xsxvqyy9 cisdocker1.areso.pro 6409:80,6431:81,6814:82,6790:83,6279:84,6218:85,6638:86,6488:87,6246:88,6620:89 None error_creating ❌', '57 4e63e7 \uD83D\uDCCB nginx nginx_xqi0hckf cisdocker1.areso.pro 6593:80 None error_creating ❌', '58 55f3a9 \uD83D\uDCCB nginx nginx_iheyg6fs cisdocker1.areso.pro 6262:80 None error_creating ❌', '59 a04fdf \uD83D\uDCCB nginx nginx_tnun2ng4 cisdocker1.areso.pro 6126:80,6324:81,6811:82,6979:83,6185:84,6851:85,6426:86,6166:87,6179:88,6205:89 None error_creating ❌', '60 d8eff1 \uD83D\uDCCB nginx nginx_oexr1yp1 cisdocker1.areso.pro 6229:80 None error_creating ❌', '61 f33040 \uD83D\uDCCB nginx nginx_yitluhn5 cisdocker1.areso.pro 6999:80 None error_creating ❌', '62 b1b2ae \uD83D\uDCCB nginx nginx_e5upkvit cisdocker1.areso.pro 6658:80,6913:81,6564:82,6398:83,6637:84,6339:85,6195:86,6372:87,6541:88,6200:89 None error_creating ❌', '63 b597be \uD83D\uDCCB nginx nginx_w8nc8ma6 cisdocker1.areso.pro 6457:80 None error_creating ❌', '64 5a826b \uD83D\uDCCB nginx nginx_7978nnxz cisdocker1.areso.pro 6818:80 None error_creating ❌', '65 130b13 \uD83D\uDCCB nginx nginx_g3plyzw4 cisdocker1.areso.pro 6034:80,6561:81,6694:82,6025:83,6449:84,6995:85,6341:86,6108:87,6410:88,6779:89 None error_creating ❌', '66 b9bf15 \uD83D\uDCCB nginx nginx_qknb34jj cisdocker1.areso.pro 6362:80 None error_creating ❌', '67 91db97 \uD83D\uDCCB nginx nginx_qydjl2l1 cisdocker1.areso.pro 6850:80 None error_creating ❌', '68 8c5b99 \uD83D\uDCCB nginx nginx_kkgyhtmm cisdocker1.areso.pro 6010:80,6871:81,6054:82,6942:83,6275:84,6081:85,6772:86,6653:87,6748:88,6635:89 None error_creating ❌', '69 04aca6 \uD83D\uDCCB nginx nginx_qdgrsqs2 cisdocker1.areso.pro 6011:80 None error_creating ❌', '70 9fd1ff \uD83D\uDCCB nginx nginx_9kaxbrwt cisdocker1.areso.pro 6015:80 None error_creating ❌', '71 a625f6 \uD83D\uDCCB nginx nginx_ekvxdmfw cisdocker1.areso.pro 6596:80,6491:81,6231:82,6597:83,6142:84,6060:85,6878:86,6771:87,6478:88,6023:89 None error_creating ❌', '72 5e2046 \uD83D\uDCCB nginx nginx_9qycd3mr cisdocker1.areso.pro 6404:80 None error_creating ❌', '73 665262 \uD83D\uDCCB nginx nginx_m8uz6lx6 cisdocker1.areso.pro 6420:80 None error_creating ❌', '74 71f37f \uD83D\uDCCB nginx nginx_egci75cm cisdocker1.areso.pro 6832:80,6239:81,6223:82,6171:83,6144:84,6697:85,6520:86,6278:87,6678:88,6414:89 None error_creating ❌', '75 34b2bf \uD83D\uDCCB nginx nginx_a08n0bm7 cisdocker1.areso.pro 6474:80 None error_creating ❌', '76 5fcd0e \uD83D\uDCCB nginx nginx_9reofnxh cisdocker1.areso.pro 6288:80 None error_creating ❌', '77 072ae4 \uD83D\uDCCB nginx nginx_qgjb4pb4 cisdocker1.areso.pro 6523:80,6971:81,6946:82,6485:83,6533:84,6317:85,6068:86,6842:87,6968:88,6447:89 None error_creating ❌', '78 678de2 \uD83D\uDCCB nginx nginx_7hrjxcgk cisdocker1.areso.pro 6263:80 None error_creating ❌', '79 70fdf4 \uD83D\uDCCB nginx nginx_agzfelpa cisdocker1.areso.pro 6035:80 None error_creating ❌', '80 eefa32 \uD83D\uDCCB nginx nginx_t0u5wijd cisdocker1.areso.pro 6725:80,6055:81,6497:82,6178:83,6241:84,6954:85,6425:86,6154:87,6553:88,6606:89 None error_creating ❌', '81 eb28e1 \uD83D\uDCCB nginx nginx_luf8rswh cisdocker1.areso.pro 6615:80 None error_creating ❌', '82 72df95 \uD83D\uDCCB nginx nginx_ame1yzyz cisdocker1.areso.pro 6808:80 None error_creating ❌', '83 85387b \uD83D\uDCCB nginx nginx_qbj9osd4 cisdocker1.areso.pro 6247:80,6513:81,6091:82,6899:83,6364:84,6477:85,6633:86,6487:87,6864:88,6462:89 None error_creating ❌', '84 d570ba \uD83D\uDCCB nginx nginx_u7nfg234 cisdocker1.areso.pro 6834:80 None error_creating ❌', '85 c1adf3 \uD83D\uDCCB nginx nginx_bpfbr3rv cisdocker1.areso.pro 6217:80 None error_creating ❌', '86 e53b8d \uD83D\uDCCB nginx nginx_9owpo5ck cisdocker1.areso.pro 6975:80,6916:81,6367:82,6905:83,6022:84,6594:85,6921:86,6534:87,6703:88,6238:89 None error_creating ❌', '87 b4b08e \uD83D\uDCCB nginx nginx_b0azdvi1 cisdocker1.areso.pro 6810:80 None error_creating ❌', '88 6b9c10 \uD83D\uDCCB nginx nginx_hkpazrve cisdocker1.areso.pro 6194:80 None error_creating ❌', '89 0a74a6 \uD83D\uDCCB nginx nginx_z67y77au cisdocker1.areso.pro 6388:80,6602:81,6794:82,6021:83,6273:84,6862:85,6793:86,6396:87,6892:88,6117:89 None error_creating ❌', '90 8dd698 \uD83D\uDCCB nginx nginx_q5ruxyim cisdocker1.areso.pro 6749:80 None error_creating ❌', '91 743514 \uD83D\uDCCB nginx nginx_ceewye3t cisdocker1.areso.pro 6622:80 None error_creating ❌', '92 305146 \uD83D\uDCCB nginx nginx_fo8a16ji cisdocker1.areso.pro 6516:80,6148:81,6961:82,6510:83,6807:84,6012:85,6565:86,6220:87,6785:88,6347:89 None error_creating ❌', '93 103064 \uD83D\uDCCB nginx nginx_xuk2m3t3 cisdocker1.areso.pro 6095:80 None error_creating ❌', '94 8462e3 \uD83D\uDCCB nginx nginx_cq5p5t7d cisdocker1.areso.pro 6641:80 None error_creating ❌', '95 65b64d \uD83D\uDCCB nginx None None creating ❌', '96 53f29a \uD83D\uDCCB nginx nginx_tpstgdqg cisdocker1.areso.pro 6051:80 None error_creating ❌', '97 0f33c9 \uD83D\uDCCB nginx nginx_5rl191qo cisdocker1.areso.pro 6538:80 None error_creating ❌', '98 783cd5 \uD83D\uDCCB nginx nginx_y22ez0qd cisdocker1.areso.pro 6799:80,6559:81,6005:82,6322:83,6829:84,6939:85,6307:86,6885:87,6351:88,6203:89 None error_creating ❌', '99 3af31a \uD83D\uDCCB nginx nginx_cco83xb3 cisdocker1.areso.pro 6504:80 None error_creating ❌', '100 1ae20e \uD83D\uDCCB nginx nginx_4gsdp9ug cisdocker1.areso.pro 6731:80 None error_creating ❌', '101 e55dec \uD83D\uDCCB nginx nginx_674f7ncl cisdocker1.areso.pro 6930:80,6149:81,6815:82,6960:83,6202:84,6312:85,6473:86,6363:87,6795:88,6990:89 None error_creating ❌', '102 553223 \uD83D\uDCCB nginx nginx_8ru2w1os cisdocker1.areso.pro 6467:80 None error_creating ❌', '103 f6fd2f \uD83D\uDCCB nginx nginx_bqxlfwcm cisdocker1.areso.pro 6948:80 None error_creating ❌', '104 3c4ee9 \uD83D\uDCCB nginx nginx_uj9hia2z cisdocker1.areso.pro 6224:80,6092:81,6743:82,6442:83,6655:84,6266:85,6084:86,6291:87,6877:88,6133:89 None error_creating ❌', '105 94906e \uD83D\uDCCB nginx nginx_olij203i cisdocker1.areso.pro 6550:80 None error_creating ❌', '106 436a5b \uD83D\uDCCB nginx nginx_f1xr4qku cisdocker1.areso.pro 6568:80 None error_creating ❌', '107 6c51b5 \uD83D\uDCCB nginx nginx_3kmexx0v cisdocker1.areso.pro 6903:80,6439:81,6518:82,6416:83,6682:84,6764:85,6673:86,6912:87,6567:88,6134:89 None error_creating ❌', '108 46c75c \uD83D\uDCCB nginx nginx_wzaq6bfd cisdocker1.areso.pro 6563:80 None error_creating ❌', '109 86a04f \uD83D\uDCCB nginx nginx_ye5jwjx2 cisdocker1.areso.pro 6545:80 None error_creating ❌', '110 6c0755 \uD83D\uDCCB nginx nginx_t3zk5umi cisdocker1.areso.pro 6767:80,6464:81,6836:82,6608:83,6535:84,6417:85,6987:86,6281:87,6716:88,6216:89 None error_creating ❌', '111 623c98 \uD83D\uDCCB nginx nginx_o2tmlsyt cisdocker1.areso.pro 6356:80 None error_creating ❌', '112 41f2d1 \uD83D\uDCCB nginx nginx_05qlfmc8 cisdocker1.areso.pro 6139:80 None error_creating ❌', '113 32b599 \uD83D\uDCCB nginx nginx_kj9dtarq cisdocker1.areso.pro 6574:80,6911:81,6739:82,6243:83,6315:84,6802:85,6566:86,6392:87,6331:88,6303:89 None error_creating ❌', '114 6dd889 \uD83D\uDCCB nginx nginx_bwvht18s cisdocker1.areso.pro 6720:80 None error_creating ❌', '115 edff6c \uD83D\uDCCB nginx nginx_5cfq2xn4 cisdocker1.areso.pro 6463:80 None error_creating ❌', '116 205ffc \uD83D\uDCCB nginx nginx_reb07h9m cisdocker1.areso.pro 6831:80,6057:81,6853:82,6046:83,6744:84,6929:85,6788:86,6479:87,6334:88,6251:89 None error_creating ❌', '117 60173a \uD83D\uDCCB nginx nginx_df62fyo6 cisdocker1.areso.pro 6390:80 None error_creating ❌', '118 c8079f \uD83D\uDCCB nginx nginx_ghlmzdy0 cisdocker1.areso.pro 6592:80 None error_creating ❌', '119 7e4468 \uD83D\uDCCB nginx nginx_kr9n7opu cisdocker1.areso.pro 6453:80,6230:81,6400:82,6458:83,6168:84,6260:85,6769:86,6923:87,6643:88,6106:89 None error_creating ❌', '120 555576 \uD83D\uDCCB nginx 6173:80 None creating ❌']",
+        "time" : {
+          "start" : 1715993882024,
+          "stop" : 1715993882025,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "delete_first_container",
+      "time" : {
+        "start" : 1715993882026,
+        "stop" : 1715993884112,
+        "duration" : 2086
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError\n",
+      "statusTrace" : "  File \"/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/allure_commons/_allure.py\", line 192, in impl\n    return func(*a, **kw)\n           ^^^^^^^^^^^^^^\n  File \"/home/runner/work/Oblache/Oblache/tests_ui/profile_page.py\", line 196, in delete_first_container\n    assert server_msg == 'container is set for deleting'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+      "steps" : [ {
+        "name" : "get_containers_list",
+        "time" : {
+          "start" : 1715993882026,
+          "stop" : 1715993883511,
+          "duration" : 1485
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Check containers list before creation: ['0 399e20 \uD83D\uDCCB nginx None None creating ❌', '1 47facc \uD83D\uDCCB nginx None None creating ❌', '2 b941e4 \uD83D\uDCCB nginx None None creating ❌', '3 941ed1 \uD83D\uDCCB nginx None None creating ❌', '4 c81591 \uD83D\uDCCB nginx None None creating ❌', '5 2459e6 \uD83D\uDCCB nginx None None creating ❌', '6 8c067b \uD83D\uDCCB nginx None None creating ❌', '7 837b4f \uD83D\uDCCB nginx None None creating ❌', '8 0f4856 \uD83D\uDCCB nginx None None creating ❌', '9 4b3960 \uD83D\uDCCB nginx None None creating ❌', '10 8ab93a \uD83D\uDCCB nginx None None creating ❌', '11 edbc8d \uD83D\uDCCB nginx None None creating ❌', '12 c43054 \uD83D\uDCCB nginx None None creating ❌', '13 96ed94 \uD83D\uDCCB nginx None None creating ❌', '14 1e2eb1 \uD83D\uDCCB nginx None None creating ❌', '15 b69cae \uD83D\uDCCB nginx None None creating ❌', '16 d949d3 \uD83D\uDCCB nginx None None creating ❌', '17 7c7233 \uD83D\uDCCB nginx nginx_tj7qdnub cisdocker1.areso.pro 6399:80 None error_creating ❌', '18 9a89d6 \uD83D\uDCCB nginx None None creating ❌', '19 7fe623 \uD83D\uDCCB nginx nginx_lfvry5yt cisdocker1.areso.pro 6628:80 None error_creating ❌', '20 ae26ba \uD83D\uDCCB nginx nginx_ea7w97h8 cisdocker1.areso.pro 6889:80 None error_creating ❌', '21 b62619 \uD83D\uDCCB nginx nginx_dxwxwzhw cisdocker1.areso.pro 6827:90 None error_creating ❌', '22 6cee20 \uD83D\uDCCB nginx nginx_l28zxrll cisdocker1.areso.pro 6967:80,6383:81,6174:82,6714:83,6974:84,6932:85,6304:86,6358:87,6927:88,6437:89 None error_creating ❌', '23 073b6f \uD83D\uDCCB nginx nginx_1la4xmji cisdocker1.areso.pro 6809:80,6721:81,6937:82,6111:83,6187:84,6584:85,6511:86,6761:87,6228:88,6825:89 None error_creating ❌', '24 fa54bb \uD83D\uDCCB nginx nginx_8f9pk4vc cisdocker1.areso.pro 6496:1 None error_creating ❌', '25 fec50f \uD83D\uDCCB nginx nginx_b01p9295 cisdocker1.areso.pro 6727:80 None error_creating ❌', '26 3bb682 \uD83D\uDCCB nginx nginx_z06nvccn cisdocker1.areso.pro 6052:80,6276:81,6505:82,6009:83,6140:84,6345:85,6689:86,6963:87,6705:88,6320:89 None error_creating ❌', '27 22392f \uD83D\uDCCB nginx nginx_ctjjgk0z cisdocker1.areso.pro 6983:80 None error_creating ❌', '28 153ab9 \uD83D\uDCCB nginx nginx_u3mpz43a cisdocker1.areso.pro 6668:80 None error_creating ❌', '29 2006dc \uD83D\uDCCB nginx nginx_ycc87w67 cisdocker1.areso.pro 6003:80,6033:81,6072:82,6294:83,6026:84,6335:85,6789:86,6544:87,6197:88,6103:89 None error_creating ❌', '30 dc9f23 \uD83D\uDCCB nginx nginx_xpm9f5ds cisdocker1.areso.pro 6249:80 None error_creating ❌', '31 8b941b \uD83D\uDCCB nginx nginx_5f8nz8m4 cisdocker1.areso.pro 6647:80 None error_creating ❌', '32 3ae35f \uD83D\uDCCB nginx nginx_y7g8k3bj cisdocker1.areso.pro 6738:80,6088:81,6636:82,6757:83,6253:84,6517:85,6059:86,6957:87,6038:88,6600:89 None error_creating ❌', '33 d8a211 \uD83D\uDCCB nginx nginx_kxl3ygw3 cisdocker1.areso.pro 6713:80 None error_creating ❌', '34 f1b184 \uD83D\uDCCB nginx nginx_9oq9917k cisdocker1.areso.pro 6800:80 None error_creating ❌', '35 672f7f \uD83D\uDCCB nginx nginx_ehxhl1pd cisdocker1.areso.pro 6524:80,6369:81,6612:82,6354:83,6066:84,6346:85,6579:86,6454:87,6773:88,6441:89 None error_creating ❌', '36 5a5eac \uD83D\uDCCB nginx nginx_j837vj8z cisdocker1.areso.pro 6287:80 None error_creating ❌', '37 36ba71 \uD83D\uDCCB nginx nginx_si99kqcb cisdocker1.areso.pro 6570:80 None error_creating ❌', '38 e2dd73 \uD83D\uDCCB nginx nginx_8gsqftxx cisdocker1.areso.pro 6001:80,6456:81,6936:82,6233:83,6642:84,6724:85,6554:86,6163:87,6207:88,6213:89 None error_creating ❌', '39 2cb188 \uD83D\uDCCB nginx nginx_apccaugc cisdocker1.areso.pro 6198:80 None error_creating ❌', '40 84e48d \uD83D\uDCCB nginx nginx_9q5zjpl6 cisdocker1.areso.pro 6893:80 None error_creating ❌', '41 3a875b \uD83D\uDCCB nginx nginx_o1o7m90z cisdocker1.areso.pro 6664:80,6349:81,6438:82,6840:83,6047:84,6824:85,6371:86,6490:87,6614:88,6309:89 None error_creating ❌', '42 36ec89 \uD83D\uDCCB nginx nginx_wn7ft3k9 cisdocker1.areso.pro 6890:80 None error_creating ❌', '43 25afb3 \uD83D\uDCCB nginx nginx_cdvi83b2 cisdocker1.areso.pro 6024:80 None error_creating ❌', '44 1d6617 \uD83D\uDCCB nginx nginx_llxm9opk cisdocker1.areso.pro 6419:80,6384:81,6407:82,6780:83,6459:84,6325:85,6029:86,6742:87,6109:88,6177:89 None error_creating ❌', '45 179d92 \uD83D\uDCCB nginx nginx_8002aozr cisdocker1.areso.pro 6519:80 None error_creating ❌', '46 0b607e \uD83D\uDCCB nginx nginx_vdmnwy7t cisdocker1.areso.pro 6432:80 None error_creating ❌', '47 1871c5 \uD83D\uDCCB nginx nginx_pwnc4iya cisdocker1.areso.pro 6669:80,6765:81,6237:82,6030:83,6536:84,6740:85,6440:86,6330:87,6020:88,6016:89 None error_creating ❌', '48 586418 \uD83D\uDCCB nginx nginx_8ydld8ic cisdocker1.areso.pro 6423:80 None error_creating ❌', '49 38b53d \uD83D\uDCCB nginx nginx_zasvtnrj cisdocker1.areso.pro 6027:80 None error_creating ❌', '50 6ac093 \uD83D\uDCCB nginx nginx_7cgpszv1 cisdocker1.areso.pro 6181:80,6090:81,6333:82,6949:83,6167:84,6492:85,6112:86,6136:87,6204:88,6219:89 None error_creating ❌', '51 4c070e \uD83D\uDCCB nginx nginx_361ihqo2 cisdocker1.areso.pro 6546:80 None error_creating ❌', '52 a8228a \uD83D\uDCCB nginx nginx_xbdkr6ox cisdocker1.areso.pro 6847:80 None error_creating ❌', '53 62a4d5 \uD83D\uDCCB nginx nginx_8c6txlbw cisdocker1.areso.pro 6776:80,6037:81,6299:82,6013:83,6186:84,6527:85,6699:86,6886:87,6708:88,6032:89 None error_creating ❌', '54 310287 \uD83D\uDCCB nginx nginx_f9pua9yg cisdocker1.areso.pro 6844:80 None error_creating ❌', '55 27da0f \uD83D\uDCCB nginx nginx_ptobt5o0 cisdocker1.areso.pro 6947:80 None error_creating ❌', '56 bd1fff \uD83D\uDCCB nginx nginx_xsxvqyy9 cisdocker1.areso.pro 6409:80,6431:81,6814:82,6790:83,6279:84,6218:85,6638:86,6488:87,6246:88,6620:89 None error_creating ❌', '57 4e63e7 \uD83D\uDCCB nginx nginx_xqi0hckf cisdocker1.areso.pro 6593:80 None error_creating ❌', '58 55f3a9 \uD83D\uDCCB nginx nginx_iheyg6fs cisdocker1.areso.pro 6262:80 None error_creating ❌', '59 a04fdf \uD83D\uDCCB nginx nginx_tnun2ng4 cisdocker1.areso.pro 6126:80,6324:81,6811:82,6979:83,6185:84,6851:85,6426:86,6166:87,6179:88,6205:89 None error_creating ❌', '60 d8eff1 \uD83D\uDCCB nginx nginx_oexr1yp1 cisdocker1.areso.pro 6229:80 None error_creating ❌', '61 f33040 \uD83D\uDCCB nginx nginx_yitluhn5 cisdocker1.areso.pro 6999:80 None error_creating ❌', '62 b1b2ae \uD83D\uDCCB nginx nginx_e5upkvit cisdocker1.areso.pro 6658:80,6913:81,6564:82,6398:83,6637:84,6339:85,6195:86,6372:87,6541:88,6200:89 None error_creating ❌', '63 b597be \uD83D\uDCCB nginx nginx_w8nc8ma6 cisdocker1.areso.pro 6457:80 None error_creating ❌', '64 5a826b \uD83D\uDCCB nginx nginx_7978nnxz cisdocker1.areso.pro 6818:80 None error_creating ❌', '65 130b13 \uD83D\uDCCB nginx nginx_g3plyzw4 cisdocker1.areso.pro 6034:80,6561:81,6694:82,6025:83,6449:84,6995:85,6341:86,6108:87,6410:88,6779:89 None error_creating ❌', '66 b9bf15 \uD83D\uDCCB nginx nginx_qknb34jj cisdocker1.areso.pro 6362:80 None error_creating ❌', '67 91db97 \uD83D\uDCCB nginx nginx_qydjl2l1 cisdocker1.areso.pro 6850:80 None error_creating ❌', '68 8c5b99 \uD83D\uDCCB nginx nginx_kkgyhtmm cisdocker1.areso.pro 6010:80,6871:81,6054:82,6942:83,6275:84,6081:85,6772:86,6653:87,6748:88,6635:89 None error_creating ❌', '69 04aca6 \uD83D\uDCCB nginx nginx_qdgrsqs2 cisdocker1.areso.pro 6011:80 None error_creating ❌', '70 9fd1ff \uD83D\uDCCB nginx nginx_9kaxbrwt cisdocker1.areso.pro 6015:80 None error_creating ❌', '71 a625f6 \uD83D\uDCCB nginx nginx_ekvxdmfw cisdocker1.areso.pro 6596:80,6491:81,6231:82,6597:83,6142:84,6060:85,6878:86,6771:87,6478:88,6023:89 None error_creating ❌', '72 5e2046 \uD83D\uDCCB nginx nginx_9qycd3mr cisdocker1.areso.pro 6404:80 None error_creating ❌', '73 665262 \uD83D\uDCCB nginx nginx_m8uz6lx6 cisdocker1.areso.pro 6420:80 None error_creating ❌', '74 71f37f \uD83D\uDCCB nginx nginx_egci75cm cisdocker1.areso.pro 6832:80,6239:81,6223:82,6171:83,6144:84,6697:85,6520:86,6278:87,6678:88,6414:89 None error_creating ❌', '75 34b2bf \uD83D\uDCCB nginx nginx_a08n0bm7 cisdocker1.areso.pro 6474:80 None error_creating ❌', '76 5fcd0e \uD83D\uDCCB nginx nginx_9reofnxh cisdocker1.areso.pro 6288:80 None error_creating ❌', '77 072ae4 \uD83D\uDCCB nginx nginx_qgjb4pb4 cisdocker1.areso.pro 6523:80,6971:81,6946:82,6485:83,6533:84,6317:85,6068:86,6842:87,6968:88,6447:89 None error_creating ❌', '78 678de2 \uD83D\uDCCB nginx nginx_7hrjxcgk cisdocker1.areso.pro 6263:80 None error_creating ❌', '79 70fdf4 \uD83D\uDCCB nginx nginx_agzfelpa cisdocker1.areso.pro 6035:80 None error_creating ❌', '80 eefa32 \uD83D\uDCCB nginx nginx_t0u5wijd cisdocker1.areso.pro 6725:80,6055:81,6497:82,6178:83,6241:84,6954:85,6425:86,6154:87,6553:88,6606:89 None error_creating ❌', '81 eb28e1 \uD83D\uDCCB nginx nginx_luf8rswh cisdocker1.areso.pro 6615:80 None error_creating ❌', '82 72df95 \uD83D\uDCCB nginx nginx_ame1yzyz cisdocker1.areso.pro 6808:80 None error_creating ❌', '83 85387b \uD83D\uDCCB nginx nginx_qbj9osd4 cisdocker1.areso.pro 6247:80,6513:81,6091:82,6899:83,6364:84,6477:85,6633:86,6487:87,6864:88,6462:89 None error_creating ❌', '84 d570ba \uD83D\uDCCB nginx nginx_u7nfg234 cisdocker1.areso.pro 6834:80 None error_creating ❌', '85 c1adf3 \uD83D\uDCCB nginx nginx_bpfbr3rv cisdocker1.areso.pro 6217:80 None error_creating ❌', '86 e53b8d \uD83D\uDCCB nginx nginx_9owpo5ck cisdocker1.areso.pro 6975:80,6916:81,6367:82,6905:83,6022:84,6594:85,6921:86,6534:87,6703:88,6238:89 None error_creating ❌', '87 b4b08e \uD83D\uDCCB nginx nginx_b0azdvi1 cisdocker1.areso.pro 6810:80 None error_creating ❌', '88 6b9c10 \uD83D\uDCCB nginx nginx_hkpazrve cisdocker1.areso.pro 6194:80 None error_creating ❌', '89 0a74a6 \uD83D\uDCCB nginx nginx_z67y77au cisdocker1.areso.pro 6388:80,6602:81,6794:82,6021:83,6273:84,6862:85,6793:86,6396:87,6892:88,6117:89 None error_creating ❌', '90 8dd698 \uD83D\uDCCB nginx nginx_q5ruxyim cisdocker1.areso.pro 6749:80 None error_creating ❌', '91 743514 \uD83D\uDCCB nginx nginx_ceewye3t cisdocker1.areso.pro 6622:80 None error_creating ❌', '92 305146 \uD83D\uDCCB nginx nginx_fo8a16ji cisdocker1.areso.pro 6516:80,6148:81,6961:82,6510:83,6807:84,6012:85,6565:86,6220:87,6785:88,6347:89 None error_creating ❌', '93 103064 \uD83D\uDCCB nginx nginx_xuk2m3t3 cisdocker1.areso.pro 6095:80 None error_creating ❌', '94 8462e3 \uD83D\uDCCB nginx nginx_cq5p5t7d cisdocker1.areso.pro 6641:80 None error_creating ❌', '95 65b64d \uD83D\uDCCB nginx None None creating ❌', '96 53f29a \uD83D\uDCCB nginx nginx_tpstgdqg cisdocker1.areso.pro 6051:80 None error_creating ❌', '97 0f33c9 \uD83D\uDCCB nginx nginx_5rl191qo cisdocker1.areso.pro 6538:80 None error_creating ❌', '98 783cd5 \uD83D\uDCCB nginx nginx_y22ez0qd cisdocker1.areso.pro 6799:80,6559:81,6005:82,6322:83,6829:84,6939:85,6307:86,6885:87,6351:88,6203:89 None error_creating ❌', '99 3af31a \uD83D\uDCCB nginx nginx_cco83xb3 cisdocker1.areso.pro 6504:80 None error_creating ❌', '100 1ae20e \uD83D\uDCCB nginx nginx_4gsdp9ug cisdocker1.areso.pro 6731:80 None error_creating ❌', '101 e55dec \uD83D\uDCCB nginx nginx_674f7ncl cisdocker1.areso.pro 6930:80,6149:81,6815:82,6960:83,6202:84,6312:85,6473:86,6363:87,6795:88,6990:89 None error_creating ❌', '102 553223 \uD83D\uDCCB nginx nginx_8ru2w1os cisdocker1.areso.pro 6467:80 None error_creating ❌', '103 f6fd2f \uD83D\uDCCB nginx nginx_bqxlfwcm cisdocker1.areso.pro 6948:80 None error_creating ❌', '104 3c4ee9 \uD83D\uDCCB nginx nginx_uj9hia2z cisdocker1.areso.pro 6224:80,6092:81,6743:82,6442:83,6655:84,6266:85,6084:86,6291:87,6877:88,6133:89 None error_creating ❌', '105 94906e \uD83D\uDCCB nginx nginx_olij203i cisdocker1.areso.pro 6550:80 None error_creating ❌', '106 436a5b \uD83D\uDCCB nginx nginx_f1xr4qku cisdocker1.areso.pro 6568:80 None error_creating ❌', '107 6c51b5 \uD83D\uDCCB nginx nginx_3kmexx0v cisdocker1.areso.pro 6903:80,6439:81,6518:82,6416:83,6682:84,6764:85,6673:86,6912:87,6567:88,6134:89 None error_creating ❌', '108 46c75c \uD83D\uDCCB nginx nginx_wzaq6bfd cisdocker1.areso.pro 6563:80 None error_creating ❌', '109 86a04f \uD83D\uDCCB nginx nginx_ye5jwjx2 cisdocker1.areso.pro 6545:80 None error_creating ❌', '110 6c0755 \uD83D\uDCCB nginx nginx_t3zk5umi cisdocker1.areso.pro 6767:80,6464:81,6836:82,6608:83,6535:84,6417:85,6987:86,6281:87,6716:88,6216:89 None error_creating ❌', '111 623c98 \uD83D\uDCCB nginx nginx_o2tmlsyt cisdocker1.areso.pro 6356:80 None error_creating ❌', '112 41f2d1 \uD83D\uDCCB nginx nginx_05qlfmc8 cisdocker1.areso.pro 6139:80 None error_creating ❌', '113 32b599 \uD83D\uDCCB nginx nginx_kj9dtarq cisdocker1.areso.pro 6574:80,6911:81,6739:82,6243:83,6315:84,6802:85,6566:86,6392:87,6331:88,6303:89 None error_creating ❌', '114 6dd889 \uD83D\uDCCB nginx nginx_bwvht18s cisdocker1.areso.pro 6720:80 None error_creating ❌', '115 edff6c \uD83D\uDCCB nginx nginx_5cfq2xn4 cisdocker1.areso.pro 6463:80 None error_creating ❌', '116 205ffc \uD83D\uDCCB nginx nginx_reb07h9m cisdocker1.areso.pro 6831:80,6057:81,6853:82,6046:83,6744:84,6929:85,6788:86,6479:87,6334:88,6251:89 None error_creating ❌', '117 60173a \uD83D\uDCCB nginx nginx_df62fyo6 cisdocker1.areso.pro 6390:80 None error_creating ❌', '118 c8079f \uD83D\uDCCB nginx nginx_ghlmzdy0 cisdocker1.areso.pro 6592:80 None error_creating ❌', '119 7e4468 \uD83D\uDCCB nginx nginx_kr9n7opu cisdocker1.areso.pro 6453:80,6230:81,6400:82,6458:83,6168:84,6260:85,6769:86,6923:87,6643:88,6106:89 None error_creating ❌', '120 555576 \uD83D\uDCCB nginx 6173:80 None creating ❌']",
+          "time" : {
+            "start" : 1715993883509,
+            "stop" : 1715993883511,
+            "duration" : 2
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "element_is_present_and_clickable",
+        "time" : {
+          "start" : 1715993883511,
+          "stop" : 1715993883546,
+          "duration" : 35
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "locator",
+          "value" : "('xpath', '//tbody[@id=\"tbody_containers\"] /tr[1]/td[10] /button')"
+        } ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 8,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "driver::0",
+    "time" : {
+      "start" : 1715993884121,
+      "stop" : 1715993884291,
+      "duration" : 170
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "ee3bd44f8e35c315",
+      "name" : "Screenshot 2024-05-18 00:58:04.230594",
+      "source" : "ee3bd44f8e35c315.png",
+      "type" : "image/png",
+      "size" : 186309
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  } ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test Profile Page."
+  }, {
+    "name" : "epic",
+    "value" : "UI Tests"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_ui"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestUI"
+  }, {
+    "name" : "host",
+    "value" : "fv-az661-983"
+  }, {
+    "name" : "thread",
+    "value" : "2286-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_ui.test_ui"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 24,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 24
+      },
+      "items" : [ {
+        "uid" : "ea8160a4a92f09e2",
+        "reportUrl" : "https://Areso.github.io/Oblache/37//#testresult/ea8160a4a92f09e2",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1715907559776,
+          "stop" : 1715907564356,
+          "duration" : 4580
+        }
+      }, {
+        "uid" : "1e730221fd24a0e6",
+        "reportUrl" : "https://Areso.github.io/Oblache/36//#testresult/1e730221fd24a0e6",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1715821153726,
+          "stop" : 1715821158312,
+          "duration" : 4586
+        }
+      }, {
+        "uid" : "cb7e14a1e3db0144",
+        "reportUrl" : "https://Areso.github.io/Oblache/35//#testresult/cb7e14a1e3db0144",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1715734758581,
+          "stop" : 1715734762792,
+          "duration" : 4211
+        }
+      }, {
+        "uid" : "bf255737e1bdc5fa",
+        "reportUrl" : "https://Areso.github.io/Oblache/34//#testresult/bf255737e1bdc5fa",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1715648349050,
+          "stop" : 1715648353160,
+          "duration" : 4110
+        }
+      }, {
+        "uid" : "48e2fda8e9215c19",
+        "reportUrl" : "https://Areso.github.io/Oblache/33//#testresult/48e2fda8e9215c19",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1715561953956,
+          "stop" : 1715561957369,
+          "duration" : 3413
+        }
+      }, {
+        "uid" : "283f832e81f4ebfa",
+        "reportUrl" : "https://Areso.github.io/Oblache/32//#testresult/283f832e81f4ebfa",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1715475797325,
+          "stop" : 1715475801138,
+          "duration" : 3813
+        }
+      }, {
+        "uid" : "2f2e9acf0b69336",
+        "reportUrl" : "https://Areso.github.io/Oblache/31//#testresult/2f2e9acf0b69336",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1715389018065,
+          "stop" : 1715389021227,
+          "duration" : 3162
+        }
+      }, {
+        "uid" : "37c172eba683016f",
+        "reportUrl" : "https://Areso.github.io/Oblache/30//#testresult/37c172eba683016f",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1715302711491,
+          "stop" : 1715302714419,
+          "duration" : 2928
+        }
+      }, {
+        "uid" : "c5a75e7feb88b944",
+        "reportUrl" : "https://Areso.github.io/Oblache/29//#testresult/c5a75e7feb88b944",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1715216304506,
+          "stop" : 1715216307866,
+          "duration" : 3360
+        }
+      }, {
+        "uid" : "a466a8149672e661",
+        "reportUrl" : "https://Areso.github.io/Oblache/28//#testresult/a466a8149672e661",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1715129284082,
+          "stop" : 1715129287278,
+          "duration" : 3196
+        }
+      }, {
+        "uid" : "b8c151d0cc9f9226",
+        "reportUrl" : "https://Areso.github.io/Oblache/27//#testresult/b8c151d0cc9f9226",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1715043415557,
+          "stop" : 1715043418576,
+          "duration" : 3019
+        }
+      }, {
+        "uid" : "d8a2fcc9c31235a2",
+        "reportUrl" : "https://Areso.github.io/Oblache/26//#testresult/d8a2fcc9c31235a2",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1714957152654,
+          "stop" : 1714957155525,
+          "duration" : 2871
+        }
+      }, {
+        "uid" : "aaa50586c70193ff",
+        "reportUrl" : "https://Areso.github.io/Oblache/25//#testresult/aaa50586c70193ff",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1714870852494,
+          "stop" : 1714870854743,
+          "duration" : 2249
+        }
+      }, {
+        "uid" : "e0e457979ab9c30b",
+        "reportUrl" : "https://Areso.github.io/Oblache/24//#testresult/e0e457979ab9c30b",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1714803667531,
+          "stop" : 1714803670128,
+          "duration" : 2597
+        }
+      }, {
+        "uid" : "80e4de27bbd1b861",
+        "reportUrl" : "https://Areso.github.io/Oblache/23//#testresult/80e4de27bbd1b861",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1714705554810,
+          "stop" : 1714705556858,
+          "duration" : 2048
+        }
+      }, {
+        "uid" : "6e83fe6b9fb82af",
+        "reportUrl" : "https://Areso.github.io/Oblache/20//#testresult/6e83fe6b9fb82af",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1714438736982,
+          "stop" : 1714438738592,
+          "duration" : 1610
+        }
+      }, {
+        "uid" : "577b82ed2c310b90",
+        "reportUrl" : "https://Areso.github.io/Oblache/19//#testresult/577b82ed2c310b90",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1714352414103,
+          "stop" : 1714352415649,
+          "duration" : 1546
+        }
+      }, {
+        "uid" : "df09e076b593d006",
+        "reportUrl" : "https://Areso.github.io/Oblache/18//#testresult/df09e076b593d006",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1714266164560,
+          "stop" : 1714266166019,
+          "duration" : 1459
+        }
+      }, {
+        "uid" : "2ec7e1daea9bbb7d",
+        "reportUrl" : "https://Areso.github.io/Oblache/17//#testresult/2ec7e1daea9bbb7d",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1714179471660,
+          "stop" : 1714179473101,
+          "duration" : 1441
+        }
+      }, {
+        "uid" : "5bb3ed8918ded8d0",
+        "reportUrl" : "https://Areso.github.io/Oblache/16//#testresult/5bb3ed8918ded8d0",
+        "status" : "failed",
+        "statusDetails" : "AssertionError",
+        "time" : {
+          "start" : 1714093131097,
+          "stop" : 1714093132490,
+          "duration" : 1393
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "3777a34f3c5a4b6e.json",
+  "parameterValues" : [ ]
+}
