@@ -3,480 +3,176 @@
   "children" : [ {
     "name" : "Product defects",
     "children" : [ {
-      "name" : "AssertionError: Value disk db used(MB) should be more than 0.\nassert 0 > 0\n +  where 0 = int(0)",
+      "name" : "AssertionError: Incorrect status code",
       "children" : [ {
-        "name" : "test_capacity_db",
-        "uid" : "8a20e4fb3a721202",
-        "parentUid" : "41cbc168c73c48621f39c23941e7d4e2",
+        "name" : "POST db_create",
+        "uid" : "3c40172d25093574",
+        "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
         "status" : "failed",
         "time" : {
-          "start" : 1712177879871,
-          "stop" : 1712177978887,
-          "duration" : 99016
+          "start" : 1719622694419,
+          "stop" : 1719622694809,
+          "duration" : 390
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "POST db_create_with_wrong_db_type.",
+        "uid" : "3b2e03f9caa9972b",
+        "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1719622694851,
+          "stop" : 1719622695250,
+          "duration" : 399
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "POST db_create_with_wrong_db_version.",
+        "uid" : "4aef2b600adec6c8",
+        "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1719622695261,
+          "stop" : 1719622695653,
+          "duration" : 392
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "POST db_create_with_wrong_env.",
+        "uid" : "ffa9a2a7afe2dd16",
+        "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1719622695663,
+          "stop" : 1719622696055,
+          "duration" : 392
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "POST db_create_with_wrong_region.",
+        "uid" : "6d74894a0dcd340c",
+        "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1719622696065,
+          "stop" : 1719622696468,
+          "duration" : 403
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "POST delete_container",
+        "uid" : "74c3863795d57dc8",
+        "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1719622705684,
+          "stop" : 1719622726703,
+          "duration" : 21019
+        },
+        "flaky" : true,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "e07dd4ab999b15027ae5a060e6c5c14d"
+    }, {
+      "name" : "AssertionError: Wrong answer from server or need manual deleting!!!",
+      "children" : [ {
+        "name" : "test_delete_database",
+        "uid" : "eb636e1c675e674f",
+        "parentUid" : "c220fb67c33f0db79926e7f15afd205f",
+        "status" : "failed",
+        "time" : {
+          "start" : 1719622785637,
+          "stop" : 1719622789507,
+          "duration" : 3870
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "41cbc168c73c48621f39c23941e7d4e2"
+      "uid" : "c220fb67c33f0db79926e7f15afd205f"
     }, {
-      "name" : "AssertionError: Incorrect status code",
+      "name" : "AssertionError",
       "children" : [ {
-        "name" : "List envs.",
-        "uid" : "21267bc19d3f0dd0",
-        "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
+        "name" : "test_delete_container",
+        "uid" : "8bf0b17d2fcc1b2a",
+        "parentUid" : "a0017ad855102fea08b8682d27fec4ca",
         "status" : "failed",
         "time" : {
-          "start" : 1712177980473,
-          "stop" : 1712177980815,
-          "duration" : 342
+          "start" : 1719622820117,
+          "stop" : 1719622831153,
+          "duration" : 11036
         },
         "flaky" : false,
-        "newFailed" : true,
-        "parameters" : [ ]
-      }, {
-        "name" : "List regions.",
-        "uid" : "1093cf2c42a9d46e",
-        "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
-        "status" : "failed",
-        "time" : {
-          "start" : 1712177980824,
-          "stop" : 1712177981166,
-          "duration" : 342
-        },
-        "flaky" : false,
-        "newFailed" : true,
-        "parameters" : [ ]
-      }, {
-        "name" : "Bad request.",
-        "uid" : "6ac38b0b4cbca7a0",
-        "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
-        "status" : "failed",
-        "time" : {
-          "start" : 1712177981174,
-          "stop" : 1712177981532,
-          "duration" : 358
-        },
-        "flaky" : true,
-        "newFailed" : true,
-        "parameters" : [ ]
-      }, {
-        "name" : "Get profile status.",
-        "uid" : "cf059d2e0f0d1874",
-        "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
-        "status" : "failed",
-        "time" : {
-          "start" : 1712177981540,
-          "stop" : 1712177981900,
-          "duration" : 360
-        },
-        "flaky" : false,
-        "newFailed" : true,
-        "parameters" : [ ]
-      }, {
-        "name" : "Post registration Bulgaria language.",
-        "uid" : "4151422bedcdcab6",
-        "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
-        "status" : "failed",
-        "time" : {
-          "start" : 1712177983767,
-          "stop" : 1712177984106,
-          "duration" : 339
-        },
-        "flaky" : false,
-        "newFailed" : true,
-        "parameters" : [ ]
-      }, {
-        "name" : "Post registration Bulgaria language not agree.",
-        "uid" : "e8d714e5a3cfa224",
-        "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
-        "status" : "failed",
-        "time" : {
-          "start" : 1712177984116,
-          "stop" : 1712177984461,
-          "duration" : 345
-        },
-        "flaky" : false,
-        "newFailed" : true,
-        "parameters" : [ ]
-      }, {
-        "name" : "Post registration email is taken for en-us",
-        "uid" : "fc7e1f8f7b5024ad",
-        "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
-        "status" : "failed",
-        "time" : {
-          "start" : 1712177984481,
-          "stop" : 1712177984835,
-          "duration" : 354
-        },
-        "flaky" : true,
-        "newFailed" : true,
-        "parameters" : [ ]
-      }, {
-        "name" : "Post registration email is taken for bg-bg",
-        "uid" : "d0b3c258b0748526",
-        "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
-        "status" : "failed",
-        "time" : {
-          "start" : 1712177984843,
-          "stop" : 1712177985197,
-          "duration" : 354
-        },
-        "flaky" : true,
-        "newFailed" : true,
-        "parameters" : [ ]
-      }, {
-        "name" : "Post registration email is taken for unsupported languages",
-        "uid" : "55b2d081a614a867",
-        "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
-        "status" : "failed",
-        "time" : {
-          "start" : 1712177985205,
-          "stop" : 1712177985550,
-          "duration" : 345
-        },
-        "flaky" : true,
-        "newFailed" : true,
-        "parameters" : [ ]
-      }, {
-        "name" : "Post login",
-        "uid" : "ba9856f145de6abf",
-        "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
-        "status" : "failed",
-        "time" : {
-          "start" : 1712177985558,
-          "stop" : 1712177985900,
-          "duration" : 342
-        },
-        "flaky" : true,
-        "newFailed" : true,
-        "parameters" : [ ]
-      }, {
-        "name" : "Post db_create",
-        "uid" : "5b3c53f788491126",
-        "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
-        "status" : "failed",
-        "time" : {
-          "start" : 1712177986664,
-          "stop" : 1712177987024,
-          "duration" : 360
-        },
-        "flaky" : false,
-        "newFailed" : true,
-        "parameters" : [ ]
-      }, {
-        "name" : "Post db_create with wrong db_type.",
-        "uid" : "7d5edfeaada97c23",
-        "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
-        "status" : "failed",
-        "time" : {
-          "start" : 1712177987032,
-          "stop" : 1712177987372,
-          "duration" : 340
-        },
-        "flaky" : false,
-        "newFailed" : true,
-        "parameters" : [ ]
-      }, {
-        "name" : "Post db_create with wrong db_version.",
-        "uid" : "15ee126f49d2daf5",
-        "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
-        "status" : "failed",
-        "time" : {
-          "start" : 1712177987380,
-          "stop" : 1712177987721,
-          "duration" : 341
-        },
-        "flaky" : false,
-        "newFailed" : true,
-        "parameters" : [ ]
-      }, {
-        "name" : "Post db_create with wrong env.",
-        "uid" : "c1ee1221303e3bd8",
-        "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
-        "status" : "failed",
-        "time" : {
-          "start" : 1712177987729,
-          "stop" : 1712177988082,
-          "duration" : 353
-        },
-        "flaky" : false,
-        "newFailed" : true,
-        "parameters" : [ ]
-      }, {
-        "name" : "Post db_create with wrong region.",
-        "uid" : "d9fe74369fc42274",
-        "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
-        "status" : "failed",
-        "time" : {
-          "start" : 1712177988093,
-          "stop" : 1712177988446,
-          "duration" : 353
-        },
-        "flaky" : false,
-        "newFailed" : true,
-        "parameters" : [ ]
-      }, {
-        "name" : "test_post_change_password",
-        "uid" : "e1fbfcadf319d5ee",
-        "parentUid" : "e07dd4ab999b15027ae5a060e6c5c14d",
-        "status" : "failed",
-        "time" : {
-          "start" : 1712177989577,
-          "stop" : 1712177989936,
-          "duration" : 359
-        },
-        "flaky" : false,
-        "newFailed" : true,
+        "newFailed" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "e07dd4ab999b15027ae5a060e6c5c14d"
+      "uid" : "a0017ad855102fea08b8682d27fec4ca"
     } ],
     "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
   }, {
     "name" : "Test defects",
     "children" : [ {
-      "name" : "requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+      "name" : "TypeError: unsupported operand type(s) for +: 'Response' and 'int'",
       "children" : [ {
-        "name" : "Post registration for English language.",
-        "uid" : "8bcb301d48f4f156",
-        "parentUid" : "0deff55915d4c9ebc746eac29285817c",
+        "name" : "POST create_docker_container",
+        "uid" : "68e0ffec9172b29",
+        "parentUid" : "2730c7aab466b75b7d1f550f7eeb0ab3",
         "status" : "broken",
         "time" : {
-          "start" : 1712177983029,
-          "stop" : 1712177983371,
-          "duration" : 342
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "Post registration for English language not agree.",
-        "uid" : "fb0b10ccf3e424ed",
-        "parentUid" : "0deff55915d4c9ebc746eac29285817c",
-        "status" : "broken",
-        "time" : {
-          "start" : 1712177983399,
-          "stop" : 1712177983739,
-          "duration" : 340
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "test_post_is_logged",
-        "uid" : "2839ce68dadeac29",
-        "parentUid" : "0deff55915d4c9ebc746eac29285817c",
-        "status" : "broken",
-        "time" : {
-          "start" : 1712177985908,
-          "stop" : 1712177986260,
-          "duration" : 352
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "test_post_is_logged_with_wrong_token",
-        "uid" : "9f8983ecbebfca6d",
-        "parentUid" : "0deff55915d4c9ebc746eac29285817c",
-        "status" : "broken",
-        "time" : {
-          "start" : 1712177986294,
-          "stop" : 1712177986636,
-          "duration" : 342
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "Post db_list",
-        "uid" : "59b9a7359e3debb5",
-        "parentUid" : "0deff55915d4c9ebc746eac29285817c",
-        "status" : "broken",
-        "time" : {
-          "start" : 1712177988454,
-          "stop" : 1712177988808,
-          "duration" : 354
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "test_post_create_docker_container",
-        "uid" : "c9be297fd283c51d",
-        "parentUid" : "0deff55915d4c9ebc746eac29285817c",
-        "status" : "broken",
-        "time" : {
-          "start" : 1712177988837,
-          "stop" : 1712177989177,
-          "duration" : 340
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "test_post_change_password_with_wrong_data",
-        "uid" : "1e8a5e1b48a8547e",
-        "parentUid" : "0deff55915d4c9ebc746eac29285817c",
-        "status" : "broken",
-        "time" : {
-          "start" : 1712177989944,
-          "stop" : 1712177990302,
-          "duration" : 358
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "test_post_change_password_without_token",
-        "uid" : "8ead8e0ffdfc61ac",
-        "parentUid" : "0deff55915d4c9ebc746eac29285817c",
-        "status" : "broken",
-        "time" : {
-          "start" : 1712177990331,
-          "stop" : 1712177990668,
-          "duration" : 337
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "test_post_create_docker_container",
-        "uid" : "af8b745e3fef46e0",
-        "parentUid" : "0deff55915d4c9ebc746eac29285817c",
-        "status" : "broken",
-        "time" : {
-          "start" : 1712177990700,
-          "stop" : 1712177991052,
-          "duration" : 352
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "test_post_create_docker_container_without_token",
-        "uid" : "62773c15bd777be6",
-        "parentUid" : "0deff55915d4c9ebc746eac29285817c",
-        "status" : "broken",
-        "time" : {
-          "start" : 1712177991081,
-          "stop" : 1712177991423,
-          "duration" : 342
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "test_post_create_docker_container_without_token",
-        "uid" : "26ab57c6b0b3977d",
-        "parentUid" : "0deff55915d4c9ebc746eac29285817c",
-        "status" : "broken",
-        "time" : {
-          "start" : 1712177991453,
-          "stop" : 1712177991801,
-          "duration" : 348
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "test_delete_container",
-        "uid" : "ef3e849bebac747a",
-        "parentUid" : "0deff55915d4c9ebc746eac29285817c",
-        "status" : "broken",
-        "time" : {
-          "start" : 1712177991834,
-          "stop" : 1712177992174,
-          "duration" : 340
+          "start" : 1719622700128,
+          "stop" : 1719622702256,
+          "duration" : 2128
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "0deff55915d4c9ebc746eac29285817c"
+      "uid" : "2730c7aab466b75b7d1f550f7eeb0ab3"
     }, {
-      "name" : "selenium.common.exceptions.TimeoutException: Message: Can't find element by locator https://oblache.areso.pro/profile.html",
+      "name" : "selenium.common.exceptions.TimeoutException: Message: Can't find element by locator ('xpath', '//div[@id=\"msg_from_server\"]')",
       "children" : [ {
-        "name" : "test_login",
-        "uid" : "fe0e29a2ea9684f7",
-        "parentUid" : "3ec0d253c762c2d713f950c000c2f309",
-        "status" : "broken",
-        "time" : {
-          "start" : 1712178001513,
-          "stop" : 1712178007050,
-          "duration" : 5537
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
         "name" : "test_create_database",
-        "uid" : "4813409006b0b1be",
-        "parentUid" : "3ec0d253c762c2d713f950c000c2f309",
+        "uid" : "18ba1a15d63b3007",
+        "parentUid" : "3ade11a03a0ed1fd0050f9b450596951",
         "status" : "broken",
         "time" : {
-          "start" : 1712178008598,
-          "stop" : 1712178008598,
-          "duration" : 0
+          "start" : 1719622776040,
+          "stop" : 1719622783847,
+          "duration" : 7807
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
-      }, {
-        "name" : "test_delete_database",
-        "uid" : "6b499fc81f06a353",
-        "parentUid" : "3ec0d253c762c2d713f950c000c2f309",
+      } ],
+      "uid" : "3ade11a03a0ed1fd0050f9b450596951"
+    }, {
+      "name" : "AttributeError: 'ProfilePage' object has no attribute 'check_port_lens_positive'",
+      "children" : [ {
+        "name" : "test_check_port_lens_positive",
+        "uid" : "c693e84fab216764",
+        "parentUid" : "91690991e3eb5d6dd0b87e30faaf93d4",
         "status" : "broken",
         "time" : {
-          "start" : 1712178014598,
-          "stop" : 1712178014598,
-          "duration" : 0
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "test_clipboard",
-        "uid" : "d9301ca98d665b5b",
-        "parentUid" : "3ec0d253c762c2d713f950c000c2f309",
-        "status" : "broken",
-        "time" : {
-          "start" : 1712178020598,
-          "stop" : 1712178020598,
-          "duration" : 0
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "test_clipboard_jdbc",
-        "uid" : "5cadaa27ccd1eaeb",
-        "parentUid" : "3ec0d253c762c2d713f950c000c2f309",
-        "status" : "broken",
-        "time" : {
-          "start" : 1712178026581,
-          "stop" : 1712178026581,
-          "duration" : 0
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "test_clipboard_uuid_docker",
-        "uid" : "4aad75dcd488b78b",
-        "parentUid" : "3ec0d253c762c2d713f950c000c2f309",
-        "status" : "broken",
-        "time" : {
-          "start" : 1712178032580,
-          "stop" : 1712178032580,
+          "start" : 1719622818321,
+          "stop" : 1719622818321,
           "duration" : 0
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "3ec0d253c762c2d713f950c000c2f309"
+      "uid" : "91690991e3eb5d6dd0b87e30faaf93d4"
     } ],
     "uid" : "bdbf199525818fae7a8651db9eafe741"
   } ],
