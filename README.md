@@ -1,5 +1,5 @@
 # Oblache
-This is a public tracker for Oblache project  
+This is a public issue and feature tracker for Oblache project  
 
 ## Design document
 [Design Document](./design_doc.md)
