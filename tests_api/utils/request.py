@@ -27,7 +27,6 @@ class API:
         get_url = API.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url)
-        with allure.step(f'Response JSON: {result_get.text}'):
             return result_get
 
     @staticmethod
@@ -42,7 +41,6 @@ class API:
         get_url = API.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url, token=token)
-        with allure.step(f'Response JSON: {result_get.text}'):
             return result_get
 
     @staticmethod
@@ -60,7 +58,6 @@ class API:
                 "queue_db_delete_orders": 1,
                 "number_of_stuck_tasks": 0
             }, token)
-        with allure.step(f'Response JSON: {result_get.text}'):
             return result_get
 
     @staticmethod
@@ -74,7 +71,6 @@ class API:
         get_url = API.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url)
-        with allure.step(f'Response JSON: {result_get.text}'):
             return result_get
 
     @staticmethod
@@ -88,7 +84,6 @@ class API:
         get_url = API.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url)
-        with allure.step(f'Response JSON: {result_get.text}'):
             return result_get
 
     @staticmethod
@@ -102,7 +97,6 @@ class API:
         get_url = API.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url)
-        with allure.step(f'Response JSON: {result_get.text}'):
             return result_get
 
     @staticmethod
@@ -116,7 +110,6 @@ class API:
         get_url = API.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url)
-        with allure.step(f'Response JSON: {result_get.text}'):
             return result_get
 
     @staticmethod
@@ -130,18 +123,15 @@ class API:
         get_url = API.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url)
-        with allure.step(f'Response JSON: {result_get.text}'):
             return result_get
 
     @staticmethod
     @allure.step('post_registration')
-    def post_registration(email, old_password, language: str, tos_agree: bool):
+    def post_registration(email: str, old_password: str, language: str, tos_agree: bool):
         """
         Method for create new user.
         :param old_password:
-        :type old_password:
         :param email:
-        :type email:
         :param language:
         :param tos_agree:
         :return: JSON Response
@@ -170,17 +160,18 @@ class API:
         :param tos_agree:
         :return: JSON Response
         """
-        json_for_create_new_user = {"email": f'aqa{tests_api.data.data.time}@{mail}.{prefix}',
-                                    "password": old_password,
-                                    "tos_agree": tos_agree,
-                                    "language": language
-                                    }
-        post_resource = '/register'
-        post_url = API.base_url + post_resource
-        with allure.step(f'POST {post_url}. Params:'f'{json_for_create_new_user}'):
-            result_post = HttpMethods.post(post_url, json_for_create_new_user)
-        with allure.step(f'Response JSON: {result_post.text}'):
-            return result_post
+        with allure.step('post_registration_variety_email'):
+            json_for_create_new_user = {"email": f'aqa{tests_api.data.data.time}@{mail}.{prefix}',
+                                        "password": old_password,
+                                        "tos_agree": tos_agree,
+                                        "language": language
+                                        }
+            post_resource = '/register'
+            post_url = API.base_url + post_resource
+            with allure.step(f'POST {post_url}. Params:'f'{json_for_create_new_user}'):
+                result_post = HttpMethods.post(post_url, json_for_create_new_user)
+            with allure.step(f'Response JSON: {result_post.text}'):
+                return result_post
 
     @staticmethod
     def post_login(body):
@@ -204,8 +195,6 @@ class API:
             with allure.step(f'POST {post_url}'):
                 result_post = HttpMethods.post(post_url, token=token)
             with allure.step('Body: {"email":"your_email","password":"your_password"}'):
-                pass
-            with allure.step(f'Response JSON: {result_post.text}'):
                 return result_post
 
     @staticmethod
