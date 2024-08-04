@@ -34,7 +34,7 @@ jobs:
           EMAIL: ${{ secrets.EMAIL}}
           PASSWORD: ${{ secrets.PASSWORD}}
         run: |
-          pytest -s -v --alluredir=allure-results ./tests_api/test_bd.py::TestRequests
+          pytest -s -v --alluredir=allure-results ./tests_api/test_bd.py
         continue-on-error: true
 
 
