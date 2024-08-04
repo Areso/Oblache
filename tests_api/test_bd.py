@@ -77,302 +77,328 @@ from .utils.request import API
 #         Checking.check_status_code(result_post_db_delete, 200)
 
 
-@allure.epic('TestRequests')
-class TestRequests:
-    @allure.suite('GET')
-    class TestGET:
-        @allure.title('GET tos.')
-        def test_tos(self):
-            result_get = API.get_tos()
-            Checking.check_status_code(result_get, 200)
+@allure.suite('GET')
+class TestGET:
+    token = None
 
-        @allure.title('GET profile information.')
-        def test_get_profile(self):
-            result_get = API.get_profile(ConnectionData.token)
-            Checking.check_status_code(result_get, 200)
+    def test_get_token(self, get_token):
+        TestGET.token = get_token[0]
 
-        @allure.title('List db_types.')
-        def test_get_list_db_types(self):
-            result_get = API.get_list_db_types()
-            Checking.check_status_code(result_get, 200)
+    @allure.title('GET tos.')
+    def test_tos(self):
+        result_get = API.get_tos()
+        Checking.check_status_code(result_get, 200)
 
-        @allure.title('GET list db_versions.')
-        def test_get_list_db_versions(self):
-            result_get = API.get_list_dbversions()
-            Checking.check_status_code(result_get, 200)
+    @allure.title('GET profile information.')
+    def test_get_profile(self):
+        result_get = API.get_profile(
+            token=TestGET.token)
+        Checking.check_status_code(result_get, 200)
 
-        @allure.title('GET list envs.')
-        def test_get_list_envs(self):
-            result_get = API.get_list_envs()
-            Checking.check_status_code(result_get, 200)
+    @allure.title('List db_types.')
+    def test_get_list_db_types(self):
+        result_get = API.get_list_db_types()
+        Checking.check_status_code(result_get, 200)
 
-        @allure.title('GET list regions.')
-        def test_get_list_regions(self):
-            result_get = API.get_list_regions()
-            Checking.check_status_code(result_get, 200)
+    @allure.title('GET list db_versions.')
+    def test_get_list_db_versions(self):
+        result_get = API.get_list_dbversions()
+        Checking.check_status_code(result_get, 200)
 
-        @allure.title('GET bad request.')
-        def test_get_with_bad_request(self):
-            result_get = API.get_bad_request()
-            Checking.check_status_code(result_get, 404)
+    @allure.title('GET list envs.')
+    def test_get_list_envs(self):
+        result_get = API.get_list_envs()
+        Checking.check_status_code(result_get, 200)
 
-        @allure.title('GET profile status.')
-        def test_get_status(self):
-            result_get = API.get_status()
-            Checking.check_status_code(result_get, 200)
+    @allure.title('GET list regions.')
+    def test_get_list_regions(self):
+        result_get = API.get_list_regions()
+        Checking.check_status_code(result_get, 200)
 
-    @allure.suite('POST')
-    class TestPOST:
+    @allure.title('GET bad request.')
+    def test_get_with_bad_request(self):
+        result_get = API.get_bad_request()
+        Checking.check_status_code(result_get, 404)
 
-        @allure.title('Post registration for English language.')
-        def test_post_registration_for_english_language(self):
-            result_post = API.post_registration_variety_email(random.choice(['gmail', 'mail', 'yandex']),
-                                                              random.choice(['com', 'ru', 'by']), "en-us", True)
-            print(result_post.text)
-            Checking.check_status_code(result_post, 201)
-            Checking.check_json_search_word_in_value(
-                result_post, 'content', 'msg[1]: registered successfully')
+    @allure.title('GET profile status.')
+    def test_get_status(self):
+        result_get = API.get_status(token=TestGET.token)
+        Checking.check_status_code(result_get, 200)
 
-        @allure.title('Post registration for English language not agree.')
-        def test_post_registration_for_english_language_not_agree(self):
-            result_post = API.post_registration_variety_email(random.choice(['gmail', 'mail', 'yandex']),
-                                                              random.choice(['com', 'ru', 'by']), "en-us", False)
-            print(result_post.text)
-            Checking.check_status_code(result_post, 400)
-            Checking.check_json_search_word_in_value(
-                result_post, 'content', 'msg[36]: you must agree to Terms of Use')
 
-        @allure.title('Post registration Bulgaria language.')
-        def test_post_registration_for_bulgaria_language(self):
-            result_post = API.post_registration_variety_email(
-                random.choice(['gmail', 'mail', 'yandex']), 'bg', "bg-bg", True)
-            Checking.check_status_code(result_post, 201)
-            Checking.check_json_search_word_in_value(
-                result_post, 'content', 'msg[1]: регистриран успешно на потребитель')
+@allure.suite('POST')
+class TestPOST:
+    token = None
+    body = None
+    new_password = None
+    old_password = None
+    email = None
 
-        @allure.title('Post registration Bulgaria language not agree.')
-        def test_post_registration_for_bulgaria_language_not_agree(self):
-            result_post = API.post_registration_variety_email(
-                random.choice(['gmail', 'mail', 'yandex']), 'bg', "bg-bg", False)
-            Checking.check_status_code(result_post, 400)
-            Checking.check_json_search_word_in_value(
-                result_post, 'content', 'msg[36]: трябва да се съгласите с Условията за Ползване')
+    def test_get_token_and_body(self, get_token):
+        TestPOST.token, TestPOST.body, TestPOST.new_password, TestPOST.old_password, TestPOST.email = get_token[0], \
+            get_token[1], get_token[2], get_token[3], get_token[4]
 
-        @allure.title('Post registration email is taken for en-us')
-        def test_post_registration_email_is_taken_for_en_en(self):
-            result_post = API.post_registration("en-us", True)
-            Checking.check_status_code(result_post, 400)
-            Checking.check_json_search_word_in_value(
-                result_post, 'content', 'msg[3]: registration failed, this email is taken')
+    @allure.title('Post registration for English language.')
+    def test_post_registration_for_english_language(self):
+        result_post = API.post_registration_variety_email(
+            mail=random.choice(['gmail', 'mail', 'yandex']),
+            old_password=TestPOST.old_password,
+            prefix=random.choice(['com', 'ru', 'by']),
+            language="en-us",
+            tos_agree=True)
+        Checking.check_status_code(result_post, 201)
+        Checking.check_json_search_word_in_value(
+            result_post, 'content', 'msg[1]: registered successfully')
 
-        @allure.title('Post registration email is taken for bg-bg')
-        def test_post_registration_email_is_taken_for_bg_bg(self):
-            result_post = API.post_registration("bg-bg", True)
-            Checking.check_status_code(result_post, 400)
-            Checking.check_json_search_word_in_value(
-                result_post, 'content', 'msg[3]: неуспешна регистрация на потребител, имейлът е зает')
+    @allure.title('Post registration for English language not agree.')
+    def test_post_registration_for_english_language_not_agree(self):
+        result_post = API.post_registration_variety_email(
+            mail=random.choice(['gmail', 'mail', 'yandex']),
+            old_password=TestPOST.old_password,
+            prefix=random.choice(['com', 'ru', 'by']),
+            language="en-us",
+            tos_agree=False)
+        Checking.check_status_code(result_post, 400)
+        Checking.check_json_search_word_in_value(
+            result_post, 'content', 'msg[36]: you must agree to Terms of Use')
 
-        @allure.title('Post registration email is taken for unsupported languages')
-        def test_post_registration_email_is_taken_for_unsupported_languages(self):
-            result_post = API.post_registration("ru-ru", True)
-            status_code = result_post
-            Checking.check_status_code(status_code, 400)
-            Checking.check_json_search_word_in_value(
-                result_post, 'content', 'msg[34]: the language is not accepted')
+    @allure.title('Post registration Bulgaria language.')
+    def test_post_registration_for_bulgaria_language(self):
+        result_post = API.post_registration_variety_email(
+            mail=random.choice(['gmail', 'mail', 'yandex']),
+            old_password=TestPOST.old_password,
+            prefix='bg',
+            language='bg-bg',
+            tos_agree=True)
+        Checking.check_status_code(result_post, 201)
+        Checking.check_json_search_word_in_value(
+            result_post, 'content', 'msg[1]: регистриран успешно на потребитель')
 
-        @allure.title('Post login')
-        def test_post_login(self):
-            result_post = API.post_login(ConnectionData.body)
-            Checking.check_status_code(result_post, 200)
+    @allure.title('Post registration Bulgaria language not agree.')
+    def test_post_registration_for_bulgaria_language_not_agree(self):
+        result_post = API.post_registration_variety_email(
+            mail=random.choice(['gmail', 'mail', 'yandex']),
+            old_password=TestPOST.old_password,
+            prefix='bg',
+            language='bg-bg',
+            tos_agree=False)
+        Checking.check_status_code(result_post, 400)
+        Checking.check_json_search_word_in_value(
+            result_post, 'content', 'msg[36]: трябва да се съгласите с Условията за Ползване')
 
-        @allure.title('POST is logged')
-        def test_post_is_logged(self):
-            result_post = API.post_is_logged(ConnectionData.token)
-            print(result_post.text)
-            Checking.check_status_code(result_post, 200)
+    @allure.title('Post registration email is taken for en-us')
+    def test_post_registration_email_is_taken_for_en_en(self):
+        result_post = API.post_registration(
+            email=TestPOST.email,
+            old_password=TestPOST.old_password,
+            language="en-us",
+            tos_agree=True)
+        Checking.check_status_code(result_post, 400)
+        Checking.check_json_search_word_in_value(
+            result_post, 'content', 'msg[3]: registration failed, this email is taken')
 
-        @allure.title('POST is_logged_with_wrong_token')
-        def test_post_is_logged_with_wrong_token(self):
-            result_post = API.post_is_logged_with_wrong_token()
-            print(result_post.text)
-            print(result_post.status_code)
-            Checking.check_status_code(result_post, 401)
+    @allure.title('Post registration email is taken for bg-bg')
+    def test_post_registration_email_is_taken_for_bg_bg(self):
+        result_post = API.post_registration(
+            email=TestPOST.email,
+            old_password=TestPOST.old_password,
+            language="bg-bg",
+            tos_agree=True)
+        Checking.check_status_code(result_post, 400)
+        Checking.check_json_search_word_in_value(
+            result_post, 'content', 'msg[3]: неуспешна регистрация на потребител, имейлът е зает')
 
-        @allure.title('POST db_create')
-        def test_post_db_create(self):
-            result = API.post_db_create(ConnectionData.token)
-            print(result.text)
-            Checking.check_status_code(result, 201)
+    @allure.title('Post registration email is taken for unsupported languages')
+    def test_post_registration_email_is_taken_for_unsupported_languages(self):
+        result_post = API.post_registration(
+            email=TestPOST.email,
+            old_password=TestPOST.old_password,
+            language="ru-ru",
+            tos_agree=True)
+        status_code = result_post
+        Checking.check_status_code(status_code, 400)
+        Checking.check_json_search_word_in_value(
+            result_post, 'content', 'msg[34]: the language is not accepted')
 
-        @allure.title('POST db_create_with_wrong_db_type.')
-        def test_post_db_create_with_wrong_values_dbtype(self):
-            result_post_db_list = API.post_db_create_wrong_value_db_type(ConnectionData.token)
-            Checking.check_status_code(result_post_db_list, 400)
-            Checking.check_json_search_word_in_value(result_post_db_list, "content",
-                                                     "error: DB type isn't found or isn't available for order")
+    @allure.title('Post login')
+    def test_post_login(self):
+        result_post = API.post_login(
+            body=TestPOST.body)
+        Checking.check_status_code(result_post, 200)
 
-        @allure.title('POST db_create_with_wrong_db_version.')
-        def test_post_db_create_with_wrong_values_db_version(self):
-            result_post_db_list = API.post_db_create_wrong_value_db_version(ConnectionData.token)
-            Checking.check_status_code(result_post_db_list, 400)
-            Checking.check_json_search_word_in_value(result_post_db_list, "content",
-                                                     "error: DB version isn't found or isn't available for order")
+    @allure.title('POST is logged')
+    def test_post_is_logged(self):
+        result_post = API.post_is_logged(
+            token=TestPOST.token)
+        Checking.check_status_code(result_post, 200)
 
-        @allure.title('POST db_create_with_wrong_env.')
-        def test_post_db_create_with_wrong_values_env(self):
-            result_post_db_list = API.post_db_create_wrong_value_env(ConnectionData.token)
-            Checking.check_status_code(result_post_db_list, 400)
-            Checking.check_json_search_word_in_value(result_post_db_list, "content",
-                                                     "error: DB environment isn't found or isn't available for order")
+    @allure.title('POST is_logged_with_wrong_token')
+    def test_post_is_logged_with_wrong_token(self):
+        result_post = API.post_is_logged_with_wrong_token()
+        Checking.check_status_code(result_post, 401)
 
-        @allure.title('POST db_create_with_wrong_region.')
-        def test_post_db_create_with_wrong_values_region(self):
-            result_post_db_list = API.post_db_create_wrong_value_region(ConnectionData.token)
-            Checking.check_status_code(result_post_db_list, 400)
-            Checking.check_json_search_word_in_value(result_post_db_list, "content",
-                                                     "error: region isn't found or isn't available for order")
+    @allure.title('POST db_create')
+    def test_post_db_create(self):
+        result = API.post_db_create(TestPOST.token)
+        Checking.check_status_code(result, 201)
 
-        @allure.title('POST db_list')
-        def test_post_db_list(self):
-            result_post_db_list = API.post_db_list(ConnectionData.token)
-            print(result_post_db_list.text)
+    @allure.title('POST db_create_with_wrong_db_type.')
+    def test_post_db_create_with_wrong_values_dbtype(self):
+        result_post_db_list = API.post_db_create_wrong_value_db_type(TestPOST.token)
+        Checking.check_status_code(result_post_db_list, 400)
+        Checking.check_json_search_word_in_value(
+            result_post_db_list, "content",
+            "error: DB type isn't found or isn't available for order")
+
+    @allure.title('POST db_create_with_wrong_db_version.')
+    def test_post_db_create_with_wrong_values_db_version(self):
+        result_post_db_list = API.post_db_create_wrong_value_db_version(TestPOST.token)
+        Checking.check_status_code(result_post_db_list, 400)
+        Checking.check_json_search_word_in_value(
+            result_post_db_list, "content",
+            "error: DB version isn't found or isn't available for order")
+
+    @allure.title('POST db_create_with_wrong_env.')
+    def test_post_db_create_with_wrong_values_env(self):
+        result_post_db_list = API.post_db_create_wrong_value_env(TestPOST.token)
+        Checking.check_status_code(result_post_db_list, 400)
+        Checking.check_json_search_word_in_value(
+            result_post_db_list, "content",
+            "error: DB environment isn't found or isn't available for order")
+
+    @allure.title('POST db_create_with_wrong_region.')
+    def test_post_db_create_with_wrong_values_region(self):
+        result_post_db_list = API.post_db_create_wrong_value_region(TestPOST.token)
+        Checking.check_status_code(result_post_db_list, 400)
+        Checking.check_json_search_word_in_value(
+            result_post_db_list, "content",
+            "error: region isn't found or isn't available for order")
+
+    @allure.title('POST db_list')
+    def test_post_db_list(self):
+        result_post_db_list = API.post_db_list(TestPOST.token)
+        Checking.check_status_code(result_post_db_list, 200)
+
+    @allure.title('POST container_list')
+    def test_post_container_list(self):
+        result = API.post_container_list(TestPOST.token)
+        Checking.check_status_code(result, 200)
+
+    @allure.title('POST db_list_with_filter')
+    @pytest.mark.xfail(reason='There are databases that need to be deleted manually.')
+    def test_post_db_list_with_filter(self):
+        list_db = API.post_db_list(TestPOST.token)
+        json_list_db = json.loads(list_db.text)
+        try:
+            first_db_uuid = list(json_list_db['data'])[-1]
+            result_post_db_list = API.delete_db(first_db_uuid, TestPOST.token)
             Checking.check_status_code(result_post_db_list, 200)
+        except IndexError as ex:
+            print(ex)
+            assert str(ex) == 'list index out of range', 'Db list is empty.'
 
-        @allure.title('POST container_list')
-        def test_post_container_list(self):
-            result = API.post_container_list(ConnectionData.token)
-            print(result.text)
-            Checking.check_status_code(result, 200)
+    @allure.title('POST change_password')
+    def test_post_change_password(self):
+        new_password = TestPOST.new_password
+        result_post_change_password = API.post_change_password(
+            TestPOST.token, TestPOST.new_password, new_password)
+        Checking.check_status_code(result_post_change_password, 200)
+        Checking.check_json_search_word_in_value(result_post_change_password, "content",
+                                                 "msg[31]: password successfully updated")
+        result_post_change_password = API.post_change_password(
+            TestPOST.token, new_password, TestPOST.new_password)
+        Checking.check_status_code(result_post_change_password, 200)
+        Checking.check_json_search_word_in_value(result_post_change_password, "content",
+                                                 "msg[31]: password successfully updated")
 
-        @allure.title('POST db_list_with_filter')
-        @pytest.mark.xfail(reason='There are databases that need to be deleted manually.')
-        def test_post_db_list_with_filter(self):
-            list_db = API.post_db_list(ConnectionData.token)
-            json_list_db = json.loads(list_db.text)
-            print(json_list_db)
-            try:
-                first_db_uuid = list(json_list_db['data'])[-1]
-                result_post_db_list = API.delete_db(first_db_uuid, ConnectionData.token)
-                print(result_post_db_list.text)
-                Checking.check_status_code(result_post_db_list, 200)
-            except IndexError as ex:
-                print(ex)
-                assert str(ex) == 'list index out of range', 'Db list is empty.'
+    @allure.title('POST change_password_with_wrong_data')
+    def test_post_change_password_with_wrong_data(self):
+        result = API.post_change_password(TestPOST.token, '123456', '123456')
+        Checking.check_status_code(result, 400)
+        Checking.check_json_search_word_in_value(
+            result, 'content', 'msg[7]: error: current password is incorrect')
 
-        @allure.title('POST change_password')
-        def test_post_change_password(self):
-            new_password = ConnectionData.new_password
-            result_post_change_password = API.post_change_password(
-                ConnectionData.token, ConnectionData.new_password, new_password)
-            Checking.check_status_code(result_post_change_password, 200)
-            Checking.check_json_search_word_in_value(result_post_change_password, "content",
-                                                     "msg[31]: password successfully updated")
-            result_post_change_password = API.post_change_password(
-                ConnectionData.token, new_password, ConnectionData.new_password)
-            Checking.check_status_code(result_post_change_password, 200)
-            Checking.check_json_search_word_in_value(result_post_change_password, "content",
-                                                     "msg[31]: password successfully updated")
+    @allure.title('POST change_password_without_token')
+    def test_post_change_password_without_token(self):
+        new_password = TestPOST.new_password
+        result = API.post_change_password({}, TestPOST.new_password, new_password)
+        Checking.check_status_code(result, 401)
+        Checking.check_json_search_word_in_value(result, 'content', 'msg[5]: unauthenticated')
 
-        @allure.title('POST change_password_with_wrong_data')
-        def test_post_change_password_with_wrong_data(self):
-            result = API.post_change_password(ConnectionData.token, '123456', '123456')
-            print('response', result.text)
-            Checking.check_status_code(result, 400)
-            Checking.check_json_search_word_in_value(
-                result, 'content', 'msg[7]: error: current password is incorrect')
+    @allure.title('POST create_docker_container')
+    def test_post_container_list(self):
+        result = API.post_container_list(TestPOST.token)
+        Checking.check_status_code(result, 200)
 
-        @allure.title('POST change_password_without_token')
-        def test_post_change_password_without_token(self):
-            new_password = ConnectionData.new_password
-            result = API.post_change_password({}, ConnectionData.new_password, new_password)
-            print(result.text)
-            Checking.check_status_code(result, 401)
-            Checking.check_json_search_word_in_value(result, 'content', 'msg[5]: unauthenticated')
+    @allure.title('POST create_docker_container')
+    def test_post_create_docker_container(self):
+        amount_before = API.post_container_list(TestPOST.token)
+        result = API.post_create_docker_container(TestPOST.token)
+        amount_after = API.post_container_list(TestPOST.token)
+        Checking.check_status_code(result, 201)
+        Checking.check_json_value(result, 'msg', 'order for new container accepted')
+        assert amount_before == amount_after + 1, 'Container not added to table.'
 
-        @allure.title('POST create_docker_container')
-        def test_post_container_list(self):
-            result = API.post_container_list(ConnectionData.token)
-            print(len(result.json()['data']), result.status_code)
-            Checking.check_status_code(result, 200)
+    @allure.title('POST checking ports_len positive')
+    def test_post_checking_ports_len_positive(self):
+        result = API.post_create_docker_container_checking_ports(TestPOST.token, "80-89")
+        Checking.check_status_code(result, 201)
+        Checking.check_json_value(result, 'msg', 'order for new container accepted')
 
-        @allure.title('POST create_docker_container')
-        def test_post_create_docker_container(self):
-            amount_before = API.post_container_list(ConnectionData.token)
-            result = API.post_create_docker_container(ConnectionData.token)
-            print(result.text, result.status_code)
-            amount_after = API.post_container_list(ConnectionData.token)
-            Checking.check_status_code(result, 201)
-            Checking.check_json_value(result, 'msg', 'order for new container accepted')
-            assert amount_before == amount_after + 1, 'Container not added to table.'
+    @allure.title('POST checking ports_len negative range')
+    def test_post_checking_ports_len_negative_range(self):
+        result = API.post_create_docker_container_checking_ports(TestPOST.token, "80-90")
+        Checking.check_status_code(result, 400)
+        Checking.check_json_value(result, 'msg', 'msg[]: ports range is too wide')
 
-        @allure.title('POST checking ports_len positive')
-        def test_post_checking_ports_len_positive(self):
-            result = API.post_create_docker_container_checking_ports(ConnectionData.token, "80-89")
-            print(result.text, result.status_code)
-            Checking.check_status_code(result, 201)
-            Checking.check_json_value(result, 'msg', 'order for new container accepted')
+    @allure.title('POST checking ports_len negative len')
+    def test_post_checking_ports_len_negative_len(self):
+        result = API.post_create_docker_container_checking_ports(TestPOST.token,
+                                                                 "80,81,82,83,84,85,86,87,88,89,90")
+        Checking.check_status_code(result, 400)
+        Checking.check_json_value(result, 'msg', 'msg[]: ports range is too wide')
 
-        @allure.title('POST checking ports_len negative range')
-        def test_post_checking_ports_len_negative_range(self):
-            result = API.post_create_docker_container_checking_ports(ConnectionData.token, "80-90")
-            print(result.text, result.status_code)
-            Checking.check_status_code(result, 400)
-            Checking.check_json_value(result, 'msg', 'msg[]: ports range is too wide')
+    @allure.title('POST checking ports_len negative symbols')
+    def test_post_checking_ports_len_negative_symbols(self):
+        result = API.post_create_docker_container_checking_ports(TestPOST.token, "qwert")
+        Checking.check_status_code(result, 400)
+        Checking.check_json_value(result, 'msg', "msg[]: ports range isn't accepted")
 
-        @allure.title('POST checking ports_len negative len')
-        def test_post_checking_ports_len_negative_len(self):
-            result = API.post_create_docker_container_checking_ports(ConnectionData.token,
-                                                                     "80,81,82,83,84,85,86,87,88,89,90")
-            print(result.text, result.status_code)
-            Checking.check_status_code(result, 400)
-            Checking.check_json_value(result, 'msg', 'msg[]: ports range is too wide')
+    @allure.title('POST create_docker_container_without_token')
+    def test_post_create_docker_container_without_token(self):
+        result = API.post_create_docker_container('incorrect_token')
+        Checking.check_status_code(result, 401)
+        Checking.check_json_value(result, 'msg', 'msg[5]: unauthenticated')
 
-        @allure.title('POST checking ports_len negative symbols')
-        def test_post_checking_ports_len_negative_symbols(self):
-            result = API.post_create_docker_container_checking_ports(ConnectionData.token, "qwert")
-            print(result.text, result.status_code)
-            Checking.check_status_code(result, 400)
-            Checking.check_json_value(result, 'msg', "msg[]: ports range isn't accepted")
+    @allure.title('POST create_docker_container_without_token')
+    def test_post_create_docker_with_defunct_image(self):
+        result = API.post_create_docker_container_with_defunct_image(TestPOST.token)
+        Checking.check_status_code(result, 400)
+        Checking.check_json_value(result, 'msg', "msg[]: the image doesn't found in the DockerHub")
 
-        @allure.title('POST create_docker_container_without_token')
-        def test_post_create_docker_container_without_token(self):
-            result = API.post_create_docker_container('incorrect_token')
-            print(result.text, result.status_code)
-            Checking.check_status_code(result, 401)
-            Checking.check_json_value(result, 'msg', 'msg[5]: unauthenticated')
+    @allure.title('POST delete_container')
+    def test_delete_container(self):
+        result = API.post_delete_docker_container(TestPOST.token, -1)
+        Checking.check_status_code(result, 200)
 
-        @allure.title('POST create_docker_container_without_token')
-        def test_post_create_docker_with_defunct_image(self):
-            result = API.post_create_docker_container_with_defunct_image(ConnectionData.token)
-            print(result.text, result.status_code)
-            Checking.check_status_code(result, 400)
-            Checking.check_json_value(result, 'msg', "msg[]: the image doesn't found in the DockerHub")
+    @allure.title('POST delete_db')
+    @pytest.mark.xfail(reason='When using this method during a test run, the database may be in deleting status.')
+    def test_delete_db(self):
+        list_db = API.post_db_list(TestPOST.token)
+        json_list_db = json.loads(list_db.text)
+        try:
+            first_db_uuid = list(json_list_db['data'])[0]
+            result_post_db_delete = API.delete_db(first_db_uuid, TestPOST.token)
+            Checking.check_status_code(result_post_db_delete, 200)
+        except IndexError as ex:
+            print(ex)
+            assert str(ex) == 'list index out of range', 'Db list is empty.'
 
-        @allure.title('POST delete_container')
-        def test_delete_container(self):
-            result = API.post_delete_docker_container(ConnectionData.token, -1)
-            print(result.text, result.status_code)
-            Checking.check_status_code(result, 200)
-
-        @allure.title('POST delete_db')
-        @pytest.mark.xfail(reason='When using this method during a test run, the database may be in deleting status.')
-        def test_delete_db(self):
-            list_db = API.post_db_list(ConnectionData.token)
-            json_list_db = json.loads(list_db.text)
-            try:
-                first_db_uuid = list(json_list_db['data'])[0]
-                result_post_db_delete = API.delete_db(first_db_uuid, ConnectionData.token)
-                print(result_post_db_delete.text)
-                Checking.check_status_code(result_post_db_delete, 200)
-            except IndexError as ex:
-                print(ex)
-                assert str(ex) == 'list index out of range', 'Db list is empty.'
-
-        @pytest.mark.xfail(
-            reason="If databases will be deleting more than 1 minute and all databases won't deleting for this time.")
-        @allure.title('POST delete_all_created_db')
-        def test_delete_all_created_db(self):
-            json_list_db = API.delete_all_created_db()
-            list_db = API.post_db_list(ConnectionData.token)
-            Checking.check_status_code(list_db, 200)
-            assert json_list_db == {}
+    @pytest.mark.xfail(
+        reason="If databases will be deleting more than 1 minute and all databases won't deleting for this time.")
+    @allure.title('POST delete_all_created_db')
+    def test_delete_all_created_db(self):
+        json_list_db = API.delete_all_created_db()
+        list_db = API.post_db_list(TestPOST.token)
+        Checking.check_status_code(list_db, 200)
+        assert json_list_db == {}

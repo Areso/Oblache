@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from datetime import datetime
 
 time = str(datetime.now().strftime("%Y_%m_%d_%H_%M_%S"))
-
+base_url = 'https://dbend.areso.pro'
 
 @dataclass
 class MySqlData:

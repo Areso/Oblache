@@ -13,10 +13,8 @@ from .checking import Checking
 from .http_methods import HttpMethods
 
 
-class API(ConnectionData):
-    def __init__(self, connection):
-        self.connection = connection
-        self.connector = mysql.connector
+class API:
+    base_url = 'https://dbend.areso.pro'
 
     @staticmethod
     @allure.step('get_tos')
@@ -25,12 +23,11 @@ class API(ConnectionData):
         Get information about databases limit.
         :return: Response
         """
-        get_resource = '/tos'  # Resource for method GET
-        get_url = ConnectionData.base_url + get_resource
+        get_resource = '/tos'
+        get_url = API.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url)
         with allure.step(f'Response JSON: {result_get.text}'):
-            print(result_get.json())
             return result_get
 
     @staticmethod
@@ -41,29 +38,28 @@ class API(ConnectionData):
         :param token:
         :return: Response
         """
-        get_resource = '/get_profile'  # Resource for method
-        get_url = ConnectionData.base_url + get_resource
+        get_resource = '/get_profile'
+        get_url = API.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url, token=token)
         with allure.step(f'Response JSON: {result_get.text}'):
-            print(result_get.json())
             return result_get
 
     @staticmethod
     @allure.step('get_status')
-    def get_status():
+    def get_status(token: str):
         """
         Get profile status.
         :return: Response
         """
         get_resource = '/get_profile'  # Resource for method
-        get_url = ConnectionData.base_url + get_resource
+        get_url = API.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url, {
                 "queue_db_create_orders": 3,
                 "queue_db_delete_orders": 1,
                 "number_of_stuck_tasks": 0
-            }, ConnectionData.token)
+            }, token)
         with allure.step(f'Response JSON: {result_get.text}'):
             return result_get
 
@@ -75,7 +71,7 @@ class API(ConnectionData):
         :return: Response
         """
         get_resource = '/list_dbtypes'  # Resource for method GET
-        get_url = ConnectionData.base_url + get_resource
+        get_url = API.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url)
         with allure.step(f'Response JSON: {result_get.text}'):
@@ -89,7 +85,7 @@ class API(ConnectionData):
         :return: Response
         """
         get_resource = '/list_dbversions'  # Resource for method GET
-        get_url = ConnectionData.base_url + get_resource
+        get_url = API.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url)
         with allure.step(f'Response JSON: {result_get.text}'):
@@ -103,7 +99,7 @@ class API(ConnectionData):
         :return: Response
         """
         get_resource = '/list_dbenvs'  # Resource for method GET
-        get_url = ConnectionData.base_url + get_resource
+        get_url = API.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url)
         with allure.step(f'Response JSON: {result_get.text}'):
@@ -117,7 +113,7 @@ class API(ConnectionData):
         :return: Response
         """
         get_resource = '/list_regions'  # Resource for method GET
-        get_url = ConnectionData.base_url + get_resource
+        get_url = API.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url)
         with allure.step(f'Response JSON: {result_get.text}'):
@@ -131,7 +127,7 @@ class API(ConnectionData):
         :return: Response
         """
         get_resource = '/bad_request'  # Resource for method GET
-        get_url = ConnectionData.base_url + get_resource
+        get_url = API.base_url + get_resource
         with allure.step(f'GET {get_url}'):
             result_get = HttpMethods.get(get_url)
         with allure.step(f'Response JSON: {result_get.text}'):
@@ -139,29 +135,35 @@ class API(ConnectionData):
 
     @staticmethod
     @allure.step('post_registration')
-    def post_registration(language: str, tos_agree: bool):
+    def post_registration(email, old_password, language: str, tos_agree: bool):
         """
         Method for create new user.
+        :param old_password:
+        :type old_password:
+        :param email:
+        :type email:
         :param language:
         :param tos_agree:
         :return: JSON Response
         """
-        json_for_create_new_user = {"email": ConnectionData.email,
-                                    "password": ConnectionData.old_password,
+        json_for_create_new_user = {"email": email,
+                                    "password": old_password,
                                     "tos_agree": tos_agree,
                                     'language': language}
 
         post_resource = '/register'  # Resource for method POST
-        post_url = ConnectionData.base_url + post_resource
+        post_url = API.base_url + post_resource
         with allure.step(f'POST {post_url}'):
             result_post = HttpMethods.post(post_url, json_for_create_new_user)
         return result_post
 
     @staticmethod
     @allure.step('post_registration_variety_email')
-    def post_registration_variety_email(mail: str, prefix: str, language: str, tos_agree: bool):
+    def post_registration_variety_email(mail: str, old_password, prefix: str, language: str, tos_agree: bool):
         """
         Method for create new user.
+        :param old_password:
+        :type old_password:
         :param mail:
         :param prefix:
         :param language:
@@ -169,26 +171,22 @@ class API(ConnectionData):
         :return: JSON Response
         """
         json_for_create_new_user = {"email": f'aqa{tests_api.data.data.time}@{mail}.{prefix}',
-                                    "password": ConnectionData.old_password,
+                                    "password": old_password,
                                     "tos_agree": tos_agree,
                                     "language": language
                                     }
         post_resource = '/register'
-        post_url = ConnectionData.base_url + post_resource
+        post_url = API.base_url + post_resource
         with allure.step(f'POST {post_url}. Params:'f'{json_for_create_new_user}'):
             result_post = HttpMethods.post(post_url, json_for_create_new_user)
         with allure.step(f'Response JSON: {result_post.text}'):
             return result_post
 
     @staticmethod
-    def post_login(body: dict):
-        """
-        :param body:
-        :return: Response
-        """
+    def post_login(body):
         with allure.step('post_login'):
             post_resource = '/login'
-            post_url = ConnectionData.base_url + post_resource
+            post_url = API.base_url + post_resource
             with allure.step(f'POST {post_url}'):
                 result_post = HttpMethods.post(post_url, body)
             with allure.step('Body: {"email":"your_email","password":"your_password"}'):
@@ -202,7 +200,7 @@ class API(ConnectionData):
         """
         with allure.step('post_is_logged'):
             post_resource = '/is_logged'
-            post_url = ConnectionData.base_url + post_resource
+            post_url = API.base_url + post_resource
             with allure.step(f'POST {post_url}'):
                 result_post = HttpMethods.post(post_url, token=token)
             with allure.step('Body: {"email":"your_email","password":"your_password"}'):
@@ -217,7 +215,7 @@ class API(ConnectionData):
         """
         with allure.step('post_is_logged'):
             post_resource = '/is_logged'
-            post_url = ConnectionData.base_url + post_resource
+            post_url = API.base_url + post_resource
             with allure.step(f'POST {post_url}'):
                 result_post = HttpMethods.post(post_url, token=1)
             with allure.step('Body: {"email":"your_email","password":"your_password"}'):
@@ -233,7 +231,7 @@ class API(ConnectionData):
         """
         with allure.step('post_db_list'):
             post_resource = '/db_list'  # Resource for method
-            post_url = ConnectionData.base_url + post_resource
+            post_url = API.base_url + post_resource
             with allure.step(f'POST {post_url}'):
                 result_post = HttpMethods.post(post_url, token=token)
             return result_post
@@ -246,7 +244,7 @@ class API(ConnectionData):
         """
         with allure.step('post_container_list'):
             post_resource = '/container_list'  # Resource for method
-            post_url = ConnectionData.base_url + post_resource
+            post_url = API.base_url + post_resource
             with allure.step(f'POST {post_url}'):
                 result_post = HttpMethods.post(post_url, token=token)
             return result_post
@@ -262,7 +260,7 @@ class API(ConnectionData):
         """
         with allure.step('post_change_password'):
             post_resource = '/password_update'  # Resource for method
-            post_url = ConnectionData.base_url + post_resource
+            post_url = API.base_url + post_resource
             with allure.step(f'POST {post_url}'):
                 result_post = HttpMethods.post(post_url,
                                                {"current_password": old_password, "new_password": new_password},
@@ -280,7 +278,7 @@ class API(ConnectionData):
         """
         with allure.step('post_db_list_with_filter'):
             post_resource = '/db_list'  # Resource for method
-            post_url = ConnectionData.base_url + post_resource
+            post_url = API.base_url + post_resource
         with allure.step(f'POST {post_url}'):
             result_post = HttpMethods.post(post_url, {"db_uuid": db_uuid}, token=token)
             return result_post
@@ -293,7 +291,7 @@ class API(ConnectionData):
         """
         with allure.step('post_db_create'):
             post_resource = '/db_create'  # Resource for method
-            post_url = ConnectionData.base_url + post_resource
+            post_url = API.base_url + post_resource
             body = {"dbtype": 3, "dbversion": 5, "env": 3, "region": 3}
             with allure.step(f'POST {post_url}, body: {body}'):
                 result_post = HttpMethods.post(post_url, body, token=token)
@@ -308,7 +306,7 @@ class API(ConnectionData):
         """
         with allure.step('post_db_create_wrong_value_db_type'):
             post_resource = '/db_create'  # Resource for method
-            post_url = ConnectionData.base_url + post_resource
+            post_url = API.base_url + post_resource
             body = {"dbtype": random.randint(4, 100), "dbversion": 5, "env": 3, "region": 3}
             with allure.step(f'POST {post_url}, body: {body}'):
                 result_post = HttpMethods.post(post_url, body, token=token)
@@ -323,7 +321,7 @@ class API(ConnectionData):
         """
         with allure.step('post_db_create_wrong_value_db_version'):
             post_resource = '/db_create'  # Resource for method
-            post_url = ConnectionData.base_url + post_resource
+            post_url = API.base_url + post_resource
             body = {"dbtype": 3, "dbversion": random.randint(6, 100), "env": 3, "region": 3}
             with allure.step(f'POST {post_url}, body: {body}'):
                 result_post = HttpMethods.post(post_url, body, token=token)
@@ -338,7 +336,7 @@ class API(ConnectionData):
         """
         with allure.step('post_db_create_wrong_value_env'):
             post_resource = '/db_create'
-            post_url = ConnectionData.base_url + post_resource
+            post_url = API.base_url + post_resource
             body = {"dbtype": 3, "dbversion": 5, "env": random.randint(4, 100), "region": 3}
             with allure.step(f'POST {post_url}, body: {body}'):
                 result_post = HttpMethods.post(post_url, body, token=token)
@@ -353,7 +351,7 @@ class API(ConnectionData):
         """
         with allure.step('post_db_create_wrong_value_region'):
             post_resource = '/db_create'
-            post_url = ConnectionData.base_url + post_resource
+            post_url = API.base_url + post_resource
             body = {"dbtype": 3, "dbversion": 5, "env": 3, "region": random.randint(4, 100)}
             with allure.step(f'POST {post_url}, body: {body}'):
                 result_post = HttpMethods.post(post_url, body, token=token)
@@ -364,7 +362,7 @@ class API(ConnectionData):
     def post_create_docker_container(token):
         with allure.step('post_create_docker_container'):
             post_resource = '/container_create'
-            post_url = ConnectionData.base_url + post_resource
+            post_url = API.base_url + post_resource
             body = {"docker_image": "nginx", "int_ports": "80", "env": 3, "region": 3}
             with allure.step(f'POST {post_url}, body: {body}'):
                 result_post = HttpMethods.post(post_url, body, token=token)
@@ -375,7 +373,7 @@ class API(ConnectionData):
     def post_create_docker_container_checking_ports(token, port_len):
         with allure.step('post_create_docker_container'):
             post_resource = '/container_create'
-            post_url = ConnectionData.base_url + post_resource
+            post_url = API.base_url + post_resource
             body = {"docker_image": "nginx", "int_ports": f"{port_len}", "env": 3, "region": 3}
             with allure.step(f'POST {post_url}, body: {body}'):
                 result_post = HttpMethods.post(post_url, body, token=token)
@@ -386,7 +384,7 @@ class API(ConnectionData):
     def post_create_docker_container_with_defunct_image(token):
         with allure.step('post_create_docker_container_with_defunct_image'):
             post_resource = '/container_create'
-            post_url = ConnectionData.base_url + post_resource
+            post_url = API.base_url + post_resource
             body = {"docker_image": "", "int_ports": "80", "env": 3, "region": 3}
             with allure.step(f'POST {post_url}, body: {body}'):
                 result_post = HttpMethods.post(post_url, body, token=token)
@@ -397,10 +395,9 @@ class API(ConnectionData):
     def post_delete_docker_container(token, list_index: int):
         with allure.step('post_delete_docker_container'):
             post_resource = '/container_delete'
-            post_url = ConnectionData.base_url + post_resource
+            post_url = API.base_url + post_resource
             result_list = API.post_container_list(token)
             docker_uuid = list(result_list.json()['data'])[list_index]
-            print('Selected uuid for delete:', docker_uuid)
             body = {'docker_uuid': f'{docker_uuid}'}
             time.sleep(20)
             with allure.step(f'POST {post_url}, body: {body}'):
@@ -417,7 +414,7 @@ class API(ConnectionData):
         """
         with allure.step('delete_db'):
             delete_resource = '/db_delete'
-            delete_url = ConnectionData.base_url + delete_resource
+            delete_url = API.base_url + delete_resource
             with allure.step(f'DELETE {delete_url}'):
                 db_uuid = {"db_uuid": f"{uuid}"}
             with allure.step(f'Db uuid is: {db_uuid}'):
@@ -490,17 +487,17 @@ class API(ConnectionData):
             assert last_db_delete.status_code == 400
             Checking.check_json_search_word_in_value(last_db_delete, 'content', 'requested database is not found')
 
-    @allure.step('load_db')
-    def load_db(self):
-        letters = ascii_letters
-        cursor = self.connection()
-        for x in range(1):
-            for i in range(10):
-                my_string = "".join(random.choice(letters) for _ in range(4096))
-                cursor.execute("""
-                INSERT INTO accounts (name, text) 
-                VALUES (
-                'lambotik',
-                %(my_string)s);""",
-                               {'my_string': my_string})
-            self.connection.commit()
+    # @allure.step('load_db')
+    # def load_db(self):
+    #     letters = ascii_letters
+    #     cursor = self.connection()
+    #     for x in range(1):
+    #         for i in range(10):
+    #             my_string = "".join(random.choice(letters) for _ in range(4096))
+    #             cursor.execute("""
+    #             INSERT INTO accounts (name, text)
+    #             VALUES (
+    #             'lambotik',
+    #             %(my_string)s);""",
+    #                            {'my_string': my_string})
+    #         self.connection.commit()
