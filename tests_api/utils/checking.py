@@ -7,6 +7,9 @@ import requests
 
 class Checking:
 
+    def __init__(self):
+        pass
+
     @staticmethod
     def check_status_code(result: requests.models.Response, status_code: int):
         """
