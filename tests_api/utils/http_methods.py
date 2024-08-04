@@ -17,14 +17,13 @@ class HttpMethods:
         :return:
         """
         Logger.add_request(url, method='GET')
-        result = requests.get(url, headers=HttpMethods.headers | {'Authorization': f'{token}'},
-                              cookies=HttpMethods.cookie)
-
-        with allure.step(f'Status code: {result.status_code}'):
-            pass
-        with allure.step(f'Response: {result.text}'):
-            Logger.add_response(result)
-        return result
+        response = requests.get(
+            url=url,
+            headers=HttpMethods.headers | {'Authorization': f'{token}'},
+            cookies=HttpMethods.cookie,
+            json=body)
+        Logger.add_response(response)
+        return response
 
     @staticmethod
     def post(url, body=None, token=None, data=None, cookie=None, json=None):
@@ -37,15 +36,16 @@ class HttpMethods:
         :param json
         :return:
         """
-        Logger.add_request(url, method='POST')
+        Logger.add_request(
+            url=url,
+            method='POST')
         # HttpMethods.headers['Authorization'] = token
-        result = requests.post(url, json=body,
-                               headers=HttpMethods.headers | {'Authorization': f'{token}'})
-        with allure.step(f'Status code: {result.status_code}'):
-            pass
-        with allure.step(f'Params url: {url}'):
-            Logger.add_response(result)
-        return result
+        response = requests.post(
+            url=url,
+            json=body,
+            headers=HttpMethods.headers | {'Authorization': f'{token}'})
+        Logger.add_response(response)
+        return response
 
     @staticmethod
     def post_for_delete_db(url, db_uuid, sid):
@@ -56,12 +56,12 @@ class HttpMethods:
         :return:
         """
         Logger.add_request(url, method='POST')
-        result = requests.post(url, data=db_uuid, cookies=sid)
-        with allure.step(f'Status code: {result.status_code}'):
+        response = requests.post(url, data=db_uuid, cookies=sid)
+        with allure.step(f'Status code: {response.status_code}'):
             pass
         with allure.step(f'Params url: {url}'):
             pass
-        with allure.step(f'Response: {result.json()}'):
+        with allure.step(f'Response: {response.json()}'):
             pass
-        Logger.add_response(result)
-        return result
+        Logger.add_response(response)
+        return response

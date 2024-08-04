@@ -1,6 +1,7 @@
 import datetime
 import os
 
+import allure
 from requests import Response
 from tests_api.logs.logger_path import LOGS_DIR
 
@@ -34,7 +35,7 @@ class Logger:
         headers_as_dict = dict(result.headers)
 
         data_to_add = f'Response code: {result.status_code}\n'
-        data_to_add += f'Response text: {result}\n'
+        data_to_add += f'Response json: {result.text}\n'
         data_to_add += f'Response headers: {headers_as_dict}\n'
         data_to_add += f'Response cookies: {cookies_as_dict}\n'
         data_to_add += '\n------\n'
