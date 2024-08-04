@@ -17,36 +17,60 @@ class API:
     base_url = 'https://dbend.areso.pro'
 
     @staticmethod
-    @allure.step('get_tos')
-    def get_tos():
+    def get_tos(token: str):
         """
         Get information about databases limit.
         :return: Response
         """
         get_resource = '/tos'
         get_url = API.base_url + get_resource
-        with allure.step(f'GET {get_url}'):
-            result_get = HttpMethods.get(get_url)
-        with allure.step(f'Response JSON: {result_get.text}'):
-            return result_get
+        response = HttpMethods.get(url=get_url)
+        with allure.step('Endpoint: /tos'):
+            ...
+        with allure.step('Request:'):
+            with allure.step(f'Url: {get_url}'):
+                ...
+            with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                ...
+            with allure.step(f'Body: {None}'):
+                ...
+        with allure.step('Response:'):
+            with allure.step(f'Status code: {response.status_code}'):
+                ...
+            with allure.step(f'JSON: {response.json()}'):
+                ...
+        return response
 
     @staticmethod
-    @allure.step('get_profile')
-    def get_profile(token):
+    def get_profile(token: str):
         """
         Get profile information.
         :param token:
         :return: Response
         """
+
         get_resource = '/get_profile'
         get_url = API.base_url + get_resource
-        with allure.step(f'GET {get_url}'):
-            result_get = HttpMethods.get(get_url, token=token)
-        with allure.step(f'Response JSON: {result_get.text}'):
-            return result_get
+        response = HttpMethods.get(
+            url=get_url,
+            token=token)
+        with allure.step('Endpoint: /get_profile'):
+            ...
+        with allure.step('Request:'):
+            with allure.step(f'Url: {get_url}'):
+                ...
+            with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                ...
+            with allure.step(f'Body: {None}'):
+                ...
+        with allure.step('Response:'):
+            with allure.step(f'Status code: {response.status_code}'):
+                ...
+            with allure.step(f'JSON: {response.json()}'):
+                ...
+        return response
 
     @staticmethod
-    @allure.step('get_status')
     def get_status(token: str):
         """
         Get profile status.
@@ -54,17 +78,34 @@ class API:
         """
         get_resource = '/get_profile'  # Resource for method
         get_url = API.base_url + get_resource
-        with allure.step(f'GET {get_url}'):
-            result_get = HttpMethods.get(get_url, {
-                "queue_db_create_orders": 3,
-                "queue_db_delete_orders": 1,
-                "number_of_stuck_tasks": 0
-            }, token)
-        with allure.step(f'Response JSON: {result_get.text}'):
-            return result_get
+        response = HttpMethods.get(
+            url=get_url,
+            body={"queue_db_create_orders": 3,
+                  "queue_db_delete_orders": 1,
+                  "number_of_stuck_tasks": 0},
+            token=token)
+        with allure.step('Endpoint: /get_profile'):
+            ...
+        with allure.step('Request:'):
+            with allure.step(f'Url: {get_url}'):
+                ...
+            with allure.step(f"Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}"):
+                ...
+            with allure.step("""
+            Body: {
+            "queue_db_create_orders": 3,
+            "queue_db_delete_orders": 1,
+            "number_of_stuck_tasks": 0
+            }"""):
+                ...
+        with allure.step('Response:'):
+            with allure.step(f'Status code: {response.status_code}'):
+                ...
+            with allure.step(f'JSON: {response.json()}'):
+                ...
+        return response
 
     @staticmethod
-    @allure.step('get_list_db_types')
     def get_list_db_types():
         """
         Get databases type list.
@@ -72,13 +113,24 @@ class API:
         """
         get_resource = '/list_dbtypes'  # Resource for method GET
         get_url = API.base_url + get_resource
-        with allure.step(f'GET {get_url}'):
-            result_get = HttpMethods.get(get_url)
-        with allure.step(f'Response JSON: {result_get.text}'):
-            return result_get
+        response = HttpMethods.get(url=get_url)
+        with allure.step('Endpoint: /list_dbtypes'):
+            ...
+        with allure.step('Request:'):
+            with allure.step(f'Url: {get_url}'):
+                ...
+            with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'}}'):
+                ...
+            with allure.step(f'Body: {None}'):
+                ...
+        with allure.step('Response:'):
+            with allure.step(f'Status code: {response.status_code}'):
+                ...
+            with allure.step(f'JSON: {response.json()}'):
+                ...
+        return response
 
     @staticmethod
-    @allure.step('get_list_dbversions')
     def get_list_dbversions():
         """
         Get list databases versions.
@@ -86,13 +138,24 @@ class API:
         """
         get_resource = '/list_dbversions'  # Resource for method GET
         get_url = API.base_url + get_resource
-        with allure.step(f'GET {get_url}'):
-            result_get = HttpMethods.get(get_url)
-        with allure.step(f'Response JSON: {result_get.text}'):
-            return result_get
+        response = HttpMethods.get(url=get_url)
+        with allure.step('Endpoint: /list_dbversions'):
+            ...
+        with allure.step('Request:'):
+            with allure.step(f'Url: {get_url}'):
+                ...
+            with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'}}'):
+                ...
+            with allure.step(f'Body: {None}'):
+                ...
+        with allure.step('Response:'):
+            with allure.step(f'Status code: {response.status_code}'):
+                ...
+            with allure.step(f'JSON: {response.json()}'):
+                ...
+        return response
 
     @staticmethod
-    @allure.step('get_list_envs')
     def get_list_envs():
         """
         Get list environments.
@@ -100,13 +163,24 @@ class API:
         """
         get_resource = '/list_dbenvs'  # Resource for method GET
         get_url = API.base_url + get_resource
-        with allure.step(f'GET {get_url}'):
-            result_get = HttpMethods.get(get_url)
-        with allure.step(f'Response JSON: {result_get.text}'):
-            return result_get
+        response = HttpMethods.get(url=get_url)
+        with allure.step('Endpoint: /list_dbenvs'):
+            ...
+        with allure.step('Request:'):
+            with allure.step(f'Url: {get_url}'):
+                ...
+            with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'}}'):
+                ...
+            with allure.step(f'Body: {None}'):
+                ...
+        with allure.step('Response:'):
+            with allure.step(f'Status code: {response.status_code}'):
+                ...
+            with allure.step(f'JSON: {response.json()}'):
+                ...
+        return response
 
     @staticmethod
-    @allure.step('get_list_regions')
     def get_list_regions():
         """
         Get list regions.
@@ -114,13 +188,24 @@ class API:
         """
         get_resource = '/list_regions'  # Resource for method GET
         get_url = API.base_url + get_resource
-        with allure.step(f'GET {get_url}'):
-            result_get = HttpMethods.get(get_url)
-        with allure.step(f'Response JSON: {result_get.text}'):
-            return result_get
+        response = HttpMethods.get(url=get_url)
+        with allure.step('Endpoint: /list_regions'):
+            ...
+        with allure.step('Request:'):
+            with allure.step(f'Url: {get_url}'):
+                ...
+            with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'}}'):
+                ...
+            with allure.step(f'Body: {None}'):
+                ...
+        with allure.step('Response:'):
+            with allure.step(f'Status code: {response.status_code}'):
+                ...
+            with allure.step(f'JSON: {response.json()}'):
+                ...
+        return response
 
     @staticmethod
-    @allure.step('get_bad_request')
     def get_bad_request():
         """
         Send bad request.
@@ -128,23 +213,32 @@ class API:
         """
         get_resource = '/bad_request'  # Resource for method GET
         get_url = API.base_url + get_resource
-        with allure.step(f'GET {get_url}'):
-            result_get = HttpMethods.get(get_url)
-        with allure.step(f'Response JSON: {result_get.text}'):
-            return result_get
+        response = HttpMethods.get(url=get_url)
+        with allure.step('Endpoint: /bad_request'):
+            ...
+        with allure.step('Request:'):
+            with allure.step(f'Url: {get_url}'):
+                ...
+            with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'}}'):
+                ...
+            with allure.step(f'Body: {None}'):
+                ...
+        with allure.step('Response:'):
+            with allure.step(f'Status code: {response.status_code}'):
+                ...
+            with allure.step(f'JSON: {response.text}'):
+                ...
+        return response
 
     @staticmethod
-    @allure.step('post_registration')
-    def post_registration(email, old_password, language: str, tos_agree: bool):
+    def post_registration(email: str, old_password: str, language: str, tos_agree: bool):
         """
         Method for create new user.
         :param old_password:
-        :type old_password:
         :param email:
-        :type email:
         :param language:
         :param tos_agree:
-        :return: JSON Response
+        :return: Response
         """
         json_for_create_new_user = {"email": email,
                                     "password": old_password,
@@ -153,12 +247,33 @@ class API:
 
         post_resource = '/register'  # Resource for method POST
         post_url = API.base_url + post_resource
-        with allure.step(f'POST {post_url}'):
-            result_post = HttpMethods.post(post_url, json_for_create_new_user)
-        return result_post
+        response = HttpMethods.post(
+            url=post_url,
+            body=json_for_create_new_user)
+        with allure.step('Endpoint: /bad_request'):
+            ...
+        with allure.step('Request:'):
+            with allure.step(f'Url: {post_url}'):
+                ...
+            with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'}}'):
+                ...
+            with allure.step(
+                    f"""Body: 
+                            {{
+                            "email": email,
+                            "password": password,
+                            "tos_agree": {tos_agree},
+                            "language": {language}
+                            }}"""):
+                ...
+        with allure.step('Response:'):
+            with allure.step(f'Status code: {response.status_code}'):
+                ...
+            with allure.step(f'JSON: {response.json()}'):
+                ...
+        return response
 
     @staticmethod
-    @allure.step('post_registration_variety_email')
     def post_registration_variety_email(mail: str, old_password, prefix: str, language: str, tos_agree: bool):
         """
         Method for create new user.
@@ -168,29 +283,71 @@ class API:
         :param prefix:
         :param language:
         :param tos_agree:
-        :return: JSON Response
+        :return: Response
         """
-        json_for_create_new_user = {"email": f'aqa{tests_api.data.data.time}@{mail}.{prefix}',
-                                    "password": old_password,
-                                    "tos_agree": tos_agree,
-                                    "language": language
-                                    }
-        post_resource = '/register'
-        post_url = API.base_url + post_resource
-        with allure.step(f'POST {post_url}. Params:'f'{json_for_create_new_user}'):
-            result_post = HttpMethods.post(post_url, json_for_create_new_user)
-        with allure.step(f'Response JSON: {result_post.text}'):
-            return result_post
+        with allure.step('post_registration_variety_email'):
+            json_for_create_new_user = {"email": f'aqa{tests_api.data.data.time}@{mail}.{prefix}',
+                                        "password": old_password,
+                                        "tos_agree": tos_agree,
+                                        "language": language
+                                        }
+            post_resource = '/register'
+            post_url = API.base_url + post_resource
+            response = HttpMethods.post(
+                url=post_url,
+                body=json_for_create_new_user)
+            with allure.step('Endpoint: /register'):
+                ...
+            with allure.step('Request:'):
+                with allure.step(f'Url: {post_url}'):
+                    ...
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'}}'):
+                    ...
+                with allure.step(
+                        f"""Body: 
+                                {{
+                                "email": f'aqa{tests_api.data.data.time}@{mail}.{prefix}',
+                                "password": password,
+                                "tos_agree": {tos_agree},
+                                "language": {language}
+                                }}"""):
+                    ...
+            with allure.step('Response:'):
+                with allure.step(f'Status code: {response.status_code}'):
+                    ...
+                with allure.step(f'JSON: {response.json()}'):
+                    ...
+            return response
 
     @staticmethod
     def post_login(body):
+        """
+        Method for login user.
+        :param body:
+        :return: Response
+        """
         with allure.step('post_login'):
             post_resource = '/login'
             post_url = API.base_url + post_resource
-            with allure.step(f'POST {post_url}'):
-                result_post = HttpMethods.post(post_url, body)
-            with allure.step('Body: {"email":"your_email","password":"your_password"}'):
-                return result_post
+            response = HttpMethods.post(
+                url=post_url,
+                body=body)
+            with allure.step('Endpoint: /login'):
+                ...
+            with allure.step('Request:'):
+                with allure.step(f'Url: {post_url}'):
+                    ...
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'}}'):
+                    ...
+                with allure.step(
+                        """Body: {"email": email, "password": password}"""):
+                    ...
+            with allure.step('Response:'):
+                with allure.step(f'Status code: {response.status_code}'):
+                    ...
+                with allure.step(f'JSON: {response.json()}'):
+                    ...
+            return response
 
     @staticmethod
     def post_is_logged(token):
@@ -201,12 +358,24 @@ class API:
         with allure.step('post_is_logged'):
             post_resource = '/is_logged'
             post_url = API.base_url + post_resource
-            with allure.step(f'POST {post_url}'):
-                result_post = HttpMethods.post(post_url, token=token)
-            with allure.step('Body: {"email":"your_email","password":"your_password"}'):
-                pass
-            with allure.step(f'Response JSON: {result_post.text}'):
-                return result_post
+            response = HttpMethods.post(
+                url=post_url,
+                token=token)
+            with allure.step('Endpoint: /is_logged'):
+                ...
+            with allure.step('Request:'):
+                with allure.step(f'Url: {post_url}'):
+                    ...
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                    ...
+                with allure.step(f"""Body: {None}"""):
+                    ...
+            with allure.step('Response:'):
+                with allure.step(f'Status code: {response.status_code}'):
+                    ...
+                with allure.step(f'JSON: {response.json()}'):
+                    ...
+            return response
 
     @staticmethod
     def post_is_logged_with_wrong_token():
@@ -216,15 +385,27 @@ class API:
         with allure.step('post_is_logged'):
             post_resource = '/is_logged'
             post_url = API.base_url + post_resource
-            with allure.step(f'POST {post_url}'):
-                result_post = HttpMethods.post(post_url, token=1)
-            with allure.step('Body: {"email":"your_email","password":"your_password"}'):
-                pass
-            with allure.step(f'Response JSON: {result_post.text}'):
-                return result_post
+            response = HttpMethods.post(
+                url=post_url,
+                token=1)
+            with allure.step('Endpoint: /is_logged'):
+                ...
+            with allure.step('Request:'):
+                with allure.step(f'Url: {post_url}'):
+                    ...
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{1}'}}'):
+                    ...
+                with allure.step(f"""Body: {None}"""):
+                    ...
+            with allure.step('Response:'):
+                with allure.step(f'Status code: {response.status_code}'):
+                    ...
+                with allure.step(f'JSON: {response.json()}'):
+                    ...
+            return response
 
     @staticmethod
-    def post_db_list(token: dict):
+    def post_db_list(token: str):
         """
         :param token:
         :return: Response
@@ -232,12 +413,27 @@ class API:
         with allure.step('post_db_list'):
             post_resource = '/db_list'  # Resource for method
             post_url = API.base_url + post_resource
-            with allure.step(f'POST {post_url}'):
-                result_post = HttpMethods.post(post_url, token=token)
-            return result_post
+            response = HttpMethods.post(
+                url=post_url,
+                token=token)
+            with allure.step('Endpoint: /db_list'):
+                ...
+            with allure.step('Request:'):
+                with allure.step(f'Url: {post_url}'):
+                    ...
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                    ...
+                with allure.step(f"""Body: {None}"""):
+                    ...
+            with allure.step('Response:'):
+                with allure.step(f'Status code: {response.status_code}'):
+                    ...
+                with allure.step(f'JSON: {response.json()}'):
+                    ...
+            return response
 
     @staticmethod
-    def post_container_list(token: dict):
+    def post_container_list(token: str):
         """
         :param token:
         :return: Response
@@ -245,12 +441,27 @@ class API:
         with allure.step('post_container_list'):
             post_resource = '/container_list'  # Resource for method
             post_url = API.base_url + post_resource
-            with allure.step(f'POST {post_url}'):
-                result_post = HttpMethods.post(post_url, token=token)
-            return result_post
+            response = HttpMethods.post(
+                url=post_url,
+                token=token)
+            with allure.step('Endpoint: /container_list'):
+                ...
+            with allure.step('Request:'):
+                with allure.step(f'Url: {post_url}'):
+                    ...
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                    ...
+                with allure.step(f"""Body: {None}"""):
+                    ...
+            with allure.step('Response:'):
+                with allure.step(f'Status code: {response.status_code}'):
+                    ...
+                with allure.step(f'JSON: {response.json()}'):
+                    ...
+            return response
 
     @staticmethod
-    def post_change_password(token: dict, old_password: str, new_password: str):
+    def post_change_password(token: str, old_password: str, new_password: str):
         """
         Body example {"current_password":"", "new_password":""}.
         :param token:
@@ -261,15 +472,28 @@ class API:
         with allure.step('post_change_password'):
             post_resource = '/password_update'  # Resource for method
             post_url = API.base_url + post_resource
-            with allure.step(f'POST {post_url}'):
-                result_post = HttpMethods.post(post_url,
-                                               {"current_password": old_password, "new_password": new_password},
-                                               token=token)
-            with allure.step(f'Response JSON: {result_post.text}'):
-                return result_post
+            response = HttpMethods.post(
+                url=post_url,
+                body={"current_password": old_password, "new_password": new_password},
+                token=token)
+            with allure.step('Endpoint: /password_update'):
+                ...
+            with allure.step('Request:'):
+                with allure.step(f'Url: {post_url}'):
+                    ...
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                    ...
+                with allure.step("""Body: {"current_password": old_password, "new_password": new_password}"""):
+                    ...
+            with allure.step('Response:'):
+                with allure.step(f'Status code: {response.status_code}'):
+                    ...
+                with allure.step(f'JSON: {response.json()}'):
+                    ...
+            return response
 
     @staticmethod
-    def post_db_list_with_filter(token: dict, db_uuid: str):
+    def post_db_list_with_filter(token: str, db_uuid: str):
         """
         Getting information about bd by uuid
         :param token: dict
@@ -279,12 +503,28 @@ class API:
         with allure.step('post_db_list_with_filter'):
             post_resource = '/db_list'  # Resource for method
             post_url = API.base_url + post_resource
-        with allure.step(f'POST {post_url}'):
-            result_post = HttpMethods.post(post_url, {"db_uuid": db_uuid}, token=token)
-            return result_post
+            response = HttpMethods.post(
+                url=post_url,
+                body={"db_uuid": db_uuid},
+                token=token)
+            with allure.step('Endpoint: /db_list'):
+                ...
+            with allure.step('Request:'):
+                with allure.step(f'Url: {post_url}'):
+                    ...
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                    ...
+                with allure.step("""Body: {"db_uuid": db_uuid}"""):
+                    ...
+            with allure.step('Response:'):
+                with allure.step(f'Status code: {response.status_code}'):
+                    ...
+                with allure.step(f'JSON: {response.json()}'):
+                    ...
+            return response
 
     @staticmethod
-    def post_db_create(token: dict):
+    def post_db_create(token: str):
         """
         :param token:
         :return: Response
@@ -293,13 +533,28 @@ class API:
             post_resource = '/db_create'  # Resource for method
             post_url = API.base_url + post_resource
             body = {"dbtype": 3, "dbversion": 5, "env": 3, "region": 3}
-            with allure.step(f'POST {post_url}, body: {body}'):
-                result_post = HttpMethods.post(post_url, body, token=token)
-            with allure.step(f'Response JSON: {result_post.text}'):
-                return result_post
+            response = HttpMethods.post(
+                url=post_url,
+                body=body,
+                token=token)
+            with allure.step('Endpoint: /db_create'):
+                ...
+            with allure.step('Request:'):
+                with allure.step(f'Url: {post_url}'):
+                    ...
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                    ...
+                with allure.step("""Body: {"dbtype": 3, "dbversion": 5, "env": 3, "region": 3}"""):
+                    ...
+            with allure.step('Response:'):
+                with allure.step(f'Status code: {response.status_code}'):
+                    ...
+                with allure.step(f'JSON: {response.text}'):
+                    ...
+            return response
 
     @staticmethod
-    def post_db_create_wrong_value_db_type(token: dict):
+    def post_db_create_wrong_value_db_type(token: str):
         """
         :param token:
         :return: Response
@@ -307,14 +562,30 @@ class API:
         with allure.step('post_db_create_wrong_value_db_type'):
             post_resource = '/db_create'  # Resource for method
             post_url = API.base_url + post_resource
-            body = {"dbtype": random.randint(4, 100), "dbversion": 5, "env": 3, "region": 3}
-            with allure.step(f'POST {post_url}, body: {body}'):
-                result_post = HttpMethods.post(post_url, body, token=token)
-            with allure.step(f'Response JSON: {result_post.text}'):
-                return result_post
+            random_value = random.randint(4, 100)
+            body = {"dbtype": random_value, "dbversion": 5, "env": 3, "region": 3}
+            response = HttpMethods.post(
+                url=post_url,
+                body=body,
+                token=token)
+            with allure.step('Endpoint: /db_create'):
+                ...
+            with allure.step('Request:'):
+                with allure.step(f'Url: {post_url}'):
+                    ...
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                    ...
+                with allure.step(f"""Body: {{"dbtype": f'{random_value}', "dbversion": 5, "env": 3, "region": 3}}"""):
+                    ...
+            with allure.step('Response:'):
+                with allure.step(f'Status code: {response.status_code}'):
+                    ...
+                with allure.step(f'JSON: {response.json()}'):
+                    ...
+            return response
 
     @staticmethod
-    def post_db_create_wrong_value_db_version(token: dict):
+    def post_db_create_wrong_value_db_version(token: str):
         """
         :param token:
         :return: Response
@@ -322,14 +593,30 @@ class API:
         with allure.step('post_db_create_wrong_value_db_version'):
             post_resource = '/db_create'  # Resource for method
             post_url = API.base_url + post_resource
-            body = {"dbtype": 3, "dbversion": random.randint(6, 100), "env": 3, "region": 3}
-            with allure.step(f'POST {post_url}, body: {body}'):
-                result_post = HttpMethods.post(post_url, body, token=token)
-            with allure.step(f'Response JSON: {result_post.text}'):
-                return result_post
+            random_value = random.randint(6, 100)
+            body = {"dbtype": 3, "dbversion": random_value, "env": 3, "region": 3}
+            response = HttpMethods.post(
+                url=post_url,
+                body=body,
+                token=token)
+            with allure.step('Endpoint: /db_create'):
+                ...
+            with allure.step('Request:'):
+                with allure.step(f'Url: {post_url}'):
+                    ...
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                    ...
+                with allure.step(f"""Body: {{"dbtype": 3, "dbversion": {random_value}, "env": 3, "region": 3}}"""):
+                    ...
+            with allure.step('Response:'):
+                with allure.step(f'Status code: {response.status_code}'):
+                    ...
+                with allure.step(f'JSON: {response.json()}'):
+                    ...
+            return response
 
     @staticmethod
-    def post_db_create_wrong_value_env(token: dict):
+    def post_db_create_wrong_value_env(token: str):
         """
         :param token:
         :return: Response
@@ -337,14 +624,30 @@ class API:
         with allure.step('post_db_create_wrong_value_env'):
             post_resource = '/db_create'
             post_url = API.base_url + post_resource
-            body = {"dbtype": 3, "dbversion": 5, "env": random.randint(4, 100), "region": 3}
-            with allure.step(f'POST {post_url}, body: {body}'):
-                result_post = HttpMethods.post(post_url, body, token=token)
-            with allure.step(f'Response JSON: {result_post.text}'):
-                return result_post
+            random_value = random.randint(4, 100)
+            body = {"dbtype": 3, "dbversion": 5, "env": random_value, "region": 3}
+            response = HttpMethods.post(
+                url=post_url,
+                body=body,
+                token=token)
+            with allure.step('Endpoint: /db_create'):
+                ...
+            with allure.step('Request:'):
+                with allure.step(f'Url: {post_url}'):
+                    ...
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                    ...
+                with allure.step(f"""Body: {{"dbtype": 3, "dbversion": 5, "env": {random_value}, "region": 3}}"""):
+                    ...
+            with allure.step('Response:'):
+                with allure.step(f'Status code: {response.status_code}'):
+                    ...
+                with allure.step(f'JSON: {response.json()}'):
+                    ...
+            return response
 
     @staticmethod
-    def post_db_create_wrong_value_region(token: dict):
+    def post_db_create_wrong_value_region(token: str):
         """
         :param token:
         :return: Response
@@ -352,11 +655,27 @@ class API:
         with allure.step('post_db_create_wrong_value_region'):
             post_resource = '/db_create'
             post_url = API.base_url + post_resource
-            body = {"dbtype": 3, "dbversion": 5, "env": 3, "region": random.randint(4, 100)}
-            with allure.step(f'POST {post_url}, body: {body}'):
-                result_post = HttpMethods.post(post_url, body, token=token)
-            with allure.step(f'Response JSON: {result_post.text}'):
-                return result_post
+            random_value = random.randint(4, 100)
+            body = {"dbtype": 3, "dbversion": 5, "env": 3, "region": random_value}
+            response = HttpMethods.post(
+                url=post_url,
+                body=body,
+                token=token)
+            with allure.step('Endpoint: /db_create'):
+                ...
+            with allure.step('Request:'):
+                with allure.step(f'Url: {post_url}'):
+                    ...
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                    ...
+                with allure.step(f"""Body: {{"dbtype": 3, "dbversion": 5, "env": 3, "region": {random_value}}}"""):
+                    ...
+            with allure.step('Response:'):
+                with allure.step(f'Status code: {response.status_code}'):
+                    ...
+                with allure.step(f'JSON: {response.json()}'):
+                    ...
+            return response
 
     @staticmethod
     def post_create_docker_container(token):
@@ -364,10 +683,25 @@ class API:
             post_resource = '/container_create'
             post_url = API.base_url + post_resource
             body = {"docker_image": "nginx", "int_ports": "80", "env": 3, "region": 3}
-            with allure.step(f'POST {post_url}, body: {body}'):
-                result_post = HttpMethods.post(post_url, body, token=token)
-            with allure.step(f'Response JSON: {result_post.text}'):
-                return result_post
+            response = HttpMethods.post(
+                url=post_url,
+                body=body,
+                token=token)
+            with allure.step('Endpoint: /container_create'):
+                ...
+            with allure.step('Request:'):
+                with allure.step(f'Url: {post_url}'):
+                    ...
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                    ...
+                with allure.step(f"""Body: {{"docker_image": "nginx", "int_ports": "80", "env": 3, "region": 3}}"""):
+                    ...
+            with allure.step('Response:'):
+                with allure.step(f'Status code: {response.status_code}'):
+                    ...
+                with allure.step(f'JSON: {response.json()}'):
+                    ...
+            return response
 
     @staticmethod
     def post_create_docker_container_checking_ports(token, port_len):
@@ -375,10 +709,26 @@ class API:
             post_resource = '/container_create'
             post_url = API.base_url + post_resource
             body = {"docker_image": "nginx", "int_ports": f"{port_len}", "env": 3, "region": 3}
-            with allure.step(f'POST {post_url}, body: {body}'):
-                result_post = HttpMethods.post(post_url, body, token=token)
-            with allure.step(f'Response JSON: {result_post.text}'):
-                return result_post
+            response = HttpMethods.post(
+                url=post_url,
+                body=body,
+                token=token)
+            with allure.step('Endpoint: /container_create'):
+                ...
+            with allure.step('Request:'):
+                with allure.step(f'Url: {post_url}'):
+                    ...
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                    ...
+                with allure.step(
+                        f"""Body: {{"docker_image": "nginx", "int_ports": f"{port_len}", "env": 3, "region": 3}}"""):
+                    ...
+            with allure.step('Response:'):
+                with allure.step(f'Status code: {response.status_code}'):
+                    ...
+                with allure.step(f'JSON: {response.json()}'):
+                    ...
+            return response
 
     @staticmethod
     def post_create_docker_container_with_defunct_image(token):
@@ -386,10 +736,26 @@ class API:
             post_resource = '/container_create'
             post_url = API.base_url + post_resource
             body = {"docker_image": "", "int_ports": "80", "env": 3, "region": 3}
-            with allure.step(f'POST {post_url}, body: {body}'):
-                result_post = HttpMethods.post(post_url, body, token=token)
-            with allure.step(f'Response JSON: {result_post.text}'):
-                return result_post
+            response = HttpMethods.post(
+                url=post_url,
+                body=body,
+                token=token)
+            with allure.step('Endpoint: /container_create'):
+                ...
+            with allure.step('Request:'):
+                with allure.step(f'Url: {post_url}'):
+                    ...
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                    ...
+                with allure.step(
+                        f"""Body: {{"docker_image": "", "int_ports": "80", "env": 3, "region": 3}}"""):
+                    ...
+            with allure.step('Response:'):
+                with allure.step(f'Status code: {response.status_code}'):
+                    ...
+                with allure.step(f'JSON: {response.json()}'):
+                    ...
+            return response
 
     @staticmethod
     def post_delete_docker_container(token, list_index: int):
@@ -400,10 +766,26 @@ class API:
             docker_uuid = list(result_list.json()['data'])[list_index]
             body = {'docker_uuid': f'{docker_uuid}'}
             time.sleep(20)
-            with allure.step(f'POST {post_url}, body: {body}'):
-                result_post = HttpMethods.post(post_url, body, token=token)
-            with allure.step(f'Response JSON: {result_post.text}'):
-                return result_post
+            response = HttpMethods.post(
+                url=post_url,
+                body=body,
+                token=token)
+            with allure.step('Endpoint: /container_delete'):
+                ...
+            with allure.step('Request:'):
+                with allure.step(f'Url: {post_url}'):
+                    ...
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                    ...
+                with allure.step(
+                        f"""Body: {{'docker_uuid': f'{docker_uuid}'}}"""):
+                    ...
+            with allure.step('Response:'):
+                with allure.step(f'Status code: {response.status_code}'):
+                    ...
+                with allure.step(f'JSON: {response.json()}'):
+                    ...
+            return response
 
     @staticmethod
     def delete_db(uuid, token):
@@ -415,35 +797,47 @@ class API:
         with allure.step('delete_db'):
             delete_resource = '/db_delete'
             delete_url = API.base_url + delete_resource
-            with allure.step(f'DELETE {delete_url}'):
-                db_uuid = {"db_uuid": f"{uuid}"}
-            with allure.step(f'Db uuid is: {db_uuid}'):
-                pass
+            db_uuid = {"db_uuid": f"{uuid}"}
             json_db_uuid = db_uuid
-            result_delete = HttpMethods.post(delete_url, json_db_uuid, token=token)
-            with allure.step(f'Response JSON: {result_delete.text}'):
-                return result_delete
+            response = HttpMethods.post(
+                url=delete_url,
+                body=json_db_uuid,
+                token=token)
+            with allure.step('Endpoint: /container_delete'):
+                ...
+            with allure.step('Request:'):
+                with allure.step(f'Url: {delete_url}'):
+                    ...
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                    ...
+                with allure.step(
+                        f"""Body: {{"db_uuid": f"{uuid}"}}"""):
+                    ...
+            with allure.step('Response:'):
+                with allure.step(f'Status code: {response.status_code}'):
+                    ...
+                with allure.step(f'JSON: {response.json()}'):
+                    ...
+            return response
 
     @staticmethod
-    def delete_all_created_db():
+    def delete_all_created_db(token):
         start = datetime.now().time().strftime('%H:%M')
         print('Start', start)
         while True:
             finish = datetime.now().time().strftime('%H:%M')
             print('Finish', finish)
-            list_db = API.post_db_list(ConnectionData.token)
+            list_db = API.post_db_list(token)
             json_list_db = list_db.json()['data']
             if json_list_db == {}:
                 break
             else:
                 first_db_uuid = list(json_list_db)[-1]
-                result_post_db_delete = API.delete_db(first_db_uuid, ConnectionData.token)
-                with allure.step(f'Response JSON: {result_post_db_delete.text}'):
-                    print(result_post_db_delete.text)
+                API.delete_db(first_db_uuid, token)
                 time.sleep(5)
                 if start != finish:
                     break
-        list_db = API.post_db_list(ConnectionData.token)
+        list_db = API.post_db_list(token)
         json_list_db = list_db.json()['data']
         return json_list_db
 

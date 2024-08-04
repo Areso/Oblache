@@ -5,6 +5,7 @@ import pytest
 import requests
 from dotenv import load_dotenv
 
+from tests_api.utils.checking import Checking
 from tests_api.utils.http_methods import HttpMethods
 
 base_url = 'https://dbend.areso.pro'  # Base url
@@ -22,6 +23,7 @@ def get_token():
         token = result.json()['token']
         if token != {}:
             new_password, old_password = old_password, new_password
+        Checking.check_status_code(result, 200)
         return token, body, new_password, old_password, email
     except Exception as ex:
         print(ex)
@@ -29,6 +31,7 @@ def get_token():
         body = {"email": email, "password": f'{old_password}'}
         result = requests.post('https://dbend.areso.pro/login', json=body)
         token = result.json()['token']
+        Checking.check_status_code(result, 200)
         return token, body, new_password, old_password, email
 
 

@@ -1,6 +1,7 @@
 name: Test-All-Daily
 
 on:
+#  workflow_dispatch
   schedule:
     - cron: '0 0 * * *'
 
@@ -49,7 +50,7 @@ jobs:
           echo GIT_COMMIT_AUTHOR_NAME=$(git show -s --format='%ae' HEAD) >> environment.properties
           echo GIT_COMMIT_TIME=$(git show -s --format=%ci HEAD) >> environment.properties
           echo CHROME_VERSION=$(google-chrome --product-version) >> environment.properties
-        continue-on-error: true
+#        continue-on-error: true
 
       - name: Get Allure history
         uses: actions/checkout@v4
@@ -57,7 +58,7 @@ jobs:
         with:
           ref: gh-pages
           path: gh-pages
-        continue-on-error: true
+#        continue-on-error: true
 
       - name: Allure Report action
         uses: simple-elf/allure-report-action@v1.6
@@ -66,7 +67,7 @@ jobs:
           allure_results: allure-results
           allure_history: allure-history
           keep_reports: 100
-        continue-on-error: true
+#        continue-on-error: true
 
       - name: Commit Allure report
         if: always()
@@ -75,7 +76,7 @@ jobs:
           PERSONAL_TOKEN: ${{ secrets.CI_TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: allure-history
-        continue-on-error: true
+#        continue-on-error: true
 
 
   messsage:
@@ -89,4 +90,4 @@ jobs:
           to: ${{secrets.CHAT_ID}}
           token: ${{secrets.TELEGRAM_TOKEN}}
           args: Daily full report https://lambotik.github.io/Oblache/
-        continue-on-error: true
+#        continue-on-error: true
