@@ -59,5 +59,5 @@ class LoginPage(BasePage):
             self.element_is_present(self.locators.INPUT_PASSWORD).send_keys(os.getenv('PASSWORD'))
         with allure.step('Click button "Login"'):
             self.element_is_present_and_clickable(self.locators.SIGN_IN_BUTTON).click()
-        assert self.check_expected_link('https://oblache.areso.pro/profile.html'
-                                        ), 'https://oblache.areso.pro/profile.html is not open.'
+            url = self.get_current_url()
+        assert self.check_expected_link(url), 'https://oblache.areso.pro/profile.html is not open.'

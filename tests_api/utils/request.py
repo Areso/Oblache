@@ -7,7 +7,6 @@ import allure
 import mysql.connector
 
 import tests_api
-from connection_data import ConnectionData
 from tests_api.data import data
 from .checking import Checking
 from .http_methods import HttpMethods
@@ -30,7 +29,7 @@ class API:
         with allure.step('Request:'):
             with allure.step(f'Url: {get_url}'):
                 ...
-            with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+            with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'} }'):
                 ...
             with allure.step(f'Body: {None}'):
                 ...
@@ -59,7 +58,7 @@ class API:
         with allure.step('Request:'):
             with allure.step(f'Url: {get_url}'):
                 ...
-            with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+            with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'} }'):
                 ...
             with allure.step(f'Body: {None}'):
                 ...
@@ -89,7 +88,7 @@ class API:
         with allure.step('Request:'):
             with allure.step(f'Url: {get_url}'):
                 ...
-            with allure.step(f"Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}"):
+            with allure.step(f"Headers: {HttpMethods.headers | {'Authorization': f'{token}'} }"):
                 ...
             with allure.step("""
             Body: {
@@ -119,7 +118,7 @@ class API:
         with allure.step('Request:'):
             with allure.step(f'Url: {get_url}'):
                 ...
-            with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'}}'):
+            with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'} }'):
                 ...
             with allure.step(f'Body: {None}'):
                 ...
@@ -144,7 +143,7 @@ class API:
         with allure.step('Request:'):
             with allure.step(f'Url: {get_url}'):
                 ...
-            with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'}}'):
+            with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'} }'):
                 ...
             with allure.step(f'Body: {None}'):
                 ...
@@ -169,7 +168,7 @@ class API:
         with allure.step('Request:'):
             with allure.step(f'Url: {get_url}'):
                 ...
-            with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'}}'):
+            with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'} }'):
                 ...
             with allure.step(f'Body: {None}'):
                 ...
@@ -194,7 +193,7 @@ class API:
         with allure.step('Request:'):
             with allure.step(f'Url: {get_url}'):
                 ...
-            with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'}}'):
+            with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'} }'):
                 ...
             with allure.step(f'Body: {None}'):
                 ...
@@ -219,7 +218,7 @@ class API:
         with allure.step('Request:'):
             with allure.step(f'Url: {get_url}'):
                 ...
-            with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'}}'):
+            with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'} }'):
                 ...
             with allure.step(f'Body: {None}'):
                 ...
@@ -255,7 +254,7 @@ class API:
         with allure.step('Request:'):
             with allure.step(f'Url: {post_url}'):
                 ...
-            with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'}}'):
+            with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'} }'):
                 ...
             with allure.step(
                     f"""Body: 
@@ -301,7 +300,7 @@ class API:
             with allure.step('Request:'):
                 with allure.step(f'Url: {post_url}'):
                     ...
-                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'}}'):
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'} }'):
                     ...
                 with allure.step(
                         f"""Body: 
@@ -337,7 +336,7 @@ class API:
             with allure.step('Request:'):
                 with allure.step(f'Url: {post_url}'):
                     ...
-                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'}}'):
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'} }'):
                     ...
                 with allure.step(
                         """Body: {"email": email, "password": password}"""):
@@ -366,7 +365,7 @@ class API:
             with allure.step('Request:'):
                 with allure.step(f'Url: {post_url}'):
                     ...
-                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'} }'):
                     ...
                 with allure.step(f"""Body: {None}"""):
                     ...
@@ -393,7 +392,7 @@ class API:
             with allure.step('Request:'):
                 with allure.step(f'Url: {post_url}'):
                     ...
-                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{1}'}}'):
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{1}'} }'):
                     ...
                 with allure.step(f"""Body: {None}"""):
                     ...
@@ -421,14 +420,14 @@ class API:
             with allure.step('Request:'):
                 with allure.step(f'Url: {post_url}'):
                     ...
-                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'} }'):
                     ...
                 with allure.step(f"""Body: {None}"""):
                     ...
             with allure.step('Response:'):
                 with allure.step(f'Status code: {response.status_code}'):
                     ...
-                with allure.step(f'JSON: {response.json()}'):
+                with allure.step(f'JSON: {response.text}'):
                     ...
             return response
 
@@ -449,7 +448,7 @@ class API:
             with allure.step('Request:'):
                 with allure.step(f'Url: {post_url}'):
                     ...
-                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'} }'):
                     ...
                 with allure.step(f"""Body: {None}"""):
                     ...
@@ -481,7 +480,7 @@ class API:
             with allure.step('Request:'):
                 with allure.step(f'Url: {post_url}'):
                     ...
-                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'} }'):
                     ...
                 with allure.step("""Body: {"current_password": old_password, "new_password": new_password}"""):
                     ...
@@ -512,7 +511,7 @@ class API:
             with allure.step('Request:'):
                 with allure.step(f'Url: {post_url}'):
                     ...
-                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'} }'):
                     ...
                 with allure.step("""Body: {"db_uuid": db_uuid}"""):
                     ...
@@ -542,7 +541,7 @@ class API:
             with allure.step('Request:'):
                 with allure.step(f'Url: {post_url}'):
                     ...
-                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'} }'):
                     ...
                 with allure.step("""Body: {"dbtype": 3, "dbversion": 5, "env": 3, "region": 3}"""):
                     ...
@@ -573,7 +572,7 @@ class API:
             with allure.step('Request:'):
                 with allure.step(f'Url: {post_url}'):
                     ...
-                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'} }'):
                     ...
                 with allure.step(f"""Body: {{"dbtype": f'{random_value}', "dbversion": 5, "env": 3, "region": 3}}"""):
                     ...
@@ -604,7 +603,7 @@ class API:
             with allure.step('Request:'):
                 with allure.step(f'Url: {post_url}'):
                     ...
-                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'} }'):
                     ...
                 with allure.step(f"""Body: {{"dbtype": 3, "dbversion": {random_value}, "env": 3, "region": 3}}"""):
                     ...
@@ -635,7 +634,7 @@ class API:
             with allure.step('Request:'):
                 with allure.step(f'Url: {post_url}'):
                     ...
-                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'} }'):
                     ...
                 with allure.step(f"""Body: {{"dbtype": 3, "dbversion": 5, "env": {random_value}, "region": 3}}"""):
                     ...
@@ -666,7 +665,7 @@ class API:
             with allure.step('Request:'):
                 with allure.step(f'Url: {post_url}'):
                     ...
-                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'} }'):
                     ...
                 with allure.step(f"""Body: {{"dbtype": 3, "dbversion": 5, "env": 3, "region": {random_value}}}"""):
                     ...
@@ -692,7 +691,7 @@ class API:
             with allure.step('Request:'):
                 with allure.step(f'Url: {post_url}'):
                     ...
-                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'} }'):
                     ...
                 with allure.step(f"""Body: {{"docker_image": "nginx", "int_ports": "80", "env": 3, "region": 3}}"""):
                     ...
@@ -718,7 +717,7 @@ class API:
             with allure.step('Request:'):
                 with allure.step(f'Url: {post_url}'):
                     ...
-                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'} }'):
                     ...
                 with allure.step(
                         f"""Body: {{"docker_image": "nginx", "int_ports": f"{port_len}", "env": 3, "region": 3}}"""):
@@ -745,7 +744,7 @@ class API:
             with allure.step('Request:'):
                 with allure.step(f'Url: {post_url}'):
                     ...
-                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'} }'):
                     ...
                 with allure.step(
                         f"""Body: {{"docker_image": "", "int_ports": "80", "env": 3, "region": 3}}"""):
@@ -775,7 +774,7 @@ class API:
             with allure.step('Request:'):
                 with allure.step(f'Url: {post_url}'):
                     ...
-                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'} }'):
                     ...
                 with allure.step(
                         f"""Body: {{'docker_uuid': f'{docker_uuid}'}}"""):
@@ -808,7 +807,7 @@ class API:
             with allure.step('Request:'):
                 with allure.step(f'Url: {delete_url}'):
                     ...
-                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'}}'):
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'} }'):
                     ...
                 with allure.step(
                         f"""Body: {{"db_uuid": f"{uuid}"}}"""):
@@ -816,7 +815,7 @@ class API:
             with allure.step('Response:'):
                 with allure.step(f'Status code: {response.status_code}'):
                     ...
-                with allure.step(f'JSON: {response.json()}'):
+                with allure.step(f'JSON: {response.text}'):
                     ...
             return response
 

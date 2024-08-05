@@ -8,7 +8,6 @@ import allure
 import pytest
 import requests
 
-from connection_data import ConnectionData
 from .utils.checking import Checking
 from .utils.request import API
 
@@ -96,7 +95,7 @@ class TestGET:
         response = API.get_profile(token=TestGET.token)
         Checking.check_status_code(response, 200)
 
-    @allure.title('List db_types.')
+    @allure.title('GET list list_dbtypes.')
     def test_get_list_db_types(self):
         response = API.get_list_db_types()
         Checking.check_status_code(response, 200)
@@ -106,17 +105,17 @@ class TestGET:
         response = API.get_list_dbversions()
         Checking.check_status_code(response, 200)
 
-    @allure.title('GET list envs.')
+    @allure.title('GET list list_dbenvs.')
     def test_get_list_envs(self):
         response = API.get_list_envs()
         Checking.check_status_code(response, 200)
 
-    @allure.title('GET list regions.')
+    @allure.title('GET list list_regions.')
     def test_get_list_regions(self):
         response = API.get_list_regions()
         Checking.check_status_code(response, 200)
 
-    @allure.title('GET bad request.')
+    @allure.title('GET bad_request.')
     def test_get_with_bad_request(self):
         response = API.get_bad_request()
         Checking.check_status_code(response, 404)
@@ -139,7 +138,7 @@ class TestPOST:
         TestPOST.token, TestPOST.body, TestPOST.new_password, TestPOST.old_password, TestPOST.email = get_token[0], \
             get_token[1], get_token[2], get_token[3], get_token[4]
 
-    @allure.title('Post registration for English language.')
+    @allure.title('POST registration for English language.')
     def test_post_registration_for_english_language(self):
         response = API.post_registration_variety_email(
             mail=random.choice(['gmail', 'mail', 'yandex']),
@@ -151,7 +150,7 @@ class TestPOST:
         Checking.check_json_search_word_in_value(
             response, 'content', 'msg[1]: registered successfully')
 
-    @allure.title('Post registration for English language not agree.')
+    @allure.title('POST registration for English language not agree.')
     def test_post_registration_for_english_language_not_agree(self):
         response = API.post_registration_variety_email(
             mail=random.choice(['gmail', 'mail', 'yandex']),
@@ -163,7 +162,7 @@ class TestPOST:
         Checking.check_json_search_word_in_value(
             response, 'content', 'msg[36]: you must agree to Terms of Use')
 
-    @allure.title('Post registration Bulgaria language.')
+    @allure.title('POST registration Bulgaria language.')
     def test_post_registration_for_bulgaria_language(self):
         response = API.post_registration_variety_email(
             mail=random.choice(['gmail', 'mail', 'yandex']),
@@ -175,7 +174,7 @@ class TestPOST:
         Checking.check_json_search_word_in_value(
             response, 'content', 'msg[1]: регистриран успешно на потребитель')
 
-    @allure.title('Post registration Bulgaria language not agree.')
+    @allure.title('POST registration Bulgaria language not agree.')
     def test_post_registration_for_bulgaria_language_not_agree(self):
         response = API.post_registration_variety_email(
             mail=random.choice(['gmail', 'mail', 'yandex']),
@@ -187,7 +186,7 @@ class TestPOST:
         Checking.check_json_search_word_in_value(
             response, 'content', 'msg[36]: трябва да се съгласите с Условията за Ползване')
 
-    @allure.title('Post registration email is taken for en-us')
+    @allure.title('POST registration email is taken for en-us')
     def test_post_registration_email_is_taken_for_en_en(self):
         response = API.post_registration(
             email=TestPOST.email,
@@ -198,7 +197,7 @@ class TestPOST:
         Checking.check_json_search_word_in_value(
             response, 'content', 'msg[3]: registration failed, this email is taken')
 
-    @allure.title('Post registration email is taken for bg-bg')
+    @allure.title('POST registration email is taken for bg-bg')
     def test_post_registration_email_is_taken_for_bg_bg(self):
         response = API.post_registration(
             email=TestPOST.email,
@@ -209,7 +208,7 @@ class TestPOST:
         Checking.check_json_search_word_in_value(
             response, 'content', 'msg[3]: неуспешна регистрация на потребител, имейлът е зает')
 
-    @allure.title('Post registration email is taken for unsupported languages')
+    @allure.title('POST registration email is taken for unsupported languages')
     def test_post_registration_email_is_taken_for_unsupported_languages(self):
         response = API.post_registration(
             email=TestPOST.email,
@@ -221,7 +220,7 @@ class TestPOST:
         Checking.check_json_search_word_in_value(
             response, 'content', 'msg[34]: the language is not accepted')
 
-    @allure.title('Post login')
+    @allure.title('POST login')
     def test_post_login(self):
         response = API.post_login(body=TestPOST.body)
         Checking.check_status_code(response, 200)
@@ -238,8 +237,8 @@ class TestPOST:
 
     @allure.title('POST db_create')
     def test_post_db_create(self):
-        result = API.post_db_create(token=TestPOST.token)
-        Checking.check_status_code(result, 201)
+        response = API.post_db_create(token=TestPOST.token)
+        Checking.check_status_code(response, 201)
 
     @allure.title('POST db_create_with_wrong_db_type.')
     def test_post_db_create_with_wrong_values_dbtype(self):
@@ -286,7 +285,7 @@ class TestPOST:
     @allure.title('POST db_list_with_filter')
     @pytest.mark.xfail(reason='There are databases that need to be deleted manually.')
     def test_post_db_list_with_filter(self):
-        list_db = API.post_db_list(TestPOST.token)
+        list_db = API.post_db_list(token=TestPOST.token)
         json_list_db = json.loads(list_db.text)
         try:
             first_db_uuid = list(json_list_db['data'])[-1]
@@ -328,7 +327,7 @@ class TestPOST:
     def test_post_change_password_without_token(self):
         new_password = TestPOST.new_password
         result = API.post_change_password(
-            token=TestPOST.token,
+            token='1',
             old_password=TestPOST.new_password,
             new_password=new_password)
         Checking.check_status_code(result, 401)
@@ -342,13 +341,12 @@ class TestPOST:
     @allure.title('POST create_docker_container')
     def test_post_create_docker_container(self):
         amount_before = API.post_container_list(token=TestPOST.token)
-        print('amount_before', amount_before.text)
         result = API.post_create_docker_container(token=TestPOST.token)
         amount_after = API.post_container_list(token=TestPOST.token)
-        print('amount_before', amount_before.text)
         Checking.check_status_code(result, 201)
         Checking.check_json_value(result, 'msg', 'order for new container accepted')
-        assert amount_before == amount_after + 1, 'Container not added to table.'
+        assert len(amount_before.json()['data']) + 1 == len(amount_after.json()['data']), \
+            'Container not added to table.'
 
     @allure.title('POST checking ports_len positive')
     def test_post_checking_ports_len_positive(self):
@@ -420,7 +418,7 @@ class TestPOST:
         reason="If databases will be deleting more than 1 minute and all databases won't deleting for this time.")
     @allure.title('POST delete_all_created_db')
     def test_delete_all_created_db(self):
-        json_list_db = API.delete_all_created_db(TestPOST.token)
-        list_db = API.post_db_list(TestPOST.token)
+        json_list_db = API.delete_all_created_db(token=TestPOST.token)
+        list_db = API.post_db_list(token=TestPOST.token)
         Checking.check_status_code(list_db, 200)
         assert json_list_db == {}
