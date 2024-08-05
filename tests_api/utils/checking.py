@@ -14,7 +14,7 @@ class Checking:
     def check_status_code(result: requests.models.Response, status_code: int):
         """
         Method check status code
-        :param result: Response JSON
+        :param result: Response
         :param status_code:
         """
         with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):
@@ -27,7 +27,7 @@ class Checking:
     def check_json_token(result: requests.models.Response, expected_value: list):
         """
         Method check key in body
-        :param result: Response JSON
+        :param result: requests.models.Response
         :param expected_value: list of the keys
         """
         token = json.loads(result.text)
@@ -39,7 +39,7 @@ class Checking:
     def check_json_many_tokens(result: requests.models.Response, first_key: str, expected_value: list):
         """
         The method gets a list of nested dictionary keys by the parent dictionary key
-        :param result: Response JSON
+        :param result: requests.models.Response
         :param first_key: str
         :param expected_value: list of the keys
         """
@@ -52,9 +52,9 @@ class Checking:
     """Method for checking values of required fields in response"""
 
     @staticmethod
-    def check_json_value(response: json, field_name: str, expected_value):
+    def check_json_value(response: requests.models.Response, field_name: str, expected_value):
         """
-        :param response:
+        :param response: requests.models.Response
         :param field_name:
         :param expected_value:
         """
@@ -70,7 +70,7 @@ class Checking:
     def check_json_search_word_in_value(response, key, search_word):
         """
         Checks if the required string is in the response JSON by key
-        :param response: JSON
+        :param response: requests.models.Response
         :param key: str()
         :param search_word: str()
         :return: answer
@@ -87,7 +87,7 @@ class Checking:
     def check_json_search_word_in_values(response, key, search_word):
         """
         Checks if the required string is in the dictionary by key
-        :param response:
+        :param response: requests.models.Response
         :param key:
         :param search_word:
         :return: answer
