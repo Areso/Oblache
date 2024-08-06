@@ -65,12 +65,12 @@ class TestProfilePage:
 
     @allure.title('test_create_database')
     def test_create_database(self, driver, authorization_user):
-        page = ProfilePage(authorization_user)
+        page = ProfilePage(driver, authorization_user)
         page.compare_database_status()
 
     @allure.title('test_delete_database')
     def test_delete_database(self, driver, authorization_user):
-        page = ProfilePage(authorization_user)
+        page = ProfilePage(driver, authorization_user)
         page.click_button_status()
         amount_databases = page.get_status_data()['db qty used']
         msg = page.delete_database()
@@ -80,7 +80,7 @@ class TestProfilePage:
 
     @allure.title('test_clipboard')
     def test_clipboard_uuid_db(self, driver, authorization_user):
-        page = ProfilePage(authorization_user)
+        page = ProfilePage(driver, authorization_user)
         page.click_button_databases()
         page.check_clipboard(
             table_xpath='//tbody[@id="tbody_dbs"]',
@@ -88,13 +88,13 @@ class TestProfilePage:
 
     @allure.title('test_clipboard_jdbc')
     def test_clipboard_jdbc(self, driver, authorization_user):
-        page = ProfilePage(authorization_user)
+        page = ProfilePage(driver, authorization_user)
         page.click_button_databases()
         page.check_clipboard_jdbc(token=TestProfilePage.token)
 
     @allure.title('test_clipboard_uuid_docker')
     def test_clipboard_uuid_docker(self, driver, authorization_user):
-        page = ProfilePage(authorization_user)
+        page = ProfilePage(driver, authorization_user)
         page.click_button_docker_containers()
         page.check_clipboard(
             table_xpath='//table[@id="table_containers"]',
@@ -102,7 +102,7 @@ class TestProfilePage:
 
     @allure.title('test_create_docker_container')
     def test_create_docker_container(self, driver, authorization_user):
-        page = ProfilePage(authorization_user)
+        page = ProfilePage(driver, authorization_user)
         page.create_docker_container()
 
     # def test_check_port_lens_positive(self, driver, authorization_user):
@@ -110,7 +110,7 @@ class TestProfilePage:
     #     page.check_port_lens_positive()
 
     def test_delete_container(self, driver, authorization_user):
-        page = ProfilePage(authorization_user)
+        page = ProfilePage(driver, authorization_user)
         page.click_button_docker_containers()
         page.get_containers_list()
         page.delete_first_container()
