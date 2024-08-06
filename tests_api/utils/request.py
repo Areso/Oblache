@@ -1,10 +1,8 @@
 import random
 import time
 from datetime import datetime
-from string import ascii_letters
 
 import allure
-import mysql.connector
 
 import tests_api
 from tests_api.data import data
@@ -36,7 +34,7 @@ class API:
         with allure.step('Response:'):
             with allure.step(f'Status code: {response.status_code}'):
                 ...
-            with allure.step(f'JSON: {response.json()}'):
+            with allure.step(f'JSON: {response.text}'):
                 ...
         return response
 
@@ -65,7 +63,7 @@ class API:
         with allure.step('Response:'):
             with allure.step(f'Status code: {response.status_code}'):
                 ...
-            with allure.step(f'JSON: {response.json()}'):
+            with allure.step(f'JSON: {response.text}'):
                 ...
         return response
 
@@ -518,7 +516,7 @@ class API:
             with allure.step('Response:'):
                 with allure.step(f'Status code: {response.status_code}'):
                     ...
-                with allure.step(f'JSON: {response.json()}'):
+                with allure.step(f'JSON: {response.text}'):
                     ...
             return response
 
@@ -848,6 +846,7 @@ class API:
             API.get_profile(token)
             API.post_db_list(token)
             result_db_create = API.post_db_create(token)
+            Checking.check_status_code(result_db_create, 200)
             db_uuid = result_db_create.json()["db_uuid"]
             result_db_delete = API.delete_db(db_uuid, token)
             assert result_db_delete.status_code == 400
