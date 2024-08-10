@@ -11,7 +11,7 @@ from tests_api.utils.http_methods import HttpMethods
 base_url = 'https://dbend.areso.pro'  # Base url
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture()
 def get_token():
     load_dotenv()
     email = os.getenv('EMAIL')
