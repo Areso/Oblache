@@ -1,5 +1,4 @@
 import json
-import os
 import random
 import time
 from datetime import datetime
@@ -27,7 +26,7 @@ class TestFull:
 
     @allure.severity(allure.severity_level.CRITICAL)
     @allure.title('Complex')
-    def complex(self):
+    def test_complex(self):
         API.check_full_cycle(TestFull.token)
 
     @allure.severity(allure.severity_level.CRITICAL)
@@ -246,8 +245,28 @@ class TestPOST:
         response = API.post_is_logged_with_wrong_token()
         Checking.check_status_code(response, 401)
 
+    @allure.title('POST is logout')
+    def test_post_logout(self):
+        response = API.post_login(body=TestPOST.body)
+        Checking.check_status_code(response, 200)
+        response = API.post_logout(token=TestPOST.token)
+        Checking.check_status_code(response, 200)
+
+    @allure.title('POST login/is_logged/logout')
+    def test_post_login_is_logged_logout(self, get_token):
+        TestPOST.token = get_token[0]
+        response_login = API.post_login(body=TestPOST.body)
+        Checking.check_status_code(response_login, 200)
+        response_is_logged = API.post_is_logged(token=TestPOST.token)
+        Checking.check_status_code(response_is_logged, 200)
+        response_logout = API.post_logout(token=TestPOST.token)
+        Checking.check_status_code(response_logout, 200)
+
     @allure.title('POST db_create')
-    def test_post_db_create(self):
+    def test_post_db_create(self, get_token):
+        TestPOST.token = get_token[0]
+        response_login = API.post_login(body=TestPOST.body)
+        Checking.check_status_code(response_login, 200)
         response = API.post_db_create(token=TestPOST.token)
         Checking.check_status_code(response, 201)
 
@@ -300,7 +319,9 @@ class TestPOST:
         json_list_db = json.loads(list_db.text)
         try:
             first_db_uuid = list(json_list_db['data'])[-1]
-            response_db_list = API.delete_db(uuid=first_db_uuid, token=TestPOST.token)
+            response_db_list = API.delete_db(
+                uuid=first_db_uuid,
+                token=TestPOST.token)
             Checking.check_status_code(response_db_list, 200)
         except IndexError as ex:
             print(ex)

@@ -402,6 +402,33 @@ class API:
             return response
 
     @staticmethod
+    def post_logout(token):
+        """
+        :return: Response
+        """
+        with allure.step('post_is_logged'):
+            post_resource = '/logout'
+            post_url = API.base_url + post_resource
+            response = HttpMethods.post(
+                url=post_url,
+                token=token)
+            with allure.step('Endpoint: /logout'):
+                ...
+            with allure.step('Request:'):
+                with allure.step(f'Url: {post_url}'):
+                    ...
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'} }'):
+                    ...
+                with allure.step(f"""Body: {None}"""):
+                    ...
+            with allure.step('Response:'):
+                with allure.step(f'Status code: {response.status_code}'):
+                    ...
+                with allure.step(f'JSON: {response.json()}'):
+                    ...
+            return response
+
+    @staticmethod
     def post_db_list(token: str):
         """
         :param token:
