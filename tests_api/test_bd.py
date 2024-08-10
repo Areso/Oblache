@@ -234,6 +234,7 @@ class TestPOST:
     def test_post_login(self):
         response = API.post_login(body=TestPOST.body)
         Checking.check_status_code(response, 200)
+        Checking.check_json_search_word_in_value(response, 'msg', 'msg[6]: login successful')
 
     @allure.title('POST is logged')
     def test_post_is_logged(self):
@@ -247,20 +248,35 @@ class TestPOST:
 
     @allure.title('POST is logout')
     def test_post_logout(self):
-        response = API.post_login(body=TestPOST.body)
-        Checking.check_status_code(response, 200)
-        response = API.post_logout(token=TestPOST.token)
-        Checking.check_status_code(response, 200)
+        response_login = API.post_login(body=TestPOST.body)
+        Checking.check_status_code(response_login, 200)
+        Checking.check_json_search_word_in_value(response_login, 'msg', 'msg[6]: login successful')
+        response_logout = API.post_logout(token=TestPOST.token)
+        Checking.check_status_code(response_logout, 200)
+        Checking.check_json_search_word_in_value(response_logout, 'msg', 'session deleted')
 
     @allure.title('POST login/is_logged/logout')
     def test_post_login_is_logged_logout(self, get_token):
         TestPOST.token = get_token[0]
         response_login = API.post_login(body=TestPOST.body)
         Checking.check_status_code(response_login, 200)
+        Checking.check_json_search_word_in_value(response_login, 'msg', 'msg[6]: login successful')
         response_is_logged = API.post_is_logged(token=TestPOST.token)
         Checking.check_status_code(response_is_logged, 200)
         response_logout = API.post_logout(token=TestPOST.token)
         Checking.check_status_code(response_logout, 200)
+
+    @allure.title('POST logout with wrong logout token')
+    def test_post_logout_with_wrong_logout_token(self, get_token):
+        TestPOST.token = get_token[0]
+        response_login = API.post_login(body=TestPOST.body)
+        Checking.check_status_code(response_login, 200)
+        Checking.check_json_search_word_in_value(response_login, 'msg', 'msg[6]: login successful')
+        response_is_logged = API.post_is_logged(token=TestPOST.token)
+        Checking.check_status_code(response_is_logged, 200)
+        response_logout = API.post_logout(token=1)
+        Checking.check_status_code(response_logout, 404)
+        Checking.check_json_search_word_in_value(response_logout, 'msg', 'session not found')
 
     @allure.title('POST db_create')
     def test_post_db_create(self, get_token):
