@@ -1,12 +1,10 @@
 import os
 
-import mysql.connector
 import pytest
 import requests
 from dotenv import load_dotenv
 
 from tests_api.utils.checking import Checking
-from tests_api.utils.http_methods import HttpMethods
 
 base_url = 'https://dbend.areso.pro'  # Base url
 
@@ -33,26 +31,3 @@ def get_token():
         token = result.json()['token']
         Checking.check_status_code(result, 200)
         return token, body, new_password, old_password, email
-
-
-@pytest.fixture()
-def connection(db_uuid, get_token):
-    token, body = get_token[0], get_token[1]
-    post_resource = '/db_list'
-    post_url = base_url + post_resource
-    result_post = HttpMethods.post(post_url, token=token, body=body)
-    json_list_db = result_post.json()
-    db_name = json_list_db['data'][db_uuid][0]
-    user_name = json_list_db['data'][db_uuid][3].split(':')[1].replace('//', '')
-    host = json_list_db['data'][db_uuid][3].split(':')[2].partition('@')[2]
-    password_db = json_list_db['data'][db_uuid][3].split(':')[2].partition('@')[0]
-    print('\nConnecting to DB...')
-    db = mysql.connector.connect(host=host,
-                                 port=3306,
-                                 user=user_name,
-                                 database=db_name,
-                                 password=password_db
-                                 )
-    print('Successfully connected...')
-    assert db.is_connected() is True
-    return db

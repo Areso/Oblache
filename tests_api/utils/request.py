@@ -1,6 +1,7 @@
 import random
 import time
 from datetime import datetime
+from string import ascii_letters
 
 import allure
 
@@ -8,6 +9,7 @@ import tests_api
 from tests_api.data import data
 from .checking import Checking
 from .http_methods import HttpMethods
+import mysql.connector
 
 
 class API:
@@ -342,7 +344,7 @@ class API:
             with allure.step('Response:'):
                 with allure.step(f'Status code: {response.status_code}'):
                     ...
-                with allure.step(f'JSON: {response.json()}'):
+                with allure.step(f'JSON: {response.text}'):
                     ...
             return response
 
@@ -870,10 +872,10 @@ class API:
         with allure.step('check_full_cycle'):
             print('\nCheck Time: ', str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))
             start_value_db_list = API.post_db_list(token)
-            API.get_profile(token)
-            API.post_db_list(token)
+            # API.get_profile(token)
+            # API.post_db_list(token)
             result_db_create = API.post_db_create(token)
-            Checking.check_status_code(result_db_create, 200)
+            Checking.check_status_code(result_db_create, 201)
             db_uuid = result_db_create.json()["db_uuid"]
             result_db_delete = API.delete_db(db_uuid, token)
             assert result_db_delete.status_code == 400
@@ -905,6 +907,75 @@ class API:
             last_db_delete = API.delete_db(db_uuid, token)
             assert last_db_delete.status_code == 400
             Checking.check_json_search_word_in_value(last_db_delete, 'content', 'requested database is not found')
+
+    @staticmethod
+    def create_table():
+        time.sleep(20)
+        with allure.step('Create table.'):
+            query = '''
+                    CREATE TABLE IF NOT EXISTS accounts(
+                    userid INT PRIMARY KEY AUTO_INCREMENT,
+                    name varchar(128),
+                    date_of_birth datetime NULL,
+                    text varchar(4096),
+                    email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+                    '''
+            return query
+
+    @staticmethod
+    def load_db(db):
+        letters = ascii_letters
+        cursor = db.cursor()
+        with allure.step('Insert records to the database'):
+            for x in range(10):
+                for i in range(10):
+                    my_string = "".join(random.choice(letters) for _ in range(4096))
+                    cursor.execute("""
+                                            INSERT INTO accounts (name, text)
+                                            VALUES (
+                                            'lambotik',
+                                            %(my_string)s);""",
+                                   {'my_string': my_string})
+                    db.commit()
+                db.commit()
+            cursor.execute('''select * from accounts''')
+            # res = cursor.fetchall()
+            # print(res)
+            time.sleep(40)
+
+    @staticmethod
+    def connection(db_uuid, token, body):
+        post_resource = '/db_list'
+        post_url = API.base_url + post_resource
+        result_post = HttpMethods.post(post_url, token=token, body=body)
+        json_list_db = result_post.json()
+        db_name = json_list_db['data'][db_uuid][0]
+        user_name = json_list_db['data'][db_uuid][3].split(':')[1].replace('//', '')
+        host = json_list_db['data'][db_uuid][3].split(':')[2].partition('@')[2]
+        password_db = json_list_db['data'][db_uuid][3].split(':')[2].partition('@')[0]
+        print('\nConnecting to DB...')
+        db = mysql.connector.connect(host=host,
+                                     port=3306,
+                                     user=user_name,
+                                     database=db_name,
+                                     password=password_db,
+                                     autocommit=True
+                                     )
+        print('Successfully connected...')
+        assert db.is_connected() is True
+        return db
+
+    @staticmethod
+    def delete_db_by_index_list(token: str, json_list_db: dict, list_db_index: int):
+        try:
+            first_db_uuid = list(json_list_db['data'])[list_db_index]
+            response_db_delete = API.delete_db(
+                uuid=first_db_uuid,
+                token=token)
+            Checking.check_status_code(response_db_delete, 200)
+        except IndexError as ex:
+            print(ex)
+            assert str(ex) == 'list index out of range', 'Db list is empty.'
 
     # @allure.step('load_db')
     # def load_db(self):
