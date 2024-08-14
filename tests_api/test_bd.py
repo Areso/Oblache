@@ -1,13 +1,9 @@
 import json
 import random
 import time
-from datetime import datetime
-from pprint import pprint
-from string import ascii_letters
 
 import allure
 import pytest
-import requests
 
 from .utils.checking import Checking
 from .utils.request import API
@@ -18,10 +14,11 @@ from .utils.request import API
 @allure.severity(allure.severity_level.CRITICAL)
 class TestFull:
     token = None
+    body = None
 
     @allure.title('Get token.')
     def test_get_token(self, get_token):
-        TestFull.token = get_token[0]
+        TestFull.token, TestFull.body = get_token[0], get_token[1]
         assert TestFull.token is not None, 'Token is None.'
 
     @allure.severity(allure.severity_level.CRITICAL)
@@ -31,54 +28,21 @@ class TestFull:
 
     @allure.severity(allure.severity_level.CRITICAL)
     @allure.title('Capacity_db')
-    def capacity_db(self, connection):
+    def test_capacity_db(self):
         start_mb_value = API.get_profile(TestFull.token).json()['data']["content"][4][1]
-        print('Db size mb:', start_mb_value)
+        API.get_status(token=TestFull.token)
         result_db_create = API.post_db_create(TestFull.token)
-        print('Status db is :', result_db_create.json())
         db_uuid = result_db_create.json()["db_uuid"]
-        print("db_uuid", db_uuid)
         time.sleep(20)
-        with allure.step('Create table.'):
-            query = '''
-            CREATE TABLE IF NOT EXISTS accounts(
-            userid INT PRIMARY KEY AUTO_INCREMENT,
-            name varchar(128),
-            date_of_birth datetime NULL,
-            text varchar(4096),
-            email varchar(128) NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-            '''
-        db = connection(f"{db_uuid}")
+        query = API.create_table()
+        db = API.connection(
+            db_uuid=f"{db_uuid}",
+            token=TestFull.token,
+            body=TestFull.body)
         cursor = db.cursor()
         cursor.execute(query)
-        db.commit()
-
-        db = connection(f"{db_uuid}")
-        letters = ascii_letters
-        cursor = db.cursor()
-        with allure.step('Insert records to the database'):
-            for x in range(10):
-                for i in range(10):
-                    my_string = "".join(random.choice(letters) for _ in range(4096))
-                    cursor.execute("""
-                                    INSERT INTO accounts (name, text)
-                                    VALUES (
-                                    'lambotik',
-                                    %(my_string)s);""",
-                                   {'my_string': my_string})
-                    db.commit()
-                db.commit()
-            cursor.execute('''select * from accounts''')
-            # res = cursor.fetchall()
-            # print(res)
-            time.sleep(40)
+        API.load_db(db)
         finish_mb_value = API.get_profile(TestFull.token).json()['data']["content"][4][1]
-        with allure.step('Get DB size (in MB) after records have been inserted.'):
-            req = requests.post('http://cisdb1.areso.pro:9090/list', json={"token": "SuperSecret"})
-        pprint(req.text)
-        print('Db size mb after insert:', finish_mb_value)
-        create_new_db = API.post_db_create(TestFull.token)
-        print(create_new_db.status_code)
         assert int(finish_mb_value) > 0, 'Value disk db used(MB) should be more than 0.'
         response_db_delete = API.delete_db(f"{db_uuid}", TestFull.token)
         Checking.check_status_code(response_db_delete, 200)
@@ -96,8 +60,8 @@ class TestGET:
     @allure.title('GET tos.')
     def test_tos(self):
         response = API.get_tos(token=TestGET.token)
-        attach = r'C:\Users\User\PycharmProjects\Oblache\tests_api\my_report.html'
-        allure.attach.file(attach, name=f"Report {datetime.today()}", attachment_type=allure.attachment_type.HTML)
+        # attach = r'C:\Users\User\PycharmProjects\Oblache\tests_api\my_report.html'
+        # allure.attach.file(attach, name=f"Report {datetime.today()}", attachment_type=allure.attachment_type.HTML)
         Checking.check_status_code(response, 200)
 
     @allure.title('GET profile information.')
@@ -265,6 +229,7 @@ class TestPOST:
         Checking.check_status_code(response_is_logged, 200)
         response_logout = API.post_logout(token=TestPOST.token)
         Checking.check_status_code(response_logout, 200)
+        Checking.check_json_search_word_in_value(response_logout, 'msg', 'session deleted')
 
     @allure.title('POST logout with wrong logout token')
     def test_post_logout_with_wrong_logout_token(self, get_token):
@@ -280,7 +245,7 @@ class TestPOST:
 
     @allure.title('POST db_create')
     def test_post_db_create(self, get_token):
-        TestPOST.token = get_token[0]
+        TestPOST.token, TestPOST.body = get_token[0], get_token[1]
         response_login = API.post_login(body=TestPOST.body)
         Checking.check_status_code(response_login, 200)
         response = API.post_db_create(token=TestPOST.token)
@@ -449,23 +414,19 @@ class TestPOST:
 
     @allure.title('POST delete_db')
     @pytest.mark.xfail(reason='When using this method during a test run, the database may be in deleting status.')
-    def test_delete_db(self):
+    def test_delete_db(self, get_token):
+        TestPOST.token = get_token[0]
         list_db = API.post_db_list(token=TestPOST.token)
         json_list_db = json.loads(list_db.text)
-        try:
-            first_db_uuid = list(json_list_db['data'])[0]
-            response_db_delete = API.delete_db(
-                uuid=first_db_uuid,
-                token=TestPOST.token)
-            Checking.check_status_code(response_db_delete, 200)
-        except IndexError as ex:
-            print(ex)
-            assert str(ex) == 'list index out of range', 'Db list is empty.'
+        API.delete_db_by_index_list(token=TestPOST.token,
+                                    json_list_db=json_list_db,
+                                    list_db_index=-1)
 
     @pytest.mark.xfail(
         reason="If databases will be deleting more than 1 minute and all databases won't deleting for this time.")
     @allure.title('POST delete_all_created_db')
-    def test_delete_all_created_db(self):
+    def test_delete_all_created_db(self, get_token):
+        TestPOST.token = get_token[0]
         json_list_db = API.delete_all_created_db(token=TestPOST.token)
         list_db = API.post_db_list(token=TestPOST.token)
         Checking.check_status_code(list_db, 200)
