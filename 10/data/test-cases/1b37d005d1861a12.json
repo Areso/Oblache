@@ -1,0 +1,372 @@
+{
+  "uid" : "1b37d005d1861a12",
+  "name" : "GET profile status.",
+  "fullName" : "tests_api.test_bd.TestGET#test_get_status",
+  "historyId" : "1db526b86e70a0d5647421e92bf453b9",
+  "time" : {
+    "start" : 1725527852252,
+    "stop" : 1725527852545,
+    "duration" : 293
+  },
+  "status" : "broken",
+  "statusMessage" : "requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+  "statusTrace" : "self = <Response [500]>, kwargs = {}\n\n    def json(self, **kwargs):\n        r\"\"\"Returns the json-encoded content of a response, if any.\n    \n        :param \\*\\*kwargs: Optional arguments that ``json.loads`` takes.\n        :raises requests.exceptions.JSONDecodeError: If the response body does not\n            contain valid json.\n        \"\"\"\n    \n        if not self.encoding and self.content and len(self.content) > 3:\n            # No encoding set. JSON RFC 4627 section 3 states we should expect\n            # UTF-8, -16 or -32. Detect which one to use; If the detection or\n            # decoding fails, fall back to `self.text` (using charset_normalizer to make\n            # a best guess).\n            encoding = guess_json_utf(self.content)\n            if encoding is not None:\n                try:\n                    return complexjson.loads(self.content.decode(encoding), **kwargs)\n                except UnicodeDecodeError:\n                    # Wrong UTF codec detected; usually because it's not UTF-8\n                    # but some other 8-bit codec.  This is an RFC violation,\n                    # and the server didn't bother to tell us what codec *was*\n                    # used.\n                    pass\n                except JSONDecodeError as e:\n                    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)\n    \n        try:\n>           return complexjson.loads(self.text, **kwargs)\n\n/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/requests/models.py:974: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/json/__init__.py:346: in loads\n    return _default_decoder.decode(s)\n/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/json/decoder.py:337: in decode\n    obj, end = self.raw_decode(s, idx=_w(s, 0).end())\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <json.decoder.JSONDecoder object at 0x7f5fbfd7e8d0>\ns = 'Some general exception', idx = 0\n\n    def raw_decode(self, s, idx=0):\n        \"\"\"Decode a JSON document from ``s`` (a ``str`` beginning with\n        a JSON document) and return a 2-tuple of the Python\n        representation and the index in ``s`` where the document ended.\n    \n        This can be used to decode a JSON document from a string that may\n        have extraneous data at the end.\n    \n        \"\"\"\n        try:\n            obj, end = self.scan_once(s, idx)\n        except StopIteration as err:\n>           raise JSONDecodeError(\"Expecting value\", s, err.value) from None\nE           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\n\n/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/json/decoder.py:355: JSONDecodeError\n\nDuring handling of the above exception, another exception occurred:\n\nself = <tests_api.test_bd.TestGET object at 0x7f5fbed77a40>\n\n    @allure.title('GET profile status.')\n    def test_get_status(self):\n>       response = API.get_status(token=TestGET.token)\n\ntests_api/test_bd.py:100: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \ntests_api/utils/request.py:103: in get_status\n    with allure.step(f'JSON: {response.json()}'):\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <Response [500]>, kwargs = {}\n\n    def json(self, **kwargs):\n        r\"\"\"Returns the json-encoded content of a response, if any.\n    \n        :param \\*\\*kwargs: Optional arguments that ``json.loads`` takes.\n        :raises requests.exceptions.JSONDecodeError: If the response body does not\n            contain valid json.\n        \"\"\"\n    \n        if not self.encoding and self.content and len(self.content) > 3:\n            # No encoding set. JSON RFC 4627 section 3 states we should expect\n            # UTF-8, -16 or -32. Detect which one to use; If the detection or\n            # decoding fails, fall back to `self.text` (using charset_normalizer to make\n            # a best guess).\n            encoding = guess_json_utf(self.content)\n            if encoding is not None:\n                try:\n                    return complexjson.loads(self.content.decode(encoding), **kwargs)\n                except UnicodeDecodeError:\n                    # Wrong UTF codec detected; usually because it's not UTF-8\n                    # but some other 8-bit codec.  This is an RFC violation,\n                    # and the server didn't bother to tell us what codec *was*\n                    # used.\n                    pass\n                except JSONDecodeError as e:\n                    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)\n    \n        try:\n            return complexjson.loads(self.text, **kwargs)\n        except JSONDecodeError as e:\n            # Catch JSON-related errors and raise as requests.JSONDecodeError\n            # This aliases json.JSONDecodeError and simplejson.JSONDecodeError\n>           raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)\nE           requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\n\n/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/requests/models.py:978: JSONDecodeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+    "statusTrace" : "self = <Response [500]>, kwargs = {}\n\n    def json(self, **kwargs):\n        r\"\"\"Returns the json-encoded content of a response, if any.\n    \n        :param \\*\\*kwargs: Optional arguments that ``json.loads`` takes.\n        :raises requests.exceptions.JSONDecodeError: If the response body does not\n            contain valid json.\n        \"\"\"\n    \n        if not self.encoding and self.content and len(self.content) > 3:\n            # No encoding set. JSON RFC 4627 section 3 states we should expect\n            # UTF-8, -16 or -32. Detect which one to use; If the detection or\n            # decoding fails, fall back to `self.text` (using charset_normalizer to make\n            # a best guess).\n            encoding = guess_json_utf(self.content)\n            if encoding is not None:\n                try:\n                    return complexjson.loads(self.content.decode(encoding), **kwargs)\n                except UnicodeDecodeError:\n                    # Wrong UTF codec detected; usually because it's not UTF-8\n                    # but some other 8-bit codec.  This is an RFC violation,\n                    # and the server didn't bother to tell us what codec *was*\n                    # used.\n                    pass\n                except JSONDecodeError as e:\n                    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)\n    \n        try:\n>           return complexjson.loads(self.text, **kwargs)\n\n/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/requests/models.py:974: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/json/__init__.py:346: in loads\n    return _default_decoder.decode(s)\n/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/json/decoder.py:337: in decode\n    obj, end = self.raw_decode(s, idx=_w(s, 0).end())\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <json.decoder.JSONDecoder object at 0x7f5fbfd7e8d0>\ns = 'Some general exception', idx = 0\n\n    def raw_decode(self, s, idx=0):\n        \"\"\"Decode a JSON document from ``s`` (a ``str`` beginning with\n        a JSON document) and return a 2-tuple of the Python\n        representation and the index in ``s`` where the document ended.\n    \n        This can be used to decode a JSON document from a string that may\n        have extraneous data at the end.\n    \n        \"\"\"\n        try:\n            obj, end = self.scan_once(s, idx)\n        except StopIteration as err:\n>           raise JSONDecodeError(\"Expecting value\", s, err.value) from None\nE           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\n\n/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/json/decoder.py:355: JSONDecodeError\n\nDuring handling of the above exception, another exception occurred:\n\nself = <tests_api.test_bd.TestGET object at 0x7f5fbed77a40>\n\n    @allure.title('GET profile status.')\n    def test_get_status(self):\n>       response = API.get_status(token=TestGET.token)\n\ntests_api/test_bd.py:100: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \ntests_api/utils/request.py:103: in get_status\n    with allure.step(f'JSON: {response.json()}'):\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <Response [500]>, kwargs = {}\n\n    def json(self, **kwargs):\n        r\"\"\"Returns the json-encoded content of a response, if any.\n    \n        :param \\*\\*kwargs: Optional arguments that ``json.loads`` takes.\n        :raises requests.exceptions.JSONDecodeError: If the response body does not\n            contain valid json.\n        \"\"\"\n    \n        if not self.encoding and self.content and len(self.content) > 3:\n            # No encoding set. JSON RFC 4627 section 3 states we should expect\n            # UTF-8, -16 or -32. Detect which one to use; If the detection or\n            # decoding fails, fall back to `self.text` (using charset_normalizer to make\n            # a best guess).\n            encoding = guess_json_utf(self.content)\n            if encoding is not None:\n                try:\n                    return complexjson.loads(self.content.decode(encoding), **kwargs)\n                except UnicodeDecodeError:\n                    # Wrong UTF codec detected; usually because it's not UTF-8\n                    # but some other 8-bit codec.  This is an RFC violation,\n                    # and the server didn't bother to tell us what codec *was*\n                    # used.\n                    pass\n                except JSONDecodeError as e:\n                    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)\n    \n        try:\n            return complexjson.loads(self.text, **kwargs)\n        except JSONDecodeError as e:\n            # Catch JSON-related errors and raise as requests.JSONDecodeError\n            # This aliases json.JSONDecodeError and simplejson.JSONDecodeError\n>           raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)\nE           requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\n\n/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/requests/models.py:978: JSONDecodeError",
+    "steps" : [ {
+      "name" : "Endpoint: /get_profile",
+      "time" : {
+        "start" : 1725527852545,
+        "stop" : 1725527852545,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Request:",
+      "time" : {
+        "start" : 1725527852545,
+        "stop" : 1725527852545,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Url: https://dbend.areso.pro/get_profile",
+        "time" : {
+          "start" : 1725527852545,
+          "stop" : 1725527852545,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Headers: {'Content-Type': 'application/json', 'Authorization': 'e5f59267-e6d8-417f-860d-9f903c8017e2'}",
+        "time" : {
+          "start" : 1725527852545,
+          "stop" : 1725527852545,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "\n            Body: {\n            \"queue_db_create_orders\": 3,\n            \"queue_db_delete_orders\": 1,\n            \"number_of_stuck_tasks\": 0\n           }",
+        "time" : {
+          "start" : 1725527852545,
+          "stop" : 1725527852545,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Response:",
+      "time" : {
+        "start" : 1725527852545,
+        "stop" : 1725527852545,
+        "duration" : 0
+      },
+      "status" : "broken",
+      "statusMessage" : "requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\n",
+      "statusTrace" : "  File \"/home/runner/work/Oblache/Oblache/tests_api/utils/request.py\", line 103, in get_status\n    with allure.step(f'JSON: {response.json()}'):\n                              ^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/requests/models.py\", line 978, in json\n    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)\n",
+      "steps" : [ {
+        "name" : "Status code: 500",
+        "time" : {
+          "start" : 1725527852545,
+          "stop" : 1725527852545,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 7,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "GET"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_api"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestGET"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1016-812"
+  }, {
+    "name" : "thread",
+    "value" : "2267-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_api.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 2,
+        "skipped" : 0,
+        "passed" : 22,
+        "unknown" : 0,
+        "total" : 24
+      },
+      "items" : [ {
+        "uid" : "5f5193f2dc21919e",
+        "reportUrl" : "https://Areso.github.io/Oblache/9//#testresult/5f5193f2dc21919e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1725526756767,
+          "stop" : 1725526757122,
+          "duration" : 355
+        }
+      }, {
+        "uid" : "8334d3b472af8e4b",
+        "reportUrl" : "https://Areso.github.io/Oblache/147//#testresult/8334d3b472af8e4b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1725499486434,
+          "stop" : 1725499486806,
+          "duration" : 372
+        }
+      }, {
+        "uid" : "a364bb29ccdb9259",
+        "reportUrl" : "https://Areso.github.io/Oblache/146//#testresult/a364bb29ccdb9259",
+        "status" : "passed",
+        "time" : {
+          "start" : 1725412896140,
+          "stop" : 1725412896660,
+          "duration" : 520
+        }
+      }, {
+        "uid" : "838ca33951c1837b",
+        "reportUrl" : "https://Areso.github.io/Oblache/145//#testresult/838ca33951c1837b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1725326424321,
+          "stop" : 1725326424826,
+          "duration" : 505
+        }
+      }, {
+        "uid" : "ff040931eb4764e3",
+        "reportUrl" : "https://Areso.github.io/Oblache/144//#testresult/ff040931eb4764e3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1725240152127,
+          "stop" : 1725240152669,
+          "duration" : 542
+        }
+      }, {
+        "uid" : "76b75b193cba0909",
+        "reportUrl" : "https://Areso.github.io/Oblache/143//#testresult/76b75b193cba0909",
+        "status" : "passed",
+        "time" : {
+          "start" : 1725154779622,
+          "stop" : 1725154779977,
+          "duration" : 355
+        }
+      }, {
+        "uid" : "d2cbacc3cac12f6a",
+        "reportUrl" : "https://Areso.github.io/Oblache/142//#testresult/d2cbacc3cac12f6a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1725067225583,
+          "stop" : 1725067226008,
+          "duration" : 425
+        }
+      }, {
+        "uid" : "84277f7222cf5d24",
+        "reportUrl" : "https://Areso.github.io/Oblache/141//#testresult/84277f7222cf5d24",
+        "status" : "passed",
+        "time" : {
+          "start" : 1724980863011,
+          "stop" : 1724980863333,
+          "duration" : 322
+        }
+      }, {
+        "uid" : "46364fb4002d50d8",
+        "reportUrl" : "https://Areso.github.io/Oblache/140//#testresult/46364fb4002d50d8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1724894440694,
+          "stop" : 1724894441077,
+          "duration" : 383
+        }
+      }, {
+        "uid" : "8d3adb4054b85196",
+        "reportUrl" : "https://Areso.github.io/Oblache/139//#testresult/8d3adb4054b85196",
+        "status" : "passed",
+        "time" : {
+          "start" : 1724808008917,
+          "stop" : 1724808009427,
+          "duration" : 510
+        }
+      }, {
+        "uid" : "66b83cb959fae438",
+        "reportUrl" : "https://Areso.github.io/Oblache/138//#testresult/66b83cb959fae438",
+        "status" : "passed",
+        "time" : {
+          "start" : 1724721571199,
+          "stop" : 1724721571629,
+          "duration" : 430
+        }
+      }, {
+        "uid" : "3af8114351fe01b2",
+        "reportUrl" : "https://Areso.github.io/Oblache/137//#testresult/3af8114351fe01b2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1724635138899,
+          "stop" : 1724635139416,
+          "duration" : 517
+        }
+      }, {
+        "uid" : "1b9a1f7ccf8dc600",
+        "reportUrl" : "https://Areso.github.io/Oblache/136//#testresult/1b9a1f7ccf8dc600",
+        "status" : "passed",
+        "time" : {
+          "start" : 1724549049142,
+          "stop" : 1724549049484,
+          "duration" : 342
+        }
+      }, {
+        "uid" : "dcb51f6ddd08a8e7",
+        "reportUrl" : "https://Areso.github.io/Oblache/135//#testresult/dcb51f6ddd08a8e7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1724462191137,
+          "stop" : 1724462191534,
+          "duration" : 397
+        }
+      }, {
+        "uid" : "9ae0583ad11097c8",
+        "reportUrl" : "https://Areso.github.io/Oblache/134//#testresult/9ae0583ad11097c8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1724375882431,
+          "stop" : 1724375882773,
+          "duration" : 342
+        }
+      }, {
+        "uid" : "89050046264ecf0d",
+        "reportUrl" : "https://Areso.github.io/Oblache/133//#testresult/89050046264ecf0d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1724289555610,
+          "stop" : 1724289556154,
+          "duration" : 544
+        }
+      }, {
+        "uid" : "34690dae5c97ce3d",
+        "reportUrl" : "https://Areso.github.io/Oblache/132//#testresult/34690dae5c97ce3d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1724203055334,
+          "stop" : 1724203055708,
+          "duration" : 374
+        }
+      }, {
+        "uid" : "9a40a214a1094247",
+        "reportUrl" : "https://Areso.github.io/Oblache/131//#testresult/9a40a214a1094247",
+        "status" : "passed",
+        "time" : {
+          "start" : 1724116638908,
+          "stop" : 1724116639460,
+          "duration" : 552
+        }
+      }, {
+        "uid" : "821bc4193908cd6b",
+        "reportUrl" : "https://Areso.github.io/Oblache/130//#testresult/821bc4193908cd6b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1724030328371,
+          "stop" : 1724030328800,
+          "duration" : 429
+        }
+      }, {
+        "uid" : "fa008f2c9bc4799d",
+        "reportUrl" : "https://Areso.github.io/Oblache/129//#testresult/fa008f2c9bc4799d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1723944143921,
+          "stop" : 1723944144307,
+          "duration" : 386
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "1b37d005d1861a12.json",
+  "parameterValues" : [ ]
+}
