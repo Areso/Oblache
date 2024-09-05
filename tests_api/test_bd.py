@@ -6,6 +6,7 @@ from datetime import datetime
 import allure
 import pytest
 
+from .loading_report_dir.loading_report_path import LOADING_REPORT_DIR
 from .utils.checking import Checking
 from .utils.request import API
 
@@ -61,7 +62,8 @@ class TestGET:
     @allure.title('GET tos.')
     def test_tos(self):
         response = API.get_tos(token=TestGET.token)
-        attach = r'tests_api\my_report1.html'
+        file_name = LOADING_REPORT_DIR / 'my_report1.html'
+        attach = file_name
         allure.attach.file(attach, name=f"Report {datetime.today()}", attachment_type=allure.attachment_type.HTML)
         Checking.check_status_code(response, 200)
 
