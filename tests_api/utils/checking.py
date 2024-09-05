@@ -1,4 +1,3 @@
-"""Methods for checking requests"""
 import json
 
 import allure
@@ -6,10 +5,6 @@ import requests
 
 
 class Checking:
-
-    def __init__(self):
-        pass
-
     @staticmethod
     def check_status_code(result: requests.models.Response, status_code: int):
         """
@@ -18,10 +13,8 @@ class Checking:
         :param status_code:
         """
         with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):
-            assert status_code == result.status_code, 'Incorrect status code'
+            assert status_code == result.status_code, f'Incorrect status code: {result.status_code}'
             print(f'Assert expected status code: {status_code} == Response status code: {result.status_code}')
-
-    """Method for validating fields in a response"""
 
     @staticmethod
     def check_json_token(result: requests.models.Response, expected_value: list):
@@ -48,8 +41,6 @@ class Checking:
         """list(token) generated list of keys from json"""
         assert list(token) == expected_value, 'Not all fields are presented'
         print(f'All body keys is present: {list(token)}')
-
-    """Method for checking values of required fields in response"""
 
     @staticmethod
     def check_json_value(response: requests.models.Response, field_name: str, expected_value):

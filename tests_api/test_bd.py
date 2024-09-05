@@ -1,6 +1,7 @@
 import json
 import random
 import time
+from datetime import datetime
 
 import allure
 import pytest
@@ -60,8 +61,8 @@ class TestGET:
     @allure.title('GET tos.')
     def test_tos(self):
         response = API.get_tos(token=TestGET.token)
-        # attach = r'C:\Users\User\PycharmProjects\Oblache\tests_api\my_report.html'
-        # allure.attach.file(attach, name=f"Report {datetime.today()}", attachment_type=allure.attachment_type.HTML)
+        attach = r'C:\Users\User\PycharmProjects\Oblache\tests_api\my_report1.html'
+        allure.attach.file(attach, name=f"Report {datetime.today()}", attachment_type=allure.attachment_type.HTML)
         Checking.check_status_code(response, 200)
 
     @allure.title('GET profile information.')
@@ -108,9 +109,27 @@ class TestPOST:
     old_password = None
     email = None
 
+    @allure.title('POST get token and other params.')
     def test_get_token_and_body(self, get_token):
         TestPOST.token, TestPOST.body, TestPOST.new_password, TestPOST.old_password, TestPOST.email = get_token[0], \
             get_token[1], get_token[2], get_token[3], get_token[4]
+
+    @allure.title('POST test get back up')
+    def test_get_back_up(self):
+        result_db_create = API.post_db_create(TestPOST.token)
+        db_uuid = result_db_create.json()["db_uuid"]
+        time.sleep(10)
+        response = API.post_db_list_with_filter(token=TestPOST.token, db_uuid=db_uuid)
+        db_current_status = response.json()['data'][f'{db_uuid}'][2]
+        assert db_current_status == 'created', \
+            f'Db has not been created or something goes wrong. Db status is: {db_current_status}'
+        response = API.post_db_backup_create(token=TestPOST.token, db_uuid=db_uuid)
+        Checking.check_status_code(response, 200)
+        Checking.check_json_value(response, 'content', 'db backup order sent')
+        response = API.delete_db(db_uuid=db_uuid, token=TestPOST.token)
+        Checking.check_status_code(response, 200)
+        Checking.check_json_value(
+            response, 'content', 'msg[13]: successfully accepted request for deletion')
 
     @allure.title('POST registration for English language.')
     def test_post_registration_for_english_language(self):
@@ -301,7 +320,7 @@ class TestPOST:
         try:
             first_db_uuid = list(json_list_db['data'])[-1]
             response_db_list = API.delete_db(
-                uuid=first_db_uuid,
+                db_uuid=first_db_uuid,
                 token=TestPOST.token)
             Checking.check_status_code(response_db_list, 200)
         except IndexError as ex:

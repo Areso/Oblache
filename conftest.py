@@ -11,6 +11,15 @@ base_url = 'https://dbend.areso.pro'  # Base url
 
 @pytest.fixture()
 def get_token():
+    """
+    Method return:\n
+    token: str\n
+    body: dict\n
+    new_password: str\n
+    old_password: str\n
+    email: str
+    :returns: token: str, body: dict, new_password: str, old_password:str, email: str
+    """
     load_dotenv()
     email = os.getenv('EMAIL')
     old_password = os.getenv('PASSWORD')
