@@ -175,7 +175,7 @@ class API:
         with allure.step('Response:'):
             with allure.step(f'Status code: {response.status_code}'):
                 ...
-            with allure.step(f'JSON: {response.json()}'):
+            with allure.step(f'JSON: {response.text}'):
                 ...
         return response
 
