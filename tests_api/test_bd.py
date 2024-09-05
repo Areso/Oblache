@@ -61,7 +61,7 @@ class TestGET:
     @allure.title('GET tos.')
     def test_tos(self):
         response = API.get_tos(token=TestGET.token)
-        attach = r'C:\Users\User\PycharmProjects\Oblache\tests_api\my_report1.html'
+        attach = r'tests_api\my_report1.html'
         allure.attach.file(attach, name=f"Report {datetime.today()}", attachment_type=allure.attachment_type.HTML)
         Checking.check_status_code(response, 200)
 
