@@ -40,3 +40,41 @@ def get_token():
         token = result.json()['token']
         Checking.check_status_code(result, 200)
         return token, body, new_password, old_password, email
+
+
+@pytest.fixture()
+def get_token_backup_1():
+    """
+    Method return:\n
+    token: str\n
+    body: dict\n
+    uuid: str
+    """
+    load_dotenv()
+    email = os.getenv('BACKUP1_MAIL')
+    old_password = os.getenv('BACKUP1_PASSWORD')
+    uuid = os.getenv('BACKUP1_UUID')
+    body = {"email": email, "password": old_password}
+    result = requests.post('https://dbend.areso.pro/login', json=body)
+    Checking.check_status_code(result, 200)
+    token = result.json()['token']
+    return token, body, uuid
+
+
+@pytest.fixture()
+def get_token_backup_2():
+    """
+    Method return:\n
+    token: str\n
+    body: dict\n
+    uuid: str
+    """
+    load_dotenv()
+    email = os.getenv('BACKUP2_MAIL')
+    old_password = os.getenv('BACKUP2_PASSWORD')
+    uuid = os.getenv('BACKUP2_UUID')
+    body = {"email": email, "password": old_password}
+    result = requests.post('https://dbend.areso.pro/login', json=body)
+    Checking.check_status_code(result, 200)
+    token = result.json()['token']
+    return token, body, uuid
