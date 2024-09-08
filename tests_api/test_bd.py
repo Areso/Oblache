@@ -444,14 +444,14 @@ class TestPOST:
         Checking.check_status_code(response, 200)
         Checking.check_json_value(response, 'content', 'db backup order sent')
 
-    @allure.title('POST test get back up with wrong token')
+    @allure.title('POST test create back up with wrong token')
     def test_create_back_up_with_wrong_token(self, get_token_backup_1):
         token, body, uuid = get_token_backup_1
         response = API.post_db_backup_create(token='wrong_token', db_uuid=uuid)
         Checking.check_status_code(response, 401)
         Checking.check_json_value(response, 'content', "msg[5]: unauthenticated")
 
-    @allure.title('POST test get back up with wrong uuid')
+    @allure.title('POST test create back up with wrong uuid')
     def test_create_back_up_with_wrong_uuid(self, get_token_backup_1):
         token, body, uuid = get_token_backup_1
         response = API.post_db_backup_create(token=token, db_uuid='wrong uuid')
@@ -459,7 +459,7 @@ class TestPOST:
         Checking.check_json_value(
             response, 'content', "db either not exist, not in good shape or not belong to the user")
 
-    @allure.title('POST test get back up without uuid')
+    @allure.title('POST test create back up without uuid')
     def test_create_back_up_without_wrong_uuid(self, get_token_backup_1):
         token, body, uuid = get_token_backup_1
         response = API.post_db_backup_create(token=token)
