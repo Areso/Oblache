@@ -230,9 +230,11 @@ class API:
         return response
 
     @staticmethod
-    def post_db_backup_create(token, db_uuid):
+    def post_db_backup_create(token, db_uuid=None):
         """
-        Send bad request.
+        Create DB backup.
+        :param token:
+        :param db_uuid:
         :return: Response
         """
         post_resource = '/db_backup_create'  # Resource for method GET
