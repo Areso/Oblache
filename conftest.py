@@ -54,8 +54,9 @@ def get_token_backup():
     email = os.getenv('BACKUP1_MAIL')
     old_password = os.getenv('BACKUP1_PASSWORD')
     uuid = os.getenv('BACKUP1_UUID')
-    body = {"email": email, "password": f'{old_password}'}
+    body = {"email": email, "password": old_password}
     result = requests.post('https://dbend.areso.pro/login', json=body)
+    print(result.text)
     Checking.check_status_code(result, 200)
     token = result.json()['token']
     return token, body, uuid
