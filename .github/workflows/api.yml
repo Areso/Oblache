@@ -33,6 +33,9 @@ jobs:
         env:
           EMAIL: ${{ secrets.EMAIL}}
           PASSWORD: ${{ secrets.PASSWORD}}
+          BACKUP1_MAIL: ${{ secrets.BACKUP1_MAIL}}
+          BACKUP1_PASSWORD: ${{ secrets.BACKUP1_PASSWORD}}
+          BACKUP1_UUID: ${{ secrets.BACKUP1_UUID}}
         run: |
           pytest -s -vv --alluredir=allure-results ./tests_api/test_bd.py
         continue-on-error: true
