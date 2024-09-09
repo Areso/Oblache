@@ -1,12 +1,13 @@
 import allure
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.ui import WebDriverWait as Wait
+from selenium.webdriver.chrome.webdriver import WebDriver
 
 
 class BasePage:
 
     def __init__(self, driver, link=None):
-        self.driver = driver
+        self.driver: WebDriver = driver
         self.link = link
         self.timeout = 5
 
