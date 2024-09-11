@@ -1,0 +1,434 @@
+{
+  "uid" : "c8f0e1cb1c45b7ee",
+  "name" : "POST db_create_with_wrong_region.",
+  "fullName" : "tests_api.test_bd.TestPOST#test_post_db_create_with_wrong_values_region",
+  "historyId" : "856aa6401c668dd622a03a1da3937968",
+  "time" : {
+    "start" : 1726017700921,
+    "stop" : 1726017701241,
+    "duration" : 320
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: Incorrect status code: 403",
+  "statusTrace" : "self = <tests_api.test_bd.TestPOST object at 0x7fc8322757f0>\n\n    @allure.title('POST db_create_with_wrong_region.')\n    def test_post_db_create_with_wrong_values_region(self):\n        response_db_list = API.post_db_create_wrong_value_region(token=TestPOST.token)\n>       Checking.check_status_code(response_db_list, 400)\n\ntests_api/test_bd.py:286: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [403]>, status_code = 400\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, f'Incorrect status code: {result.status_code}'\nE           AssertionError: Incorrect status code: 403\n\ntests_api/utils/checking.py:16: AssertionError",
+  "flaky" : true,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: Incorrect status code: 403",
+    "statusTrace" : "self = <tests_api.test_bd.TestPOST object at 0x7fc8322757f0>\n\n    @allure.title('POST db_create_with_wrong_region.')\n    def test_post_db_create_with_wrong_values_region(self):\n        response_db_list = API.post_db_create_wrong_value_region(token=TestPOST.token)\n>       Checking.check_status_code(response_db_list, 400)\n\ntests_api/test_bd.py:286: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [403]>, status_code = 400\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, f'Incorrect status code: {result.status_code}'\nE           AssertionError: Incorrect status code: 403\n\ntests_api/utils/checking.py:16: AssertionError",
+    "steps" : [ {
+      "name" : "post_db_create_wrong_value_region",
+      "time" : {
+        "start" : 1726017700921,
+        "stop" : 1726017701240,
+        "duration" : 319
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Endpoint: /db_create",
+        "time" : {
+          "start" : 1726017701240,
+          "stop" : 1726017701240,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Request:",
+        "time" : {
+          "start" : 1726017701240,
+          "stop" : 1726017701240,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Url: https://dbend.areso.pro/db_create",
+          "time" : {
+            "start" : 1726017701240,
+            "stop" : 1726017701240,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Headers: {'Content-Type': 'application/json', 'Authorization': '03a24572-883f-4f0e-acfd-9ccec7e31287'}",
+          "time" : {
+            "start" : 1726017701240,
+            "stop" : 1726017701240,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Body: {\"dbtype\": 3, \"dbversion\": 5, \"env\": 3, \"region\": 96}",
+          "time" : {
+            "start" : 1726017701240,
+            "stop" : 1726017701240,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Response:",
+        "time" : {
+          "start" : 1726017701240,
+          "stop" : 1726017701240,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status code: 403",
+          "time" : {
+            "start" : 1726017701240,
+            "stop" : 1726017701240,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "JSON: {'content': 'you are not allowed to create new databases'}",
+          "time" : {
+            "start" : 1726017701240,
+            "stop" : 1726017701240,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 8,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Assert status code: 400 == Response status code: 403",
+      "time" : {
+        "start" : 1726017701240,
+        "stop" : 1726017701240,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: Incorrect status code: 403\n",
+      "statusTrace" : "  File \"/home/runner/work/Oblache/Oblache/tests_api/utils/checking.py\", line 16, in check_status_code\n    assert status_code == result.status_code, f'Incorrect status code: {result.status_code}'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 10,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "POST"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_api"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestPOST"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1153-12"
+  }, {
+    "name" : "thread",
+    "value" : "2285-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_api.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 28,
+        "broken" : 1,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 32
+      },
+      "items" : [ {
+        "uid" : "5543941492590cc8",
+        "reportUrl" : "https://Areso.github.io/Oblache/152//#testresult/5543941492590cc8",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 403",
+        "time" : {
+          "start" : 1725931357730,
+          "stop" : 1725931358043,
+          "duration" : 313
+        }
+      }, {
+        "uid" : "57bf778ba907b0a0",
+        "reportUrl" : "https://Areso.github.io/Oblache/12//#testresult/57bf778ba907b0a0",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 403",
+        "time" : {
+          "start" : 1725892815130,
+          "stop" : 1725892815451,
+          "duration" : 321
+        }
+      }, {
+        "uid" : "df1e9578317bcdb4",
+        "reportUrl" : "https://Areso.github.io/Oblache/151//#testresult/df1e9578317bcdb4",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 403",
+        "time" : {
+          "start" : 1725845201517,
+          "stop" : 1725845201834,
+          "duration" : 317
+        }
+      }, {
+        "uid" : "7211bbd8fcf61805",
+        "reportUrl" : "https://Areso.github.io/Oblache/11//#testresult/7211bbd8fcf61805",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 403",
+        "time" : {
+          "start" : 1725789060736,
+          "stop" : 1725789061046,
+          "duration" : 310
+        }
+      }, {
+        "uid" : "c8167ea9f55cfe06",
+        "reportUrl" : "https://Areso.github.io/Oblache/150//#testresult/c8167ea9f55cfe06",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 403",
+        "time" : {
+          "start" : 1725758861433,
+          "stop" : 1725758861792,
+          "duration" : 359
+        }
+      }, {
+        "uid" : "9c86fd5e701d1623",
+        "reportUrl" : "https://Areso.github.io/Oblache/149//#testresult/9c86fd5e701d1623",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 403",
+        "time" : {
+          "start" : 1725672026050,
+          "stop" : 1725672026563,
+          "duration" : 513
+        }
+      }, {
+        "uid" : "fee15bd6172476d5",
+        "reportUrl" : "https://Areso.github.io/Oblache/148//#testresult/fee15bd6172476d5",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 403",
+        "time" : {
+          "start" : 1725585823879,
+          "stop" : 1725585824191,
+          "duration" : 312
+        }
+      }, {
+        "uid" : "48ec0a3b034ff1ac",
+        "reportUrl" : "https://Areso.github.io/Oblache/10//#testresult/48ec0a3b034ff1ac",
+        "status" : "passed",
+        "time" : {
+          "start" : 1725527872189,
+          "stop" : 1725527872500,
+          "duration" : 311
+        }
+      }, {
+        "uid" : "fc98c1087aa63f43",
+        "reportUrl" : "https://Areso.github.io/Oblache/9//#testresult/fc98c1087aa63f43",
+        "status" : "passed",
+        "time" : {
+          "start" : 1725526777199,
+          "stop" : 1725526777500,
+          "duration" : 301
+        }
+      }, {
+        "uid" : "2a0fdf5bbd2be29a",
+        "reportUrl" : "https://Areso.github.io/Oblache/147//#testresult/2a0fdf5bbd2be29a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1725499496632,
+          "stop" : 1725499496989,
+          "duration" : 357
+        }
+      }, {
+        "uid" : "448923e9297392a0",
+        "reportUrl" : "https://Areso.github.io/Oblache/146//#testresult/448923e9297392a0",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1725412910561,
+          "stop" : 1725412911073,
+          "duration" : 512
+        }
+      }, {
+        "uid" : "836ef0d459904660",
+        "reportUrl" : "https://Areso.github.io/Oblache/145//#testresult/836ef0d459904660",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1725326438830,
+          "stop" : 1725326439349,
+          "duration" : 519
+        }
+      }, {
+        "uid" : "d29e8b30339dab7c",
+        "reportUrl" : "https://Areso.github.io/Oblache/144//#testresult/d29e8b30339dab7c",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1725240166640,
+          "stop" : 1725240167155,
+          "duration" : 515
+        }
+      }, {
+        "uid" : "5999f6a201dd52f9",
+        "reportUrl" : "https://Areso.github.io/Oblache/143//#testresult/5999f6a201dd52f9",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1725154789841,
+          "stop" : 1725154790193,
+          "duration" : 352
+        }
+      }, {
+        "uid" : "f22eaf7476825034",
+        "reportUrl" : "https://Areso.github.io/Oblache/142//#testresult/f22eaf7476825034",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1725067235018,
+          "stop" : 1725067235321,
+          "duration" : 303
+        }
+      }, {
+        "uid" : "73a6bcce4244a9c2",
+        "reportUrl" : "https://Areso.github.io/Oblache/141//#testresult/73a6bcce4244a9c2",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1724980872259,
+          "stop" : 1724980872570,
+          "duration" : 311
+        }
+      }, {
+        "uid" : "c1ddddf152244893",
+        "reportUrl" : "https://Areso.github.io/Oblache/140//#testresult/c1ddddf152244893",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1724894451149,
+          "stop" : 1724894451518,
+          "duration" : 369
+        }
+      }, {
+        "uid" : "1aa2691f59447de2",
+        "reportUrl" : "https://Areso.github.io/Oblache/139//#testresult/1aa2691f59447de2",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1724808023478,
+          "stop" : 1724808023976,
+          "duration" : 498
+        }
+      }, {
+        "uid" : "3f53d28249486e3a",
+        "reportUrl" : "https://Areso.github.io/Oblache/138//#testresult/3f53d28249486e3a",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1724721580741,
+          "stop" : 1724721581039,
+          "duration" : 298
+        }
+      }, {
+        "uid" : "9632cc6cbdde9ba5",
+        "reportUrl" : "https://Areso.github.io/Oblache/137//#testresult/9632cc6cbdde9ba5",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1724635153456,
+          "stop" : 1724635153972,
+          "duration" : 516
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "c8f0e1cb1c45b7ee.json",
+  "parameterValues" : [ ]
+}
