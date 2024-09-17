@@ -37,6 +37,19 @@ class ProfilePage(BasePage):
     def click_button_databases(self):
         return self.element_is_present_and_clickable(self.locators.DATABASE_BUTTON).click()
 
+    @allure.step('Click "Static site" button.')
+    def click_static_site_button(self):
+        return self.element_is_present_and_clickable(self.locators.STATIC_BUTTON).click()
+
+    @allure.step('Check webpages block is visible.')
+    def check_webpages_block_is_visible(self):
+        return self.check_element_is_visible(self.locators.WEBPAGES_BLOCK)
+
+    @allure.step('Check titles of static table .')
+    def check_titles_of_static_table(self):
+        titles_list = [title.text for title in self.elements_are_visible(self.locators.TITLES_OF_STATIC_TABLE)]
+        return titles_list
+
     @allure.step('Click "Docker containers" button.')
     def click_button_docker_containers(self):
         return self.element_is_present_and_clickable(self.locators.BUTTON_DOCKER_CONTAINER).click()

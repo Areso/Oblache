@@ -482,3 +482,29 @@ class TestBackup:
         Checking.check_status_code(response, 400)
         Checking.check_json_value(
             response, 'content', "db either not exist, not in good shape or not belong to the user")
+
+
+@allure.suite('Test Static webpages')
+class TestStaticWebPages:
+    token = None
+    body = None
+    new_password = None
+    old_password = None
+    email = None
+
+    @allure.title('POST get token and other params.')
+    def test_get_token_and_body(self, get_token):
+        (TestStaticWebPages.token, TestStaticWebPages.body, TestStaticWebPages.new_password,
+         TestStaticWebPages.old_password, TestStaticWebPages.email) = get_token[0], get_token[1], get_token[2], \
+        get_token[3], get_token[4]
+
+    @allure.title('POST check static webpages.')
+    def test_static_webpages(self):
+        response = API.post_static_webpages(token=TestStaticWebPages.token)
+        Checking.check_status_code(response, 200)
+
+    @allure.title('POST check static webpages without toke.')
+    def test_static_webpages(self):
+        response = API.post_static_webpages(token=None)
+        Checking.check_status_code(response, 401)
+        Checking.check_json_value(response, 'content', 'msg[5]: unauthenticated')

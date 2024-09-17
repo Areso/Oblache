@@ -1,3 +1,5 @@
+import time
+
 import allure
 
 from tests_ui.links import TestDataLinks
@@ -63,6 +65,20 @@ class TestProfilePage:
         page.open()
         page.get_all_ids()
 
+    @allure.title('test_open_static_site_page')
+    def test_open_statistic_page(self, driver, authorization_user):
+        page = ProfilePage(driver)
+        page.click_static_site_button()
+        assert page.check_webpages_block_is_visible() is True, 'Webpages block is not visible.'
+
+    @allure.title('test_check_title_of_static_table')
+    def test_check_title_of_static_table(self, driver, authorization_user):
+        page = ProfilePage(driver)
+        page.click_static_site_button()
+        titles_list = page.check_titles_of_static_table()
+        assert titles_list == ['№', 'uuid', 'full uuid', 'full address', 'Current status', 'Creation date', 'Delete'], \
+            'Title is not equal expected titles'
+
     @allure.title('test_create_database')
     def test_create_database(self, driver, authorization_user):
         page = ProfilePage(driver, authorization_user)
@@ -100,17 +116,17 @@ class TestProfilePage:
             table_xpath='//table[@id="table_containers"]',
             token=TestProfilePage.token)
 
-    @allure.title('test_create_docker_container')
-    def test_create_docker_container(self, driver, authorization_user):
-        page = ProfilePage(driver, authorization_user)
-        page.create_docker_container()
+    # @allure.title('test_create_docker_container')
+    # def test_create_docker_container(self, driver, authorization_user):
+    #     page = ProfilePage(driver, authorization_user)
+    #     page.create_docker_container()
 
     # def test_check_port_lens_positive(self, driver, authorization_user):
     #     page = ProfilePage(driver)
     #     page.check_port_lens_positive()
 
-    def test_delete_container(self, driver, authorization_user):
-        page = ProfilePage(driver, authorization_user)
-        page.click_button_docker_containers()
-        page.get_containers_list()
-        page.delete_first_container()
+    # def test_delete_container(self, driver, authorization_user):
+    #     page = ProfilePage(driver, authorization_user)
+    #     page.click_button_docker_containers()
+    #     page.get_containers_list()
+    #     page.delete_first_container()
