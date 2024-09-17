@@ -24,7 +24,6 @@ class BasePage:
         print('Current url: ' + get_url)
         return get_url
 
-    @allure.step('element_is_present_and_clickable')
     def element_is_present_and_clickable(self, locator):
         return (Wait(self.driver, self.timeout).until(
             ec.visibility_of_element_located(locator), message=f"Can't find element by locator {locator}") and
