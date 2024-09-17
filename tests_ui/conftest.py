@@ -63,7 +63,7 @@ def get_token():
 
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
-def pytest_runtest_make_report(item, call):
+def pytest_runtest_makereport(item):
     outcome = yield
     report = outcome.get_result()
 
