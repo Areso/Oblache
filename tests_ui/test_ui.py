@@ -1,5 +1,3 @@
-import time
-
 import allure
 
 from tests_ui.links import TestDataLinks

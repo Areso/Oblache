@@ -27,8 +27,6 @@ def driver():
         # chrome_options.add_argument('--headless')
         driver = webdriver.Chrome(options=chrome_options)
     yield driver
-    attach = driver.get_screenshot_as_png()
-    allure.attach(attach, name=f"Screenshot {datetime.today()}", attachment_type=allure.attachment_type.PNG)
     print('\nquit browser...')
     driver.quit()
 
@@ -62,3 +60,14 @@ def get_token():
         token = result.json()['token']
         Checking.check_status_code(result, 200)
         return token, body, new_password, old_password, email
+
+
+@pytest.hookimpl(tryfirst=True, hookwrapper=True)
+def pytest_runtest_make_report(item, call):
+    outcome = yield
+    report = outcome.get_result()
+
+    if report.when == 'call' and report.failed:
+        driver = item.funcargs['driver']
+        attach = driver.get_screenshot_as_png()
+        allure.attach(attach, name=f"Screenshot {datetime.today()}", attachment_type=allure.attachment_type.PNG)
