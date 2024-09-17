@@ -918,6 +918,28 @@ class API:
         return json_list_db
 
     @staticmethod
+    def post_static_webpages(token):
+        with allure.step('webpage_list'):
+            post_resource = '/webpage_list'
+            post_url = API.base_url + post_resource
+            response = HttpMethods.post(
+                url=post_url,
+                token=token)
+            with allure.step('Endpoint: /webpage_list'):
+                ...
+            with allure.step('Request:'):
+                with allure.step(f'Url: {post_url}'):
+                    ...
+                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{None}'} }'):
+                    ...
+            with allure.step('Response:'):
+                with allure.step(f'Status code: {response.status_code}'):
+                    ...
+                with allure.step(f'JSON: {response.text}'):
+                    ...
+            return response
+
+    @staticmethod
     def check_full_cycle(token):
         with allure.step('check_full_cycle'):
             print('\nCheck Time: ', str(datetime.now().strftime("%d-%m-%Y %H:%M:%S")))

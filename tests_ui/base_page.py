@@ -1,4 +1,5 @@
 import allure
+from selenium.common import TimeoutException
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.ui import WebDriverWait as Wait
 from selenium.webdriver.chrome.webdriver import WebDriver
@@ -68,3 +69,11 @@ class BasePage:
             Wait(self.driver, self.timeout).until(
                 ec.url_changes(url), message=f"Url: {url} has not been changed!!!")
             self.get_current_url()
+
+    def check_element_is_visible(self, locator, timeout=15):
+        try:
+            Wait(self.driver, timeout).until(ec.visibility_of_element_located(locator),
+                                             message=f"Can't find element by locator {locator}")
+            return True
+        except TimeoutException:
+            return False

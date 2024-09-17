@@ -23,6 +23,9 @@ class Locators:
     # Profile page
     DATABASE_BUTTON = (By.XPATH, '//button[@id = "menu_button_databases"]')
     STATUS_BUTTON = (By.XPATH, '//button[@id="menu_button_status"]')
+    STATIC_BUTTON = (By.XPATH, '//button[@id="menu_button_webpages"]')
+    WEBPAGES_BLOCK = (By.XPATH, '//div[@id="webpages"]')
+    TITLES_OF_STATIC_TABLE = (By.XPATH, '//table[@id="table_webpages"]//tr/td')
 
     CREATE_DATABASE_BUTTON = (By.XPATH, '//button[@id="btn_new_db"]')
     CREATE_NEW_DATABASE_BUTTON = (By.XPATH, '//button[@id="btn_create_db"]')
