@@ -12,12 +12,11 @@ from tests_ui.login_page_locators import Locators
 class ProfilePage(BasePage):
     locators = Locators()
 
-    @allure.step('Click button Status.')
     def click_button_status(self):
         time.sleep(1)
-        return self.element_is_present_and_clickable(self.locators.STATUS_BUTTON).click()
+        with allure.step('Click button Status.'):
+            return self.element_is_present_and_clickable(self.locators.STATUS_BUTTON).click()
 
-    @allure.step('get_status_data')
     def get_status_data(self):
         amount_string = len(self.elements_are_visible(self.locators.LEN_TABLE_STRINGS))
         status_dict = {}
@@ -32,50 +31,47 @@ class ProfilePage(BasePage):
                 # pprint(status_dict)
         return status_dict
 
-    @allure.step('Click "Databases" button.')
     def click_button_databases(self):
-        return self.element_is_present_and_clickable(self.locators.DATABASE_BUTTON).click()
+        with allure.step('Click "Databases" button.'):
+            return self.element_is_present_and_clickable(self.locators.DATABASE_BUTTON).click()
 
-    @allure.step('Click "Static site" button.')
     def click_static_site_button(self):
-        return self.element_is_present_and_clickable(self.locators.STATIC_BUTTON).click()
+        with allure.step('Click "Static site" button.'):
+            return self.element_is_present_and_clickable(self.locators.STATIC_BUTTON).click()
 
-    @allure.step('Check webpages block is visible.')
     def check_webpages_block_is_visible(self):
-        return self.check_element_is_visible(self.locators.WEBPAGES_BLOCK)
+        with allure.step('Check webpages block is visible.'):
+            return self.check_element_is_visible(self.locators.WEBPAGES_BLOCK)
 
-    @allure.step('Check titles of static table .')
     def check_titles_of_static_table(self):
-        titles_list = [title.text for title in self.elements_are_visible(self.locators.TITLES_OF_STATIC_TABLE)]
-        return titles_list
+        with allure.step('Check titles of static table .'):
+            titles_list = [title.text for title in self.elements_are_visible(self.locators.TITLES_OF_STATIC_TABLE)]
+            return titles_list
 
-    @allure.step('Click "Docker containers" button.')
     def click_button_docker_containers(self):
-        return self.element_is_present_and_clickable(self.locators.BUTTON_DOCKER_CONTAINER).click()
+        with allure.step('Click "Docker containers" button.'):
+            return self.element_is_present_and_clickable(self.locators.BUTTON_DOCKER_CONTAINER).click()
 
-    @allure.step('click_buttons_create_new_db')
     def click_buttons_create_new_db(self):
         with allure.step('Click "Create new DB" button.'):
             self.element_is_present_and_clickable(self.locators.CREATE_DATABASE_BUTTON).click()
 
-    @allure.step('click_buttons_create')
     def click_buttons_create(self):
         with allure.step('Click "Create" button.'):
             self.element_is_clickable(self.locators.CREATE_NEW_DATABASE_BUTTON).click()
             # print(f'Click {self.locators.CREATE_NEW_DATABASE_BUTTON}')
 
-    @allure.step('Select region "CIS".')
     def select_db_region_cis(self):
-        self.element_is_present_and_clickable(self.locators.SELECT_DB_REGION).click()
-        self.element_is_present_and_clickable(self.locators.DB_REGION_CIS).click()
+        with allure.step('Select region "CIS".'):
+            self.element_is_present_and_clickable(self.locators.SELECT_DB_REGION).click()
+            self.element_is_present_and_clickable(self.locators.DB_REGION_CIS).click()
 
-    @allure.step('get_amount_databases')
     def get_amount_databases(self):
         self.click_button_databases()
         amount = len(self.elements_are_present((By.XPATH, '//tbody[@id="tbody_dbs"]/tr')))
-        return amount
+        with allure.step(f'Get amount databases: {amount}'):
+            return amount
 
-    @allure.step('delete_database')
     def delete_database(self):
         self.click_button_databases()
         self.click_buttons_create_new_db()
@@ -96,7 +92,7 @@ class ProfilePage(BasePage):
             with allure.step(f'{msg}'):
                 return msg
 
-    @allure.step('check_clipboard')
+    @allure.step('Check clipboard')
     def check_clipboard(self, table_xpath, token: str):
         databases_list = self.elements_are_present((By.XPATH, f'{table_xpath}//tr'))
         list_db = [databases_list[i].text for i in range(len(databases_list))]
@@ -121,7 +117,6 @@ class ProfilePage(BasePage):
         else:
             assert False, 'No database in the table.'
 
-    @allure.step('check_clipboard_jdbc')
     def check_clipboard_jdbc(self, token: str):
         databases_list = self.elements_are_present(self.locators.LIST_DATABASES)
         list_db = [databases_list[i].text for i in range(len(databases_list))]
@@ -145,7 +140,6 @@ class ProfilePage(BasePage):
         else:
             assert False, 'No database in the table.'
 
-    @allure.step('compare_database_status')
     def compare_database_status(self):
         self.click_button_status()
         amount_databases = self.get_status_data()['db qty used']
@@ -162,7 +156,6 @@ class ProfilePage(BasePage):
         amount_after_create = self.get_status_data()['db qty used']
         assert int(amount_databases) + 1 == int(amount_after_create)
 
-    @allure.step('create_docker_container')
     def create_docker_container(self):
         with allure.step('Click button "Docker Containers".'):
             self.element_is_present_and_clickable(self.locators.BUTTON_DOCKER_CONTAINER).click()
@@ -190,7 +183,6 @@ class ProfilePage(BasePage):
             pass
         assert len(list_before) + 1 == len(list_after)
 
-    @allure.step('get_containers_list')
     def get_containers_list(self):
         containers_data = self.elements_are_visible((By.XPATH, '//table[@id="table_containers"]/tbody/tr'))
         containers_list = [i.text for i in containers_data]
@@ -199,7 +191,7 @@ class ProfilePage(BasePage):
             # pprint(containers_list)
         return containers_list
 
-    @allure.step('delete_first_container')
+    @allure.step('Delete first container')
     def delete_first_container(self):
         amount_containers = self.get_containers_list()
         if len(amount_containers) != 0:
