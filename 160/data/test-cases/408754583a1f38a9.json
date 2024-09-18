@@ -1,0 +1,406 @@
+{
+  "uid" : "408754583a1f38a9",
+  "name" : "POST db_create_with_wrong_region.",
+  "fullName" : "tests_api.test_bd.TestPOST#test_post_db_create_with_wrong_values_region",
+  "historyId" : "856aa6401c668dd622a03a1da3937968",
+  "time" : {
+    "start" : 1726622535962,
+    "stop" : 1726622536266,
+    "duration" : 304
+  },
+  "status" : "broken",
+  "statusMessage" : "TypeError: 'str' object is not callable",
+  "statusTrace" : "self = <tests_api.test_bd.TestPOST object at 0x7fd39b895df0>\n\n    @allure.title('POST db_create_with_wrong_region.')\n    def test_post_db_create_with_wrong_values_region(self):\n>       response_db_list = API.post_db_create_wrong_value_region(token=TestPOST.token)\n\ntests_api/test_bd.py:285: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\ntoken = '92279666-b90f-485b-9f00-bcc97a16747d'\n\n    @staticmethod\n    def post_db_create_wrong_value_region(token: str):\n        \"\"\"\n        :param token:\n        :return: Response\n        \"\"\"\n        with allure.step('post_db_create_wrong_value_region'):\n            post_resource = '/db_create'\n            post_url = API.base_url + post_resource\n            random_value = random.randint(4, 100)\n            body = {\"dbtype\": 3, \"dbversion\": 5, \"env\": 3, \"region\": random_value}\n            response = HttpMethods.post(\n                url=post_url,\n                body=body,\n                token=token)\n            with allure.step('Endpoint: /db_create'):\n                ...\n            with allure.step('Request:'):\n                with allure.step(f'Url: {post_url}'):\n                    ...\n                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'} }'):\n                    ...\n                with allure.step(f\"\"\"Body: {{\"dbtype\": 3, \"dbversion\": 5, \"env\": 3, \"region\": {random_value}}}\"\"\"):\n                    ...\n            with allure.step('Response:'):\n                with allure.step(f'Status code: {response.status_code}'):\n                    ...\n>               with allure.step(f'JSON: {response.text()}'):\nE               TypeError: 'str' object is not callable\n\ntests_api/utils/request.py:753: TypeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "TypeError: 'str' object is not callable",
+    "statusTrace" : "self = <tests_api.test_bd.TestPOST object at 0x7fd39b895df0>\n\n    @allure.title('POST db_create_with_wrong_region.')\n    def test_post_db_create_with_wrong_values_region(self):\n>       response_db_list = API.post_db_create_wrong_value_region(token=TestPOST.token)\n\ntests_api/test_bd.py:285: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\ntoken = '92279666-b90f-485b-9f00-bcc97a16747d'\n\n    @staticmethod\n    def post_db_create_wrong_value_region(token: str):\n        \"\"\"\n        :param token:\n        :return: Response\n        \"\"\"\n        with allure.step('post_db_create_wrong_value_region'):\n            post_resource = '/db_create'\n            post_url = API.base_url + post_resource\n            random_value = random.randint(4, 100)\n            body = {\"dbtype\": 3, \"dbversion\": 5, \"env\": 3, \"region\": random_value}\n            response = HttpMethods.post(\n                url=post_url,\n                body=body,\n                token=token)\n            with allure.step('Endpoint: /db_create'):\n                ...\n            with allure.step('Request:'):\n                with allure.step(f'Url: {post_url}'):\n                    ...\n                with allure.step(f'Headers: {HttpMethods.headers | {'Authorization': f'{token}'} }'):\n                    ...\n                with allure.step(f\"\"\"Body: {{\"dbtype\": 3, \"dbversion\": 5, \"env\": 3, \"region\": {random_value}}}\"\"\"):\n                    ...\n            with allure.step('Response:'):\n                with allure.step(f'Status code: {response.status_code}'):\n                    ...\n>               with allure.step(f'JSON: {response.text()}'):\nE               TypeError: 'str' object is not callable\n\ntests_api/utils/request.py:753: TypeError",
+    "steps" : [ {
+      "name" : "post_db_create_wrong_value_region",
+      "time" : {
+        "start" : 1726622535962,
+        "stop" : 1726622536265,
+        "duration" : 303
+      },
+      "status" : "broken",
+      "statusMessage" : "TypeError: 'str' object is not callable\n",
+      "statusTrace" : "  File \"/home/runner/work/Oblache/Oblache/tests_api/utils/request.py\", line 753, in post_db_create_wrong_value_region\n    with allure.step(f'JSON: {response.text()}'):\n                              ^^^^^^^^^^^^^^^\n",
+      "steps" : [ {
+        "name" : "Endpoint: /db_create",
+        "time" : {
+          "start" : 1726622536265,
+          "stop" : 1726622536265,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Request:",
+        "time" : {
+          "start" : 1726622536265,
+          "stop" : 1726622536265,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Url: https://dbend.areso.pro/db_create",
+          "time" : {
+            "start" : 1726622536265,
+            "stop" : 1726622536265,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Headers: {'Content-Type': 'application/json', 'Authorization': '92279666-b90f-485b-9f00-bcc97a16747d'}",
+          "time" : {
+            "start" : 1726622536265,
+            "stop" : 1726622536265,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Body: {\"dbtype\": 3, \"dbversion\": 5, \"env\": 3, \"region\": 97}",
+          "time" : {
+            "start" : 1726622536265,
+            "stop" : 1726622536265,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Response:",
+        "time" : {
+          "start" : 1726622536265,
+          "stop" : 1726622536265,
+          "duration" : 0
+        },
+        "status" : "broken",
+        "statusMessage" : "TypeError: 'str' object is not callable\n",
+        "statusTrace" : "  File \"/home/runner/work/Oblache/Oblache/tests_api/utils/request.py\", line 753, in post_db_create_wrong_value_region\n    with allure.step(f'JSON: {response.text()}'):\n                              ^^^^^^^^^^^^^^^\n",
+        "steps" : [ {
+          "name" : "Status code: 403",
+          "time" : {
+            "start" : 1726622536265,
+            "stop" : 1726622536265,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 7,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 8,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "POST"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_api"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestPOST"
+  }, {
+    "name" : "host",
+    "value" : "fv-az887-52"
+  }, {
+    "name" : "thread",
+    "value" : "2274-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_api.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 33,
+        "broken" : 3,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 39
+      },
+      "items" : [ {
+        "uid" : "f4f5178f22dcc45f",
+        "reportUrl" : "https://Areso.github.io/Oblache/159//#testresult/f4f5178f22dcc45f",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+        "time" : {
+          "start" : 1726535354172,
+          "stop" : 1726535354642,
+          "duration" : 470
+        }
+      }, {
+        "uid" : "3f8a0b8a2c1518fc",
+        "reportUrl" : "https://Areso.github.io/Oblache/158//#testresult/3f8a0b8a2c1518fc",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 403",
+        "time" : {
+          "start" : 1726450024702,
+          "stop" : 1726450025055,
+          "duration" : 353
+        }
+      }, {
+        "uid" : "4a2bae194e7befc7",
+        "reportUrl" : "https://Areso.github.io/Oblache/157//#testresult/4a2bae194e7befc7",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 403",
+        "time" : {
+          "start" : 1726364259460,
+          "stop" : 1726364259972,
+          "duration" : 512
+        }
+      }, {
+        "uid" : "6eef9f845c112fcd",
+        "reportUrl" : "https://Areso.github.io/Oblache/156//#testresult/6eef9f845c112fcd",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 403",
+        "time" : {
+          "start" : 1726276882914,
+          "stop" : 1726276883272,
+          "duration" : 358
+        }
+      }, {
+        "uid" : "436a715106a31190",
+        "reportUrl" : "https://Areso.github.io/Oblache/155//#testresult/436a715106a31190",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 403",
+        "time" : {
+          "start" : 1726190555917,
+          "stop" : 1726190556210,
+          "duration" : 293
+        }
+      }, {
+        "uid" : "b00d3f192fa018ad",
+        "reportUrl" : "https://Areso.github.io/Oblache/154//#testresult/b00d3f192fa018ad",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 403",
+        "time" : {
+          "start" : 1726104139333,
+          "stop" : 1726104139834,
+          "duration" : 501
+        }
+      }, {
+        "uid" : "c8f0e1cb1c45b7ee",
+        "reportUrl" : "https://Areso.github.io/Oblache/153//#testresult/c8f0e1cb1c45b7ee",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 403",
+        "time" : {
+          "start" : 1726017700921,
+          "stop" : 1726017701241,
+          "duration" : 320
+        }
+      }, {
+        "uid" : "5543941492590cc8",
+        "reportUrl" : "https://Areso.github.io/Oblache/152//#testresult/5543941492590cc8",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 403",
+        "time" : {
+          "start" : 1725931357730,
+          "stop" : 1725931358043,
+          "duration" : 313
+        }
+      }, {
+        "uid" : "57bf778ba907b0a0",
+        "reportUrl" : "https://Areso.github.io/Oblache/12//#testresult/57bf778ba907b0a0",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 403",
+        "time" : {
+          "start" : 1725892815130,
+          "stop" : 1725892815451,
+          "duration" : 321
+        }
+      }, {
+        "uid" : "df1e9578317bcdb4",
+        "reportUrl" : "https://Areso.github.io/Oblache/151//#testresult/df1e9578317bcdb4",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 403",
+        "time" : {
+          "start" : 1725845201517,
+          "stop" : 1725845201834,
+          "duration" : 317
+        }
+      }, {
+        "uid" : "7211bbd8fcf61805",
+        "reportUrl" : "https://Areso.github.io/Oblache/11//#testresult/7211bbd8fcf61805",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 403",
+        "time" : {
+          "start" : 1725789060736,
+          "stop" : 1725789061046,
+          "duration" : 310
+        }
+      }, {
+        "uid" : "c8167ea9f55cfe06",
+        "reportUrl" : "https://Areso.github.io/Oblache/150//#testresult/c8167ea9f55cfe06",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 403",
+        "time" : {
+          "start" : 1725758861433,
+          "stop" : 1725758861792,
+          "duration" : 359
+        }
+      }, {
+        "uid" : "9c86fd5e701d1623",
+        "reportUrl" : "https://Areso.github.io/Oblache/149//#testresult/9c86fd5e701d1623",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 403",
+        "time" : {
+          "start" : 1725672026050,
+          "stop" : 1725672026563,
+          "duration" : 513
+        }
+      }, {
+        "uid" : "fee15bd6172476d5",
+        "reportUrl" : "https://Areso.github.io/Oblache/148//#testresult/fee15bd6172476d5",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 403",
+        "time" : {
+          "start" : 1725585823879,
+          "stop" : 1725585824191,
+          "duration" : 312
+        }
+      }, {
+        "uid" : "48ec0a3b034ff1ac",
+        "reportUrl" : "https://Areso.github.io/Oblache/10//#testresult/48ec0a3b034ff1ac",
+        "status" : "passed",
+        "time" : {
+          "start" : 1725527872189,
+          "stop" : 1725527872500,
+          "duration" : 311
+        }
+      }, {
+        "uid" : "fc98c1087aa63f43",
+        "reportUrl" : "https://Areso.github.io/Oblache/9//#testresult/fc98c1087aa63f43",
+        "status" : "passed",
+        "time" : {
+          "start" : 1725526777199,
+          "stop" : 1725526777500,
+          "duration" : 301
+        }
+      }, {
+        "uid" : "2a0fdf5bbd2be29a",
+        "reportUrl" : "https://Areso.github.io/Oblache/147//#testresult/2a0fdf5bbd2be29a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1725499496632,
+          "stop" : 1725499496989,
+          "duration" : 357
+        }
+      }, {
+        "uid" : "448923e9297392a0",
+        "reportUrl" : "https://Areso.github.io/Oblache/146//#testresult/448923e9297392a0",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1725412910561,
+          "stop" : 1725412911073,
+          "duration" : 512
+        }
+      }, {
+        "uid" : "836ef0d459904660",
+        "reportUrl" : "https://Areso.github.io/Oblache/145//#testresult/836ef0d459904660",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1725326438830,
+          "stop" : 1725326439349,
+          "duration" : 519
+        }
+      }, {
+        "uid" : "d29e8b30339dab7c",
+        "reportUrl" : "https://Areso.github.io/Oblache/144//#testresult/d29e8b30339dab7c",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code",
+        "time" : {
+          "start" : 1725240166640,
+          "stop" : 1725240167155,
+          "duration" : 515
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "408754583a1f38a9.json",
+  "parameterValues" : [ ]
+}
