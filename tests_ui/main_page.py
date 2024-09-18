@@ -9,7 +9,7 @@ from tests_ui.base_page import BasePage
 class MainPage(BasePage):
     locators = Locators()
 
-    @allure.step('check_links')
+    @allure.step('Check links')
     def check_links(self):
         links = self.elements_are_present(self.locators.LINKS)
         list_links = [link.get_attribute('href') for link in links]
@@ -17,7 +17,7 @@ class MainPage(BasePage):
             with allure.step(f'{link} status code is: {requests.get(link).status_code}'):
                 assert requests.get(link).status_code != 404, f'Link {link} is broken!'
 
-    @allure.step('check_main_button_is_visible')
+    @allure.step('Check main button is visible')
     def check_main_button_is_visible(self):
         with allure.step('Click Terms of Use.'):
             self.element_is_present_and_clickable(self.locators.TOS_BUTTON).click()

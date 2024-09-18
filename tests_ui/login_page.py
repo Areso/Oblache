@@ -14,7 +14,7 @@ load_dotenv()
 class LoginPage(BasePage):
     locators = Locators()
 
-    @allure.step('get_all_ids')
+    @allure.step('Get all ids')
     def get_all_ids(self):
         web_ids = self.elements_are_present(self.locators.IDS)
         list_ids = [i.get_attribute('id') for i in web_ids]
@@ -51,7 +51,7 @@ class LoginPage(BasePage):
             assert self.element_is_present_and_clickable(
                 self.locators.INPUT_REGISTER_BUTTON), 'Register(input) button is not present or clickable.'
 
-    @allure.step('login_user')
+    @allure.step('Login user')
     def login_user(self):
         with allure.step('Enter email.'):
             self.element_is_present(self.locators.INPUT_LOGIN).send_keys(os.getenv('EMAIL'))

@@ -125,7 +125,7 @@ class API:
         with allure.step('Response:'):
             with allure.step(f'Status code: {response.status_code}'):
                 ...
-            with allure.step(f'JSON: {response.text()}'):
+            with allure.step(f'JSON: {response.text}'):
                 ...
         return response
 
@@ -150,7 +150,7 @@ class API:
         with allure.step('Response:'):
             with allure.step(f'Status code: {response.status_code}'):
                 ...
-            with allure.step(f'JSON: {response.text()}'):
+            with allure.step(f'JSON: {response.text}'):
                 ...
         return response
 
@@ -200,7 +200,7 @@ class API:
         with allure.step('Response:'):
             with allure.step(f'Status code: {response.status_code}'):
                 ...
-            with allure.step(f'JSON: {response.text()}'):
+            with allure.step(f'JSON: {response.text}'):
                 ...
         return response
 
@@ -321,7 +321,7 @@ class API:
         with allure.step('Response:'):
             with allure.step(f'Status code: {response.status_code}'):
                 ...
-            with allure.step(f'JSON: {response.text()}'):
+            with allure.step(f'JSON: {response.text}'):
                 ...
         return response
 
@@ -366,7 +366,7 @@ class API:
             with allure.step('Response:'):
                 with allure.step(f'Status code: {response.status_code}'):
                     ...
-                with allure.step(f'JSON: {response.text()}'):
+                with allure.step(f'JSON: {response.text}'):
                     ...
             return response
 
@@ -423,7 +423,7 @@ class API:
             with allure.step('Response:'):
                 with allure.step(f'Status code: {response.status_code}'):
                     ...
-                with allure.step(f'JSON: {response.text()}'):
+                with allure.step(f'JSON: {response.text}'):
                     ...
             return response
 
@@ -450,7 +450,7 @@ class API:
             with allure.step('Response:'):
                 with allure.step(f'Status code: {response.status_code}'):
                     ...
-                with allure.step(f'JSON: {response.text()}'):
+                with allure.step(f'JSON: {response.text}'):
                     ...
             return response
 
@@ -477,7 +477,7 @@ class API:
             with allure.step('Response:'):
                 with allure.step(f'Status code: {response.status_code}'):
                     ...
-                with allure.step(f'JSON: {response.text()}'):
+                with allure.step(f'JSON: {response.text}'):
                     ...
             return response
 
@@ -533,7 +533,7 @@ class API:
             with allure.step('Response:'):
                 with allure.step(f'Status code: {response.status_code}'):
                     ...
-                with allure.step(f'JSON: {response.text()}'):
+                with allure.step(f'JSON: {response.text}'):
                     ...
             return response
 
@@ -565,7 +565,7 @@ class API:
             with allure.step('Response:'):
                 with allure.step(f'Status code: {response.status_code}'):
                     ...
-                with allure.step(f'JSON: {response.text()}'):
+                with allure.step(f'JSON: {response.text}'):
                     ...
             return response
 
@@ -657,7 +657,7 @@ class API:
             with allure.step('Response:'):
                 with allure.step(f'Status code: {response.status_code}'):
                     ...
-                with allure.step(f'JSON: {response.text()}'):
+                with allure.step(f'JSON: {response.text}'):
                     ...
             return response
 
@@ -688,7 +688,7 @@ class API:
             with allure.step('Response:'):
                 with allure.step(f'Status code: {response.status_code}'):
                     ...
-                with allure.step(f'JSON: {response.text()}'):
+                with allure.step(f'JSON: {response.text}'):
                     ...
             return response
 
@@ -719,7 +719,7 @@ class API:
             with allure.step('Response:'):
                 with allure.step(f'Status code: {response.status_code}'):
                     ...
-                with allure.step(f'JSON: {response.text()}'):
+                with allure.step(f'JSON: {response.text}'):
                     ...
             return response
 
@@ -750,7 +750,7 @@ class API:
             with allure.step('Response:'):
                 with allure.step(f'Status code: {response.status_code}'):
                     ...
-                with allure.step(f'JSON: {response.text()}'):
+                with allure.step(f'JSON: {response.text}'):
                     ...
             return response
 
@@ -776,7 +776,7 @@ class API:
             with allure.step('Response:'):
                 with allure.step(f'Status code: {response.status_code}'):
                     ...
-                with allure.step(f'JSON: {response.text()}'):
+                with allure.step(f'JSON: {response.text}'):
                     ...
             return response
 
@@ -803,7 +803,7 @@ class API:
             with allure.step('Response:'):
                 with allure.step(f'Status code: {response.status_code}'):
                     ...
-                with allure.step(f'JSON: {response.text()}'):
+                with allure.step(f'JSON: {response.text}'):
                     ...
             return response
 
@@ -830,7 +830,7 @@ class API:
             with allure.step('Response:'):
                 with allure.step(f'Status code: {response.status_code}'):
                     ...
-                with allure.step(f'JSON: {response.text()}'):
+                with allure.step(f'JSON: {response.text}'):
                     ...
             return response
 
@@ -860,7 +860,7 @@ class API:
             with allure.step('Response:'):
                 with allure.step(f'Status code: {response.status_code}'):
                     ...
-                with allure.step(f'JSON: {response.text()}'):
+                with allure.step(f'JSON: {response.text}'):
                     ...
             return response
 
