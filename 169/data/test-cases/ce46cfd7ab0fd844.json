@@ -1,0 +1,419 @@
+{
+  "uid" : "ce46cfd7ab0fd844",
+  "name" : "POST checking ports_len negative range",
+  "fullName" : "tests_api.test_bd.TestPOST#test_post_checking_ports_len_negative_range",
+  "historyId" : "6a5e2b3a0040caf8e74db064b01d1684",
+  "time" : {
+    "start" : 1727400369848,
+    "stop" : 1727400370171,
+    "duration" : 323
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: Incorrect status code: 502",
+  "statusTrace" : "self = <tests_api.test_bd.TestPOST object at 0x7f2d9bce6720>\n\n    @allure.title('POST checking ports_len negative range')\n    def test_post_checking_ports_len_negative_range(self):\n        result = API.post_create_docker_container_checking_ports(\n            token=TestPOST.token,\n            port_len=\"80-90\")\n>       Checking.check_status_code(result, 400)\n\ntests_api/test_bd.py:382: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [502]>, status_code = 400\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, f'Incorrect status code: {result.status_code}'\nE           AssertionError: Incorrect status code: 502\n\ntests_api/utils/checking.py:16: AssertionError",
+  "flaky" : false,
+  "newFailed" : true,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: Incorrect status code: 502",
+    "statusTrace" : "self = <tests_api.test_bd.TestPOST object at 0x7f2d9bce6720>\n\n    @allure.title('POST checking ports_len negative range')\n    def test_post_checking_ports_len_negative_range(self):\n        result = API.post_create_docker_container_checking_ports(\n            token=TestPOST.token,\n            port_len=\"80-90\")\n>       Checking.check_status_code(result, 400)\n\ntests_api/test_bd.py:382: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [502]>, status_code = 400\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, f'Incorrect status code: {result.status_code}'\nE           AssertionError: Incorrect status code: 502\n\ntests_api/utils/checking.py:16: AssertionError",
+    "steps" : [ {
+      "name" : "post_create_docker_container",
+      "time" : {
+        "start" : 1727400369848,
+        "stop" : 1727400370171,
+        "duration" : 323
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Endpoint: /container_create",
+        "time" : {
+          "start" : 1727400370170,
+          "stop" : 1727400370170,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Request:",
+        "time" : {
+          "start" : 1727400370170,
+          "stop" : 1727400370171,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Url: https://dbend.areso.pro/container_create",
+          "time" : {
+            "start" : 1727400370170,
+            "stop" : 1727400370170,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Headers: {'Content-Type': 'application/json', 'Authorization': '60f617bf-e08e-45b6-a77c-0a6d309cd05d'}",
+          "time" : {
+            "start" : 1727400370171,
+            "stop" : 1727400370171,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Body: {\"docker_image\": \"nginx\", \"int_ports\": f\"80-90\", \"env\": 3, \"region\": 3}",
+          "time" : {
+            "start" : 1727400370171,
+            "stop" : 1727400370171,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Response:",
+        "time" : {
+          "start" : 1727400370171,
+          "stop" : 1727400370171,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status code: 502",
+          "time" : {
+            "start" : 1727400370171,
+            "stop" : 1727400370171,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "JSON: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.18.0 (Ubuntu)</center>\r\n</body>\r\n</html>\r\n",
+          "time" : {
+            "start" : 1727400370171,
+            "stop" : 1727400370171,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 8,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Assert status code: 400 == Response status code: 502",
+      "time" : {
+        "start" : 1727400370171,
+        "stop" : 1727400370171,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: Incorrect status code: 502\n",
+      "statusTrace" : "  File \"/home/runner/work/Oblache/Oblache/tests_api/utils/checking.py\", line 16, in check_status_code\n    assert status_code == result.status_code, f'Incorrect status code: {result.status_code}'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 10,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "POST"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_api"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestPOST"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1020-725"
+  }, {
+    "name" : "thread",
+    "value" : "2287-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_api.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 3,
+        "skipped" : 0,
+        "passed" : 44,
+        "unknown" : 0,
+        "total" : 48
+      },
+      "items" : [ {
+        "uid" : "ae2f6a8a3c53146e",
+        "reportUrl" : "https://Areso.github.io/Oblache/168//#testresult/ae2f6a8a3c53146e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1727313935973,
+          "stop" : 1727313936490,
+          "duration" : 517
+        }
+      }, {
+        "uid" : "b59e4489cbf0aa4",
+        "reportUrl" : "https://Areso.github.io/Oblache/167//#testresult/b59e4489cbf0aa4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1727227625007,
+          "stop" : 1727227625323,
+          "duration" : 316
+        }
+      }, {
+        "uid" : "da8e1cdd86342cd9",
+        "reportUrl" : "https://Areso.github.io/Oblache/166//#testresult/da8e1cdd86342cd9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1727141180472,
+          "stop" : 1727141180987,
+          "duration" : 515
+        }
+      }, {
+        "uid" : "6e8694126ec1ae88",
+        "reportUrl" : "https://Areso.github.io/Oblache/165//#testresult/6e8694126ec1ae88",
+        "status" : "passed",
+        "time" : {
+          "start" : 1727054744721,
+          "stop" : 1727054745040,
+          "duration" : 319
+        }
+      }, {
+        "uid" : "2254e9ff52cb6604",
+        "reportUrl" : "https://Areso.github.io/Oblache/164//#testresult/2254e9ff52cb6604",
+        "status" : "passed",
+        "time" : {
+          "start" : 1726969089064,
+          "stop" : 1726969089581,
+          "duration" : 517
+        }
+      }, {
+        "uid" : "9d5d59883f05007e",
+        "reportUrl" : "https://Areso.github.io/Oblache/163//#testresult/9d5d59883f05007e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1726881744004,
+          "stop" : 1726881744320,
+          "duration" : 316
+        }
+      }, {
+        "uid" : "567f3dc0ce2810dc",
+        "reportUrl" : "https://Areso.github.io/Oblache/162//#testresult/567f3dc0ce2810dc",
+        "status" : "passed",
+        "time" : {
+          "start" : 1726795456105,
+          "stop" : 1726795456462,
+          "duration" : 357
+        }
+      }, {
+        "uid" : "adf25bb98ebafff5",
+        "reportUrl" : "https://Areso.github.io/Oblache/161//#testresult/adf25bb98ebafff5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1726709053789,
+          "stop" : 1726709054303,
+          "duration" : 514
+        }
+      }, {
+        "uid" : "65e6e60ea306f01b",
+        "reportUrl" : "https://Areso.github.io/Oblache/160//#testresult/65e6e60ea306f01b",
+        "status" : "broken",
+        "statusDetails" : "TypeError: 'str' object is not callable",
+        "time" : {
+          "start" : 1726622540893,
+          "stop" : 1726622541200,
+          "duration" : 307
+        }
+      }, {
+        "uid" : "dea5e06849d0f7e9",
+        "reportUrl" : "https://Areso.github.io/Oblache/159//#testresult/dea5e06849d0f7e9",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+        "time" : {
+          "start" : 1726535358898,
+          "stop" : 1726535359384,
+          "duration" : 486
+        }
+      }, {
+        "uid" : "f19de54208ddad96",
+        "reportUrl" : "https://Areso.github.io/Oblache/158//#testresult/f19de54208ddad96",
+        "status" : "passed",
+        "time" : {
+          "start" : 1726450031435,
+          "stop" : 1726450031800,
+          "duration" : 365
+        }
+      }, {
+        "uid" : "2db97bb7b1214761",
+        "reportUrl" : "https://Areso.github.io/Oblache/157//#testresult/2db97bb7b1214761",
+        "status" : "passed",
+        "time" : {
+          "start" : 1726364268501,
+          "stop" : 1726364268999,
+          "duration" : 498
+        }
+      }, {
+        "uid" : "1df29b0653788f36",
+        "reportUrl" : "https://Areso.github.io/Oblache/156//#testresult/1df29b0653788f36",
+        "status" : "passed",
+        "time" : {
+          "start" : 1726276890273,
+          "stop" : 1726276890633,
+          "duration" : 360
+        }
+      }, {
+        "uid" : "54ad8ae474bb4d74",
+        "reportUrl" : "https://Areso.github.io/Oblache/155//#testresult/54ad8ae474bb4d74",
+        "status" : "passed",
+        "time" : {
+          "start" : 1726190561821,
+          "stop" : 1726190562115,
+          "duration" : 294
+        }
+      }, {
+        "uid" : "b0b6799f5f85c4a6",
+        "reportUrl" : "https://Areso.github.io/Oblache/154//#testresult/b0b6799f5f85c4a6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1726104148565,
+          "stop" : 1726104149099,
+          "duration" : 534
+        }
+      }, {
+        "uid" : "ba4411ee110c7ad3",
+        "reportUrl" : "https://Areso.github.io/Oblache/153//#testresult/ba4411ee110c7ad3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1726017706766,
+          "stop" : 1726017707089,
+          "duration" : 323
+        }
+      }, {
+        "uid" : "e76218248e21a93a",
+        "reportUrl" : "https://Areso.github.io/Oblache/152//#testresult/e76218248e21a93a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1725931364250,
+          "stop" : 1725931364564,
+          "duration" : 314
+        }
+      }, {
+        "uid" : "48203ecd9b32945e",
+        "reportUrl" : "https://Areso.github.io/Oblache/12//#testresult/48203ecd9b32945e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1725892821283,
+          "stop" : 1725892821599,
+          "duration" : 316
+        }
+      }, {
+        "uid" : "c4e7bc03e16f558",
+        "reportUrl" : "https://Areso.github.io/Oblache/151//#testresult/c4e7bc03e16f558",
+        "status" : "passed",
+        "time" : {
+          "start" : 1725845207799,
+          "stop" : 1725845208123,
+          "duration" : 324
+        }
+      }, {
+        "uid" : "6a1b2c38d921c253",
+        "reportUrl" : "https://Areso.github.io/Oblache/11//#testresult/6a1b2c38d921c253",
+        "status" : "passed",
+        "time" : {
+          "start" : 1725789066640,
+          "stop" : 1725789067089,
+          "duration" : 449
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "ce46cfd7ab0fd844.json",
+  "parameterValues" : [ ]
+}
