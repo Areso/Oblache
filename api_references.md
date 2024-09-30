@@ -2,7 +2,7 @@
 
 Table of contents:  
 1. [Common](#common)  
-1.1. [Get reference tables"](#get-reference-tables)   
+1.1. [Get reference tables](#get-reference-tables)   
 1.2. [Registration](###Registration)  
 1.3. [Log-in](#log-in)  
 1.4. [Is logged?](#is-logged)  
