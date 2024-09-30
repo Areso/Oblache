@@ -7,7 +7,7 @@ Table of contents:
 1.3. [Log-in](#log-in)  
 1.4. [Is logged?](#is-logged)  
 1.5. [Get profile](#get-profile)  
-1.6. [Password update](#password-update)
+1.6. [Password update](#password-update)  
 1.7. [Log-out](#log-out)
 
 ## Common
