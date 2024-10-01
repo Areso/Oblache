@@ -22,7 +22,7 @@ Table of contents:
 4.2. [List sites](#list-sites)  
 4.3. [Undeploy site](#undeploy-site)  
 
-This document covers only Requests, and does not cover corresponding Responses, because Response signatures are changing now so often now. After the stable release the document will get update with the Responses.  
+This document covers only Requests, and does not cover corresponding Responses, because Response signatures are changing so often now. After the stable release the document will get update with the Responses.  
 ## Common
 ### Get reference tables
 1. `curl https://dbend.areso.pro/list_regions`
