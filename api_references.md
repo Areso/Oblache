@@ -21,6 +21,8 @@ Table of contents:
 4.1. [Deploy site](#deploy-site)  
 4.2. [List sites](#list-sites)  
 4.3. [Undeploy site](#undeploy-site)  
+
+This document covers only Requests, and does not cover corresponding Responses, because Response signatures are changing so often before the stable release.  
 ## Common
 ### Get reference tables
 1. `curl https://dbend.areso.pro/list_regions`
