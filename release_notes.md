@@ -1,1 +1,2 @@
-# Release notes
+
+enable automation
