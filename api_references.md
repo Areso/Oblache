@@ -58,7 +58,7 @@ Should return msg code 5, unauthenticated, code 401, if not logged.
 ### Get profile
 
 ```
-curl -i  -H "Authorization: 3f7bc762-c6ac-41d0-affc-0c2f0fa7376b" \
+curl -i -X POST -H "Authorization: 3f7bc762-c6ac-41d0-affc-0c2f0fa7376b" \
 https://dbend.areso.pro/get_profile -v
 ```
 
