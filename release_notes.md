@@ -1,5 +1,7 @@
 # Release notes
-Thu 10 Oct 2024 02:37 AM EEST  
+Thu 10 Oct 2024 02:38 AM EEST  
+dbaas_backend:
+formatting release notes better (maybe?)---Thu 10 Oct 2024 02:37 AM EEST  
 dbaas_backend:
 formatting release notes better (maybe?)  ---Thu 10 Oct 2024 02:36 AM EEST  
 dbaas_backend:
