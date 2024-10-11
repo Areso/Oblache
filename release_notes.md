@@ -1,4 +1,7 @@
 # Release notes
+Sat 12 Oct 2024 12:21 AM EEST  
+dbaas_backend:
+OBL-288 hotfix anuaht response  
 Thu 10 Oct 2024 03:16 AM EEST  
 dbaas_backend:
 try to move auth check for /db_create to decorator. hotfix  
