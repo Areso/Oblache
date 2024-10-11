@@ -1,4 +1,7 @@
 # Release notes
+Sat 12 Oct 2024 12:22 AM EEST  
+dbaas_backend:
+OBL-288 hotfix response code  
 Sat 12 Oct 2024 12:21 AM EEST  
 dbaas_backend:
 OBL-288 hotfix anuaht response  
