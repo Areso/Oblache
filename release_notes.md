@@ -1,4 +1,7 @@
 # Release notes
+Sat 12 Oct 2024 12:51 AM EEST  
+dbaas_backend:
+removed obsolete auth_check from /db_create  
 Sat 12 Oct 2024 12:29 AM EEST  
 dbaas_backend:
 OBL-288 hotfix response text localization resolve  
