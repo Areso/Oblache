@@ -1,4 +1,7 @@
 # Release notes
+Sat 12 Oct 2024 12:29 AM EEST  
+dbaas_backend:
+OBL-288 hotfix response text localization resolve  
 Sat 12 Oct 2024 12:22 AM EEST  
 dbaas_backend:
 OBL-288 hotfix response code  
