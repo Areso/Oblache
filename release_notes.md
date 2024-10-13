@@ -1,4 +1,8 @@
 # Release notes
+Sun 13 Oct 2024 09:58 PM EEST  
+dbaas_backend:
+imported py_logger    
+
 Sun 13 Oct 2024 03:24 PM EEST  
 dbaas_backend:
 remove debug from the HOOK    
