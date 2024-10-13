@@ -1,4 +1,7 @@
 # Release notes
+Sun 13 Oct 2024 02:55 PM EEST  
+dbaas_backend:
+added MORE debug to the hook: fix variable  
 Sun 13 Oct 2024 02:54 PM EEST  
 :
 added MORE debug to the hook  
