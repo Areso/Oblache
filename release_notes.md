@@ -1,4 +1,7 @@
 # Release notes
+Sun 13 Oct 2024 02:51 PM EEST  
+dbaas_backend:
+added debug to the hook  
 Sat 12 Oct 2024 12:51 AM EEST  
 dbaas_backend:
 removed obsolete auth_check from /db_create  
