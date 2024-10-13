@@ -1,4 +1,7 @@
 # Release notes
+Sun 13 Oct 2024 02:52 PM EEST  
+dbaas_backend:
+added MORE debug to the hook  
 Sun 13 Oct 2024 02:51 PM EEST  
 dbaas_backend:
 added debug to the hook  
