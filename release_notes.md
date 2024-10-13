@@ -1,4 +1,8 @@
 # Release notes
+Sun 13 Oct 2024 03:24 PM EEST  
+dbaas_backend:
+remove debug from the HOOK    
+
 Sun 13 Oct 2024 03:23 PM EEST  
 dbaas_backend:
 apply new formmatting to release notes    
