@@ -1,4 +1,7 @@
 # Release notes
+Sun 13 Oct 2024 03:18 PM EEST  
+dbaas_backend:
+apply new formmatting to release notes      
 Sun 13 Oct 2024 02:56 PM EEST  
 dbaas_backend:
 added MORE debug to the hook    
