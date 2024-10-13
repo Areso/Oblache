@@ -1,4 +1,8 @@
 # Release notes
+Mon Oct 14 12:41 AM EEST 2024  
+dbaas_backend:
+added log file to .gitignore    
+
 Sun Oct 13 11:13 PM EEST 2024  
 dbaas_backend:
 updated import    
