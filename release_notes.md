@@ -1,4 +1,8 @@
 # Release notes
+Sun Oct 13 11:13 PM EEST 2024  
+dbaas_backend:
+updated import    
+
 Sun Oct 13 11:11 PM EEST 2024  
 dbaas_backend:
 updated py logger import    
