@@ -1,4 +1,7 @@
 # Release notes
+Sun 13 Oct 2024 03:23 PM EEST  
+dbaas_backend:
+apply new formmatting to release notes    
 Sun 13 Oct 2024 03:19 PM EEST  
 dbaas_backend:
 apply new formmatting to release notes        
