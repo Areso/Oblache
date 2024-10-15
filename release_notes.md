@@ -1,4 +1,8 @@
 # Release notes
+Wed 16 Oct 2024 12:47 AM EEST  
+dbaas_backend:
+OBL-292 added number of created databases to the endpoint. hotfix    
+
 Wed 16 Oct 2024 12:06 AM EEST  
 dbaas_backend:
 OBL-292 added number of created databases to the endpoint    
