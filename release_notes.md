@@ -1,4 +1,8 @@
 # Release notes
+Wed 16 Oct 2024 12:06 AM EEST  
+dbaas_backend:
+OBL-292 added number of created databases to the endpoint    
+
 Mon Oct 14 12:41 AM EEST 2024  
 dbaas_backend:
 added log file to .gitignore    
