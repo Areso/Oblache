@@ -1,4 +1,8 @@
 # Release notes
+Fri 18 Oct 2024 10:15 PM EEST  
+dbaas_backend:
+    
+
 Fri 18 Oct 2024 10:11 PM EEST  
 dbaas_backend:
     
