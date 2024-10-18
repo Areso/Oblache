@@ -1,4 +1,8 @@
 # Release notes
+Fri 18 Oct 2024 10:23 PM EEST  
+dbaas_backend:
+    
+
 Fri 18 Oct 2024 10:22 PM EEST  
 dbaas_backend:
 [Obl-](https://github.com/Areso/Oblache/issues/)295 fix    
