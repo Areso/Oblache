@@ -1,4 +1,8 @@
 # Release notes
+Sat 19 Oct 2024 12:23 AM EEST  
+dbaas_backend:
+[OBL-296](https://github.com/Areso/Oblache/issues/296) - added number of created containers and sites. hotfix    
+
 Sat 19 Oct 2024 12:22 AM EEST  
 dbaas_backend:
 [OBL-296](https://github.com/Areso/Oblache/issues/296) - added number of created containers and sites    
