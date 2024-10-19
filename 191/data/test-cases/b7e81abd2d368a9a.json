@@ -1,0 +1,571 @@
+{
+  "uid" : "b7e81abd2d368a9a",
+  "name" : "POST db_list_with_filter",
+  "fullName" : "tests_api.test_bd.TestPOST#test_post_db_list_with_filter",
+  "historyId" : "1404cf75602dc5c195df0f6e9ffb5ba3",
+  "time" : {
+    "start" : 1729301115483,
+    "stop" : 1729301116104,
+    "duration" : 621
+  },
+  "status" : "skipped",
+  "statusMessage" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 400",
+  "statusTrace" : "self = <tests_api.test_bd.TestPOST object at 0x7ffb9d839730>\n\n    @allure.title('POST db_list_with_filter')\n    @pytest.mark.xfail(reason='There are databases that need to be deleted manually.')\n    def test_post_db_list_with_filter(self):\n        list_db = API.post_db_list(token=TestPOST.token)\n        json_list_db = json.loads(list_db.text)\n        try:\n            first_db_uuid = list(json_list_db['data'])[-1]\n            response_db_list = API.delete_db(\n                db_uuid=first_db_uuid,\n                token=TestPOST.token)\n>           Checking.check_status_code(response_db_list, 200)\n\ntests_api/test_bd.py:311: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [400]>, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, f'Incorrect status code: {result.status_code}'\nE           AssertionError: Incorrect status code: 400\n\ntests_api/utils/checking.py:16: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "skipped",
+    "statusMessage" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 400",
+    "statusTrace" : "self = <tests_api.test_bd.TestPOST object at 0x7ffb9d839730>\n\n    @allure.title('POST db_list_with_filter')\n    @pytest.mark.xfail(reason='There are databases that need to be deleted manually.')\n    def test_post_db_list_with_filter(self):\n        list_db = API.post_db_list(token=TestPOST.token)\n        json_list_db = json.loads(list_db.text)\n        try:\n            first_db_uuid = list(json_list_db['data'])[-1]\n            response_db_list = API.delete_db(\n                db_uuid=first_db_uuid,\n                token=TestPOST.token)\n>           Checking.check_status_code(response_db_list, 200)\n\ntests_api/test_bd.py:311: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [400]>, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, f'Incorrect status code: {result.status_code}'\nE           AssertionError: Incorrect status code: 400\n\ntests_api/utils/checking.py:16: AssertionError",
+    "steps" : [ {
+      "name" : "post_db_list",
+      "time" : {
+        "start" : 1729301115483,
+        "stop" : 1729301115794,
+        "duration" : 311
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Endpoint: /db_list",
+        "time" : {
+          "start" : 1729301115794,
+          "stop" : 1729301115794,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0
+      }, {
+        "name" : "Request:",
+        "time" : {
+          "start" : 1729301115794,
+          "stop" : 1729301115794,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Url: https://dbend.areso.pro/db_list",
+          "time" : {
+            "start" : 1729301115794,
+            "stop" : 1729301115794,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false,
+          "stepsCount" : 0
+        }, {
+          "name" : "Headers: {'Content-Type': 'application/json', 'Authorization': '72dbc5d7-fdda-41b0-92ee-2f0b3ba76c07'}",
+          "time" : {
+            "start" : 1729301115794,
+            "stop" : 1729301115794,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false,
+          "stepsCount" : 0
+        }, {
+          "name" : "Body: None",
+          "time" : {
+            "start" : 1729301115794,
+            "stop" : 1729301115794,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false,
+          "stepsCount" : 0
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true,
+        "stepsCount" : 3
+      }, {
+        "name" : "Response:",
+        "time" : {
+          "start" : 1729301115794,
+          "stop" : 1729301115794,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status code: 200",
+          "time" : {
+            "start" : 1729301115794,
+            "stop" : 1729301115794,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false,
+          "stepsCount" : 0
+        }, {
+          "name" : "JSON: {\n  \"data\": {\n    \"066b87ca-9dd6-7a0b-8000-461dafcab111\": [\n      \"\",\n      \"CIS\",\n      \"manual_deleting\",\n      null,\n      \"None\",\n      0\n    ],\n    \"066b87cb-4cfd-73bd-8000-ad0fc36ba001\": [\n      \"\",\n      \"CIS\",\n      \"manual_deleting\",\n      null,\n      \"None\",\n      0\n    ],\n    \"066b87cf-a338-7323-8000-0bf32a680ae6\": [\n      \"\",\n      \"CIS\",\n      \"manual_deleting\",\n      null,\n      \"None\",\n      0\n    ],\n    \"066b87fa-e7b6-76b6-8000-6da15c803e34\": [\n      \"\",\n      \"CIS\",\n      \"manual_deleting\",\n      null,\n      \"None\",\n      0\n    ],\n    \"066b901a-88fc-7a2b-8000-712464b36b1c\": [\n      \"\",\n      \"CIS\",\n      \"manual_deleting\",\n      null,\n      \"None\",\n      0\n    ],\n    \"066bd164-0617-75dd-8000-866f5dc1ce44\": [\n      \"db_ji3eegk9\",\n      \"CIS\",\n      \"error_to_threshold\",\n      \"mysql://user_tln5y0w3:pwPW01__H5d8gcbeqWWdZH@cis_db1.areso.pro:3306/db_ji3eegk9\",\n      \"2024-08-14 20:40:42\",\n      0\n    ],\n    \"066d9eed-f09a-7db8-8000-80b496f05633\": [\n      \"db_8bmgvwjv\",\n      \"CIS\",\n      \"error_to_threshold\",\n      \"mysql://user_gdrgym35:pwPW01__Iuiwn8ykAK65hy@cis_db1.areso.pro:3306/db_8bmgvwjv\",\n      \"2024-09-05 17:48:25\",\n      0\n    ],\n    \"066d9efb-8218-79d4-8000-4e7aba4f0139\": [\n      \"db_wjlk1fw0\",\n      \"CIS\",\n      \"error_to_threshold\",\n      \"mysql://user_rv52273g:pwPW01__4d0hT10HYRpuTi@cis_db1.areso.pro:3306/db_wjlk1fw0\",\n      \"2024-09-05 17:52:03\",\n      0\n    ],\n    \"066d9efc-7d24-7243-8000-e2a65edbd23e\": [\n      \"db_i5n4oqpl\",\n      \"CIS\",\n      \"error_to_threshold\",\n      \"mysql://user_2d99654y:pwPW01__YR60Gyo480l0Xx@cis_db1.areso.pro:3306/db_i5n4oqpl\",\n      \"2024-09-05 17:52:17\",\n      0\n    ],\n    \"066da549-ba6b-71bc-8000-329f72336f26\": [\n      \"db_i1fqs78r\",\n      \"CIS\",\n      \"error_to_threshold\",\n      \"mysql://user_kk09qxgi:pwPW01__5srn0nAEQwhv9H@cis_db1.areso.pro:3306/db_i1fqs78r\",\n      \"2024-09-06 01:02:29\",\n      0\n    ],\n    \"066da592-2e9e-748b-8000-9567d3d0f846\": [\n      \"db_hy3nifmn\",\n      \"CIS\",\n      \"error_deleting\",\n      \"mysql://user_qyz0dq0z:pwPW01__WlYyX4pVQkosaQ@cis_db1.areso.pro:3306/db_hy3nifmn\",\n      \"2024-09-06 01:21:48\",\n      9\n    ]\n  },\n  \"headers\": {\n    \"Access-Control-Allow-Methods\": [\n      \"POST\",\n      \"OPTIONS\"\n    ],\n    \"Access-Control-Allow-Origin\": \"*\",\n    \"Access-Control-Expose-Headers\": \"*\",\n    \"Content-Type\": \"application/json; charset=utf-8\"\n  },\n  \"status\": 200\n}\n",
+          "time" : {
+            "start" : 1729301115794,
+            "stop" : 1729301115794,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false,
+          "stepsCount" : 0
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true,
+        "stepsCount" : 2
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 8
+    }, {
+      "name" : "delete_db",
+      "time" : {
+        "start" : 1729301115794,
+        "stop" : 1729301116104,
+        "duration" : 310
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Endpoint: /container_delete",
+        "time" : {
+          "start" : 1729301116104,
+          "stop" : 1729301116104,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0
+      }, {
+        "name" : "Request:",
+        "time" : {
+          "start" : 1729301116104,
+          "stop" : 1729301116104,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Url: https://dbend.areso.pro/db_delete",
+          "time" : {
+            "start" : 1729301116104,
+            "stop" : 1729301116104,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false,
+          "stepsCount" : 0
+        }, {
+          "name" : "Headers: {'Content-Type': 'application/json', 'Authorization': '72dbc5d7-fdda-41b0-92ee-2f0b3ba76c07'}",
+          "time" : {
+            "start" : 1729301116104,
+            "stop" : 1729301116104,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false,
+          "stepsCount" : 0
+        }, {
+          "name" : "Body: {\"db_uuid\": f\"{'db_uuid': '066da592-2e9e-748b-8000-9567d3d0f846'}\"}",
+          "time" : {
+            "start" : 1729301116104,
+            "stop" : 1729301116104,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false,
+          "stepsCount" : 0
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true,
+        "stepsCount" : 3
+      }, {
+        "name" : "Response:",
+        "time" : {
+          "start" : 1729301116104,
+          "stop" : 1729301116104,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status code: 400",
+          "time" : {
+            "start" : 1729301116104,
+            "stop" : 1729301116104,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false,
+          "stepsCount" : 0
+        }, {
+          "name" : "JSON: {\n    \"content\": \"msg[20]: error: can't delete a db while it is in deletion error state\"\n}\n",
+          "time" : {
+            "start" : 1729301116104,
+            "stop" : 1729301116104,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false,
+          "stepsCount" : 0
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true,
+        "stepsCount" : 2
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 8
+    }, {
+      "name" : "Assert status code: 200 == Response status code: 400",
+      "time" : {
+        "start" : 1729301116104,
+        "stop" : 1729301116104,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: Incorrect status code: 400\n",
+      "statusTrace" : "  File \"/home/runner/work/Oblache/Oblache/tests_api/utils/checking.py\", line 16, in check_status_code\n    assert status_code == result.status_code, f'Incorrect status code: {result.status_code}'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true,
+      "stepsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true,
+    "stepsCount" : 19
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "POST"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.xfail(reason='There are databases that need to be deleted manually.')"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_api"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestPOST"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1543-749"
+  }, {
+    "name" : "thread",
+    "value" : "2241-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_api.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 70,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 70
+      },
+      "items" : [ {
+        "uid" : "bec605961238ebe6",
+        "reportUrl" : "https://Areso.github.io/Oblache/190//#testresult/bec605961238ebe6",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1729214794570,
+          "stop" : 1729214795196,
+          "duration" : 626
+        }
+      }, {
+        "uid" : "337a90d659b7e172",
+        "reportUrl" : "https://Areso.github.io/Oblache/189//#testresult/337a90d659b7e172",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1729128379114,
+          "stop" : 1729128379739,
+          "duration" : 625
+        }
+      }, {
+        "uid" : "67d27f28f2f8661b",
+        "reportUrl" : "https://Areso.github.io/Oblache/188//#testresult/67d27f28f2f8661b",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1729042050798,
+          "stop" : 1729042051843,
+          "duration" : 1045
+        }
+      }, {
+        "uid" : "82d404c45c7c1c3",
+        "reportUrl" : "https://Areso.github.io/Oblache/187//#testresult/82d404c45c7c1c3",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1728955619924,
+          "stop" : 1728955620554,
+          "duration" : 630
+        }
+      }, {
+        "uid" : "6cfaef2423e55fc",
+        "reportUrl" : "https://Areso.github.io/Oblache/186//#testresult/6cfaef2423e55fc",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1728869288819,
+          "stop" : 1728869289834,
+          "duration" : 1015
+        }
+      }, {
+        "uid" : "515697722d1a129a",
+        "reportUrl" : "https://Areso.github.io/Oblache/185//#testresult/515697722d1a129a",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1728783517163,
+          "stop" : 1728783518187,
+          "duration" : 1024
+        }
+      }, {
+        "uid" : "80ef8a05a5be5516",
+        "reportUrl" : "https://Areso.github.io/Oblache/184//#testresult/80ef8a05a5be5516",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1728696237464,
+          "stop" : 1728696238170,
+          "duration" : 706
+        }
+      }, {
+        "uid" : "ef8a9be6a906da13",
+        "reportUrl" : "https://Areso.github.io/Oblache/183//#testresult/ef8a9be6a906da13",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1728609945390,
+          "stop" : 1728609946421,
+          "duration" : 1031
+        }
+      }, {
+        "uid" : "6630e321a61198e3",
+        "reportUrl" : "https://Areso.github.io/Oblache/182//#testresult/6630e321a61198e3",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1728523532866,
+          "stop" : 1728523533602,
+          "duration" : 736
+        }
+      }, {
+        "uid" : "315d4e682708ca21",
+        "reportUrl" : "https://Areso.github.io/Oblache/181//#testresult/315d4e682708ca21",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1728437140697,
+          "stop" : 1728437141328,
+          "duration" : 631
+        }
+      }, {
+        "uid" : "75596883761289fb",
+        "reportUrl" : "https://Areso.github.io/Oblache/180//#testresult/75596883761289fb",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1728350757546,
+          "stop" : 1728350758191,
+          "duration" : 645
+        }
+      }, {
+        "uid" : "268384e741ee4c3e",
+        "reportUrl" : "https://Areso.github.io/Oblache/179//#testresult/268384e741ee4c3e",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1728264951655,
+          "stop" : 1728264952314,
+          "duration" : 659
+        }
+      }, {
+        "uid" : "b685f8876ae29b98",
+        "reportUrl" : "https://Areso.github.io/Oblache/178//#testresult/b685f8876ae29b98",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1728178729711,
+          "stop" : 1728178730348,
+          "duration" : 637
+        }
+      }, {
+        "uid" : "6dc2b1e139111aa3",
+        "reportUrl" : "https://Areso.github.io/Oblache/177//#testresult/6dc2b1e139111aa3",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1728091498910,
+          "stop" : 1728091499636,
+          "duration" : 726
+        }
+      }, {
+        "uid" : "70bfb855ef7ec222",
+        "reportUrl" : "https://Areso.github.io/Oblache/176//#testresult/70bfb855ef7ec222",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1728005162294,
+          "stop" : 1728005162902,
+          "duration" : 608
+        }
+      }, {
+        "uid" : "5138831ebe956cfd",
+        "reportUrl" : "https://Areso.github.io/Oblache/175//#testresult/5138831ebe956cfd",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1727918768807,
+          "stop" : 1727918769530,
+          "duration" : 723
+        }
+      }, {
+        "uid" : "31b7bc6d8dca3657",
+        "reportUrl" : "https://Areso.github.io/Oblache/174//#testresult/31b7bc6d8dca3657",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1727832366287,
+          "stop" : 1727832367307,
+          "duration" : 1020
+        }
+      }, {
+        "uid" : "3edb49869ebbbd7d",
+        "reportUrl" : "https://Areso.github.io/Oblache/173//#testresult/3edb49869ebbbd7d",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1727746883782,
+          "stop" : 1727746884412,
+          "duration" : 630
+        }
+      }, {
+        "uid" : "2c2a52bfec13241",
+        "reportUrl" : "https://Areso.github.io/Oblache/172//#testresult/2c2a52bfec13241",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1727660169180,
+          "stop" : 1727660169775,
+          "duration" : 595
+        }
+      }, {
+        "uid" : "9670d302c39d75ff",
+        "reportUrl" : "https://Areso.github.io/Oblache/171//#testresult/9670d302c39d75ff",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1727573958621,
+          "stop" : 1727573959334,
+          "duration" : 713
+        }
+      } ]
+    },
+    "tags" : [ "@pytest.mark.xfail(reason='There are databases that need to be deleted manually.')" ]
+  },
+  "source" : "b7e81abd2d368a9a.json",
+  "parameterValues" : [ ]
+}
