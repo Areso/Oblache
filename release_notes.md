@@ -1,4 +1,8 @@
 # Release notes
+Thu 24 Oct 2024 09:04 AM EEST  
+dbaas_backend:
+[OBL-245](https://github.com/Areso/Oblache/issues/245): try to fix MYSQL SERVER GONE AWAY err    
+
 Thu 24 Oct 2024 07:45 AM EEST  
 dbaas_backend:
 [OBL-245](https://github.com/Areso/Oblache/issues/245): try to fix MYSQL SERVER GONE AWAY err    
