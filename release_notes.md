@@ -1,4 +1,8 @@
 # Release notes
+Thu 24 Oct 2024 05:42 AM EEST  
+dbaas_backend:
+[OBL-299](https://github.com/Areso/Oblache/issues/299) draft    
+
 Thu 24 Oct 2024 02:55 AM EEST  
 dbaas_backend:
 [OBL-298](https://github.com/Areso/Oblache/issues/298) endpoint checker done. hotfix    
