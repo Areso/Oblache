@@ -1,4 +1,8 @@
 # Release notes
+Thu 24 Oct 2024 07:08 AM EEST  
+dbaas_backend:
+finished [OBL-299](https://github.com/Areso/Oblache/issues/299), now all user endpoints have toggle    
+
 Thu 24 Oct 2024 05:42 AM EEST  
 dbaas_backend:
 [OBL-299](https://github.com/Areso/Oblache/issues/299) draft    
