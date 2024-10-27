@@ -3,6 +3,10 @@ Sun 27 Oct 2024 11:29 PM EET
 new_node:
 [OBL-303](https://github.com/Areso/Oblache/issues/303) new role for monitoring oblache nodes is done and working    
 
+Sun 27 Oct 2024 11:29 PM EET  
+new_node:
+[OBL-303](https://github.com/Areso/Oblache/issues/303) new role for monitoring oblache nodes is done and working    
+
 Sun Oct 27 04:52 PM EET 2024  
 new_node:
 [OBL-301](https://github.com/Areso/Oblache/issues/301) - added the HOOK to new_node subproject    
