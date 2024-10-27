@@ -1,4 +1,8 @@
 # Release notes
+Sun Oct 27 04:52 PM EET 2024  
+new_node:
+[OBL-301](https://github.com/Areso/Oblache/issues/301) - added the HOOK to new_node subproject    
+
 Thu 24 Oct 2024 09:04 AM EEST  
 dbaas_backend:
 [OBL-245](https://github.com/Areso/Oblache/issues/245): try to fix MYSQL SERVER GONE AWAY err    
