@@ -1,4 +1,8 @@
 # Release notes
+Tue 29 Oct 2024 09:32 PM EET  
+dbaas_backend:
+[OBL-309](https://github.com/Areso/Oblache/issues/309) - added db_size_updated_at property to the model    
+
 Sun 27 Oct 2024 11:29 PM EET  
 new_node:
 [OBL-303](https://github.com/Areso/Oblache/issues/303) new role for monitoring oblache nodes is done and working    
