@@ -1,4 +1,8 @@
 # Release notes
+Tue 29 Oct 2024 10:09 PM EET  
+dbaas_backend:
+[OBL-309](https://github.com/Areso/Oblache/issues/309) hotfix dbagent user privs    
+
 Tue 29 Oct 2024 09:32 PM EET  
 dbaas_backend:
 [OBL-309](https://github.com/Areso/Oblache/issues/309) - added db_size_updated_at property to the model    
