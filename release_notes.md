@@ -1,4 +1,8 @@
 # Release notes
+Sun 03 Nov 2024 11:09 PM EET  
+dbaas_backend:
+[OBL-315](https://github.com/Areso/Oblache/issues/315) added exceptions and logging in @register_call    
+
 Sun 03 Nov 2024 09:32 PM EET  
 dbaas_backend:
 Upgraded dependency    
