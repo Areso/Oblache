@@ -1,4 +1,8 @@
 # Release notes
+Sun 03 Nov 2024 09:32 PM EET  
+dbaas_backend:
+Upgraded dependency    
+
 Sun 03 Nov 2024 04:32 PM EET  
 dbaas_backend:
 fixed copypast err, removed obsolete configs    
