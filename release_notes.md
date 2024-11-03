@@ -1,4 +1,8 @@
 # Release notes
+Sun 03 Nov 2024 04:32 PM EET  
+dbaas_backend:
+fixed copypast err, removed obsolete configs    
+
 Tue 29 Oct 2024 10:14 PM EET  
 new_node:
 [OBL-308](https://github.com/Areso/Oblache/issues/308) - dbagent role updated and supports now separated endpoint and checker services    
