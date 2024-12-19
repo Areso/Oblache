@@ -1,0 +1,422 @@
+{
+  "uid" : "8d2912fe973c3bc7",
+  "name" : "GET profile information.",
+  "fullName" : "tests_api.test_bd.TestGET#test_get_profile",
+  "historyId" : "766cb6f3a7cf6add5fb057e07bf28012",
+  "time" : {
+    "start" : 1734572360561,
+    "stop" : 1734572361056,
+    "duration" : 495
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: Incorrect status code: 405",
+  "statusTrace" : "self = <tests_api.test_bd.TestGET object at 0x7f4c1b114260>\n\n    @allure.title('GET profile information.')\n    def test_get_profile(self):\n        response = API.get_profile(token=TestGET.token)\n>       Checking.check_status_code(response, 200)\n\ntests_api/test_bd.py:73: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [405]>, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, f'Incorrect status code: {result.status_code}'\nE           AssertionError: Incorrect status code: 405\n\ntests_api/utils/checking.py:16: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: Incorrect status code: 405",
+    "statusTrace" : "self = <tests_api.test_bd.TestGET object at 0x7f4c1b114260>\n\n    @allure.title('GET profile information.')\n    def test_get_profile(self):\n        response = API.get_profile(token=TestGET.token)\n>       Checking.check_status_code(response, 200)\n\ntests_api/test_bd.py:73: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [405]>, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, f'Incorrect status code: {result.status_code}'\nE           AssertionError: Incorrect status code: 405\n\ntests_api/utils/checking.py:16: AssertionError",
+    "steps" : [ {
+      "name" : "Endpoint: /get_profile",
+      "time" : {
+        "start" : 1734572361056,
+        "stop" : 1734572361056,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Request:",
+      "time" : {
+        "start" : 1734572361056,
+        "stop" : 1734572361056,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Url: https://dbend.areso.pro/get_profile",
+        "time" : {
+          "start" : 1734572361056,
+          "stop" : 1734572361056,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Headers: {'Content-Type': 'application/json', 'Authorization': '9c6e69ed-5eca-48f2-be40-c06462b8936b'}",
+        "time" : {
+          "start" : 1734572361056,
+          "stop" : 1734572361056,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Body: None",
+        "time" : {
+          "start" : 1734572361056,
+          "stop" : 1734572361056,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Response:",
+      "time" : {
+        "start" : 1734572361056,
+        "stop" : 1734572361056,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Status code: 405",
+        "time" : {
+          "start" : 1734572361056,
+          "stop" : 1734572361056,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "JSON: {\n    \"message\": \"The method is not allowed for the requested URL.\"\n}\n",
+        "time" : {
+          "start" : 1734572361056,
+          "stop" : 1734572361056,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Assert status code: 200 == Response status code: 405",
+      "time" : {
+        "start" : 1734572361056,
+        "stop" : 1734572361056,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: Incorrect status code: 405\n",
+      "statusTrace" : "  File \"/home/runner/work/Oblache/Oblache/tests_api/utils/checking.py\", line 16, in check_status_code\n    assert status_code == result.status_code, f'Incorrect status code: {result.status_code}'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 9,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "GET"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_api"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestGET"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1696-252"
+  }, {
+    "name" : "thread",
+    "value" : "2482-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_api.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 73,
+        "broken" : 1,
+        "skipped" : 0,
+        "passed" : 56,
+        "unknown" : 0,
+        "total" : 130
+      },
+      "items" : [ {
+        "uid" : "4f6ecaf8bfc32e46",
+        "reportUrl" : "https://Areso.github.io/Oblache/250//#testresult/4f6ecaf8bfc32e46",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 405",
+        "time" : {
+          "start" : 1734399691448,
+          "stop" : 1734399691748,
+          "duration" : 300
+        }
+      }, {
+        "uid" : "e8ee9cb10c8016bb",
+        "reportUrl" : "https://Areso.github.io/Oblache/249//#testresult/e8ee9cb10c8016bb",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 405",
+        "time" : {
+          "start" : 1734313523488,
+          "stop" : 1734313523837,
+          "duration" : 349
+        }
+      }, {
+        "uid" : "5b72d640e2011f1e",
+        "reportUrl" : "https://Areso.github.io/Oblache/248//#testresult/5b72d640e2011f1e",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 405",
+        "time" : {
+          "start" : 1734227272697,
+          "stop" : 1734227273053,
+          "duration" : 356
+        }
+      }, {
+        "uid" : "cee7cb31c0a36e3c",
+        "reportUrl" : "https://Areso.github.io/Oblache/247//#testresult/cee7cb31c0a36e3c",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 405",
+        "time" : {
+          "start" : 1734140322265,
+          "stop" : 1734140322729,
+          "duration" : 464
+        }
+      }, {
+        "uid" : "cc12067462df1f1f",
+        "reportUrl" : "https://Areso.github.io/Oblache/246//#testresult/cc12067462df1f1f",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 405",
+        "time" : {
+          "start" : 1734054181289,
+          "stop" : 1734054181782,
+          "duration" : 493
+        }
+      }, {
+        "uid" : "cfa429795cb5d472",
+        "reportUrl" : "https://Areso.github.io/Oblache/245//#testresult/cfa429795cb5d472",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 405",
+        "time" : {
+          "start" : 1733967710980,
+          "stop" : 1733967711487,
+          "duration" : 507
+        }
+      }, {
+        "uid" : "c1e96932f7c69f6f",
+        "reportUrl" : "https://Areso.github.io/Oblache/244//#testresult/c1e96932f7c69f6f",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 405",
+        "time" : {
+          "start" : 1733881332057,
+          "stop" : 1733881332561,
+          "duration" : 504
+        }
+      }, {
+        "uid" : "6c65b33abbf40776",
+        "reportUrl" : "https://Areso.github.io/Oblache/243//#testresult/6c65b33abbf40776",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 405",
+        "time" : {
+          "start" : 1733795015873,
+          "stop" : 1733795016513,
+          "duration" : 640
+        }
+      }, {
+        "uid" : "ee3ce783c6074355",
+        "reportUrl" : "https://Areso.github.io/Oblache/242//#testresult/ee3ce783c6074355",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 405",
+        "time" : {
+          "start" : 1733708707412,
+          "stop" : 1733708707900,
+          "duration" : 488
+        }
+      }, {
+        "uid" : "7a9ff580090b409d",
+        "reportUrl" : "https://Areso.github.io/Oblache/241//#testresult/7a9ff580090b409d",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 405",
+        "time" : {
+          "start" : 1733622484403,
+          "stop" : 1733622484742,
+          "duration" : 339
+        }
+      }, {
+        "uid" : "44a37eb76d82cf52",
+        "reportUrl" : "https://Areso.github.io/Oblache/240//#testresult/44a37eb76d82cf52",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 405",
+        "time" : {
+          "start" : 1733535612808,
+          "stop" : 1733535613126,
+          "duration" : 318
+        }
+      }, {
+        "uid" : "2680e72463e479ed",
+        "reportUrl" : "https://Areso.github.io/Oblache/239//#testresult/2680e72463e479ed",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 405",
+        "time" : {
+          "start" : 1733449257236,
+          "stop" : 1733449257749,
+          "duration" : 513
+        }
+      }, {
+        "uid" : "56d9a581a2773148",
+        "reportUrl" : "https://Areso.github.io/Oblache/238//#testresult/56d9a581a2773148",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 405",
+        "time" : {
+          "start" : 1733362927241,
+          "stop" : 1733362927572,
+          "duration" : 331
+        }
+      }, {
+        "uid" : "e7af390bff115f69",
+        "reportUrl" : "https://Areso.github.io/Oblache/237//#testresult/e7af390bff115f69",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 405",
+        "time" : {
+          "start" : 1733276546618,
+          "stop" : 1733276547112,
+          "duration" : 494
+        }
+      }, {
+        "uid" : "aaf82d08d7b8472e",
+        "reportUrl" : "https://Areso.github.io/Oblache/236//#testresult/aaf82d08d7b8472e",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 405",
+        "time" : {
+          "start" : 1733190120596,
+          "stop" : 1733190120939,
+          "duration" : 343
+        }
+      }, {
+        "uid" : "4761b4eb119b0d8b",
+        "reportUrl" : "https://Areso.github.io/Oblache/235//#testresult/4761b4eb119b0d8b",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 405",
+        "time" : {
+          "start" : 1733103805183,
+          "stop" : 1733103805586,
+          "duration" : 403
+        }
+      }, {
+        "uid" : "6432a5bfe693bb3a",
+        "reportUrl" : "https://Areso.github.io/Oblache/234//#testresult/6432a5bfe693bb3a",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 405",
+        "time" : {
+          "start" : 1733018046469,
+          "stop" : 1733018046971,
+          "duration" : 502
+        }
+      }, {
+        "uid" : "3022224068a1cfdf",
+        "reportUrl" : "https://Areso.github.io/Oblache/233//#testresult/3022224068a1cfdf",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 405",
+        "time" : {
+          "start" : 1732930655518,
+          "stop" : 1732930656035,
+          "duration" : 517
+        }
+      }, {
+        "uid" : "da495fbcb1d3ae4d",
+        "reportUrl" : "https://Areso.github.io/Oblache/232//#testresult/da495fbcb1d3ae4d",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 405",
+        "time" : {
+          "start" : 1732844406371,
+          "stop" : 1732844406866,
+          "duration" : 495
+        }
+      }, {
+        "uid" : "c0e848767bcfe554",
+        "reportUrl" : "https://Areso.github.io/Oblache/231//#testresult/c0e848767bcfe554",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 405",
+        "time" : {
+          "start" : 1732758015404,
+          "stop" : 1732758015877,
+          "duration" : 473
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "8d2912fe973c3bc7.json",
+  "parameterValues" : [ ]
+}
