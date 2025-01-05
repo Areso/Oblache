@@ -1,0 +1,437 @@
+{
+  "uid" : "f9fd2fc7310097a1",
+  "name" : "test order db create backup with wrong uuid",
+  "fullName" : "tests_api.test_bd.TestBackup#test_order_db_create_backup_with_wrong_uuid",
+  "historyId" : "bc5ef28400accd6488b5c9ca6e9589b9",
+  "time" : {
+    "start" : 1736041302166,
+    "stop" : 1736041302676,
+    "duration" : 510
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "get_token_backup_1",
+    "time" : {
+      "start" : 1736041301643,
+      "stop" : 1736041302166,
+      "duration" : 523
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Assert status code: 200 == Response status code: 200",
+      "time" : {
+        "start" : 1736041302165,
+        "stop" : 1736041302166,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Endpoint: /db_backup_create",
+      "time" : {
+        "start" : 1736041302675,
+        "stop" : 1736041302675,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Request:",
+      "time" : {
+        "start" : 1736041302675,
+        "stop" : 1736041302676,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Url: https://dbend.areso.pro/db_backup_create",
+        "time" : {
+          "start" : 1736041302675,
+          "stop" : 1736041302675,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Headers: {'Content-Type': 'application/json', 'Authorization': '537d80b0-4574-4ad2-a2f1-7aba41f99364'}",
+        "time" : {
+          "start" : 1736041302675,
+          "stop" : 1736041302675,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Body: {\"email\": email, \"password\": password}",
+        "time" : {
+          "start" : 1736041302676,
+          "stop" : 1736041302676,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Response:",
+      "time" : {
+        "start" : 1736041302676,
+        "stop" : 1736041302676,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Status code: 400",
+        "time" : {
+          "start" : 1736041302676,
+          "stop" : 1736041302676,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "JSON: {\n    \"content\": \"db either not exist, not in good shape or not belong to the user\"\n}\n",
+        "time" : {
+          "start" : 1736041302676,
+          "stop" : 1736041302676,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Assert status code: 400 == Response status code: 400",
+      "time" : {
+        "start" : 1736041302676,
+        "stop" : 1736041302676,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Compare result request with expected value:\nResponse: <Response [400]>\nField name: content\nValue: db either not exist, not in good shape or not belong to the user",
+      "time" : {
+        "start" : 1736041302676,
+        "stop" : 1736041302676,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 10,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test Backup"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_api"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestBackup"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1921-478"
+  }, {
+    "name" : "thread",
+    "value" : "2511-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_api.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 117,
+        "unknown" : 0,
+        "total" : 118
+      },
+      "items" : [ {
+        "uid" : "168dc83c2ee76538",
+        "reportUrl" : "https://Areso.github.io/Oblache/268//#testresult/168dc83c2ee76538",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735954002628,
+          "stop" : 1735954003154,
+          "duration" : 526
+        }
+      }, {
+        "uid" : "1dbb412c50473bb4",
+        "reportUrl" : "https://Areso.github.io/Oblache/267//#testresult/1dbb412c50473bb4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735867723610,
+          "stop" : 1735867723928,
+          "duration" : 318
+        }
+      }, {
+        "uid" : "86093aaef9138f6",
+        "reportUrl" : "https://Areso.github.io/Oblache/266//#testresult/86093aaef9138f6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735781262989,
+          "stop" : 1735781263504,
+          "duration" : 515
+        }
+      }, {
+        "uid" : "6e8c1f93d6333b2b",
+        "reportUrl" : "https://Areso.github.io/Oblache/265//#testresult/6e8c1f93d6333b2b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735695759816,
+          "stop" : 1735695760131,
+          "duration" : 315
+        }
+      }, {
+        "uid" : "c69b945b09b7609e",
+        "reportUrl" : "https://Areso.github.io/Oblache/264//#testresult/c69b945b09b7609e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735608463430,
+          "stop" : 1735608463955,
+          "duration" : 525
+        }
+      }, {
+        "uid" : "4ef706de7e77baff",
+        "reportUrl" : "https://Areso.github.io/Oblache/263//#testresult/4ef706de7e77baff",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735522720230,
+          "stop" : 1735522720745,
+          "duration" : 515
+        }
+      }, {
+        "uid" : "c0cf9fa6c30876a6",
+        "reportUrl" : "https://Areso.github.io/Oblache/262//#testresult/c0cf9fa6c30876a6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735436561803,
+          "stop" : 1735436562306,
+          "duration" : 503
+        }
+      }, {
+        "uid" : "1d0b1b80fec3151",
+        "reportUrl" : "https://Areso.github.io/Oblache/261//#testresult/1d0b1b80fec3151",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735349199026,
+          "stop" : 1735349199333,
+          "duration" : 307
+        }
+      }, {
+        "uid" : "34821becab737ac7",
+        "reportUrl" : "https://Areso.github.io/Oblache/260//#testresult/34821becab737ac7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735262861765,
+          "stop" : 1735262862071,
+          "duration" : 306
+        }
+      }, {
+        "uid" : "fe4b3c64c9cad5f5",
+        "reportUrl" : "https://Areso.github.io/Oblache/259//#testresult/fe4b3c64c9cad5f5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735176461848,
+          "stop" : 1735176462167,
+          "duration" : 319
+        }
+      }, {
+        "uid" : "b97ed11f0553c123",
+        "reportUrl" : "https://Areso.github.io/Oblache/258//#testresult/b97ed11f0553c123",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735090063375,
+          "stop" : 1735090063736,
+          "duration" : 361
+        }
+      }, {
+        "uid" : "d97c0ef2ccd3243b",
+        "reportUrl" : "https://Areso.github.io/Oblache/257//#testresult/d97c0ef2ccd3243b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1735003662530,
+          "stop" : 1735003662854,
+          "duration" : 324
+        }
+      }, {
+        "uid" : "120fd81015be8a2",
+        "reportUrl" : "https://Areso.github.io/Oblache/256//#testresult/120fd81015be8a2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734917380764,
+          "stop" : 1734917381270,
+          "duration" : 506
+        }
+      }, {
+        "uid" : "d791f19e50fe619a",
+        "reportUrl" : "https://Areso.github.io/Oblache/255//#testresult/d791f19e50fe619a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734831701402,
+          "stop" : 1734831701706,
+          "duration" : 304
+        }
+      }, {
+        "uid" : "65fe4402088a849e",
+        "reportUrl" : "https://Areso.github.io/Oblache/254//#testresult/65fe4402088a849e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734744399863,
+          "stop" : 1734744400182,
+          "duration" : 319
+        }
+      }, {
+        "uid" : "f5e49ddd91e9febe",
+        "reportUrl" : "https://Areso.github.io/Oblache/253//#testresult/f5e49ddd91e9febe",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734658119816,
+          "stop" : 1734658120136,
+          "duration" : 320
+        }
+      }, {
+        "uid" : "759d3452deeb5800",
+        "reportUrl" : "https://Areso.github.io/Oblache/252//#testresult/759d3452deeb5800",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734572505955,
+          "stop" : 1734572506454,
+          "duration" : 499
+        }
+      }, {
+        "uid" : "4a4f3ed3aef20f3c",
+        "reportUrl" : "https://Areso.github.io/Oblache/250//#testresult/4a4f3ed3aef20f3c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734399821567,
+          "stop" : 1734399821891,
+          "duration" : 324
+        }
+      }, {
+        "uid" : "20a18afeeab71f3e",
+        "reportUrl" : "https://Areso.github.io/Oblache/249//#testresult/20a18afeeab71f3e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734313663517,
+          "stop" : 1734313663888,
+          "duration" : 371
+        }
+      }, {
+        "uid" : "d1de3d229bb097e5",
+        "reportUrl" : "https://Areso.github.io/Oblache/248//#testresult/d1de3d229bb097e5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734227383732,
+          "stop" : 1734227384102,
+          "duration" : 370
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "f9fd2fc7310097a1.json",
+  "parameterValues" : [ ]
+}
