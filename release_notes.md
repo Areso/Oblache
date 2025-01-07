@@ -1,4 +1,8 @@
 # Release notes
+Wed 08 Jan 2025 12:54 AM EET  
+dbaas_backend:
+[OBL-316](https://github.com/Areso/Oblache/issues/316): added token to the model, added token_update, draft all_tokens_update    
+
 Mon 04 Nov 2024 12:50 AM EET  
 dbaas_backend:
 added logging and exceptions handling to @check_endpoint decorator    
