@@ -1,4 +1,8 @@
 # Release notes
+Wed 08 Jan 2025 08:06 PM EET  
+dbaas_backend:
+[OBL-317](https://github.com/Areso/Oblache/issues/317): let's fill the tokens for the users    
+
 Wed 08 Jan 2025 12:54 AM EET  
 dbaas_backend:
 [OBL-316](https://github.com/Areso/Oblache/issues/316): added token to the model, added token_update, draft all_tokens_update    
