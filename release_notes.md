@@ -1,4 +1,8 @@
 # Release notes
+Wed 08 Jan 2025 09:33 PM EET  
+dbaas_backend:
+[OBL-317](https://github.com/Areso/Oblache/issues/317): removed from starting sequence update_all_tokens    
+
 Wed 08 Jan 2025 08:16 PM EET  
 dbaas_backend:
 [OBL-317](https://github.com/Areso/Oblache/issues/317): let's fill the tokens for the users. should work from here    
