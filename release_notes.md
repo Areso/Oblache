@@ -1,4 +1,8 @@
 # Release notes
+Wed 15 Jan 2025 12:16 AM EET  
+dbaas_backend:
+[OBL-316](https://github.com/Areso/Oblache/issues/316): now we generate token during user creation    
+
 Wed 08 Jan 2025 09:33 PM EET  
 dbaas_backend:
 [OBL-317](https://github.com/Areso/Oblache/issues/317): removed from starting sequence update_all_tokens    
