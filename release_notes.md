@@ -1,4 +1,8 @@
 # Release notes
+Wed 15 Jan 2025 10:19 PM EET  
+dbaas_backend:
+fix bug with token update    
+
 Wed 15 Jan 2025 12:36 AM EET  
 dbaas_backend:
 [OBL-318](https://github.com/Areso/Oblache/issues/318): added tokenupd_at field, so now we know the timestamp of token updation    
