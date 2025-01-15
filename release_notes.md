@@ -1,4 +1,8 @@
 # Release notes
+Wed 15 Jan 2025 10:34 PM EET  
+dbaas_backend:
+micro-optimization of token functions    
+
 Wed 15 Jan 2025 10:19 PM EET  
 dbaas_backend:
 fix bug with token update    
