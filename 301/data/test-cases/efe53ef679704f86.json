@@ -1,0 +1,427 @@
+{
+  "uid" : "efe53ef679704f86",
+  "name" : "test_clipboard_uuid_docker",
+  "fullName" : "tests_ui.test_ui.TestProfilePage#test_clipboard_uuid_docker",
+  "historyId" : "11f91f43cfea2a231aececf29c7ed302",
+  "time" : {
+    "start" : 1738809292279,
+    "stop" : 1738809297407,
+    "duration" : 5128
+  },
+  "status" : "broken",
+  "statusMessage" : "selenium.common.exceptions.TimeoutException: Message: Can't find element by locator ('xpath', '//button[@id=\"menu_button_containers\"]')\nStacktrace:\n#0 0x55e5e92d253a <unknown>\n#1 0x55e5e8dcdf00 <unknown>\n#2 0x55e5e8e1dc0c <unknown>\n#3 0x55e5e8e1de31 <unknown>\n#4 0x55e5e8e63bd4 <unknown>\n#5 0x55e5e8e425cd <unknown>\n#6 0x55e5e8e60f84 <unknown>\n#7 0x55e5e8e42343 <unknown>\n#8 0x55e5e8e0f78a <unknown>\n#9 0x55e5e8e109de <unknown>\n#10 0x55e5e929c2cb <unknown>\n#11 0x55e5e92a0242 <unknown>\n#12 0x55e5e92897ac <unknown>\n#13 0x55e5e92a0df7 <unknown>\n#14 0x55e5e926db2f <unknown>\n#15 0x55e5e92c11a8 <unknown>\n#16 0x55e5e92c1370 <unknown>\n#17 0x55e5e92d13b6 <unknown>\n#18 0x7fd57ea9ca94 <unknown>\n#19 0x7fd57eb29c3c <unknown>",
+  "statusTrace" : "self = <tests_ui.test_ui.TestProfilePage object at 0x7fecc9fec5f0>\ndriver = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"b944d3106ffa206e1ca5a20f08c4aa22\")>\nauthorization_user = None\n\n    @allure.title('test_clipboard_uuid_docker')\n    def test_clipboard_uuid_docker(self, driver, authorization_user):\n        page = ProfilePage(driver, authorization_user)\n>       page.click_button_docker_containers()\n\ntests_ui/test_ui.py:112: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \ntests_ui/profile_page.py:53: in click_button_docker_containers\n    return self.element_is_present_and_clickable(self.locators.BUTTON_DOCKER_CONTAINER).click()\ntests_ui/base_page.py:28: in element_is_present_and_clickable\n    return (Wait(self.driver, self.timeout).until(\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <selenium.webdriver.support.wait.WebDriverWait (session=\"b944d3106ffa206e1ca5a20f08c4aa22\")>\nmethod = <function visibility_of_element_located.<locals>._predicate at 0x7fecc8f8dee0>\nmessage = 'Can\\'t find element by locator (\\'xpath\\', \\'//button[@id=\"menu_button_containers\"]\\')'\n\n    def until(self, method: Callable[[D], Union[Literal[False], T]], message: str = \"\") -> T:\n        \"\"\"Calls the method provided with the driver as an argument until the \\\n        return value does not evaluate to ``False``.\n    \n        :param method: callable(WebDriver)\n        :param message: optional message for :exc:`TimeoutException`\n        :returns: the result of the last call to `method`\n        :raises: :exc:`selenium.common.exceptions.TimeoutException` if timeout occurs\n        \"\"\"\n        screen = None\n        stacktrace = None\n    \n        end_time = time.monotonic() + self._timeout\n        while True:\n            try:\n                value = method(self._driver)\n                if value:\n                    return value\n            except self._ignored_exceptions as exc:\n                screen = getattr(exc, \"screen\", None)\n                stacktrace = getattr(exc, \"stacktrace\", None)\n            time.sleep(self._poll)\n            if time.monotonic() > end_time:\n                break\n>       raise TimeoutException(message, screen, stacktrace)\nE       selenium.common.exceptions.TimeoutException: Message: Can't find element by locator ('xpath', '//button[@id=\"menu_button_containers\"]')\nE       Stacktrace:\nE       #0 0x55e5e92d253a <unknown>\nE       #1 0x55e5e8dcdf00 <unknown>\nE       #2 0x55e5e8e1dc0c <unknown>\nE       #3 0x55e5e8e1de31 <unknown>\nE       #4 0x55e5e8e63bd4 <unknown>\nE       #5 0x55e5e8e425cd <unknown>\nE       #6 0x55e5e8e60f84 <unknown>\nE       #7 0x55e5e8e42343 <unknown>\nE       #8 0x55e5e8e0f78a <unknown>\nE       #9 0x55e5e8e109de <unknown>\nE       #10 0x55e5e929c2cb <unknown>\nE       #11 0x55e5e92a0242 <unknown>\nE       #12 0x55e5e92897ac <unknown>\nE       #13 0x55e5e92a0df7 <unknown>\nE       #14 0x55e5e926db2f <unknown>\nE       #15 0x55e5e92c11a8 <unknown>\nE       #16 0x55e5e92c1370 <unknown>\nE       #17 0x55e5e92d13b6 <unknown>\nE       #18 0x7fd57ea9ca94 <unknown>\nE       #19 0x7fd57eb29c3c <unknown>\n\n/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/selenium/webdriver/support/wait.py:105: TimeoutException",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "driver",
+    "time" : {
+      "start" : 1738809291421,
+      "stop" : 1738809291769,
+      "duration" : 348
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "authorization_user",
+    "time" : {
+      "start" : 1738809291769,
+      "stop" : 1738809292278,
+      "duration" : 509
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Open page: https://oblache.areso.pro/register.html",
+      "time" : {
+        "start" : 1738809291769,
+        "stop" : 1738809292088,
+        "duration" : 319
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Login user",
+      "time" : {
+        "start" : 1738809292088,
+        "stop" : 1738809292278,
+        "duration" : 190
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Enter email.",
+        "time" : {
+          "start" : 1738809292088,
+          "stop" : 1738809292144,
+          "duration" : 56
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "Enter password.",
+        "time" : {
+          "start" : 1738809292144,
+          "stop" : 1738809292188,
+          "duration" : 44
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "Click button \"Login\"",
+        "time" : {
+          "start" : 1738809292188,
+          "stop" : 1738809292276,
+          "duration" : 88
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "Check url is present: https://oblache.areso.pro/register.html",
+        "time" : {
+          "start" : 1738809292276,
+          "stop" : 1738809292278,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : true,
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 6,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "selenium.common.exceptions.TimeoutException: Message: Can't find element by locator ('xpath', '//button[@id=\"menu_button_containers\"]')\nStacktrace:\n#0 0x55e5e92d253a <unknown>\n#1 0x55e5e8dcdf00 <unknown>\n#2 0x55e5e8e1dc0c <unknown>\n#3 0x55e5e8e1de31 <unknown>\n#4 0x55e5e8e63bd4 <unknown>\n#5 0x55e5e8e425cd <unknown>\n#6 0x55e5e8e60f84 <unknown>\n#7 0x55e5e8e42343 <unknown>\n#8 0x55e5e8e0f78a <unknown>\n#9 0x55e5e8e109de <unknown>\n#10 0x55e5e929c2cb <unknown>\n#11 0x55e5e92a0242 <unknown>\n#12 0x55e5e92897ac <unknown>\n#13 0x55e5e92a0df7 <unknown>\n#14 0x55e5e926db2f <unknown>\n#15 0x55e5e92c11a8 <unknown>\n#16 0x55e5e92c1370 <unknown>\n#17 0x55e5e92d13b6 <unknown>\n#18 0x7fd57ea9ca94 <unknown>\n#19 0x7fd57eb29c3c <unknown>",
+    "statusTrace" : "self = <tests_ui.test_ui.TestProfilePage object at 0x7fecc9fec5f0>\ndriver = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"b944d3106ffa206e1ca5a20f08c4aa22\")>\nauthorization_user = None\n\n    @allure.title('test_clipboard_uuid_docker')\n    def test_clipboard_uuid_docker(self, driver, authorization_user):\n        page = ProfilePage(driver, authorization_user)\n>       page.click_button_docker_containers()\n\ntests_ui/test_ui.py:112: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \ntests_ui/profile_page.py:53: in click_button_docker_containers\n    return self.element_is_present_and_clickable(self.locators.BUTTON_DOCKER_CONTAINER).click()\ntests_ui/base_page.py:28: in element_is_present_and_clickable\n    return (Wait(self.driver, self.timeout).until(\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <selenium.webdriver.support.wait.WebDriverWait (session=\"b944d3106ffa206e1ca5a20f08c4aa22\")>\nmethod = <function visibility_of_element_located.<locals>._predicate at 0x7fecc8f8dee0>\nmessage = 'Can\\'t find element by locator (\\'xpath\\', \\'//button[@id=\"menu_button_containers\"]\\')'\n\n    def until(self, method: Callable[[D], Union[Literal[False], T]], message: str = \"\") -> T:\n        \"\"\"Calls the method provided with the driver as an argument until the \\\n        return value does not evaluate to ``False``.\n    \n        :param method: callable(WebDriver)\n        :param message: optional message for :exc:`TimeoutException`\n        :returns: the result of the last call to `method`\n        :raises: :exc:`selenium.common.exceptions.TimeoutException` if timeout occurs\n        \"\"\"\n        screen = None\n        stacktrace = None\n    \n        end_time = time.monotonic() + self._timeout\n        while True:\n            try:\n                value = method(self._driver)\n                if value:\n                    return value\n            except self._ignored_exceptions as exc:\n                screen = getattr(exc, \"screen\", None)\n                stacktrace = getattr(exc, \"stacktrace\", None)\n            time.sleep(self._poll)\n            if time.monotonic() > end_time:\n                break\n>       raise TimeoutException(message, screen, stacktrace)\nE       selenium.common.exceptions.TimeoutException: Message: Can't find element by locator ('xpath', '//button[@id=\"menu_button_containers\"]')\nE       Stacktrace:\nE       #0 0x55e5e92d253a <unknown>\nE       #1 0x55e5e8dcdf00 <unknown>\nE       #2 0x55e5e8e1dc0c <unknown>\nE       #3 0x55e5e8e1de31 <unknown>\nE       #4 0x55e5e8e63bd4 <unknown>\nE       #5 0x55e5e8e425cd <unknown>\nE       #6 0x55e5e8e60f84 <unknown>\nE       #7 0x55e5e8e42343 <unknown>\nE       #8 0x55e5e8e0f78a <unknown>\nE       #9 0x55e5e8e109de <unknown>\nE       #10 0x55e5e929c2cb <unknown>\nE       #11 0x55e5e92a0242 <unknown>\nE       #12 0x55e5e92897ac <unknown>\nE       #13 0x55e5e92a0df7 <unknown>\nE       #14 0x55e5e926db2f <unknown>\nE       #15 0x55e5e92c11a8 <unknown>\nE       #16 0x55e5e92c1370 <unknown>\nE       #17 0x55e5e92d13b6 <unknown>\nE       #18 0x7fd57ea9ca94 <unknown>\nE       #19 0x7fd57eb29c3c <unknown>\n\n/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/selenium/webdriver/support/wait.py:105: TimeoutException",
+    "steps" : [ {
+      "name" : "Click \"Docker containers\" button.",
+      "time" : {
+        "start" : 1738809292279,
+        "stop" : 1738809297407,
+        "duration" : 5128
+      },
+      "status" : "broken",
+      "statusMessage" : "selenium.common.exceptions.TimeoutException: Message: Can't find element by locator ('xpath', '//button[@id=\"menu_button_containers\"]')\nStacktrace:\n#0 0x55e5e92d253a <unknown>\n#1 0x55e5e8dcdf00 <unknown>\n#2 0x55e5e8e1dc0c <unknown>\n#3 0x55e5e8e1de31 <unknown>\n#4 0x55e5e8e63bd4 <unknown>\n#5 0x55e5e8e425cd <unknown>\n#6 0x55e5e8e60f84 <unknown>\n#7 0x55e5e8e42343 <unknown>\n#8 0x55e5e8e0f78a <unknown>\n#9 0x55e5e8e109de <unknown>\n#10 0x55e5e929c2cb <unknown>\n#11 0x55e5e92a0242 <unknown>\n#12 0x55e5e92897ac <unknown>\n#13 0x55e5e92a0df7 <unknown>\n#14 0x55e5e926db2f <unknown>\n#15 0x55e5e92c11a8 <unknown>\n#16 0x55e5e92c1370 <unknown>\n#17 0x55e5e92d13b6 <unknown>\n#18 0x7fd57ea9ca94 <unknown>\n#19 0x7fd57eb29c3c <unknown>\n\n",
+      "statusTrace" : "  File \"/home/runner/work/Oblache/Oblache/tests_ui/profile_page.py\", line 53, in click_button_docker_containers\n    return self.element_is_present_and_clickable(self.locators.BUTTON_DOCKER_CONTAINER).click()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/Oblache/Oblache/tests_ui/base_page.py\", line 28, in element_is_present_and_clickable\n    return (Wait(self.driver, self.timeout).until(\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.12.8/x64/lib/python3.12/site-packages/selenium/webdriver/support/wait.py\", line 105, in until\n    raise TimeoutException(message, screen, stacktrace)\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "43623c87b9d0c042",
+      "name" : "Screenshot 2025-02-06 02:34:57.503295",
+      "source" : "43623c87b9d0c042.png",
+      "type" : "image/png",
+      "size" : 15568
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 1,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true
+  },
+  "afterStages" : [ {
+    "name" : "driver::0",
+    "time" : {
+      "start" : 1738809297504,
+      "stop" : 1738809297568,
+      "duration" : 64
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test Profile Page."
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_ui"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestProfilePage"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1950-696"
+  }, {
+    "name" : "thread",
+    "value" : "2435-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_ui.test_ui"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 11,
+        "skipped" : 0,
+        "passed" : 165,
+        "unknown" : 0,
+        "total" : 176
+      },
+      "items" : [ {
+        "uid" : "f44e8b8629255b72",
+        "reportUrl" : "https://Areso.github.io/Oblache/300//#testresult/f44e8b8629255b72",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.TimeoutException: Message: Can't find element by locator ('xpath', '//button[@id=\"menu_button_containers\"]')\nStacktrace:\n#0 0x56428efdedca <unknown>\n#1 0x56428ead53f0 <unknown>\n#2 0x56428eb2510c <unknown>\n#3 0x56428eb25331 <unknown>\n#4 0x56428eb6b154 <unknown>\n#5 0x56428eb49abd <unknown>\n#6 0x56428eb684b3 <unknown>\n#7 0x56428eb49833 <unknown>\n#8 0x56428eb165a0 <unknown>\n#9 0x56428eb17ece <unknown>\n#10 0x56428efa8bdb <unknown>\n#11 0x56428efacb67 <unknown>\n#12 0x56428ef943bc <unknown>\n#13 0x56428efad727 <unknown>\n#14 0x56428ef7874f <unknown>\n#15 0x56428efcd938 <unknown>\n#16 0x56428efcdb00 <unknown>\n#17 0x56428efddc46 <unknown>\n#18 0x7ff76d69ca94 <unknown>\n#19 0x7ff76d729c3c <unknown>",
+        "time" : {
+          "start" : 1738722878979,
+          "stop" : 1738722884112,
+          "duration" : 5133
+        }
+      }, {
+        "uid" : "e765de71e42368d8",
+        "reportUrl" : "https://Areso.github.io/Oblache/299//#testresult/e765de71e42368d8",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.TimeoutException: Message: Can't find element by locator ('xpath', '//button[@id=\"menu_button_containers\"]')\nStacktrace:\n#0 0x55fd96c64dca <unknown>\n#1 0x55fd9675b3f0 <unknown>\n#2 0x55fd967ab10c <unknown>\n#3 0x55fd967ab331 <unknown>\n#4 0x55fd967f1154 <unknown>\n#5 0x55fd967cfabd <unknown>\n#6 0x55fd967ee4b3 <unknown>\n#7 0x55fd967cf833 <unknown>\n#8 0x55fd9679c5a0 <unknown>\n#9 0x55fd9679dece <unknown>\n#10 0x55fd96c2ebdb <unknown>\n#11 0x55fd96c32b67 <unknown>\n#12 0x55fd96c1a3bc <unknown>\n#13 0x55fd96c33727 <unknown>\n#14 0x55fd96bfe74f <unknown>\n#15 0x55fd96c53938 <unknown>\n#16 0x55fd96c53b00 <unknown>\n#17 0x55fd96c63c46 <unknown>\n#18 0x7f3dfac9ca94 <unknown>\n#19 0x7f3dfad29c3c <unknown>",
+        "time" : {
+          "start" : 1738636415008,
+          "stop" : 1738636420139,
+          "duration" : 5131
+        }
+      }, {
+        "uid" : "905a17bd26d4e7bf",
+        "reportUrl" : "https://Areso.github.io/Oblache/298//#testresult/905a17bd26d4e7bf",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.TimeoutException: Message: Can't find element by locator ('xpath', '//button[@id=\"menu_button_containers\"]')\nStacktrace:\n#0 0x5654e08dedca <unknown>\n#1 0x5654e03d53f0 <unknown>\n#2 0x5654e042510c <unknown>\n#3 0x5654e0425331 <unknown>\n#4 0x5654e046b154 <unknown>\n#5 0x5654e0449abd <unknown>\n#6 0x5654e04684b3 <unknown>\n#7 0x5654e0449833 <unknown>\n#8 0x5654e04165a0 <unknown>\n#9 0x5654e0417ece <unknown>\n#10 0x5654e08a8bdb <unknown>\n#11 0x5654e08acb67 <unknown>\n#12 0x5654e08943bc <unknown>\n#13 0x5654e08ad727 <unknown>\n#14 0x5654e087874f <unknown>\n#15 0x5654e08cd938 <unknown>\n#16 0x5654e08cdb00 <unknown>\n#17 0x5654e08ddc46 <unknown>\n#18 0x7f4c4ac9ca94 <unknown>\n#19 0x7f4c4ad29c3c <unknown>",
+        "time" : {
+          "start" : 1738550072957,
+          "stop" : 1738550078084,
+          "duration" : 5127
+        }
+      }, {
+        "uid" : "5520b5de3413bca7",
+        "reportUrl" : "https://Areso.github.io/Oblache/297//#testresult/5520b5de3413bca7",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.TimeoutException: Message: Can't find element by locator ('xpath', '//button[@id=\"menu_button_containers\"]')\nStacktrace:\n#0 0x55fb01ccfdca <unknown>\n#1 0x55fb017c63f0 <unknown>\n#2 0x55fb0181610c <unknown>\n#3 0x55fb01816331 <unknown>\n#4 0x55fb0185c154 <unknown>\n#5 0x55fb0183aabd <unknown>\n#6 0x55fb018594b3 <unknown>\n#7 0x55fb0183a833 <unknown>\n#8 0x55fb018075a0 <unknown>\n#9 0x55fb01808ece <unknown>\n#10 0x55fb01c99bdb <unknown>\n#11 0x55fb01c9db67 <unknown>\n#12 0x55fb01c853bc <unknown>\n#13 0x55fb01c9e727 <unknown>\n#14 0x55fb01c6974f <unknown>\n#15 0x55fb01cbe938 <unknown>\n#16 0x55fb01cbeb00 <unknown>\n#17 0x55fb01ccec46 <unknown>\n#18 0x7f6ab029ca94 <unknown>\n#19 0x7f6ab0329c3c <unknown>",
+        "time" : {
+          "start" : 1738464275744,
+          "stop" : 1738464280867,
+          "duration" : 5123
+        }
+      }, {
+        "uid" : "a0e8a963466f2eaa",
+        "reportUrl" : "https://Areso.github.io/Oblache/296//#testresult/a0e8a963466f2eaa",
+        "status" : "passed",
+        "time" : {
+          "start" : 1738373953868,
+          "stop" : 1738373956320,
+          "duration" : 2452
+        }
+      }, {
+        "uid" : "57ec7b7512b1e2ac",
+        "reportUrl" : "https://Areso.github.io/Oblache/295//#testresult/57ec7b7512b1e2ac",
+        "status" : "passed",
+        "time" : {
+          "start" : 1738286849855,
+          "stop" : 1738286852476,
+          "duration" : 2621
+        }
+      }, {
+        "uid" : "a6f412f9925c5e11",
+        "reportUrl" : "https://Areso.github.io/Oblache/294//#testresult/a6f412f9925c5e11",
+        "status" : "passed",
+        "time" : {
+          "start" : 1738200334346,
+          "stop" : 1738200336785,
+          "duration" : 2439
+        }
+      }, {
+        "uid" : "989f88c443acd9e7",
+        "reportUrl" : "https://Areso.github.io/Oblache/293//#testresult/989f88c443acd9e7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1738114002392,
+          "stop" : 1738114005728,
+          "duration" : 3336
+        }
+      }, {
+        "uid" : "a3d0c0c698c6967d",
+        "reportUrl" : "https://Areso.github.io/Oblache/292//#testresult/a3d0c0c698c6967d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1738027592121,
+          "stop" : 1738027594775,
+          "duration" : 2654
+        }
+      }, {
+        "uid" : "866232dba206a18b",
+        "reportUrl" : "https://Areso.github.io/Oblache/291//#testresult/866232dba206a18b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1737941323400,
+          "stop" : 1737941326120,
+          "duration" : 2720
+        }
+      }, {
+        "uid" : "80d7bd85d936ffda",
+        "reportUrl" : "https://Areso.github.io/Oblache/290//#testresult/80d7bd85d936ffda",
+        "status" : "passed",
+        "time" : {
+          "start" : 1737854978317,
+          "stop" : 1737854980736,
+          "duration" : 2419
+        }
+      }, {
+        "uid" : "ee8851b9f2f20955",
+        "reportUrl" : "https://Areso.github.io/Oblache/289//#testresult/ee8851b9f2f20955",
+        "status" : "passed",
+        "time" : {
+          "start" : 1737768215385,
+          "stop" : 1737768217804,
+          "duration" : 2419
+        }
+      }, {
+        "uid" : "cc5606d7395764dd",
+        "reportUrl" : "https://Areso.github.io/Oblache/288//#testresult/cc5606d7395764dd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1737682073656,
+          "stop" : 1737682077056,
+          "duration" : 3400
+        }
+      }, {
+        "uid" : "129ada8f82ab3b1a",
+        "reportUrl" : "https://Areso.github.io/Oblache/287//#testresult/129ada8f82ab3b1a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1737595589671,
+          "stop" : 1737595592398,
+          "duration" : 2727
+        }
+      }, {
+        "uid" : "44f2e526ff3fc6a1",
+        "reportUrl" : "https://Areso.github.io/Oblache/286//#testresult/44f2e526ff3fc6a1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1737509332880,
+          "stop" : 1737509336233,
+          "duration" : 3353
+        }
+      }, {
+        "uid" : "fde60401d6fea185",
+        "reportUrl" : "https://Areso.github.io/Oblache/285//#testresult/fde60401d6fea185",
+        "status" : "passed",
+        "time" : {
+          "start" : 1737422798211,
+          "stop" : 1737422800678,
+          "duration" : 2467
+        }
+      }, {
+        "uid" : "c314338b5224510d",
+        "reportUrl" : "https://Areso.github.io/Oblache/284//#testresult/c314338b5224510d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1737336512655,
+          "stop" : 1737336515359,
+          "duration" : 2704
+        }
+      }, {
+        "uid" : "1dc39c3f62e6c9d9",
+        "reportUrl" : "https://Areso.github.io/Oblache/283//#testresult/1dc39c3f62e6c9d9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1737250781678,
+          "stop" : 1737250784389,
+          "duration" : 2711
+        }
+      }, {
+        "uid" : "4438ec1d04d66cb5",
+        "reportUrl" : "https://Areso.github.io/Oblache/282//#testresult/4438ec1d04d66cb5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1737163480136,
+          "stop" : 1737163482622,
+          "duration" : 2486
+        }
+      }, {
+        "uid" : "dd6e4b963559e8ed",
+        "reportUrl" : "https://Areso.github.io/Oblache/281//#testresult/dd6e4b963559e8ed",
+        "status" : "passed",
+        "time" : {
+          "start" : 1737077190386,
+          "stop" : 1737077192894,
+          "duration" : 2508
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "efe53ef679704f86.json",
+  "parameterValues" : [ ]
+}
