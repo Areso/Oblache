@@ -1,0 +1,437 @@
+{
+  "uid" : "bbace381c9c6bca4",
+  "name" : "POST checking ports_len positive",
+  "fullName" : "tests_api.test_bd.TestPOST#test_post_checking_ports_len_positive",
+  "historyId" : "c6f631852f230d7f46e21d1143ab0d56",
+  "time" : {
+    "start" : 1740965945691,
+    "stop" : 1740965945997,
+    "duration" : 306
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: Incorrect status code: 400",
+  "statusTrace" : "self = <tests_api.test_bd.TestPOST object at 0x7f90ee409ca0>\n\n    @allure.title('POST checking ports_len positive')\n    def test_post_checking_ports_len_positive(self):\n        result = API.post_create_docker_container_checking_ports(\n            token=TestPOST.token,\n            port_len=\"80-89\")\n>       Checking.check_status_code(result, 201)\n\ntests_api/test_bd.py:374: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [400]>, status_code = 201\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, f'Incorrect status code: {result.status_code}'\nE           AssertionError: Incorrect status code: 400\n\ntests_api/utils/checking.py:16: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: Incorrect status code: 400",
+    "statusTrace" : "self = <tests_api.test_bd.TestPOST object at 0x7f90ee409ca0>\n\n    @allure.title('POST checking ports_len positive')\n    def test_post_checking_ports_len_positive(self):\n        result = API.post_create_docker_container_checking_ports(\n            token=TestPOST.token,\n            port_len=\"80-89\")\n>       Checking.check_status_code(result, 201)\n\ntests_api/test_bd.py:374: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [400]>, status_code = 201\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, f'Incorrect status code: {result.status_code}'\nE           AssertionError: Incorrect status code: 400\n\ntests_api/utils/checking.py:16: AssertionError",
+    "steps" : [ {
+      "name" : "post_create_docker_container",
+      "time" : {
+        "start" : 1740965945691,
+        "stop" : 1740965945997,
+        "duration" : 306
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Endpoint: /container_create",
+        "time" : {
+          "start" : 1740965945996,
+          "stop" : 1740965945996,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Request:",
+        "time" : {
+          "start" : 1740965945996,
+          "stop" : 1740965945996,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Url: https://dbend.areso.pro/container_create",
+          "time" : {
+            "start" : 1740965945996,
+            "stop" : 1740965945996,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Headers: {'Content-Type': 'application/json', 'Authorization': '75828e6a-f4c3-4cf8-9277-88b397161479'}",
+          "time" : {
+            "start" : 1740965945996,
+            "stop" : 1740965945996,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Body: {\"docker_image\": \"nginx\", \"int_ports\": f\"80-89\", \"env\": 3, \"region\": 3}",
+          "time" : {
+            "start" : 1740965945996,
+            "stop" : 1740965945996,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Response:",
+        "time" : {
+          "start" : 1740965945996,
+          "stop" : 1740965945997,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status code: 400",
+          "time" : {
+            "start" : 1740965945997,
+            "stop" : 1740965945997,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "JSON: {\n    \"msg_code\": -1,\n    \"msg\": \"endpoint is disabled\"\n}\n",
+          "time" : {
+            "start" : 1740965945997,
+            "stop" : 1740965945997,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 8,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Assert status code: 201 == Response status code: 400",
+      "time" : {
+        "start" : 1740965945997,
+        "stop" : 1740965945997,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: Incorrect status code: 400\n",
+      "statusTrace" : "  File \"/home/runner/work/Oblache/Oblache/tests_api/utils/checking.py\", line 16, in check_status_code\n    assert status_code == result.status_code, f'Incorrect status code: {result.status_code}'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 10,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "POST"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_api"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestPOST"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1758-843"
+  }, {
+    "name" : "thread",
+    "value" : "2456-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_api.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 131,
+        "broken" : 3,
+        "skipped" : 0,
+        "passed" : 70,
+        "unknown" : 0,
+        "total" : 204
+      },
+      "items" : [ {
+        "uid" : "78366dce993713a1",
+        "reportUrl" : "https://Areso.github.io/Oblache/325//#testresult/78366dce993713a1",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1740879645669,
+          "stop" : 1740879645979,
+          "duration" : 310
+        }
+      }, {
+        "uid" : "358860e90fb6f5b8",
+        "reportUrl" : "https://Areso.github.io/Oblache/324//#testresult/358860e90fb6f5b8",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1740793319481,
+          "stop" : 1740793319846,
+          "duration" : 365
+        }
+      }, {
+        "uid" : "7d83075d7ccce181",
+        "reportUrl" : "https://Areso.github.io/Oblache/323//#testresult/7d83075d7ccce181",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1740706601405,
+          "stop" : 1740706601762,
+          "duration" : 357
+        }
+      }, {
+        "uid" : "72661fee86d39245",
+        "reportUrl" : "https://Areso.github.io/Oblache/322//#testresult/72661fee86d39245",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1740620186410,
+          "stop" : 1740620186774,
+          "duration" : 364
+        }
+      }, {
+        "uid" : "741a346f9d3d02e7",
+        "reportUrl" : "https://Areso.github.io/Oblache/321//#testresult/741a346f9d3d02e7",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1740533308362,
+          "stop" : 1740533308727,
+          "duration" : 365
+        }
+      }, {
+        "uid" : "9bb1c01efecda0b",
+        "reportUrl" : "https://Areso.github.io/Oblache/320//#testresult/9bb1c01efecda0b",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1740447401657,
+          "stop" : 1740447402166,
+          "duration" : 509
+        }
+      }, {
+        "uid" : "f4cee9670e51be81",
+        "reportUrl" : "https://Areso.github.io/Oblache/319//#testresult/f4cee9670e51be81",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1740361021463,
+          "stop" : 1740361021768,
+          "duration" : 305
+        }
+      }, {
+        "uid" : "f4314e98e7bf3a3b",
+        "reportUrl" : "https://Areso.github.io/Oblache/318//#testresult/f4314e98e7bf3a3b",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1740274786896,
+          "stop" : 1740274787396,
+          "duration" : 500
+        }
+      }, {
+        "uid" : "a5bed1db15137b7e",
+        "reportUrl" : "https://Areso.github.io/Oblache/317//#testresult/a5bed1db15137b7e",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1740187476674,
+          "stop" : 1740187477150,
+          "duration" : 476
+        }
+      }, {
+        "uid" : "70aa4bf2f82cffce",
+        "reportUrl" : "https://Areso.github.io/Oblache/316//#testresult/70aa4bf2f82cffce",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1740101247152,
+          "stop" : 1740101247668,
+          "duration" : 516
+        }
+      }, {
+        "uid" : "c7685246e0b468bc",
+        "reportUrl" : "https://Areso.github.io/Oblache/315//#testresult/c7685246e0b468bc",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1740014812808,
+          "stop" : 1740014813172,
+          "duration" : 364
+        }
+      }, {
+        "uid" : "9a6fb1e1b0b86572",
+        "reportUrl" : "https://Areso.github.io/Oblache/314//#testresult/9a6fb1e1b0b86572",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1739928401950,
+          "stop" : 1739928402326,
+          "duration" : 376
+        }
+      }, {
+        "uid" : "c33de7ae001421db",
+        "reportUrl" : "https://Areso.github.io/Oblache/313//#testresult/c33de7ae001421db",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1739841962052,
+          "stop" : 1739841962357,
+          "duration" : 305
+        }
+      }, {
+        "uid" : "5bd55fe46c0a62d0",
+        "reportUrl" : "https://Areso.github.io/Oblache/312//#testresult/5bd55fe46c0a62d0",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1739756210898,
+          "stop" : 1739756211400,
+          "duration" : 502
+        }
+      }, {
+        "uid" : "39db923e068bef69",
+        "reportUrl" : "https://Areso.github.io/Oblache/311//#testresult/39db923e068bef69",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1739670004723,
+          "stop" : 1739670005241,
+          "duration" : 518
+        }
+      }, {
+        "uid" : "f1098ba4e02e0344",
+        "reportUrl" : "https://Areso.github.io/Oblache/310//#testresult/f1098ba4e02e0344",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1739582717060,
+          "stop" : 1739582717432,
+          "duration" : 372
+        }
+      }, {
+        "uid" : "28f5a8ae48b107d2",
+        "reportUrl" : "https://Areso.github.io/Oblache/309//#testresult/28f5a8ae48b107d2",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1739496364941,
+          "stop" : 1739496365275,
+          "duration" : 334
+        }
+      }, {
+        "uid" : "1c88ecbb9622795d",
+        "reportUrl" : "https://Areso.github.io/Oblache/308//#testresult/1c88ecbb9622795d",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1739409992441,
+          "stop" : 1739409992946,
+          "duration" : 505
+        }
+      }, {
+        "uid" : "4173972c31678d30",
+        "reportUrl" : "https://Areso.github.io/Oblache/307//#testresult/4173972c31678d30",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 400",
+        "time" : {
+          "start" : 1739323553726,
+          "stop" : 1739323554045,
+          "duration" : 319
+        }
+      }, {
+        "uid" : "752fd13caecaa73",
+        "reportUrl" : "https://Areso.github.io/Oblache/306//#testresult/752fd13caecaa73",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 504",
+        "time" : {
+          "start" : 1739239960755,
+          "stop" : 1739240021086,
+          "duration" : 60331
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "bbace381c9c6bca4.json",
+  "parameterValues" : [ ]
+}
