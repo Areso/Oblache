@@ -1,4 +1,8 @@
 # Release notes
+Tue 04 Mar 2025 08:25 PM EET  
+dbaas_backend:
+[OBL-320](https://github.com/Areso/Oblache/issues/320): move some prometheus metrics to a separate exporter    
+
 Wed 15 Jan 2025 10:34 PM EET  
 dbaas_backend:
 micro-optimization of token functions    
