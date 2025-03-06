@@ -1,1 +1,336 @@
 # Release notes
+Tue 04 Mar 2025 08:25 PM EET  
+dbaas_backend:
+[OBL-320](https://github.com/Areso/Oblache/issues/320): move some prometheus metrics to a separate exporter    
+
+Wed 15 Jan 2025 10:34 PM EET  
+dbaas_backend:
+micro-optimization of token functions    
+
+Wed 15 Jan 2025 10:19 PM EET  
+dbaas_backend:
+fix bug with token update    
+
+Wed 15 Jan 2025 12:36 AM EET  
+dbaas_backend:
+[OBL-318](https://github.com/Areso/Oblache/issues/318): added tokenupd_at field, so now we know the timestamp of token updation    
+
+Wed 15 Jan 2025 12:16 AM EET  
+dbaas_backend:
+[OBL-316](https://github.com/Areso/Oblache/issues/316): now we generate token during user creation    
+
+Wed 08 Jan 2025 09:33 PM EET  
+dbaas_backend:
+[OBL-317](https://github.com/Areso/Oblache/issues/317): removed from starting sequence update_all_tokens    
+
+Wed 08 Jan 2025 08:16 PM EET  
+dbaas_backend:
+[OBL-317](https://github.com/Areso/Oblache/issues/317): let's fill the tokens for the users. should work from here    
+
+Wed 08 Jan 2025 08:15 PM EET  
+dbaas_backend:
+[OBL-317](https://github.com/Areso/Oblache/issues/317): let's fill the tokens for the users    
+
+Wed 08 Jan 2025 08:06 PM EET  
+dbaas_backend:
+[OBL-317](https://github.com/Areso/Oblache/issues/317): let's fill the tokens for the users    
+
+Wed 08 Jan 2025 12:54 AM EET  
+dbaas_backend:
+[OBL-316](https://github.com/Areso/Oblache/issues/316): added token to the model, added token_update, draft all_tokens_update    
+
+Mon 04 Nov 2024 12:50 AM EET  
+dbaas_backend:
+added logging and exceptions handling to @check_endpoint decorator    
+
+Sun 03 Nov 2024 11:09 PM EET  
+dbaas_backend:
+[OBL-315](https://github.com/Areso/Oblache/issues/315) added exceptions and logging in @register_call    
+
+Sun 03 Nov 2024 09:32 PM EET  
+dbaas_backend:
+Upgraded dependency    
+
+Sun 03 Nov 2024 04:32 PM EET  
+dbaas_backend:
+fixed copypast err, removed obsolete configs    
+
+Tue 29 Oct 2024 10:14 PM EET  
+new_node:
+[OBL-308](https://github.com/Areso/Oblache/issues/308) - dbagent role updated and supports now separated endpoint and checker services    
+
+Tue 29 Oct 2024 10:09 PM EET  
+dbaas_backend:
+[OBL-309](https://github.com/Areso/Oblache/issues/309) hotfix dbagent user privs    
+
+Tue 29 Oct 2024 09:32 PM EET  
+dbaas_backend:
+[OBL-309](https://github.com/Areso/Oblache/issues/309) - added db_size_updated_at property to the model    
+
+Sun 27 Oct 2024 11:29 PM EET  
+new_node:
+[OBL-303](https://github.com/Areso/Oblache/issues/303) new role for monitoring oblache nodes is done and working    
+
+Sun 27 Oct 2024 11:29 PM EET  
+new_node:
+[OBL-303](https://github.com/Areso/Oblache/issues/303) new role for monitoring oblache nodes is done and working    
+
+Sun Oct 27 04:52 PM EET 2024  
+new_node:
+[OBL-301](https://github.com/Areso/Oblache/issues/301) - added the HOOK to new_node subproject    
+
+Thu 24 Oct 2024 09:04 AM EEST  
+dbaas_backend:
+[OBL-245](https://github.com/Areso/Oblache/issues/245): try to fix MYSQL SERVER GONE AWAY err    
+
+Thu 24 Oct 2024 07:45 AM EEST  
+dbaas_backend:
+[OBL-245](https://github.com/Areso/Oblache/issues/245): try to fix MYSQL SERVER GONE AWAY err    
+
+Thu 24 Oct 2024 07:08 AM EEST  
+dbaas_backend:
+finished [OBL-299](https://github.com/Areso/Oblache/issues/299), now all user endpoints have toggle    
+
+Thu 24 Oct 2024 05:42 AM EEST  
+dbaas_backend:
+[OBL-299](https://github.com/Areso/Oblache/issues/299) draft    
+
+Thu 24 Oct 2024 02:55 AM EEST  
+dbaas_backend:
+[OBL-298](https://github.com/Areso/Oblache/issues/298) endpoint checker done. hotfix    
+
+Thu 24 Oct 2024 02:52 AM EEST  
+dbaas_backend:
+[OBL-298](https://github.com/Areso/Oblache/issues/298) endpoint checker done. hotfix    
+
+Thu 24 Oct 2024 02:47 AM EEST  
+dbaas_backend:
+[OBL-298](https://github.com/Areso/Oblache/issues/298) endpoint checker done. hotfix    
+
+Thu 24 Oct 2024 02:45 AM EEST  
+dbaas_backend:
+[OBL-298](https://github.com/Areso/Oblache/issues/298) endpoint checker done. hotfix    
+
+Thu 24 Oct 2024 02:24 AM EEST  
+dbaas_backend:
+[OBL-298](https://github.com/Areso/Oblache/issues/298) endpoint checker done. hotfix    
+
+Thu 24 Oct 2024 12:41 AM EEST  
+dbaas_backend:
+[OBL-298](https://github.com/Areso/Oblache/issues/298) endpoint checker done. hotfix    
+
+Thu 24 Oct 2024 12:35 AM EEST  
+dbaas_backend:
+[OBL-298](https://github.com/Areso/Oblache/issues/298) endpoint checker done. hotfix    
+
+Thu 24 Oct 2024 12:24 AM EEST  
+dbaas_backend:
+[OBL-298](https://github.com/Areso/Oblache/issues/298) endpoint checker done. hotfix    
+
+Thu 24 Oct 2024 12:08 AM EEST  
+dbaas_backend:
+[OBL-298](https://github.com/Areso/Oblache/issues/298) endpoint checker done. hotfix    
+
+Wed 23 Oct 2024 11:54 PM EEST  
+dbaas_backend:
+[OBL-298](https://github.com/Areso/Oblache/issues/298) endpoint checker done. hotfix    
+
+Wed 23 Oct 2024 11:49 PM EEST  
+dbaas_backend:
+[OBL-298](https://github.com/Areso/Oblache/issues/298) endpoint checker done    
+
+Sat 19 Oct 2024 12:23 AM EEST  
+dbaas_backend:
+[OBL-296](https://github.com/Areso/Oblache/issues/296) - added number of created containers and sites. hotfix    
+
+Sat 19 Oct 2024 12:22 AM EEST  
+dbaas_backend:
+[OBL-296](https://github.com/Areso/Oblache/issues/296) - added number of created containers and sites    
+
+Fri 18 Oct 2024 11:11 PM EEST  
+dbaas_backend:
+[OBL-295](https://github.com/Areso/Oblache/issues/295) fix    
+
+Fri 18 Oct 2024 10:25 PM EEST  
+dbaas_backend:
+[OBL-295](https://github.com/Areso/Oblache/issues/OBL-) fix    
+
+Fri 18 Oct 2024 10:24 PM EEST  
+dbaas_backend:
+    
+
+Fri 18 Oct 2024 10:23 PM EEST  
+dbaas_backend:
+[OBL-295](https://github.com/Areso/Oblache/issues/OBL-) fix    
+
+Fri 18 Oct 2024 10:23 PM EEST  
+dbaas_backend:
+[Obl-295](https://github.com/Areso/Oblache/issues/Obl-) fix    
+
+Fri 18 Oct 2024 10:23 PM EEST  
+dbaas_backend:
+    
+
+Fri 18 Oct 2024 10:22 PM EEST  
+dbaas_backend:
+[Obl-](https://github.com/Areso/Oblache/issues/)295 fix    
+
+Fri 18 Oct 2024 10:22 PM EEST  
+dbaas_backend:
+[OBL-295](https://github.com/Areso/Oblache/issues/295) fix    
+
+Fri 18 Oct 2024 10:21 PM EEST  
+dbaas_backend:
+[Obl-](https://github.com/Areso/Oblache/issues/)295 fix    
+
+Fri 18 Oct 2024 10:21 PM EEST  
+dbaas_backend:
+    
+
+Fri 18 Oct 2024 10:21 PM EEST  
+dbaas_backend:
+[Obl-295](https://github.com/Areso/Oblache/issues/295) fix    
+
+Fri 18 Oct 2024 10:20 PM EEST  
+dbaas_backend:
+Obl-295 fix    
+
+Fri 18 Oct 2024 10:20 PM EEST  
+dbaas_backend:
+Obl-295 fix    
+
+Fri 18 Oct 2024 10:19 PM EEST  
+dbaas_backend:
+Obl-295 fix    
+
+Fri 18 Oct 2024 10:19 PM EEST  
+dbaas_backend:
+Obl-[295](https://github.com/Areso/Oblache/issues/295) fix    
+
+Fri 18 Oct 2024 10:18 PM EEST  
+dbaas_backend:
+Obl-[295](https://github.com/Areso/Oblache/issues/295) fix    
+
+Fri 18 Oct 2024 10:18 PM EEST  
+dbaas_backend:
+    
+
+Fri 18 Oct 2024 10:16 PM EEST  
+dbaas_backend:
+Obl-[295](https://github.com/Areso/Oblache/issues/295) fix    
+
+Fri 18 Oct 2024 10:15 PM EEST  
+dbaas_backend:
+    
+
+Fri 18 Oct 2024 10:11 PM EEST  
+dbaas_backend:
+    
+
+Fri Oct 18 10:10 PM EEST 2024  
+dbaas_backend:
+    
+
+Fri Oct 18 10:09 PM EEST 2024  
+dbaas_backend:
+    
+
+Fri Oct 18 10:04 PM EEST 2024  
+dbaas_backend:
+    
+
+Fri Oct 18 10:02 PM EEST 2024  
+dbaas_backend:
+    
+
+Wed 16 Oct 2024 12:47 AM EEST  
+dbaas_backend:
+OBL-292 added number of created databases to the endpoint. hotfix    
+
+Wed 16 Oct 2024 12:06 AM EEST  
+dbaas_backend:
+OBL-292 added number of created databases to the endpoint    
+
+Mon Oct 14 12:41 AM EEST 2024  
+dbaas_backend:
+added log file to .gitignore    
+
+Sun Oct 13 11:13 PM EEST 2024  
+dbaas_backend:
+updated import    
+
+Sun Oct 13 11:11 PM EEST 2024  
+dbaas_backend:
+updated py logger import    
+
+Sun 13 Oct 2024 09:58 PM EEST  
+dbaas_backend:
+imported py_logger    
+
+Sun 13 Oct 2024 03:24 PM EEST  
+dbaas_backend:
+remove debug from the HOOK    
+
+Sun 13 Oct 2024 03:23 PM EEST  
+dbaas_backend:
+apply new formmatting to release notes    
+
+Sun 13 Oct 2024 03:23 PM EEST  
+dbaas_backend:
+apply new formmatting to release notes    
+Sun 13 Oct 2024 03:19 PM EEST  
+dbaas_backend:
+apply new formmatting to release notes        
+Sun 13 Oct 2024 03:18 PM EEST  
+dbaas_backend:
+apply new formmatting to release notes      
+Sun 13 Oct 2024 02:56 PM EEST  
+dbaas_backend:
+added MORE debug to the hook    
+Sun 13 Oct 2024 02:56 PM EEST  
+dbaas_backend:
+added MORE debug to the hook  
+Sun 13 Oct 2024 02:55 PM EEST  
+dbaas_backend:
+added MORE debug to the hook: fix variable  
+Sun 13 Oct 2024 02:54 PM EEST  
+:
+added MORE debug to the hook  
+Sun 13 Oct 2024 02:52 PM EEST  
+dbaas_backend:
+added MORE debug to the hook  
+Sun 13 Oct 2024 02:51 PM EEST  
+dbaas_backend:
+added debug to the hook  
+Sat 12 Oct 2024 12:51 AM EEST  
+dbaas_backend:
+removed obsolete auth_check from /db_create  
+Sat 12 Oct 2024 12:29 AM EEST  
+dbaas_backend:
+OBL-288 hotfix response text localization resolve  
+Sat 12 Oct 2024 12:22 AM EEST  
+dbaas_backend:
+OBL-288 hotfix response code  
+Sat 12 Oct 2024 12:21 AM EEST  
+dbaas_backend:
+OBL-288 hotfix anuaht response  
+Thu 10 Oct 2024 03:16 AM EEST  
+dbaas_backend:
+try to move auth check for /db_create to decorator. hotfix  
+Thu 10 Oct 2024 03:11 AM EEST  
+dbaas_backend:
+try to move auth check for /db_create to decorator  
+Thu 10 Oct 2024 02:54 AM EEST  
+dbaas_backend:
+formatting release notes better (maybe?)  
+
+Thu 10 Oct 2024 02:53 AM EEST  
+dbaas_backend:
+formatting release notes better (maybe?)  
+Thu 10 Oct 2024 02:52 AM EEST  
+dbaas_backend:
+formatting release notes better (maybe?)  
+
+Thu 10 Oct 2024 02:51 AM EEST  
+dbaas_backend:
+formatting release notes better (maybe?)  
