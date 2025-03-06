@@ -1,10 +1,31 @@
 import os
 
-import pytest
 import requests
 from dotenv import load_dotenv
 
 from tests_api.utils.checking import Checking
+import logging
+import allure
+import pytest
+
+
+class AllureHandler(logging.Handler):
+    def emit(self, record):
+        log_entry = self.format(record)
+        with allure.step(log_entry):
+            pass
+
+
+@pytest.fixture(scope='session', autouse=True)
+def setup_logging():
+    # Инициализация логгера
+    allure_handler = AllureHandler()
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    allure_handler.setFormatter(formatter)
+
+    logger = logging.getLogger()
+    logger.addHandler(allure_handler)
+
 
 base_url = 'https://dbend.areso.pro'  # Base url
 
