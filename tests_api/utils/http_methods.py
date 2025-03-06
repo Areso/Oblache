@@ -2,33 +2,35 @@ import allure
 import requests
 
 from tests_api.utils.logger import Logger
+import logging
 
 
 class HttpMethods:
+    base_url = 'https://dbend.areso.pro'
     headers = {'Content-Type': 'application/json'}
     cookie = ''
 
     @staticmethod
-    def get(url, body=None, token=None):
+    def get(endpoint: str, body=None, token=None) -> requests.Response:
         """
-        :param url:
+        :param endpoint:
         :param body:
         :param token:
         :return:
         """
-        Logger.add_request(url, method='GET')
         response = requests.get(
-            url=url,
+            url=HttpMethods.base_url + endpoint,
             headers=HttpMethods.headers | {'Authorization': f'{token}'},
             cookies=HttpMethods.cookie,
             json=body)
-        Logger.add_response(response)
+        logging.info(f'GET запрос на {HttpMethods.base_url + endpoint}.\nКод ответа: {response.status_code}')
+        logging.info(response.text)
         return response
 
     @staticmethod
-    def post(url, body=None, token=None, data=None, cookie=None, json=None):
+    def post(endpoint: str, body=None, token=None, data=None, cookie=None, json=None):
         """
-        :param url:
+        :param endpoint:
         :param body:
         :param token:
         :param data:
@@ -36,15 +38,14 @@ class HttpMethods:
         :param json
         :return:
         """
-        Logger.add_request(
-            url=url,
-            method='POST')
-        # HttpMethods.headers['Authorization'] = token
         response = requests.post(
-            url=url,
+            url=HttpMethods.base_url + endpoint,
             json=body,
             headers=HttpMethods.headers | {'Authorization': f'{token}'})
-        Logger.add_response(response)
+        logging.info(
+            f'POST запрос на {HttpMethods.base_url + endpoint} c данными\nbody:{body}\njson:{json}\ndata:{data}.\n'
+            f'Код ответа: {response.status_code}')
+        logging.info(response.text)
         return response
 
     @staticmethod
