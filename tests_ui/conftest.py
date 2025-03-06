@@ -67,7 +67,7 @@ def pytest_runtest_makereport(item):
     outcome = yield
     report = outcome.get_result()
 
-    if report.when == 'call' and report.failed:
+    if report.when == 'call' and report.failed or report.skipped:
         driver = item.funcargs['driver']
         attach = driver.get_screenshot_as_png()
         allure.attach(attach, name=f"Screenshot {datetime.today()}", attachment_type=allure.attachment_type.PNG)

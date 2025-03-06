@@ -1,10 +1,45 @@
 import os
 
-import pytest
 import requests
 from dotenv import load_dotenv
 
 from tests_api.utils.checking import Checking
+import logging
+import pytest
+import allure
+
+
+# class AllureHandler(logging.Handler):
+#     def emit(self, record):
+#         log_entry = self.format(record)
+#         with allure.step(log_entry):
+#             pass
+#
+#
+# @pytest.fixture(scope='function', autouse=True)
+# def setup_logging():
+#     # Создаем хендлер для записи логов в файл
+#     file_handler = logging.FileHandler('test_log.log', mode='w')
+#     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+#     file_handler.setFormatter(formatter)
+#
+#     logger = logging.getLogger()
+#     logger.addHandler(file_handler)
+#     logger.setLevel(logging.INFO)
+#
+#     # Установка уровня логирования для библиотек, если необходимо
+#     logging.getLogger('some_library').setLevel(logging.WARNING)
+#
+#
+# @pytest.hookimpl(tryfirst=True, hookwrapper=True)
+# def pytest_runtest_teardown(item):
+#     # Получаем текущий результат теста
+#     yield
+#     # Прикрепляем файл логов к отчету Allure после каждого теста
+#     with open('test_log.log', 'r') as f:
+#         log_content = f.read()
+#         allure.attach(log_content, name=f"{item.name}_log", attachment_type=allure.attachment_type.TEXT)
+
 
 base_url = 'https://dbend.areso.pro'  # Base url
 
