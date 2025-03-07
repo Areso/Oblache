@@ -1,4 +1,8 @@
 # Release notes
+Fri 07 Mar 2025 06:16 PM EET  
+dbaas_site:
+fixed translation typo in [OBL-294](https://github.com/Areso/Oblache/issues/294)    
+
 Tue 04 Mar 2025 08:25 PM EET  
 dbaas_backend:
 [OBL-320](https://github.com/Areso/Oblache/issues/320): move some prometheus metrics to a separate exporter    
