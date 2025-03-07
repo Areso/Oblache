@@ -1,4 +1,8 @@
 # Release notes
+Fri 07 Mar 2025 11:04 PM EET  
+dbaas_site:
+[OBL-325](https://github.com/Areso/Oblache/issues/325): fixed missing translation for logout button    
+
 Fri 07 Mar 2025 06:16 PM EET  
 dbaas_site:
 fixed translation typo in [OBL-294](https://github.com/Areso/Oblache/issues/294)    
