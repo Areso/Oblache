@@ -1,4 +1,8 @@
 # Release notes
+Tue 11 Mar 2025 09:40 PM EET  
+paas_webpage_deployer:
+[OBL-312](https://github.com/Areso/Oblache/issues/312) - upd site deploy exectr to push size to Orc    
+
 Fri 07 Mar 2025 11:47 PM EET  
 dbaas_site:
 [OBL-325](https://github.com/Areso/Oblache/issues/325): fixed missing translation for logout button    
