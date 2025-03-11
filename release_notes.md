@@ -1,4 +1,8 @@
 # Release notes
+Tue 11 Mar 2025 10:09 PM EET  
+dbaas_backend:
+[OBL-312](https://github.com/Areso/Oblache/issues/312): added /site_size_checker    
+
 Tue 11 Mar 2025 10:04 PM EET  
 paas_webpage_deployer:
 [OBL-312](https://github.com/Areso/Oblache/issues/312) - upd site deploy exectr to push size to Orc    
