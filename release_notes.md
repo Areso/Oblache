@@ -1,4 +1,8 @@
 # Release notes
+Wed 12 Mar 2025 11:11 PM EET  
+dbaas_backend:
+[OBL-312](https://github.com/Areso/Oblache/issues/312): remove debug    
+
 Wed 12 Mar 2025 11:09 PM EET  
 paas_webpage_deployer:
 updated name generator    
