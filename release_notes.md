@@ -1,4 +1,8 @@
 # Release notes
+Wed 12 Mar 2025 10:54 PM EET  
+paas_webpage_deployer:
+[OBL-312](https://github.com/Areso/Oblache/issues/312): hotfix data    
+
 Wed 12 Mar 2025 10:51 PM EET  
 dbaas_backend:
 [OBL-312](https://github.com/Areso/Oblache/issues/312): debug mode    
