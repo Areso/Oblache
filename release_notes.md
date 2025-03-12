@@ -1,4 +1,8 @@
 # Release notes
+Wed 12 Mar 2025 10:27 PM EET  
+paas_webpage_deployer:
+[OBL-312](https://github.com/Areso/Oblache/issues/312). hotfix executor    
+
 Wed 12 Mar 2025 10:23 PM EET  
 paas_webpage_deployer:
 [OBL-312](https://github.com/Areso/Oblache/issues/312). hotfix executor    
