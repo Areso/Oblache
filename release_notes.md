@@ -1,4 +1,8 @@
 # Release notes
+Wed 12 Mar 2025 09:14 PM EET  
+dbaas_backend:
+[OBL-312](https://github.com/Areso/Oblache/issues/312) - finished, [OBL-327](https://github.com/Areso/Oblache/issues/327) - done    
+
 Tue 11 Mar 2025 10:09 PM EET  
 dbaas_backend:
 [OBL-312](https://github.com/Areso/Oblache/issues/312): added /site_size_checker    
