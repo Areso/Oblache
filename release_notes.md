@@ -1,4 +1,8 @@
 # Release notes
+Wed 12 Mar 2025 11:13 PM EET  
+dbaas_backend:
+[OBL-312](https://github.com/Areso/Oblache/issues/312): enabled decorators    
+
 Wed 12 Mar 2025 11:12 PM EET  
 dbaas_backend:
 [OBL-312](https://github.com/Areso/Oblache/issues/312): updated async with id_acc instead of site_uuid    
