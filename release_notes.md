@@ -1,4 +1,8 @@
 # Release notes
+Wed 12 Mar 2025 11:02 PM EET  
+dbaas_backend:
+[OBL-312](https://github.com/Areso/Oblache/issues/312): hotfix threading    
+
 Wed 12 Mar 2025 10:59 PM EET  
 dbaas_backend:
 [OBL-312](https://github.com/Areso/Oblache/issues/312): hotfix SQL    
