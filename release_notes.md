@@ -1,4 +1,8 @@
 # Release notes
+Thu 13 Mar 2025 05:27 PM EET  
+paas_webpage_deployer:
+[OBL-329](https://github.com/Areso/Oblache/issues/329), now deploy_name_gen is a dependency    
+
 Thu 13 Mar 2025 05:23 PM EET  
 paas_webpage_deployer:
 fix state    
