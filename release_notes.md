@@ -1,4 +1,8 @@
 # Release notes
+Thu 13 Mar 2025 05:23 PM EET  
+paas_webpage_deployer:
+fix state    
+
 Wed 12 Mar 2025 11:13 PM EET  
 dbaas_backend:
 [OBL-312](https://github.com/Areso/Oblache/issues/312): enabled decorators    
