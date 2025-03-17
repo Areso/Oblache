@@ -1,4 +1,8 @@
 # Release notes
+Mon Mar 17 10:15 PM EET 2025  
+dbaas_backend:
+[OBL-330](https://github.com/Areso/Oblache/issues/330): done    
+
 Thu 13 Mar 2025 05:27 PM EET  
 paas_webpage_deployer:
 [OBL-329](https://github.com/Areso/Oblache/issues/329), now deploy_name_gen is a dependency    
