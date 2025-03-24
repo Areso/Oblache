@@ -1,4 +1,8 @@
 # Release notes
+Mon 24 Mar 2025 08:44 PM EET  
+dbaas_backend:
+[OBL-328](https://github.com/Areso/Oblache/issues/328) [OBL-331](https://github.com/Areso/Oblache/issues/331) unpulishing in Orc    
+
 Mon Mar 17 10:30 PM EET 2025  
 dbaas_site:
 [OBL-330](https://github.com/Areso/Oblache/issues/330): added Size, MB in Static Sites    
