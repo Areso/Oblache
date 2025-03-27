@@ -1,0 +1,533 @@
+{
+  "uid" : "bf2ae1a253657363",
+  "name" : "test_delete_database",
+  "fullName" : "tests_ui.test_ui.TestProfilePage#test_delete_database",
+  "historyId" : "79ccd4aa4a29c03ae3f72e89c73351ae",
+  "time" : {
+    "start" : 1743039734957,
+    "stop" : 1743039738370,
+    "duration" : 3413
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: Wrong answer from server or need manual deleting!!!",
+  "statusTrace" : "self = <tests_ui.test_ui.TestProfilePage object at 0x7f19fa4ff920>\ndriver = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"9bf89fd905ade5e4412aabe4ffa64967\")>\nauthorization_user = None\n\n    @allure.title('test_delete_database')\n    def test_delete_database(self, driver, authorization_user):\n        page = ProfilePage(driver, authorization_user)\n        page.click_button_status()\n        amount_databases = page.get_status_data()['db qty used']\n>       msg = page.delete_database()\n\ntests_ui/test_ui.py:90: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <tests_ui.profile_page.ProfilePage object at 0x7f19fa474e30>\n\n    def delete_database(self):\n        self.click_button_databases()\n        self.click_buttons_create_new_db()\n        self.click_button_databases()\n        time.sleep(1)\n        list_databases = self.elements_are_present(self.locators.LIST_DATABASES)\n        list_db = [list_databases[i].text for i in range(len(list_databases))]\n        if len(list_db) != 0:\n            button = self.element_is_visible((By.XPATH, f'//tbody[@id=\"tbody_dbs\"] /tr[1]/td[10] /button'))\n            button.click()\n            server_msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text\n            with allure.step(f'Check server answer is: {server_msg}'):\n>               assert server_msg == 'server is set for deleting', 'Wrong answer from server or need manual deleting!!!'\nE               AssertionError: Wrong answer from server or need manual deleting!!!\n\ntests_ui/profile_page.py:87: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "authorization_user",
+    "time" : {
+      "start" : 1743039734422,
+      "stop" : 1743039734956,
+      "duration" : 534
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Open page: https://oblache.areso.pro/register.html",
+      "time" : {
+        "start" : 1743039734422,
+        "stop" : 1743039734741,
+        "duration" : 319
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Login user",
+      "time" : {
+        "start" : 1743039734742,
+        "stop" : 1743039734956,
+        "duration" : 214
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Enter email.",
+        "time" : {
+          "start" : 1743039734742,
+          "stop" : 1743039734810,
+          "duration" : 68
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Enter password.",
+        "time" : {
+          "start" : 1743039734811,
+          "stop" : 1743039734857,
+          "duration" : 46
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Click button \"Login\"",
+        "time" : {
+          "start" : 1743039734857,
+          "stop" : 1743039734953,
+          "duration" : 96
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Check url is present: https://oblache.areso.pro/register.html",
+        "time" : {
+          "start" : 1743039734954,
+          "stop" : 1743039734956,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  }, {
+    "name" : "driver",
+    "time" : {
+      "start" : 1743039734058,
+      "stop" : 1743039734422,
+      "duration" : 364
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: Wrong answer from server or need manual deleting!!!",
+    "statusTrace" : "self = <tests_ui.test_ui.TestProfilePage object at 0x7f19fa4ff920>\ndriver = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"9bf89fd905ade5e4412aabe4ffa64967\")>\nauthorization_user = None\n\n    @allure.title('test_delete_database')\n    def test_delete_database(self, driver, authorization_user):\n        page = ProfilePage(driver, authorization_user)\n        page.click_button_status()\n        amount_databases = page.get_status_data()['db qty used']\n>       msg = page.delete_database()\n\ntests_ui/test_ui.py:90: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <tests_ui.profile_page.ProfilePage object at 0x7f19fa474e30>\n\n    def delete_database(self):\n        self.click_button_databases()\n        self.click_buttons_create_new_db()\n        self.click_button_databases()\n        time.sleep(1)\n        list_databases = self.elements_are_present(self.locators.LIST_DATABASES)\n        list_db = [list_databases[i].text for i in range(len(list_databases))]\n        if len(list_db) != 0:\n            button = self.element_is_visible((By.XPATH, f'//tbody[@id=\"tbody_dbs\"] /tr[1]/td[10] /button'))\n            button.click()\n            server_msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text\n            with allure.step(f'Check server answer is: {server_msg}'):\n>               assert server_msg == 'server is set for deleting', 'Wrong answer from server or need manual deleting!!!'\nE               AssertionError: Wrong answer from server or need manual deleting!!!\n\ntests_ui/profile_page.py:87: AssertionError",
+    "steps" : [ {
+      "name" : "Click button Status.",
+      "time" : {
+        "start" : 1743039735957,
+        "stop" : 1743039736033,
+        "duration" : 76
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Get status data.",
+      "time" : {
+        "start" : 1743039736401,
+        "stop" : 1743039736401,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Status data is: {'Email:': 'test4@mail.com', 'is blocked?': '0', 'is db creation allowed?': '0', 'disk db quota, mb': '4', 'disk db used, mb': '9', 'db qty quota': '100', 'db qty used': '16', 'site qty quota': '5', 'site qty used': '0', 'is site deploy allowed?': '1'}",
+        "time" : {
+          "start" : 1743039736401,
+          "stop" : 1743039736401,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Click \"Databases\" button.",
+      "time" : {
+        "start" : 1743039736401,
+        "stop" : 1743039736471,
+        "duration" : 70
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Click \"Create new DB\" button.",
+      "time" : {
+        "start" : 1743039736471,
+        "stop" : 1743039736550,
+        "duration" : 79
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Click \"Databases\" button.",
+      "time" : {
+        "start" : 1743039736550,
+        "stop" : 1743039736618,
+        "duration" : 68
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Check server answer is: something went wrong",
+      "time" : {
+        "start" : 1743039738370,
+        "stop" : 1743039738370,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: Wrong answer from server or need manual deleting!!!\n",
+      "statusTrace" : "  File \"/home/runner/work/Oblache/Oblache/tests_ui/profile_page.py\", line 87, in delete_database\n    assert server_msg == 'server is set for deleting', 'Wrong answer from server or need manual deleting!!!'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "9ad55e9143a9111",
+      "name" : "Screenshot 2025-03-27 01:42:18.475538",
+      "source" : "9ad55e9143a9111.png",
+      "type" : "image/png",
+      "size" : 137858
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 7,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "driver::0",
+    "time" : {
+      "start" : 1743039738477,
+      "stop" : 1743039738539,
+      "duration" : 62
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test Profile Page."
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_ui"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestProfilePage"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1315-66"
+  }, {
+    "name" : "thread",
+    "value" : "2514-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_ui.test_ui"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 203,
+        "broken" : 22,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 225
+      },
+      "items" : [ {
+        "uid" : "c7a87e61e2ad0b4c",
+        "reportUrl" : "https://Areso.github.io/Oblache/349//#testresult/c7a87e61e2ad0b4c",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Wrong answer from server or need manual deleting!!!",
+        "time" : {
+          "start" : 1742953417384,
+          "stop" : 1742953421000,
+          "duration" : 3616
+        }
+      }, {
+        "uid" : "1526ba5de8597884",
+        "reportUrl" : "https://Areso.github.io/Oblache/348//#testresult/1526ba5de8597884",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Wrong answer from server or need manual deleting!!!",
+        "time" : {
+          "start" : 1742866997944,
+          "stop" : 1742867001245,
+          "duration" : 3301
+        }
+      }, {
+        "uid" : "d01803eba3198ce8",
+        "reportUrl" : "https://Areso.github.io/Oblache/347//#testresult/d01803eba3198ce8",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Wrong answer from server or need manual deleting!!!",
+        "time" : {
+          "start" : 1742780735121,
+          "stop" : 1742780738431,
+          "duration" : 3310
+        }
+      }, {
+        "uid" : "4c35abd485a0d003",
+        "reportUrl" : "https://Areso.github.io/Oblache/346//#testresult/4c35abd485a0d003",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Wrong answer from server or need manual deleting!!!",
+        "time" : {
+          "start" : 1742694434023,
+          "stop" : 1742694437309,
+          "duration" : 3286
+        }
+      }, {
+        "uid" : "4823a8f3c9fab364",
+        "reportUrl" : "https://Areso.github.io/Oblache/345//#testresult/4823a8f3c9fab364",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Wrong answer from server or need manual deleting!!!",
+        "time" : {
+          "start" : 1742607627909,
+          "stop" : 1742607631214,
+          "duration" : 3305
+        }
+      }, {
+        "uid" : "806c07833a08cbc0",
+        "reportUrl" : "https://Areso.github.io/Oblache/344//#testresult/806c07833a08cbc0",
+        "status" : "broken",
+        "statusDetails" : "selenium.common.exceptions.TimeoutException: Message: Can't find elements by locator ('xpath', '//tbody[@id=\"tbody_dbs\"]/tr')",
+        "time" : {
+          "start" : 1742521337194,
+          "stop" : 1742521344902,
+          "duration" : 7708
+        }
+      }, {
+        "uid" : "89a0ad2f2e576707",
+        "reportUrl" : "https://Areso.github.io/Oblache/343//#testresult/89a0ad2f2e576707",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Wrong answer from server or need manual deleting!!!",
+        "time" : {
+          "start" : 1742434883509,
+          "stop" : 1742434886817,
+          "duration" : 3308
+        }
+      }, {
+        "uid" : "fe7960007086e2c1",
+        "reportUrl" : "https://Areso.github.io/Oblache/342//#testresult/fe7960007086e2c1",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Wrong answer from server or need manual deleting!!!",
+        "time" : {
+          "start" : 1742348537023,
+          "stop" : 1742348540326,
+          "duration" : 3303
+        }
+      }, {
+        "uid" : "1db32151eaee6d44",
+        "reportUrl" : "https://Areso.github.io/Oblache/341//#testresult/1db32151eaee6d44",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Wrong answer from server or need manual deleting!!!",
+        "time" : {
+          "start" : 1742262077608,
+          "stop" : 1742262080944,
+          "duration" : 3336
+        }
+      }, {
+        "uid" : "4ba41a9ff2aeb998",
+        "reportUrl" : "https://Areso.github.io/Oblache/340//#testresult/4ba41a9ff2aeb998",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Wrong answer from server or need manual deleting!!!",
+        "time" : {
+          "start" : 1742175879025,
+          "stop" : 1742175882607,
+          "duration" : 3582
+        }
+      }, {
+        "uid" : "10c30c28d3247875",
+        "reportUrl" : "https://Areso.github.io/Oblache/339//#testresult/10c30c28d3247875",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Wrong answer from server or need manual deleting!!!",
+        "time" : {
+          "start" : 1742089585477,
+          "stop" : 1742089589154,
+          "duration" : 3677
+        }
+      }, {
+        "uid" : "f6d3b50b2ab73de3",
+        "reportUrl" : "https://Areso.github.io/Oblache/338//#testresult/f6d3b50b2ab73de3",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Wrong answer from server or need manual deleting!!!",
+        "time" : {
+          "start" : 1742002757660,
+          "stop" : 1742002760961,
+          "duration" : 3301
+        }
+      }, {
+        "uid" : "9fe4f2cda695c4ed",
+        "reportUrl" : "https://Areso.github.io/Oblache/337//#testresult/9fe4f2cda695c4ed",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Wrong answer from server or need manual deleting!!!",
+        "time" : {
+          "start" : 1741916418232,
+          "stop" : 1741916421578,
+          "duration" : 3346
+        }
+      }, {
+        "uid" : "72bd4b83bb7981f6",
+        "reportUrl" : "https://Areso.github.io/Oblache/336//#testresult/72bd4b83bb7981f6",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Wrong answer from server or need manual deleting!!!",
+        "time" : {
+          "start" : 1741830075207,
+          "stop" : 1741830078508,
+          "duration" : 3301
+        }
+      }, {
+        "uid" : "87b25cbed1ba0770",
+        "reportUrl" : "https://Areso.github.io/Oblache/335//#testresult/87b25cbed1ba0770",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Wrong answer from server or need manual deleting!!!",
+        "time" : {
+          "start" : 1741743624083,
+          "stop" : 1741743627721,
+          "duration" : 3638
+        }
+      }, {
+        "uid" : "83000ed1353bf624",
+        "reportUrl" : "https://Areso.github.io/Oblache/334//#testresult/83000ed1353bf624",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Wrong answer from server or need manual deleting!!!",
+        "time" : {
+          "start" : 1741657294739,
+          "stop" : 1741657298069,
+          "duration" : 3330
+        }
+      }, {
+        "uid" : "7e70d47cb8e6e130",
+        "reportUrl" : "https://Areso.github.io/Oblache/333//#testresult/7e70d47cb8e6e130",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Wrong answer from server or need manual deleting!!!",
+        "time" : {
+          "start" : 1741569623514,
+          "stop" : 1741569626873,
+          "duration" : 3359
+        }
+      }, {
+        "uid" : "e65a2d9b89f14ccd",
+        "reportUrl" : "https://Areso.github.io/Oblache/332//#testresult/e65a2d9b89f14ccd",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Wrong answer from server or need manual deleting!!!",
+        "time" : {
+          "start" : 1741483304225,
+          "stop" : 1741483307562,
+          "duration" : 3337
+        }
+      }, {
+        "uid" : "f6855fc05358e7d3",
+        "reportUrl" : "https://Areso.github.io/Oblache/331//#testresult/f6855fc05358e7d3",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Wrong answer from server or need manual deleting!!!",
+        "time" : {
+          "start" : 1741396525817,
+          "stop" : 1741396529468,
+          "duration" : 3651
+        }
+      }, {
+        "uid" : "10e4b3cbd23151c7",
+        "reportUrl" : "https://Areso.github.io/Oblache/330//#testresult/10e4b3cbd23151c7",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Wrong answer from server or need manual deleting!!!",
+        "time" : {
+          "start" : 1741311681231,
+          "stop" : 1741311684544,
+          "duration" : 3313
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "bf2ae1a253657363.json",
+  "parameterValues" : [ ]
+}
