@@ -1,4 +1,8 @@
 # Release notes
+Sun 30 Mar 2025 11:38 PM EEST  
+dbaas_backend:
+[OBL-331](https://github.com/Areso/Oblache/issues/331) added migration    
+
 Mon 24 Mar 2025 08:44 PM EET  
 dbaas_backend:
 [OBL-328](https://github.com/Areso/Oblache/issues/328) [OBL-331](https://github.com/Areso/Oblache/issues/331) unpulishing in Orc    
