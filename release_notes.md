@@ -1,4 +1,8 @@
 # Release notes
+Mon 31 Mar 2025 12:38 AM EEST  
+paas_site_destroyer:
+[OBL-331](https://github.com/Areso/Oblache/issues/331) site destroyer executor update to support the unpublish action    
+
 Sun 30 Mar 2025 11:38 PM EEST  
 dbaas_backend:
 [OBL-331](https://github.com/Areso/Oblache/issues/331) added migration    
