@@ -1,4 +1,8 @@
 # Release notes
+Tue 01 Apr 2025 12:40 AM EEST  
+paas_site_destroyer:
+[OBL-31](https://github.com/Areso/Oblache/issues/31) patch    
+
 Tue 01 Apr 2025 12:27 AM EEST  
 paas_site_destroyer:
 [OBL-31](https://github.com/Areso/Oblache/issues/31) patch    
