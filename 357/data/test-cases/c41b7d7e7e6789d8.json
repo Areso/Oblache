@@ -1,0 +1,392 @@
+{
+  "uid" : "c41b7d7e7e6789d8",
+  "name" : "POST registration email is taken for unsupported languages",
+  "fullName" : "tests_api.test_bd.TestPOST#test_post_registration_email_is_taken_for_unsupported_languages",
+  "historyId" : "0f497336a453dab6752b8ca2c68cb0db",
+  "time" : {
+    "start" : 1743644458614,
+    "stop" : 1743644459120,
+    "duration" : 506
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Endpoint: /register",
+      "time" : {
+        "start" : 1743644459120,
+        "stop" : 1743644459120,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Request:",
+      "time" : {
+        "start" : 1743644459120,
+        "stop" : 1743644459120,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Headers: {'Content-Type': 'application/json', 'Authorization': 'None'}",
+        "time" : {
+          "start" : 1743644459120,
+          "stop" : 1743644459120,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Body: \n                            {\n                            \"email\": email,\n                            \"password\": password,\n                            \"tos_agree\": True,\n                            \"language\": ru-ru\n                           }",
+        "time" : {
+          "start" : 1743644459120,
+          "stop" : 1743644459120,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Response:",
+      "time" : {
+        "start" : 1743644459120,
+        "stop" : 1743644459120,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Status code: 400",
+        "time" : {
+          "start" : 1743644459120,
+          "stop" : 1743644459120,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "JSON: {\n    \"content\": \"msg[34]: the language is not accepted\"\n}\n",
+        "time" : {
+          "start" : 1743644459120,
+          "stop" : 1743644459120,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Assert status code: 400 == Response status code: 400",
+      "time" : {
+        "start" : 1743644459120,
+        "stop" : 1743644459120,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Check and compare result request with expected value by key:\nResponse: <Response [400]>\nKey: content\nValue: msg[34]: the language is not accepted",
+      "time" : {
+        "start" : 1743644459120,
+        "stop" : 1743644459120,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 9,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "POST"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_api"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestPOST"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1376-254"
+  }, {
+    "name" : "thread",
+    "value" : "2537-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_api.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 10,
+        "broken" : 3,
+        "skipped" : 0,
+        "passed" : 222,
+        "unknown" : 0,
+        "total" : 235
+      },
+      "items" : [ {
+        "uid" : "6c2cfdb351510870",
+        "reportUrl" : "https://Areso.github.io/Oblache/356//#testresult/6c2cfdb351510870",
+        "status" : "passed",
+        "time" : {
+          "start" : 1743558131278,
+          "stop" : 1743558131595,
+          "duration" : 317
+        }
+      }, {
+        "uid" : "7c4a6c9c80dec2b3",
+        "reportUrl" : "https://Areso.github.io/Oblache/355//#testresult/7c4a6c9c80dec2b3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1743472308462,
+          "stop" : 1743472308985,
+          "duration" : 523
+        }
+      }, {
+        "uid" : "f0272bd1c5d2d2dd",
+        "reportUrl" : "https://Areso.github.io/Oblache/354//#testresult/f0272bd1c5d2d2dd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1743385548234,
+          "stop" : 1743385548734,
+          "duration" : 500
+        }
+      }, {
+        "uid" : "68c657b335d1f5b7",
+        "reportUrl" : "https://Areso.github.io/Oblache/353//#testresult/68c657b335d1f5b7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1743299244398,
+          "stop" : 1743299244912,
+          "duration" : 514
+        }
+      }, {
+        "uid" : "1cc31e768d4c9464",
+        "reportUrl" : "https://Areso.github.io/Oblache/352//#testresult/1cc31e768d4c9464",
+        "status" : "passed",
+        "time" : {
+          "start" : 1743212351571,
+          "stop" : 1743212351881,
+          "duration" : 310
+        }
+      }, {
+        "uid" : "c46ab9fa94c73874",
+        "reportUrl" : "https://Areso.github.io/Oblache/351//#testresult/c46ab9fa94c73874",
+        "status" : "passed",
+        "time" : {
+          "start" : 1743126016085,
+          "stop" : 1743126016398,
+          "duration" : 313
+        }
+      }, {
+        "uid" : "a34f07c33a702aee",
+        "reportUrl" : "https://Areso.github.io/Oblache/350//#testresult/a34f07c33a702aee",
+        "status" : "passed",
+        "time" : {
+          "start" : 1743039597560,
+          "stop" : 1743039597880,
+          "duration" : 320
+        }
+      }, {
+        "uid" : "98300354c64fdc48",
+        "reportUrl" : "https://Areso.github.io/Oblache/349//#testresult/98300354c64fdc48",
+        "status" : "passed",
+        "time" : {
+          "start" : 1742953229087,
+          "stop" : 1742953229584,
+          "duration" : 497
+        }
+      }, {
+        "uid" : "b2195927802626",
+        "reportUrl" : "https://Areso.github.io/Oblache/348//#testresult/b2195927802626",
+        "status" : "passed",
+        "time" : {
+          "start" : 1742866855541,
+          "stop" : 1742866855852,
+          "duration" : 311
+        }
+      }, {
+        "uid" : "79032dc7ee64ae06",
+        "reportUrl" : "https://Areso.github.io/Oblache/347//#testresult/79032dc7ee64ae06",
+        "status" : "passed",
+        "time" : {
+          "start" : 1742780581565,
+          "stop" : 1742780581994,
+          "duration" : 429
+        }
+      }, {
+        "uid" : "de2ea5e920eaf43c",
+        "reportUrl" : "https://Areso.github.io/Oblache/346//#testresult/de2ea5e920eaf43c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1742694293206,
+          "stop" : 1742694293517,
+          "duration" : 311
+        }
+      }, {
+        "uid" : "595260b865510526",
+        "reportUrl" : "https://Areso.github.io/Oblache/345//#testresult/595260b865510526",
+        "status" : "passed",
+        "time" : {
+          "start" : 1742607465617,
+          "stop" : 1742607465946,
+          "duration" : 329
+        }
+      }, {
+        "uid" : "1831acb9ad710755",
+        "reportUrl" : "https://Areso.github.io/Oblache/344//#testresult/1831acb9ad710755",
+        "status" : "passed",
+        "time" : {
+          "start" : 1742521213901,
+          "stop" : 1742521214314,
+          "duration" : 413
+        }
+      }, {
+        "uid" : "20492d328b209d09",
+        "reportUrl" : "https://Areso.github.io/Oblache/343//#testresult/20492d328b209d09",
+        "status" : "passed",
+        "time" : {
+          "start" : 1742434716470,
+          "stop" : 1742434716797,
+          "duration" : 327
+        }
+      }, {
+        "uid" : "d57224effa10a94e",
+        "reportUrl" : "https://Areso.github.io/Oblache/342//#testresult/d57224effa10a94e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1742348383385,
+          "stop" : 1742348383700,
+          "duration" : 315
+        }
+      }, {
+        "uid" : "a20dea1e5f51b944",
+        "reportUrl" : "https://Areso.github.io/Oblache/341//#testresult/a20dea1e5f51b944",
+        "status" : "passed",
+        "time" : {
+          "start" : 1742261963163,
+          "stop" : 1742261963558,
+          "duration" : 395
+        }
+      }, {
+        "uid" : "ca1eb63037e5813c",
+        "reportUrl" : "https://Areso.github.io/Oblache/340//#testresult/ca1eb63037e5813c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1742175692740,
+          "stop" : 1742175693252,
+          "duration" : 512
+        }
+      }, {
+        "uid" : "8a7a4649b466af15",
+        "reportUrl" : "https://Areso.github.io/Oblache/339//#testresult/8a7a4649b466af15",
+        "status" : "passed",
+        "time" : {
+          "start" : 1742089447389,
+          "stop" : 1742089447902,
+          "duration" : 513
+        }
+      }, {
+        "uid" : "e5f877f1ee9735bf",
+        "reportUrl" : "https://Areso.github.io/Oblache/338//#testresult/e5f877f1ee9735bf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1742002597136,
+          "stop" : 1742002597460,
+          "duration" : 324
+        }
+      }, {
+        "uid" : "eb013a22bb2354fc",
+        "reportUrl" : "https://Areso.github.io/Oblache/337//#testresult/eb013a22bb2354fc",
+        "status" : "passed",
+        "time" : {
+          "start" : 1741916243433,
+          "stop" : 1741916243869,
+          "duration" : 436
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "c41b7d7e7e6789d8.json",
+  "parameterValues" : [ ]
+}
