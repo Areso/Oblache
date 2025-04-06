@@ -1,0 +1,289 @@
+{
+  "uid" : "2bbb344a9d90b4bb",
+  "name" : "POST delete_db",
+  "fullName" : "tests_api.test_bd.TestPOST#test_delete_db",
+  "historyId" : "aacf29e4b56c0d304e9b651197b003cc",
+  "time" : {
+    "start" : 1743903980300,
+    "stop" : 1743903980300,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "statusMessage" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nrequests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+  "statusTrace" : "self = <Response [502]>, kwargs = {}\n\n    def json(self, **kwargs):\n        r\"\"\"Returns the json-encoded content of a response, if any.\n    \n        :param \\*\\*kwargs: Optional arguments that ``json.loads`` takes.\n        :raises requests.exceptions.JSONDecodeError: If the response body does not\n            contain valid json.\n        \"\"\"\n    \n        if not self.encoding and self.content and len(self.content) > 3:\n            # No encoding set. JSON RFC 4627 section 3 states we should expect\n            # UTF-8, -16 or -32. Detect which one to use; If the detection or\n            # decoding fails, fall back to `self.text` (using charset_normalizer to make\n            # a best guess).\n            encoding = guess_json_utf(self.content)\n            if encoding is not None:\n                try:\n                    return complexjson.loads(self.content.decode(encoding), **kwargs)\n                except UnicodeDecodeError:\n                    # Wrong UTF codec detected; usually because it's not UTF-8\n                    # but some other 8-bit codec.  This is an RFC violation,\n                    # and the server didn't bother to tell us what codec *was*\n                    # used.\n                    pass\n                except JSONDecodeError as e:\n                    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)\n    \n        try:\n>           return complexjson.loads(self.text, **kwargs)\n\n/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/requests/models.py:974: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/json/__init__.py:346: in loads\n    return _default_decoder.decode(s)\n/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/json/decoder.py:338: in decode\n    obj, end = self.raw_decode(s, idx=_w(s, 0).end())\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <json.decoder.JSONDecoder object at 0x7f5ce2627080>\ns = '<html>\\r\\n<head><title>502 Bad Gateway</title></head>\\r\\n<body>\\r\\n<center><h1>502 Bad Gateway</h1></center>\\r\\n<hr><center>nginx/1.18.0 (Ubuntu)</center>\\r\\n</body>\\r\\n</html>\\r\\n'\nidx = 0\n\n    def raw_decode(self, s, idx=0):\n        \"\"\"Decode a JSON document from ``s`` (a ``str`` beginning with\n        a JSON document) and return a 2-tuple of the Python\n        representation and the index in ``s`` where the document ended.\n    \n        This can be used to decode a JSON document from a string that may\n        have extraneous data at the end.\n    \n        \"\"\"\n        try:\n            obj, end = self.scan_once(s, idx)\n        except StopIteration as err:\n>           raise JSONDecodeError(\"Expecting value\", s, err.value) from None\nE           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\n\n/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/json/decoder.py:356: JSONDecodeError\n\nDuring handling of the above exception, another exception occurred:\n\n    @pytest.fixture()\n    def get_token():\n        \"\"\"\n        Method return:\\n\n        token: str\\n\n        body: dict\\n\n        new_password: str\\n\n        old_password: str\\n\n        email: str\n        :returns: token: str, body: dict, new_password: str, old_password:str, email: str\n        \"\"\"\n        load_dotenv()\n        email = os.getenv('EMAIL')\n        old_password = os.getenv('PASSWORD')\n        new_password = '123456789'\n        try:\n            body = {\"email\": email, \"password\": f'{old_password}'}\n            result = requests.post('https://dbend.areso.pro/login', json=body)\n            token = result.json()['token']\n            if token != {}:\n                new_password, old_password = old_password, new_password\n            Checking.check_status_code(result, 200)\n            return token, body, new_password, old_password, email\n        except Exception as ex:\n            print(ex)\n            old_password, new_password = new_password, old_password\n            body = {\"email\": email, \"password\": f'{old_password}'}\n            result = requests.post('https://dbend.areso.pro/login', json=body)\n>           token = result.json()['token']\n\nconftest.py:75: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <Response [502]>, kwargs = {}\n\n    def json(self, **kwargs):\n        r\"\"\"Returns the json-encoded content of a response, if any.\n    \n        :param \\*\\*kwargs: Optional arguments that ``json.loads`` takes.\n        :raises requests.exceptions.JSONDecodeError: If the response body does not\n            contain valid json.\n        \"\"\"\n    \n        if not self.encoding and self.content and len(self.content) > 3:\n            # No encoding set. JSON RFC 4627 section 3 states we should expect\n            # UTF-8, -16 or -32. Detect which one to use; If the detection or\n            # decoding fails, fall back to `self.text` (using charset_normalizer to make\n            # a best guess).\n            encoding = guess_json_utf(self.content)\n            if encoding is not None:\n                try:\n                    return complexjson.loads(self.content.decode(encoding), **kwargs)\n                except UnicodeDecodeError:\n                    # Wrong UTF codec detected; usually because it's not UTF-8\n                    # but some other 8-bit codec.  This is an RFC violation,\n                    # and the server didn't bother to tell us what codec *was*\n                    # used.\n                    pass\n                except JSONDecodeError as e:\n                    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)\n    \n        try:\n            return complexjson.loads(self.text, **kwargs)\n        except JSONDecodeError as e:\n            # Catch JSON-related errors and raise as requests.JSONDecodeError\n            # This aliases json.JSONDecodeError and simplejson.JSONDecodeError\n>           raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)\nE           requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\n\n/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/requests/models.py:978: JSONDecodeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "get_token",
+    "time" : {
+      "start" : 1743903980301,
+      "stop" : 1743903981253,
+      "duration" : 952
+    },
+    "status" : "broken",
+    "statusMessage" : "requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\n",
+    "statusTrace" : "  File \"/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pluggy/_callers.py\", line 103, in _multicall\n    res = hook_impl.function(*args)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/_pytest/fixtures.py\", line 1123, in pytest_fixture_setup\n    result = call_fixture_func(fixturefunc, request, kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/_pytest/fixtures.py\", line 902, in call_fixture_func\n    fixture_result = fixturefunc(**kwargs)\n                     ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/Oblache/Oblache/conftest.py\", line 75, in get_token\n    token = result.json()['token']\n            ^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/requests/models.py\", line 978, in json\n    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)\n",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  } ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "POST"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.xfail(reason='When using this method during a test run, the database may be in deleting status.')"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_api"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestPOST"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1947-294"
+  }, {
+    "name" : "thread",
+    "value" : "2529-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_api.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 222,
+        "passed" : 16,
+        "unknown" : 0,
+        "total" : 238
+      },
+      "items" : [ {
+        "uid" : "584760eb247d3f87",
+        "reportUrl" : "https://Areso.github.io/Oblache/359//#testresult/584760eb247d3f87",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1743817185473,
+          "stop" : 1743817186091,
+          "duration" : 618
+        }
+      }, {
+        "uid" : "ee25cf859cdab3d9",
+        "reportUrl" : "https://Areso.github.io/Oblache/358//#testresult/ee25cf859cdab3d9",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1743730871754,
+          "stop" : 1743730872365,
+          "duration" : 611
+        }
+      }, {
+        "uid" : "a16aeedb907066fb",
+        "reportUrl" : "https://Areso.github.io/Oblache/357//#testresult/a16aeedb907066fb",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1743644501408,
+          "stop" : 1743644502393,
+          "duration" : 985
+        }
+      }, {
+        "uid" : "309128f044d5d6f6",
+        "reportUrl" : "https://Areso.github.io/Oblache/356//#testresult/309128f044d5d6f6",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1743558165914,
+          "stop" : 1743558166545,
+          "duration" : 631
+        }
+      }, {
+        "uid" : "8d21dbd6947744c6",
+        "reportUrl" : "https://Areso.github.io/Oblache/355//#testresult/8d21dbd6947744c6",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1743472351668,
+          "stop" : 1743472352668,
+          "duration" : 1000
+        }
+      }, {
+        "uid" : "bae35f3a3c3bc450",
+        "reportUrl" : "https://Areso.github.io/Oblache/354//#testresult/bae35f3a3c3bc450",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1743385590974,
+          "stop" : 1743385591946,
+          "duration" : 972
+        }
+      }, {
+        "uid" : "af0bfeb43e0453be",
+        "reportUrl" : "https://Areso.github.io/Oblache/353//#testresult/af0bfeb43e0453be",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1743299287800,
+          "stop" : 1743299288800,
+          "duration" : 1000
+        }
+      }, {
+        "uid" : "afe818703656f9ee",
+        "reportUrl" : "https://Areso.github.io/Oblache/352//#testresult/afe818703656f9ee",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1743212386265,
+          "stop" : 1743212386929,
+          "duration" : 664
+        }
+      }, {
+        "uid" : "d2e00ef8d7c5ae55",
+        "reportUrl" : "https://Areso.github.io/Oblache/351//#testresult/d2e00ef8d7c5ae55",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1743126050684,
+          "stop" : 1743126051289,
+          "duration" : 605
+        }
+      }, {
+        "uid" : "48aaf448065ddf",
+        "reportUrl" : "https://Areso.github.io/Oblache/350//#testresult/48aaf448065ddf",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1743039632401,
+          "stop" : 1743039633074,
+          "duration" : 673
+        }
+      }, {
+        "uid" : "355a0a78a867152f",
+        "reportUrl" : "https://Areso.github.io/Oblache/349//#testresult/355a0a78a867152f",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1742953272084,
+          "stop" : 1742953273081,
+          "duration" : 997
+        }
+      }, {
+        "uid" : "d5e1e3f5b42b40f5",
+        "reportUrl" : "https://Areso.github.io/Oblache/348//#testresult/d5e1e3f5b42b40f5",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1742866890362,
+          "stop" : 1742866890967,
+          "duration" : 605
+        }
+      }, {
+        "uid" : "63d78129bb0d66d7",
+        "reportUrl" : "https://Areso.github.io/Oblache/347//#testresult/63d78129bb0d66d7",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1742780618152,
+          "stop" : 1742780618859,
+          "duration" : 707
+        }
+      }, {
+        "uid" : "12c8c849e3a97f1b",
+        "reportUrl" : "https://Areso.github.io/Oblache/346//#testresult/12c8c849e3a97f1b",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1742694327494,
+          "stop" : 1742694328088,
+          "duration" : 594
+        }
+      }, {
+        "uid" : "8d2eca037eefba30",
+        "reportUrl" : "https://Areso.github.io/Oblache/345//#testresult/8d2eca037eefba30",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1742607500379,
+          "stop" : 1742607500997,
+          "duration" : 618
+        }
+      }, {
+        "uid" : "f32201ecf91419c1",
+        "reportUrl" : "https://Areso.github.io/Oblache/344//#testresult/f32201ecf91419c1",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1742521250514,
+          "stop" : 1742521251228,
+          "duration" : 714
+        }
+      }, {
+        "uid" : "7f7b608ca849420f",
+        "reportUrl" : "https://Areso.github.io/Oblache/343//#testresult/7f7b608ca849420f",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1742434751265,
+          "stop" : 1742434751883,
+          "duration" : 618
+        }
+      }, {
+        "uid" : "94210b3e045f9d4d",
+        "reportUrl" : "https://Areso.github.io/Oblache/342//#testresult/94210b3e045f9d4d",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1742348418161,
+          "stop" : 1742348418785,
+          "duration" : 624
+        }
+      }, {
+        "uid" : "d486d16a02d8e34d",
+        "reportUrl" : "https://Areso.github.io/Oblache/341//#testresult/d486d16a02d8e34d",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1742261997846,
+          "stop" : 1742261998455,
+          "duration" : 609
+        }
+      }, {
+        "uid" : "8a163a53b8a1b9e3",
+        "reportUrl" : "https://Areso.github.io/Oblache/340//#testresult/8a163a53b8a1b9e3",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1742175735470,
+          "stop" : 1742175736429,
+          "duration" : 959
+        }
+      } ]
+    },
+    "tags" : [ "@pytest.mark.xfail(reason='When using this method during a test run, the database may be in deleting status.')" ]
+  },
+  "source" : "2bbb344a9d90b4bb.json",
+  "parameterValues" : [ ]
+}

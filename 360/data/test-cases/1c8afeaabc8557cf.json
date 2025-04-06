@@ -1,0 +1,307 @@
+{
+  "uid" : "1c8afeaabc8557cf",
+  "name" : "test order db create backup",
+  "fullName" : "tests_api.test_bd.TestBackup#test_order_db_create_backup",
+  "historyId" : "bbc51bc9e59c2f7de52280f53d30e264",
+  "time" : {
+    "start" : 1743903982276,
+    "stop" : 1743903982276,
+    "duration" : 0
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: Incorrect status code: 502",
+  "statusTrace" : "@pytest.fixture()\n    def get_token_backup_2():\n        \"\"\"\n        Method return:\\n\n        token: str\\n\n        body: dict\\n\n        uuid: str\n        \"\"\"\n        load_dotenv()\n        email = os.getenv('BACKUP2_MAIL')\n        old_password = os.getenv('BACKUP2_PASSWORD')\n        uuid = os.getenv('BACKUP2_UUID')\n        body = {\"email\": email, \"password\": old_password}\n        result = requests.post('https://dbend.areso.pro/login', json=body)\n>       Checking.check_status_code(result, 200)\n\nconftest.py:113: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [502]>, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, f'Incorrect status code: {result.status_code}'\nE           AssertionError: Incorrect status code: 502\n\ntests_api/utils/checking.py:16: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "get_token_backup_2",
+    "time" : {
+      "start" : 1743903982276,
+      "stop" : 1743903982889,
+      "duration" : 613
+    },
+    "status" : "failed",
+    "statusMessage" : "AssertionError: Incorrect status code: 502\n",
+    "statusTrace" : "  File \"/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/pluggy/_callers.py\", line 103, in _multicall\n    res = hook_impl.function(*args)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/_pytest/fixtures.py\", line 1123, in pytest_fixture_setup\n    result = call_fixture_func(fixturefunc, request, kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages/_pytest/fixtures.py\", line 902, in call_fixture_func\n    fixture_result = fixturefunc(**kwargs)\n                     ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/Oblache/Oblache/conftest.py\", line 113, in get_token_backup_2\n    Checking.check_status_code(result, 200)\n  File \"/home/runner/work/Oblache/Oblache/tests_api/utils/checking.py\", line 16, in check_status_code\n    assert status_code == result.status_code, f'Incorrect status code: {result.status_code}'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+    "steps" : [ {
+      "name" : "Assert status code: 200 == Response status code: 502",
+      "time" : {
+        "start" : 1743903982889,
+        "stop" : 1743903982889,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: Incorrect status code: 502\n",
+      "statusTrace" : "  File \"/home/runner/work/Oblache/Oblache/tests_api/utils/checking.py\", line 16, in check_status_code\n    assert status_code == result.status_code, f'Incorrect status code: {result.status_code}'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  } ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test Backup"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_api"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestBackup"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1947-294"
+  }, {
+    "name" : "thread",
+    "value" : "2529-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_api.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 13,
+        "broken" : 30,
+        "skipped" : 0,
+        "passed" : 166,
+        "unknown" : 0,
+        "total" : 209
+      },
+      "items" : [ {
+        "uid" : "4602f8dd10aef2fc",
+        "reportUrl" : "https://Areso.github.io/Oblache/359//#testresult/4602f8dd10aef2fc",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='dbend.areso.prohttp', port=443): Max retries exceeded with url: /cis_db1.areso.pro/backups/db_cen6maxr.sql (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7ff744977410>: Failed to resolve 'dbend.areso.prohttp' ([Errno -2] Name or service not known)\"))",
+        "time" : {
+          "start" : 1743817209889,
+          "stop" : 1743817240267,
+          "duration" : 30378
+        }
+      }, {
+        "uid" : "79e00fb628bde405",
+        "reportUrl" : "https://Areso.github.io/Oblache/358//#testresult/79e00fb628bde405",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='dbend.areso.prohttp', port=443): Max retries exceeded with url: /cis_db1.areso.pro/backups/db_cen6maxr.sql (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f4ae1fe0650>: Failed to resolve 'dbend.areso.prohttp' ([Errno -2] Name or service not known)\"))",
+        "time" : {
+          "start" : 1743730929909,
+          "stop" : 1743730960315,
+          "duration" : 30406
+        }
+      }, {
+        "uid" : "c978963d2eb90452",
+        "reportUrl" : "https://Areso.github.io/Oblache/357//#testresult/c978963d2eb90452",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='dbend.areso.prohttp', port=443): Max retries exceeded with url: /cis_db1.areso.pro/backups/db_cen6maxr.sql (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7fc25cb72240>: Failed to resolve 'dbend.areso.prohttp' ([Errno -2] Name or service not known)\"))",
+        "time" : {
+          "start" : 1743644528402,
+          "stop" : 1743644559061,
+          "duration" : 30659
+        }
+      }, {
+        "uid" : "aafc08ad477ce229",
+        "reportUrl" : "https://Areso.github.io/Oblache/356//#testresult/aafc08ad477ce229",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='dbend.areso.prohttp', port=443): Max retries exceeded with url: /cis_db1.areso.pro/backups/db_cen6maxr.sql (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7fb6b26022a0>: Failed to resolve 'dbend.areso.prohttp' ([Errno -2] Name or service not known)\"))",
+        "time" : {
+          "start" : 1743558190331,
+          "stop" : 1743558220743,
+          "duration" : 30412
+        }
+      }, {
+        "uid" : "22afa1ef2b6fa2d7",
+        "reportUrl" : "https://Areso.github.io/Oblache/355//#testresult/22afa1ef2b6fa2d7",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='dbend.areso.prohttp', port=443): Max retries exceeded with url: /cis_db1.areso.pro/backups/db_cen6maxr.sql (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7fa5a4bea5a0>: Failed to resolve 'dbend.areso.prohttp' ([Errno -2] Name or service not known)\"))",
+        "time" : {
+          "start" : 1743472390751,
+          "stop" : 1743472421361,
+          "duration" : 30610
+        }
+      }, {
+        "uid" : "66e6d69680dcd9e4",
+        "reportUrl" : "https://Areso.github.io/Oblache/354//#testresult/66e6d69680dcd9e4",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='dbend.areso.prohttp', port=443): Max retries exceeded with url: /cis_db1.areso.pro/backups/db_cen6maxr.sql (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f80d9bed6d0>: Failed to resolve 'dbend.areso.prohttp' ([Errno -2] Name or service not known)\"))",
+        "time" : {
+          "start" : 1743385629914,
+          "stop" : 1743385660613,
+          "duration" : 30699
+        }
+      }, {
+        "uid" : "13e599f0526a3005",
+        "reportUrl" : "https://Areso.github.io/Oblache/353//#testresult/13e599f0526a3005",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='dbend.areso.prohttp', port=443): Max retries exceeded with url: /cis_db1.areso.pro/backups/db_cen6maxr.sql (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f08458900b0>: Failed to resolve 'dbend.areso.prohttp' ([Errno -2] Name or service not known)\"))",
+        "time" : {
+          "start" : 1743299350958,
+          "stop" : 1743299381514,
+          "duration" : 30556
+        }
+      }, {
+        "uid" : "c621f59537e10cb3",
+        "reportUrl" : "https://Areso.github.io/Oblache/352//#testresult/c621f59537e10cb3",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='dbend.areso.prohttp', port=443): Max retries exceeded with url: /cis_db1.areso.pro/backups/db_cen6maxr.sql (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f7fb6a00bf0>: Failed to resolve 'dbend.areso.prohttp' ([Errno -2] Name or service not known)\"))",
+        "time" : {
+          "start" : 1743212410736,
+          "stop" : 1743212441142,
+          "duration" : 30406
+        }
+      }, {
+        "uid" : "7cb180abcc01c356",
+        "reportUrl" : "https://Areso.github.io/Oblache/351//#testresult/7cb180abcc01c356",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='dbend.areso.prohttp', port=443): Max retries exceeded with url: /cis_db1.areso.pro/backups/db_cen6maxr.sql (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f298a0acbf0>: Failed to resolve 'dbend.areso.prohttp' ([Errno -2] Name or service not known)\"))",
+        "time" : {
+          "start" : 1743126069461,
+          "stop" : 1743126099924,
+          "duration" : 30463
+        }
+      }, {
+        "uid" : "46ffd4024b7584f",
+        "reportUrl" : "https://Areso.github.io/Oblache/350//#testresult/46ffd4024b7584f",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='dbend.areso.prohttp', port=443): Max retries exceeded with url: /cis_db1.areso.pro/backups/db_cen6maxr.sql (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f19fa48efc0>: Failed to resolve 'dbend.areso.prohttp' ([Errno -2] Name or service not known)\"))",
+        "time" : {
+          "start" : 1743039668115,
+          "stop" : 1743039698467,
+          "duration" : 30352
+        }
+      }, {
+        "uid" : "ba8fc4bbdbf8648b",
+        "reportUrl" : "https://Areso.github.io/Oblache/349//#testresult/ba8fc4bbdbf8648b",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='dbend.areso.prohttp', port=443): Max retries exceeded with url: /cis_db1.areso.pro/backups/db_cen6maxr.sql (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f6fa5358110>: Failed to resolve 'dbend.areso.prohttp' ([Errno -2] Name or service not known)\"))",
+        "time" : {
+          "start" : 1742953329126,
+          "stop" : 1742953359769,
+          "duration" : 30643
+        }
+      }, {
+        "uid" : "b6fbf4ec9dc8c0ae",
+        "reportUrl" : "https://Areso.github.io/Oblache/348//#testresult/b6fbf4ec9dc8c0ae",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='dbend.areso.prohttp', port=443): Max retries exceeded with url: /cis_db1.areso.pro/backups/db_cen6maxr.sql (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f5214ca49b0>: Failed to resolve 'dbend.areso.prohttp' ([Errno -2] Name or service not known)\"))",
+        "time" : {
+          "start" : 1742866931559,
+          "stop" : 1742866961922,
+          "duration" : 30363
+        }
+      }, {
+        "uid" : "ac9c0a7824b6c924",
+        "reportUrl" : "https://Areso.github.io/Oblache/347//#testresult/ac9c0a7824b6c924",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='dbend.areso.prohttp', port=443): Max retries exceeded with url: /cis_db1.areso.pro/backups/db_cen6maxr.sql (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f30667b51f0>: Failed to resolve 'dbend.areso.prohttp' ([Errno -2] Name or service not known)\"))",
+        "time" : {
+          "start" : 1742780648966,
+          "stop" : 1742780679364,
+          "duration" : 30398
+        }
+      }, {
+        "uid" : "a19f2393f8cc8ba5",
+        "reportUrl" : "https://Areso.github.io/Oblache/346//#testresult/a19f2393f8cc8ba5",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='dbend.areso.prohttp', port=443): Max retries exceeded with url: /cis_db1.areso.pro/backups/db_cen6maxr.sql (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f8366baaf30>: Failed to resolve 'dbend.areso.prohttp' ([Errno -2] Name or service not known)\"))",
+        "time" : {
+          "start" : 1742694368532,
+          "stop" : 1742694398961,
+          "duration" : 30429
+        }
+      }, {
+        "uid" : "6bd19ebaf8b09946",
+        "reportUrl" : "https://Areso.github.io/Oblache/345//#testresult/6bd19ebaf8b09946",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='dbend.areso.prohttp', port=443): Max retries exceeded with url: /cis_db1.areso.pro/backups/db_cen6maxr.sql (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7fc2bef41430>: Failed to resolve 'dbend.areso.prohttp' ([Errno -2] Name or service not known)\"))",
+        "time" : {
+          "start" : 1742607547394,
+          "stop" : 1742607577835,
+          "duration" : 30441
+        }
+      }, {
+        "uid" : "bbb22dc250331854",
+        "reportUrl" : "https://Areso.github.io/Oblache/344//#testresult/bbb22dc250331854",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='dbend.areso.prohttp', port=443): Max retries exceeded with url: /cis_db1.areso.pro/backups/db_cen6maxr.sql (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f1213464650>: Failed to resolve 'dbend.areso.prohttp' ([Errno -2] Name or service not known)\"))",
+        "time" : {
+          "start" : 1742521269845,
+          "stop" : 1742521300280,
+          "duration" : 30435
+        }
+      }, {
+        "uid" : "c483b02147558ae4",
+        "reportUrl" : "https://Areso.github.io/Oblache/343//#testresult/c483b02147558ae4",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='dbend.areso.prohttp', port=443): Max retries exceeded with url: /cis_db1.areso.pro/backups/db_cen6maxr.sql (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f9b9b48e1e0>: Failed to resolve 'dbend.areso.prohttp' ([Errno -2] Name or service not known)\"))",
+        "time" : {
+          "start" : 1742434809380,
+          "stop" : 1742434839740,
+          "duration" : 30360
+        }
+      }, {
+        "uid" : "a854b1cb7600b26b",
+        "reportUrl" : "https://Areso.github.io/Oblache/342//#testresult/a854b1cb7600b26b",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='dbend.areso.prohttp', port=443): Max retries exceeded with url: /cis_db1.areso.pro/backups/db_cen6maxr.sql (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7fe4e2762b10>: Failed to resolve 'dbend.areso.prohttp' ([Errno -2] Name or service not known)\"))",
+        "time" : {
+          "start" : 1742348470605,
+          "stop" : 1742348501063,
+          "duration" : 30458
+        }
+      }, {
+        "uid" : "80577158f9dd3f4e",
+        "reportUrl" : "https://Areso.github.io/Oblache/341//#testresult/80577158f9dd3f4e",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='dbend.areso.prohttp', port=443): Max retries exceeded with url: /cis_db1.areso.pro/backups/db_cen6maxr.sql (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7ff34ae54860>: Failed to resolve 'dbend.areso.prohttp' ([Errno -2] Name or service not known)\"))",
+        "time" : {
+          "start" : 1742262011018,
+          "stop" : 1742262041466,
+          "duration" : 30448
+        }
+      }, {
+        "uid" : "e0a136f772d206db",
+        "reportUrl" : "https://Areso.github.io/Oblache/340//#testresult/e0a136f772d206db",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='dbend.areso.prohttp', port=443): Max retries exceeded with url: /cis_db1.areso.pro/backups/db_cen6maxr.sql (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7fac40b46720>: Failed to resolve 'dbend.areso.prohttp' ([Errno -2] Name or service not known)\"))",
+        "time" : {
+          "start" : 1742175792380,
+          "stop" : 1742175823034,
+          "duration" : 30654
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "1c8afeaabc8557cf.json",
+  "parameterValues" : [ ]
+}

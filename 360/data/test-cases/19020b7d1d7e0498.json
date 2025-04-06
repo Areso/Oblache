@@ -1,0 +1,404 @@
+{
+  "uid" : "19020b7d1d7e0498",
+  "name" : "POST db_list_with_filter",
+  "fullName" : "tests_api.test_bd.TestPOST#test_post_db_list_with_filter",
+  "historyId" : "1404cf75602dc5c195df0f6e9ffb5ba3",
+  "time" : {
+    "start" : 1743903972762,
+    "stop" : 1743903973249,
+    "duration" : 487
+  },
+  "status" : "skipped",
+  "statusMessage" : "XFAIL There are databases that need to be deleted manually.\n\njson.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+  "statusTrace" : "self = <tests_api.test_bd.TestPOST object at 0x7f5ce11b09b0>\n\n    @allure.title('POST db_list_with_filter')\n    @pytest.mark.xfail(reason='There are databases that need to be deleted manually.')\n    def test_post_db_list_with_filter(self):\n        list_db = API.post_db_list(token=TestPOST.token)\n>       json_list_db = json.loads(list_db.text)\n\ntests_api/test_bd.py:305: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/json/__init__.py:346: in loads\n    return _default_decoder.decode(s)\n/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/json/decoder.py:338: in decode\n    obj, end = self.raw_decode(s, idx=_w(s, 0).end())\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <json.decoder.JSONDecoder object at 0x7f5ce2627080>\ns = '<html>\\r\\n<head><title>502 Bad Gateway</title></head>\\r\\n<body>\\r\\n<center><h1>502 Bad Gateway</h1></center>\\r\\n<hr><center>nginx/1.18.0 (Ubuntu)</center>\\r\\n</body>\\r\\n</html>\\r\\n'\nidx = 0\n\n    def raw_decode(self, s, idx=0):\n        \"\"\"Decode a JSON document from ``s`` (a ``str`` beginning with\n        a JSON document) and return a 2-tuple of the Python\n        representation and the index in ``s`` where the document ended.\n    \n        This can be used to decode a JSON document from a string that may\n        have extraneous data at the end.\n    \n        \"\"\"\n        try:\n            obj, end = self.scan_once(s, idx)\n        except StopIteration as err:\n>           raise JSONDecodeError(\"Expecting value\", s, err.value) from None\nE           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\n\n/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/json/decoder.py:356: JSONDecodeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "skipped",
+    "statusMessage" : "XFAIL There are databases that need to be deleted manually.\n\njson.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+    "statusTrace" : "self = <tests_api.test_bd.TestPOST object at 0x7f5ce11b09b0>\n\n    @allure.title('POST db_list_with_filter')\n    @pytest.mark.xfail(reason='There are databases that need to be deleted manually.')\n    def test_post_db_list_with_filter(self):\n        list_db = API.post_db_list(token=TestPOST.token)\n>       json_list_db = json.loads(list_db.text)\n\ntests_api/test_bd.py:305: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/json/__init__.py:346: in loads\n    return _default_decoder.decode(s)\n/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/json/decoder.py:338: in decode\n    obj, end = self.raw_decode(s, idx=_w(s, 0).end())\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <json.decoder.JSONDecoder object at 0x7f5ce2627080>\ns = '<html>\\r\\n<head><title>502 Bad Gateway</title></head>\\r\\n<body>\\r\\n<center><h1>502 Bad Gateway</h1></center>\\r\\n<hr><center>nginx/1.18.0 (Ubuntu)</center>\\r\\n</body>\\r\\n</html>\\r\\n'\nidx = 0\n\n    def raw_decode(self, s, idx=0):\n        \"\"\"Decode a JSON document from ``s`` (a ``str`` beginning with\n        a JSON document) and return a 2-tuple of the Python\n        representation and the index in ``s`` where the document ended.\n    \n        This can be used to decode a JSON document from a string that may\n        have extraneous data at the end.\n    \n        \"\"\"\n        try:\n            obj, end = self.scan_once(s, idx)\n        except StopIteration as err:\n>           raise JSONDecodeError(\"Expecting value\", s, err.value) from None\nE           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\n\n/opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/json/decoder.py:356: JSONDecodeError",
+    "steps" : [ {
+      "name" : "post_db_list",
+      "time" : {
+        "start" : 1743903972762,
+        "stop" : 1743903973248,
+        "duration" : 486
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Endpoint: /db_list",
+        "time" : {
+          "start" : 1743903973248,
+          "stop" : 1743903973248,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Request:",
+        "time" : {
+          "start" : 1743903973248,
+          "stop" : 1743903973248,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Headers: {'Content-Type': 'application/json', 'Authorization': 'None'}",
+          "time" : {
+            "start" : 1743903973248,
+            "stop" : 1743903973248,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Body: None",
+          "time" : {
+            "start" : 1743903973248,
+            "stop" : 1743903973248,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Response:",
+        "time" : {
+          "start" : 1743903973248,
+          "stop" : 1743903973248,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status code: 502",
+          "time" : {
+            "start" : 1743903973248,
+            "stop" : 1743903973248,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "JSON: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.18.0 (Ubuntu)</center>\r\n</body>\r\n</html>\r\n",
+          "time" : {
+            "start" : 1743903973248,
+            "stop" : 1743903973248,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 7,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 8,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "POST"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.xfail(reason='There are databases that need to be deleted manually.')"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_api"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestPOST"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1947-294"
+  }, {
+    "name" : "thread",
+    "value" : "2529-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_api.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 238,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 238
+      },
+      "items" : [ {
+        "uid" : "5269231dc9f385f7",
+        "reportUrl" : "https://Areso.github.io/Oblache/359//#testresult/5269231dc9f385f7",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1743817158764,
+          "stop" : 1743817159378,
+          "duration" : 614
+        }
+      }, {
+        "uid" : "8212520e484570c9",
+        "reportUrl" : "https://Areso.github.io/Oblache/358//#testresult/8212520e484570c9",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1743730844711,
+          "stop" : 1743730845420,
+          "duration" : 709
+        }
+      }, {
+        "uid" : "8b8b9d6907d1bff5",
+        "reportUrl" : "https://Areso.github.io/Oblache/357//#testresult/8b8b9d6907d1bff5",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1743644470808,
+          "stop" : 1743644471790,
+          "duration" : 982
+        }
+      }, {
+        "uid" : "4c1157b615928845",
+        "reportUrl" : "https://Areso.github.io/Oblache/356//#testresult/4c1157b615928845",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1743558139136,
+          "stop" : 1743558139745,
+          "duration" : 609
+        }
+      }, {
+        "uid" : "a6c6d57379fc79a8",
+        "reportUrl" : "https://Areso.github.io/Oblache/355//#testresult/a6c6d57379fc79a8",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1743472320919,
+          "stop" : 1743472321916,
+          "duration" : 997
+        }
+      }, {
+        "uid" : "37fd98e4bc5a7ad7",
+        "reportUrl" : "https://Areso.github.io/Oblache/354//#testresult/37fd98e4bc5a7ad7",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1743385560383,
+          "stop" : 1743385561365,
+          "duration" : 982
+        }
+      }, {
+        "uid" : "2511c0db4bce66f9",
+        "reportUrl" : "https://Areso.github.io/Oblache/353//#testresult/2511c0db4bce66f9",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1743299256934,
+          "stop" : 1743299257938,
+          "duration" : 1004
+        }
+      }, {
+        "uid" : "70932311a7649a18",
+        "reportUrl" : "https://Areso.github.io/Oblache/352//#testresult/70932311a7649a18",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1743212359455,
+          "stop" : 1743212360082,
+          "duration" : 627
+        }
+      }, {
+        "uid" : "b6a3c5957ea66ad3",
+        "reportUrl" : "https://Areso.github.io/Oblache/351//#testresult/b6a3c5957ea66ad3",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1743126023906,
+          "stop" : 1743126024514,
+          "duration" : 608
+        }
+      }, {
+        "uid" : "5e79a62dc59c6f75",
+        "reportUrl" : "https://Areso.github.io/Oblache/350//#testresult/5e79a62dc59c6f75",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1743039605500,
+          "stop" : 1743039606107,
+          "duration" : 607
+        }
+      }, {
+        "uid" : "3e5e6baea481c6c1",
+        "reportUrl" : "https://Areso.github.io/Oblache/349//#testresult/3e5e6baea481c6c1",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1742953241361,
+          "stop" : 1742953242370,
+          "duration" : 1009
+        }
+      }, {
+        "uid" : "683dcb8f162098be",
+        "reportUrl" : "https://Areso.github.io/Oblache/348//#testresult/683dcb8f162098be",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1742866863593,
+          "stop" : 1742866864207,
+          "duration" : 614
+        }
+      }, {
+        "uid" : "d985f3580ffe2e1f",
+        "reportUrl" : "https://Areso.github.io/Oblache/347//#testresult/d985f3580ffe2e1f",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1742780590446,
+          "stop" : 1742780591165,
+          "duration" : 719
+        }
+      }, {
+        "uid" : "2b7003e3ce4c487f",
+        "reportUrl" : "https://Areso.github.io/Oblache/346//#testresult/2b7003e3ce4c487f",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1742694300910,
+          "stop" : 1742694301612,
+          "duration" : 702
+        }
+      }, {
+        "uid" : "57edd0617409c5f9",
+        "reportUrl" : "https://Areso.github.io/Oblache/345//#testresult/57edd0617409c5f9",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1742607473546,
+          "stop" : 1742607474160,
+          "duration" : 614
+        }
+      }, {
+        "uid" : "8621a22186c1e88c",
+        "reportUrl" : "https://Areso.github.io/Oblache/344//#testresult/8621a22186c1e88c",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1742521222808,
+          "stop" : 1742521223497,
+          "duration" : 689
+        }
+      }, {
+        "uid" : "6220ca8a5c6da9cc",
+        "reportUrl" : "https://Areso.github.io/Oblache/343//#testresult/6220ca8a5c6da9cc",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1742434724418,
+          "stop" : 1742434725192,
+          "duration" : 774
+        }
+      }, {
+        "uid" : "cd058f7e44493d50",
+        "reportUrl" : "https://Areso.github.io/Oblache/342//#testresult/cd058f7e44493d50",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1742348391343,
+          "stop" : 1742348391944,
+          "duration" : 601
+        }
+      }, {
+        "uid" : "2d75e7989ef29a89",
+        "reportUrl" : "https://Areso.github.io/Oblache/341//#testresult/2d75e7989ef29a89",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1742261970951,
+          "stop" : 1742261971560,
+          "duration" : 609
+        }
+      }, {
+        "uid" : "43544104681929e0",
+        "reportUrl" : "https://Areso.github.io/Oblache/340//#testresult/43544104681929e0",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL There are databases that need to be deleted manually.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1742175704894,
+          "stop" : 1742175705869,
+          "duration" : 975
+        }
+      } ]
+    },
+    "tags" : [ "@pytest.mark.xfail(reason='There are databases that need to be deleted manually.')" ]
+  },
+  "source" : "19020b7d1d7e0498.json",
+  "parameterValues" : [ ]
+}
