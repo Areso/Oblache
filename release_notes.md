@@ -1,4 +1,8 @@
 # Release notes
+Mon 07 Apr 2025 07:27 PM EEST  
+dbaas_backend:
+hotfix    
+
 Tue 01 Apr 2025 01:35 AM EEST  
 paas_site_destroyer:
 [OBL-331](https://github.com/Areso/Oblache/issues/331) patch    
