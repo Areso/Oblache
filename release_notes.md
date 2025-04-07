@@ -1,4 +1,8 @@
 # Release notes
+Mon 07 Apr 2025 11:43 PM EEST  
+dbaas_backend:
+[OBL-331](https://github.com/Areso/Oblache/issues/331) [OBL-335](https://github.com/Areso/Oblache/issues/335): added logging to unpublish    
+
 Mon 07 Apr 2025 09:04 PM EEST  
 paas_site_destroyer:
 [OBL-335](https://github.com/Areso/Oblache/issues/335) - update py_logger depedency    
