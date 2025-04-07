@@ -1,4 +1,8 @@
 # Release notes
+Tue 08 Apr 2025 12:57 AM EEST  
+paas_site_destroyer:
+fixed bug    
+
 Mon 07 Apr 2025 11:43 PM EEST  
 dbaas_backend:
 [OBL-331](https://github.com/Areso/Oblache/issues/331) [OBL-335](https://github.com/Areso/Oblache/issues/335): added logging to unpublish    
