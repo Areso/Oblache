@@ -1,4 +1,8 @@
 # Release notes
+Fri 11 Apr 2025 12:06 AM EEST  
+dbaas_backend:
+[OBL-338](https://github.com/Areso/Oblache/issues/338) fix bug    
+
 Thu 10 Apr 2025 11:51 PM EEST  
 dbaas_backend:
 [OBL-338](https://github.com/Areso/Oblache/issues/338) fix bug    
