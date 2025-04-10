@@ -1,4 +1,8 @@
 # Release notes
+Thu 10 Apr 2025 11:02 PM EEST  
+dbaas_backend:
+[OBL-338](https://github.com/Areso/Oblache/issues/338) - return disk quota/usage by Static Sites in Profile page    
+
 Thu 10 Apr 2025 10:49 PM EEST  
 dbaas_backend:
 bugfix    
