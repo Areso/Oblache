@@ -1,4 +1,8 @@
 # Release notes
+Thu 10 Apr 2025 10:49 PM EEST  
+dbaas_backend:
+bugfix    
+
 Tue 08 Apr 2025 12:57 AM EEST  
 paas_site_destroyer:
 fixed bug    
