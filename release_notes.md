@@ -1,4 +1,8 @@
 # Release notes
+Fri 11 Apr 2025 10:54 PM EEST  
+dbaas_site:
+[OBL-341](https://github.com/Areso/Oblache/issues/341) - added urestart and CF cash purge    
+
 Fri 11 Apr 2025 12:06 AM EEST  
 dbaas_backend:
 [OBL-338](https://github.com/Areso/Oblache/issues/338) fix bug    
