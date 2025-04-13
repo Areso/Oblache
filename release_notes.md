@@ -1,4 +1,8 @@
 # Release notes
+Sun 13 Apr 2025 06:00 PM EEST  
+dbaas_backend:
+[OBL-340](https://github.com/Areso/Oblache/issues/340): unpublish checking    
+
 Fri 11 Apr 2025 10:54 PM EEST  
 dbaas_site:
 [OBL-341](https://github.com/Areso/Oblache/issues/341) - added urestart and CF cash purge    
