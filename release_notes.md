@@ -1,4 +1,8 @@
 # Release notes
+Sun 13 Apr 2025 06:06 PM EEST  
+paas_site_destroyer:
+[OBL-340](https://github.com/Areso/Oblache/issues/340) debug info    
+
 Sun 13 Apr 2025 06:00 PM EEST  
 dbaas_backend:
 [OBL-340](https://github.com/Areso/Oblache/issues/340): unpublish checking    
