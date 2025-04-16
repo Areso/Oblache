@@ -1,4 +1,8 @@
 # Release notes
+Wed 16 Apr 2025 10:42 PM EEST  
+paas_site_destroyer:
+try to fix bug in site destroyer    
+
 Sun 13 Apr 2025 06:06 PM EEST  
 paas_site_destroyer:
 [OBL-340](https://github.com/Areso/Oblache/issues/340) debug info    
