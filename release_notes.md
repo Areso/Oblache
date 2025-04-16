@@ -1,4 +1,8 @@
 # Release notes
+Wed 16 Apr 2025 10:44 PM EEST  
+paas_site_destroyer:
+try to fix bug in site destroyer    
+
 Wed 16 Apr 2025 10:42 PM EEST  
 paas_site_destroyer:
 try to fix bug in site destroyer    
