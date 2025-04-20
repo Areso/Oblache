@@ -1,4 +1,8 @@
 # Release notes
+Sun 20 Apr 2025 11:06 PM EEST  
+dbaas_backend:
+[OBL-342](https://github.com/Areso/Oblache/issues/342) Allow Orc to delete unpublished sites    
+
 Thu 17 Apr 2025 12:24 AM EEST  
 paas_site_destroyer:
 try to fix destroyer    
