@@ -1,0 +1,724 @@
+{
+  "uid" : "f7dd06bab46f7f8d",
+  "name" : "POST logout with wrong logout token",
+  "fullName" : "tests_api.test_bd.TestPOST#test_post_logout_with_wrong_logout_token",
+  "historyId" : "ac26adaf1449f9d49ab62370d3da46df",
+  "time" : {
+    "start" : 1745113733703,
+    "stop" : 1745113734669,
+    "duration" : 966
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "get_token",
+    "time" : {
+      "start" : 1745113733206,
+      "stop" : 1745113733703,
+      "duration" : 497
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Assert status code: 200 == Response status code: 200",
+      "time" : {
+        "start" : 1745113733702,
+        "stop" : 1745113733702,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true,
+    "stepsCount" : 1
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "post_login",
+      "time" : {
+        "start" : 1745113733703,
+        "stop" : 1745113734035,
+        "duration" : 332
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Endpoint: /login",
+        "time" : {
+          "start" : 1745113734035,
+          "stop" : 1745113734035,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0
+      }, {
+        "name" : "Request:",
+        "time" : {
+          "start" : 1745113734035,
+          "stop" : 1745113734035,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Headers: {'Content-Type': 'application/json', 'Authorization': 'None'}",
+          "time" : {
+            "start" : 1745113734035,
+            "stop" : 1745113734035,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false,
+          "stepsCount" : 0
+        }, {
+          "name" : "Body: {\"email\": email, \"password\": password}",
+          "time" : {
+            "start" : 1745113734035,
+            "stop" : 1745113734035,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false,
+          "stepsCount" : 0
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true,
+        "stepsCount" : 2
+      }, {
+        "name" : "Response:",
+        "time" : {
+          "start" : 1745113734035,
+          "stop" : 1745113734035,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status code: 200",
+          "time" : {
+            "start" : 1745113734035,
+            "stop" : 1745113734035,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false,
+          "stepsCount" : 0
+        }, {
+          "name" : "JSON: {\n    \"token\": \"4bd50ce0-b6ea-4d3e-9053-490b25e437ed\",\n    \"msg\": \"msg[6]: login successful\"\n}\n",
+          "time" : {
+            "start" : 1745113734035,
+            "stop" : 1745113734035,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false,
+          "stepsCount" : 0
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true,
+        "stepsCount" : 2
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 7
+    }, {
+      "name" : "Assert status code: 200 == Response status code: 200",
+      "time" : {
+        "start" : 1745113734035,
+        "stop" : 1745113734035,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Check and compare result request with expected value by key:\nResponse: <Response [200]>\nKey: msg\nValue: msg[6]: login successful",
+      "time" : {
+        "start" : 1745113734035,
+        "stop" : 1745113734035,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "post_is_logged",
+      "time" : {
+        "start" : 1745113734035,
+        "stop" : 1745113734353,
+        "duration" : 318
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Endpoint: /is_logged",
+        "time" : {
+          "start" : 1745113734353,
+          "stop" : 1745113734353,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0
+      }, {
+        "name" : "Request:",
+        "time" : {
+          "start" : 1745113734353,
+          "stop" : 1745113734353,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Headers: {'Content-Type': 'application/json', 'Authorization': 'a3ae9885-e907-4270-a35d-d36e1299f57a'}",
+          "time" : {
+            "start" : 1745113734353,
+            "stop" : 1745113734353,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false,
+          "stepsCount" : 0
+        }, {
+          "name" : "Body: None",
+          "time" : {
+            "start" : 1745113734353,
+            "stop" : 1745113734353,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false,
+          "stepsCount" : 0
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true,
+        "stepsCount" : 2
+      }, {
+        "name" : "Response:",
+        "time" : {
+          "start" : 1745113734353,
+          "stop" : 1745113734353,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status code: 200",
+          "time" : {
+            "start" : 1745113734353,
+            "stop" : 1745113734353,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false,
+          "stepsCount" : 0
+        }, {
+          "name" : "JSON: {}\n",
+          "time" : {
+            "start" : 1745113734353,
+            "stop" : 1745113734353,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false,
+          "stepsCount" : 0
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true,
+        "stepsCount" : 2
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 7
+    }, {
+      "name" : "Assert status code: 200 == Response status code: 200",
+      "time" : {
+        "start" : 1745113734353,
+        "stop" : 1745113734353,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "post_is_logged",
+      "time" : {
+        "start" : 1745113734353,
+        "stop" : 1745113734668,
+        "duration" : 315
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Endpoint: /logout",
+        "time" : {
+          "start" : 1745113734668,
+          "stop" : 1745113734668,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0
+      }, {
+        "name" : "Request:",
+        "time" : {
+          "start" : 1745113734668,
+          "stop" : 1745113734668,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Headers: {'Content-Type': 'application/json', 'Authorization': '1'}",
+          "time" : {
+            "start" : 1745113734668,
+            "stop" : 1745113734668,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false,
+          "stepsCount" : 0
+        }, {
+          "name" : "Body: None",
+          "time" : {
+            "start" : 1745113734668,
+            "stop" : 1745113734668,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false,
+          "stepsCount" : 0
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true,
+        "stepsCount" : 2
+      }, {
+        "name" : "Response:",
+        "time" : {
+          "start" : 1745113734668,
+          "stop" : 1745113734668,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status code: 404",
+          "time" : {
+            "start" : 1745113734668,
+            "stop" : 1745113734668,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false,
+          "stepsCount" : 0
+        }, {
+          "name" : "JSON: {\n    \"msg\": \"session not found\"\n}\n",
+          "time" : {
+            "start" : 1745113734668,
+            "stop" : 1745113734668,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false,
+          "stepsCount" : 0
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true,
+        "stepsCount" : 2
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 7
+    }, {
+      "name" : "Assert status code: 404 == Response status code: 404",
+      "time" : {
+        "start" : 1745113734668,
+        "stop" : 1745113734668,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Check and compare result request with expected value by key:\nResponse: <Response [404]>\nKey: msg\nValue: session not found",
+      "time" : {
+        "start" : 1745113734668,
+        "stop" : 1745113734668,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false,
+      "stepsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true,
+    "stepsCount" : 29
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "POST"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_api"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestPOST"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1315-757"
+  }, {
+    "name" : "thread",
+    "value" : "2525-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_api.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 16,
+        "skipped" : 0,
+        "passed" : 235,
+        "unknown" : 0,
+        "total" : 252
+      },
+      "items" : [ {
+        "uid" : "e3e3b8d13ba424e4",
+        "reportUrl" : "https://Areso.github.io/Oblache/373//#testresult/e3e3b8d13ba424e4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1745026730664,
+          "stop" : 1745026731574,
+          "duration" : 910
+        }
+      }, {
+        "uid" : "3eade6b5520d31d",
+        "reportUrl" : "https://Areso.github.io/Oblache/372//#testresult/3eade6b5520d31d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1744940458872,
+          "stop" : 1744940459976,
+          "duration" : 1104
+        }
+      }, {
+        "uid" : "68a9a02708397845",
+        "reportUrl" : "https://Areso.github.io/Oblache/371//#testresult/68a9a02708397845",
+        "status" : "passed",
+        "time" : {
+          "start" : 1744854178324,
+          "stop" : 1744854179436,
+          "duration" : 1112
+        }
+      }, {
+        "uid" : "f52e11cc9f8816ec",
+        "reportUrl" : "https://Areso.github.io/Oblache/370//#testresult/f52e11cc9f8816ec",
+        "status" : "passed",
+        "time" : {
+          "start" : 1744767868825,
+          "stop" : 1744767869943,
+          "duration" : 1118
+        }
+      }, {
+        "uid" : "b80ca8368d836ed7",
+        "reportUrl" : "https://Areso.github.io/Oblache/369//#testresult/b80ca8368d836ed7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1744681507664,
+          "stop" : 1744681509177,
+          "duration" : 1513
+        }
+      }, {
+        "uid" : "43b6ae63b080f3c3",
+        "reportUrl" : "https://Areso.github.io/Oblache/368//#testresult/43b6ae63b080f3c3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1744595143953,
+          "stop" : 1744595145078,
+          "duration" : 1125
+        }
+      }, {
+        "uid" : "9116f8852c1dbecf",
+        "reportUrl" : "https://Areso.github.io/Oblache/367//#testresult/9116f8852c1dbecf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1744513719932,
+          "stop" : 1744513721420,
+          "duration" : 1488
+        }
+      }, {
+        "uid" : "53a3619aced6d62b",
+        "reportUrl" : "https://Areso.github.io/Oblache/366//#testresult/53a3619aced6d62b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1744421964710,
+          "stop" : 1744421965826,
+          "duration" : 1116
+        }
+      }, {
+        "uid" : "88d34cd803918175",
+        "reportUrl" : "https://Areso.github.io/Oblache/365//#testresult/88d34cd803918175",
+        "status" : "passed",
+        "time" : {
+          "start" : 1744335747834,
+          "stop" : 1744335748918,
+          "duration" : 1084
+        }
+      }, {
+        "uid" : "de64f083a01a40bf",
+        "reportUrl" : "https://Areso.github.io/Oblache/364//#testresult/de64f083a01a40bf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1744249303866,
+          "stop" : 1744249304998,
+          "duration" : 1132
+        }
+      }, {
+        "uid" : "bd8f120ae18b4a7",
+        "reportUrl" : "https://Areso.github.io/Oblache/363//#testresult/bd8f120ae18b4a7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1744162908509,
+          "stop" : 1744162909522,
+          "duration" : 1013
+        }
+      }, {
+        "uid" : "190d1b4c0a621634",
+        "reportUrl" : "https://Areso.github.io/Oblache/362//#testresult/190d1b4c0a621634",
+        "status" : "passed",
+        "time" : {
+          "start" : 1744076500611,
+          "stop" : 1744076502119,
+          "duration" : 1508
+        }
+      }, {
+        "uid" : "b648e12629f6224",
+        "reportUrl" : "https://Areso.github.io/Oblache/361//#testresult/b648e12629f6224",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+        "time" : {
+          "start" : 1743990242082,
+          "stop" : 1743990242082,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "915bc26fedfad7cc",
+        "reportUrl" : "https://Areso.github.io/Oblache/360//#testresult/915bc26fedfad7cc",
+        "status" : "broken",
+        "statusDetails" : "requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+        "time" : {
+          "start" : 1743903967569,
+          "stop" : 1743903967569,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "99f2f4c4d39ff09",
+        "reportUrl" : "https://Areso.github.io/Oblache/359//#testresult/99f2f4c4d39ff09",
+        "status" : "passed",
+        "time" : {
+          "start" : 1743817154539,
+          "stop" : 1743817155498,
+          "duration" : 959
+        }
+      }, {
+        "uid" : "49e6c7d43d952ed4",
+        "reportUrl" : "https://Areso.github.io/Oblache/358//#testresult/49e6c7d43d952ed4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1743730840455,
+          "stop" : 1743730841411,
+          "duration" : 956
+        }
+      }, {
+        "uid" : "52bb0275eb056594",
+        "reportUrl" : "https://Areso.github.io/Oblache/357//#testresult/52bb0275eb056594",
+        "status" : "passed",
+        "time" : {
+          "start" : 1743644464203,
+          "stop" : 1743644465707,
+          "duration" : 1504
+        }
+      }, {
+        "uid" : "69c54530bd30242f",
+        "reportUrl" : "https://Areso.github.io/Oblache/356//#testresult/69c54530bd30242f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1743558134815,
+          "stop" : 1743558135778,
+          "duration" : 963
+        }
+      }, {
+        "uid" : "2c239540475e2ac7",
+        "reportUrl" : "https://Areso.github.io/Oblache/355//#testresult/2c239540475e2ac7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1743472314165,
+          "stop" : 1743472315735,
+          "duration" : 1570
+        }
+      }, {
+        "uid" : "74f36dc7d7c41c48",
+        "reportUrl" : "https://Areso.github.io/Oblache/354//#testresult/74f36dc7d7c41c48",
+        "status" : "passed",
+        "time" : {
+          "start" : 1743385553802,
+          "stop" : 1743385555302,
+          "duration" : 1500
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "f7dd06bab46f7f8d.json",
+  "parameterValues" : [ ]
+}
