@@ -1,4 +1,8 @@
 # Release notes
+Mon 21 Apr 2025 03:06 PM EEST  
+dbaas_backend:
+[OBL-343](https://github.com/Areso/Oblache/issues/343) added redeploy endpoint to Orc    
+
 Sun 20 Apr 2025 11:06 PM EEST  
 dbaas_backend:
 [OBL-342](https://github.com/Areso/Oblache/issues/342) Allow Orc to delete unpublished sites    
