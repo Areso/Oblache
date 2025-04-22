@@ -1,4 +1,8 @@
 # Release notes
+Tue 22 Apr 2025 10:49 PM EEST  
+dbaas_backend:
+added debug delay 120s    
+
 Tue 22 Apr 2025 10:48 PM EEST  
 dbaas_backend:
 deleted code    
