@@ -1,0 +1,437 @@
+{
+  "uid" : "3712d2cae08673d7",
+  "name" : "POST checking ports_len negative range",
+  "fullName" : "tests_api.test_bd.TestPOST#test_post_checking_ports_len_negative_range",
+  "historyId" : "6a5e2b3a0040caf8e74db064b01d1684",
+  "time" : {
+    "start" : 1745718577008,
+    "stop" : 1745718577410,
+    "duration" : 402
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: Result is not equal expected value",
+  "statusTrace" : "self = <tests_api.test_bd.TestPOST object at 0x7f3a6bd52fc0>\n\n    @allure.title('POST checking ports_len negative range')\n    def test_post_checking_ports_len_negative_range(self):\n        result = API.post_create_docker_container_checking_ports(\n            token=TestPOST.token,\n            port_len=\"80-90\")\n        Checking.check_status_code(result, 400)\n>       Checking.check_json_value(result, 'msg', 'msg[]: ports range is too wide')\n\ntests_api/test_bd.py:383: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresponse = <Response [400]>, field_name = 'msg'\nexpected_value = 'msg[]: ports range is too wide'\n\n    @staticmethod\n    def check_json_value(response: requests.models.Response, field_name: str, expected_value):\n        \"\"\"\n        :param response: requests.models.Response\n        :param field_name:\n        :param expected_value:\n        \"\"\"\n        check = response.json()\n        check_info = check.get(field_name)\n        with allure.step(\n                f'Compare result request with expected value:'\n                f'\\nResponse: {response}\\nField name: {field_name}\\nValue: {expected_value}'):\n>           assert check_info == expected_value, 'Result is not equal expected value'\nE           AssertionError: Result is not equal expected value\n\ntests_api/utils/checking.py:57: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: Result is not equal expected value",
+    "statusTrace" : "self = <tests_api.test_bd.TestPOST object at 0x7f3a6bd52fc0>\n\n    @allure.title('POST checking ports_len negative range')\n    def test_post_checking_ports_len_negative_range(self):\n        result = API.post_create_docker_container_checking_ports(\n            token=TestPOST.token,\n            port_len=\"80-90\")\n        Checking.check_status_code(result, 400)\n>       Checking.check_json_value(result, 'msg', 'msg[]: ports range is too wide')\n\ntests_api/test_bd.py:383: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresponse = <Response [400]>, field_name = 'msg'\nexpected_value = 'msg[]: ports range is too wide'\n\n    @staticmethod\n    def check_json_value(response: requests.models.Response, field_name: str, expected_value):\n        \"\"\"\n        :param response: requests.models.Response\n        :param field_name:\n        :param expected_value:\n        \"\"\"\n        check = response.json()\n        check_info = check.get(field_name)\n        with allure.step(\n                f'Compare result request with expected value:'\n                f'\\nResponse: {response}\\nField name: {field_name}\\nValue: {expected_value}'):\n>           assert check_info == expected_value, 'Result is not equal expected value'\nE           AssertionError: Result is not equal expected value\n\ntests_api/utils/checking.py:57: AssertionError",
+    "steps" : [ {
+      "name" : "post_create_docker_container",
+      "time" : {
+        "start" : 1745718577008,
+        "stop" : 1745718577410,
+        "duration" : 402
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Endpoint: /container_create",
+        "time" : {
+          "start" : 1745718577409,
+          "stop" : 1745718577409,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Request:",
+        "time" : {
+          "start" : 1745718577410,
+          "stop" : 1745718577410,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Headers: {'Content-Type': 'application/json', 'Authorization': '5489947b-7620-41a2-a55d-0194af93754a'}",
+          "time" : {
+            "start" : 1745718577410,
+            "stop" : 1745718577410,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Body: {\"docker_image\": \"nginx\", \"int_ports\": f\"80-90\", \"env\": 3, \"region\": 3}",
+          "time" : {
+            "start" : 1745718577410,
+            "stop" : 1745718577410,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Response:",
+        "time" : {
+          "start" : 1745718577410,
+          "stop" : 1745718577410,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status code: 400",
+          "time" : {
+            "start" : 1745718577410,
+            "stop" : 1745718577410,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "JSON: {\n    \"msg_code\": -1,\n    \"msg\": \"endpoint is disabled\"\n}\n",
+          "time" : {
+            "start" : 1745718577410,
+            "stop" : 1745718577410,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 7,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Assert status code: 400 == Response status code: 400",
+      "time" : {
+        "start" : 1745718577410,
+        "stop" : 1745718577410,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Compare result request with expected value:\nResponse: <Response [400]>\nField name: msg\nValue: msg[]: ports range is too wide",
+      "time" : {
+        "start" : 1745718577410,
+        "stop" : 1745718577410,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: Result is not equal expected value\n",
+      "statusTrace" : "  File \"/home/runner/work/Oblache/Oblache/tests_api/utils/checking.py\", line 57, in check_json_value\n    assert check_info == expected_value, 'Result is not equal expected value'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 10,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "POST"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_api"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestPOST"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1784-642"
+  }, {
+    "name" : "thread",
+    "value" : "2465-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_api.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 186,
+        "broken" : 3,
+        "skipped" : 0,
+        "passed" : 70,
+        "unknown" : 0,
+        "total" : 259
+      },
+      "items" : [ {
+        "uid" : "870eed1f4a567bfd",
+        "reportUrl" : "https://Areso.github.io/Oblache/380//#testresult/870eed1f4a567bfd",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Result is not equal expected value",
+        "time" : {
+          "start" : 1745631677710,
+          "stop" : 1745631678023,
+          "duration" : 313
+        }
+      }, {
+        "uid" : "f2c21a5da84ba210",
+        "reportUrl" : "https://Areso.github.io/Oblache/379//#testresult/f2c21a5da84ba210",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Result is not equal expected value",
+        "time" : {
+          "start" : 1745545495603,
+          "stop" : 1745545495917,
+          "duration" : 314
+        }
+      }, {
+        "uid" : "bd25ac1345a4438c",
+        "reportUrl" : "https://Areso.github.io/Oblache/378//#testresult/bd25ac1345a4438c",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Result is not equal expected value",
+        "time" : {
+          "start" : 1745459073879,
+          "stop" : 1745459074244,
+          "duration" : 365
+        }
+      }, {
+        "uid" : "f028c17ced3ee473",
+        "reportUrl" : "https://Areso.github.io/Oblache/377//#testresult/f028c17ced3ee473",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Result is not equal expected value",
+        "time" : {
+          "start" : 1745372646654,
+          "stop" : 1745372646954,
+          "duration" : 300
+        }
+      }, {
+        "uid" : "ec3493c5dbaf1283",
+        "reportUrl" : "https://Areso.github.io/Oblache/376//#testresult/ec3493c5dbaf1283",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Result is not equal expected value",
+        "time" : {
+          "start" : 1745286242752,
+          "stop" : 1745286243271,
+          "duration" : 519
+        }
+      }, {
+        "uid" : "6855c32770ee535f",
+        "reportUrl" : "https://Areso.github.io/Oblache/375//#testresult/6855c32770ee535f",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Result is not equal expected value",
+        "time" : {
+          "start" : 1745200086837,
+          "stop" : 1745200087139,
+          "duration" : 302
+        }
+      }, {
+        "uid" : "9bc8509e5660b8c1",
+        "reportUrl" : "https://Areso.github.io/Oblache/374//#testresult/9bc8509e5660b8c1",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Result is not equal expected value",
+        "time" : {
+          "start" : 1745113741929,
+          "stop" : 1745113742248,
+          "duration" : 319
+        }
+      }, {
+        "uid" : "6fa9c13f1df0fdca",
+        "reportUrl" : "https://Areso.github.io/Oblache/373//#testresult/6fa9c13f1df0fdca",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Result is not equal expected value",
+        "time" : {
+          "start" : 1745026738671,
+          "stop" : 1745026738975,
+          "duration" : 304
+        }
+      }, {
+        "uid" : "56bdda5e41e9320",
+        "reportUrl" : "https://Areso.github.io/Oblache/372//#testresult/56bdda5e41e9320",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Result is not equal expected value",
+        "time" : {
+          "start" : 1744940467751,
+          "stop" : 1744940468056,
+          "duration" : 305
+        }
+      }, {
+        "uid" : "dd60799c7f4d7ec5",
+        "reportUrl" : "https://Areso.github.io/Oblache/371//#testresult/dd60799c7f4d7ec5",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Result is not equal expected value",
+        "time" : {
+          "start" : 1744854187475,
+          "stop" : 1744854187842,
+          "duration" : 367
+        }
+      }, {
+        "uid" : "9c9c50fdc745cbc2",
+        "reportUrl" : "https://Areso.github.io/Oblache/370//#testresult/9c9c50fdc745cbc2",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Result is not equal expected value",
+        "time" : {
+          "start" : 1744767877900,
+          "stop" : 1744767878275,
+          "duration" : 375
+        }
+      }, {
+        "uid" : "536ed5f277da9aaa",
+        "reportUrl" : "https://Areso.github.io/Oblache/369//#testresult/536ed5f277da9aaa",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Result is not equal expected value",
+        "time" : {
+          "start" : 1744681520489,
+          "stop" : 1744681520999,
+          "duration" : 510
+        }
+      }, {
+        "uid" : "4bea01f446f25be",
+        "reportUrl" : "https://Areso.github.io/Oblache/368//#testresult/4bea01f446f25be",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Result is not equal expected value",
+        "time" : {
+          "start" : 1744595152640,
+          "stop" : 1744595152951,
+          "duration" : 311
+        }
+      }, {
+        "uid" : "2c1fad04550150a0",
+        "reportUrl" : "https://Areso.github.io/Oblache/367//#testresult/2c1fad04550150a0",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Result is not equal expected value",
+        "time" : {
+          "start" : 1744513732514,
+          "stop" : 1744513733014,
+          "duration" : 500
+        }
+      }, {
+        "uid" : "188dd79805645787",
+        "reportUrl" : "https://Areso.github.io/Oblache/366//#testresult/188dd79805645787",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Result is not equal expected value",
+        "time" : {
+          "start" : 1744421973006,
+          "stop" : 1744421973323,
+          "duration" : 317
+        }
+      }, {
+        "uid" : "c1c8e1a36c9c6171",
+        "reportUrl" : "https://Areso.github.io/Oblache/365//#testresult/c1c8e1a36c9c6171",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Result is not equal expected value",
+        "time" : {
+          "start" : 1744335757072,
+          "stop" : 1744335757435,
+          "duration" : 363
+        }
+      }, {
+        "uid" : "ec1c628aa47e342b",
+        "reportUrl" : "https://Areso.github.io/Oblache/364//#testresult/ec1c628aa47e342b",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Result is not equal expected value",
+        "time" : {
+          "start" : 1744249313349,
+          "stop" : 1744249313718,
+          "duration" : 369
+        }
+      }, {
+        "uid" : "9c34b56a95ebe74a",
+        "reportUrl" : "https://Areso.github.io/Oblache/363//#testresult/9c34b56a95ebe74a",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Result is not equal expected value",
+        "time" : {
+          "start" : 1744162916730,
+          "stop" : 1744162917046,
+          "duration" : 316
+        }
+      }, {
+        "uid" : "10ce1dffeaa0ce77",
+        "reportUrl" : "https://Areso.github.io/Oblache/362//#testresult/10ce1dffeaa0ce77",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Result is not equal expected value",
+        "time" : {
+          "start" : 1744076513322,
+          "stop" : 1744076513827,
+          "duration" : 505
+        }
+      }, {
+        "uid" : "ff5cff9983fbe41f",
+        "reportUrl" : "https://Areso.github.io/Oblache/361//#testresult/ff5cff9983fbe41f",
+        "status" : "failed",
+        "statusDetails" : "AssertionError: Incorrect status code: 502",
+        "time" : {
+          "start" : 1743990247643,
+          "stop" : 1743990248082,
+          "duration" : 439
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "3712d2cae08673d7.json",
+  "parameterValues" : [ ]
+}
