@@ -1,0 +1,396 @@
+{
+  "uid" : "1771cf845f2fa3f2",
+  "name" : "Capacity_db",
+  "fullName" : "tests_api.test_bd.TestFull#test_capacity_db",
+  "historyId" : "936f7fa0df691d843e1d921c6b4b86e7",
+  "time" : {
+    "start" : 1746236581146,
+    "stop" : 1746236581620,
+    "duration" : 474
+  },
+  "status" : "broken",
+  "statusMessage" : "KeyError: 'data'",
+  "statusTrace" : "self = <tests_api.test_bd.TestFull object at 0x7f70dd30aa80>\n\n    @allure.severity(allure.severity_level.CRITICAL)\n    @allure.title('Capacity_db')\n    def test_capacity_db(self):\n>       start_mb_value = API.get_profile(TestFull.token).json()['data'][\"content\"][4][1]\nE       KeyError: 'data'\n\ntests_api/test_bd.py:34: KeyError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "KeyError: 'data'",
+    "statusTrace" : "self = <tests_api.test_bd.TestFull object at 0x7f70dd30aa80>\n\n    @allure.severity(allure.severity_level.CRITICAL)\n    @allure.title('Capacity_db')\n    def test_capacity_db(self):\n>       start_mb_value = API.get_profile(TestFull.token).json()['data'][\"content\"][4][1]\nE       KeyError: 'data'\n\ntests_api/test_bd.py:34: KeyError",
+    "steps" : [ {
+      "name" : "Endpoint: /get_profile",
+      "time" : {
+        "start" : 1746236581620,
+        "stop" : 1746236581620,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Request:",
+      "time" : {
+        "start" : 1746236581620,
+        "stop" : 1746236581620,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Headers: {'Content-Type': 'application/json', 'Authorization': '02ea3d3a-3cbf-48e0-b85d-2a813ac95e90'}",
+        "time" : {
+          "start" : 1746236581620,
+          "stop" : 1746236581620,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Body: None",
+        "time" : {
+          "start" : 1746236581620,
+          "stop" : 1746236581620,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Response:",
+      "time" : {
+        "start" : 1746236581620,
+        "stop" : 1746236581620,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Status code: 405",
+        "time" : {
+          "start" : 1746236581620,
+          "stop" : 1746236581620,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "JSON: {\n    \"message\": \"The method is not allowed for the requested URL.\"\n}\n",
+        "time" : {
+          "start" : 1746236581620,
+          "stop" : 1746236581620,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 7,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "epic",
+    "value" : "Connection DB"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "suite",
+    "value" : "Test Connection DB"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_api"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestFull"
+  }, {
+    "name" : "host",
+    "value" : "fv-az2027-365"
+  }, {
+    "name" : "thread",
+    "value" : "2461-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_api.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 261,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 265
+      },
+      "items" : [ {
+        "uid" : "48b0faca5d6f33eb",
+        "reportUrl" : "https://Areso.github.io/Oblache/386//#testresult/48b0faca5d6f33eb",
+        "status" : "broken",
+        "statusDetails" : "KeyError: 'data'",
+        "time" : {
+          "start" : 1746150323249,
+          "stop" : 1746150323853,
+          "duration" : 604
+        }
+      }, {
+        "uid" : "1cceed2c5c388584",
+        "reportUrl" : "https://Areso.github.io/Oblache/385//#testresult/1cceed2c5c388584",
+        "status" : "broken",
+        "statusDetails" : "KeyError: 'data'",
+        "time" : {
+          "start" : 1746064407791,
+          "stop" : 1746064408077,
+          "duration" : 286
+        }
+      }, {
+        "uid" : "c671ed7fe78a694e",
+        "reportUrl" : "https://Areso.github.io/Oblache/384//#testresult/c671ed7fe78a694e",
+        "status" : "broken",
+        "statusDetails" : "KeyError: 'data'",
+        "time" : {
+          "start" : 1745977489456,
+          "stop" : 1745977489745,
+          "duration" : 289
+        }
+      }, {
+        "uid" : "6f71773dc71f531a",
+        "reportUrl" : "https://Areso.github.io/Oblache/383//#testresult/6f71773dc71f531a",
+        "status" : "broken",
+        "statusDetails" : "KeyError: 'data'",
+        "time" : {
+          "start" : 1745891139389,
+          "stop" : 1745891139878,
+          "duration" : 489
+        }
+      }, {
+        "uid" : "cf7df5b782ade85f",
+        "reportUrl" : "https://Areso.github.io/Oblache/382//#testresult/cf7df5b782ade85f",
+        "status" : "broken",
+        "statusDetails" : "KeyError: 'data'",
+        "time" : {
+          "start" : 1745804862938,
+          "stop" : 1745804863246,
+          "duration" : 308
+        }
+      }, {
+        "uid" : "bcf340dad4d874d8",
+        "reportUrl" : "https://Areso.github.io/Oblache/381//#testresult/bcf340dad4d874d8",
+        "status" : "broken",
+        "statusDetails" : "KeyError: 'data'",
+        "time" : {
+          "start" : 1745718555330,
+          "stop" : 1745718555738,
+          "duration" : 408
+        }
+      }, {
+        "uid" : "c507ae630b09ce2a",
+        "reportUrl" : "https://Areso.github.io/Oblache/380//#testresult/c507ae630b09ce2a",
+        "status" : "broken",
+        "statusDetails" : "KeyError: 'data'",
+        "time" : {
+          "start" : 1745631659969,
+          "stop" : 1745631660272,
+          "duration" : 303
+        }
+      }, {
+        "uid" : "4e39e3895f7dd8bd",
+        "reportUrl" : "https://Areso.github.io/Oblache/379//#testresult/4e39e3895f7dd8bd",
+        "status" : "broken",
+        "statusDetails" : "KeyError: 'data'",
+        "time" : {
+          "start" : 1745545476898,
+          "stop" : 1745545477367,
+          "duration" : 469
+        }
+      }, {
+        "uid" : "e4c6727e51b7af41",
+        "reportUrl" : "https://Areso.github.io/Oblache/378//#testresult/e4c6727e51b7af41",
+        "status" : "broken",
+        "statusDetails" : "KeyError: 'data'",
+        "time" : {
+          "start" : 1745459053090,
+          "stop" : 1745459053458,
+          "duration" : 368
+        }
+      }, {
+        "uid" : "d7aaec5b2b321ba4",
+        "reportUrl" : "https://Areso.github.io/Oblache/377//#testresult/d7aaec5b2b321ba4",
+        "status" : "broken",
+        "statusDetails" : "KeyError: 'data'",
+        "time" : {
+          "start" : 1745372628005,
+          "stop" : 1745372628286,
+          "duration" : 281
+        }
+      }, {
+        "uid" : "28136179af506542",
+        "reportUrl" : "https://Areso.github.io/Oblache/376//#testresult/28136179af506542",
+        "status" : "broken",
+        "statusDetails" : "KeyError: 'data'",
+        "time" : {
+          "start" : 1745286214166,
+          "stop" : 1745286214772,
+          "duration" : 606
+        }
+      }, {
+        "uid" : "4ce386cd88341321",
+        "reportUrl" : "https://Areso.github.io/Oblache/375//#testresult/4ce386cd88341321",
+        "status" : "broken",
+        "statusDetails" : "KeyError: 'data'",
+        "time" : {
+          "start" : 1745200068295,
+          "stop" : 1745200068747,
+          "duration" : 452
+        }
+      }, {
+        "uid" : "4bd5ca25409b159f",
+        "reportUrl" : "https://Areso.github.io/Oblache/374//#testresult/4bd5ca25409b159f",
+        "status" : "broken",
+        "statusDetails" : "KeyError: 'data'",
+        "time" : {
+          "start" : 1745113723547,
+          "stop" : 1745113723838,
+          "duration" : 291
+        }
+      }, {
+        "uid" : "18fe53dfe9e3be47",
+        "reportUrl" : "https://Areso.github.io/Oblache/373//#testresult/18fe53dfe9e3be47",
+        "status" : "broken",
+        "statusDetails" : "KeyError: 'data'",
+        "time" : {
+          "start" : 1745026720045,
+          "stop" : 1745026720492,
+          "duration" : 447
+        }
+      }, {
+        "uid" : "385dcb1c53bb356f",
+        "reportUrl" : "https://Areso.github.io/Oblache/372//#testresult/385dcb1c53bb356f",
+        "status" : "broken",
+        "statusDetails" : "KeyError: 'data'",
+        "time" : {
+          "start" : 1744940448737,
+          "stop" : 1744940449023,
+          "duration" : 286
+        }
+      }, {
+        "uid" : "a5fe24e5085a7f58",
+        "reportUrl" : "https://Areso.github.io/Oblache/371//#testresult/a5fe24e5085a7f58",
+        "status" : "broken",
+        "statusDetails" : "KeyError: 'data'",
+        "time" : {
+          "start" : 1744854167411,
+          "stop" : 1744854167752,
+          "duration" : 341
+        }
+      }, {
+        "uid" : "a331c7939c52cc66",
+        "reportUrl" : "https://Areso.github.io/Oblache/370//#testresult/a331c7939c52cc66",
+        "status" : "broken",
+        "statusDetails" : "KeyError: 'data'",
+        "time" : {
+          "start" : 1744767857663,
+          "stop" : 1744767858167,
+          "duration" : 504
+        }
+      }, {
+        "uid" : "47da6e8deaeb8a5d",
+        "reportUrl" : "https://Areso.github.io/Oblache/369//#testresult/47da6e8deaeb8a5d",
+        "status" : "broken",
+        "statusDetails" : "KeyError: 'data'",
+        "time" : {
+          "start" : 1744681492868,
+          "stop" : 1744681493465,
+          "duration" : 597
+        }
+      }, {
+        "uid" : "8594993dccbc4f60",
+        "reportUrl" : "https://Areso.github.io/Oblache/368//#testresult/8594993dccbc4f60",
+        "status" : "broken",
+        "statusDetails" : "KeyError: 'data'",
+        "time" : {
+          "start" : 1744595133742,
+          "stop" : 1744595134032,
+          "duration" : 290
+        }
+      }, {
+        "uid" : "eccff16e6f772c05",
+        "reportUrl" : "https://Areso.github.io/Oblache/367//#testresult/eccff16e6f772c05",
+        "status" : "broken",
+        "statusDetails" : "KeyError: 'data'",
+        "time" : {
+          "start" : 1744513705807,
+          "stop" : 1744513706300,
+          "duration" : 493
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "1771cf845f2fa3f2.json",
+  "parameterValues" : [ ]
+}
