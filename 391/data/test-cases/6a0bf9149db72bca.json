@@ -1,0 +1,571 @@
+{
+  "uid" : "6a0bf9149db72bca",
+  "name" : "POST delete_db",
+  "fullName" : "tests_api.test_bd.TestPOST#test_delete_db",
+  "historyId" : "aacf29e4b56c0d304e9b651197b003cc",
+  "time" : {
+    "start" : 1746582476972,
+    "stop" : 1746582477981,
+    "duration" : 1009
+  },
+  "status" : "skipped",
+  "statusMessage" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+  "statusTrace" : "self = <tests_api.test_bd.TestPOST object at 0x7f21fc6892b0>\nget_token = ('93dd5c52-6dea-4dd6-b395-f3c0a030573d', {'email': 'test4@mail.com', 'password': 'testpassword'}, 'testpassword', '123456789', 'test4@mail.com')\n\n    @allure.title('POST delete_db')\n    @pytest.mark.xfail(reason='When using this method during a test run, the database may be in deleting status.')\n    def test_delete_db(self, get_token):\n        TestPOST.token = get_token[0]\n        list_db = API.post_db_list(token=TestPOST.token)\n        json_list_db = json.loads(list_db.text)\n>       API.delete_db_by_index_list(token=TestPOST.token,\n                                    json_list_db=json_list_db,\n                                    list_db_index=-1)\n\ntests_api/test_bd.py:426: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \ntests_api/utils/request.py:957: in delete_db_by_index_list\n    Checking.check_status_code(response_db_delete, 200)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [500]>, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, f'Incorrect status code: {result.status_code}'\nE           AssertionError: Incorrect status code: 500\n\ntests_api/utils/checking.py:16: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "get_token",
+    "time" : {
+      "start" : 1746582476468,
+      "stop" : 1746582476972,
+      "duration" : 504
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Assert status code: 200 == Response status code: 200",
+      "time" : {
+        "start" : 1746582476972,
+        "stop" : 1746582476972,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  } ],
+  "testStage" : {
+    "status" : "skipped",
+    "statusMessage" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+    "statusTrace" : "self = <tests_api.test_bd.TestPOST object at 0x7f21fc6892b0>\nget_token = ('93dd5c52-6dea-4dd6-b395-f3c0a030573d', {'email': 'test4@mail.com', 'password': 'testpassword'}, 'testpassword', '123456789', 'test4@mail.com')\n\n    @allure.title('POST delete_db')\n    @pytest.mark.xfail(reason='When using this method during a test run, the database may be in deleting status.')\n    def test_delete_db(self, get_token):\n        TestPOST.token = get_token[0]\n        list_db = API.post_db_list(token=TestPOST.token)\n        json_list_db = json.loads(list_db.text)\n>       API.delete_db_by_index_list(token=TestPOST.token,\n                                    json_list_db=json_list_db,\n                                    list_db_index=-1)\n\ntests_api/test_bd.py:426: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \ntests_api/utils/request.py:957: in delete_db_by_index_list\n    Checking.check_status_code(response_db_delete, 200)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = <Response [500]>, status_code = 200\n\n    @staticmethod\n    def check_status_code(result: requests.models.Response, status_code: int):\n        \"\"\"\n        Method check status code\n        :param result: Response\n        :param status_code:\n        \"\"\"\n        with allure.step(f'Assert status code: {status_code} == Response status code: {result.status_code}'):\n>           assert status_code == result.status_code, f'Incorrect status code: {result.status_code}'\nE           AssertionError: Incorrect status code: 500\n\ntests_api/utils/checking.py:16: AssertionError",
+    "steps" : [ {
+      "name" : "post_db_list",
+      "time" : {
+        "start" : 1746582476972,
+        "stop" : 1746582477507,
+        "duration" : 535
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Endpoint: /db_list",
+        "time" : {
+          "start" : 1746582477506,
+          "stop" : 1746582477506,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Request:",
+        "time" : {
+          "start" : 1746582477506,
+          "stop" : 1746582477507,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Headers: {'Content-Type': 'application/json', 'Authorization': {'93dd5c52-6dea-4dd6-b395-f3c0a030573d'}}",
+          "time" : {
+            "start" : 1746582477506,
+            "stop" : 1746582477506,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Body: None",
+          "time" : {
+            "start" : 1746582477506,
+            "stop" : 1746582477507,
+            "duration" : 1
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Response:",
+        "time" : {
+          "start" : 1746582477507,
+          "stop" : 1746582477507,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status code: 200",
+          "time" : {
+            "start" : 1746582477507,
+            "stop" : 1746582477507,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "JSON: {\n  \"data\": {\n    \"066b87ca-9dd6-7a0b-8000-461dafcab111\": [\n      \"\",\n      \"CIS\",\n      \"manual_deleting\",\n      null,\n      \"None\",\n      0\n    ],\n    \"066b87cb-4cfd-73bd-8000-ad0fc36ba001\": [\n      \"\",\n      \"CIS\",\n      \"manual_deleting\",\n      null,\n      \"None\",\n      0\n    ],\n    \"066b87cf-a338-7323-8000-0bf32a680ae6\": [\n      \"\",\n      \"CIS\",\n      \"manual_deleting\",\n      null,\n      \"None\",\n      0\n    ],\n    \"066b87fa-e7b6-76b6-8000-6da15c803e34\": [\n      \"\",\n      \"CIS\",\n      \"manual_deleting\",\n      null,\n      \"None\",\n      0\n    ],\n    \"066b901a-88fc-7a2b-8000-712464b36b1c\": [\n      \"\",\n      \"CIS\",\n      \"manual_deleting\",\n      null,\n      \"None\",\n      0\n    ],\n    \"066bd164-0617-75dd-8000-866f5dc1ce44\": [\n      \"db_ji3eegk9\",\n      \"CIS\",\n      \"error_to_threshold\",\n      \"mysql://user_tln5y0w3:pwPW01__H5d8gcbeqWWdZH@cis_db1.areso.pro:3306/db_ji3eegk9\",\n      \"2024-08-14 20:40:42\",\n      0\n    ],\n    \"066d9eed-f09a-7db8-8000-80b496f05633\": [\n      \"db_8bmgvwjv\",\n      \"CIS\",\n      \"error_to_threshold\",\n      \"mysql://user_gdrgym35:pwPW01__Iuiwn8ykAK65hy@cis_db1.areso.pro:3306/db_8bmgvwjv\",\n      \"2024-09-05 17:48:25\",\n      0\n    ],\n    \"066d9efb-8218-79d4-8000-4e7aba4f0139\": [\n      \"db_wjlk1fw0\",\n      \"CIS\",\n      \"error_to_threshold\",\n      \"mysql://user_rv52273g:pwPW01__4d0hT10HYRpuTi@cis_db1.areso.pro:3306/db_wjlk1fw0\",\n      \"2024-09-05 17:52:03\",\n      0\n    ],\n    \"066d9efc-7d24-7243-8000-e2a65edbd23e\": [\n      \"db_i5n4oqpl\",\n      \"CIS\",\n      \"error_to_threshold\",\n      \"mysql://user_2d99654y:pwPW01__YR60Gyo480l0Xx@cis_db1.areso.pro:3306/db_i5n4oqpl\",\n      \"2024-09-05 17:52:17\",\n      0\n    ],\n    \"066da549-ba6b-71bc-8000-329f72336f26\": [\n      \"db_i1fqs78r\",\n      \"CIS\",\n      \"error_to_threshold\",\n      \"mysql://user_kk09qxgi:pwPW01__5srn0nAEQwhv9H@cis_db1.areso.pro:3306/db_i1fqs78r\",\n      \"2024-09-06 01:02:29\",\n      0\n    ],\n    \"066da592-2e9e-748b-8000-9567d3d0f846\": [\n      \"db_hy3nifmn\",\n      \"CIS\",\n      \"error_deleting\",\n      \"mysql://user_qyz0dq0z:pwPW01__WlYyX4pVQkosaQ@cis_db1.areso.pro:3306/db_hy3nifmn\",\n      \"2024-09-06 01:21:48\",\n      9\n    ],\n    \"0671af47-4ad9-7df1-8000-4bd970b89140\": [\n      \"db_ghdm8tjq\",\n      \"CIS\",\n      \"error_to_threshold\",\n      \"mysql://user_np1z7f7w:pwPW01__1Gg95a9QbwUTdZ@cis_db1.areso.pro:3306/db_ghdm8tjq\",\n      \"2024-10-25 01:29:35\",\n      0\n    ],\n    \"0672c17c-2ac2-76a9-8000-755c38dfde67\": [\n      \"db_udjdopyi\",\n      \"CIS\",\n      \"error_to_threshold\",\n      \"mysql://user_42jxxxl6:pwPW01__sEBAmuSLp4WiiO@cis_db1.areso.pro:3306/db_udjdopyi\",\n      \"2024-11-07 01:28:44\",\n      0\n    ],\n    \"0672d635-60a4-71c9-8000-293693d25d89\": [\n      \"db_yvs2nrlo\",\n      \"CIS\",\n      \"manual_deleting\",\n      \"mysql://user_au971vxk:pwPW01__mmwks6dloWynhn@cis_db1.areso.pro:3306/db_yvs2nrlo\",\n      \"None\",\n      0\n    ],\n    \"0672d693-65b0-7f04-8000-fb2220c30330\": [\n      \"db_oe9tvhec\",\n      \"CIS\",\n      \"manual_deleting\",\n      \"mysql://user_cpwquucc:pwPW01__hucPw3TumKIN0E@cis_db1.areso.pro:3306/db_oe9tvhec\",\n      \"None\",\n      0\n    ],\n    \"06737f8f-508a-70cb-8000-d3b442ce147e\": [\n      \"db_qgkfa8pp\",\n      \"CIS\",\n      \"error_to_threshold\",\n      \"mysql://user_c62g023v:pwPW01__ZZxflk4e0toqx9@cis_db1.areso.pro:3306/db_qgkfa8pp\",\n      \"2024-11-16 01:44:30\",\n      0\n    ]\n  },\n  \"headers\": {\n    \"Access-Control-Allow-Methods\": [\n      \"POST\",\n      \"OPTIONS\"\n    ],\n    \"Access-Control-Allow-Origin\": \"*\",\n    \"Access-Control-Expose-Headers\": \"*\",\n    \"Content-Type\": \"application/json; charset=utf-8\"\n  },\n  \"status\": 200\n}\n",
+          "time" : {
+            "start" : 1746582477507,
+            "stop" : 1746582477507,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 7,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "delete_db",
+      "time" : {
+        "start" : 1746582477507,
+        "stop" : 1746582477980,
+        "duration" : 473
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Endpoint: /db_delete",
+        "time" : {
+          "start" : 1746582477980,
+          "stop" : 1746582477980,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Request:",
+        "time" : {
+          "start" : 1746582477980,
+          "stop" : 1746582477980,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Headers: {'Content-Type': 'application/json', 'Authorization': {'93dd5c52-6dea-4dd6-b395-f3c0a030573d'}}",
+          "time" : {
+            "start" : 1746582477980,
+            "stop" : 1746582477980,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Body: {\"db_uuid\": f\"{'db_uuid': '06737f8f-508a-70cb-8000-d3b442ce147e'}\"}",
+          "time" : {
+            "start" : 1746582477980,
+            "stop" : 1746582477980,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Response:",
+        "time" : {
+          "start" : 1746582477980,
+          "stop" : 1746582477980,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Status code: 500",
+          "time" : {
+            "start" : 1746582477980,
+            "stop" : 1746582477980,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "JSON: Some general exception",
+          "time" : {
+            "start" : 1746582477980,
+            "stop" : 1746582477980,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 7,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Assert status code: 200 == Response status code: 500",
+      "time" : {
+        "start" : 1746582477980,
+        "stop" : 1746582477981,
+        "duration" : 1
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: Incorrect status code: 500\n",
+      "statusTrace" : "  File \"/home/runner/work/Oblache/Oblache/tests_api/utils/checking.py\", line 16, in check_status_code\n    assert status_code == result.status_code, f'Incorrect status code: {result.status_code}'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 17,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "POST"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.xfail(reason='When using this method during a test run, the database may be in deleting status.')"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests_api"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestPOST"
+  }, {
+    "name" : "host",
+    "value" : "fv-az2023-48"
+  }, {
+    "name" : "thread",
+    "value" : "2466-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests_api.test_bd"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 253,
+        "passed" : 16,
+        "unknown" : 0,
+        "total" : 269
+      },
+      "items" : [ {
+        "uid" : "5236709a3bf80798",
+        "reportUrl" : "https://Areso.github.io/Oblache/390//#testresult/5236709a3bf80798",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1746496037569,
+          "stop" : 1746496038564,
+          "duration" : 995
+        }
+      }, {
+        "uid" : "5a39f553f8071076",
+        "reportUrl" : "https://Areso.github.io/Oblache/389//#testresult/5a39f553f8071076",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1746409828437,
+          "stop" : 1746409829437,
+          "duration" : 1000
+        }
+      }, {
+        "uid" : "eaf28e2d0a99cf5d",
+        "reportUrl" : "https://Areso.github.io/Oblache/388//#testresult/eaf28e2d0a99cf5d",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1746323695261,
+          "stop" : 1746323695869,
+          "duration" : 608
+        }
+      }, {
+        "uid" : "8a7e8dfcb7d5970c",
+        "reportUrl" : "https://Areso.github.io/Oblache/387//#testresult/8a7e8dfcb7d5970c",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1746236622246,
+          "stop" : 1746236622858,
+          "duration" : 612
+        }
+      }, {
+        "uid" : "25c0aa1d664aa61d",
+        "reportUrl" : "https://Areso.github.io/Oblache/386//#testresult/25c0aa1d664aa61d",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1746150375473,
+          "stop" : 1746150376456,
+          "duration" : 983
+        }
+      }, {
+        "uid" : "ea63b6a4f20d1d09",
+        "reportUrl" : "https://Areso.github.io/Oblache/385//#testresult/ea63b6a4f20d1d09",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1746064447500,
+          "stop" : 1746064448073,
+          "duration" : 573
+        }
+      }, {
+        "uid" : "7b4b2cf8dbd74280",
+        "reportUrl" : "https://Areso.github.io/Oblache/384//#testresult/7b4b2cf8dbd74280",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1745977529854,
+          "stop" : 1745977530462,
+          "duration" : 608
+        }
+      }, {
+        "uid" : "bece9da223b28a30",
+        "reportUrl" : "https://Areso.github.io/Oblache/383//#testresult/bece9da223b28a30",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1745891191399,
+          "stop" : 1745891192385,
+          "duration" : 986
+        }
+      }, {
+        "uid" : "e41e057dc34bb9f5",
+        "reportUrl" : "https://Areso.github.io/Oblache/382//#testresult/e41e057dc34bb9f5",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1745804904012,
+          "stop" : 1745804904629,
+          "duration" : 617
+        }
+      }, {
+        "uid" : "353a4ae10ba56437",
+        "reportUrl" : "https://Areso.github.io/Oblache/381//#testresult/353a4ae10ba56437",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1745718600618,
+          "stop" : 1745718601385,
+          "duration" : 767
+        }
+      }, {
+        "uid" : "d1fe17820c677b91",
+        "reportUrl" : "https://Areso.github.io/Oblache/380//#testresult/d1fe17820c677b91",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1745631700602,
+          "stop" : 1745631701206,
+          "duration" : 604
+        }
+      }, {
+        "uid" : "6284d0dec201fd90",
+        "reportUrl" : "https://Areso.github.io/Oblache/379//#testresult/6284d0dec201fd90",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1745545518853,
+          "stop" : 1745545519460,
+          "duration" : 607
+        }
+      }, {
+        "uid" : "84b39fff9e756621",
+        "reportUrl" : "https://Areso.github.io/Oblache/378//#testresult/84b39fff9e756621",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1745459097269,
+          "stop" : 1745459098003,
+          "duration" : 734
+        }
+      }, {
+        "uid" : "217dd3cfc34b6cc3",
+        "reportUrl" : "https://Areso.github.io/Oblache/377//#testresult/217dd3cfc34b6cc3",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1745372669571,
+          "stop" : 1745372670143,
+          "duration" : 572
+        }
+      }, {
+        "uid" : "7b005ac4c04547b2",
+        "reportUrl" : "https://Areso.github.io/Oblache/376//#testresult/7b005ac4c04547b2",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1745286267460,
+          "stop" : 1745286268471,
+          "duration" : 1011
+        }
+      }, {
+        "uid" : "57ccf9d17052dbde",
+        "reportUrl" : "https://Areso.github.io/Oblache/375//#testresult/57ccf9d17052dbde",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1745200109620,
+          "stop" : 1745200110207,
+          "duration" : 587
+        }
+      }, {
+        "uid" : "669aed645cf0e9c9",
+        "reportUrl" : "https://Areso.github.io/Oblache/374//#testresult/669aed645cf0e9c9",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1745113764825,
+          "stop" : 1745113765439,
+          "duration" : 614
+        }
+      }, {
+        "uid" : "1f3704dd1c23b8bf",
+        "reportUrl" : "https://Areso.github.io/Oblache/373//#testresult/1f3704dd1c23b8bf",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1745026761811,
+          "stop" : 1745026762395,
+          "duration" : 584
+        }
+      }, {
+        "uid" : "856d125b984243e0",
+        "reportUrl" : "https://Areso.github.io/Oblache/372//#testresult/856d125b984243e0",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1744940490560,
+          "stop" : 1744940491344,
+          "duration" : 784
+        }
+      }, {
+        "uid" : "5392ab5c7e0a2490",
+        "reportUrl" : "https://Areso.github.io/Oblache/371//#testresult/5392ab5c7e0a2490",
+        "status" : "skipped",
+        "statusDetails" : "XFAIL When using this method during a test run, the database may be in deleting status.\n\nAssertionError: Incorrect status code: 500",
+        "time" : {
+          "start" : 1744854210801,
+          "stop" : 1744854211517,
+          "duration" : 716
+        }
+      } ]
+    },
+    "tags" : [ "@pytest.mark.xfail(reason='When using this method during a test run, the database may be in deleting status.')" ]
+  },
+  "source" : "6a0bf9149db72bca.json",
+  "parameterValues" : [ ]
+}
