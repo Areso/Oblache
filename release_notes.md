@@ -1,4 +1,8 @@
 # Release notes
+Mon 02 Jun 2025 01:25 AM EEST  
+dbaas_site:
+added admin site    
+
 Tue 22 Apr 2025 10:49 PM EEST  
 dbaas_backend:
 added debug delay 120s    
