@@ -1,4 +1,8 @@
 # Release notes
+Mon 02 Jun 2025 02:45 AM EEST  
+dbaas_site:
+[OBL-252](https://github.com/Areso/Oblache/issues/252): fixed endpoint    
+
 Mon 02 Jun 2025 01:26 AM EEST  
 dbaas_backend:
 [OBL-252](https://github.com/Areso/Oblache/issues/252): updated /host_list    
