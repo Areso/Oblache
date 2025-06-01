@@ -1,6 +1,10 @@
 # Release notes
 Mon 02 Jun 2025 01:25 AM EEST  
 dbaas_site:
+[OBL-252](https://github.com/Areso/Oblache/issues/252). admin site added    
+
+Mon 02 Jun 2025 01:25 AM EEST  
+dbaas_site:
 added admin site    
 
 Tue 22 Apr 2025 10:49 PM EEST  
