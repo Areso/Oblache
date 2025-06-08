@@ -1,4 +1,8 @@
 # Release notes
+Sun 08 Jun 2025 11:57 PM EEST  
+dbaas_site:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) hosts page for admin panel - hotfix bug    
+
 Sun 08 Jun 2025 10:47 PM EEST  
 dbaas_site:
 [OBL-350](https://github.com/Areso/Oblache/issues/350) hosts page for admin panel - draft done    
