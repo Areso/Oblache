@@ -1,4 +1,8 @@
 # Release notes
+Sun 08 Jun 2025 10:10 PM EEST  
+dbaas_site:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) hotfix parsing    
+
 Sun 08 Jun 2025 09:08 PM EEST  
 dbaas_backend:
 [OBL-349](https://github.com/Areso/Oblache/issues/349) hotfix /host_list endpoint    
