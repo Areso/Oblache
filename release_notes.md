@@ -1,4 +1,8 @@
 # Release notes
+Sat 14 Jun 2025 10:57 PM EEST  
+dbaas_backend:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) - adjust fields in /host_list    
+
 Sun 08 Jun 2025 11:57 PM EEST  
 dbaas_site:
 [OBL-350](https://github.com/Areso/Oblache/issues/350) hosts page for admin panel - hotfix bug    
