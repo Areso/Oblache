@@ -1,4 +1,8 @@
 # Release notes
+Sun 15 Jun 2025 02:23 AM EEST  
+dbaas_backend:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) draft done    
+
 Sat 14 Jun 2025 11:04 PM EEST  
 dbaas_backend:
 [OBL-350](https://github.com/Areso/Oblache/issues/350) hotfix fields    
