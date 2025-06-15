@@ -1,4 +1,8 @@
 # Release notes
+Sun 15 Jun 2025 04:21 PM EEST  
+dbaas_site:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) fixed unref variable in host details tab    
+
 Sun 15 Jun 2025 04:12 PM EEST  
 dbaas_site:
 [OBL-350](https://github.com/Areso/Oblache/issues/350) hotfix undefined var    
