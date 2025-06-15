@@ -1,4 +1,8 @@
 # Release notes
+Sun 15 Jun 2025 03:18 AM EEST  
+dbaas_backend:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) removed redundant ID    
+
 Sun 15 Jun 2025 03:15 AM EEST  
 dbaas_site:
 hotfix    
