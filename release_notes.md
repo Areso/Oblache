@@ -1,4 +1,8 @@
 # Release notes
+Sun 15 Jun 2025 03:53 PM EEST  
+dbaas_site:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) change receipient structure    
+
 Sun 15 Jun 2025 03:44 PM EEST  
 dbaas_site:
 [OBL-350](https://github.com/Areso/Oblache/issues/350) fix parsin issue on host details page    
