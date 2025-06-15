@@ -1,4 +1,8 @@
 # Release notes
+Sun 15 Jun 2025 03:57 AM EEST  
+dbaas_site:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) added CSS to the clickable element    
+
 Sun 15 Jun 2025 03:19 AM EEST  
 dbaas_backend:
 [OBL-350](https://github.com/Areso/Oblache/issues/350) removed commented code    
