@@ -1,4 +1,8 @@
 # Release notes
+Sun 15 Jun 2025 09:46 PM EEST  
+dbaas_site:
+[OBL-351](https://github.com/Areso/Oblache/issues/351) hotfix variable    
+
 Sun 15 Jun 2025 09:39 PM EEST  
 dbaas_site:
 [OBL-351](https://github.com/Areso/Oblache/issues/351) hotfix variable    
