@@ -1,4 +1,8 @@
 # Release notes
+Sun 15 Jun 2025 04:12 PM EEST  
+dbaas_site:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) hotfix undefined var    
+
 Sun 15 Jun 2025 03:53 PM EEST  
 dbaas_site:
 [OBL-350](https://github.com/Areso/Oblache/issues/350) change receipient structure    
