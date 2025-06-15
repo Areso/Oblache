@@ -1,4 +1,8 @@
 # Release notes
+Sun 15 Jun 2025 09:59 PM EEST  
+dbaas_site:
+[OBL-351](https://github.com/Areso/Oblache/issues/351) updated DOM element of host details tab    
+
 Sun 15 Jun 2025 09:46 PM EEST  
 dbaas_site:
 [OBL-351](https://github.com/Areso/Oblache/issues/351) hotfix variable    
