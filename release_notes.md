@@ -1,4 +1,8 @@
 # Release notes
+Sun 15 Jun 2025 03:15 AM EEST  
+dbaas_site:
+hotfix    
+
 Sun 15 Jun 2025 03:14 AM EEST  
 dbaas_site:
 hotfix    
