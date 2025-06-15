@@ -1,4 +1,8 @@
 # Release notes
+Sun 15 Jun 2025 03:06 AM EEST  
+dbaas_site:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) debugging    
+
 Sun 15 Jun 2025 03:01 AM EEST  
 dbaas_backend:
 [OBL-350](https://github.com/Areso/Oblache/issues/350) changed /host_list answer structure    
