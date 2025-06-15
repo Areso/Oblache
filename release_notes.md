@@ -1,4 +1,8 @@
 # Release notes
+Sun 15 Jun 2025 03:01 AM EEST  
+dbaas_backend:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) changed /host_list answer structure    
+
 Sun 15 Jun 2025 02:44 AM EEST  
 dbaas_backend:
 added not found exception for /host_get    
