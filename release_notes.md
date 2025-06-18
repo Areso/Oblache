@@ -1,4 +1,8 @@
 # Release notes
+Thu 19 Jun 2025 12:05 AM EEST  
+dbaas_backend:
+[OBL-352](https://github.com/Areso/Oblache/issues/352) fixed structure to check    
+
 Wed 18 Jun 2025 11:12 PM EEST  
 dbaas_backend:
 [OBL-352](https://github.com/Areso/Oblache/issues/352) moved some checks to decorators    
