@@ -1,4 +1,8 @@
 # Release notes
+Wed 18 Jun 2025 11:12 PM EEST  
+dbaas_backend:
+[OBL-352](https://github.com/Areso/Oblache/issues/352) moved some checks to decorators    
+
 Wed 18 Jun 2025 11:07 PM EEST  
 dbaas_backend:
 [OBL-352](https://github.com/Areso/Oblache/issues/352), temporary disabled unnecessary params for host_add    
