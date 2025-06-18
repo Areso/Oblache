@@ -1,4 +1,8 @@
 # Release notes
+Wed 18 Jun 2025 11:07 PM EEST  
+dbaas_backend:
+[OBL-352](https://github.com/Areso/Oblache/issues/352), temporary disabled unnecessary params for host_add    
+
 Sun 15 Jun 2025 09:59 PM EEST  
 dbaas_site:
 [OBL-351](https://github.com/Areso/Oblache/issues/351) updated DOM element of host details tab    
