@@ -1,4 +1,8 @@
 # Release notes
+Thu 19 Jun 2025 12:07 AM EEST  
+dbaas_site:
+[OBL-352](https://github.com/Areso/Oblache/issues/352) added page add new host    
+
 Thu 19 Jun 2025 12:05 AM EEST  
 dbaas_backend:
 [OBL-352](https://github.com/Areso/Oblache/issues/352) fixed structure to check    
