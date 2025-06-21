@@ -1,4 +1,8 @@
 # Release notes
+Sun 22 Jun 2025 12:14 AM EEST  
+paas_server_role_applier:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) new microservice for installing new hosts and vms    
+
 Thu 19 Jun 2025 10:47 PM EEST  
 dbaas_site:
 [OBL-352](https://github.com/Areso/Oblache/issues/352) fix UI layout, added message handling    
