@@ -1,4 +1,8 @@
 # Release notes
+Sun 22 Jun 2025 11:59 PM EEST  
+dbaas_backend:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) added /host_apply_role endpoint    
+
 Sun 22 Jun 2025 10:46 PM EEST  
 paas_server_role_applier:
 [OBL-353](https://github.com/Areso/Oblache/issues/353) updated ansible for nginx servers    
