@@ -1,4 +1,8 @@
 # Release notes
+Mon 23 Jun 2025 10:33 PM EEST  
+dbaas_backend:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) added host's history field    
+
 Sun 22 Jun 2025 11:59 PM EEST  
 dbaas_backend:
 [OBL-353](https://github.com/Areso/Oblache/issues/353) added /host_apply_role endpoint    
