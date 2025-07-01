@@ -1,4 +1,8 @@
 # Release notes
+Wed 02 Jul 2025 12:47 AM EEST  
+dbaas_backend:
+[OBL-356](https://github.com/Areso/Oblache/issues/356) move DB logic from /list_dbversions to a separate layer    
+
 Wed 02 Jul 2025 12:38 AM EEST  
 dbaas_backend:
 [OBL-355](https://github.com/Areso/Oblache/issues/355) try to move DB logic to separate layer. /list_dbtypes is nice and clean now    
