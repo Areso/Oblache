@@ -1,4 +1,160 @@
 # Release notes
+Mon 23 Jun 2025 10:33 PM EEST  
+dbaas_backend:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) added host's history field    
+
+Sun 22 Jun 2025 11:59 PM EEST  
+dbaas_backend:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) added /host_apply_role endpoint    
+
+Sun 22 Jun 2025 10:46 PM EEST  
+paas_server_role_applier:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) updated ansible for nginx servers    
+
+Sun 22 Jun 2025 01:05 AM EEST  
+paas_server_role_applier:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) added dependency    
+
+Sun 22 Jun 2025 12:23 AM EEST  
+paas_server_role_applier:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) new microservice for installing new hosts and vms    
+
+Sun 22 Jun 2025 12:14 AM EEST  
+paas_server_role_applier:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) new microservice for installing new hosts and vms    
+
+Thu 19 Jun 2025 10:47 PM EEST  
+dbaas_site:
+[OBL-352](https://github.com/Areso/Oblache/issues/352) fix UI layout, added message handling    
+
+Thu 19 Jun 2025 12:07 AM EEST  
+dbaas_site:
+[OBL-352](https://github.com/Areso/Oblache/issues/352) added page add new host    
+
+Thu 19 Jun 2025 12:05 AM EEST  
+dbaas_backend:
+[OBL-352](https://github.com/Areso/Oblache/issues/352) fixed structure to check    
+
+Wed 18 Jun 2025 11:12 PM EEST  
+dbaas_backend:
+[OBL-352](https://github.com/Areso/Oblache/issues/352) moved some checks to decorators    
+
+Wed 18 Jun 2025 11:07 PM EEST  
+dbaas_backend:
+[OBL-352](https://github.com/Areso/Oblache/issues/352), temporary disabled unnecessary params for host_add    
+
+Sun 15 Jun 2025 09:59 PM EEST  
+dbaas_site:
+[OBL-351](https://github.com/Areso/Oblache/issues/351) updated DOM element of host details tab    
+
+Sun 15 Jun 2025 09:46 PM EEST  
+dbaas_site:
+[OBL-351](https://github.com/Areso/Oblache/issues/351) hotfix variable    
+
+Sun 15 Jun 2025 09:39 PM EEST  
+dbaas_site:
+[OBL-351](https://github.com/Areso/Oblache/issues/351) hotfix variable    
+
+Sun 15 Jun 2025 04:21 PM EEST  
+dbaas_site:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) fixed unref variable in host details tab    
+
+Sun 15 Jun 2025 04:12 PM EEST  
+dbaas_site:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) hotfix undefined var    
+
+Sun 15 Jun 2025 03:53 PM EEST  
+dbaas_site:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) change receipient structure    
+
+Sun 15 Jun 2025 03:44 PM EEST  
+dbaas_site:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) fix parsin issue on host details page    
+
+Sun 15 Jun 2025 03:57 AM EEST  
+dbaas_site:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) added CSS to the clickable element    
+
+Sun 15 Jun 2025 03:19 AM EEST  
+dbaas_backend:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) removed commented code    
+
+Sun 15 Jun 2025 03:18 AM EEST  
+dbaas_backend:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) removed redundant ID    
+
+Sun 15 Jun 2025 03:15 AM EEST  
+dbaas_site:
+hotfix    
+
+Sun 15 Jun 2025 03:14 AM EEST  
+dbaas_site:
+hotfix    
+
+Sun 15 Jun 2025 03:06 AM EEST  
+dbaas_site:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) debugging    
+
+Sun 15 Jun 2025 03:01 AM EEST  
+dbaas_backend:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) changed /host_list answer structure    
+
+Sun 15 Jun 2025 02:44 AM EEST  
+dbaas_backend:
+added not found exception for /host_get    
+
+Sun 15 Jun 2025 02:42 AM EEST  
+dbaas_backend:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) fix structure    
+
+Sun 15 Jun 2025 02:35 AM EEST  
+dbaas_site:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) added host details tab    
+
+Sun 15 Jun 2025 02:23 AM EEST  
+dbaas_backend:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) draft done    
+
+Sat 14 Jun 2025 11:04 PM EEST  
+dbaas_backend:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) hotfix fields    
+
+Sat 14 Jun 2025 10:57 PM EEST  
+dbaas_backend:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) - adjust fields in /host_list    
+
+Sun 08 Jun 2025 11:57 PM EEST  
+dbaas_site:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) hosts page for admin panel - hotfix bug    
+
+Sun 08 Jun 2025 10:47 PM EEST  
+dbaas_site:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) hosts page for admin panel - draft done    
+
+Sun 08 Jun 2025 10:10 PM EEST  
+dbaas_site:
+[OBL-350](https://github.com/Areso/Oblache/issues/350) hotfix parsing    
+
+Sun 08 Jun 2025 09:08 PM EEST  
+dbaas_backend:
+[OBL-349](https://github.com/Areso/Oblache/issues/349) hotfix /host_list endpoint    
+
+Mon 02 Jun 2025 02:45 AM EEST  
+dbaas_site:
+[OBL-252](https://github.com/Areso/Oblache/issues/252): fixed endpoint    
+
+Mon 02 Jun 2025 01:26 AM EEST  
+dbaas_backend:
+[OBL-252](https://github.com/Areso/Oblache/issues/252): updated /host_list    
+
+Mon 02 Jun 2025 01:25 AM EEST  
+dbaas_site:
+[OBL-252](https://github.com/Areso/Oblache/issues/252). admin site added    
+
+Mon 02 Jun 2025 01:25 AM EEST  
+dbaas_site:
+added admin site    
+
 Tue 22 Apr 2025 10:49 PM EEST  
 dbaas_backend:
 added debug delay 120s    
