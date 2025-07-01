@@ -1,4 +1,8 @@
 # Release notes
+Tue 01 Jul 2025 11:44 PM EEST  
+dbaas_backend:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) updated a bit the contract to microservice    
+
 Mon 23 Jun 2025 10:33 PM EEST  
 dbaas_backend:
 [OBL-353](https://github.com/Areso/Oblache/issues/353) added host's history field    
