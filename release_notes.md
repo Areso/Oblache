@@ -1,4 +1,8 @@
 # Release notes
+Tue 01 Jul 2025 11:46 PM EEST  
+dbaas_site:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) added button to apply the role    
+
 Tue 01 Jul 2025 11:44 PM EEST  
 dbaas_backend:
 [OBL-353](https://github.com/Areso/Oblache/issues/353) updated a bit the contract to microservice    
