@@ -1,4 +1,8 @@
 # Release notes
+Wed 02 Jul 2025 12:07 AM EEST  
+dbaas_backend:
+[OBL-355](https://github.com/Areso/Oblache/issues/355) try to move DB logic to separate layer    
+
 Tue 01 Jul 2025 11:46 PM EEST  
 dbaas_site:
 [OBL-353](https://github.com/Areso/Oblache/issues/353) added button to apply the role    
