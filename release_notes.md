@@ -1,4 +1,8 @@
 # Release notes
+Wed 02 Jul 2025 12:27 AM EEST  
+dbaas_backend:
+[OBL-355](https://github.com/Areso/Oblache/issues/355) try to move DB logic to separate layer. hotfix    
+
 Wed 02 Jul 2025 12:25 AM EEST  
 dbaas_backend:
 [OBL-355](https://github.com/Areso/Oblache/issues/355) try to move DB logic to separate layer. hotfix    
