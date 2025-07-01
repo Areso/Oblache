@@ -1,4 +1,8 @@
 # Release notes
+Wed 02 Jul 2025 01:28 AM EEST  
+dbaas_backend:
+[OBL-359](https://github.com/Areso/Oblache/issues/359): move DB logic from /list_regions to a separate layer. improved naming    
+
 Wed 02 Jul 2025 01:26 AM EEST  
 dbaas_backend:
 [OBL-359](https://github.com/Areso/Oblache/issues/359): move DB logic from /list_regions to a separate layer. hotfix    
