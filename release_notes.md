@@ -1,4 +1,8 @@
 # Release notes
+Sat 05 Jul 2025 04:28 PM EEST  
+dbaas_backend:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) debugging /host_role_apply    
+
 Sat 05 Jul 2025 04:14 PM EEST  
 dbaas_backend:
 [OBL-353](https://github.com/Areso/Oblache/issues/353), hotfix for register call decorator    
