@@ -1,4 +1,8 @@
 # Release notes
+Sat 05 Jul 2025 03:40 PM EEST  
+dbaas_site:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) added role apply button to the admin panel    
+
 Wed 02 Jul 2025 01:36 AM EEST  
 dbaas_backend:
 [OBL-359](https://github.com/Areso/Oblache/issues/359): move DB logic from /list_regions to a separate layer. improved repo class    
