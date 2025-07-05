@@ -1,4 +1,8 @@
 # Release notes
+Sat 05 Jul 2025 04:14 PM EEST  
+dbaas_backend:
+[OBL-353](https://github.com/Areso/Oblache/issues/353), hotfix for register call decorator    
+
 Sat 05 Jul 2025 04:13 PM EEST  
 dbaas_site:
 [OBL-353](https://github.com/Areso/Oblache/issues/353) added role apply button to the admin panel. hotfix    
