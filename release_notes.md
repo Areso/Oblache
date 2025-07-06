@@ -1,4 +1,8 @@
 # Release notes
+Sun 06 Jul 2025 07:04 PM EEST  
+dbaas_backend:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) added button to apply the role. adding fetching logic for host    
+
 Sun 06 Jul 2025 01:42 AM EEST  
 dbaas_backend:
 [OBL-353](https://github.com/Areso/Oblache/issues/353) added button to apply the role. adding decorators    
