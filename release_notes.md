@@ -1,4 +1,8 @@
 # Release notes
+Sun 06 Jul 2025 10:38 PM EEST  
+paas_server_role_applier:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) added role file, added history record    
+
 Sun 06 Jul 2025 10:28 PM EEST  
 paas_server_role_applier:
 [OBL-353](https://github.com/Areso/Oblache/issues/353) added role file, added history record    
