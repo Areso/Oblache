@@ -1,4 +1,8 @@
 # Release notes
+Mon 07 Jul 2025 12:00 AM EEST  
+paas_server_role_applier:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) hotfix history message with COALESCE    
+
 Sun 06 Jul 2025 11:35 PM EEST  
 paas_server_role_applier:
 [OBL-353](https://github.com/Areso/Oblache/issues/353) hotfix history message    
