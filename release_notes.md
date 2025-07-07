@@ -1,4 +1,8 @@
 # Release notes
+Mon 07 Jul 2025 08:52 PM EEST  
+dbaas_backend:
+[OBL-363](https://github.com/Areso/Oblache/issues/363): draft /host_delete    
+
 Mon 07 Jul 2025 12:00 AM EEST  
 paas_server_role_applier:
 [OBL-353](https://github.com/Areso/Oblache/issues/353) hotfix history message with COALESCE    
