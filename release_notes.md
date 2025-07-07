@@ -1,4 +1,8 @@
 # Release notes
+Mon 07 Jul 2025 10:41 PM EEST  
+dbaas_backend:
+[OBL-363](https://github.com/Areso/Oblache/issues/363): draft /host_delete    
+
 Mon 07 Jul 2025 10:37 PM EEST  
 dbaas_backend:
 [OBL-363](https://github.com/Areso/Oblache/issues/363): draft /host_delete    
