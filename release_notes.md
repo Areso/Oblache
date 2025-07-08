@@ -1,4 +1,8 @@
 # Release notes
+Wed 09 Jul 2025 12:51 AM EEST  
+dbaas_site:
+[OBL-361](https://github.com/Areso/Oblache/issues/361) [OBL-362](https://github.com/Areso/Oblache/issues/362) hotfix css with important clause    
+
 Wed 09 Jul 2025 12:26 AM EEST  
 dbaas_site:
 [OBL-361](https://github.com/Areso/Oblache/issues/361) [OBL-362](https://github.com/Areso/Oblache/issues/362) added enable and disable buttons    
