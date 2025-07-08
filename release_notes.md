@@ -1,4 +1,8 @@
 # Release notes
+Wed 09 Jul 2025 12:23 AM EEST  
+dbaas_backend:
+[OBL-361](https://github.com/Areso/Oblache/issues/361) [OBL-362](https://github.com/Areso/Oblache/issues/362) update /host_enable /host_disable endpoints with moving base logic to decorators    
+
 Tue 08 Jul 2025 12:43 AM EEST  
 dbaas_backend:
 [OBL-363](https://github.com/Areso/Oblache/issues/363): draft /host_delete    
