@@ -1,4 +1,8 @@
 # Release notes
+Wed 09 Jul 2025 10:26 PM EEST  
+dbaas_backend:
+[OBL-371](https://github.com/Areso/Oblache/issues/371) added endpoint for updating hostname of the host    
+
 Wed 09 Jul 2025 12:51 AM EEST  
 dbaas_site:
 [OBL-361](https://github.com/Areso/Oblache/issues/361) [OBL-362](https://github.com/Areso/Oblache/issues/362) hotfix css with important clause    
