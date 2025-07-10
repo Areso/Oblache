@@ -1,4 +1,8 @@
 # Release notes
+Thu 10 Jul 2025 02:54 PM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) microservice paas server lifecycle draft    
+
 Wed 09 Jul 2025 10:30 PM EEST  
 dbaas_backend:
 [OBL-371](https://github.com/Areso/Oblache/issues/371) added endpoint for updating hostname of the host. hotfix token    
