@@ -1,4 +1,8 @@
 # Release notes
+Thu 10 Jul 2025 03:05 PM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) microservice paas server lifecycle draft. added pbrun dependency    
+
 Thu 10 Jul 2025 02:54 PM EEST  
 paas_server_lifecycle:
 [OBL-369](https://github.com/Areso/Oblache/issues/369) microservice paas server lifecycle draft    
