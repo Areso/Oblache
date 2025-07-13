@@ -1,4 +1,8 @@
 # Release notes
+Sun 13 Jul 2025 10:55 PM EEST  
+dbaas_backend:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) /host_create created    
+
 Thu 10 Jul 2025 03:05 PM EEST  
 paas_server_lifecycle:
 [OBL-369](https://github.com/Areso/Oblache/issues/369) microservice paas server lifecycle draft. added pbrun dependency    
