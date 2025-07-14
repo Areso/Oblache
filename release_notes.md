@@ -1,4 +1,8 @@
 # Release notes
+Tue 15 Jul 2025 01:41 AM EEST  
+dbaas_backend:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) added host_repo    
+
 Sun 13 Jul 2025 10:55 PM EEST  
 dbaas_backend:
 [OBL-369](https://github.com/Areso/Oblache/issues/369) /host_create created    
