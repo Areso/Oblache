@@ -1,4 +1,8 @@
 # Release notes
+Tue 15 Jul 2025 02:05 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) added default provider    
+
 Tue 15 Jul 2025 02:02 AM EEST  
 dbaas_backend:
 [OBL-369](https://github.com/Areso/Oblache/issues/369) added id_host to the contract (sender)    
