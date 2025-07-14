@@ -1,4 +1,8 @@
 # Release notes
+Tue 15 Jul 2025 02:09 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) hotfix parameter naming    
+
 Tue 15 Jul 2025 02:08 AM EEST  
 paas_server_lifecycle:
 [OBL-369](https://github.com/Areso/Oblache/issues/369) hotfix getting provider    
