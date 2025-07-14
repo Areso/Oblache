@@ -1,4 +1,8 @@
 # Release notes
+Tue 15 Jul 2025 02:21 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) removed crypted secrets due loading them from the plain text param    
+
 Tue 15 Jul 2025 02:17 AM EEST  
 paas_server_lifecycle:
 [OBL-369](https://github.com/Areso/Oblache/issues/369) hotfix role name    
