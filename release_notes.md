@@ -1,4 +1,8 @@
 # Release notes
+Tue 15 Jul 2025 02:39 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) fixed tokens mess    
+
 Tue 15 Jul 2025 02:38 AM EEST  
 paas_server_lifecycle:
 [OBL-369](https://github.com/Areso/Oblache/issues/369) fixed tokens mess    
