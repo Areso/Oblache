@@ -1,4 +1,8 @@
 # Release notes
+Tue 15 Jul 2025 02:29 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) fix do_token    
+
 Tue 15 Jul 2025 02:26 AM EEST  
 paas_server_lifecycle:
 [OBL-369](https://github.com/Areso/Oblache/issues/369) fix invokation    
