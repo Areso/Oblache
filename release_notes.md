@@ -1,4 +1,8 @@
 # Release notes
+Tue 15 Jul 2025 01:54 AM EEST  
+dbaas_backend:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) removed fetch from _safe_execute when run I U D operations    
+
 Tue 15 Jul 2025 01:41 AM EEST  
 dbaas_backend:
 [OBL-369](https://github.com/Areso/Oblache/issues/369) added host_repo    
