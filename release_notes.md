@@ -1,4 +1,8 @@
 # Release notes
+Tue 15 Jul 2025 04:03 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) fixed name pattern in the VM    
+
 Tue 15 Jul 2025 04:01 AM EEST  
 paas_server_lifecycle:
 [OBL-369](https://github.com/Areso/Oblache/issues/369) fixed region_slug    
