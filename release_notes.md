@@ -1,4 +1,8 @@
 # Release notes
+Tue 15 Jul 2025 03:55 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) fixed region_slug    
+
 Tue 15 Jul 2025 03:49 AM EEST  
 dbaas_backend:
 [OBL-369](https://github.com/Areso/Oblache/issues/369) fixed q status check , fix status code    
