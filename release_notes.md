@@ -1,4 +1,8 @@
 # Release notes
+Thu 24 Jul 2025 12:25 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) hotfix undefined variables to Orc callback    
+
 Thu 24 Jul 2025 12:16 AM EEST  
 paas_server_lifecycle:
 [OBL-369](https://github.com/Areso/Oblache/issues/369) hotfix undefined variables to Orc callback    
