@@ -1,4 +1,8 @@
 # Release notes
+Wed 23 Jul 2025 11:29 PM EEST  
+dbaas_site:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) - front-end for /host_create    
+
 Tue 15 Jul 2025 04:03 AM EEST  
 paas_server_lifecycle:
 [OBL-369](https://github.com/Areso/Oblache/issues/369) fixed name pattern in the VM    
