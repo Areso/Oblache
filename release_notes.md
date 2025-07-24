@@ -1,4 +1,8 @@
 # Release notes
+Thu 24 Jul 2025 09:48 PM EEST  
+paas_server_lifecycle:
+[OBL-382](https://github.com/Areso/Oblache/issues/382) added installation doc    
+
 Thu 24 Jul 2025 12:41 AM EEST  
 dbaas_backend:
 [OBL-369](https://github.com/Areso/Oblache/issues/369) hotfix config    
