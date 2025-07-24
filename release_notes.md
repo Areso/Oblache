@@ -1,4 +1,344 @@
 # Release notes
+Thu 24 Jul 2025 12:41 AM EEST  
+dbaas_backend:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) hotfix config    
+
+Thu 24 Jul 2025 12:25 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) hotfix undefined variables to Orc callback    
+
+Thu 24 Jul 2025 12:16 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) hotfix undefined variables to Orc callback    
+
+Wed 23 Jul 2025 11:29 PM EEST  
+dbaas_site:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) - front-end for /host_create    
+
+Tue 15 Jul 2025 04:03 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) fixed name pattern in the VM    
+
+Tue 15 Jul 2025 04:01 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) fixed region_slug    
+
+Tue 15 Jul 2025 03:59 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) fixed region_slug    
+
+Tue 15 Jul 2025 03:57 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) fixed region_slug    
+
+Tue 15 Jul 2025 03:55 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) fixed region_slug    
+
+Tue 15 Jul 2025 03:49 AM EEST  
+dbaas_backend:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) fixed q status check , fix status code    
+
+Tue 15 Jul 2025 03:35 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) fixed region_slug    
+
+Tue 15 Jul 2025 02:39 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) fixed tokens mess    
+
+Tue 15 Jul 2025 02:38 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) fixed tokens mess    
+
+Tue 15 Jul 2025 02:36 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) fixed tokens mess    
+
+Tue 15 Jul 2025 02:29 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) fix do_token    
+
+Tue 15 Jul 2025 02:26 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) fix invokation    
+
+Tue 15 Jul 2025 02:21 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) removed crypted secrets due loading them from the plain text param    
+
+Tue 15 Jul 2025 02:17 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) hotfix role name    
+
+Tue 15 Jul 2025 02:14 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) hotfix updating history of the server    
+
+Tue 15 Jul 2025 02:09 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) hotfix parameter naming    
+
+Tue 15 Jul 2025 02:08 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) hotfix getting provider    
+
+Tue 15 Jul 2025 02:05 AM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) added default provider    
+
+Tue 15 Jul 2025 02:02 AM EEST  
+dbaas_backend:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) added id_host to the contract (sender)    
+
+Tue 15 Jul 2025 01:54 AM EEST  
+dbaas_backend:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) removed fetch from _safe_execute when run I U D operations    
+
+Tue 15 Jul 2025 01:41 AM EEST  
+dbaas_backend:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) added host_repo    
+
+Sun 13 Jul 2025 10:55 PM EEST  
+dbaas_backend:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) /host_create created    
+
+Thu 10 Jul 2025 03:05 PM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) microservice paas server lifecycle draft. added pbrun dependency    
+
+Thu 10 Jul 2025 02:54 PM EEST  
+paas_server_lifecycle:
+[OBL-369](https://github.com/Areso/Oblache/issues/369) microservice paas server lifecycle draft    
+
+Wed 09 Jul 2025 10:30 PM EEST  
+dbaas_backend:
+[OBL-371](https://github.com/Areso/Oblache/issues/371) added endpoint for updating hostname of the host. hotfix token    
+
+Wed 09 Jul 2025 10:26 PM EEST  
+dbaas_backend:
+[OBL-371](https://github.com/Areso/Oblache/issues/371) added endpoint for updating hostname of the host    
+
+Wed 09 Jul 2025 12:51 AM EEST  
+dbaas_site:
+[OBL-361](https://github.com/Areso/Oblache/issues/361) [OBL-362](https://github.com/Areso/Oblache/issues/362) hotfix css with important clause    
+
+Wed 09 Jul 2025 12:26 AM EEST  
+dbaas_site:
+[OBL-361](https://github.com/Areso/Oblache/issues/361) [OBL-362](https://github.com/Areso/Oblache/issues/362) added enable and disable buttons    
+
+Wed 09 Jul 2025 12:23 AM EEST  
+dbaas_backend:
+[OBL-361](https://github.com/Areso/Oblache/issues/361) [OBL-362](https://github.com/Areso/Oblache/issues/362) update /host_enable /host_disable endpoints with moving base logic to decorators    
+
+Tue 08 Jul 2025 12:43 AM EEST  
+dbaas_backend:
+[OBL-363](https://github.com/Areso/Oblache/issues/363): draft /host_delete    
+
+Tue 08 Jul 2025 12:23 AM EEST  
+dbaas_site:
+[OBL-363](https://github.com/Areso/Oblache/issues/363) added remove button    
+
+Mon 07 Jul 2025 10:41 PM EEST  
+dbaas_backend:
+[OBL-363](https://github.com/Areso/Oblache/issues/363): draft /host_delete    
+
+Mon 07 Jul 2025 10:37 PM EEST  
+dbaas_backend:
+[OBL-363](https://github.com/Areso/Oblache/issues/363): draft /host_delete    
+
+Mon 07 Jul 2025 10:14 PM EEST  
+dbaas_backend:
+[OBL-363](https://github.com/Areso/Oblache/issues/363): draft /host_delete    
+
+Mon 07 Jul 2025 10:06 PM EEST  
+dbaas_backend:
+[OBL-363](https://github.com/Areso/Oblache/issues/363): draft /host_delete    
+
+Mon 07 Jul 2025 10:05 PM EEST  
+dbaas_backend:
+[OBL-363](https://github.com/Areso/Oblache/issues/363): draft /host_delete    
+
+Mon 07 Jul 2025 09:57 PM EEST  
+dbaas_backend:
+[OBL-363](https://github.com/Areso/Oblache/issues/363): draft /host_delete    
+
+Mon 07 Jul 2025 09:50 PM EEST  
+dbaas_backend:
+[OBL-363](https://github.com/Areso/Oblache/issues/363): draft /host_delete    
+
+Mon 07 Jul 2025 09:49 PM EEST  
+dbaas_backend:
+[OBL-363](https://github.com/Areso/Oblache/issues/363): draft /host_delete    
+
+Mon 07 Jul 2025 09:37 PM EEST  
+dbaas_backend:
+[OBL-363](https://github.com/Areso/Oblache/issues/363): draft /host_delete    
+
+Mon 07 Jul 2025 09:36 PM EEST  
+dbaas_backend:
+[OBL-363](https://github.com/Areso/Oblache/issues/363): draft /host_delete    
+
+Mon 07 Jul 2025 09:27 PM EEST  
+dbaas_backend:
+[OBL-363](https://github.com/Areso/Oblache/issues/363): draft /host_delete    
+
+Mon 07 Jul 2025 09:23 PM EEST  
+dbaas_backend:
+[OBL-363](https://github.com/Areso/Oblache/issues/363): draft /host_delete    
+
+Mon 07 Jul 2025 09:01 PM EEST  
+dbaas_backend:
+[OBL-363](https://github.com/Areso/Oblache/issues/363): draft /host_delete    
+
+Mon 07 Jul 2025 08:59 PM EEST  
+dbaas_backend:
+[OBL-363](https://github.com/Areso/Oblache/issues/363): draft /host_delete    
+
+Mon 07 Jul 2025 08:52 PM EEST  
+dbaas_backend:
+[OBL-363](https://github.com/Areso/Oblache/issues/363): draft /host_delete    
+
+Mon 07 Jul 2025 12:00 AM EEST  
+paas_server_role_applier:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) hotfix history message with COALESCE    
+
+Sun 06 Jul 2025 11:35 PM EEST  
+paas_server_role_applier:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) hotfix history message    
+
+Sun 06 Jul 2025 11:24 PM EEST  
+paas_server_role_applier:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) hotfix history message    
+
+Sun 06 Jul 2025 10:39 PM EEST  
+paas_server_role_applier:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) hotfix inventory    
+
+Sun 06 Jul 2025 10:38 PM EEST  
+paas_server_role_applier:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) added role file, added history record    
+
+Sun 06 Jul 2025 10:28 PM EEST  
+paas_server_role_applier:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) added role file, added history record    
+
+Sun 06 Jul 2025 09:40 PM EEST  
+dbaas_backend:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) added button to apply the role. adding order issuing    
+
+Sun 06 Jul 2025 09:31 PM EEST  
+dbaas_site:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) added role apply button to the admin panel. hotfix increment in updateUI_host_details    
+
+Sun 06 Jul 2025 07:04 PM EEST  
+dbaas_backend:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) added button to apply the role. adding fetching logic for host    
+
+Sun 06 Jul 2025 01:42 AM EEST  
+dbaas_backend:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) added button to apply the role. adding decorators    
+
+Sat 05 Jul 2025 04:28 PM EEST  
+dbaas_backend:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) debugging /host_role_apply    
+
+Sat 05 Jul 2025 04:14 PM EEST  
+dbaas_backend:
+[OBL-353](https://github.com/Areso/Oblache/issues/353), hotfix for register call decorator    
+
+Sat 05 Jul 2025 04:13 PM EEST  
+dbaas_site:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) added role apply button to the admin panel. hotfix    
+
+Sat 05 Jul 2025 03:40 PM EEST  
+dbaas_site:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) added role apply button to the admin panel    
+
+Wed 02 Jul 2025 01:36 AM EEST  
+dbaas_backend:
+[OBL-359](https://github.com/Areso/Oblache/issues/359): move DB logic from /list_regions to a separate layer. improved repo class    
+
+Wed 02 Jul 2025 01:28 AM EEST  
+dbaas_backend:
+[OBL-359](https://github.com/Areso/Oblache/issues/359): move DB logic from /list_regions to a separate layer. improved naming    
+
+Wed 02 Jul 2025 01:26 AM EEST  
+dbaas_backend:
+[OBL-359](https://github.com/Areso/Oblache/issues/359): move DB logic from /list_regions to a separate layer. hotfix    
+
+Wed 02 Jul 2025 01:25 AM EEST  
+dbaas_backend:
+[OBL-359](https://github.com/Areso/Oblache/issues/359): move DB logic from /list_regions to a separate layer    
+
+Wed 02 Jul 2025 01:24 AM EEST  
+dbaas_backend:
+[OBL-359](https://github.com/Areso/Oblache/issues/359): move DB logic from /list_regions to a separate layer    
+
+Wed 02 Jul 2025 01:01 AM EEST  
+dbaas_backend:
+[OBL-358](https://github.com/Areso/Oblache/issues/358): simplified /probe endpoint    
+
+Wed 02 Jul 2025 12:57 AM EEST  
+dbaas_backend:
+[OBL-357](https://github.com/Areso/Oblache/issues/357): move DB logic from /list_dbenvs to a separate layer    
+
+Wed 02 Jul 2025 12:48 AM EEST  
+dbaas_backend:
+[OBL-356](https://github.com/Areso/Oblache/issues/356) move DB logic from /list_dbversions to a separate layer    
+
+Wed 02 Jul 2025 12:47 AM EEST  
+dbaas_backend:
+[OBL-356](https://github.com/Areso/Oblache/issues/356) move DB logic from /list_dbversions to a separate layer    
+
+Wed 02 Jul 2025 12:38 AM EEST  
+dbaas_backend:
+[OBL-355](https://github.com/Areso/Oblache/issues/355) try to move DB logic to separate layer. /list_dbtypes is nice and clean now    
+
+Wed 02 Jul 2025 12:37 AM EEST  
+dbaas_backend:
+[OBL-355](https://github.com/Areso/Oblache/issues/355) try to move DB logic to separate layer. /list_dbtypes are now nice and clean    
+
+Wed 02 Jul 2025 12:29 AM EEST  
+dbaas_backend:
+[OBL-355](https://github.com/Areso/Oblache/issues/355) try to move DB logic to separate layer. finalyze    
+
+Wed 02 Jul 2025 12:27 AM EEST  
+dbaas_backend:
+[OBL-355](https://github.com/Areso/Oblache/issues/355) try to move DB logic to separate layer. hotfix    
+
+Wed 02 Jul 2025 12:25 AM EEST  
+dbaas_backend:
+[OBL-355](https://github.com/Areso/Oblache/issues/355) try to move DB logic to separate layer. hotfix    
+
+Wed 02 Jul 2025 12:24 AM EEST  
+dbaas_backend:
+[OBL-355](https://github.com/Areso/Oblache/issues/355) try to move DB logic to separate layer. hotfix    
+
+Wed 02 Jul 2025 12:18 AM EEST  
+dbaas_backend:
+[OBL-355](https://github.com/Areso/Oblache/issues/355) try to move DB logic to separate layer. hotfix    
+
+Wed 02 Jul 2025 12:17 AM EEST  
+dbaas_backend:
+[OBL-355](https://github.com/Areso/Oblache/issues/355) try to move DB logic to separate layer. hotfix    
+
+Wed 02 Jul 2025 12:16 AM EEST  
+dbaas_backend:
+[OBL-355](https://github.com/Areso/Oblache/issues/355) try to move DB logic to separate layer. hotfix    
+
+Wed 02 Jul 2025 12:07 AM EEST  
+dbaas_backend:
+[OBL-355](https://github.com/Areso/Oblache/issues/355) try to move DB logic to separate layer    
+
+Tue 01 Jul 2025 11:46 PM EEST  
+dbaas_site:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) added button to apply the role    
+
+Tue 01 Jul 2025 11:44 PM EEST  
+dbaas_backend:
+[OBL-353](https://github.com/Areso/Oblache/issues/353) updated a bit the contract to microservice    
+
 Mon 23 Jun 2025 10:33 PM EEST  
 dbaas_backend:
 [OBL-353](https://github.com/Areso/Oblache/issues/353) added host's history field    
