@@ -1,4 +1,8 @@
 # Release notes
+Thu 24 Jul 2025 11:13 PM EEST  
+dbaas_backend:
+[OBL-377](https://github.com/Areso/Oblache/issues/377) now new hosts are created with is_enabled=0 by default    
+
 Thu 24 Jul 2025 09:48 PM EEST  
 paas_server_lifecycle:
 [OBL-382](https://github.com/Areso/Oblache/issues/382) added installation doc    
