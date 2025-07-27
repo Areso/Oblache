@@ -1,4 +1,8 @@
 # Release notes
+Sun 27 Jul 2025 09:04 PM EEST  
+paas_server_role_applier:
+[OBL-389](https://github.com/Areso/Oblache/issues/389) fixed typing error    
+
 Sun 27 Jul 2025 09:01 PM EEST  
 paas_server_role_applier:
 [OBL-389](https://github.com/Areso/Oblache/issues/389) added pack_purge var    
