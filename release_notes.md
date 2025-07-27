@@ -1,4 +1,8 @@
 # Release notes
+Mon 28 Jul 2025 01:40 AM EEST  
+docker_creator:
+[OBL-394](https://github.com/Areso/Oblache/issues/394) fix get_host logic    
+
 Mon 28 Jul 2025 01:33 AM EEST  
 docker_creator:
 [OBL-393](https://github.com/Areso/Oblache/issues/393) - check free ports on the host    
