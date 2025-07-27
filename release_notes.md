@@ -1,4 +1,8 @@
 # Release notes
+Sun 27 Jul 2025 11:31 PM EEST  
+dbaas_site:
+[OBL-391](https://github.com/Areso/Oblache/issues/391) - endpoint is disabled handling added for db_create site_deploy docker_create    
+
 Sun 27 Jul 2025 10:51 PM EEST  
 dbaas_site:
 [OBL-390](https://github.com/Areso/Oblache/issues/390) added error handling in WebUI if no host available in the selected region    
