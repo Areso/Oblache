@@ -1,4 +1,8 @@
 # Release notes
+Sun 27 Jul 2025 10:51 PM EEST  
+dbaas_site:
+[OBL-390](https://github.com/Areso/Oblache/issues/390) added error handling in WebUI if no host available in the selected region    
+
 Sun 27 Jul 2025 10:34 PM EEST  
 dbaas_backend:
 [OBL-390](https://github.com/Areso/Oblache/issues/390) added hosts available check for DCE product    
