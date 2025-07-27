@@ -1,4 +1,8 @@
 # Release notes
+Sun 27 Jul 2025 10:34 PM EEST  
+dbaas_backend:
+[OBL-390](https://github.com/Areso/Oblache/issues/390) added hosts available check for DCE product    
+
 Sun 27 Jul 2025 09:04 PM EEST  
 paas_server_role_applier:
 [OBL-389](https://github.com/Areso/Oblache/issues/389) fixed typing error    
