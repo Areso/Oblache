@@ -1,4 +1,8 @@
 # Release notes
+Sun 27 Jul 2025 08:40 PM EEST  
+paas_server_role_applier:
+[OBL-389](https://github.com/Areso/Oblache/issues/389) added to paas_role_applier Docker host    
+
 Thu 24 Jul 2025 11:13 PM EEST  
 dbaas_backend:
 [OBL-377](https://github.com/Areso/Oblache/issues/377) now new hosts are created with is_enabled=0 by default    
