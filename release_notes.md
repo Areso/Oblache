@@ -1,4 +1,8 @@
 # Release notes
+Mon 28 Jul 2025 01:33 AM EEST  
+docker_creator:
+[OBL-393](https://github.com/Areso/Oblache/issues/393) - check free ports on the host    
+
 Sun 27 Jul 2025 11:33 PM EEST  
 dbaas_backend:
 [OBL-391](https://github.com/Areso/Oblache/issues/391) added migration for localization entry    
