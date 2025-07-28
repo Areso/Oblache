@@ -1,4 +1,8 @@
 # Release notes
+Mon 28 Jul 2025 09:47 PM EEST  
+dbaas_backend:
+[OBL-398](https://github.com/Areso/Oblache/issues/398) added /role_apply endpoint for pipelines    
+
 Mon 28 Jul 2025 09:35 PM EEST  
 dbaas_backend:
 try to decouple logic from /host_role_apply    
