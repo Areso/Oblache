@@ -1,4 +1,8 @@
 # Release notes
+Mon 28 Jul 2025 09:35 PM EEST  
+dbaas_backend:
+try to decouple logic from /host_role_apply    
+
 Mon 28 Jul 2025 09:01 PM EEST  
 dbaas_backend:
 [OBL-397](https://github.com/Areso/Oblache/issues/397) now Docker eraser is working    
