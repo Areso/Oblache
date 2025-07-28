@@ -1,4 +1,8 @@
 # Release notes
+Mon 28 Jul 2025 11:15 AM EEST  
+docker_creator:
+[OBL-396](https://github.com/Areso/Oblache/issues/396) debug    
+
 Mon 28 Jul 2025 10:57 AM EEST  
 docker_creator:
 [OBL-396](https://github.com/Areso/Oblache/issues/396) move to docker_compose_v2    
