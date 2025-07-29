@@ -1,4 +1,8 @@
 # Release notes
+Tue 29 Jul 2025 09:36 PM EEST  
+paas_server_role_applier:
+[OBL-385](https://github.com/Areso/Oblache/issues/385) add origin to the history msg    
+
 Tue 29 Jul 2025 09:16 PM EEST  
 paas_server_lifecycle:
 [OBL-385](https://github.com/Areso/Oblache/issues/385) add history update message it's origin - server lifecycle    
