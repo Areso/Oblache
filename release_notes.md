@@ -1,4 +1,8 @@
 # Release notes
+Tue 29 Jul 2025 07:16 PM EEST  
+dbaas_backend:
+[OBL-398](https://github.com/Areso/Oblache/issues/398) now adding a host also invokes role apply in a threaded mode. hotfix thread invocation    
+
 Tue 29 Jul 2025 07:05 PM EEST  
 dbaas_backend:
 [OBL-398](https://github.com/Areso/Oblache/issues/398) now adding a host also invokes role apply in a threaded mode    
