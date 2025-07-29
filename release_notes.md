@@ -1,4 +1,8 @@
 # Release notes
+Tue 29 Jul 2025 09:38 PM EEST  
+paas_server_role_applier:
+[OBL-400](https://github.com/Areso/Oblache/issues/400) added delay to release apt lock    
+
 Tue 29 Jul 2025 09:36 PM EEST  
 paas_server_role_applier:
 [OBL-385](https://github.com/Areso/Oblache/issues/385) add origin to the history msg    
