@@ -1,4 +1,8 @@
 # Release notes
+Wed 30 Jul 2025 12:38 AM EEST  
+dbaas_site:
+don't update translations for non-existing elements in admin panel    
+
 Tue 29 Jul 2025 11:34 PM EEST  
 dbaas_backend:
 [OBL-402](https://github.com/Areso/Oblache/issues/402) added history to /host_get properties    
