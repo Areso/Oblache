@@ -1,4 +1,8 @@
 # Release notes
+Tue 29 Jul 2025 11:34 PM EEST  
+dbaas_backend:
+[OBL-402](https://github.com/Areso/Oblache/issues/402) added history to /host_get properties    
+
 Tue 29 Jul 2025 11:13 PM EEST  
 paas_server_role_applier:
 [OBL-399](https://github.com/Areso/Oblache/issues/399) try to add retries and delay options    
