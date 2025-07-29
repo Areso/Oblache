@@ -1,4 +1,8 @@
 # Release notes
+Wed 30 Jul 2025 01:27 AM EEST  
+paas_server_role_applier:
+added delay and retry for Docker role    
+
 Wed 30 Jul 2025 12:38 AM EEST  
 dbaas_site:
 don't update translations for non-existing elements in admin panel    
