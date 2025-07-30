@@ -1,4 +1,8 @@
 # Release notes
+Wed 30 Jul 2025 11:36 PM EEST  
+paas_server_role_applier:
+[OBL-403](https://github.com/Areso/Oblache/issues/403). Add is_enabled property upd and try to fix [OBL-399](https://github.com/Areso/Oblache/issues/399) while fuser dpkg/lock-frontend    
+
 Wed 30 Jul 2025 11:27 PM EEST  
 paas_server_lifecycle:
 [OBL-403](https://github.com/Areso/Oblache/issues/403) added msg before invocation of the playbook. Hotfix is_enabled property    
