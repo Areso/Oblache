@@ -1,4 +1,8 @@
 # Release notes
+Wed 30 Jul 2025 11:27 PM EEST  
+paas_server_lifecycle:
+[OBL-403](https://github.com/Areso/Oblache/issues/403) added msg before invocation of the playbook. Hotfix is_enabled property    
+
 Wed 30 Jul 2025 10:43 PM EEST  
 paas_server_lifecycle:
 [OBL-403](https://github.com/Areso/Oblache/issues/403) added msg before invocation of the playbook    
