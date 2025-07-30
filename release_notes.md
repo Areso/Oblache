@@ -1,4 +1,8 @@
 # Release notes
+Wed 30 Jul 2025 10:21 PM EEST  
+paas_server_role_applier:
+[OBL-403](https://github.com/Areso/Oblache/issues/403) added msg before running the Role Applier    
+
 Wed 30 Jul 2025 01:27 AM EEST  
 paas_server_role_applier:
 added delay and retry for Docker role    
