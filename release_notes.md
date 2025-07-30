@@ -1,4 +1,8 @@
 # Release notes
+Thu 31 Jul 2025 12:40 AM EEST  
+paas_server_role_applier:
+[OBL-399](https://github.com/Areso/Oblache/issues/399) added retries    
+
 Thu 31 Jul 2025 12:12 AM EEST  
 paas_server_role_applier:
 [OBL-403](https://github.com/Areso/Oblache/issues/403). Fix host property update SQL    
