@@ -1,4 +1,8 @@
 # Release notes
+Thu 31 Jul 2025 01:07 PM EEST  
+paas_server_role_applier:
+[OBL-404](https://github.com/Areso/Oblache/issues/404) fix pbrun    
+
 Thu 31 Jul 2025 09:27 AM EEST  
 paas_server_role_applier:
 [OBL-404](https://github.com/Areso/Oblache/issues/404) added database role to the role applier service    
