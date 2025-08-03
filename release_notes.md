@@ -1,4 +1,8 @@
 # Release notes
+Sun 03 Aug 2025 10:10 PM EEST  
+dbaas_backend:
+[OBL-406](https://github.com/Areso/Oblache/issues/406) try to move to routes some logic    
+
 Thu 31 Jul 2025 01:12 PM EEST  
 paas_server_role_applier:
 [OBL-404](https://github.com/Areso/Oblache/issues/404) fix pbrun    
