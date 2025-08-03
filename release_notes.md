@@ -1,4 +1,8 @@
 # Release notes
+Sun 03 Aug 2025 11:24 PM EEST  
+dbaas_backend:
+[OBL-400](https://github.com/Areso/Oblache/issues/400) added /host_delete message to the history    
+
 Sun 03 Aug 2025 11:01 PM EEST  
 dbaas_backend:
 [OBL-406](https://github.com/Areso/Oblache/issues/406) enough for today    
