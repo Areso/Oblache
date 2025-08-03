@@ -1,4 +1,8 @@
 # Release notes
+Sun 03 Aug 2025 10:27 PM EEST  
+dbaas_backend:
+[OBL-406](https://github.com/Areso/Oblache/issues/406) try to move to routes some logic    
+
 Sun 03 Aug 2025 10:26 PM EEST  
 dbaas_backend:
 [OBL-406](https://github.com/Areso/Oblache/issues/406) try to move to routes some logic    
