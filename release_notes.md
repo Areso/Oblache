@@ -1,4 +1,8 @@
 # Release notes
+Sun 03 Aug 2025 11:48 PM EEST  
+dbaas_backend:
+[OBL-407](https://github.com/Areso/Oblache/issues/407) added history messages when enabling and disabling a host    
+
 Sun 03 Aug 2025 11:24 PM EEST  
 dbaas_backend:
 [OBL-400](https://github.com/Areso/Oblache/issues/400) added /host_delete message to the history    
