@@ -1,4 +1,8 @@
 # Release notes
+Thu Aug  7 01:27 AM EEST 2025  
+dbaas_backend:
+[OBL-410](https://github.com/Areso/Oblache/issues/410) add history message when backup is ordered. added debug to the repo    
+
 Thu Aug  7 01:26 AM EEST 2025  
 dbaas_backend:
 [OBL-410](https://github.com/Areso/Oblache/issues/410) add history message when backup is ordered. added debug to the repo    
