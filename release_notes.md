@@ -1,4 +1,8 @@
 # Release notes
+Wed Aug  6 11:33 PM EEST 2025  
+dbaas_site:
+[OBL-409](https://github.com/Areso/Oblache/issues/409) database backup button on the site    
+
 Sun 03 Aug 2025 11:53 PM EEST  
 dbaas_backend:
 [OBL-407](https://github.com/Areso/Oblache/issues/407) added history messages when enabling and disabling a host. Hotfix copypaste err in calling repo    
