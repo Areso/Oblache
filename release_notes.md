@@ -1,4 +1,8 @@
 # Release notes
+Thu Aug  7 12:21 AM EEST 2025  
+dbaas_backend:
+[OBL-410](https://github.com/Areso/Oblache/issues/410) add history message when backup is ordered    
+
 Wed Aug  6 11:33 PM EEST 2025  
 dbaas_site:
 [OBL-409](https://github.com/Areso/Oblache/issues/409) database backup button on the site    
