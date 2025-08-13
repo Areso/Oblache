@@ -1,4 +1,8 @@
 # Release notes
+Wed 13 Aug 2025 11:30 PM EEST  
+dbaas_backend:
+[OBL-413](https://github.com/Areso/Oblache/issues/413) fixed host_repo create_new    
+
 Wed 13 Aug 2025 11:20 PM EEST  
 dbaas_backend:
 [OBL-413](https://github.com/Areso/Oblache/issues/413) fixed are_dbhosts_available    
