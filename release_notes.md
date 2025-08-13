@@ -1,4 +1,8 @@
 # Release notes
+Wed 13 Aug 2025 11:59 PM EEST  
+dbaas_backend:
+[OBL-413](https://github.com/Areso/Oblache/issues/413) enabled debug in set_vps_capacity    
+
 Wed 13 Aug 2025 11:46 PM EEST  
 dbaas_backend:
 [OBL-413](https://github.com/Areso/Oblache/issues/413) disabled debug msgs    
