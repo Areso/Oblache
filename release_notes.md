@@ -1,4 +1,8 @@
 # Release notes
+Thu 14 Aug 2025 12:39 AM EEST  
+paas_server_role_applier:
+[OBL-414](https://github.com/Areso/Oblache/issues/414) added db_agent role for database playbook    
+
 Thu 14 Aug 2025 12:06 AM EEST  
 dbaas_backend:
 [OBL-413](https://github.com/Areso/Oblache/issues/413) fixed bug in invocation of host_repo.create_new()    
