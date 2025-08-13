@@ -1,4 +1,8 @@
 # Release notes
+Wed 13 Aug 2025 10:54 PM EEST  
+dbaas_backend:
+[OBL-413](https://github.com/Areso/Oblache/issues/413) added VPS environment target    
+
 Wed 13 Aug 2025 09:13 PM EEST  
 dbaas_backend:
 diverge    
