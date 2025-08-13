@@ -1,4 +1,8 @@
 # Release notes
+Wed 13 Aug 2025 09:13 PM EEST  
+dbaas_backend:
+diverge    
+
 Wed 13 Aug 2025 08:34 PM EEST  
 dbaas_backend:
 fix current state    
