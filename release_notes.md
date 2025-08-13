@@ -1,4 +1,8 @@
 # Release notes
+Thu 14 Aug 2025 01:13 AM EEST  
+paas_server_role_applier:
+[OBL-414](https://github.com/Areso/Oblache/issues/414) fixed path to config template    
+
 Thu 14 Aug 2025 01:09 AM EEST  
 paas_server_role_applier:
 [OBL-414](https://github.com/Areso/Oblache/issues/414) added config file    
