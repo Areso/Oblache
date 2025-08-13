@@ -1,4 +1,8 @@
 # Release notes
+Thu 14 Aug 2025 12:06 AM EEST  
+dbaas_backend:
+[OBL-413](https://github.com/Areso/Oblache/issues/413) fixed bug in invocation of host_repo.create_new()    
+
 Thu 14 Aug 2025 12:02 AM EEST  
 dbaas_backend:
 [OBL-413](https://github.com/Areso/Oblache/issues/413) enabled debug in set_vps_capacity    
