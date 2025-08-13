@@ -1,4 +1,8 @@
 # Release notes
+Wed 13 Aug 2025 08:34 PM EEST  
+dbaas_backend:
+fix current state    
+
 Sat 09 Aug 2025 01:31 AM EEST  
 paas_db_backuper:
 [OBL-411](https://github.com/Areso/Oblache/issues/411) updated paas db backuper    
