@@ -1,4 +1,8 @@
 # Release notes
+Thu 14 Aug 2025 12:42 AM EEST  
+paas_server_role_applier:
+[OBL-414](https://github.com/Areso/Oblache/issues/414) added README    
+
 Thu 14 Aug 2025 12:39 AM EEST  
 paas_server_role_applier:
 [OBL-414](https://github.com/Areso/Oblache/issues/414) added db_agent role for database playbook    
