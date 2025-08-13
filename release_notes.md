@@ -1,4 +1,8 @@
 # Release notes
+Wed 13 Aug 2025 11:46 PM EEST  
+dbaas_backend:
+[OBL-413](https://github.com/Areso/Oblache/issues/413) fied typo in def set_vps_max_capacity_to_1    
+
 Wed 13 Aug 2025 11:41 PM EEST  
 dbaas_backend:
 [OBL-413](https://github.com/Areso/Oblache/issues/413) added debug    
