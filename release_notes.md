@@ -1,4 +1,8 @@
 # Release notes
+Fri 15 Aug 2025 12:39 AM EEST  
+dbaas_db_eraser:
+[OBL-287](https://github.com/Areso/Oblache/issues/287) streamlined account update when a db is deleted with success    
+
 Fri 15 Aug 2025 12:37 AM EEST  
 dbaas_db_eraser:
 [OBL-287](https://github.com/Areso/Oblache/issues/287) streamlined account update when a db is deleted with success    
