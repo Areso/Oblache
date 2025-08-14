@@ -1,4 +1,8 @@
 # Release notes
+Fri 15 Aug 2025 12:16 AM EEST  
+dbaas_backend:
+[OBL-287](https://github.com/Areso/Oblache/issues/287) streamlined logic for is_allowed_db_creation change    
+
 Fri 15 Aug 2025 12:14 AM EEST  
 dbaas_backend:
 [OBL-287](https://github.com/Areso/Oblache/issues/287) streamlined logic for is_allowed_db_creation change    
