@@ -1,4 +1,8 @@
 # Release notes
+Thu 14 Aug 2025 10:55 PM EEST  
+dbaas_site:
+[OBL-415](https://github.com/Areso/Oblache/issues/415) fix error handling on Portal    
+
 Thu 14 Aug 2025 01:13 AM EEST  
 paas_server_role_applier:
 [OBL-414](https://github.com/Areso/Oblache/issues/414) fixed path to config template    
