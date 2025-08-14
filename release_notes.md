@@ -1,4 +1,8 @@
 # Release notes
+Fri 15 Aug 2025 12:14 AM EEST  
+dbaas_backend:
+[OBL-287](https://github.com/Areso/Oblache/issues/287) streamlined logic for is_allowed_db_creation change    
+
 Thu 14 Aug 2025 10:55 PM EEST  
 dbaas_site:
 [OBL-415](https://github.com/Areso/Oblache/issues/415) fix error handling on Portal    
