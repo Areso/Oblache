@@ -1,4 +1,8 @@
 # Release notes
+Fri 15 Aug 2025 10:01 PM EEST  
+dbaas_db_locker:
+[OBL-287](https://github.com/Areso/Oblache/issues/287) streamlined process of unblocking user    
+
 Fri 15 Aug 2025 12:48 AM EEST  
 dbaas_db_eraser:
 [OBL-287](https://github.com/Areso/Oblache/issues/287) streamlined account update when a db is deleted with success    
