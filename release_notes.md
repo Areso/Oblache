@@ -1,4 +1,8 @@
 # Release notes
+Sat 16 Aug 2025 12:53 AM EEST  
+dbaas_backend:
+moved out first decorator    
+
 Sat 16 Aug 2025 12:31 AM EEST  
 dbaas_backend:
 small refactoring    
