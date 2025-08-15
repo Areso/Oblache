@@ -1,4 +1,8 @@
 # Release notes
+Sat 16 Aug 2025 12:31 AM EEST  
+dbaas_backend:
+small refactoring    
+
 Fri 15 Aug 2025 10:09 PM EEST  
 dbaas_db_locker:
 fixed urestart    
