@@ -1,4 +1,8 @@
 # Release notes
+Sat 16 Aug 2025 08:43 PM EEST  
+docker_creator:
+[OBL-418](https://github.com/Areso/Oblache/issues/418) added resource management to docker creator    
+
 Sat 16 Aug 2025 08:28 PM EEST  
 docker_eraser:
 [OBL-418](https://github.com/Areso/Oblache/issues/418) added resource management to docker container eraser    
