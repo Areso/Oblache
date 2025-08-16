@@ -1,4 +1,8 @@
 # Release notes
+Sat 16 Aug 2025 04:50 AM EEST  
+dbaas_backend:
+[OBL-280](https://github.com/Areso/Oblache/issues/280) try to remove lock function    
+
 Sat 16 Aug 2025 03:30 AM EEST  
 paas_site_destroyer:
 [OBL-280](https://github.com/Areso/Oblache/issues/280) try to fix logic behind resource management in site_destroyer    
