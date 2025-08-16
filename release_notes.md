@@ -1,5 +1,9 @@
 # Release notes
 Sat 16 Aug 2025 03:18 PM EEST  
+paas_site_destroyer:
+[OBL-280](https://github.com/Areso/Oblache/issues/280) unified resource logic with Orc    
+
+Sat 16 Aug 2025 03:18 PM EEST  
 dbaas_backend:
 reversed unpublish change    
 
