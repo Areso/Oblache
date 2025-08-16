@@ -1,4 +1,8 @@
 # Release notes
+Sat 16 Aug 2025 08:44 PM EEST  
+docker_creator:
+updated urestart    
+
 Sat 16 Aug 2025 08:43 PM EEST  
 docker_creator:
 [OBL-418](https://github.com/Areso/Oblache/issues/418) added resource management to docker creator    
