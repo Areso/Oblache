@@ -1,4 +1,8 @@
 # Release notes
+Sat 16 Aug 2025 06:06 PM EEST  
+dbaas_backend:
+[OBL-418](https://github.com/Areso/Oblache/issues/418) trying to fix Container's resource management    
+
 Sat 16 Aug 2025 05:00 PM EEST  
 dbaas_site:
 [OBL-417](https://github.com/Areso/Oblache/issues/417) updated status page with containers    
