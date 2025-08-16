@@ -1,4 +1,8 @@
 # Release notes
+Sat 16 Aug 2025 07:51 PM EEST  
+dbaas_backend:
+[OBL-418](https://github.com/Areso/Oblache/issues/418) streamline 403 err on backend    
+
 Sat 16 Aug 2025 06:06 PM EEST  
 dbaas_backend:
 [OBL-418](https://github.com/Areso/Oblache/issues/418) trying to fix Container's resource management    
