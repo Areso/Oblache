@@ -1,4 +1,8 @@
 # Release notes
+Sat 16 Aug 2025 08:28 PM EEST  
+docker_eraser:
+[OBL-418](https://github.com/Areso/Oblache/issues/418) added resource management to docker container eraser    
+
 Sat 16 Aug 2025 07:53 PM EEST  
 dbaas_site:
 [OBL-418](https://github.com/Areso/Oblache/issues/418) error handling if no container creation allowed    
