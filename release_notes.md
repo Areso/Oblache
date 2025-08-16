@@ -1,4 +1,8 @@
 # Release notes
+Sat 16 Aug 2025 03:03 PM EEST  
+dbaas_backend:
+[OBL-280](https://github.com/Areso/Oblache/issues/280) try to fix is_site_creation_allowed. fix invocation params    
+
 Sat 16 Aug 2025 02:42 PM EEST  
 dbaas_backend:
 [OBL-280](https://github.com/Areso/Oblache/issues/280) try to fix is_site_creation_allowed    
