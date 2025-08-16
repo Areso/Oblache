@@ -1,4 +1,8 @@
 # Release notes
+Sat 16 Aug 2025 09:46 PM EEST  
+docker_eraser:
+fix cursor is not connected    
+
 Sat 16 Aug 2025 09:42 PM EEST  
 docker_eraser:
 fix cursor is not connected    
