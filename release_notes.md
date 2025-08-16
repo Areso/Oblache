@@ -1,4 +1,8 @@
 # Release notes
+Sat 16 Aug 2025 03:30 AM EEST  
+paas_site_destroyer:
+[OBL-280](https://github.com/Areso/Oblache/issues/280) try to fix logic behind resource management in site_destroyer    
+
 Sat 16 Aug 2025 01:44 AM EEST  
 dbaas_backend:
 [OBL-280](https://github.com/Areso/Oblache/issues/280) try to fix is_site_creation_allowed    
