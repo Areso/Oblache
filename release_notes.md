@@ -1,4 +1,8 @@
 # Release notes
+Sat 16 Aug 2025 07:53 PM EEST  
+dbaas_site:
+[OBL-418](https://github.com/Areso/Oblache/issues/418) error handling if no container creation allowed    
+
 Sat 16 Aug 2025 07:51 PM EEST  
 dbaas_backend:
 [OBL-418](https://github.com/Areso/Oblache/issues/418) streamline 403 err on backend    
