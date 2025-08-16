@@ -1,4 +1,8 @@
 # Release notes
+Sat 16 Aug 2025 02:09 PM EEST  
+dbaas_site:
+[OBL-280](https://github.com/Areso/Oblache/issues/280) handling backend err you are not allowed to create new webpages    
+
 Sat 16 Aug 2025 04:50 AM EEST  
 dbaas_backend:
 [OBL-280](https://github.com/Areso/Oblache/issues/280) try to remove lock function    
