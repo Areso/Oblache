@@ -1,4 +1,8 @@
 # Release notes
+Sun 17 Aug 2025 09:21 PM EEST  
+dbaas_backend:
+[OBL-53](https://github.com/Areso/Oblache/issues/53). fix are_dbhosts_available    
+
 Sun 17 Aug 2025 08:35 PM EEST  
 paas_server_role_applier:
 [OBL-53](https://github.com/Areso/Oblache/issues/53) added role for setup PG. added lock manager    
