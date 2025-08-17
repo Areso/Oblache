@@ -1,4 +1,8 @@
 # Release notes
+Sun 17 Aug 2025 08:13 PM EEST  
+paas_server_role_applier:
+[OBL-53](https://github.com/Areso/Oblache/issues/53) added role for setup PG    
+
 Sun 17 Aug 2025 08:12 PM EEST  
 dbaas_backend:
 [OBL-53](https://github.com/Areso/Oblache/issues/53) added postgres for role applier    
