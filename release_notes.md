@@ -1,4 +1,8 @@
 # Release notes
+Thu 21 Aug 2025 01:36 AM EEST  
+dbaas_backend:
+[OBL-424](https://github.com/Areso/Oblache/issues/424) env_type added to admin/hosts    
+
 Wed 20 Aug 2025 10:11 PM EEST  
 paas_server_role_applier:
 [OBL-420](https://github.com/Areso/Oblache/issues/420) added pymongo dependency    
