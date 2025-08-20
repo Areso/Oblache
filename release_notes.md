@@ -1,4 +1,8 @@
 # Release notes
+Wed 20 Aug 2025 08:31 PM EEST  
+paas_server_role_applier:
+[OBL-420](https://github.com/Areso/Oblache/issues/420) added mondodb role draft    
+
 Sun 17 Aug 2025 09:39 PM EEST  
 dbaas_backend:
 [OBL-53](https://github.com/Areso/Oblache/issues/53). fix are_dbhosts_available    
