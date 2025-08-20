@@ -1,4 +1,8 @@
 # Release notes
+Wed 20 Aug 2025 08:50 PM EEST  
+dbaas_backend:
+[OBL-423](https://github.com/Areso/Oblache/issues/423) id purpose now are returned to admin/hosts    
+
 Wed 20 Aug 2025 08:31 PM EEST  
 dbaas_backend:
 [OBL-420](https://github.com/Areso/Oblache/issues/420) added general mongodb support    
