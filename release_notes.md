@@ -1,5 +1,9 @@
 # Release notes
 Wed 20 Aug 2025 08:31 PM EEST  
+dbaas_backend:
+[OBL-420](https://github.com/Areso/Oblache/issues/420) added general mongodb support    
+
+Wed 20 Aug 2025 08:31 PM EEST  
 paas_server_role_applier:
 [OBL-420](https://github.com/Areso/Oblache/issues/420) added mondodb role draft    
 
