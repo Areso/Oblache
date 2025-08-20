@@ -1,4 +1,8 @@
 # Release notes
+Wed 20 Aug 2025 09:45 PM EEST  
+paas_server_role_applier:
+[OBL-420](https://github.com/Areso/Oblache/issues/420) fixed mongod handler    
+
 Wed 20 Aug 2025 09:42 PM EEST  
 paas_server_role_applier:
 [OBL-420](https://github.com/Areso/Oblache/issues/420) finished with security part, restricted admin to localhost    
