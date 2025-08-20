@@ -1,4 +1,8 @@
 # Release notes
+Thu 21 Aug 2025 01:37 AM EEST  
+dbaas_site:
+[OBL-425](https://github.com/Areso/Oblache/issues/425) added env_type to admin/hosts page    
+
 Thu 21 Aug 2025 01:36 AM EEST  
 dbaas_backend:
 [OBL-424](https://github.com/Areso/Oblache/issues/424) env_type added to admin/hosts    
