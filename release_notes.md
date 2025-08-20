@@ -1,6 +1,10 @@
 # Release notes
 Wed 20 Aug 2025 09:04 PM EEST  
 dbaas_site:
+removed delete button since we moved it to the host details page    
+
+Wed 20 Aug 2025 09:04 PM EEST  
+dbaas_site:
 [OBL-423](https://github.com/Areso/Oblache/issues/423) added id_purpose. fix columnname    
 
 Wed 20 Aug 2025 09:02 PM EEST  
