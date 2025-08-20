@@ -1,4 +1,8 @@
 # Release notes
+Wed 20 Aug 2025 09:40 PM EEST  
+paas_server_role_applier:
+[OBL-420](https://github.com/Areso/Oblache/issues/420) finished with security part    
+
 Wed 20 Aug 2025 09:36 PM EEST  
 paas_server_role_applier:
 [OBL-420](https://github.com/Areso/Oblache/issues/420) finished with security part    
