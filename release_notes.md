@@ -1,4 +1,8 @@
 # Release notes
+Thu 21 Aug 2025 01:43 PM EEST  
+dbaas_site:
+[OBL-293](https://github.com/Areso/Oblache/issues/293) all pop-up messages now handled with one showMsg method    
+
 Thu 21 Aug 2025 01:37 AM EEST  
 dbaas_site:
 [OBL-425](https://github.com/Areso/Oblache/issues/425) added env_type to admin/hosts page    
