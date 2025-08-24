@@ -1,4 +1,8 @@
 # Release notes
+Sun 24 Aug 2025 12:23 PM EEST  
+dbaas_backend:
+[OBL-392](https://github.com/Areso/Oblache/issues/392) added endpoints_list to backend. fixed DBConnect util    
+
 Sun 24 Aug 2025 12:11 PM EEST  
 dbaas_backend:
 [OBL-392](https://github.com/Areso/Oblache/issues/392) added endpoints_list to backend    
