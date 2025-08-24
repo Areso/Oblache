@@ -1,4 +1,8 @@
 # Release notes
+Mon 25 Aug 2025 12:49 AM EEST  
+dbaas_backend:
+fix is_admins    
+
 Mon 25 Aug 2025 12:41 AM EEST  
 dbaas_site:
 [OBL-392](https://github.com/Areso/Oblache/issues/392) remove old code remove callback    
