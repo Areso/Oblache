@@ -1,4 +1,8 @@
 # Release notes
+Sun 24 Aug 2025 02:16 PM EEST  
+dbaas_backend:
+moved away from monolith is_admin    
+
 Sun 24 Aug 2025 01:31 PM EEST  
 dbaas_backend:
 [OBL-392](https://github.com/Areso/Oblache/issues/392) added endpoints_list to backend. fixed import in monolith    
