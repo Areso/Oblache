@@ -1,4 +1,8 @@
 # Release notes
+Sun 24 Aug 2025 12:11 PM EEST  
+dbaas_backend:
+[OBL-392](https://github.com/Areso/Oblache/issues/392) added endpoints_list to backend    
+
 Thu 21 Aug 2025 01:59 PM EEST  
 dbaas_site:
 [OBL-293](https://github.com/Areso/Oblache/issues/293) all pop-up messages now handled with one showMsg method    
