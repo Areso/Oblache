@@ -1,4 +1,8 @@
 # Release notes
+Sun 24 Aug 2025 01:29 PM EEST  
+dbaas_backend:
+[OBL-392](https://github.com/Areso/Oblache/issues/392) added endpoints_list to backend. added @login_required for /endpoints_list invocation    
+
 Sun 24 Aug 2025 01:09 PM EEST  
 dbaas_backend:
 [OBL-392](https://github.com/Areso/Oblache/issues/392) added endpoints_list to backend. try to move @login_required from monolith    
