@@ -1,4 +1,8 @@
 # Release notes
+Sun 24 Aug 2025 10:04 PM EEST  
+dbaas_backend:
+[OBL-392](https://github.com/Areso/Oblache/issues/392) added. fix endpoints.toggle    
+
 Sun 24 Aug 2025 09:59 PM EEST  
 dbaas_backend:
 [OBL-392](https://github.com/Areso/Oblache/issues/392) added. fix require_fields    
