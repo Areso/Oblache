@@ -1,4 +1,8 @@
 # Release notes
+Mon 25 Aug 2025 02:13 AM EEST  
+dbaas_backend:
+streamlined utils/decorators    
+
 Mon 25 Aug 2025 02:02 AM EEST  
 dbaas_backend:
 remove obsolete file    
