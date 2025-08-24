@@ -1,4 +1,8 @@
 # Release notes
+Sun 24 Aug 2025 09:22 PM EEST  
+dbaas_backend:
+[OBL-392](https://github.com/Areso/Oblache/issues/392) added. try to fix format of /endpoint_list response    
+
 Sun 24 Aug 2025 09:10 PM EEST  
 dbaas_backend:
 [OBL-392](https://github.com/Areso/Oblache/issues/392) added /endpoint_toggle fixed name of the function    
