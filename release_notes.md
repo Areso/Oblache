@@ -1,4 +1,8 @@
 # Release notes
+Sun 24 Aug 2025 09:31 PM EEST  
+dbaas_site:
+[OBL-392](https://github.com/Areso/Oblache/issues/392) try to fix onclick cell    
+
 Sun 24 Aug 2025 09:28 PM EEST  
 dbaas_site:
 [OBL-392](https://github.com/Areso/Oblache/issues/392) try to fix onclick property    
