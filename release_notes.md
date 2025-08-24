@@ -1,4 +1,8 @@
 # Release notes
+Sun 24 Aug 2025 09:09 PM EEST  
+dbaas_backend:
+[OBL-392](https://github.com/Areso/Oblache/issues/392) added /endpoint_toggle remove endpoint    
+
 Sun 24 Aug 2025 09:00 PM EEST  
 dbaas_site:
 [OBL-392](https://github.com/Areso/Oblache/issues/392) added draft for /endpoints    
