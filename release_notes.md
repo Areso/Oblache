@@ -1,4 +1,8 @@
 # Release notes
+Sun 24 Aug 2025 03:26 PM EEST  
+dbaas_backend:
+try to move out admin_required    
+
 Sun 24 Aug 2025 03:25 PM EEST  
 dbaas_backend:
 try to move out admin_required    
