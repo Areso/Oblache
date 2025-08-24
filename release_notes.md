@@ -1,4 +1,8 @@
 # Release notes
+Mon 25 Aug 2025 01:34 AM EEST  
+dbaas_site:
+[OBL-392](https://github.com/Areso/Oblache/issues/392) try to fix doubled onclick    
+
 Mon 25 Aug 2025 01:30 AM EEST  
 dbaas_backend:
 try to fix headers    
