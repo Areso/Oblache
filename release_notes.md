@@ -1,4 +1,8 @@
 # Release notes
+Sun 24 Aug 2025 09:59 PM EEST  
+dbaas_backend:
+[OBL-392](https://github.com/Areso/Oblache/issues/392) added. fix require_fields    
+
 Sun 24 Aug 2025 09:57 PM EEST  
 dbaas_site:
 [OBL-392](https://github.com/Areso/Oblache/issues/392) try to fix onclick cell    
