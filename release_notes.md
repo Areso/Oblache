@@ -1,4 +1,8 @@
 # Release notes
+Mon 25 Aug 2025 01:42 AM EEST  
+dbaas_site:
+deleted obsolete code    
+
 Mon 25 Aug 2025 01:41 AM EEST  
 dbaas_site:
 deleted obsolete code    
