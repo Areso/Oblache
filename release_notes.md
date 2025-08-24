@@ -1,4 +1,8 @@
 # Release notes
+Mon 25 Aug 2025 01:41 AM EEST  
+dbaas_site:
+deleted obsolete code    
+
 Mon 25 Aug 2025 01:34 AM EEST  
 dbaas_site:
 [OBL-392](https://github.com/Areso/Oblache/issues/392) try to fix doubled onclick    
