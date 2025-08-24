@@ -1,4 +1,8 @@
 # Release notes
+Mon 25 Aug 2025 02:02 AM EEST  
+dbaas_backend:
+remove obsolete file    
+
 Mon 25 Aug 2025 02:01 AM EEST  
 dbaas_backend:
 removed obsolete todo file    
