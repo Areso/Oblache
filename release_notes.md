@@ -1,4 +1,8 @@
 # Release notes
+Sun 24 Aug 2025 12:47 PM EEST  
+dbaas_backend:
+[OBL-392](https://github.com/Areso/Oblache/issues/392) added endpoints_list to backend. fixed repo method list()    
+
 Sun 24 Aug 2025 12:43 PM EEST  
 dbaas_backend:
 [OBL-392](https://github.com/Areso/Oblache/issues/392) added endpoints_list to backend. fixed invocation of ednpoints_repo    
