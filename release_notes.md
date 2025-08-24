@@ -1,4 +1,8 @@
 # Release notes
+Sun 24 Aug 2025 11:00 PM EEST  
+dbaas_backend:
+[OBL-392](https://github.com/Areso/Oblache/issues/392) added. fix endpoints.toggle is_connected    
+
 Sun 24 Aug 2025 10:27 PM EEST  
 dbaas_site:
 [OBL-392](https://github.com/Areso/Oblache/issues/392) try to fix onclick cell    
