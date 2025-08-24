@@ -1,4 +1,8 @@
 # Release notes
+Mon 25 Aug 2025 01:45 AM EEST  
+dbaas_backend:
+streamlined is_admin    
+
 Mon 25 Aug 2025 01:42 AM EEST  
 dbaas_site:
 deleted obsolete code    
