@@ -1,4 +1,8 @@
 # Release notes
+Mon 25 Aug 2025 12:07 AM EEST  
+dbaas_backend:
+fix is_admins    
+
 Sun 24 Aug 2025 11:57 PM EEST  
 dbaas_backend:
 [OBL-392](https://github.com/Areso/Oblache/issues/392) added. fix endpoints.toggle is_connected    
