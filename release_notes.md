@@ -1,4 +1,8 @@
 # Release notes
+Mon 25 Aug 2025 01:22 AM EEST  
+dbaas_site:
+[OBL-392](https://github.com/Areso/Oblache/issues/392) remove fix    
+
 Mon 25 Aug 2025 01:18 AM EEST  
 dbaas_backend:
 add debug    
