@@ -1,4 +1,8 @@
 # Release notes
+Mon 25 Aug 2025 01:59 AM EEST  
+dbaas_backend:
+hotfix host_disable    
+
 Mon 25 Aug 2025 01:51 AM EEST  
 dbaas_backend:
 streamlined is_admin    
