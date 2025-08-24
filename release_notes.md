@@ -1,4 +1,8 @@
 # Release notes
+Sun 24 Aug 2025 03:10 PM EEST  
+dbaas_backend:
+try to move out admin_required    
+
 Sun 24 Aug 2025 02:17 PM EEST  
 dbaas_backend:
 moved away from monolith is_admin. fix with mod function    
