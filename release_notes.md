@@ -1,4 +1,8 @@
 # Release notes
+Mon 25 Aug 2025 12:52 AM EEST  
+dbaas_backend:
+add debug    
+
 Mon 25 Aug 2025 12:49 AM EEST  
 dbaas_backend:
 fix is_admins    
