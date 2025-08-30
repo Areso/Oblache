@@ -1,4 +1,8 @@
 # Release notes
+Sat 30 Aug 2025 05:26 PM EEST  
+dbaas_backend:
+[OBL-431](https://github.com/Areso/Oblache/issues/431) preparations    
+
 Sat 30 Aug 2025 04:50 PM EEST  
 cms:
 update readme    
