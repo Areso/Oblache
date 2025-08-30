@@ -1,4 +1,8 @@
 # Release notes
+Sat 30 Aug 2025 04:48 PM EEST  
+cms:
+[OBL-387](https://github.com/Areso/Oblache/issues/387) local reload CMS, [OBL-432](https://github.com/Areso/Oblache/issues/432) date of the last change of the document    
+
 Mon 25 Aug 2025 02:13 AM EEST  
 dbaas_backend:
 streamlined utils/decorators    
