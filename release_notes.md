@@ -1,4 +1,8 @@
 # Release notes
+Sun 31 Aug 2025 12:09 AM EEST  
+dbaas_backend:
+[OBL-424](https://github.com/Areso/Oblache/issues/424) now supports mongodb check    
+
 Sat 30 Aug 2025 05:26 PM EEST  
 dbaas_backend:
 [OBL-431](https://github.com/Areso/Oblache/issues/431) preparations    
