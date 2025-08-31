@@ -1,4 +1,8 @@
 # Release notes
+Sun 31 Aug 2025 11:33 PM EEST  
+dbaas_db_eraser:
+[OBL-424](https://github.com/Areso/Oblache/issues/424) fixed role name    
+
 Sun 31 Aug 2025 10:05 PM EEST  
 dbaas_db_eraser:
 [OBL-424](https://github.com/Areso/Oblache/issues/424) added handling for dbagent for pg and mongo    
