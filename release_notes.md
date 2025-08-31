@@ -1,4 +1,8 @@
 # Release notes
+Sun 31 Aug 2025 12:20 PM EEST  
+dbaas_db_eraser:
+[OBL-424](https://github.com/Areso/Oblache/issues/424) added mongodb, postgres    
+
 Sun 31 Aug 2025 12:09 AM EEST  
 dbaas_backend:
 [OBL-424](https://github.com/Areso/Oblache/issues/424) now supports mongodb check    
