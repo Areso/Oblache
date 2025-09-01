@@ -67,11 +67,6 @@ class TestGET:
         allure.attach.file(attach, name=f"Report {datetime.today()}", attachment_type=allure.attachment_type.HTML)
         Checking.check_status_code(response, 200)
 
-    @allure.title('GET profile information.')
-    def test_get_profile(self):
-        response = API.get_profile(token=TestGET.token)
-        Checking.check_status_code(response, 200)
-
     @allure.title('GET list list_dbtypes.')
     def test_get_list_db_types(self):
         response = API.get_list_db_types()
@@ -97,11 +92,6 @@ class TestGET:
         response = API.get_bad_request()
         Checking.check_status_code(response, 404)
 
-    @allure.title('GET profile status.')
-    def test_get_status(self):
-        response = API.get_status(token=TestGET.token)
-        Checking.check_status_code(response, 200)
-
 
 @allure.suite('POST')
 class TestPOST:
@@ -115,6 +105,11 @@ class TestPOST:
     def test_get_token_and_body(self, get_token):
         TestPOST.token, TestPOST.body, TestPOST.new_password, TestPOST.old_password, TestPOST.email = get_token[0], \
             get_token[1], get_token[2], get_token[3], get_token[4]
+
+    @allure.title('POST check profile')
+    def test_get_status(self):
+        response = API.get_profile(token=TestPOST.token)
+        Checking.check_status_code(response, 200)
 
     @allure.title('POST registration for English language.')
     def test_post_registration_for_english_language(self):

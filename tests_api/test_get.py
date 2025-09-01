@@ -11,10 +11,6 @@ from .utils.checking import Checking
 from .utils.request import API
 
 
-@allure.epic('Connection DB')
-@allure.suite('Test Connection DB')
-@allure.severity(allure.severity_level.CRITICAL)
-
 @allure.suite('GET')
 class TestGET:
     token = None
@@ -31,11 +27,6 @@ class TestGET:
         attach = file_name
         allure.attach.file(attach, name=f"Report {datetime.today()}", attachment_type=allure.attachment_type.HTML)
         Checking.check_status_code(response, 200)
-
-#    @allure.title('GET profile information.')
-#    def test_get_profile(self):
-#        response = API.get_profile(token=TestGET.token)
-#        Checking.check_status_code(response, 200)
 
     @allure.title('GET list list_dbtypes.')
     def test_get_list_db_types(self):

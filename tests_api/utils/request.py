@@ -37,13 +37,13 @@ class API:
         return response
 
     @staticmethod
-    def get_profile(token: str):
+    def get_profile(token):
         """
         Get profile information.
         :param token:
         :return: Response
         """
-        response = HttpMethods.get(
+        response = HttpMethods.post(
             endpoint='/get_profile',
             token=token)
         auth_header = {"Authorization": f"{token}"}
@@ -784,7 +784,7 @@ class API:
             return response
 
     @staticmethod
-    def delete_db(db_uuid, token):
+    def post_db_delete(db_uuid, token):
         """
         :param db_uuid:
         :param token:
@@ -794,7 +794,7 @@ class API:
             db_uuid = {"db_uuid": f"{db_uuid}"}
             json_db_uuid = db_uuid
             response = HttpMethods.post(
-                endpoint='/',
+                endpoint='/db_delete',
                 body=json_db_uuid,
                 token=token)
             with allure.step('Endpoint: /db_delete'):
