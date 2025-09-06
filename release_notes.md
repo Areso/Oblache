@@ -1,4 +1,8 @@
 # Release notes
+Sat 06 Sep 2025 11:21 PM EEST  
+dbaas_backend:
+[OBL-436](https://github.com/Areso/Oblache/issues/436) now we send id_provider to hosts table when creating one    
+
 Sat 06 Sep 2025 09:26 PM EEST  
 dbaas_backend:
 [OBL-436](https://github.com/Areso/Oblache/issues/436) now we send id_provider in /host_create endpoint to executor    
