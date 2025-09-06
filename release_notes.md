@@ -1,4 +1,8 @@
 # Release notes
+Sat 06 Sep 2025 09:26 PM EEST  
+dbaas_backend:
+[OBL-436](https://github.com/Areso/Oblache/issues/436) now we send id_provider in /host_create endpoint to executor    
+
 Sat 06 Sep 2025 09:24 PM EEST  
 dbaas_backend:
 [OBL-436](https://github.com/Areso/Oblache/issues/436) now we support id_host_at_provider callback property to support deletion provisioned hosts    
