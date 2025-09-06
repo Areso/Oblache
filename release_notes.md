@@ -1,4 +1,8 @@
 # Release notes
+Sun 07 Sep 2025 01:04 AM EEST  
+dbaas_backend:
+[OBL-436](https://github.com/Areso/Oblache/issues/436) now /host_delete sends order to lifecycle executor    
+
 Sat 06 Sep 2025 11:21 PM EEST  
 dbaas_backend:
 [OBL-436](https://github.com/Areso/Oblache/issues/436) now we send id_provider to hosts table when creating one    
