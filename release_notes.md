@@ -1,4 +1,8 @@
 # Release notes
+Sun 07 Sep 2025 02:58 AM EEST  
+paas_server_lifecycle:
+[OBL-426](https://github.com/Areso/Oblache/issues/426) fix response    
+
 Sun 07 Sep 2025 02:55 AM EEST  
 paas_server_lifecycle:
 [OBL-426](https://github.com/Areso/Oblache/issues/426) fix missing param    
