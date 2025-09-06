@@ -1,4 +1,8 @@
 # Release notes
+Sat 06 Sep 2025 09:24 PM EEST  
+dbaas_backend:
+[OBL-436](https://github.com/Areso/Oblache/issues/436) now we support id_host_at_provider callback property to support deletion provisioned hosts    
+
 Sun 31 Aug 2025 11:33 PM EEST  
 dbaas_db_eraser:
 [OBL-424](https://github.com/Areso/Oblache/issues/424) fixed role name    
