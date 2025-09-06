@@ -1,4 +1,8 @@
 # Release notes
+Sun 07 Sep 2025 02:21 AM EEST  
+paas_server_lifecycle:
+[OBL-426](https://github.com/Areso/Oblache/issues/426) fix bug in do_delete    
+
 Sun 07 Sep 2025 01:53 AM EEST  
 dbaas_backend:
 [OBL-436](https://github.com/Areso/Oblache/issues/436) now /host_delete sends order to lifecycle executor. fix type-related bug    
