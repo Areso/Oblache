@@ -1,4 +1,8 @@
 # Release notes
+Wed 10 Sep 2025 09:39 PM EEST  
+dbaas_site:
+[OBL-435](https://github.com/Areso/Oblache/issues/435) fix message after sending DB to deletion    
+
 Sun 07 Sep 2025 02:58 AM EEST  
 paas_server_lifecycle:
 [OBL-426](https://github.com/Areso/Oblache/issues/426) fix response    
