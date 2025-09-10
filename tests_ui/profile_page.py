@@ -92,7 +92,7 @@ class ProfilePage(BasePage):
         if len(list_db) != 0:
             button = self.element_is_visible((By.XPATH, f'//tbody[@id="tbody_dbs"] /tr[1]/td[10] /button'))
             button.click()
-            server_msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text
+            server_msg = self.element_is_visible(self.locators.MSG_COPYPASTE).text
             with allure.step(f'Check server answer is: {server_msg}'):
                 assert server_msg == 'server is set for deleting', 'Wrong answer from server or need manual deleting!!!'
             with allure.step(f'Clicked button: {button.text} on the first database in the list.'):
@@ -109,7 +109,7 @@ class ProfilePage(BasePage):
         list_db = [databases_list[i].text for i in range(len(databases_list))]
         """Проверка наличия БД в таблице"""
         if len(list_db) != 0:
-            """Копируем UUID нажимаем кнопку"""
+            """Копируем UUID нажимаем кнопку в столбце 3"""
             button = self.element_is_visible((By.XPATH, f'{table_xpath} //tr[1]/td[3] /button'))
             button.click()
             table_line = self.element_is_visible((By.XPATH, f'{table_xpath} //tr[1]')).text
@@ -117,17 +117,11 @@ class ProfilePage(BasePage):
                 pass
             """Получаем UUID из API"""
             result = API.post_db_list(token)
-            print(result)
-            print("**************************")
-            print(result.json())
-            print("**************************")
-            print(result.json()['data'])
             data_dict = result.json()['data']
             full_uuid = list(data_dict.keys())[0]
             short_uuid = self.element_is_visible((By.XPATH, f'{table_xpath} //tr[1]/td[2]')).text
             assert self.element_is_visible(self.locators.MSG_COPYPASTE)
             msg = self.element_is_visible(self.locators.MSG_COPYPASTE).text
-            # print(msg)
             with allure.step(f'Check message after UUID copy. MSG: {msg}'):
                 pass
             with allure.step(f'Checked that {short_uuid} is included into {full_uuid}'):
@@ -137,22 +131,33 @@ class ProfilePage(BasePage):
             assert False, 'No database in the table.'
 
     def check_clipboard_jdbc(self, token: str):
+        """Получение списка баз данных"""
         databases_list = self.elements_are_present(self.locators.LIST_DATABASES)
         list_db = [databases_list[i].text for i in range(len(databases_list))]
+        """Проверка наличия БД в таблице"""
         if len(list_db) != 0:
+            """Копируем JDBC нажимаем кнопку в столбце 7"""
             button = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]/td[7] /button'))
             button.click()
             table_line = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]')).text
             with allure.step(f'Clicked button {button.text} in database:{table_line}, for copy uuid.'):
                 pass
+            """Получить первый UUID из ответа"""
             result = API.post_db_list(token)
-            uuid = list(result.json()['data'])[0]
-            # print('UUID: ', uuid)
-            jdbc = result.json()['data'][f'{uuid}'][3]
-            # print('JDBC', jdbc)
+            data_dict = result.json()['data']
+            """Получаем первый ключ (UUID) из словаря"""
+            first_uuid = list(data_dict.keys())[0]
+            jdbc_from_api  = data_dict[first_uuid][3]  # JDBC на позиции 3 (4-й элемент)
+
+            """Проверить что JDBC-строка имеет правильный формат"""
+            assert '@' in jdbc_from_api, f'Invalid JDBC format: {jdbc_from_api}'
+            assert 'mysql://' in jdbc_from_api, f'Not MySQL connection: {jdbc_from_api}'
+
+            """ПРОВЕРЯЕМ ЧТО ЭТО MYSQL"""
+            assert jdbc_from_api.startswith('mysql://'), f'Expected MySQL connection, got: {jdbc_from_api}'
+
             assert self.element_is_visible(self.locators.MSG_COPYPASTE)
             msg = self.element_is_visible(self.locators.MSG_COPYPASTE).text
-            # print(msg)
             with allure.step(f'Check message after JDBC copy. MSG: {msg}'):
                 pass
             assert msg == 'copied to clipboard', 'Message is not present.'
@@ -166,11 +171,12 @@ class ProfilePage(BasePage):
             amount_databases = self.get_status_data()['db qty used']
         self.click_button_databases()  # Перешли в раздел Database
         self.click_buttons_create_new_db()  # Нажали кнопку create new DB
-        self.select_db_type()  # Выбрали тип msql8
-        self.select_db_version() # Выбрали версию msql8
         self.select_db_region_cis()  # Выбрали регион CIS
+        self.select_db_version()  # Выбрали версию msql8
+        self.select_db_type()  # Выбрали тип msql8
+
         self.click_buttons_create()
-        msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text
+        msg = self.element_is_visible(self.locators.MSG_COPYPASTE).text
         with allure.step(f'Check the message after clicking the create database button. MSG: {msg}'):
             pass
         assert msg == 'Order for the new DB accepted', 'Message is not present.'

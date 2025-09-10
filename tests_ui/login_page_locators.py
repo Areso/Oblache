@@ -42,8 +42,8 @@ class Locators:
     LIST_DATABASES = (By.XPATH, f'//tbody[@id="tbody_dbs"]/tr')
     LEN_TABLE_STRINGS = (By.XPATH, '//tbody[@id="tbody_status"]/tr')
 
-    MSG_COPYPASTE = (By.XPATH, '//div[@id="msg_copypaste"]')
-    MSG_FROM_SERVER = (By.XPATH, '//div[@id="msg_from_server"]')
+    MSG_COPYPASTE = (By.XPATH, '//div[@id="msg_from_server"]')
+
 
     # Docker container page
     BUTTON_DOCKER_CONTAINER = (By.XPATH, '//button[@id="menu_button_containers"]')

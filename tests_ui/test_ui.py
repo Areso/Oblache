@@ -56,19 +56,18 @@ class TestLoginPage:
 class TestProfilePage:
     token = None
 
-    @allure.title('Get token.')
+    @allure.title('Получение токена авторизации')
     def test_get_token(self, get_token):
         TestProfilePage.token = get_token[0]
         assert TestProfilePage.token is not None, 'Token is None.'
 
-    @allure.title('Проверить, что все HTML-элементы на странице профиля имеют уникальные ID (нет повторяющихся '
-                  'значений)')
+    @allure.title('Проверка уникальности ID элементов на странице профиля')
     def test_ids_is_not_repeated_on_profile_page(self, driver):
         page = LoginPage(driver, TestDataLinks.profile_page)
         page.open()
         page.get_all_ids()
 
-    @allure.title('Проверка, что на странице есть запись Manage your Static Sites(?) here')
+    @allure.title('Проверка открытия страницы статистики')
     def test_open_statistic_page(self, driver, authorization_user):
         page = ProfilePage(driver)
         page.click_static_site_button()
@@ -100,27 +99,27 @@ class TestProfilePage:
         amount_after_create = int(page.get_status_data()['db qty used'])+1
         assert amount_databases == amount_after_create or msg == 'No database for deleting.'
 
-    @allure.title('test_clipboard')
-    def test_clipboard_uuid_db(self, driver, authorization_user):
+    @allure.title('Проверка копирования UUID базы данных')
+    def test_clipboard_uuid_db(self, driver, authorization_user, get_token):
         page = ProfilePage(driver, authorization_user)
         page.click_button_databases()
         page.check_clipboard(
             table_xpath='//tbody[@id="tbody_dbs"]',
-            token=TestProfilePage.token)
+            token=get_token[0])
 
-    @allure.title('test_clipboard_jdbc')
-    def test_clipboard_jdbc(self, driver, authorization_user):
+    @allure.title('Проверка копирования JDBC-строки подключения')
+    def test_clipboard_jdbc(self, driver, authorization_user, get_token):
         page = ProfilePage(driver, authorization_user)
         page.click_button_databases()
-        page.check_clipboard_jdbc(token=TestProfilePage.token)
+        page.check_clipboard_jdbc(token=get_token[0])
 
     @allure.title('test_clipboard_uuid_docker')
-    def test_clipboard_uuid_docker(self, driver, authorization_user):
+    def test_clipboard_uuid_docker(self, driver, authorization_user, get_token):
         page = ProfilePage(driver, authorization_user)
         page.click_button_docker_containers()
         page.check_clipboard(
             table_xpath='//table[@id="table_containers"]',
-            token=TestProfilePage.token)
+            token=get_token[0])
 
     # @allure.title('test_create_docker_container')
     # def test_create_docker_container(self, driver, authorization_user):
