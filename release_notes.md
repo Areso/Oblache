@@ -1,4 +1,8 @@
 # Release notes
+Wed 10 Sep 2025 11:59 PM EEST  
+paas_webpage_deployer:
+[OBL-364](https://github.com/Areso/Oblache/issues/364) added schema to the static page address    
+
 Wed 10 Sep 2025 09:39 PM EEST  
 dbaas_site:
 [OBL-435](https://github.com/Areso/Oblache/issues/435) fix message after sending DB to deletion    
