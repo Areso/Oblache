@@ -56,18 +56,18 @@ class TestLoginPage:
 class TestProfilePage:
     token = None
 
-    @allure.title('Получение токена авторизации')
+    @allure.title('Getting an authorization token')
     def test_get_token(self, get_token):
         TestProfilePage.token = get_token[0]
         assert TestProfilePage.token is not None, 'Token is None.'
 
-    @allure.title('Проверка уникальности ID элементов на странице профиля')
+    @allure.title('Checking the uniqueness of ID elements on the profile page')
     def test_ids_is_not_repeated_on_profile_page(self, driver):
         page = LoginPage(driver, TestDataLinks.profile_page)
         page.open()
         page.get_all_ids()
 
-    @allure.title('Проверка открытия страницы статистики')
+    @allure.title('Checking the opening of the statistics page')
     def test_open_statistic_page(self, driver, authorization_user):
         page = ProfilePage(driver)
         page.click_static_site_button()
@@ -75,7 +75,7 @@ class TestProfilePage:
         element = driver.find_element(*Locators.SITES_PAGE_CONTENT)
         assert element.text == "Manage your Static Sites(?) here"
 
-    @allure.title('Проверка заголовка таблицы "Static Sites"')
+    @allure.title('Checking the "Static Sites" table header')
     def test_check_title_of_static_table(self, driver, authorization_user):
         page = ProfilePage(driver)
         page.click_static_site_button()
@@ -84,12 +84,12 @@ class TestProfilePage:
                                'Size, MB', 'Delete'], \
             'Title is not equal expected titles'
 
-    @allure.title('Создание базы данных mysql8 с DB hosts region CIS')
+    @allure.title('Creating a mysql8 database with DB hosts region CIS')
     def test_create_database(self, driver, authorization_user):
         page = ProfilePage(driver, authorization_user)
         page.compare_database_status()
 
-    @allure.title('Удаление ДБ с проверкой результатов в таблице Account Dashboard')
+    @allure.title('Deleting a DB with results check in the Account Dashboard table')
     def test_delete_database(self, driver, authorization_user):
         page = ProfilePage(driver, authorization_user)
         page.click_button_status()
@@ -99,7 +99,7 @@ class TestProfilePage:
         amount_after_create = int(page.get_status_data()['db qty used'])+1
         assert amount_databases == amount_after_create or msg == 'No database for deleting.'
 
-    @allure.title('Проверка копирования UUID базы данных')
+    @allure.title('Checking the copy of the database UUID')
     def test_clipboard_uuid_db(self, driver, authorization_user, get_token):
         page = ProfilePage(driver, authorization_user)
         page.click_button_databases()
@@ -107,7 +107,7 @@ class TestProfilePage:
             table_xpath='//tbody[@id="tbody_dbs"]',
             token=get_token[0])
 
-    @allure.title('Проверка копирования JDBC-строки подключения')
+    @allure.title('Checking the JDBC connection string signature')
     def test_clipboard_jdbc(self, driver, authorization_user, get_token):
         page = ProfilePage(driver, authorization_user)
         page.click_button_databases()
