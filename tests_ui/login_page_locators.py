@@ -23,14 +23,19 @@ class Locators:
     # Profile page
     DATABASE_BUTTON = (By.XPATH, '//button[@id = "menu_button_databases"]')
     STATUS_BUTTON = (By.XPATH, '//button[@id="menu_button_status"]')
-    STATIC_BUTTON = (By.XPATH, '//button[@id="menu_button_webpages"]')
-    WEBPAGES_BLOCK = (By.XPATH, '//div[@id="webpages"]')
-    TITLES_OF_STATIC_TABLE = (By.XPATH, '//table[@id="table_webpages"]//tr/td')
+    STATIC_BUTTON = (By.XPATH, '//button[@id="menu_button_sites"]')
+    SITES_PAGE_CONTENT = (By.XPATH, '//*[@id="sites_page_content"]')
+    TITLES_OF_STATIC_TABLE = (By.XPATH, '//table[@id="table_sites"]//tr/td')
 
     CREATE_DATABASE_BUTTON = (By.XPATH, '//button[@id="btn_new_db"]')
     CREATE_NEW_DATABASE_BUTTON = (By.XPATH, '//button[@id="btn_create_db"]')
     SELECT_DB_REGION = (By.XPATH, '//select[@id="selectDBRegion"]')
     DB_REGION_CIS = (By.XPATH, '//select[@id="selectDBRegion"] /option[@value="3"]')
+    SELECT_DB_TYPE = (By.XPATH, '//select[@id="selectDBType"]')
+    DB_TYPE_MYSQL = (By.XPATH, '//select[@id="selectDBType"] /option[@value="3"]')
+    SELECT_DB_VERSION = (By.XPATH, '//select[@id="selectDBVersion"]')
+    DB_VERSION_MYSQL = (By.XPATH, '//select[@id="selectDBVersion"] /option[@value="5"]')
+
     SELECT_DOCKER_REGION = (By.XPATH, '//select[@id="selectDockerRegion"]')
     DOCKER_REGION_CIS = (By.XPATH, '//select[@id="selectDockerRegion"] /option[@value="3"]')
 
