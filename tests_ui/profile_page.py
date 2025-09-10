@@ -18,6 +18,7 @@ class ProfilePage(BasePage):
             return self.element_is_present_and_clickable(self.locators.STATUS_BUTTON).click()
 
     def get_status_data(self):
+        """Getting data from a table """
         amount_string = len(self.elements_are_visible(self.locators.LEN_TABLE_STRINGS))
         status_dict = {}
         for i in range(1, amount_string):
@@ -28,7 +29,6 @@ class ProfilePage(BasePage):
             pass
             with allure.step(f'Status data is: {status_dict}'):
                 ...
-                # pprint(status_dict)
         return status_dict
 
     def click_button_databases(self):
@@ -39,9 +39,9 @@ class ProfilePage(BasePage):
         with allure.step('Click "Static site" button.'):
             return self.element_is_present_and_clickable(self.locators.STATIC_BUTTON).click()
 
-    def check_webpages_block_is_visible(self):
-        with allure.step('Check webpages block is visible.'):
-            return self.check_element_is_visible(self.locators.WEBPAGES_BLOCK)
+    def check_content_block_is_visible(self):
+        with allure.step('Content is visible.'):
+            return self.check_element_is_visible(self.locators.SITES_PAGE_CONTENT)
 
     def check_titles_of_static_table(self):
         with allure.step('Check titles of static table .'):
@@ -59,12 +59,21 @@ class ProfilePage(BasePage):
     def click_buttons_create(self):
         with allure.step('Click "Create" button.'):
             self.element_is_clickable(self.locators.CREATE_NEW_DATABASE_BUTTON).click()
-            # print(f'Click {self.locators.CREATE_NEW_DATABASE_BUTTON}')
 
     def select_db_region_cis(self):
-        with allure.step('Select region "CIS".'):
+        with allure.step('Select DB hosts region "CIS".'):
             self.element_is_present_and_clickable(self.locators.SELECT_DB_REGION).click()
             self.element_is_present_and_clickable(self.locators.DB_REGION_CIS).click()
+
+    def select_db_type(self):
+        with allure.step('Select DB type mysql8.'):
+            self.element_is_present_and_clickable(self.locators.SELECT_DB_TYPE).click()
+            self.element_is_present_and_clickable(self.locators.DB_TYPE_MYSQL).click()
+
+    def select_db_version(self):
+        with allure.step('Select DB type mysql8.'):
+            self.element_is_present_and_clickable(self.locators.SELECT_DB_VERSION).click()
+            self.element_is_present_and_clickable(self.locators.DB_VERSION_MYSQL).click()
 
     def get_amount_databases(self):
         self.click_button_databases()
@@ -74,15 +83,14 @@ class ProfilePage(BasePage):
 
     def delete_database(self):
         self.click_button_databases()
-        self.click_buttons_create_new_db()
-        self.click_button_databases()
         time.sleep(1)
         list_databases = self.elements_are_present(self.locators.LIST_DATABASES)
         list_db = [list_databases[i].text for i in range(len(list_databases))]
+        """If there is at least one DB"""
         if len(list_db) != 0:
             button = self.element_is_visible((By.XPATH, f'//tbody[@id="tbody_dbs"] /tr[1]/td[10] /button'))
             button.click()
-            server_msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text
+            server_msg = self.element_is_visible(self.locators.MSG_COPYPASTE).text
             with allure.step(f'Check server answer is: {server_msg}'):
                 assert server_msg == 'server is set for deleting', 'Wrong answer from server or need manual deleting!!!'
             with allure.step(f'Clicked button: {button.text} on the first database in the list.'):
@@ -94,21 +102,24 @@ class ProfilePage(BasePage):
 
     @allure.step('Check clipboard')
     def check_clipboard(self, table_xpath, token: str):
+        """Getting a list of databases"""
         databases_list = self.elements_are_present((By.XPATH, f'{table_xpath}//tr'))
         list_db = [databases_list[i].text for i in range(len(databases_list))]
+        """Checking for the presence of a database in a table"""
         if len(list_db) != 0:
+            """Copy the UUID and click the button in column 3"""
             button = self.element_is_visible((By.XPATH, f'{table_xpath} //tr[1]/td[3] /button'))
             button.click()
             table_line = self.element_is_visible((By.XPATH, f'{table_xpath} //tr[1]')).text
             with allure.step(f'Clicked button {button.text} in database:{table_line}, for copy uuid.'):
                 pass
-
+            """Getting UUID from API"""
             result = API.post_db_list(token)
-            full_uuid = list(result.json()['data'])[0]
+            data_dict = result.json()['data']
+            full_uuid = list(data_dict.keys())[0]
             short_uuid = self.element_is_visible((By.XPATH, f'{table_xpath} //tr[1]/td[2]')).text
             assert self.element_is_visible(self.locators.MSG_COPYPASTE)
             msg = self.element_is_visible(self.locators.MSG_COPYPASTE).text
-            # print(msg)
             with allure.step(f'Check message after UUID copy. MSG: {msg}'):
                 pass
             with allure.step(f'Checked that {short_uuid} is included into {full_uuid}'):
@@ -118,22 +129,33 @@ class ProfilePage(BasePage):
             assert False, 'No database in the table.'
 
     def check_clipboard_jdbc(self, token: str):
+        """Getting a list of databases"""
         databases_list = self.elements_are_present(self.locators.LIST_DATABASES)
         list_db = [databases_list[i].text for i in range(len(databases_list))]
+        """Checking for the presence of a database in a table"""
         if len(list_db) != 0:
+            """Copy JDBC click the button in column 7"""
             button = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]/td[7] /button'))
             button.click()
             table_line = self.element_is_visible((By.XPATH, '//tbody[@id="tbody_dbs"] /tr[1]')).text
             with allure.step(f'Clicked button {button.text} in database:{table_line}, for copy uuid.'):
                 pass
+            """Get the first UUID from the response"""
             result = API.post_db_list(token)
-            uuid = list(result.json()['data'])[0]
-            # print('UUID: ', uuid)
-            jdbc = result.json()['data'][f'{uuid}'][3]
-            # print('JDBC', jdbc)
+            data_dict = result.json()['data']
+            """Get the first key (UUID) from the dictionary"""
+            first_uuid = list(data_dict.keys())[0]
+            jdbc_from_api  = data_dict[first_uuid][3]  # JDBC at position 3 (4th element)
+
+            """Check that the JDBC string is in the correct format"""
+            assert '@' in jdbc_from_api, f'Invalid JDBC format: {jdbc_from_api}'
+            assert 'mysql://' in jdbc_from_api, f'Not MySQL connection: {jdbc_from_api}'
+
+            """CHECK THAT IT IS MYSQL"""
+            assert jdbc_from_api.startswith('mysql://'), f'Expected MySQL connection, got: {jdbc_from_api}'
+
             assert self.element_is_visible(self.locators.MSG_COPYPASTE)
             msg = self.element_is_visible(self.locators.MSG_COPYPASTE).text
-            # print(msg)
             with allure.step(f'Check message after JDBC copy. MSG: {msg}'):
                 pass
             assert msg == 'copied to clipboard', 'Message is not present.'
@@ -141,14 +163,18 @@ class ProfilePage(BasePage):
             assert False, 'No database in the table.'
 
     def compare_database_status(self):
+        """When creating a DB, the db qty used counter is incremented in the table."""
         self.click_button_status()
-        amount_databases = self.get_status_data()['db qty used']
-        self.click_button_databases()
-        self.click_buttons_create_new_db()
-        self.select_db_region_cis()
+        with allure.step("Save the number 'db qty used' from the Account Dashboard table to a variable"):
+            amount_databases = self.get_status_data()['db qty used']
+        self.click_button_databases()  # Moved to the Database section
+        self.click_buttons_create_new_db()  # Clicked the create new DB button
+        self.select_db_region_cis()  # Selected region CIS
+        self.select_db_version()  # Selected version msql8
+        self.select_db_type()  # Selected type msql8
+
         self.click_buttons_create()
-        msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text
-        # print(msg)
+        msg = self.element_is_visible(self.locators.MSG_COPYPASTE).text
         with allure.step(f'Check the message after clicking the create database button. MSG: {msg}'):
             pass
         assert msg == 'Order for the new DB accepted', 'Message is not present.'
@@ -172,7 +198,7 @@ class ProfilePage(BasePage):
             self.element_is_present_and_clickable(self.locators.BUTTON_CREATE).click()
         with allure.step('Click button "Docker Containers".'):
             self.element_is_present_and_clickable(self.locators.BUTTON_DOCKER_CONTAINER).click()
-        server_msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text
+        server_msg = self.element_is_visible(self.locators.MSG_COPYPASTE).text
         with allure.step(f'Check message from server: "{server_msg}"'):
             assert server_msg == 'Order for the new Container accepted', 'Error creating container!!!'
         self.element_is_present_and_clickable(self.locators.BUTTON_DOCKER_CONTAINER).click()
@@ -197,7 +223,7 @@ class ProfilePage(BasePage):
         if len(amount_containers) != 0:
             self.element_is_present_and_clickable((By.XPATH,
                                                    '//tbody[@id="tbody_containers"] /tr[1]/td[10] /button')).click()
-            server_msg = self.element_is_visible(self.locators.MSG_FROM_SERVER).text
+            server_msg = self.element_is_visible(self.locators.MSG_COPYPASTE).text
             assert server_msg == 'container is set for deleting'
         else:
             assert False, 'No containers in the table.'

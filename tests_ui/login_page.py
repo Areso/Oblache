@@ -16,17 +16,20 @@ class LoginPage(BasePage):
 
     @allure.step('Get all ids')
     def get_all_ids(self):
+        """Finds all elements with the id attribute"""
         web_ids = self.elements_are_present(self.locators.IDS)
+        """Creates a list of all IDs"""
         list_ids = [i.get_attribute('id') for i in web_ids]
-        with allure.step(f'First list is: {list_ids}'):
+        with allure.step(f'Uniqueness check: {list_ids}'):
             pass
         second_list = []
         for ids in list_ids:
             if ids not in second_list:
-                second_list.append(ids)
+                second_list.append(ids)     # Add a unique ID
             else:
+                # If the ID is already in second_list - it's a repetition!
                 with allure.step(f'{ids} is repeated.'):
-                    assert ids is False, f'{ids} is repeated!'
+                    assert False, f'{ids} is repeated!'
         # [second_list.append(ids) for ids in list_ids if ids not in second_list]
         with allure.step(f'If id not in first list second_list.append. Second list is: {second_list}'):
             pass
