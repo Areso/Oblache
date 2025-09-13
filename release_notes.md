@@ -1,4 +1,8 @@
 # Release notes
+Sat 13 Sep 2025 03:53 PM EEST  
+dbaas_backend:
+[OBL-319](https://github.com/Areso/Oblache/issues/319) fixed seriliazation in /db_backup_create_link response    
+
 Sat 13 Sep 2025 03:44 PM EEST  
 paas_db_backuper:
 [OBL-439](https://github.com/Areso/Oblache/issues/439) fix ambigious column name    
