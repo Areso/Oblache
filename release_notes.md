@@ -1,4 +1,8 @@
 # Release notes
+Sat 13 Sep 2025 04:44 PM EEST  
+dbaas_backend:
+[OBL-319](https://github.com/Areso/Oblache/issues/319) return logic    
+
 Sat 13 Sep 2025 04:38 PM EEST  
 dbaas_backend:
 [OBL-319](https://github.com/Areso/Oblache/issues/319) fixed seriliazation in /db_backup_create_link response. try to fix required_fields decorator    
