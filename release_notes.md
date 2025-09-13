@@ -1,4 +1,8 @@
 # Release notes
+Sat 13 Sep 2025 03:44 PM EEST  
+paas_db_backuper:
+[OBL-439](https://github.com/Areso/Oblache/issues/439) fix ambigious column name    
+
 Sat 13 Sep 2025 03:14 PM EEST  
 dbaas_backend:
 fixed model in db_repo. added statment draft    
