@@ -1,4 +1,8 @@
 # Release notes
+Sat 13 Sep 2025 02:43 PM EEST  
+dbaas_backend:
+[OBL-319](https://github.com/Areso/Oblache/issues/319) added backup link generator    
+
 Wed 10 Sep 2025 11:59 PM EEST  
 paas_webpage_deployer:
 [OBL-364](https://github.com/Areso/Oblache/issues/364) added schema to the static page address    
