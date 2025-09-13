@@ -1,4 +1,8 @@
 # Release notes
+Sat 13 Sep 2025 03:59 PM EEST  
+dbaas_backend:
+[OBL-319](https://github.com/Areso/Oblache/issues/319) fixed seriliazation in /db_backup_create_link response. DEBUG    
+
 Sat 13 Sep 2025 03:53 PM EEST  
 dbaas_backend:
 [OBL-319](https://github.com/Areso/Oblache/issues/319) fixed seriliazation in /db_backup_create_link response    
