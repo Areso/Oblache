@@ -1,4 +1,8 @@
 # Release notes
+Sat 13 Sep 2025 02:55 PM EEST  
+dbaas_backend:
+fixed model in db_repo. fix typo    
+
 Sat 13 Sep 2025 02:46 PM EEST  
 dbaas_backend:
 fixed model in db_repo    
