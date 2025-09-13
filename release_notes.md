@@ -1,4 +1,8 @@
 # Release notes
+Sat 13 Sep 2025 04:50 PM EEST  
+dbaas_backend:
+[OBL-319](https://github.com/Areso/Oblache/issues/319) fix signing    
+
 Sat 13 Sep 2025 04:44 PM EEST  
 dbaas_backend:
 [OBL-319](https://github.com/Areso/Oblache/issues/319) return logic    
