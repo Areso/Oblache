@@ -1,4 +1,8 @@
 # Release notes
+Sat 13 Sep 2025 02:44 PM EEST  
+dbaas_backend:
+[OBL-319](https://github.com/Areso/Oblache/issues/319) added backup link generator    
+
 Sat 13 Sep 2025 02:43 PM EEST  
 dbaas_backend:
 [OBL-319](https://github.com/Areso/Oblache/issues/319) added backup link generator    
