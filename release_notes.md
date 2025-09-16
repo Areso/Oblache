@@ -1,4 +1,8 @@
 # Release notes
+Wed 17 Sep 2025 01:51 AM EEST  
+dbaas_backend:
+[OBL-441](https://github.com/Areso/Oblache/issues/441) refactored all the repos to cursor handling    
+
 Sat 13 Sep 2025 04:50 PM EEST  
 dbaas_backend:
 [OBL-319](https://github.com/Areso/Oblache/issues/319) fix signing    
