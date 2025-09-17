@@ -1,4 +1,8 @@
 # Release notes
+Wed 17 Sep 2025 10:38 PM EEST  
+dbaas_site:
+[OBL-440](https://github.com/Areso/Oblache/issues/440) added backup link create button to portal    
+
 Wed 17 Sep 2025 01:52 AM EEST  
 dbaas_backend:
 [OBL-441](https://github.com/Areso/Oblache/issues/441) refactored all the repos to cursor handling    
