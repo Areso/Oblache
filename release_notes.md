@@ -1,4 +1,8 @@
 # Release notes
+Fri 19 Sep 2025 12:02 AM EEST  
+paas_db_backuper:
+[OBL-319](https://github.com/Areso/Oblache/issues/319) new backups destination    
+
 Wed 17 Sep 2025 10:42 PM EEST  
 dbaas_site:
 [OBL-440](https://github.com/Areso/Oblache/issues/440) added backup link create button to portal. fix property key    
