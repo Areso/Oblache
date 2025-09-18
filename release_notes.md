@@ -1,4 +1,8 @@
 # Release notes
+Fri 19 Sep 2025 12:45 AM EEST  
+dbaas_site:
+hotfix backup button    
+
 Fri 19 Sep 2025 12:02 AM EEST  
 paas_db_backuper:
 [OBL-319](https://github.com/Areso/Oblache/issues/319) new backups destination    
