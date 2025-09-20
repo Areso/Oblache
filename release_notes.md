@@ -1,4 +1,8 @@
 # Release notes
+Sun 21 Sep 2025 02:16 AM EEST  
+dbaas_backend:
+[OBL-319](https://github.com/Areso/Oblache/issues/319) fixed hostname resolution and schema for backup creation link    
+
 Fri 19 Sep 2025 12:45 AM EEST  
 dbaas_site:
 hotfix backup button    
