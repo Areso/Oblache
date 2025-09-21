@@ -1,4 +1,8 @@
 # Release notes
+Sun 21 Sep 2025 04:38 PM EEST  
+paas_db_backuper:
+changed core-loop and config reading    
+
 Sun 21 Sep 2025 02:16 AM EEST  
 dbaas_backend:
 [OBL-319](https://github.com/Areso/Oblache/issues/319) fixed hostname resolution and schema for backup creation link    
