@@ -1,4 +1,8 @@
 # Release notes
+Sun 21 Sep 2025 08:03 PM EEST  
+paas_db_backuper:
+[OBL-457](https://github.com/Areso/Oblache/issues/457) try to fix that    
+
 Sun 21 Sep 2025 07:34 PM EEST  
 dbaas_site:
 [OBL-456](https://github.com/Areso/Oblache/issues/456) updated error handling for db backup link creation    
