@@ -1,4 +1,8 @@
 # Release notes
+Sun 21 Sep 2025 07:34 PM EEST  
+dbaas_backend:
+[OBL-456](https://github.com/Areso/Oblache/issues/456) updated error handling for db backup creation link    
+
 Sun 21 Sep 2025 06:57 PM EEST  
 dbaas_backend:
 [OBL-444](https://github.com/Areso/Oblache/issues/444) added check for db backup creation link to ensure backup exists. fixed response code    
