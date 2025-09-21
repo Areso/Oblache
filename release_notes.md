@@ -1,4 +1,8 @@
 # Release notes
+Sun 21 Sep 2025 06:49 PM EEST  
+dbaas_backend:
+[OBL-444](https://github.com/Areso/Oblache/issues/444) added check for db backup creation link to ensure backup exists    
+
 Sun 21 Sep 2025 06:09 PM EEST  
 paas_db_backuper:
 [OBL-454](https://github.com/Areso/Oblache/issues/454) now we filling backuped_at property    
