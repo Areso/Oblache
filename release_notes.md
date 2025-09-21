@@ -1,4 +1,8 @@
 # Release notes
+Sun 21 Sep 2025 05:25 PM EEST  
+paas_db_backuper:
+changed core-loop and config reading. fixed config, added verbose debug    
+
 Sun 21 Sep 2025 04:38 PM EEST  
 paas_db_backuper:
 changed core-loop and config reading    
