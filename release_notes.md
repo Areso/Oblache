@@ -1,4 +1,8 @@
 # Release notes
+Sun 21 Sep 2025 05:42 PM EEST  
+paas_db_backuper:
+changed logic to cursor    
+
 Sun 21 Sep 2025 05:29 PM EEST  
 paas_db_backuper:
 changed core-loop and config reading. fixed config reading    
