@@ -1,4 +1,8 @@
 # Release notes
+Thu 25 Sep 2025 01:37 AM EEST  
+paas_server_role_applier:
+[OBL-460](https://github.com/Areso/Oblache/issues/460) added nginx role to support backup sharing later    
+
 Sun 21 Sep 2025 08:03 PM EEST  
 paas_db_backuper:
 [OBL-457](https://github.com/Areso/Oblache/issues/457) try to fix that    
