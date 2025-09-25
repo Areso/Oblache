@@ -1,4 +1,8 @@
 # Release notes
+Thu 25 Sep 2025 06:13 PM EEST  
+paas_server_lifecycle:
+[OBL-458](https://github.com/Areso/Oblache/issues/458) draft with registration of DNS to CF    
+
 Thu 25 Sep 2025 05:59 PM EEST  
 paas_server_lifecycle:
 [OBL-458](https://github.com/Areso/Oblache/issues/458) draft with registration of DNS to CF    
