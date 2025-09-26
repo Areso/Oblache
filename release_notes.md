@@ -1,4 +1,8 @@
 # Release notes
+Fri 26 Sep 2025 11:28 AM EEST  
+dbaas_backend:
+[OBL-458](https://github.com/Areso/Oblache/issues/458) try to fix id_host issue    
+
 Thu 25 Sep 2025 06:22 PM EEST  
 paas_server_lifecycle:
 [OBL-458](https://github.com/Areso/Oblache/issues/458) draft with registration of DNS to CF. added debug    
