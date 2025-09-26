@@ -1,4 +1,8 @@
 # Release notes
+Sat 27 Sep 2025 02:49 AM EEST  
+paas_server_lifecycle:
+prolly now    
+
 Sat 27 Sep 2025 01:59 AM EEST  
 paas_server_lifecycle:
 [OBL-458](https://github.com/Areso/Oblache/issues/458) fix bug finally    
