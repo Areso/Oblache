@@ -1,4 +1,8 @@
 # Release notes
+Fri 26 Sep 2025 11:39 AM EEST  
+dbaas_backend:
+[OBL-458](https://github.com/Areso/Oblache/issues/458) try to fix id_host issue    
+
 Fri 26 Sep 2025 11:28 AM EEST  
 dbaas_backend:
 [OBL-458](https://github.com/Areso/Oblache/issues/458) try to fix id_host issue    
