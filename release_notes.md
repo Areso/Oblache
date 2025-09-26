@@ -1,4 +1,8 @@
 # Release notes
+Fri 26 Sep 2025 12:20 PM EEST  
+paas_server_lifecycle:
+[OBL-458](https://github.com/Areso/Oblache/issues/458) now we do record DNS records we made in CF to ORC    
+
 Fri 26 Sep 2025 11:39 AM EEST  
 dbaas_backend:
 [OBL-458](https://github.com/Areso/Oblache/issues/458) try to fix id_host issue    
