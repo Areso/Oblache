@@ -1,4 +1,8 @@
 # Release notes
+Sun 28 Sep 2025 05:12 PM EEST  
+paas_server_lifecycle:
+[OBL-459](https://github.com/Areso/Oblache/issues/459) draft to DNS unreg    
+
 Sat 27 Sep 2025 02:49 AM EEST  
 paas_server_lifecycle:
 prolly now    
