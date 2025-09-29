@@ -1,4 +1,8 @@
 # Release notes
+Mon 29 Sep 2025 09:58 PM EEST  
+paas_server_lifecycle:
+[OBL-464](https://github.com/Areso/Oblache/issues/464) try to switch from IP address to DNS name    
+
 Mon 29 Sep 2025 09:41 PM EEST  
 paas_server_lifecycle:
 [OBL-464](https://github.com/Areso/Oblache/issues/464) try to switch from IP address to DNS name    
