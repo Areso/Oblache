@@ -1,4 +1,8 @@
 # Release notes
+Mon 29 Sep 2025 10:19 PM EEST  
+dbaas_backend:
+[OBL-464](https://github.com/Areso/Oblache/issues/464) adjust Orc handler to support ip as a separate property    
+
 Mon 29 Sep 2025 10:05 PM EEST  
 paas_server_lifecycle:
 [OBL-464](https://github.com/Areso/Oblache/issues/464) try to switch from IP address to DNS name. more debug    
