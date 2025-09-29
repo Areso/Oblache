@@ -1,4 +1,8 @@
 # Release notes
+Mon 29 Sep 2025 09:41 PM EEST  
+paas_server_lifecycle:
+[OBL-464](https://github.com/Areso/Oblache/issues/464) try to switch from IP address to DNS name    
+
 Sun 28 Sep 2025 07:59 PM EEST  
 paas_server_lifecycle:
 [OBL-459](https://github.com/Areso/Oblache/issues/459) finished to DNS unreg    
