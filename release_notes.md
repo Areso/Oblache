@@ -1,4 +1,8 @@
 # Release notes
+Tue 30 Sep 2025 10:14 PM EEST  
+dbaas_db_locker:
+[OBL-468](https://github.com/Areso/Oblache/issues/468) fix    
+
 Mon 29 Sep 2025 10:53 PM EEST  
 dbaas_backend:
 fix typo    
