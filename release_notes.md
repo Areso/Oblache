@@ -1,4 +1,8 @@
 # Release notes
+Wed 01 Oct 2025 08:53 PM EEST  
+paas_db_backuper:
+[OBL-465](https://github.com/Areso/Oblache/issues/465) fix structure bug    
+
 Wed 01 Oct 2025 08:52 PM EEST  
 paas_db_backuper:
 [OBL-465](https://github.com/Areso/Oblache/issues/465) added debug    
