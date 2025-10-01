@@ -1,4 +1,8 @@
 # Release notes
+Wed 01 Oct 2025 07:49 PM EEST  
+paas_db_backuper:
+[OBL-465](https://github.com/Areso/Oblache/issues/465) backups are now stored in DB    
+
 Tue 30 Sep 2025 10:16 PM EEST  
 dbaas_db_locker:
 [OBL-468](https://github.com/Areso/Oblache/issues/468) fix    
