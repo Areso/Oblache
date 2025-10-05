@@ -1,4 +1,8 @@
 # Release notes
+Sun 05 Oct 2025 08:45 PM EEST  
+dbaas_backend:
+[OBL-477](https://github.com/Areso/Oblache/issues/477) moved to independent cursors container stats    
+
 Sun 05 Oct 2025 08:31 PM EEST  
 dbaas_backend:
 [OBL-476](https://github.com/Areso/Oblache/issues/476) moved stats with site operations to an indendent cursors    
