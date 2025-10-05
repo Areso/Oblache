@@ -1,4 +1,8 @@
 # Release notes
+Sun 05 Oct 2025 09:11 PM EEST  
+dbaas_backend:
+[OBL-465](https://github.com/Areso/Oblache/issues/465) added backend endpoint for creation restore from a backup order    
+
 Sun 05 Oct 2025 08:45 PM EEST  
 dbaas_backend:
 [OBL-477](https://github.com/Areso/Oblache/issues/477) moved to independent cursors container stats    
