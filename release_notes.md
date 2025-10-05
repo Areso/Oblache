@@ -1,4 +1,8 @@
 # Release notes
+Sun 05 Oct 2025 06:51 PM EEST  
+dbaas_backend:
+[OBL-469](https://github.com/Areso/Oblache/issues/469) move inline SQL /login to repo    
+
 Wed 01 Oct 2025 08:53 PM EEST  
 paas_db_backuper:
 [OBL-465](https://github.com/Areso/Oblache/issues/465) fix structure bug    
