@@ -1,4 +1,8 @@
 # Release notes
+Sun 05 Oct 2025 08:14 PM EEST  
+dbaas_backend:
+[OBL-471](https://github.com/Areso/Oblache/issues/471) moved get_number_of_manual_deletes_tasks to an independent cursor    
+
 Sun 05 Oct 2025 07:13 PM EEST  
 dbaas_backend:
 [OBL-470](https://github.com/Areso/Oblache/issues/470) moved get_number_of_stuck_tasks to an independent cursor    
