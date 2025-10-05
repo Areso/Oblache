@@ -1,4 +1,8 @@
 # Release notes
+Sun 05 Oct 2025 08:27 PM EEST  
+dbaas_backend:
+moved get_number_db_deleting to independent cursor    
+
 Sun 05 Oct 2025 08:25 PM EEST  
 dbaas_backend:
 [OBL-474](https://github.com/Areso/Oblache/issues/474) moved get_number_db_creating to an independent cursor    
