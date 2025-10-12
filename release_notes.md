@@ -1,4 +1,8 @@
 # Release notes
+Sun 12 Oct 2025 08:37 PM EEST  
+dbaas_backend:
+[OBL-465](https://github.com/Areso/Oblache/issues/465): improved endpoint name    
+
 Sun 05 Oct 2025 09:11 PM EEST  
 dbaas_backend:
 [OBL-465](https://github.com/Areso/Oblache/issues/465) added backend endpoint for creation restore from a backup order    
