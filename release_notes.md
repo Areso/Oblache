@@ -1,4 +1,8 @@
 # Release notes
+Sun 19 Oct 2025 10:25 PM EEST  
+dbaas_backend:
+[OBL-466](https://github.com/Areso/Oblache/issues/466) improved repo dbversion    
+
 Sun 19 Oct 2025 09:37 PM EEST  
 dbaas_backend:
 updated hook    
