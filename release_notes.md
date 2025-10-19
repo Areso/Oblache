@@ -1,4 +1,8 @@
 # Release notes
+Sun 19 Oct 2025 09:35 PM EEST  
+dbaas_backend:
+updated hook    
+
 Sun 12 Oct 2025 08:47 PM EEST  
 dbaas_site:
 [OBL-465](https://github.com/Areso/Oblache/issues/465) restore button done    
