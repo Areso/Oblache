@@ -1,4 +1,8 @@
 # Release notes
+Sun 19 Oct 2025 09:37 PM EEST  
+dbaas_backend:
+updated hook    
+
 Sun 19 Oct 2025 09:36 PM EEST  
 dbaas_backend:
 updated hook    
