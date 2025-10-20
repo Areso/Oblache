@@ -1,4 +1,8 @@
 # Release notes
+Mon 20 Oct 2025 11:33 PM EEST  
+dbaas_backend:
+[OBL-386](https://github.com/Areso/Oblache/issues/386) audit table draft    
+
 Mon 20 Oct 2025 09:25 PM EEST  
 dbaas_site:
 [OBL-466](https://github.com/Areso/Oblache/issues/466) try to improve version indication - catch for DBversion    
