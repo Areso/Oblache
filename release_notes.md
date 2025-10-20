@@ -1,4 +1,8 @@
 # Release notes
+Mon 20 Oct 2025 11:39 PM EEST  
+dbaas_backend:
+[OBL-386](https://github.com/Areso/Oblache/issues/386) audit table draft. fix array to str    
+
 Mon 20 Oct 2025 11:36 PM EEST  
 dbaas_backend:
 [OBL-386](https://github.com/Areso/Oblache/issues/386) audit table draft. fix array to str    
