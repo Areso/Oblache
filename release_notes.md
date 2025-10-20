@@ -1,4 +1,8 @@
 # Release notes
+Mon 20 Oct 2025 08:49 PM EEST  
+dbaas_site:
+[OBL-466](https://github.com/Areso/Oblache/issues/466) try to fix dbversion    
+
 Mon 20 Oct 2025 12:57 AM EEST  
 dbaas_site:
 [OBL-466](https://github.com/Areso/Oblache/issues/466) try to fix db_versions bug    
