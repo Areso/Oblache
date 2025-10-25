@@ -1,4 +1,8 @@
 # Release notes
+Sat 25 Oct 2025 06:25 PM EEST  
+dbaas_backend:
+[OBL-482](https://github.com/Areso/Oblache/issues/482) added logging to Orc service    
+
 Mon 20 Oct 2025 11:42 PM EEST  
 dbaas_backend:
 [OBL-386](https://github.com/Areso/Oblache/issues/386) audit table draft. fix array to str    
