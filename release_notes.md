@@ -1,4 +1,8 @@
 # Release notes
+Sun 26 Oct 2025 11:19 PM EET  
+paas_server_role_applier:
+[OBL-483](https://github.com/Areso/Oblache/issues/483) backup sharer automation DRAFT    
+
 Sat 25 Oct 2025 06:25 PM EEST  
 dbaas_backend:
 [OBL-482](https://github.com/Areso/Oblache/issues/482) added logging to Orc service    
