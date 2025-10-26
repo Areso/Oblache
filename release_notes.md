@@ -1,4 +1,8 @@
 # Release notes
+Mon 27 Oct 2025 12:32 AM EET  
+paas_server_role_applier:
+Upgraded dependency    
+
 Sun 26 Oct 2025 11:19 PM EET  
 paas_server_role_applier:
 [OBL-483](https://github.com/Areso/Oblache/issues/483) backup sharer automation DRAFT    
