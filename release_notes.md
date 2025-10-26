@@ -1,4 +1,8 @@
 # Release notes
+Mon 27 Oct 2025 01:27 AM EET  
+paas_server_role_applier:
+[OBL-483](https://github.com/Areso/Oblache/issues/483) bugfixes    
+
 Mon 27 Oct 2025 12:32 AM EET  
 paas_server_role_applier:
 Upgraded dependency    
