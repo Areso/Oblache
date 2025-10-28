@@ -1,4 +1,8 @@
 # Release notes
+Wed 29 Oct 2025 12:54 AM EET  
+paas_server_role_applier:
+[OBL-461](https://github.com/Areso/Oblache/issues/461) now issuing certificate and install it to the nginx    
+
 Tue 28 Oct 2025 11:46 PM EET  
 paas_server_role_applier:
 [OBL-461](https://github.com/Areso/Oblache/issues/461) added nginx certbot plugin    
