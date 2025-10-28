@@ -1,4 +1,8 @@
 # Release notes
+Tue 28 Oct 2025 11:46 PM EET  
+paas_server_role_applier:
+[OBL-461](https://github.com/Areso/Oblache/issues/461) added nginx certbot plugin    
+
 Tue 28 Oct 2025 11:41 PM EET  
 paas_server_role_applier:
 [OBL-461](https://github.com/Areso/Oblache/issues/461) added certbot to nginx role    
