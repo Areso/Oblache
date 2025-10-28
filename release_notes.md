@@ -1,4 +1,8 @@
 # Release notes
+Tue 28 Oct 2025 11:22 PM EET  
+dbaas_backend:
+[OBL-484](https://github.com/Areso/Oblache/issues/484) added is_connected wrapper to is_admin and is_admin_or_mod    
+
 Mon 27 Oct 2025 01:27 AM EET  
 paas_server_role_applier:
 [OBL-483](https://github.com/Areso/Oblache/issues/483) bugfixes    
