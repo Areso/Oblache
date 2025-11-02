@@ -1,4 +1,8 @@
 # Release notes
+Sun 02 Nov 2025 03:40 PM EET  
+paas_server_role_applier:
+[OBL-483](https://github.com/Areso/Oblache/issues/483) add certbot    
+
 Sun 02 Nov 2025 01:14 PM EET  
 dbaas_backend:
 [OBL-486](https://github.com/Areso/Oblache/issues/486)/488 try to fix connection issue    
