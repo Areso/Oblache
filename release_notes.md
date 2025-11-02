@@ -1,4 +1,8 @@
 # Release notes
+Sun 02 Nov 2025 11:02 PM EET  
+paas_server_role_applier:
+added redirect to nginx config. fix config address    
+
 Sun 02 Nov 2025 10:47 PM EET  
 paas_server_role_applier:
 added redirect to nginx config    
