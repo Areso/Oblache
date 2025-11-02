@@ -1,4 +1,8 @@
 # Release notes
+Sun 02 Nov 2025 01:14 PM EET  
+dbaas_backend:
+[OBL-486](https://github.com/Areso/Oblache/issues/486)/488 try to fix connection issue    
+
 Sun 02 Nov 2025 01:13 PM EET  
 dbaas_backend:
 [OBL-486](https://github.com/Areso/Oblache/issues/486)/488 try to fix connection issue    
