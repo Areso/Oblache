@@ -1,4 +1,8 @@
 # Release notes
+Sun 02 Nov 2025 08:17 PM EET  
+paas_server_role_applier:
+try to fix FQDN bug    
+
 Sun 02 Nov 2025 03:40 PM EET  
 paas_server_role_applier:
 [OBL-483](https://github.com/Areso/Oblache/issues/483) add certbot    
