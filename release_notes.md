@@ -1,4 +1,8 @@
 # Release notes
+Sun 02 Nov 2025 01:13 PM EET  
+dbaas_backend:
+[OBL-486](https://github.com/Areso/Oblache/issues/486)/488 try to fix connection issue    
+
 Wed 29 Oct 2025 02:00 AM EET  
 paas_server_role_applier:
 [OBL-461](https://github.com/Areso/Oblache/issues/461) now issuing certificate and install it to the nginx. bugfix    
