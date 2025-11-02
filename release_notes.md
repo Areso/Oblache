@@ -1,4 +1,8 @@
 # Release notes
+Sun 02 Nov 2025 10:25 PM EET  
+paas_server_role_applier:
+fix dest for sharer executive file    
+
 Sun 02 Nov 2025 08:17 PM EET  
 paas_server_role_applier:
 try to fix FQDN bug    
