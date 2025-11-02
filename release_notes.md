@@ -1,4 +1,8 @@
 # Release notes
+Sun 02 Nov 2025 10:47 PM EET  
+paas_server_role_applier:
+added redirect to nginx config    
+
 Sun 02 Nov 2025 10:25 PM EET  
 paas_server_role_applier:
 fix dest for sharer executive file    
