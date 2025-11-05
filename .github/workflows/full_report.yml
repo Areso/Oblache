@@ -58,12 +58,12 @@ jobs:
           echo CHROME_VERSION=$(google-chrome --product-version) >> environment.properties
 #        continue-on-error: true
 
-      - name: Get Allure history
-        uses: actions/checkout@v4
-        if: always()
-        with:
-          ref: gh-pages
-          path: gh-pages
+#      - name: Get Allure history
+#        uses: actions/checkout@v4
+#        if: always()
+#        with:
+#          ref: gh-pages
+#          path: gh-pages
 #        continue-on-error: true
 
       - name: Allure Report action
