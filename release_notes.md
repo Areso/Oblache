@@ -1,4 +1,8 @@
 # Release notes
+Sun 09 Nov 2025 04:23 PM EET  
+paas_db_backuper:
+[OBL-492](https://github.com/Areso/Oblache/issues/492) fix error    
+
 Sun 02 Nov 2025 11:08 PM EET  
 paas_server_role_applier:
 added redirect to nginx config. fix config address    
